@@ -1,0 +1,91 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-block text-right">
+            <button class="btn btn-primary mb-3" (click)="packageModal(item)">Add Packages</button>
+        </div>
+   
+<div class="row">
+    <div class="col-md-4">
+        <div class="package-box border text-center p-4 text-white rounded bg-primary">
+        <span class="h1"><i class="fas fa-chess-king "></i></span> 
+            <h2 class="pb-3">Basic</h2>
+            <h1 class="price">$100/<span>12 Months</span></h1>
+            <h4 class="pt-3 pb-3">Save Upto 50%</h4>
+            
+            <button class="btn btn-block" (click)="packageEditModal(itemedit)">Edit</button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="package-box border text-center p-4 text-white rounded bg-primary">
+        <span class="h1"><i class="fas fa-chess-king "></i></span> 
+            <h2 class="pb-3">Silver</h2>
+            <h1 class="price">$150/<span>12 Months</span></h1>
+            <h4 class="pt-3 pb-3">Save Upto 50%</h4>
+            
+            <button class="btn btn-block" (click)="packageEditModal(itemedit)">Edit</button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="package-box border text-center p-4 text-white rounded bg-primary">
+        <span class="h1"><i class="fas fa-chess-king "></i></span> 
+            <h2 class="pb-3">Gold</h2>
+            <h1 class="price">$250/<span>12 Months</span></h1>
+            <h4 class="pt-3 pb-3">Save Upto 50%</h4>
+            
+            <button class="btn btn-block" (click)="packageEditModal(itemedit)">Edit</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<ng-template #item let-modal>
+    <div class="modal-body">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label> Plan Name</label>
+                    <input type="text" placeholder="Plan Name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label> Price</label>
+                    <input type="text" placeholder="$20" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label> Months</label>
+                    <input type="number" placeholder="4 Months" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label> Save Upto</label>
+                    <input type="number" placeholder="20%" class="form-control">
+                </div>
+                <button class="btn btn-primary" (click)="modal.dismiss()">Save</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #itemedit let-modal>
+    <div class="modal-body">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label> Plan Name</label>
+                    <input type="text" placeholder="Plan Name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label> Price</label>
+                    <input type="text" placeholder="$20" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label> Months</label>
+                    <input type="number" placeholder="4 Months" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label> Save Upto</label>
+                    <input type="number" placeholder="20%" class="form-control">
+                </div>
+                <button class="btn btn-primary" (click)="modal.dismiss()">Save</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

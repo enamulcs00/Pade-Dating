@@ -1,0 +1,273 @@
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-12 col-xlg-3 col-md-5">
+        <a routerLink="/pages/users" class="btn btn-primary mb-3">Back</a>
+        <div class="card">
+            <div class="row">
+                <div class="col-md-3">
+          <div class="card-body p-3 bg-light">
+            <div class=" text-center">
+              <img src="assets/images/users/agent.jpg" class="rounded-circle" width="150" />
+            </div>
+
+          </div>
+        </div>
+                <div class="col-md-9 pr-0 pt-2 pb-2">
+                    <div class="row pt-2 ml-0 mr-0 ">
+                        <div class="col-md-4">
+                            <ul class="list-block pl-0 list-style-none">
+                                <li class="list-block-listing pr-2 pb-2">Name: <span class="font-weight-600">Sandy</span></li>
+                                <li class="list-block-listing pr-2 pb-2">Contact: <span class="font-weight-600">+91-9564345452</span>
+                                  
+                                    <!-- <li class="list-block-listing pr-2 pb-2">User ID: <span class="font-weight-600">elite2345</span></li> -->
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="list-block pl-0 list-style-none">
+
+                                <li class="list-block-listing pr-2 pb-2">Dob: <span class="font-weight-600">15-09-1991</span></li>
+                                <li class="list-block-listing pr-2 pb-2">Country: <span class="font-weight-600">England</span></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="list-block pl-0 list-style-none">
+                                <li class="list-block-listing pr-2 pb-2">Email: <span class="font-weight-600"> sand@example.com </span>
+                                </li>
+                                <li class="list-block-listing pr-2 pb-2"> Username: <span class="font-weight-600">Sand43</span></li>
+                            </ul>
+                        </div>
+                      
+                    </div>
+               
+                </div>
+            </div>
+            <!-- end row -->
+
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <!-- <div class="col-lg-12">
+        <h4 class="pt-2">Order History</h4>
+        <div class="card ">
+
+            <div class="card-body">
+                <div class="row pb-2">
+                    <div class="col-md-4">
+                        <div>
+                            <input type="text" class="form-control" id="prenametext" placeholder="Search">
+                        </div>
+                    </div>
+                    <div class="col-md-8 text-right">
+                        <div ngbDropdown class="d-inline-block ">
+                            <button class="btn btn-info text-white" id="dropdownBasic1" ngbDropdownToggle>
+                All
+              </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button class="dropdown-item">Completed Orders</button>
+                                <button class="dropdown-item">Cancelled Orders</button>
+                                <button class="dropdown-item">Pending Orders</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table mat-table class="w-100" [dataSource]="dataSource" matSort>                   
+
+                      
+                        <ng-container matColumnDef="hotelName">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Service Provider </th>
+                            <td mat-cell *matCellDef="let row"> {{row.hotelName}} </td>
+                        </ng-container>
+                          <ng-container matColumnDef="productname">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Services </th>
+                            <td mat-cell *matCellDef="let row"> {{row.productname}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="orderdate">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Date </th>
+                            <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.orderdate}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="price">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                            <td mat-cell *matCellDef="let row" [style.color]="row.color"><b>$</b>{{row.price}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="Reviews_sp">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Reviews by service Provider </th>
+                            <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.Reviews_sp}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="status">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Status </th>
+                            <td mat-cell *matCellDef="let row" [style.color]="row.color"> <button class="btn" [ngClass]="row.status == 'Cancelled' ? 'btn-outline-danger': (row.status == 'Pending') ? 'btn-outline-info' : 'btn-outline-success' ">{{row.status}}</button> </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+                    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Column -->
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h4>User History</h4>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="d-flex border p-3 align-items-center justify-content-center">
+            <div class="text-center">
+            <figure class="rounded-circle match_box">
+                <img src="assets/images/users/agent.jpg" class="img-fluid">                
+            </figure>
+            <h4 class="mt-2">Emma Stone</h4>
+        </div>
+            <span class="border rounded-circle heart-box"><i class=" mdi mdi-heart"></i></span>
+            <div class="text-center">
+            <figure class="rounded-circle match_box">
+                <img src="assets/images/users/d3.jpg" class="img-fluid">               
+            </figure>
+            <h4 class="mt-2">David</h4>
+            </div>            
+        </div>
+        <div class="bg-primary text-white p-2 text-center">Conversation time: 2 Hours</div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="d-flex border p-3 align-items-center justify-content-center">
+            <div class="text-center">
+            <figure class="rounded-circle match_box">
+                <img src="assets/images/users/agent.jpg" class="img-fluid">                
+            </figure>
+            <h4 class="mt-2">Emma Stone</h4>
+        </div>
+            <span class="border rounded-circle heart-box"><i class=" mdi mdi-heart"></i></span>
+            <div class="text-center">
+            <figure class="rounded-circle match_box">
+                <img src="assets/images/users/d3.jpg" class="img-fluid">               
+            </figure>
+            <h4 class="mt-2">David</h4>
+            </div>            
+        </div>
+        <div class="bg-primary text-white p-2 text-center">Conversation time: 2 Hours</div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="d-flex border p-3 align-items-center justify-content-center">
+            <div class="text-center">
+            <figure class="rounded-circle match_box">
+                <img src="assets/images/users/agent.jpg" class="img-fluid">                
+            </figure>
+            <h4 class="mt-2">Emma Stone</h4>
+        </div>
+            <span class="border rounded-circle heart-box"><i class=" mdi mdi-heart"></i></span>
+            <div class="text-center">
+            <figure class="rounded-circle match_box">
+                <img src="assets/images/users/d3.jpg" class="img-fluid">               
+            </figure>
+            <h4 class="mt-2">David</h4>
+            </div>            
+        </div>
+        <div class="bg-primary text-white p-2 text-center">Conversation time: 2 Hours</div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="d-flex border p-3 align-items-center justify-content-center">
+            <div class="text-center">
+            <figure class="rounded-circle match_box">
+                <img src="assets/images/users/agent.jpg" class="img-fluid">                
+            </figure>
+            <h4 class="mt-2">Emma Stone</h4>
+        </div>
+            <span class="border rounded-circle heart-box"><i class=" mdi mdi-heart"></i></span>
+            <div class="text-center">
+            <figure class="rounded-circle match_box">
+                <img src="assets/images/users/3.jpg" class="img-fluid">               
+            </figure>
+            <h4 class="mt-2">David</h4>
+            </div>            
+        </div>
+        <div class="bg-primary text-white p-2 text-center">Conversation time: 2 Hours</div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="d-flex border p-3 align-items-center justify-content-center">
+            <div class="text-center">
+            <figure class="rounded-circle match_box">
+                <img src="assets/images/users/agent.jpg" class="img-fluid">                
+            </figure>
+            <h4 class="mt-2">Emma Stone</h4>
+        </div>
+            <span class="border rounded-circle heart-box"><i class=" mdi mdi-heart"></i></span>
+            <div class="text-center">
+            <figure class="rounded-circle match_box">
+                <img src="assets/images/users/2.jpg" class="img-fluid">               
+            </figure>
+            <h4 class="mt-2">David</h4>
+            </div>            
+        </div>
+        <div class="bg-primary text-white p-2 text-center">Conversation time: 2 Hours</div>
+    </div>
+</div>
+
+
+    
+    <div class="card">
+        <div class="card-body">
+            <h4>Photo/Video</h4>
+          <div class="row mt-3">
+            <div class="col-md-3">
+              <figure class="mb-0 p-2 border"><a href="javascript:void()" (click)="videoBoxModal(videobox)"><img src="assets/images/img3.jpg" class="img-fluid"></a></figure>
+            </div>
+            <div class="col-md-3">
+              <figure class="mb-0 p-2 border"><a href="javascript:void()" (click)="videoBoxModal(videobox)"><img src="assets/images/img3.jpg" class="img-fluid"></a></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #videobox let-modal>
+          <div class="modal-body">
+              <button class="btn close-icon" (click)="modal.dismiss()"><i class="mdi mdi-close"></i></button>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/XncoZAkq_Qs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </ng-template>
+
+<!-- <ng-template #discount let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Coupons</h4>
+    <button type="button" class="close-icon" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   <div class="table-reponsive">
+     <table class="table table-sm">
+      <tbody>
+       <tr>
+       <td class="align-middle">Get 20% OFF On Food Orders</td>
+       <td><button class="food-code btn btn-success">
+        Food20
+       </button></td>
+      </tr>
+      <tr>
+        <td class="align-middle">Get 60% OFF On Food Orders</td>
+        <td><button class="food-code btn btn-success">
+         Food60
+        </button></td>
+       </tr>
+       <tr>
+        <td class="align-middle">Get 60% OFF On Food Orders</td>
+        <td><button class="food-code btn btn-success">
+         Food60
+        </button></td>
+       </tr>
+       <tr>
+        <td class="align-middle">Get 60% OFF On Food Orders</td>
+        <td><button class="food-code btn btn-success">
+         Food60
+        </button></td>
+       </tr>
+       </tbody>
+     </table>
+   </div>
+  </div>
+
+</ng-template> -->
