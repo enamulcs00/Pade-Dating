@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-dev": "ng build --base-href /Pade/admin/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -48,6 +49,7 @@
     "ngx-custom-validators": "^9.1.0",
     "ngx-perfect-scrollbar": "9.0.0",
     "ngx-quill": "^12.0.1",
+    "ngx-spinner": "^11.0.1",
     "ngx-toastr": "^12.0.0",
     "node-sass": "^4.13.1",
     "pace-js": "^1.0.2",

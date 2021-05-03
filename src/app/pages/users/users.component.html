@@ -8,134 +8,119 @@
                     <div class="col-md-4">
                         <form>
                             <div class="mb-2">
-                                <input type="text" class="form-control" id="prenametext" placeholder="Search">
+                                <input type="text" class="form-control" id="prenametext" (keyup)="applyFilter($event.target.value)" placeholder="Search">
                             </div>
                         </form>
                     </div>
                     <div class="col-md-8  d-flex justify-content-end">
                         <div ngbDropdown class="d-inline-block mb-2 mr-2">
                             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-                All
-              </button>
+                                All
+                            </button>
                             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                                 <button class="dropdown-item">All</button>
                                 <button class="dropdown-item">Active</button>
                                 <button class="dropdown-item">Inactive</button>
                             </div>
                         </div>
-                        <button class="btn btn-primary mb-2 mr-2"><i class="sl-icon-cloud-download"></i> Export CSV</button>
-                        <!-- <button class="btn btn-seconadary mb-2" (click)="addUserModal(addUser)"><i class="sl-icon-plus"></i> Add
-              User</button> -->
+                        <button class="btn btn-primary mb-2 mr-2"><i class="sl-icon-cloud-download"></i> Export
+                            CSV</button>
+                        <button class="btn btn-seconadary mb-2" (click)="addUserModal(addUser)"><i class="sl-icon-plus"></i> Add
+              User</button>
                     </div>
                 </div>
                 <div class="table-responsive">
                     <table mat-table class=" w-100" [dataSource]="dataSource" matSort>
 
-                        <!-- ID Column -->
                         <ng-container matColumnDef="name">
                             <th mat-header-cell *matHeaderCellDef> Name </th>
-                            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                            <td mat-cell *matCellDef="let row"> {{row.firstName}} {{row.lastName}}</td>
                         </ng-container>
 
-                        <!-- Progress Column -->
-                        <!-- <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef >User ID </th>
-              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-            </ng-container> -->
-                        <!-- Progress Column -->
                         <ng-container matColumnDef="contact">
                             <th mat-header-cell *matHeaderCellDef class="text-nowrap">Contact </th>
-                            <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.contact}} </td>
+                            <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.phoneNo}} </td>
                         </ng-container>
-                        <!-- Progress Column -->
+
                         <ng-container matColumnDef="email">
                             <th mat-header-cell *matHeaderCellDef>Email </th>
                             <td mat-cell *matCellDef="let row"> {{row.email}} </td>
                         </ng-container>
-                        <!-- Address -->
+
                         <ng-container matColumnDef="address">
                             <th mat-header-cell *matHeaderCellDef>Address </th>
                             <td mat-cell *matCellDef="let row"> {{row.address}} </td>
                         </ng-container>
-                        <!-- pendingOrder -->
+                        
                         <ng-container matColumnDef="username">
-              <th mat-header-cell *matHeaderCellDef  class="text-nowrap">Username </th>
-              <td mat-cell *matCellDef="let row"> {{row.username}} </td>
-            </ng-container>
-            <ng-container matColumnDef="dob">
-                <th mat-header-cell *matHeaderCellDef  class="text-nowrap">DOB </th>
-                <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.dob}} </td>
-              </ng-container>
-              <ng-container matColumnDef="gender">
-                <th mat-header-cell *matHeaderCellDef  class="text-nowrap">Gender </th>
-                <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.gender}} </td>
-              </ng-container>
-                        <!-- total Orders -->
-                        <!-- <ng-container matColumnDef="totalOrders">
-                <th mat-header-cell *matHeaderCellDef  class="text-nowrap"> Total Orders </th>
-                <td mat-cell *matCellDef="let row"> {{row.totalOrders}} </td>
-              </ng-container> -->
-                        <!-- Name Column -->
-                     
+                            <th mat-header-cell *matHeaderCellDef class="text-nowrap">Username </th>
+                            <td mat-cell *matCellDef="let row"> {{row.username}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="dateofbirth">
+                            <th mat-header-cell *matHeaderCellDef class="text-nowrap">DOB </th>
+                            <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.dateofbirth}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="gender">
+                            <th mat-header-cell *matHeaderCellDef class="text-nowrap">Gender </th>
+                            <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.gender}} </td>
+                        </ng-container>
+
                         <ng-container matColumnDef="status">
                             <th mat-header-cell *matHeaderCellDef class="text-nowrap"> Status </th>
-                            <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.status}}
-                                <mat-slide-toggle>
+                            <td mat-cell *matCellDef="let row" class="text-nowrap">
+                                <mat-slide-toggle [checked]="row.status === 'true' ? true : false" (change)="inactiveUsers(row, $event)">
                                 </mat-slide-toggle>
                             </td>
                         </ng-container>
+
                         <ng-container matColumnDef="action">
                             <th mat-header-cell *matHeaderCellDef class="text-nowrap"> Action </th>
                             <td mat-cell *matCellDef="let row" class="text-nowrap">
                                 <div ngbDropdown placement="bottom" class="d-inline-block" container="body">
-                                    <button class="btn btn-outline-primary btn-sm" id="dropdownBasic1" ngbDropdownToggle>
-                    Action
-                  </button>
+                                    <button class="btn btn-outline-primary btn-sm" id="dropdownBasic1"
+                                        ngbDropdownToggle>
+                                        Action
+                                    </button>
 
-                                    <div *ngIf="row.action==0" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                    <!-- <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                                         <a class="dropdown-item" routerLink="/pages/users_detail"><i class="ti-eye"></i>
-                      Accept
-                    </a>
-                                        <!-- <button class="dropdown-item" (click)="userDetailModal(userDetail)"><i _ngcontent-axh-c146=""
-                        class="ti-marker-alt"></i> Edit</button> -->
+                                            Accept
+                                        </a>
 
-                                        <button class="dropdown-item" (click)="userDeleteModal(userDelete)"><i class="ti-trash"></i>
-                      Reject</button>
-                                    </div>
+                                        <button class="dropdown-item" (click)="userDeleteModal(userDelete)"><i
+                                                class="ti-trash"></i>
+                                            Reject</button>
+                                    </div> -->
 
-                                    <div *ngIf="row.action==1" ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                        <a class="dropdown-item" routerLink="/pages/users_detail"><i class="ti-eye"></i>
-                      View
-                    </a>
-                                        <button class="dropdown-item" (click)="userDetailModal(userDetail)"><i _ngcontent-axh-c146=""
-                        class="ti-marker-alt"></i> Edit</button>
+                                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                        <a class="dropdown-item" (click)="viewUserDetail(row)" style="cursor: default;"><i class="ti-eye"></i>
+                                            View
+                                        </a>
+                                        <button class="dropdown-item" (click)="userDetailModal(userDetail)"><i
+                                                _ngcontent-axh-c146="" class="ti-marker-alt"></i> Edit</button>
 
-                                        <button class="dropdown-item" (click)="userDeleteModal(userDelete)"><i class="ti-trash"></i>
-                      Delete</button>
+                                        <button class="dropdown-item" (click)="userDeleteModal(userDelete)"><i
+                                                class="ti-trash"></i>
+                                            Delete</button>
                                     </div>
                                 </div>
                             </td>
                         </ng-container>
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                        <!-- Row shown when there is no matching data. -->
-                        <!-- <tr class="mat-row" *matNoDataRow>
-              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-            </tr> -->
                     </table>
                 </div>
                 <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
             </div>
         </div>
-        <!-- Column -->
     </div>
 
     <ng-template #content3 let-modal>
         <div class="modal-header p-2">
             <h4 class="modal-title">Driving Licence</h4>
             <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <div class="modal-body">
             <div class="row">
@@ -155,8 +140,10 @@
         <div class="modal-body">
             <p>Are you ure want to delete this user?</p>
             <div class="btn-group">
-                <button type="button" class="btn btn-primary mr-2" aria-label="Close" (click)="modal.dismiss('Cross click')">Yes</button>
-                <button type="button" class="btn btn-seconadary" aria-label="Close" (click)="modal.dismiss('Cross click')">No</button>
+                <button type="button" class="btn btn-primary mr-2" aria-label="Close"
+                    (click)="modal.dismiss('Cross click')">Yes</button>
+                <button type="button" class="btn btn-seconadary" aria-label="Close"
+                    (click)="modal.dismiss('Cross click')">No</button>
             </div>
         </div>
     </ng-template>
@@ -181,7 +168,9 @@
                                     <div class="form-group has-success">
                                         <div class="form-group">
                                             <label class="control-label">Upload User Profile</label>
-                                            <div class="custom-file"><input class="custom-file-input" id="inputGroupFile01" type="file"><label class="custom-file-label" for="inputGroupFile01">Choose file</label></div>
+                                            <div class="custom-file"><input class="custom-file-input"
+                                                    id="inputGroupFile01" type="file"><label class="custom-file-label"
+                                                    for="inputGroupFile01">Choose file</label></div>
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +189,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Email</label>
-                                        <input type="email" id="firstName" class="form-control" placeholder="example@gmail.com">
+                                        <input type="email" id="firstName" class="form-control"
+                                            placeholder="example@gmail.com">
 
                                     </div>
                                 </div>
@@ -208,57 +198,41 @@
                                 <div class="col-md-6">
                                     <div class="form-group has-danger">
                                         <label class="control-label">Username</label>
-                                        <input type="text" id="email" class="form-control form-control-danger" placeholder="#46543343">
+                                        <input type="text" id="email" class="form-control form-control-danger"
+                                            placeholder="#46543343">
                                     </div>
                                 </div>
-                                <!--/span-->
-                                <!-- <div class="col-md-6">
-                                    <div class="form-group has-danger">
-                                        <label class="control-label">Total Orders</label>
-                                        <input type="text" id="email" class="form-control form-control-danger" placeholder="40">
-                                    </div>
-                                </div> -->
-                                <!--/span-->
-                                <!-- <div class="col-md-6">
-                                    <div class="form-group has-danger">
-                                        <label class="control-label">Cancelled  Orders</label>
-                                        <input type="text" id="email" class="form-control form-control-danger" placeholder="00">
-                                    </div>
-                                </div> -->
-                                <!--/span-->
-                                <!-- <div class="col-md-6">
-                                    <div class="form-group has-danger">
-                                        <label class="control-label">Completed Orders</label>
-                                        <input type="text" id="email" class="form-control form-control-danger" placeholder="40">
-                                    </div>
-                                </div> -->
-                              
+
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group has-danger">
                                         <label class="control-label">DOB</label>
-                                        <input type="date" id="date" class="form-control form-control-danger" placeholder="Pincode">
+                                        <input type="date" id="date" class="form-control form-control-danger"
+                                            placeholder="Pincode">
                                     </div>
                                 </div>
-                                  <!--/span-->
-                                  <div class="col-md-6">
+                                <!--/span-->
+                                <div class="col-md-6">
                                     <div class="form-group has-danger">
                                         <label class="control-label">City</label>
-                                        <input type="text" id="city" class="form-control form-control-danger" placeholder="Berlin">
+                                        <input type="text" id="city" class="form-control form-control-danger"
+                                            placeholder="Berlin">
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group has-danger">
                                         <label class="control-label">Pincode</label>
-                                        <input type="text" id="email" class="form-control form-control-danger" placeholder="Pincode">
+                                        <input type="text" id="email" class="form-control form-control-danger"
+                                            placeholder="Pincode">
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-12">
                                     <div class="form-group has-danger">
                                         <label class="control-label">Address</label>
-                                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="#433 New garden Complex"></textarea>
+                                        <textarea name="" id="" cols="30" rows="5" class="form-control"
+                                            placeholder="#433 New garden Complex"></textarea>
                                     </div>
                                 </div>
                                 <!--/span-->
@@ -268,9 +242,11 @@
 
                         <div class="form-actions">
                             <div class="card-body">
-                                <button type="submit" class="btn btn-primary mr-3" (click)="modal.dismiss('Cross click')">
-                  <i class="fa fa-check"></i> Update</button>
-                                <button type="button" class="btn btn-dark" (click)="modal.dismiss('Cross click')">Cancel</button>
+                                <button type="submit" class="btn btn-primary mr-3"
+                                    (click)="modal.dismiss('Cross click')">
+                                    <i class="fa fa-check"></i> Update</button>
+                                <button type="button" class="btn btn-dark"
+                                    (click)="modal.dismiss('Cross click')">Cancel</button>
                             </div>
                         </div>
                     </div>
@@ -300,7 +276,9 @@
                                     <div class="form-group has-success">
                                         <div class="form-group">
                                             <label class="control-label">Upload User Profile</label>
-                                            <div class="custom-file"><input class="custom-file-input" id="inputGroupFile01" type="file"><label class="custom-file-label" for="inputGroupFile01">Choose file</label></div>
+                                            <div class="custom-file"><input class="custom-file-input"
+                                                    id="inputGroupFile01" type="file"><label class="custom-file-label"
+                                                    for="inputGroupFile01">Choose file</label></div>
                                         </div>
                                     </div>
                                 </div>
@@ -319,7 +297,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group has-danger">
                                         <label class="control-label">Email</label>
-                                        <input type="email" id="email" class="form-control form-control-danger" placeholder="example@gmail.com">
+                                        <input type="email" id="email" class="form-control form-control-danger"
+                                            placeholder="example@gmail.com">
 
                                     </div>
                                 </div>
@@ -330,7 +309,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group has-danger">
                                         <label class="control-label">Address</label>
-                                        <input type="text" id="Address" class="form-control form-control-danger" placeholder="Address">
+                                        <input type="text" id="Address" class="form-control form-control-danger"
+                                            placeholder="Address">
 
                                     </div>
                                 </div>
@@ -338,10 +318,11 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Gender</label>
-                                        <select class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
-                      <option value="Category 1">Male</option>
-                      <option value="Category 2">Female</option>
-                    </select>
+                                        <select class="form-control custom-select" data-placeholder="Choose a Category"
+                                            tabindex="1">
+                                            <option value="Category 1">Male</option>
+                                            <option value="Category 2">Female</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <!--/span-->
@@ -351,14 +332,16 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Bike Name</label>
-                                        <input type="text" id="bike_name" name="bike_name" class="form-control" placeholder="Bike name">
+                                        <input type="text" id="bike_name" name="bike_name" class="form-control"
+                                            placeholder="Bike name">
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Bike No</label>
-                                        <input type="text" id="bike_no" name="bike_no" class="form-control" placeholder="Bike No">
+                                        <input type="text" id="bike_no" name="bike_no" class="form-control"
+                                            placeholder="Bike No">
                                     </div>
                                 </div>
                                 <!--/span-->
@@ -366,11 +349,13 @@
                                     <div class="form-group">
                                         <label class="control-label">User Status</label>
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                            <input type="radio" id="customRadio1" name="customRadio"
+                                                class="custom-control-input">
                                             <label class="custom-control-label" for="customRadio1">Active</label>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                            <input type="radio" id="customRadio2" name="customRadio"
+                                                class="custom-control-input">
                                             <label class="custom-control-label" for="customRadio2">Inactive</label>
                                         </div>
                                     </div>
@@ -383,9 +368,11 @@
 
                         <div class="form-actions">
                             <div class="card-body">
-                                <button type="submit" class="btn btn-success mr-3" (click)="modal.dismiss('Cross click')">
-                  <i class="fa fa-check"></i> Add</button>
-                                <button type="button" class="btn btn-dark" (click)="modal.dismiss('Cross click')">Cancel</button>
+                                <button type="submit" class="btn btn-success mr-3"
+                                    (click)="modal.dismiss('Cross click')">
+                                    <i class="fa fa-check"></i> Add</button>
+                                <button type="button" class="btn btn-dark"
+                                    (click)="modal.dismiss('Cross click')">Cancel</button>
                             </div>
                         </div>
                     </div>

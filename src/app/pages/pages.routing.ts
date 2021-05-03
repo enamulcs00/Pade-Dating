@@ -55,6 +55,7 @@ import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { ReportComponent } from './report/report.component';
 import { ReasonComponent } from './reason/reason.component';
 import { PackagesComponent } from './packages/packages.component';
+import { AuthGuard } from '../shared/guards/auth.guard';
 
 
 export const PagesRoutes: Routes = [
@@ -84,7 +85,7 @@ export const PagesRoutes: Routes = [
         }
       },
       {
-        path: 'users_detail',
+        path: 'users_detail/:id',
         component: UsersDetailComponent,
         data: {
           title: 'Users Detail',
@@ -205,6 +206,7 @@ export const PagesRoutes: Routes = [
         }
       },
       {
+        canActivate: [AuthGuard] ,
         path: 'profile',
         component: ProfileComponent,
         data: {

@@ -2,22 +2,29 @@
     <!-- Column -->
     <div class="col-lg-12 col-xlg-3 col-md-5">
         <a routerLink="/pages/users" class="btn btn-primary mb-3">Back</a>
+        <!-- <a (click)="history.back()" class="btn btn-primary mb-3">Back</a> -->
         <div class="card">
             <div class="row">
                 <div class="col-md-3">
-          <div class="card-body p-3 bg-light">
-            <div class=" text-center">
-              <img src="assets/images/users/agent.jpg" class="rounded-circle" width="150" />
-            </div>
-
-          </div>
-        </div>
-                <div class="col-md-9 pr-0 pt-2 pb-2">
+                    <div class="card-body p-3 bg-light" *ngIf="user && !user.image">
+                        <div class=" text-center">
+                        <img *ngIf="!user.image && (user.gender || !user.gender) == 'MALE'" src="assets/images/users/avatar_male.jpg" class="rounded-circle" width="150" />
+                        <img *ngIf="!user.image && (user.gender || !user.gender) == 'FEMALE'" src="assets/images/users/avatar_female.jpg" class="rounded-circle" width="150" />
+                        <img *ngIf="!user.image && !user.gender" src="assets/images/users/agent.jpg" class="rounded-circle" width="150" />
+                        </div>
+                    </div>
+                    <div class="card-body p-3 bg-light" *ngIf="user && user.image">
+                        <div class=" text-center">
+                        <img [src]=imageUrl class="rounded-circle" width="100" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 pr-0 pt-2 pb-2" *ngIf="user">
                     <div class="row pt-2 ml-0 mr-0 ">
                         <div class="col-md-4">
                             <ul class="list-block pl-0 list-style-none">
-                                <li class="list-block-listing pr-2 pb-2">Name: <span class="font-weight-600">Sandy</span></li>
-                                <li class="list-block-listing pr-2 pb-2">Contact: <span class="font-weight-600">+91-9564345452</span>
+                                <li class="list-block-listing pr-2 pb-2">Name: <span class="font-weight-600">{{user?.firstName}} {{user?.lastName}}</span></li>
+                                <li class="list-block-listing pr-2 pb-2">Contact: <span class="font-weight-600">{{user?.countryCode}}-{{user?.phoneNo}}</span>
                                   
                                     <!-- <li class="list-block-listing pr-2 pb-2">User ID: <span class="font-weight-600">elite2345</span></li> -->
                             </ul>
@@ -25,16 +32,16 @@
                         <div class="col-md-4">
                             <ul class="list-block pl-0 list-style-none">
 
-                                <li class="list-block-listing pr-2 pb-2">Dob: <span class="font-weight-600">15-09-1991</span></li>
-                                <li class="list-block-listing pr-2 pb-2">Country: <span class="font-weight-600">England</span></li>
+                                <li class="list-block-listing pr-2 pb-2">Dob: <span class="font-weight-600">{{user?.dateofbirth}}</span></li>
+                                <li class="list-block-listing pr-2 pb-2">Country: <span class="font-weight-600">{{user?.country}}</span></li>
 
                             </ul>
                         </div>
                         <div class="col-md-4">
                             <ul class="list-block pl-0 list-style-none">
-                                <li class="list-block-listing pr-2 pb-2">Email: <span class="font-weight-600"> sand@example.com </span>
+                                <li class="list-block-listing pr-2 pb-2">Email: <span class="font-weight-600"> {{user?.email }}</span>
                                 </li>
-                                <li class="list-block-listing pr-2 pb-2"> Username: <span class="font-weight-600">Sand43</span></li>
+                                <li class="list-block-listing pr-2 pb-2"> Username: <span class="font-weight-600">{{user?.username}}</span></li>
                             </ul>
                         </div>
                       

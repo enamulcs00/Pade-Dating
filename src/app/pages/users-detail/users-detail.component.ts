@@ -1,8 +1,13 @@
 import { AfterViewInit, Component, OnInit,ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource, } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource, } from '@angular/material/table';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { ApiService } from '../../shared/services/api.service';
+import { environment } from 'src/environments/environment';
 
 export interface UserData {
   hotelName: string,
@@ -22,6 +27,7 @@ export interface UserData {
 })
 export class UsersDetailComponent implements AfterViewInit    {
 
+  history = window.history;
   closeResult: string;
   //table: any
   displayedColumns: string[] = [ 'hotelName' ,'productname', 'orderdate', 'Reviews_sp','price','status'];
@@ -29,8 +35,18 @@ export class UsersDetailComponent implements AfterViewInit    {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
+  id: any;
+  getAllUsers: any;
+  user: any;
+  imageUrl: any;
 
-  constructor(private modalService: NgbModal) {
+  constructor(
+    private modalService: NgbModal,
+    private fb: FormBuilder,
+		private api: ApiService,
+		private router: Router,
+    private route: ActivatedRoute,
+		private toastr: ToastrService,) {
     // const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
@@ -41,6 +57,49 @@ export class UsersDetailComponent implements AfterViewInit    {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+
+  ngOnInit(){
+    this.route.params.subscribe(params => {
+      this.id = params["id"];
+      // this.getOutlettById(this.id);
+    });
+    console.log("id: ", this.id)
+    this.imageUrl = environment.imagesUrl;
+    this.getUsers()
+  }
+
+  getUsers() {
+		this.api.users().subscribe(res => {
+			if (res['statusCode'] === 200) {
+        this.getAllUsers = res["data"]["data"]
+        console.log("getAllUsers: ", this.getAllUsers)
+        this.user = this.getAllUsers.find((x:any) => x._id === this.id);
+        this.setValues(this.user);
+        console.log("user: ", this.user)
+			} else {
+				this.toastr.error(res["message"]);
+			}
+		}, error => {
+			this.toastr.error('Something went wrong, please try again!', 'Oops!', { timeOut: 3000, closeButton: true });
+			console.log(error)
+		})
+	}
+
+  setValues = data => {
+		if (data) {
+			data.image && (this.imageUrl = data.image);
+			// this.userForm.patchValue({
+			// 	fullName: data.fullName,
+			// 	countryCode: data.countryCode,
+			// 	password: data.password,
+			// 	phoneNo: data.phoneNo,
+			// 	email: data.email
+			// });
+			if (data.image) {
+				this.imageUrl
+			}
+		}
+	}
 
 
   videoBoxModal(videobox) {
