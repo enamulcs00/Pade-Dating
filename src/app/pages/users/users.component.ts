@@ -96,18 +96,19 @@ export class UsersComponent implements OnInit {
 		this.router.navigateByUrl("/pages/users_detail/"+item._id);
 	}
 
-	inactiveUsers(item, status) {
-		if (status.checked) {
-			item.status = 'true'
-		} else {
-			item.status = 'false'
-		}
+	unblockUsers(item, status) {
+		console.log("item: ", item);
+		// if (status.checked) {
+		// 	item.status = 'true'
+		// } else {
+		// 	item.status = 'false'
+		// }
 		const data = {
-			id: item._id,
+			Id: item._id,
 			// isActive: status
 		};
 		console.log("data: ", data);
-		this.api.inactiveUsers(data).subscribe(response => {
+		this.api.unblockUsers(data).subscribe(response => {
 			if (response['statusCode'] === 200) {
 				this.toastr.success(response['message']);
 				this.getUsers();

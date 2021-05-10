@@ -83,8 +83,8 @@ export class ApiService {
     return this.http.put(environment.apiUrl + "updateProfile", id);
   }
 
-  blockUsers(id){
-    return this.http.put(environment.apiUrl + "blockUsers", id);
+  unblockUsers(id){
+    return this.http.post(environment.apiUrl + "unblockUsers", id);
   }
   
   inactiveUsers(id){
