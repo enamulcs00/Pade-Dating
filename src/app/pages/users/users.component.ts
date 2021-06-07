@@ -3,12 +3,14 @@ import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource, } from '@angular/material/table';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserData } from '../../pages/model/UserData'
 import { NgxSpinnerService } from 'src/app/shared/services/spinner.service';
+import { CommonService } from 'src/app/shared/services/common.service'
+import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'app-users',
@@ -31,33 +33,109 @@ export class UsersComponent implements OnInit {
 		'action'
 	];
 	dataSource = new MatTableDataSource<UserData>();
+	exportLink: any = ''
 
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 	@ViewChild(MatSort, { static: true }) sort: MatSort;
+	userDetail: any;
+	userImage: any;
+	File: any;
 
 	constructor(
 		private modalService: NgbModal,
 		private fb: FormBuilder,
+		private formBuilder: FormBuilder,
 		private api: ApiService,
 		private router: Router,
 		private toastr: ToastrService,
 		private spinner: NgxSpinnerService,
+		public comm: CommonService,
 	) {
 
 	}
 	ngOnInit(): void {
 		this.getUsers()
 		this.spinner.show();
+
+		this.userForm = this.formBuilder.group({
+			firstName: new FormControl("", Validators.compose([Validators.required, Validators.minLength(2),
+			Validators.maxLength(18),Validators.pattern("^[a-zA-Z ]*$")])),
+			lastName: new FormControl("",Validators.compose([Validators.required, Validators.minLength(2),
+			  Validators.maxLength(16),Validators.pattern("^[a-zA-Z ]*$")])),
+			username: new FormControl("",Validators.compose([Validators.required, Validators.minLength(2),
+				Validators.maxLength(16),Validators.pattern("^[a-zA-Z ]*$")])),
+			// countryCode: new FormControl("", Validators.compose([Validators.required])),
+			phoneNo: new FormControl("", [Validators.required, Validators.maxLength(15),
+			Validators.minLength(7),
+			Validators.pattern("^[0-9]*$")]),
+			email: new FormControl("", Validators.compose([Validators.required, ,
+			Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")])),
+			dateofbirth: new FormControl("",),
+			city: new FormControl("",),
+			// country: new FormControl("", Validators.compose([Validators.required])),
+			address: new FormControl("",),
+		  });
 	}
 	ngAfterViewInit() {
 		// this.dataSource.paginator = this.paginator;
 		// this.dataSource.sort = this.sort;
 	}
 
+	// getUserById(){
+	// 	this.api.users().subscribe(res => {
+	// 		if (res['statusCode'] === 200) {
+	// 			this.userDetail = res["data"];
+	// 			this.setValues(this.userDetail);
+	// 		} else {
+	// 			this.toastr.error(res["message"]);
+	// 		}
+	// 	}, error => {
+	// 		this.toastr.error('Something went wrong, please try again!', 'Oops!', { timeOut: 3000, closeButton: true });
+	// 		console.log(error)
+	// 	})	
+	// }
+
+	async profilePic(event) {
+		this.File = event.target.files[0];
+		if (event.target.files && event.target.files[0]) {
+		  var reader = new FileReader();
+		  reader.readAsDataURL(event.target.files[0]);
+		  reader.onload = (event: any) => {
+			this.userImage = event.target.result;
+		  };
+		}
+	  }
+
+	setValues = data => {
+		if (data) {
+		  this.userForm.patchValue({
+			firstName: data.firstName,
+			lastName: data.lastName,
+			// countryCode: data.countryCode,
+			username: data.username,
+			phoneNo: data.phoneNo,
+			email: data.email,
+			dateofbirth: data.dateofbirth,
+			city: data.city,
+			address: data.address,
+		  });
+		//   if (data && data.emergencyPhone) {
+		// 	this.userForm.controls.emergencyPhone.patchValue({
+		// 	  phone: data.emergencyPhone.phone,
+		// 	  countryCode: data.emergencyPhone.countryCode
+		// 	})
+		//   }
+		  if (data.image) {
+			this.userImage = environment.imagesUrl + data.image;
+		  }
+		}
+	  };
+
 	getUsers() {
 		this.api.users().subscribe(res => {
 			if (res['statusCode'] === 200) {
 				this.dataSource = new MatTableDataSource<UserData>(res["data"]["data"]);
+				this.exportLink = res["data"]["exportLink"];
 				this.dataSource.paginator = this.paginator;
 				this.dataSource.sort = this.sort;
 			} else {
@@ -69,46 +147,78 @@ export class UsersComponent implements OnInit {
 		})
 	}
 
-	updateStatus(item, e) {
-		if (e.checked) {
-			item.status = 'true'
-		} else {
-			item.status = 'false'
-		}
-		var data = {
-			userId: item._id,
-			status: item.status
-		};
-		// console.log("data: ", data);
-		let formData = new FormData();
-		formData.append("data", JSON.stringify(data));
-		// formData.append("pic", item.profilePic);
-		return
-		this.api.updateUser(formData).subscribe((res: any) => {
-			if (res["response"]["success"]) {
-				this.getUsers();
-			}
-			if (!res["response"]["success"]) return;
-		});
-	}
-
 	viewUserDetail(item){
 		this.router.navigateByUrl("/pages/users_detail/"+item._id);
 	}
 
-	unblockUsers(item, status) {
-		console.log("item: ", item);
-		// if (status.checked) {
-		// 	item.status = 'true'
-		// } else {
-		// 	item.status = 'false'
+	userEditModal(userEdit,data) {
+		console.log(data);
+		this.modalService.open(userEdit, { backdropClass: 'light-blue-backdrop', centered: true, size: 'lg' })
+		// onSubmit() {
+		// 	this.modalService.dismissAll();
+		// 	var data = this.userForm.value;
+		// 		data['id'] = data._id
+		// 		let formData = new FormData();
+		// 		formData.append("data", JSON.stringify(data));
+		// 		formData.append("pic", this.File);
+		// 		this.api.updateUser(data).subscribe(response => {
+		// 		  if (response['statusCode'] === 200) {
+		// 			this.toastr.success(response['message']);
+		// 			this.getUsers();
+		// 		  } else {
+		// 			this.toastr.error(response['message']);
+		// 		  }
+		// 		});
+		// 	// console.log("res:", this.editProfileForm.getRawValue());
 		// }
+		.result.then((result) => {
+			this.closeResult = `Closed with: ${result}`;
+			this.userForm.patchValue({
+				firstName: data.firstName,
+				lastName: data.lastName,
+				// countryCode: data.countryCode,
+				username: data.username,
+				phoneNo: data.phoneNo,
+				email: data.email,
+				dateofbirth: data.dateofbirth,
+				city: data.city,
+				address: data.address,
+		});
+		if (data.image) {
+			this.userImage = environment.imagesUrl + data.image;
+		  }
+			if (result) {
+				var data = this.userForm.value;
+				data['id'] = data._id
+				let formData = new FormData();
+				formData.append("data", JSON.stringify(data));
+				formData.append("pic", this.File);
+				this.api.updateUser(data).subscribe(response => {
+				  if (response['statusCode'] === 200) {
+					this.toastr.success(response['message']);
+					this.getUsers();
+				  } else {
+					this.toastr.error(response['message']);
+				  }
+				});
+			  }
+		}, (reason) => {
+			this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+		});
+	}
+
+	blockUsers(item, status) {
+		console.log("item: ", item);
+		if (status.checked) {
+			item.status = true
+		} else {
+			item.status = false
+		}
 		const data = {
-			Id: item._id,
-			// isActive: status
+			// id: item._id,
+			isBlocked: status
 		};
-		console.log("data: ", data);
-		this.api.unblockUsers(data).subscribe(response => {
+		this.api.blockUsers(item._id, data).subscribe(response => {
 			if (response['statusCode'] === 200) {
 				this.toastr.success(response['message']);
 				this.getUsers();
@@ -116,6 +226,32 @@ export class UsersComponent implements OnInit {
 				this.toastr.error(response['message']);
 			}
 		});
+	}
+
+	deleteUser(userModal,list) {
+		// const message = 'Are you sure you want to delete ' + list.firstName + ' ' + list.lastName + ' ?';
+		this.modalService.open(userModal, { ariaLabelledBy: 'modal-basic-title', centered: true, size: 'sm' }).result.then((result) => {
+			this.closeResult = `Closed with: ${result}`;
+			if (result) {
+				const data = {
+				  id: list._id,
+				};
+				this.api.deleteUser(list._id).subscribe(response => {
+				  if (response['statusCode'] === 200) {
+					this.toastr.success(response['message']);
+					this.getUsers();
+				  } else {
+					this.toastr.error(response['message']);
+				  }
+				});
+			  }
+		}, (reason) => {
+			this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+		});
+	}
+
+	openLink() {
+		window.open(this.exportLink)
 	}
 
 
@@ -198,7 +334,9 @@ export class UsersComponent implements OnInit {
 		this.modalService.open(userDelete, { backdropClass: 'light-blue-backdrop', centered: true, size: 'lg' });
 	}
 	userDeleteModal(userDelete) {
-		this.modalService.open(userDelete, { backdropClass: 'light-blue-backdrop', centered: true, size: 'sm' });
+		this.modalService.open(userDelete, { backdropClass: 'light-blue-backdrop', centered: true, size: 'sm' }).result.then(x=>{
+			alert(x);
+		});
 	}
 	userDetailModal(userDetail) {
 		this.modalService.open(userDetail, { backdropClass: 'light-blue-backdrop', centered: true, size: 'lg' });

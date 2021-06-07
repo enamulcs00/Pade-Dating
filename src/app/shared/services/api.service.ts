@@ -71,6 +71,10 @@ export class ApiService {
     return this.http.put(environment.apiUrl + "updateProfile", body);
   }
   
+  getUserById(id) {
+    return this.http.get(environment.apiUrl + "users/"+id,);
+  }
+
   users() {
     return this.http.get(environment.apiUrl + "users");
   }
@@ -80,11 +84,14 @@ export class ApiService {
   }
 
   updateUser(id) {
-    return this.http.put(environment.apiUrl + "updateProfile", id);
+    return this.http.put(environment.apiUrl + "updateUser", id);
   }
 
-  unblockUsers(id){
-    return this.http.post(environment.apiUrl + "unblockUsers", id);
+  deleteUser(id){
+    return this.http.delete(environment.apiUrl + "users/"+id);
+  }
+  blockUsers(id, body){
+    return this.http.post(environment.apiUrl + "blockUsers/" +id, body);
   }
   
   inactiveUsers(id){
