@@ -1,7 +1,8 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { HttpClient, HttpEventType, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpEventType, HttpHeaders, HttpParams } from "@angular/common/http";
 import { environment } from '../../../environments/environment'
 import { BehaviorSubject, Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class ApiService {
   
   onUpdateUser: Subject<any> = new Subject();
 
-  constructor(
+  constructor(private router:Router,
     private http: HttpClient,
 
   ) { }
@@ -97,5 +98,42 @@ export class ApiService {
   inactiveUsers(id){
     return this.http.put(environment.apiUrl + "inactiveUsers", id);
   }
+  postApi(endPoint,body) {
+    return this.http.post(environment.apiUrl + endPoint, body);
+  }
+  putApi(endPoint,body) {
+    return this.http.put(environment.apiUrl + endPoint, body);
+  }
+  getApi(url) {
+    return this.http.get(environment.apiUrl + url);
+  }
+  getUsers(count, page, search, status)
+  {
+    let param = new HttpParams;
+    param = param.append('limit', count);
+    param = param.append('page',page)
+    //console.log(status);
+    if(search !=null)
+    {
+     param= param.append('search',search)
+    }
 
+
+    if(status===1)
+    {
+     param= param.append('status',status)
+    }
+    else if(status===0)
+    {
+     param= param.append('status',status)
+    }
+
+
+     return this.http.get(environment.apiUrl+'users',{params:param});
+  }
+  logout() {
+    sessionStorage.clear();
+sessionStorage.removeItem('admin');
+this.router.navigate(['/login']);
+}
 }

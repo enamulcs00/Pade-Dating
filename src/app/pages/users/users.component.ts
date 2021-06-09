@@ -19,6 +19,9 @@ import { environment } from 'src/environments/environment';
 })
 export class UsersComponent implements OnInit {
 	closeResult: string;
+	imagePath:any;
+	submitted:boolean = false
+	isActive:boolean = false
 	userForm: FormGroup;
 	allUsers: UserData[];
 	displayedColumns: string[] = [
@@ -40,8 +43,15 @@ export class UsersComponent implements OnInit {
 	userDetail: any;
 	userImage: any;
 	File: any;
-
-	constructor(
+	files: any;
+	pageSize: any= 10;
+    pageIndex :any= 1;
+	objId: any;
+	minAge: any = 18;
+	searchBy: any;
+	totalUser:number;
+	IsJective:boolean
+constructor(
 		private modalService: NgbModal,
 		private fb: FormBuilder,
 		private formBuilder: FormBuilder,
@@ -51,62 +61,35 @@ export class UsersComponent implements OnInit {
 		private spinner: NgxSpinnerService,
 		public comm: CommonService,
 	) {
-
+		var today = new Date();
+		this.minAge = new Date(today.getFullYear() - this.minAge, today.getMonth(), today.getDate());
 	}
 	ngOnInit(): void {
 		this.getUsers()
-		this.spinner.show();
-
-		this.userForm = this.formBuilder.group({
-			firstName: new FormControl("", Validators.compose([Validators.required, Validators.minLength(2),
-			Validators.maxLength(18),Validators.pattern("^[a-zA-Z ]*$")])),
-			lastName: new FormControl("",Validators.compose([Validators.required, Validators.minLength(2),
-			  Validators.maxLength(16),Validators.pattern("^[a-zA-Z ]*$")])),
-			username: new FormControl("",Validators.compose([Validators.required, Validators.minLength(2),
-				Validators.maxLength(16),Validators.pattern("^[a-zA-Z ]*$")])),
+	
+         this.userForm = this.formBuilder.group({
+			firstName: new FormControl("", Validators.compose([Validators.required,
+			Validators.maxLength(15),Validators.pattern("^[a-zA-Z ]*$")])),
+			lastName: new FormControl("",Validators.compose([Validators.required,
+			  Validators.maxLength(15),Validators.pattern("^[a-zA-Z ]*$")])),
+			  userName: new FormControl("",Validators.compose([Validators.required,
+				Validators.maxLength(15),Validators.pattern(/^[a-zA-Z0-9]+$/)])),
 			// countryCode: new FormControl("", Validators.compose([Validators.required])),
 			phoneNo: new FormControl("", [Validators.required, Validators.maxLength(15),
 			Validators.minLength(7),
-			Validators.pattern("^[0-9]*$")]),
+			Validators.pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-s./0-9]*$')]),
 			email: new FormControl("", Validators.compose([Validators.required, ,
-			Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")])),
-			dateofbirth: new FormControl("",),
-			city: new FormControl("",),
-			// country: new FormControl("", Validators.compose([Validators.required])),
-			address: new FormControl("",),
+			Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/)])),
+			dateofbirth: new FormControl("",Validators.required),
+			address: new FormControl("",Validators.required),
+			image: new FormControl("",Validators.required),
+			gender: new FormControl('',Validators.required),
+		
 		  });
-	}
-	ngAfterViewInit() {
-		// this.dataSource.paginator = this.paginator;
-		// this.dataSource.sort = this.sort;
+		  
 	}
 
-	// getUserById(){
-	// 	this.api.users().subscribe(res => {
-	// 		if (res['statusCode'] === 200) {
-	// 			this.userDetail = res["data"];
-	// 			this.setValues(this.userDetail);
-	// 		} else {
-	// 			this.toastr.error(res["message"]);
-	// 		}
-	// 	}, error => {
-	// 		this.toastr.error('Something went wrong, please try again!', 'Oops!', { timeOut: 3000, closeButton: true });
-	// 		console.log(error)
-	// 	})	
-	// }
-
-	async profilePic(event) {
-		this.File = event.target.files[0];
-		if (event.target.files && event.target.files[0]) {
-		  var reader = new FileReader();
-		  reader.readAsDataURL(event.target.files[0]);
-		  reader.onload = (event: any) => {
-			this.userImage = event.target.result;
-		  };
-		}
-	  }
-
-	setValues = data => {
+setValues = data => {
 		if (data) {
 		  this.userForm.patchValue({
 			firstName: data.firstName,
@@ -132,45 +115,48 @@ export class UsersComponent implements OnInit {
 	  };
 
 	getUsers() {
-		this.api.users().subscribe(res => {
-			if (res['statusCode'] === 200) {
-				this.dataSource = new MatTableDataSource<UserData>(res["data"]["data"]);
-				this.exportLink = res["data"]["exportLink"];
+		let url = `users?limit=${(this.pageSize?(this.pageSize) : '')+(this.pageIndex ? ('&page=' + this.pageIndex) : '')+ (this.searchBy ? ('&search=' + this.searchBy) : '')+ (this.IsJective ? ('&isActive=' + this.IsJective) : '')}`
+		this.api.getApi(url).subscribe((res:any) => {
+			if (res.statusCode === 200) {
+				this.dataSource = new MatTableDataSource<UserData>(res.data.data);
+				this.exportLink = res.data.exportLink;
 				this.dataSource.paginator = this.paginator;
 				this.dataSource.sort = this.sort;
+				this.totalUser = res.data.itemCount
+				console.log('Total user',this.totalUser,res);
+				
 			} else {
 				this.toastr.error(res["message"]);
+				this.totalUser = 0
 			}
-		}, error => {
-			this.toastr.error('Something went wrong, please try again!', 'Oops!', { timeOut: 3000, closeButton: true });
-			console.log(error)
 		})
 	}
-
+	pageChange(event) {
+		console.log('ev page',event);
+		this.pageSize=event.pageSize;
+	     this.pageIndex=event.pageIndex;
+		 this.getUsers()
+	  }
 	viewUserDetail(item){
 		this.router.navigateByUrl("/pages/users_detail/"+item._id);
 	}
 
 	userEditModal(userEdit,data) {
-		console.log(data);
+		this.isActive = data.isActive
+		this.objId = data._id
+		this.files = data.image
+		this.imagePath = data.image.split('/').pop()
+		this.userForm.controls['firstName'].setValue(data.firstName)
+		this.userForm.controls['lastName'].setValue(data.lastName)
+		this.userForm.controls['email'].setValue(data.email)
+		this.userForm.controls['phoneNo'].setValue(data.phoneNo)
+		this.userForm.controls['dateofbirth'].setValue(data.dateofbirth)
+		this.userForm.controls['userName'].setValue(data.username)
+		this.userForm.controls['address'].setValue(data.address)
+		this.userForm.controls['gender'].setValue(data.gender || 'MALE')
+		this.userForm.controls['image'].setValue(data.image)
 		this.modalService.open(userEdit, { backdropClass: 'light-blue-backdrop', centered: true, size: 'lg' })
-		// onSubmit() {
-		// 	this.modalService.dismissAll();
-		// 	var data = this.userForm.value;
-		// 		data['id'] = data._id
-		// 		let formData = new FormData();
-		// 		formData.append("data", JSON.stringify(data));
-		// 		formData.append("pic", this.File);
-		// 		this.api.updateUser(data).subscribe(response => {
-		// 		  if (response['statusCode'] === 200) {
-		// 			this.toastr.success(response['message']);
-		// 			this.getUsers();
-		// 		  } else {
-		// 			this.toastr.error(response['message']);
-		// 		  }
-		// 		});
-		// 	// console.log("res:", this.editProfileForm.getRawValue());
-		// }
+		
 		.result.then((result) => {
 			this.closeResult = `Closed with: ${result}`;
 			this.userForm.patchValue({
@@ -206,7 +192,11 @@ export class UsersComponent implements OnInit {
 			this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
 		});
 	}
-
+	filterBy(ref){
+	this.IsJective = ref
+	this.searchBy = null
+	this.getUsers()	
+	}
 	blockUsers(item, status) {
 		console.log("item: ", item);
 		if (status.checked) {
@@ -220,8 +210,7 @@ export class UsersComponent implements OnInit {
 		};
 		this.api.blockUsers(item._id, data).subscribe(response => {
 			if (response['statusCode'] === 200) {
-				this.toastr.success(response['message']);
-				this.getUsers();
+			this.getUsers();
 			} else {
 				this.toastr.error(response['message']);
 			}
@@ -312,13 +301,17 @@ export class UsersComponent implements OnInit {
 		},
 
 	]
-	applyFilter(filterValue: string) {
-		this.dataSource.filter = filterValue.trim().toLowerCase();
-
-		if (this.dataSource.paginator) {
-			this.dataSource.paginator.firstPage();
-		}
-	}
+	timer: number;
+  deleteId:any;
+  applyFilter(event: any) {
+    window.clearTimeout(this.timer);
+    this.timer = window.setTimeout(() => {
+      let filterValue = (event.target as HTMLInputElement).value;
+      this.searchBy=filterValue;
+      this.pageIndex=1;
+      this.getUsers();
+    }, 1000)
+  }
 	// This is for the first modal
 	open1(content1) {
 		this.modalService.open(content1, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -353,4 +346,58 @@ export class UsersComponent implements OnInit {
 			return `with: ${reason}`;
 		}
 	}
+	sendFile(fileData) {
+		let url = `uploadFile`
+	   let formdata = new FormData()
+		formdata.append('file', fileData);
+		this.api.postApi(url,formdata).subscribe((res: any) => {
+		  console.log(res.data)
+		  if (res.statusCode==200) {
+		 this.toastr.success('File updated successfully')
+			console.log("upload data res=>>", res.data)
+			this.files = res.data.filePath
+			
+		  } else {
+			this.toastr.error(res.message)
+		  }
+		});
+	  }
+	  uploadFile(event) {
+		if (event.target.files && event.target.files[0]) {
+		  var type = event.target.files[0].type;
+		  if (type === 'image/png' || type === 'image/jpg' || type === 'image/jpeg') {
+			let fileData = event.target.files[0];
+			this.sendFile(fileData)
+			 var reader = new FileReader()
+			 this.imagePath = fileData.name
+		}}}
+		UpadteUser()
+		{
+		  this.submitted = true
+		  let url = `users/${this.objId}`
+	   let  obj = {
+			"firstName":  this.userForm.controls['firstName'].value,
+			"lastName":this.userForm.controls['lastName'].value,
+			"gender":this.userForm.controls['gender'].value,
+			 "address":this.userForm.controls['address'].value,
+			"image":this.files,
+			"phoneNo":this.userForm.controls['phoneNo'].value,
+			"email":this.userForm.controls['email'].value,
+			"dateofbirth":this.userForm.controls['dateofbirth'].value,
+			"username":this.userForm.controls['userName'].value,
+			"isActive":this.isActive,
+			}
+			if(this.userForm.valid){
+			  this.api.putApi(url,obj).subscribe((res:any)=>{
+				if(res.statusCode==200){
+				  this.submitted = false
+				  this.toastr.success(res.message)
+				  this.getUsers()
+				  this.modalService.dismissAll()
+				}else{
+				  this.toastr.error(res.message)
+				}
+			  })
+			}
+		}
 }

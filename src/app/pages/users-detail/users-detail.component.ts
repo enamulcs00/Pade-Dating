@@ -75,13 +75,10 @@ export class UsersDetailComponent implements AfterViewInit    {
         console.log("getAllUsers: ", this.getAllUsers)
         this.user = this.getAllUsers.find((x:any) => x._id === this.id);
         this.setValues(this.user);
-        console.log("user: ", this.user)
+        console.log("user obj: ", this.user)
 			} else {
 				this.toastr.error(res["message"]);
 			}
-		}, error => {
-			this.toastr.error('Something went wrong, please try again!', 'Oops!', { timeOut: 3000, closeButton: true });
-			console.log(error)
 		})
 	}
 

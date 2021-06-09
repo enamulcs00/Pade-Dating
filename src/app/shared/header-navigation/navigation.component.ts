@@ -124,29 +124,14 @@ export class NavigationComponent implements AfterViewInit {
 				if (this.userDetail.image) {
 					this.userImage = environment.imagesUrl + this.userDetail.image;
 				}
-				
-			} else {
-				this.toastr.error(res["message"]);
 			}
 		})
 	}
 
 	logout() {
-		// const body = {};
-		// this.api.logOut(body).subscribe(response => {
-		// 	console.log("response: ", response);
-		// 	if (response['statusCode'] === 200) {
-				localStorage.clear();
-				sessionStorage.clear();
+	         	sessionStorage.clear();
 				sessionStorage.removeItem('admin');
-				localStorage.removeItem('remember');
 				this.toastr.success('You have been successfully logged out!');
 				this.router.navigate(['/login']);
-	// 		} else {
-	// 			localStorage.clear()
-	// 			this.router.navigate(['/']);
-	// 			this.toastr.error(response['message']);
-	// 		}
-	// 	})
 	}
 }

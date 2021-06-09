@@ -14,26 +14,26 @@
                                 <span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>
                             </div>
                             <input type="email" class="form-control form-control-lg" formControlName="email" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
-                            <small class="form-text text-danger w-100" *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched">
+                            <mat-error class="form-text text-danger w-100" *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched">
                                 Please enter the email address
-                            </small>
+                            </mat-error>
 
-                            <small class="form-text text-danger w-100" *ngIf="loginForm.controls['email'].hasError('pattern') && loginForm.controls['email'].touched">
+                            <mat-error class="form-text text-danger w-100" *ngIf="loginForm.controls['email'].hasError('pattern') && loginForm.controls['email'].touched">
                                 Email must be a valid e-mail address
-                            </small>
+                            </mat-error>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon2"><i class="fa fa-lock"></i></span>
                             </div>
                             <input type="password" class="form-control form-control-lg" formControlName="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
-                            <small class="form-text text-danger w-100" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">
+                            <mat-error class="form-text text-danger w-100" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">
                                 Please enter the password
-                            </small>
+                            </mat-error>
 
-                            <small class="form-text text-danger w-100" *ngIf="loginForm.controls['password'].hasError('minLength') && loginForm.controls['password'].touched">
+                            <mat-error class="form-text text-danger w-100" *ngIf="loginForm.controls['password'].hasError('minlength')">
                                 Password must be atleast 8 characters
-                            </small>
+                            </mat-error>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-12">
@@ -74,17 +74,29 @@
             </div>
             <div class="row m-t-20">
                 <!-- Form -->
-                <form class="col-12">
+                <form class="col-12" [formGroup]="forgotForm">
                     <!-- email -->
                     <div class="form-group row">
                         <div class="col-12">
-                            <input class="form-control form-control-lg" type="email" required="" placeholder="Email">
+                            <input class="form-control form-control-lg" type="email" required="" placeholder="Email" formControlName="email">
                         </div>
+                        <mat-error class="form-text text-danger w-100" *ngIf="forgotForm.controls['email'].hasError('required') && forgotForm.controls['email'].touched">
+                            Please enter the email address
+                        </mat-error>
+
+                        <mat-error class="form-text text-danger w-100" *ngIf="forgotForm.controls['email'].hasError('pattern') && forgotForm.controls['email'].touched">
+                            Email must be a valid e-mail address
+                        </mat-error>
                     </div>
                     <!-- pwd -->
                     <div class="row m-t-20">
                         <div class="col-12">
-                            <button class="btn btn-block btn-lg btn-white" type="submit" name="action">Reset</button>
+                            <button class="btn btn-block btn-lg btn-white" type="submit" (click)="ForgotPassword()">Reset</button>
+                        </div>
+                    </div>
+                    <div class="row m-t-20">
+                        <div class="col-12">
+                            <button class="btn btn-block btn-lg btn-danger" (click)="goToforgotPassword()">Cancel</button>
                         </div>
                     </div>
                 </form>

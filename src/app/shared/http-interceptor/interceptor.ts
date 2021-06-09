@@ -1,47 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { finalize } from 'rxjs/operators';
+import { ApiService } from '../services/api.service';
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
-    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  token:any;
+  constructor(private spinner:NgxSpinnerService,private service:ApiService) {}
 
-    const clonedReq = this.handleRequest(request);
-    // this.common.showSpinner();
-    return next.handle(clonedReq);
-  }
-  handleRequest(request: HttpRequest<any>) {
-    const token = sessionStorage.getItem("token");
-    let authReq;
-    authReq = request.clone({
-      headers: new HttpHeaders({
-        "Content-Type": "application/json",
-        authorization: token ? 'Bearer'+ ' '+token : ""
-      })
-    });
-    if (
-      (request.method.toLowerCase() == "post" ||
-        request.method.toLowerCase() == "put") &&
-      request.body instanceof FormData
-    ) {
-      authReq = request.clone({
-        headers: new HttpHeaders({
-          authorization: token ? 'Bearer'+ ' '+token : ""
-        })
-      });
-    }
-    return authReq;
-  }
+  intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+     //console.log("hi");
+    this.token=sessionStorage.getItem('token');
+ 
+    this.spinner.show();
+    //console.log(this.token);
+    let tokenizedReq=req.clone({
+      setHeaders:{
+        authorization:`${this.token}`
+      }
+ })
+    return next.handle(tokenizedReq).pipe(finalize( ()=>
+    this.spinner.hide()
 
-    //     // add authorization header with jwt token if available
-    //     let Token = sessionStorage.getItem('token');
-    //     let headers = {
-    //     }
-    //     if (Token) {
-    //         headers['x-jwt-token'] = `Bearer ${Token}`;
-    //     }
-    //     request = request.clone({
-    //         setHeaders: headers
-    //     });
-    //     return next.handle(request);
-    // }
+   ));
+
+}
+
 }

@@ -14,42 +14,37 @@ export class Login2Component {
 	submitted = false;
 	showLogin = true
 	forgotPwd = false
-	loginForm: FormGroup;
-	remember: boolean = false;
+    remember: boolean = false;
 	errorMessage: any = "Error";
 	flags = {
 		isLogin: false,
 		isError: false,
 	};
-
-	constructor(
+constructor(
 		private fb: FormBuilder,
 		private api: ApiService,
 		private router: Router,
 		private toastr: ToastrService,
-	) {
-		if (localStorage.getItem("remember")) {
-			let data = JSON.parse(localStorage.getItem("remember"));
-			this.remember = true;
-			this.loginForm = this.fb.group({
-				email: [data.email, [Validators.required, Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")]],
-				password: [data.password, [Validators.required, Validators.minLength(8)]]
-			});
-		} else {
-			this.loginForm = this.fb.group({
-				email: ["", [Validators.required, Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")]],
-				password: ["", [Validators.required, Validators.minLength(8)]]
-			});
+	) {}
+	loginForm = this.fb.group({
+		email : ['', [Validators.required, Validators.email,Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/)]],
+		password : ['',[Validators.required,Validators.minLength(8)]]
+	  })
+	  forgotForm = this.fb.group({
+		email : ['', [Validators.required,Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/)]],
+	  })
+ngOnInit() {
+		if(localStorage.getItem('remember')) {
+			this.remember = true
+			let formData = JSON.parse(localStorage.getItem('remember'))
+			this.loginForm.patchValue({
+			email: formData.email,
+			password: formData.password,
+			})
+			
+			}
 		}
-	}
-
-	ngOnInit() {
-		// if (sessionStorage.getItem("token")) {
-		//   this.router.navigateByUrl("/dashboard");
-		// }
-	}
-
-	goToforgotPassword() {
+    goToforgotPassword() {
 		this.showLogin = !this.showLogin;
 		this.forgotPwd = !this.forgotPwd;
 	}
@@ -58,33 +53,46 @@ export class Login2Component {
 	login() {
 		this.submitted = true;
 		if (this.loginForm.valid) {
-			if (this.remember) {
-				localStorage.setItem('remember', JSON.stringify(this.loginForm.value));
-			} else {
-				localStorage.clear();
-			}
 			this.flags.isLogin = true;
 			this.api.logIn(this.loginForm.value).subscribe((response) => {
 				if (response['statusCode'] === 200) {
+					if (this.remember) {
+						localStorage.setItem('remember', JSON.stringify(this.loginForm.value));
+					} else {
+						localStorage.clear();
+					}
 					sessionStorage.setItem("token", response["data"].accessToken);
 					sessionStorage.setItem("id", response["data"]._id);
 					sessionStorage.setItem("admin", JSON.stringify(response["data"]));
-					// sessionStorage.setItem("role", JSON.stringify(response["data"].role));
-					this.toastr.success("Admin login successfully");
+					this.toastr.success("Admin login successfully",'', {
+						timeOut: 700,});
 					this.router.navigate(['dashboard']);
-					// if (response["data"].role == "SubAdmin") {
-					//   sessionStorage.setItem("access", JSON.stringify(response["data"].access));
-					// }
-					// this.router.navigateByUrl("/dashboard");
 				} else {
 					this.flags.isLogin = false;
 					this.flags.isError = true;
-					this.toastr.error(response["message"]);
+					this.toastr.error(response["message"],'', {
+						timeOut: 900,});
 				}
 			});
 		} else {
 			this.loginForm.markAllAsTouched();
 		}
-
-	}
+}
+ForgotPassword(){
+	
+	let obj = {
+		"email":this.forgotForm.value
+	 }
+	let url = `forgotPassword`
+	if(this.forgotForm.valid){
+		this.api.postApi(url,obj).subscribe((res:any)=>{
+			if(res.success==true){
+				this.toastr.success(res.message)
+				this.goToforgotPassword()
+			}else{
+				this.toastr.error(res.message,'', {
+					timeOut: 500,})
+			}
+})
+	}}
 }

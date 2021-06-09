@@ -41,27 +41,39 @@
 
 <ng-template #item let-modal>
     <div class="modal-body">
+        <form [formGroup]="userForm">
         <div class="card">
             <div class="card-body">
                 <div class="form-group">
                     <label> Plan Name</label>
-                    <input type="text" placeholder="Plan Name" class="form-control">
+                    <input type="text" placeholder="Plan Name" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="planName">
                 </div>
-                <div class="form-group">
-                    <label> Price</label>
-                    <input type="text" placeholder="$20" class="form-control">
-                </div>
-                <div class="form-group">
+                <div class="row" formGroupName="price">
+<div class="col-md-6">
+    <div class="form-group">
+        <label> Price</label>
+        <input type="number" min="0" maxlength="10" placeholder="$20" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="amount">
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="form-group">
+        <label> Price unit</label>
+        <input type="text"  maxlength="10" placeholder="eg:- $ or ₹" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="units">
+    </div>
+</div>
+ </div>
+<div class="form-group">
                     <label> Months</label>
-                    <input type="number" placeholder="4 Months" class="form-control">
+                    <input type="number" min="0" max="100" placeholder="4 Months" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="month">
                 </div>
                 <div class="form-group">
                     <label> Save Upto</label>
-                    <input type="number" placeholder="20%" class="form-control">
+                    <input type="number" min="0" max="100" placeholder="20%" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="saveUpto">
                 </div>
-                <button class="btn btn-primary" (click)="modal.dismiss()">Save</button>
+                <button class="btn btn-primary" (click)="SavePackage()">Save</button>
             </div>
         </div>
+    </form>
     </div>
 </ng-template>
 <ng-template #itemedit let-modal>

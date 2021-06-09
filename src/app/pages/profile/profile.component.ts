@@ -32,12 +32,12 @@ export class ProfileComponent {
 		this.getProfile()
 		this.userForm = this.fb.group({
 			fullName: new FormControl("", Validators.compose([Validators.required, Validators.minLength(3),
-			Validators.maxLength(15), Validators.pattern("^[a-zA-Z ]*$")])),
+			Validators.maxLength(25), Validators.pattern(/^[a-zA-Z ]*$/i)])),
 			// password: new FormControl("", Validators.compose([Validators.required])),
 			phoneNo: new FormControl("", [Validators.required, Validators.maxLength(15), Validators.minLength(7),
-			Validators.pattern("^[0-9]*$")]),
+			Validators.pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-s./0-9]*$')]),
 			email: new FormControl("", Validators.compose([Validators.required, ,
-			Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")])),
+			Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/)])),
 		});
 	}
 	getProfile() {
@@ -92,6 +92,7 @@ export class ProfileComponent {
 			this.spinner.show();
 			this.api.updateProfile(formData).subscribe(res => {
 				if (res['statusCode'] === 200) {
+					this.router.navigate(['dashboard'])
 					this.api.onUpdateUser.next("new data");
 					this.toastr.success(res["message"]);
 					this.getProfile()
