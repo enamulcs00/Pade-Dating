@@ -10,7 +10,7 @@
             <div class="col-md-4">
               <form>
                 <div class="mb-2">
-                  <input type="text" class="form-control" id="prenametext" placeholder="Search">
+                  <input type="text" class="form-control" id="prenametext" placeholder="Search" (keydown)="applyFilter($event)">
                 </div>
               </form>
             </div>
@@ -20,8 +20,8 @@
                   Status
                 </button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button class="dropdown-item">Active</button>
-                  <button class="dropdown-item">Inactive</button>
+                  <button class="dropdown-item" (click)="filterBy('active')">Active</button>
+                  <button class="dropdown-item" (click)="filterBy('inactive')">Inactive</button>
                 </div>
               </div>            
               <button class="btn btn-seconadary mb-2" (click)="addUserModal(addUser)"><i class="sl-icon-plus"></i> Add
@@ -40,13 +40,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr *ngFor="let item of giftList">
                    
-                    <td>C43FWSSF</td>
-                      <td>$100</td>
-                      <td>2</td>
-                    <td><span class="text-nowrap">10-02-2021</span></td>                  
-                    <td><span class="text-nowrap">10-05-2021</span></td>                  
+                    <td>{{item?.cardName}}</td>
+                      <td>{{item?.cost}}</td>
+                      <td>{{item?.cardsBought}}</td>
+                    <td><span class="text-nowrap">{{item?.validFrom}}</span></td>                  
+                    <td><span class="text-nowrap">{{item?.validTill}}</span></td>                  
                 
                     <!-- <td>
                       <div class="form-check">
@@ -67,10 +67,10 @@
                           <!-- <button class="dropdown-item" (click)="userprofileModal(userprofile)"><i class="ti-eye"></i>
                             View
                           </button> -->
-                          <button class="dropdown-item" (click)="userDetailModal(userDetail)"><i _ngcontent-axh-c146=""
+                          <button class="dropdown-item" (click)="userDetailModal(userDetail,item)"><i _ngcontent-axh-c146=""
                               class="ti-marker-alt"></i> Edit</button>
   
-                          <button class="dropdown-item" (click)="userDeleteModal(userDelete)"><i class="ti-trash"></i>
+                          <button class="dropdown-item" (click)="userDeleteModal(userDelete,item?._id)"><i class="ti-trash"></i>
                             Delete</button>
                         </div>
                       </div>
@@ -79,7 +79,10 @@
                 </tbody>
               </table>
             </div>
+            <p *ngIf="totalUser==0">Data not found!</p>   
           </div>
+         
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalUser" (page)="pageChange($event)"></mat-paginator>
         </div>
       </div>
       <!-- Column -->
@@ -194,10 +197,10 @@
     <!-- delete modal -->
     <ng-template #userDelete let-modal>
       <div class="modal-body">
-        <p>Are you ure want to delete this user?</p>
+        <p>Are you ure want to delete this gift card?</p>
         <div class="btn-group">
           <button type="button" class="btn btn-primary mr-2" aria-label="Close"
-            (click)="modal.dismiss('Cross click')">Yes</button>
+            (click)="DeleteCard()">Yes</button>
           <button type="button" class="btn btn-seconadary" aria-label="Close"
             (click)="modal.dismiss('Cross click')">No</button>
         </div>
@@ -208,21 +211,21 @@
     <ng-template #userDetail let-modal>
       <div class="modal-body">
         <div class="card">
-          <form action="#">
+          <form [formGroup]="giftForm">
             <div class="form-body">
                 <div class="card-body">
                   <div class="row p-t-20">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="control-label">Card Name</label>
-                        <input type="text" id="firstName" class="form-control" placeholder="J2d3ddf3">  
+                        <input type="text" id="firstName" class="form-control" placeholder="J2d3ddf3" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="cardName">  
                       </div>
                     </div>
                     <!--/span--> 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="control-label">Cost</label>
-                        <input type="number" id="cost" class="form-control" placeholder="$100">
+                        <input type="number" id="cost" class="form-control" placeholder="$100" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="cost">
     
                       </div>
                     </div>
@@ -236,7 +239,7 @@
                     <div class="col-md-6">
                       <div class="form-group has-danger">
                         <label class="control-label">Valid From</label>
-                        <input type="date" id="event" class="form-control form-control-danger"  >
+                        <input type="date" id="event" class="form-control form-control-danger"  formControlName="validFrom">
     
                       </div>
                     </div>
@@ -244,7 +247,7 @@
                     <div class="col-md-6">
                       <div class="form-group has-danger">
                         <label class="control-label">Valid To</label>
-                        <input type="date" id="event" class="form-control form-control-danger"  >
+                        <input type="date" id="event" class="form-control form-control-danger" formControlName="validTill" >
     
                       </div>
                     </div>
@@ -254,7 +257,7 @@
                     <div class="col-md-12">
                       <div class="form-group has-danger">
                         <label class="control-label">Number of Cards Bought</label>
-                        <input type="number" id="Address" class="form-control form-control-danger" placeholder="% Discount">
+                        <input type="number" id="Address" class="form-control form-control-danger" placeholder="% Discount" formControlName="cardsBought">
     
                       </div>
                     </div>
@@ -266,8 +269,8 @@
     
                 <div class="form-actions">
                   <div class="card-body">
-                    <button type="submit" class="btn btn-success mr-3" (click)="modal.dismiss('Cross click')">
-                      <i class="fa fa-check"></i> Save</button>
+                    <button type="submit" class="btn btn-success mr-3" (click)="UpdateCard()">
+                      <i class="fa fa-check"></i> Update</button>
                     <button type="button" class="btn btn-dark" (click)="modal.dismiss('Cross click')">Cancel</button>
                   </div>
                 </div>
@@ -282,21 +285,21 @@
     <ng-template #addUser let-modal>
       <div class="modal-body">
         <div class="card">
-          <form action="#">
+          <form [formGroup]="giftForm">
             <div class="form-body">
                 <div class="card-body">
                   <div class="row p-t-20">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="control-label">Card Name</label>
-                        <input type="text" id="firstName" class="form-control" placeholder="J2d3ddf3">  
+                        <input type="text" id="firstName" class="form-control" placeholder="J2d3ddf3" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="cardName">  
                       </div>
                     </div>
                     <!--/span--> 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="control-label">Cost</label>
-                        <input type="number" id="cost" class="form-control" placeholder="$100">
+                        <input type="number" id="cost" class="form-control" placeholder="$100" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="cost">
     
                       </div>
                     </div>
@@ -310,7 +313,7 @@
                     <div class="col-md-6">
                       <div class="form-group has-danger">
                         <label class="control-label">Valid From</label>
-                        <input type="date" id="event" class="form-control form-control-danger"  >
+                        <input type="date" id="event" class="form-control form-control-danger"  formControlName="validFrom">
     
                       </div>
                     </div>
@@ -318,7 +321,7 @@
                     <div class="col-md-6">
                       <div class="form-group has-danger">
                         <label class="control-label">Valid To</label>
-                        <input type="date" id="event" class="form-control form-control-danger"  >
+                        <input type="date" id="event" class="form-control form-control-danger" formControlName="validTill" >
     
                       </div>
                     </div>
@@ -328,7 +331,7 @@
                     <div class="col-md-12">
                       <div class="form-group has-danger">
                         <label class="control-label">Number of Cards Bought</label>
-                        <input type="number" id="Address" class="form-control form-control-danger" placeholder="% Discount">
+                        <input type="number" id="Address" class="form-control form-control-danger" placeholder="% Discount" formControlName="cardsBought">
     
                       </div>
                     </div>
@@ -340,7 +343,7 @@
     
                 <div class="form-actions">
                   <div class="card-body">
-                    <button type="submit" class="btn btn-success mr-3" (click)="modal.dismiss('Cross click')">
+                    <button type="submit" class="btn btn-success mr-3" (click)="addCard()">
                       <i class="fa fa-check"></i> Save</button>
                     <button type="button" class="btn btn-dark" (click)="modal.dismiss('Cross click')">Cancel</button>
                   </div>

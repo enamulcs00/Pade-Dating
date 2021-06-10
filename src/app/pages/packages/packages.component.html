@@ -5,17 +5,25 @@
         </div>
    
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" *ngFor="let item of packages">
         <div class="package-box border text-center p-4 text-white rounded bg-primary">
         <span class="h1"><i class="fas fa-chess-king "></i></span> 
-            <h2 class="pb-3">Basic</h2>
-            <h1 class="price">$100/<span>12 Months</span></h1>
-            <h4 class="pt-3 pb-3">Save Upto 50%</h4>
-            
-            <button class="btn btn-block" (click)="packageEditModal(itemedit)">Edit</button>
+            <h2 class="pb-3">{{item?.name}}</h2>
+            <h1 class="price">{{item?.price.units}} {{item?.price.amount}}/<span>{{item?.month}}Months</span></h1>
+            <h4 class="pt-3 pb-3">{{item?.saveUpto}}%</h4>
+            <div class="row">
+<div class="col-md-6">
+    <button class="btn btn-block" (click)="packageEditModal(itemedit,item)">Edit</button>
+</div>
+<div class="col-md-6">
+    <button class="btn btn-block" (click)="packagedelModal(userDelete,item._id)">Delete</button>
+</div>
+            </div>
+            <!-- <button class="btn btn-block" (click)="packageEditModal(itemedit,item)">Edit</button> -->
         </div>
     </div>
-    <div class="col-md-4">
+    
+    <!-- <div class="col-md-4">
         <div class="package-box border text-center p-4 text-white rounded bg-primary">
         <span class="h1"><i class="fas fa-chess-king "></i></span> 
             <h2 class="pb-3">Silver</h2>
@@ -34,8 +42,10 @@
             
             <button class="btn btn-block" (click)="packageEditModal(itemedit)">Edit</button>
         </div>
-    </div>
+    </div> -->
+<p *ngIf="totalUser==0">Data not found!</p>
 </div>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalUser" (page)="pageChange($event)"></mat-paginator>
 </div>
 </div>
 
@@ -46,29 +56,63 @@
             <div class="card-body">
                 <div class="form-group">
                     <label> Plan Name</label>
-                    <input type="text" placeholder="Plan Name" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="planName">
+                    <input type="text" placeholder="Plan Name" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="name">
+                    <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['name'].hasError('required') && submitted">
+                        Please enter the plan name!
+                    </mat-error>
+                    <!-- <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')">
+                        First name should alphabetic!
+                    </mat-error> -->
+                    <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')">
+                        Maxlength should 15!
+                    </mat-error> 
                 </div>
                 <div class="row" formGroupName="price">
 <div class="col-md-6">
     <div class="form-group">
         <label> Price</label>
         <input type="number" min="0" maxlength="10" placeholder="$20" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="amount">
+        <mat-error class="form-text text-danger w-100" *ngIf="amount.hasError('required') && submitted">
+            Please enter the price!
+        </mat-error>
+        <mat-error class="form-text text-danger w-100" *ngIf="amount.hasError('maxlength') && !amount.hasError('required')">
+            Maxlength should 10!
+        </mat-error> 
     </div>
 </div>
 <div class="col-md-6">
     <div class="form-group">
         <label> Price unit</label>
-        <input type="text"  maxlength="10" placeholder="eg:- $ or ₹" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="units">
+        <input type="text"  maxlength="10" placeholder="eg:- $ or ₹" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="units" maxlength="1">
+        <mat-error class="form-text text-danger w-100" *ngIf="units.hasError('required') && submitted">
+            Please enter the price unit!
+        </mat-error>
+        <mat-error class="form-text text-danger w-100" *ngIf="units.hasError('maxlength') && !units.hasError('required')">
+            Maxlength should 1!
+        </mat-error> 
     </div>
 </div>
  </div>
 <div class="form-group">
                     <label> Months</label>
                     <input type="number" min="0" max="100" placeholder="4 Months" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="month">
+                    <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['month'].hasError('required') && submitted">
+                        Please enter the months!
+                    </mat-error>
+                    
+                    <!-- <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')">
+                        Maxlength should 2!
+                    </mat-error>  -->
                 </div>
                 <div class="form-group">
                     <label> Save Upto</label>
                     <input type="number" min="0" max="100" placeholder="20%" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="saveUpto">
+                    <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['saveUpto'].hasError('required') && submitted">
+                        Please enter the months!
+                    </mat-error>
+                    <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')">
+                        Maxlength should 10!
+                    </mat-error> 
                 </div>
                 <button class="btn btn-primary" (click)="SavePackage()">Save</button>
             </div>
@@ -78,26 +122,84 @@
 </ng-template>
 <ng-template #itemedit let-modal>
     <div class="modal-body">
-        <div class="card">
-            <div class="card-body">
-                <div class="form-group">
-                    <label> Plan Name</label>
-                    <input type="text" placeholder="Plan Name" class="form-control">
+        <form [formGroup]="userForm">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label> Plan Name</label>
+                        <input type="text" placeholder="Plan Name" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="name">
+                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['name'].hasError('required') && submitted">
+                            Please enter the plan name!
+                        </mat-error>
+                        <!-- <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')">
+                            First name should alphabetic!
+                        </mat-error> -->
+                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')">
+                            Maxlength should 15!
+                        </mat-error> 
+                    </div>
+                    <div class="row" formGroupName="price">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label> Price</label>
+            <input type="number" min="0" maxlength="10" placeholder="$20" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="amount">
+            <mat-error class="form-text text-danger w-100" *ngIf="amount.hasError('required') && submitted">
+                Please enter the price!
+            </mat-error>
+            <mat-error class="form-text text-danger w-100" *ngIf="amount.hasError('maxlength') && !amount.hasError('required')">
+                Maxlength should 10!
+            </mat-error> 
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label> Price unit</label>
+            <input type="text"  maxlength="10" placeholder="eg:- $ or ₹" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="units" maxlength="1">
+            <mat-error class="form-text text-danger w-100" *ngIf="units.hasError('required') && submitted">
+                Please enter the price unit!
+            </mat-error>
+            <mat-error class="form-text text-danger w-100" *ngIf="units.hasError('maxlength') && !units.hasError('required')">
+                Maxlength should 1!
+            </mat-error> 
+        </div>
+    </div>
+     </div>
+    <div class="form-group">
+                        <label> Months</label>
+                        <input type="number" min="0" max="100" placeholder="4 Months" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="month">
+                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['month'].hasError('required') && submitted">
+                            Please enter the months!
+                        </mat-error>
+                        
+                        <!-- <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')">
+                            Maxlength should 2!
+                        </mat-error>  -->
+                    </div>
+                    <div class="form-group">
+                        <label> Save Upto</label>
+                        <input type="number" min="0" max="100" placeholder="20%" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="saveUpto">
+                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['saveUpto'].hasError('required') && submitted">
+                            Please enter the months!
+                        </mat-error>
+                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')">
+                            Maxlength should 10!
+                        </mat-error> 
+                    </div>
+                    <button class="btn btn-primary" (click)="updatePackage()">Update</button>
                 </div>
-                <div class="form-group">
-                    <label> Price</label>
-                    <input type="text" placeholder="$20" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label> Months</label>
-                    <input type="number" placeholder="4 Months" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label> Save Upto</label>
-                    <input type="number" placeholder="20%" class="form-control">
-                </div>
-                <button class="btn btn-primary" (click)="modal.dismiss()">Save</button>
             </div>
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #userDelete let-modal>
+    <div class="modal-body">
+        <p>Are you ure want to delete this package?</p>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary mr-2" aria-label="Close"
+                (click)="deletePackage()">Yes</button>
+            <button type="button" class="btn btn-seconadary" aria-label="Close"
+                (click)="modal.dismiss('Cross click')">No</button>
         </div>
     </div>
 </ng-template>

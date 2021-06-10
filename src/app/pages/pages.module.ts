@@ -15,7 +15,7 @@ import { UsersComponent } from './users/users.component';
 // import { ToursComponent } from './tours/tours.component';
 // import { DestinationComponent } from './destination/destination.component';
 // import { HotelsComponent } from './hotels/hotels.component';
-// import { CalculatorComponent } from './calculator/calculator.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 import { RevenueManagementComponent } from './revenue-management/revenue-management.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
@@ -113,7 +113,7 @@ CommonModule,
     // ToursComponent,
     // DestinationComponent,
     // HotelsComponent,
-    // CalculatorComponent,
+    CalculatorComponent,
     RevenueManagementComponent,
     ReviewsComponent,
     AnalyticsComponent,

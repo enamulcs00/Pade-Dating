@@ -107,6 +107,9 @@ export class ApiService {
   getApi(url) {
     return this.http.get(environment.apiUrl + url);
   }
+  deleteApi(url) {
+    return this.http.delete(environment.apiUrl + url);
+  }
   getUsers(count, page, search, status)
   {
     let param = new HttpParams;

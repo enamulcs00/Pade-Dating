@@ -192,7 +192,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">User name</label>
-                                        <input type="text" id="firstName" class="form-control" placeholder="John doe" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="userName">
+                                        <input type="text" id="firstName" class="form-control" placeholder="John doe" (keydown.space)="$event.preventDefault()" formControlName="userName">
                                         <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['userName'].hasError('required') && submitted">
                                             Please enter the user name!
                                         </mat-error>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
+import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
   selector: 'app-reviews',
@@ -7,12 +10,18 @@ import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-
   styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit {
-
+  pageSize: any= 10;
+  pageIndex :any= 1;
   active=1;
   closeResult: string;
+  totalUser: number;
+  searchBy: string;
   ngOnInit(): void {
+    this.getUsers()
   }
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal,	private api: ApiService,
+		private router: Router,
+		private toastr: ToastrService,) {}
   reviewModal(review) {
     this.modalService.open(review, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
   }
@@ -31,4 +40,16 @@ export class ReviewsComponent implements OnInit {
       return  `with: ${reason}`;
     }
   }
+  getUsers() {
+		let url = `reviews?count=${(this.pageSize?(this.pageSize) : '')+(this.pageIndex ? ('&page=' + this.pageIndex) : '')+ (this.searchBy ? ('&search=' + this.searchBy) : '')}`
+		this.api.getApi(url).subscribe((res:any) => {
+			if (res.statusCode === 200) {
+				this.totalUser = res.data.itemCount
+				console.log('Total rev',this.totalUser,res);
+			} else {
+				this.toastr.error(res["message"]);
+				this.totalUser = 0
+			}
+		})
+	}
 }

@@ -139,31 +139,31 @@ export const ROUTES: RouteInfo[] = [
       extralink: false,
       submenu: []
   },
-  // {
-  //   path: '',
-  //   title: 'Manage Report',
-  //   icon: 'mdi mdi-account-alert',
-  //   class: '',
-  //   extralink: false,
-  //   submenu: [
-  //     {
-  //       path: '/pages/reason',
-  //       title: 'Reasons',
-  //       icon: '',
-  //       class: '',
-  //       extralink: false,
-  //       submenu: []
-  //     },
-  //     {
-  //       path: '/pages/report',
-  //       title: 'Reports',
-  //       icon: '',
-  //       class: '',
-  //       extralink: false,
-  //       submenu: []
-  //     }
-  //   ]
-  // },
+  {
+    path: '',
+    title: 'Manage Report',
+    icon: 'mdi mdi-account-alert',
+    class: '',
+    extralink: false,
+    submenu: [
+      {
+        path: '/pages/reason',
+        title: 'Reasons',
+        icon: '',
+        class: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/pages/report',
+        title: 'Reports',
+        icon: '',
+        class: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
     {
         path: '/pages/calculator',
         title: 'Manage Credits',

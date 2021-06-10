@@ -12,6 +12,8 @@ export class ErrorInterceptor implements HttpInterceptor {
     constructor(private accountService: ApiService,private toastr:ToastrService) {}
  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       return next.handle(request).pipe(catchError(err => {
+        console.log('err Intercep',err);
+        
           if ([401, 403].includes(err.status)) {
              this.toastr.error('Session has been expired','Please login',{
                 timeOut: 1200,
@@ -20,6 +22,8 @@ export class ErrorInterceptor implements HttpInterceptor {
           }
  const error = err.error?.message || err.statusText;
          if (![401, 403,200].includes(err.status)) {
+           console.log('If not 200 inter cal',err,error);
+           
             this.toastr.error(error,'',{
                timeOut: 1000,
              })
