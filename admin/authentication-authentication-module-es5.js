@@ -886,7 +886,7 @@
             var _this4 = this;
 
             var obj = {
-              "email": this.forgotForm.value
+              "email": this.forgotForm.get('email').value
             };
             var url = "forgotPassword";
 

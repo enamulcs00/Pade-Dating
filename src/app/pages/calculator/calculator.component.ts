@@ -92,23 +92,23 @@ export class CalculatorComponent implements OnInit {
 			}
 		})
 	}
-  UpdatePackage()
-
-  {
-    
-    console.log('Form',this.FormMatrix.value);
-    let obj = {
-      
-  }
-    this.submitted = true
-    let url = `credits/${this.id}`
+  UpdatePackage(id,rate,limit)
+{let obj = 
+      {
+        
+        "creditLimit" : limit,
+        "creditRate" : rate
+    }
+  this.submitted = true
+    let url = `credits/${id}`
     if(this.FormMatrix.valid){
       this.addedCredit = true
-      this.service.putApi(url,this.FormMatrix.controls['pricing'].value).subscribe((res:any)=>{
+      this.service.putApi(url,obj).subscribe((res:any)=>{
       if(res.statusCode==200){
         this.submitted = false
         this.getPackages()
-        this.toastr.success(res.message)
+        this.toastr.success(res.message,'', {
+          timeOut: 700,})
       }else{
         this.toastr.error(res.message)
       }

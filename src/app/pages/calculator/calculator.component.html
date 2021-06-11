@@ -37,8 +37,8 @@
                </div>
                
                <div class="col-md-2 ">
-                 
-                <a href="javascript:void()" class="btn btn-primary" (click)="removeGroup(i,a.get('_id').value)"><i class="mdi mdi-minus"></i></a>
+                <a href="javascript:void()" class="btn btn-primary" (click)="removeGroup(i,a.get('_id').value)"><i class="mdi mdi-minus"></i></a>&nbsp;&nbsp;
+                <a href="javascript:void()" class="btn btn-primary" (click)="UpdatePackage(a.get('_id').value,a.get('creditRate').value,a.get('creditLimit').value)" *ngIf="!addedCredit && a.get('_id').value"><i class="mdi mdi-update" title="Update"></i></a>
              </div>      
                  </div>
             </div>
@@ -51,7 +51,7 @@
               <div class="row" >
                 <div class="col-md-6">
                  <button class="btn btn-primary" (click)="SavePackage()" *ngIf="IsFormEmpty">Save</button>
-                 <button class="btn btn-primary" (click)="UpdatePackage()" *ngIf="!addedCredit">Update</button>
+                 <!-- <button class="btn btn-primary" (click)="UpdatePackage()" *ngIf="!addedCredit">Update</button> -->
                 </div>
                 </div>
         </form>

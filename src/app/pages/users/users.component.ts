@@ -115,7 +115,7 @@ setValues = data => {
 	  };
 
 	getUsers() {
-		let url = `users?limit=${(this.pageSize?(this.pageSize) : '')+(this.pageIndex ? ('&page=' + this.pageIndex) : '')+ (this.searchBy ? ('&search=' + this.searchBy) : '')+ (this.IsJective ? ('&isActive=' + this.IsJective) : '')}`
+		let url = `users?limit=${(this.pageSize?(this.pageSize) : '')+(this.pageIndex ? ('&page=' + this.pageIndex) : '')+ (this.searchBy ? ('&search=' + this.searchBy) : '')+ (this.IsJective ? ('&isBlock=' + this.IsJective) : '')}`
 		this.api.getApi(url).subscribe((res:any) => {
 			if (res.statusCode === 200) {
 				this.dataSource = new MatTableDataSource<UserData>(res.data.data);

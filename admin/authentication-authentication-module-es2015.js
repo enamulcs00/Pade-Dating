@@ -560,7 +560,7 @@ let Login2Component = class Login2Component {
     }
     ForgotPassword() {
         let obj = {
-            "email": this.forgotForm.value
+            "email": this.forgotForm.get('email').value
         };
         let url = `forgotPassword`;
         if (this.forgotForm.valid) {
