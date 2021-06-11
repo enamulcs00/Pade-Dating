@@ -1054,6 +1054,9 @@ let ApiService = class ApiService {
     getToday() {
         return new Date().toISOString().split('T')[0];
     }
+    getCurrency() {
+        return this.http.get('assets/currencyUnit.json');
+    }
 };
 ApiService.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },

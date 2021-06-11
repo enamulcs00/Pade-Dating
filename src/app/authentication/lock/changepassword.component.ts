@@ -11,6 +11,9 @@ import {CustomValidationService} from 'src/app/shared/services/custom-validation
 export class changepasswordComponent implements OnInit{
   history = window.history;
   changepassForm:FormGroup;
+  public showPassword: boolean;
+  public showNewPassword: boolean;
+  public showCnfPassword: boolean;
   constructor(private fb:FormBuilder,private apiservice:ApiService,private router:Router,private toaster:ToastrService,private customvalidator:CustomValidationService) 
   {}
   ngOnInit()

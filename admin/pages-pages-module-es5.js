@@ -24700,7 +24700,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n      <div class=\"row\" *ngIf=\"addedCredit\">\n        <div class=\"col-md-12 text-right pb-3\">\n          <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"toggleEdit()\"><i class=\"mdi mdi-pencil\"></i> </a>\n        </div>\n      </div>\n        <form [formGroup]=\"FormMatrix\">\n          <div class=\"row\">\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Credit Rate Exchange in terms of Dollars</label>\n            </div>\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Minimum Credit Buy Limit</label>\n            </div>\n          </div>\n          <div formArrayName=\"pricing\" *ngFor=\"let a of FormMatrix.get('pricing').controls; let i = index\" >\n            <div [formGroupName]=\"i\">\n              <div class=\"row\">\n                <div class=\"col-md-5\">\n                   <div class=\"form-group\">\n                     <input type=\"text\" formControlName=\"creditLimit\" id=\"creditLimit\" placeholder=\"Credit limit\" class=\"form-control\" [readonly]='addedCredit'>\n                     <span *ngIf=\"submitted && a.get('creditLimit').hasError('required')\" class=\"error\">\n                      *Credit limit is required.</span>\n                      <span *ngIf=\"a.get('creditLimit').hasError('pattern')\" class=\"error\">\n                       *Credit limit should numeric only.</span>\n                    </div>\n               </div>\n               <div class=\"col-md-5\">\n                   <div class=\"form-group\">\n                     <input type=\"text\" id=\"BaseFare\" formControlName=\"creditRate\" placeholder=\"Credit rate\" class=\"form-control\" [readonly]='addedCredit'>\n                     <span *ngIf=\"submitted && a.get('creditRate').hasError('required')\" class=\"error\">\n                      *Credit rate is required.</span>\n                      <span *ngIf=\"a.get('creditRate').hasError('pattern')\" class=\"error\">\n                       *Credit rate should numeric only.</span>\n                    </div>\n               </div>\n               \n               <div class=\"col-md-2 \">\n                 \n                <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"removeGroup(i)\"><i class=\"mdi mdi-minus\"></i></a>\n             </div>      \n                 </div>\n            </div>\n          </div>\n      <div class=\"row\" *ngIf=\"!addedCredit\">\n        <div class=\"col-md-12 text-right pb-3\">\n          <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"addRow()\"><i class=\"mdi mdi-plus\"></i> </a>\n        </div>\n      </div>\n              <div class=\"row\" >\n                <div class=\"col-md-6\">\n                 <button class=\"btn btn-primary\" (click)=\"SavePackage()\" *ngIf=\"IsFormEmpty\">Save</button>\n                 <button class=\"btn btn-primary\" (click)=\"UpdatePackage()\" *ngIf=\"!addedCredit\">Update</button>\n                </div>\n                </div>\n        </form>\n    </div>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n      <div class=\"row\" *ngIf=\"addedCredit\">\n        <div class=\"col-md-12 text-right pb-3\">\n          <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"toggleEdit()\"><i class=\"mdi mdi-pencil\"></i> </a>\n        </div>\n      </div>\n        <form [formGroup]=\"FormMatrix\">\n          <div class=\"row\">\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Credit Rate Exchange in terms of Dollars</label>\n            </div>\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Minimum Credit Buy Limit</label>\n            </div>\n          </div>\n          <div formArrayName=\"pricing\" *ngFor=\"let a of FormMatrix.get('pricing').controls; let i = index\" >\n            <div [formGroupName]=\"i\">\n              <div class=\"row\">\n                <div class=\"col-md-5\">\n                   <div class=\"form-group\">\n                     <input type=\"text\" formControlName=\"creditLimit\" id=\"creditLimit\" placeholder=\"Credit limit\" class=\"form-control\" [readonly]='addedCredit'>\n                     <span *ngIf=\"submitted && a.get('creditLimit').hasError('required')\" class=\"error\">\n                      *Credit limit is required.</span>\n                      <span *ngIf=\"a.get('creditLimit').hasError('pattern')\" class=\"error\">\n                       *Credit limit should numeric only.</span>\n                    </div>\n               </div>\n               <div class=\"col-md-5\">\n                   <div class=\"form-group\">\n                     <input type=\"text\" id=\"BaseFare\" formControlName=\"creditRate\" placeholder=\"Credit rate\" class=\"form-control\" [readonly]='addedCredit'>\n                     <span *ngIf=\"submitted && a.get('creditRate').hasError('required')\" class=\"error\">\n                      *Credit rate is required.</span>\n                      <span *ngIf=\"a.get('creditRate').hasError('pattern')\" class=\"error\">\n                       *Credit rate should numeric only.</span>\n                    </div>\n               </div>\n               \n               <div class=\"col-md-2 \">\n                 \n                <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"removeGroup(i,a.get('_id').value)\"><i class=\"mdi mdi-minus\"></i></a>\n             </div>      \n                 </div>\n            </div>\n          </div>\n      <div class=\"row\" *ngIf=\"!addedCredit\">\n        <div class=\"col-md-12 text-right pb-3\">\n          <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"addRow()\"><i class=\"mdi mdi-plus\"></i> </a>\n        </div>\n      </div>\n              <div class=\"row\" >\n                <div class=\"col-md-6\">\n                 <button class=\"btn btn-primary\" (click)=\"SavePackage()\" *ngIf=\"IsFormEmpty\">Save</button>\n                 <button class=\"btn btn-primary\" (click)=\"UpdatePackage()\" *ngIf=\"!addedCredit\">Update</button>\n                </div>\n                </div>\n        </form>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -25120,7 +25120,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n        <div class=\"d-block text-right\">\n            <button class=\"btn btn-primary mb-3\" (click)=\"packageModal(item)\">Add Packages</button>\n        </div>\n   \n<div class=\"row\">\n    <div class=\"col-md-4\" *ngFor=\"let item of packages\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">{{item?.name}}</h2>\n            <h1 class=\"price\">{{item?.price.units}} {{item?.price.amount}}/<span>{{item?.month}}Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">{{item?.saveUpto}}%</h4>\n            <div class=\"row\">\n<div class=\"col-md-6\">\n    <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button>\n</div>\n<div class=\"col-md-6\">\n    <button class=\"btn btn-block\" (click)=\"packagedelModal(userDelete,item._id)\">Delete</button>\n</div>\n            </div>\n            <!-- <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button> -->\n        </div>\n    </div>\n    \n    <!-- <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Silver</h2>\n            <h1 class=\"price\">$150/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div>\n    <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Gold</h2>\n            <h1 class=\"price\">$250/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div> -->\n<p *ngIf=\"totalUser==0\">Data not found!</p>\n</div>\n<mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\n</div>\n</div>\n\n<ng-template #item let-modal>\n    <div class=\"modal-body\">\n        <form [formGroup]=\"userForm\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"form-group\">\n                    <label> Plan Name</label>\n                    <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\n                        Please enter the plan name!\n                    </mat-error>\n                    <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                        First name should alphabetic!\n                    </mat-error> -->\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\n                        Maxlength should 15!\n                    </mat-error> \n                </div>\n                <div class=\"row\" formGroupName=\"price\">\n<div class=\"col-md-6\">\n    <div class=\"form-group\">\n        <label> Price</label>\n        <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\n            Please enter the price!\n        </mat-error>\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\n            Maxlength should 10!\n        </mat-error> \n    </div>\n</div>\n<div class=\"col-md-6\">\n    <div class=\"form-group\">\n        <label> Price unit</label>\n        <input type=\"text\"  maxlength=\"10\" placeholder=\"eg:- $ or ₹\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\" maxlength=\"1\">\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\n            Please enter the price unit!\n        </mat-error>\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('maxlength') && !units.hasError('required')\">\n            Maxlength should 1!\n        </mat-error> \n    </div>\n</div>\n </div>\n<div class=\"form-group\">\n                    <label> Months</label>\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\n                        Please enter the months!\n                    </mat-error>\n                    \n                    <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')\">\n                        Maxlength should 2!\n                    </mat-error>  -->\n                </div>\n                <div class=\"form-group\">\n                    <label> Save Upto</label>\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\n                        Please enter the months!\n                    </mat-error>\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\n                        Maxlength should 10!\n                    </mat-error> \n                </div>\n                <button class=\"btn btn-primary\" (click)=\"SavePackage()\">Save</button>\n            </div>\n        </div>\n    </form>\n    </div>\n</ng-template>\n<ng-template #itemedit let-modal>\n    <div class=\"modal-body\">\n        <form [formGroup]=\"userForm\">\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <div class=\"form-group\">\n                        <label> Plan Name</label>\n                        <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\n                            Please enter the plan name!\n                        </mat-error>\n                        <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                            First name should alphabetic!\n                        </mat-error> -->\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\n                            Maxlength should 15!\n                        </mat-error> \n                    </div>\n                    <div class=\"row\" formGroupName=\"price\">\n    <div class=\"col-md-6\">\n        <div class=\"form-group\">\n            <label> Price</label>\n            <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\n                Please enter the price!\n            </mat-error>\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\n                Maxlength should 10!\n            </mat-error> \n        </div>\n    </div>\n    <div class=\"col-md-6\">\n        <div class=\"form-group\">\n            <label> Price unit</label>\n            <input type=\"text\"  maxlength=\"10\" placeholder=\"eg:- $ or ₹\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\" maxlength=\"1\">\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\n                Please enter the price unit!\n            </mat-error>\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('maxlength') && !units.hasError('required')\">\n                Maxlength should 1!\n            </mat-error> \n        </div>\n    </div>\n     </div>\n    <div class=\"form-group\">\n                        <label> Months</label>\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\n                            Please enter the months!\n                        </mat-error>\n                        \n                        <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')\">\n                            Maxlength should 2!\n                        </mat-error>  -->\n                    </div>\n                    <div class=\"form-group\">\n                        <label> Save Upto</label>\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\n                            Please enter the months!\n                        </mat-error>\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\n                            Maxlength should 10!\n                        </mat-error> \n                    </div>\n                    <button class=\"btn btn-primary\" (click)=\"updatePackage()\">Update</button>\n                </div>\n            </div>\n        </form>\n    </div>\n</ng-template>\n<ng-template #userDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you want to delete this package?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n            (click)=\"deletePackage()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n<!-- <ng-template #userDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you ure want to delete this package?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n                (click)=\"deletePackage()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template> -->";
+      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n        <div class=\"d-block text-right\">\n            <button class=\"btn btn-primary mb-3\" (click)=\"packageModal(item)\">Add Packages</button>\n        </div>\n   \n<div class=\"row\">\n    <div class=\"col-md-4\" *ngFor=\"let item of packages\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">{{item?.name}}</h2>\n            <h1 class=\"price\">{{item?.price.units}} {{item?.price.amount}}/<span>{{item?.month}}Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">{{item?.saveUpto}}%</h4>\n            <div class=\"row\">\n<div class=\"col-md-6\">\n    <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button>\n</div>\n<div class=\"col-md-6\">\n    <button class=\"btn btn-block\" (click)=\"packagedelModal(userDelete,item._id)\">Delete</button>\n</div>\n            </div>\n            <!-- <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button> -->\n        </div>\n    </div>\n    \n    <!-- <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Silver</h2>\n            <h1 class=\"price\">$150/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div>\n    <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Gold</h2>\n            <h1 class=\"price\">$250/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div> -->\n<p *ngIf=\"totalUser==0\">Data not found!</p>\n</div>\n<mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\n</div>\n</div>\n\n<ng-template #item let-modal>\n    <div class=\"modal-body\">\n        <form [formGroup]=\"userForm\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"form-group\">\n                    <label> Plan Name</label>\n                    <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\n                        Please enter the plan name!\n                    </mat-error>\n                    <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                        First name should alphabetic!\n                    </mat-error> -->\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\n                        Maxlength should 15!\n                    </mat-error> \n                </div>\n                <div class=\"row\" formGroupName=\"price\">\n<div class=\"col-md-6\">\n    <div class=\"form-group\">\n        <label> Price</label>\n        <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\n            Please enter the price!\n        </mat-error>\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\n            Maxlength should 10!\n        </mat-error> \n    </div>\n</div>\n<div class=\"col-md-6\">\n    <div class=\"form-group\">\n        <label> Price unit</label>\n        <input type=\"text\" list=\"brow\"\n         placeholder=\"eg:- $ or ₹\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\">\n         <datalist id=\"brow\">\n            <option [value]=\"code?.symbol\" *ngFor=\"let code of currencyArray\">\n            \n           </datalist>\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\n            Please enter the price unit!\n        </mat-error>\n        \n    </div>\n</div>\n </div>\n<div class=\"form-group\">\n                    <label> Months</label>\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\n                        Please enter the months!\n                    </mat-error>\n                    \n                    <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')\">\n                        Maxlength should 2!\n                    </mat-error>  -->\n                </div>\n                <div class=\"form-group\">\n                    <label> Save Upto</label>\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\n                        Please enter the months!\n                    </mat-error>\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\n                        Maxlength should 10!\n                    </mat-error> \n                </div>\n                <button class=\"btn btn-primary\" (click)=\"SavePackage()\">Save</button>\n            </div>\n        </div>\n    </form>\n    </div>\n</ng-template>\n<ng-template #itemedit let-modal>\n    <div class=\"modal-body\">\n        <form [formGroup]=\"userForm\">\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <div class=\"form-group\">\n                        <label> Plan Name</label>\n                        <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\n                            Please enter the plan name!\n                        </mat-error>\n                        <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                            First name should alphabetic!\n                        </mat-error> -->\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\n                            Maxlength should 15!\n                        </mat-error> \n                    </div>\n                    <div class=\"row\" formGroupName=\"price\">\n    <div class=\"col-md-6\">\n        <div class=\"form-group\">\n            <label> Price</label>\n            <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\n                Please enter the price!\n            </mat-error>\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\n                Maxlength should 10!\n            </mat-error> \n        </div>\n    </div>\n    <div class=\"col-md-6\">\n        <div class=\"form-group\">\n            <label> Price unit</label>\n            <input type=\"text\"  maxlength=\"10\" placeholder=\"eg:- $ or ₹\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\" maxlength=\"1\">\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\n                Please enter the price unit!\n            </mat-error>\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('maxlength') && !units.hasError('required')\">\n                Maxlength should 1!\n            </mat-error> \n        </div>\n    </div>\n     </div>\n    <div class=\"form-group\">\n                        <label> Months</label>\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\n                            Please enter the months!\n                        </mat-error>\n                        \n                        <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')\">\n                            Maxlength should 2!\n                        </mat-error>  -->\n                    </div>\n                    <div class=\"form-group\">\n                        <label> Save Upto</label>\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\n                            Please enter the months!\n                        </mat-error>\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\n                            Maxlength should 10!\n                        </mat-error> \n                    </div>\n                    <button class=\"btn btn-primary\" (click)=\"updatePackage()\">Update</button>\n                </div>\n            </div>\n        </form>\n    </div>\n</ng-template>\n<ng-template #userDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you want to delete this package?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n            (click)=\"deletePackage()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n<!-- <ng-template #userDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you ure want to delete this package?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n                (click)=\"deletePackage()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template> -->";
       /***/
     },
 
@@ -25240,7 +25240,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n  \n  \n    <div class=\"col-lg-12\">\n      <div class=\"card\">\n  \n        <div class=\"card-body\">\n          <div class=\"row\">\n            <div class=\"col-md-4\">\n              <form>\n                <div class=\"mb-2\">\n                  <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\" (keydown)=\"applyFilter($event)\">\n                </div>\n              </form>\n            </div>\n            <div class=\"col-md-8  d-flex justify-content-end\">\n              <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\n                <button class=\"btn btn-info text-white\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                  Status\n                </button>\n                <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                  <button class=\"dropdown-item\" (click)=\"filterBy('active')\">Active</button>\n                  <button class=\"dropdown-item\" (click)=\"filterBy('inactive')\">Inactive</button>\n                </div>\n              </div>            \n              <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add\n                Coupan</button>\n            </div>\n            <div class=\"table-responsive\">\n              <table class=\"table v-middle product-overview\" id=\"zero_config\">\n                <thead>\n                  <tr>\n                    <th>Card Name</th>\n                    <th>Cost </th>\n                    <th>Number of Cards Bought </th>\n                    <th>Valid From</th>\n                    <th>Valid To</th>  \n                    <th>Action</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr *ngFor=\"let item of giftList\">\n                   \n                    <td>{{item?.cardName}}</td>\n                      <td>{{item?.cost}}</td>\n                      <td>{{item?.cardsBought}}</td>\n                    <td><span class=\"text-nowrap\">{{item?.validFrom}}</span></td>                  \n                    <td><span class=\"text-nowrap\">{{item?.validTill}}</span></td>                  \n                \n                    <!-- <td>\n                      <div class=\"form-check\">\n                        <div class=\"custom-control custom-radio\">\n                          <input type=\"radio\" class=\"custom-control-input\" id=\"customControlValidation2\"\n                            name=\"radio-stacked\" disabled>\n                          <label class=\"custom-control-label\" for=\"customControlValidation2\">Inactive</label>\n                        </div>\n                      </div>\n                    </td> -->\n                    <td>\n                      <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\n                        <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                          Action\n                        </button>\n  \n                        <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\" class=\" pb-5\">\n                          <!-- <button class=\"dropdown-item\" (click)=\"userprofileModal(userprofile)\"><i class=\"ti-eye\"></i>\n                            View\n                          </button> -->\n                          <button class=\"dropdown-item\" (click)=\"userDetailModal(userDetail,item)\"><i _ngcontent-axh-c146=\"\"\n                              class=\"ti-marker-alt\"></i> Edit</button>\n  \n                          <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete,item?._id)\"><i class=\"ti-trash\"></i>\n                            Delete</button>\n                        </div>\n                      </div>\n                    </td>\n                  </tr>               \n                </tbody>\n              </table>\n            </div>\n            <p *ngIf=\"totalUser==0\">Data not found!</p>   \n          </div>\n         \n          <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\n        </div>\n      </div>\n      <!-- Column -->\n    </div>\n  \n    <ng-template #content3 let-modal>\n      <div class=\"modal-header p-2\">\n        <h4 class=\"modal-title\">Driving Licence</h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n          </div>\n          <div class=\"col-md-6\">\n            <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n          </div>\n        </div>\n      </div>\n    </ng-template>\n  \n  \n    <!-- view modal -->\n    <ng-template #userprofile let-modal>\n      <div class=\"modal-body\">\n        <button type=\"button\" class=\" close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n          <i class=\"mdi mdi-close\"></i>\n        </button>\n        <div class=\"row\">\n          <!-- Column -->\n          <div class=\"col-lg-3 col-xlg-3 col-md-5\">\n            <div class=\"card\">\n              <div class=\"card-body\">\n                <div class=\"m-t-30 text-center\">\n                  <img src=\"assets/images/users/5.jpg\" class=\"rounded-circle\" width=\"120\" />\n                  <h4 class=\"card-title m-t-10\">Hanna Gover</h4>\n                </div>\n              </div>\n            </div>\n          </div>\n          <!-- Column -->\n          <!-- Column -->\n          <div class=\"col-lg-9 col-xlg-9 col-md-7\">\n            <div class=\"card custom-tabs mb-0\">\n              <div class=\"card-body\">\n                <!-- <div class=\"col-md-12 text-right\"><button class=\"btn btn-primary\">Export CSV</button></div>  -->\n                <ngb-tabset>\n                  <ngb-tab>\n                    <ng-template ngbTabTitle><b>User Detail</b></ng-template>\n                    <ng-template ngbTabContent>\n                      <div class=\"row pt-2\">\n                        <div class=\"col-md-6\">\n                          <ul class=\"list-block\">\n                            <li class=\"list-block-listing\">Name: <span class=\"font-weight-600\">Hanna Gover</span></li>\n                            <li class=\"list-block-listing\">Email: <span\n                                class=\"font-weight-600\">Hannagover@gmail.com</span>\n                            </li>\n                            <li class=\"list-block-listing\">Gender: <span class=\"font-weight-600\">Female</span>\n                            </li>\n                            <li class=\"list-block-listing\">Phone No: <span class=\"font-weight-600\">+91-7858485474</span>\n                            </li>\n                            <li class=\"list-block-listing \"> <span>Address: </span> <span class=\"font-weight-600\">3750\n                                Grove Avenue, Clinton</span>\n                            </li>\n  \n  \n                          </ul>\n                        </div>\n                        <div class=\"col-md-6\">\n                          <ul class=\"list-block\">\n  \n                            <li class=\"list-block-listing\">Total Bike: <span class=\"font-weight-600\">1</span></li>\n                            <li class=\"list-block-listing\">Bike Name: <span>Pulsar </span></li>\n                            <li class=\"list-block-listing\">Bike No: <span>HR-04-V-2433</span></li>\n                            <li class=\"list-block-listing\">Vendor Name: <span class=\"font-weight-600\">John</span></li>\n                          </ul>\n                        </div>\n                      </div>\n                    </ng-template>\n                  </ngb-tab>\n  \n                  <ngb-tab>\n                    <ng-template ngbTabTitle><b>User History</b></ng-template>\n                    <ng-template ngbTabContent>\n                      <ul class=\"user_history pl-0\">\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 1</span> </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 2</span> </li>\n                        <li class=\"user_history_list skip\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span>Location 3\n                        </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 4</span> </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 5</span> </li>\n                      </ul>\n                    </ng-template>\n                  </ngb-tab>\n                </ngb-tabset>\n              </div>\n            </div>\n          </div>\n          <!-- Column -->\n        </div>\n      </div>\n    </ng-template>\n  \n    <!-- delete modal -->\n    <ng-template #userDelete let-modal>\n      <div class=\"modal-body\">\n        <p>Are you want to delete this gift card?</p>\n        <div class=\"btn-group\">\n          <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n            (click)=\"DeleteCard()\">Yes</button>\n          <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n            (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n      </div>\n    </ng-template>\n  \n    <!-- edit user detail -->\n    <ng-template #userDetail let-modal>\n      <div class=\"modal-body\">\n        <div class=\"card\">\n          <form [formGroup]=\"giftForm\">\n            <div class=\"form-body\">\n                <div class=\"card-body\">\n                  <div class=\"row p-t-20\">\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Card name</label>\n                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"J2d3ddf3\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cardName\">  \n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('required') && submitted\">\n                          Please enter the card name!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('pattern') && !giftForm.controls['cardName'].hasError('required') && !giftForm.controls['cardName'].hasError('maxlength')\">\n                          Card name should alphabetic only!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('maxlength') && !giftForm.controls['cardName'].hasError('required')\">\n                          Maxlength should 15!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span--> \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Cost</label>\n                        <input type=\"number\" id=\"cost\" class=\"form-control\" placeholder=\"$100\" onKeyDown=\"if(this.value.length==11 && event.keyCode!=8)\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cost\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].hasError('required') && submitted\">\n                          Please enter the cost!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].value?.toString().length>=11\">\n                          Maxlength should 10!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                 \n                    <!--/span-->\n                  </div>\n                  \n                  <!--/row-->\n                  <div class=\"row \">\n                  \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid From</label>\n                        <input type=\"date\" id=\"event\" [min]=\"service.getToday()\" [max]=\"maxValue()\" onkeydown=\"return false\" class=\"form-control form-control-danger\"  formControlName=\"validFrom\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validFrom'].hasError('required') && submitted\">\n                          Please enter valid from the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                    <!--/span-->\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid To</label>\n                        <input type=\"date\" id=\"event\" [min]=\"minValue() || service.getToday()\" onkeydown=\"event.preventDefault()\" class=\"form-control form-control-danger\" formControlName=\"validTill\" >\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validTill'].hasError('required') && submitted\">\n                          Please enter valid to the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                  </div>\n                  <!--/row-->\n                  <div class=\"row\">\n                    <div class=\"col-md-12\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Number of Cards Bought</label>\n                        <input type=\"number\" id=\"Address\" onKeyDown=\"if(this.value.length==6 && event.keyCode!=8) return false;\" class=\"form-control form-control-danger\" placeholder=\"eg:- 10\" formControlName=\"cardsBought\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].hasError('required') && submitted\">\n                          Please number of cards bought!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].value?.toString().length>=6\">\n                          Maxlength should 5!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                \n                  </div>\n                  <!--/row-->\n                  \n                </div>\n    \n                <div class=\"form-actions\">\n                  <div class=\"card-body\">\n                    <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"UpdateCard()\">\n                      <i class=\"fa fa-check\"></i> Update</button>\n                    <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                  </div>\n                </div>\n              </div>\n          </form>\n        </div>\n  \n      </div>\n    </ng-template>\n  \n    <!-- add user -->\n    <ng-template #addUser let-modal>\n      <div class=\"modal-body\">\n        <div class=\"card\">\n          <form [formGroup]=\"giftForm\">\n            <div class=\"form-body\">\n                <div class=\"card-body\">\n                  <div class=\"row p-t-20\">\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Card name</label>\n                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"J2d3ddf3\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cardName\">  \n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('required') && submitted\">\n                          Please enter the card name!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('pattern') && !giftForm.controls['cardName'].hasError('required') && !giftForm.controls['cardName'].hasError('maxlength')\">\n                          Card name should alphabetic only!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('maxlength') && !giftForm.controls['cardName'].hasError('required')\">\n                          Maxlength should 15!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span--> \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Cost</label>\n                        <input type=\"number\" id=\"cost\" class=\"form-control\" onKeyDown=\"if(this.value.length==11 && event.keyCode!=8) return false;\" placeholder=\"$100\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cost\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].hasError('required') && submitted\">\n                          Please enter the cost!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].value?.toString().length>=11\">\n                          Maxlength should 10!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                 \n                    <!--/span-->\n                  </div>\n                  \n                  <!--/row-->\n                  <div class=\"row \">\n                  \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid From</label>\n                        <input type=\"date\" id=\"event\" [min]=\"service.getToday()\" [max]=\"maxValue()\" onkeydown=\"return false\" class=\"form-control form-control-danger\"  formControlName=\"validFrom\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validFrom'].hasError('required') && submitted\">\n                          Please enter valid from the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                    <!--/span-->\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid To</label>\n                        <input type=\"date\" id=\"event\" [min]=\"minValue() || service.getToday()\" onkeydown=\"event.preventDefault()\" class=\"form-control form-control-danger\" formControlName=\"validTill\" >\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validTill'].hasError('required') && submitted\">\n                          Please enter valid to the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                  </div>\n                  <!--/row-->\n                  <div class=\"row\">\n                    <div class=\"col-md-12\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Number of Cards Bought</label>\n                        <input type=\"number\" id=\"Address\" onKeyDown=\"if(this.value.length==6 && event.keyCode!=8) return false;\" class=\"form-control form-control-danger\" placeholder=\"eg:- 10\" formControlName=\"cardsBought\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].hasError('required') && submitted\">\n                          Please number of cards bought!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].value?.toString().length>=6\">\n                          Maxlength should 5!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                \n                  </div>\n                  <!--/row-->\n                  \n                </div>\n    \n                <div class=\"form-actions\">\n                  <div class=\"card-body\">\n                    <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"addCard()\">\n                      <i class=\"fa fa-check\"></i> Save</button>\n                    <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                  </div>\n                </div>\n              </div>\n          </form>\n        </div>\n  \n  \n      </div>\n    </ng-template>";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n  \n  \n    <div class=\"col-lg-12\">\n      <div class=\"card\">\n  \n        <div class=\"card-body\">\n          <div class=\"row\">\n            <div class=\"col-md-4\">\n              <form>\n                <div class=\"mb-2\">\n                  <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\" (keydown)=\"applyFilter($event)\">\n                </div>\n              </form>\n            </div>\n            <div class=\"col-md-8  d-flex justify-content-end\">\n              <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\n                <button class=\"btn btn-info text-white\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                  Status\n                </button>\n                <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                  <button class=\"dropdown-item\" (click)=\"filterBy('active')\">Active</button>\n                  <button class=\"dropdown-item\" (click)=\"filterBy('inactive')\">Inactive</button>\n                </div>\n              </div>            \n              <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add\n                Coupan</button>\n            </div>\n            <div class=\"table-responsive\">\n              <table class=\"table v-middle product-overview\" id=\"zero_config\">\n                <thead>\n                  <tr>\n                    <th>Card Name</th>\n                    <th>Cost </th>\n                    <th>Number of Cards Bought </th>\n                    <th>Valid From</th>\n                    <th>Valid To</th>  \n                    <th>Action</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr *ngFor=\"let item of giftList\">\n                   \n                    <td>{{item?.cardName}}</td>\n                      <td>{{item?.cost}}</td>\n                      <td>{{item?.cardsBought}}</td>\n                    <td><span class=\"text-nowrap\">{{item?.validFrom}}</span></td>                  \n                    <td><span class=\"text-nowrap\">{{item?.validTill}}</span></td>                  \n                \n                    <!-- <td>\n                      <div class=\"form-check\">\n                        <div class=\"custom-control custom-radio\">\n                          <input type=\"radio\" class=\"custom-control-input\" id=\"customControlValidation2\"\n                            name=\"radio-stacked\" disabled>\n                          <label class=\"custom-control-label\" for=\"customControlValidation2\">Inactive</label>\n                        </div>\n                      </div>\n                    </td> -->\n                    <td>\n                      <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\n                        <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                          Action\n                        </button>\n  \n                        <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                          <!-- <button class=\"dropdown-item\" (click)=\"userprofileModal(userprofile)\"><i class=\"ti-eye\"></i>\n                            View\n                          </button> -->\n                          <button class=\"dropdown-item\" (click)=\"userDetailModal(userDetail,item)\"><i _ngcontent-axh-c146=\"\"\n                              class=\"ti-marker-alt\"></i> Edit</button>\n  \n                          <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete,item?._id)\"><i class=\"ti-trash\"></i>\n                            Delete</button>\n                        </div>\n                      </div>\n                    </td>\n                  </tr>               \n                </tbody>\n              </table>\n            </div>\n            <p *ngIf=\"totalUser==0\">Data not found!</p>   \n          </div>\n         \n          <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\n        </div>\n      </div>\n      <!-- Column -->\n    </div>\n  \n    <ng-template #content3 let-modal>\n      <div class=\"modal-header p-2\">\n        <h4 class=\"modal-title\">Driving Licence</h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n          </div>\n          <div class=\"col-md-6\">\n            <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n          </div>\n        </div>\n      </div>\n    </ng-template>\n  \n  \n    <!-- view modal -->\n    <ng-template #userprofile let-modal>\n      <div class=\"modal-body\">\n        <button type=\"button\" class=\" close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n          <i class=\"mdi mdi-close\"></i>\n        </button>\n        <div class=\"row\">\n          <!-- Column -->\n          <div class=\"col-lg-3 col-xlg-3 col-md-5\">\n            <div class=\"card\">\n              <div class=\"card-body\">\n                <div class=\"m-t-30 text-center\">\n                  <img src=\"assets/images/users/5.jpg\" class=\"rounded-circle\" width=\"120\" />\n                  <h4 class=\"card-title m-t-10\">Hanna Gover</h4>\n                </div>\n              </div>\n            </div>\n          </div>\n          <!-- Column -->\n          <!-- Column -->\n          <div class=\"col-lg-9 col-xlg-9 col-md-7\">\n            <div class=\"card custom-tabs mb-0\">\n              <div class=\"card-body\">\n                <!-- <div class=\"col-md-12 text-right\"><button class=\"btn btn-primary\">Export CSV</button></div>  -->\n                <ngb-tabset>\n                  <ngb-tab>\n                    <ng-template ngbTabTitle><b>User Detail</b></ng-template>\n                    <ng-template ngbTabContent>\n                      <div class=\"row pt-2\">\n                        <div class=\"col-md-6\">\n                          <ul class=\"list-block\">\n                            <li class=\"list-block-listing\">Name: <span class=\"font-weight-600\">Hanna Gover</span></li>\n                            <li class=\"list-block-listing\">Email: <span\n                                class=\"font-weight-600\">Hannagover@gmail.com</span>\n                            </li>\n                            <li class=\"list-block-listing\">Gender: <span class=\"font-weight-600\">Female</span>\n                            </li>\n                            <li class=\"list-block-listing\">Phone No: <span class=\"font-weight-600\">+91-7858485474</span>\n                            </li>\n                            <li class=\"list-block-listing \"> <span>Address: </span> <span class=\"font-weight-600\">3750\n                                Grove Avenue, Clinton</span>\n                            </li>\n  \n  \n                          </ul>\n                        </div>\n                        <div class=\"col-md-6\">\n                          <ul class=\"list-block\">\n  \n                            <li class=\"list-block-listing\">Total Bike: <span class=\"font-weight-600\">1</span></li>\n                            <li class=\"list-block-listing\">Bike Name: <span>Pulsar </span></li>\n                            <li class=\"list-block-listing\">Bike No: <span>HR-04-V-2433</span></li>\n                            <li class=\"list-block-listing\">Vendor Name: <span class=\"font-weight-600\">John</span></li>\n                          </ul>\n                        </div>\n                      </div>\n                    </ng-template>\n                  </ngb-tab>\n  \n                  <ngb-tab>\n                    <ng-template ngbTabTitle><b>User History</b></ng-template>\n                    <ng-template ngbTabContent>\n                      <ul class=\"user_history pl-0\">\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 1</span> </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 2</span> </li>\n                        <li class=\"user_history_list skip\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span>Location 3\n                        </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 4</span> </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 5</span> </li>\n                      </ul>\n                    </ng-template>\n                  </ngb-tab>\n                </ngb-tabset>\n              </div>\n            </div>\n          </div>\n          <!-- Column -->\n        </div>\n      </div>\n    </ng-template>\n  \n    <!-- delete modal -->\n    <ng-template #userDelete let-modal>\n      <div class=\"modal-body\">\n        <p>Are you want to delete this gift card?</p>\n        <div class=\"btn-group\">\n          <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n            (click)=\"DeleteCard()\">Yes</button>\n          <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n            (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n      </div>\n    </ng-template>\n  \n    <!-- edit user detail -->\n    <ng-template #userDetail let-modal>\n      <div class=\"modal-body\">\n        <div class=\"card\">\n          <form [formGroup]=\"giftForm\">\n            <div class=\"form-body\">\n                <div class=\"card-body\">\n                  <div class=\"row p-t-20\">\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Card name</label>\n                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"J2d3ddf3\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cardName\">  \n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('required') && submitted\">\n                          Please enter the card name!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('pattern') && !giftForm.controls['cardName'].hasError('required') && !giftForm.controls['cardName'].hasError('maxlength')\">\n                          Card name should alphabetic only!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('maxlength') && !giftForm.controls['cardName'].hasError('required')\">\n                          Maxlength should 15!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span--> \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Cost</label>\n                        <input type=\"number\" id=\"cost\" class=\"form-control\" placeholder=\"$100\" onKeyDown=\"if(this.value.length==11 && event.keyCode!=8)\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cost\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].hasError('required') && submitted\">\n                          Please enter the cost!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].value?.toString().length>=11\">\n                          Maxlength should 10!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                 \n                    <!--/span-->\n                  </div>\n                  \n                  <!--/row-->\n                  <div class=\"row \">\n                  \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid From</label>\n                        <input type=\"date\" id=\"event\" [min]=\"service.getToday()\" [max]=\"maxValue()\" onkeydown=\"return false\" class=\"form-control form-control-danger\"  formControlName=\"validFrom\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validFrom'].hasError('required') && submitted\">\n                          Please enter valid from the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                    <!--/span-->\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid To</label>\n                        <input type=\"date\" id=\"event\" [min]=\"minValue() || service.getToday()\" onkeydown=\"event.preventDefault()\" class=\"form-control form-control-danger\" formControlName=\"validTill\" >\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validTill'].hasError('required') && submitted\">\n                          Please enter valid to the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                  </div>\n                  <!--/row-->\n                  <div class=\"row\">\n                    <div class=\"col-md-12\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Number of Cards Bought</label>\n                        <input type=\"number\" id=\"Address\" onKeyDown=\"if(this.value.length==6 && event.keyCode!=8) return false;\" class=\"form-control form-control-danger\" placeholder=\"eg:- 10\" formControlName=\"cardsBought\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].hasError('required') && submitted\">\n                          Please number of cards bought!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].value?.toString().length>=6\">\n                          Maxlength should 5!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                \n                  </div>\n                  <!--/row-->\n                  \n                </div>\n    \n                <div class=\"form-actions\">\n                  <div class=\"card-body\">\n                    <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"UpdateCard()\">\n                      <i class=\"fa fa-check\"></i> Update</button>\n                    <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                  </div>\n                </div>\n              </div>\n          </form>\n        </div>\n  \n      </div>\n    </ng-template>\n  \n    <!-- add user -->\n    <ng-template #addUser let-modal>\n      <div class=\"modal-body\">\n        <div class=\"card\">\n          <form [formGroup]=\"giftForm\">\n            <div class=\"form-body\">\n                <div class=\"card-body\">\n                  <div class=\"row p-t-20\">\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Card name</label>\n                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"J2d3ddf3\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cardName\">  \n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('required') && submitted\">\n                          Please enter the card name!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('pattern') && !giftForm.controls['cardName'].hasError('required') && !giftForm.controls['cardName'].hasError('maxlength')\">\n                          Card name should alphabetic only!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('maxlength') && !giftForm.controls['cardName'].hasError('required')\">\n                          Maxlength should 15!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span--> \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Cost</label>\n                        <input type=\"number\" id=\"cost\" class=\"form-control\" onKeyDown=\"if(this.value.length==11 && event.keyCode!=8) return false;\" placeholder=\"$100\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cost\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].hasError('required') && submitted\">\n                          Please enter the cost!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].value?.toString().length>=11\">\n                          Maxlength should 10!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                 \n                    <!--/span-->\n                  </div>\n                  \n                  <!--/row-->\n                  <div class=\"row \">\n                  \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid From</label>\n                        <input type=\"date\" id=\"event\" [min]=\"service.getToday()\" [max]=\"maxValue()\" onkeydown=\"return false\" class=\"form-control form-control-danger\"  formControlName=\"validFrom\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validFrom'].hasError('required') && submitted\">\n                          Please enter valid from the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                    <!--/span-->\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid To</label>\n                        <input type=\"date\" id=\"event\" [min]=\"minValue() || service.getToday()\" onkeydown=\"event.preventDefault()\" class=\"form-control form-control-danger\" formControlName=\"validTill\" >\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validTill'].hasError('required') && submitted\">\n                          Please enter valid to the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                  </div>\n                  <!--/row-->\n                  <div class=\"row\">\n                    <div class=\"col-md-12\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Number of Cards Bought</label>\n                        <input type=\"number\" id=\"Address\" onKeyDown=\"if(this.value.length==6 && event.keyCode!=8) return false;\" class=\"form-control form-control-danger\" placeholder=\"eg:- 10\" formControlName=\"cardsBought\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].hasError('required') && submitted\">\n                          Please number of cards bought!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].value?.toString().length>=6\">\n                          Maxlength should 5!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                \n                  </div>\n                  <!--/row-->\n                  \n                </div>\n    \n                <div class=\"form-actions\">\n                  <div class=\"card-body\">\n                    <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"addCard()\">\n                      <i class=\"fa fa-check\"></i> Save</button>\n                    <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                  </div>\n                </div>\n              </div>\n          </form>\n        </div>\n  \n  \n      </div>\n    </ng-template>";
       /***/
     },
 
@@ -26918,7 +26918,8 @@
           value: function createRow() {
             return this.fb.group({
               creditLimit: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern("^[0-9]*$")]),
-              creditRate: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern("^[0-9]*$")])
+              creditRate: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern("^[0-9]*$")]),
+              _id: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('')
             });
           }
         }, {
@@ -26929,9 +26930,15 @@
           }
         }, {
           key: "removeGroup",
-          value: function removeGroup(index) {
-            this.pricing = this.FormMatrix.get('pricing');
-            this.pricing.removeAt(index);
+          value: function removeGroup(index, a) {
+            console.log(a, 'Remove arr itm id');
+
+            if (a) {
+              this.DeleteCard(a);
+            } else if (!a) {
+              this.pricing = this.FormMatrix.get('pricing');
+              this.pricing.removeAt(index);
+            }
           }
         }, {
           key: "SavePackage",
@@ -26951,7 +26958,9 @@
 
                   _this97.getPackages();
 
-                  _this97.toastr.success(res.message);
+                  _this97.toastr.success(res.message, '', {
+                    timeOut: 700
+                  });
                 } else {
                   _this97.toastr.error(res.message);
                 }
@@ -26989,7 +26998,8 @@
                     var x = _step13.value;
                     control.push(_this98.fb.group({
                       creditLimit: x.creditLimit,
-                      creditRate: x.creditRate
+                      creditRate: x.creditRate,
+                      _id: x._id
                     }));
                   }
                 } catch (err) {
@@ -27026,6 +27036,26 @@
                 }
               });
             }
+          }
+        }, {
+          key: "DeleteCard",
+          value: function DeleteCard(id) {
+            var _this100 = this;
+
+            var url = "credits/".concat(id);
+            this.service.deleteApi(url).subscribe(function (res) {
+              if (res.statusCode == 200) {
+                _this100.getPackages();
+
+                _this100.submitted = false;
+
+                _this100.toastr.success(res.message, '', {
+                  timeOut: 700
+                });
+              } else {
+                _this100.toastr.error(res.message);
+              }
+            });
           }
         }]);
 
@@ -27235,14 +27265,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this100 = this;
+            var _this101 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this100.closeResult = "Closed with: ".concat(result);
+              _this101.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this100.closeResult = "Dismissed ".concat(_this100.getDismissReason(reason));
+              _this101.closeResult = "Dismissed ".concat(_this101.getDismissReason(reason));
             });
           }
         }, {
@@ -27505,14 +27535,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this101 = this;
+            var _this102 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this101.closeResult = "Closed with: ".concat(result);
+              _this102.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this101.closeResult = "Dismissed ".concat(_this101.getDismissReason(reason));
+              _this102.closeResult = "Dismissed ".concat(_this102.getDismissReason(reason));
             });
           }
         }, {
@@ -29008,14 +29038,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this102 = this;
+            var _this103 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this102.closeResult = "Closed with: ".concat(result);
+              _this103.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this102.closeResult = "Dismissed ".concat(_this102.getDismissReason(reason));
+              _this103.closeResult = "Dismissed ".concat(_this103.getDismissReason(reason));
             });
           }
         }, {
@@ -30031,6 +30061,8 @@
 
       var PackagesComponent = /*#__PURE__*/function () {
         function PackagesComponent(toastr, modalService, fb, service, toast) {
+          var _this104 = this;
+
           _classCallCheck(this, PackagesComponent);
 
           this.toastr = toastr;
@@ -30047,8 +30079,13 @@
             month: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])),
             price: this.fb.group({
               amount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(10)]),
-              units: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(1)])
+              units: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])
             })
+          });
+          this.service.getCurrency().subscribe(function (res) {
+            console.log('Currency Res', res);
+            _this104.currencyArray = res.currencyUnitArray;
+            _this104.currencySymbol = res['INR'].symbol;
           });
         }
 
@@ -30060,6 +30097,8 @@
         }, {
           key: "packageModal",
           value: function packageModal(item) {
+            this.userForm.reset();
+            this.submitted = false;
             this.modalService.open(item, {
               backdropClass: 'light-blue-backdrop',
               centered: true,
@@ -30094,7 +30133,7 @@
         }, {
           key: "SavePackage",
           value: function SavePackage() {
-            var _this103 = this;
+            var _this105 = this;
 
             console.log('Form', this.userForm.value.pric);
             var obj = {
@@ -30109,17 +30148,17 @@
             if (this.userForm.valid) {
               this.service.postApi(url, obj).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this103.getPackages();
+                  _this105.getPackages();
 
-                  _this103.submitted = false;
+                  _this105.submitted = false;
 
-                  _this103.toast.success(res.message);
+                  _this105.toast.success(res.message);
 
-                  _this103.modalService.dismissAll();
+                  _this105.modalService.dismissAll();
 
-                  _this103.userForm.reset();
+                  _this105.userForm.reset();
                 } else {
-                  _this103.toast.error(res.message);
+                  _this105.toast.error(res.message);
                 }
               });
             }
@@ -30141,25 +30180,25 @@
         }, {
           key: "getPackages",
           value: function getPackages() {
-            var _this104 = this;
+            var _this106 = this;
 
             var url = "packages?page=".concat(this.pageIndex, "&count=").concat(this.pageSize);
             this.service.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
-                _this104.packages = res.data.doc;
-                _this104.totalUser = res.data.itemCount;
-                console.log('Total pack', _this104.totalUser, res);
+                _this106.packages = res.data.doc;
+                _this106.totalUser = res.data.itemCount;
+                console.log('Total pack', _this106.totalUser, res);
               } else {
-                _this104.toastr.error(res["message"]);
+                _this106.toastr.error(res["message"]);
 
-                _this104.totalUser = 0;
+                _this106.totalUser = 0;
               }
             });
           }
         }, {
           key: "updatePackage",
           value: function updatePackage() {
-            var _this105 = this;
+            var _this107 = this;
 
             console.log('Form', this.userForm.value.pric);
             var obj = {
@@ -30174,15 +30213,15 @@
             if (this.userForm.valid) {
               this.service.putApi(url, obj).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this105.getPackages();
+                  _this107.getPackages();
 
-                  _this105.submitted = false;
+                  _this107.submitted = false;
 
-                  _this105.toast.success('Package data updated successfully.');
+                  _this107.toast.success('Package data updated successfully.');
 
-                  _this105.modalService.dismissAll();
+                  _this107.modalService.dismissAll();
                 } else {
-                  _this105.toast.error(res.message);
+                  _this107.toast.error(res.message);
                 }
               });
             }
@@ -30190,18 +30229,18 @@
         }, {
           key: "deletePackage",
           value: function deletePackage() {
-            var _this106 = this;
+            var _this108 = this;
 
             var url = "packages/".concat(this.id);
             this.service.deleteApi(url).subscribe(function (res) {
               if (res.statusCode == 200) {
-                _this106.toastr.success(res.message);
+                _this108.toastr.success(res.message);
 
-                _this106.modalService.dismissAll();
+                _this108.modalService.dismissAll();
 
-                _this106.getPackages();
+                _this108.getPackages();
               } else {
-                _this106.toastr.error(res.message);
+                _this108.toastr.error(res.message);
               }
             });
           }
@@ -32208,7 +32247,7 @@
 
       var ProfileComponent = /*#__PURE__*/function () {
         function ProfileComponent(fb, api, router, toastr, spinner) {
-          var _this107 = this;
+          var _this109 = this;
 
           _classCallCheck(this, ProfileComponent);
 
@@ -32221,9 +32260,9 @@
 
           this.setValues = function (data) {
             if (data) {
-              data.image && (_this107.userImage = data.image);
+              data.image && (_this109.userImage = data.image);
 
-              _this107.userForm.patchValue({
+              _this109.userForm.patchValue({
                 fullName: data.fullName,
                 // countryCode: data.countryCode,
                 // password: data.password,
@@ -32232,7 +32271,7 @@
               });
 
               if (data.image) {
-                _this107.userImage = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].imagesUrl + data.image;
+                _this109.userImage = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].imagesUrl + data.image;
               }
             }
           }; // this.id = JSON.parse(localStorage.getItem("id"));
@@ -32253,26 +32292,26 @@
         }, {
           key: "getProfile",
           value: function getProfile() {
-            var _this108 = this;
+            var _this110 = this;
 
             this.spinner.show();
             this.api.getProfile().subscribe(function (res) {
               if (res['statusCode'] === 200) {
-                _this108.userDetail = res["data"];
+                _this110.userDetail = res["data"];
 
-                _this108.setValues(_this108.userDetail);
+                _this110.setValues(_this110.userDetail);
               } else {
-                _this108.toastr.error(res["message"]);
+                _this110.toastr.error(res["message"]);
               }
             }, function (error) {
-              _this108.spinner.hide();
+              _this110.spinner.hide();
             });
           }
         }, {
           key: "profilePic",
           value: function profilePic(event) {
             return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-              var _this109 = this;
+              var _this111 = this;
 
               var reader;
               return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -32286,7 +32325,7 @@
                         reader.readAsDataURL(event.target.files[0]);
 
                         reader.onload = function (event) {
-                          _this109.userImage = event.target.result;
+                          _this111.userImage = event.target.result;
                         };
                       }
 
@@ -32301,7 +32340,7 @@
         }, {
           key: "update",
           value: function update() {
-            var _this110 = this;
+            var _this112 = this;
 
             this.submitted = true;
 
@@ -32315,18 +32354,22 @@
               this.spinner.show();
               this.api.updateProfile(formData).subscribe(function (res) {
                 if (res['statusCode'] === 200) {
-                  _this110.router.navigate(['dashboard']);
+                  _this112.router.navigate(['dashboard']);
 
-                  _this110.api.onUpdateUser.next("new data");
+                  _this112.api.onUpdateUser.next("new data");
 
-                  _this110.toastr.success(res["message"]);
+                  _this112.toastr.success(res["message"], '', {
+                    timeOut: 900
+                  });
 
-                  _this110.getProfile();
+                  _this112.getProfile();
                 } else {
-                  _this110.toastr.error(res["message"]);
+                  _this112.toastr.error(res["message"], '', {
+                    timeOut: 900
+                  });
                 }
               }, function (error) {
-                _this110.spinner.hide();
+                _this112.spinner.hide();
               });
             }
           }
@@ -32478,14 +32521,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this111 = this;
+            var _this113 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this111.closeResult = "Closed with: ".concat(result);
+              _this113.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this111.closeResult = "Dismissed ".concat(_this111.getDismissReason(reason));
+              _this113.closeResult = "Dismissed ".concat(_this113.getDismissReason(reason));
             });
           }
         }, {
@@ -32569,41 +32612,41 @@
         }, {
           key: "applyFilter",
           value: function applyFilter(event) {
-            var _this112 = this;
+            var _this114 = this;
 
             console.log('apply fil call', event.target.value);
             window.clearTimeout(this.timer);
             this.timer = window.setTimeout(function () {
               var filterValue = event.target.value;
-              _this112.searchBy = filterValue;
-              _this112.pageIndex = 1;
+              _this114.searchBy = filterValue;
+              _this114.pageIndex = 1;
 
-              _this112.getUsers();
+              _this114.getUsers();
             }, 1000);
           }
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this113 = this;
+            var _this115 = this;
 
             var url = "giftCards?count=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : '') + (this.status ? '&status=' + this.status : ''));
             this.service.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
                 console.log('FGift', res);
-                _this113.giftList = res.data.doc;
-                _this113.totalUser = res.data.itemCount;
-                console.log('Total user', _this113.totalUser, res);
+                _this115.giftList = res.data.doc;
+                _this115.totalUser = res.data.itemCount;
+                console.log('Total user', _this115.totalUser, res);
               } else {
-                _this113.toast.error(res["message"]);
+                _this115.toast.error(res["message"]);
 
-                _this113.totalUser = 0;
+                _this115.totalUser = 0;
               }
             });
           }
         }, {
           key: "addCard",
           value: function addCard() {
-            var _this114 = this;
+            var _this116 = this;
 
             this.submitted = true;
             var url = "giftCards";
@@ -32611,17 +32654,17 @@
             if (this.giftForm.valid && this.giftForm.controls['cost'].value.toString().length != 11 && this.giftForm.controls['cardsBought'].value.toString().length != 6) {
               this.service.postApi(url, this.giftForm.value).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this114.getUsers();
+                  _this116.getUsers();
 
-                  _this114.submitted = false;
+                  _this116.submitted = false;
 
-                  _this114.toast.success('Gift card added successfully');
+                  _this116.toast.success('Gift card added successfully');
 
-                  _this114.modalService.dismissAll();
+                  _this116.modalService.dismissAll();
 
-                  _this114.giftForm.reset();
+                  _this116.giftForm.reset();
                 } else {
-                  _this114.toast.error(res.message);
+                  _this116.toast.error(res.message);
                 }
               });
             }
@@ -32643,7 +32686,7 @@
         }, {
           key: "UpdateCard",
           value: function UpdateCard() {
-            var _this115 = this;
+            var _this117 = this;
 
             this.submitted = true;
             var url = "giftCards/".concat(this.gitfId);
@@ -32651,17 +32694,17 @@
             if (this.giftForm.valid && this.giftForm.controls['cost'].value.toString().length != 11 && this.giftForm.controls['cardsBought'].value.toString().length != 6) {
               this.service.putApi(url, this.giftForm.value).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this115.getUsers();
+                  _this117.getUsers();
 
-                  _this115.submitted = false;
+                  _this117.submitted = false;
 
-                  _this115.toast.success('Gift card updated successfully');
+                  _this117.toast.success('Gift card updated successfully');
 
-                  _this115.modalService.dismissAll();
+                  _this117.modalService.dismissAll();
 
-                  _this115.giftForm.reset();
+                  _this117.giftForm.reset();
                 } else {
-                  _this115.toast.error(res.message);
+                  _this117.toast.error(res.message);
                 }
               });
             }
@@ -32669,20 +32712,20 @@
         }, {
           key: "DeleteCard",
           value: function DeleteCard() {
-            var _this116 = this;
+            var _this118 = this;
 
             var url = "giftCards/".concat(this.gitfId);
             this.service.deleteApi(url).subscribe(function (res) {
               if (res.statusCode == 200) {
-                _this116.getUsers();
+                _this118.getUsers();
 
-                _this116.submitted = false;
+                _this118.submitted = false;
 
-                _this116.toast.success('Gift card deleted successfully');
+                _this118.toast.success('Gift card deleted successfully');
 
-                _this116.modalService.dismissAll();
+                _this118.modalService.dismissAll();
               } else {
-                _this116.toast.error(res.message);
+                _this118.toast.error(res.message);
               }
             });
           }
@@ -33699,17 +33742,17 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this117 = this;
+            var _this119 = this;
 
             var url = "reviews?count=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : ''));
             this.api.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
-                _this117.totalUser = res.data.itemCount;
-                console.log('Total rev', _this117.totalUser, res);
+                _this119.totalUser = res.data.itemCount;
+                console.log('Total rev', _this119.totalUser, res);
               } else {
-                _this117.toastr.error(res["message"]);
+                _this119.toastr.error(res["message"]);
 
-                _this117.totalUser = 0;
+                _this119.totalUser = 0;
               }
             });
           }
@@ -34390,14 +34433,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this118 = this;
+            var _this120 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this118.closeResult = "Closed with: ".concat(result);
+              _this120.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this118.closeResult = "Dismissed ".concat(_this118.getDismissReason(reason));
+              _this120.closeResult = "Dismissed ".concat(_this120.getDismissReason(reason));
             });
           }
         }, {
@@ -35117,7 +35160,7 @@
 
       var UsersDetailComponent = /*#__PURE__*/function () {
         function UsersDetailComponent(modalService, fb, api, router, route, toastr) {
-          var _this119 = this;
+          var _this121 = this;
 
           _classCallCheck(this, UsersDetailComponent);
 
@@ -35134,7 +35177,7 @@
 
           this.setValues = function (data) {
             if (data) {
-              data.image && (_this119.imageUrl = data.image); // this.userForm.patchValue({
+              data.image && (_this121.imageUrl = data.image); // this.userForm.patchValue({
               // 	fullName: data.fullName,
               // 	countryCode: data.countryCode,
               // 	password: data.password,
@@ -35143,7 +35186,7 @@
               // });
 
               if (data.image) {
-                _this119.imageUrl;
+                _this121.imageUrl;
               }
             }
           };
@@ -35192,10 +35235,10 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this120 = this;
+            var _this122 = this;
 
             this.route.params.subscribe(function (params) {
-              _this120.id = params["id"]; // this.getOutlettById(this.id);
+              _this122.id = params["id"]; // this.getOutlettById(this.id);
             });
             console.log("id: ", this.id);
             this.imageUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].imagesUrl;
@@ -35204,21 +35247,21 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this121 = this;
+            var _this123 = this;
 
             this.api.users().subscribe(function (res) {
               if (res['statusCode'] === 200) {
-                _this121.getAllUsers = res["data"]["data"];
-                console.log("getAllUsers: ", _this121.getAllUsers);
-                _this121.user = _this121.getAllUsers.find(function (x) {
-                  return x._id === _this121.id;
+                _this123.getAllUsers = res["data"]["data"];
+                console.log("getAllUsers: ", _this123.getAllUsers);
+                _this123.user = _this123.getAllUsers.find(function (x) {
+                  return x._id === _this123.id;
                 });
 
-                _this121.setValues(_this121.user);
+                _this123.setValues(_this123.user);
 
-                console.log("user obj: ", _this121.user);
+                console.log("user obj: ", _this123.user);
               } else {
-                _this121.toastr.error(res["message"]);
+                _this123.toastr.error(res["message"]);
               }
             });
           }
@@ -35434,7 +35477,7 @@
 
       var UsersComponent = /*#__PURE__*/function () {
         function UsersComponent(modalService, fb, formBuilder, api, router, toastr, spinner, comm) {
-          var _this122 = this;
+          var _this124 = this;
 
           _classCallCheck(this, UsersComponent);
 
@@ -35457,7 +35500,7 @@
 
           this.setValues = function (data) {
             if (data) {
-              _this122.userForm.patchValue({
+              _this124.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35476,7 +35519,7 @@
 
 
               if (data.image) {
-                _this122.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this124.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
             }
           };
@@ -35554,21 +35597,21 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this123 = this;
+            var _this125 = this;
 
             var url = "users?limit=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : '') + (this.IsJective ? '&isActive=' + this.IsJective : ''));
             this.api.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
-                _this123.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res.data.data);
-                _this123.exportLink = res.data.exportLink;
-                _this123.dataSource.paginator = _this123.paginator;
-                _this123.dataSource.sort = _this123.sort;
-                _this123.totalUser = res.data.itemCount;
-                console.log('Total user', _this123.totalUser, res);
+                _this125.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res.data.data);
+                _this125.exportLink = res.data.exportLink;
+                _this125.dataSource.paginator = _this125.paginator;
+                _this125.dataSource.sort = _this125.sort;
+                _this125.totalUser = res.data.itemCount;
+                console.log('Total user', _this125.totalUser, res);
               } else {
-                _this123.toastr.error(res["message"]);
+                _this125.toastr.error(res["message"]);
 
-                _this123.totalUser = 0;
+                _this125.totalUser = 0;
               }
             });
           }
@@ -35588,7 +35631,7 @@
         }, {
           key: "userEditModal",
           value: function userEditModal(userEdit, data) {
-            var _this124 = this;
+            var _this126 = this;
 
             this.isActive = data.isActive;
             this.objId = data._id;
@@ -35608,9 +35651,9 @@
               centered: true,
               size: 'lg'
             }).result.then(function (result) {
-              _this124.closeResult = "Closed with: ".concat(result);
+              _this126.closeResult = "Closed with: ".concat(result);
 
-              _this124.userForm.patchValue({
+              _this126.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35623,28 +35666,28 @@
               });
 
               if (data.image) {
-                _this124.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this126.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
 
               if (result) {
-                var data = _this124.userForm.value;
+                var data = _this126.userForm.value;
                 data['id'] = data._id;
                 var formData = new FormData();
                 formData.append("data", JSON.stringify(data));
-                formData.append("pic", _this124.File);
+                formData.append("pic", _this126.File);
 
-                _this124.api.updateUser(data).subscribe(function (response) {
+                _this126.api.updateUser(data).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this124.toastr.success(response['message']);
+                    _this126.toastr.success(response['message']);
 
-                    _this124.getUsers();
+                    _this126.getUsers();
                   } else {
-                    _this124.toastr.error(response['message']);
+                    _this126.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this124.closeResult = "Dismissed ".concat(_this124.getDismissReason(reason));
+              _this126.closeResult = "Dismissed ".concat(_this126.getDismissReason(reason));
             });
           }
         }, {
@@ -35657,7 +35700,7 @@
         }, {
           key: "blockUsers",
           value: function blockUsers(item, status) {
-            var _this125 = this;
+            var _this127 = this;
 
             console.log("item: ", item);
 
@@ -35673,16 +35716,16 @@
             };
             this.api.blockUsers(item._id, data).subscribe(function (response) {
               if (response['statusCode'] === 200) {
-                _this125.getUsers();
+                _this127.getUsers();
               } else {
-                _this125.toastr.error(response['message']);
+                _this127.toastr.error(response['message']);
               }
             });
           }
         }, {
           key: "deleteUser",
           value: function deleteUser(userModal, list) {
-            var _this126 = this;
+            var _this128 = this;
 
             // const message = 'Are you sure you want to delete ' + list.firstName + ' ' + list.lastName + ' ?';
             this.modalService.open(userModal, {
@@ -35690,25 +35733,25 @@
               centered: true,
               size: 'sm'
             }).result.then(function (result) {
-              _this126.closeResult = "Closed with: ".concat(result);
+              _this128.closeResult = "Closed with: ".concat(result);
 
               if (result) {
                 var data = {
                   id: list._id
                 };
 
-                _this126.api.deleteUser(list._id).subscribe(function (response) {
+                _this128.api.deleteUser(list._id).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this126.toastr.success(response['message']);
+                    _this128.toastr.success(response['message']);
 
-                    _this126.getUsers();
+                    _this128.getUsers();
                   } else {
-                    _this126.toastr.error(response['message']);
+                    _this128.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this126.closeResult = "Dismissed ".concat(_this126.getDismissReason(reason));
+              _this128.closeResult = "Dismissed ".concat(_this128.getDismissReason(reason));
             });
           }
         }, {
@@ -35728,29 +35771,29 @@
         }, {
           key: "applyFilter",
           value: function applyFilter(event) {
-            var _this127 = this;
+            var _this129 = this;
 
             window.clearTimeout(this.timer);
             this.timer = window.setTimeout(function () {
               var filterValue = event.target.value;
-              _this127.searchBy = filterValue;
-              _this127.pageIndex = 1;
+              _this129.searchBy = filterValue;
+              _this129.pageIndex = 1;
 
-              _this127.getUsers();
+              _this129.getUsers();
             }, 1000);
           } // This is for the first modal
 
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this128 = this;
+            var _this130 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this128.closeResult = "Closed with: ".concat(result);
+              _this130.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this128.closeResult = "Dismissed ".concat(_this128.getDismissReason(reason));
+              _this130.closeResult = "Dismissed ".concat(_this130.getDismissReason(reason));
             });
           }
         }, {
@@ -35814,7 +35857,7 @@
         }, {
           key: "sendFile",
           value: function sendFile(fileData) {
-            var _this129 = this;
+            var _this131 = this;
 
             var url = "uploadFile";
             var formdata = new FormData();
@@ -35823,12 +35866,12 @@
               console.log(res.data);
 
               if (res.statusCode == 200) {
-                _this129.toastr.success('File updated successfully');
+                _this131.toastr.success('File updated successfully');
 
                 console.log("upload data res=>>", res.data);
-                _this129.files = res.data.filePath;
+                _this131.files = res.data.filePath;
               } else {
-                _this129.toastr.error(res.message);
+                _this131.toastr.error(res.message);
               }
             });
           }
@@ -35849,7 +35892,7 @@
         }, {
           key: "UpadteUser",
           value: function UpadteUser() {
-            var _this130 = this;
+            var _this132 = this;
 
             this.submitted = true;
             var url = "users/".concat(this.objId);
@@ -35869,15 +35912,15 @@
             if (this.userForm.valid) {
               this.api.putApi(url, obj).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this130.submitted = false;
+                  _this132.submitted = false;
 
-                  _this130.toastr.success(res.message);
+                  _this132.toastr.success(res.message);
 
-                  _this130.getUsers();
+                  _this132.getUsers();
 
-                  _this130.modalService.dismissAll();
+                  _this132.modalService.dismissAll();
                 } else {
-                  _this130.toastr.error(res.message);
+                  _this132.toastr.error(res.message);
                 }
               });
             }
@@ -36862,14 +36905,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this131 = this;
+            var _this133 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this131.closeResult = "Closed with: ".concat(result);
+              _this133.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this131.closeResult = "Dismissed ".concat(_this131.getDismissReason(reason));
+              _this133.closeResult = "Dismissed ".concat(_this133.getDismissReason(reason));
             });
           }
         }, {

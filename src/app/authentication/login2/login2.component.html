@@ -22,11 +22,19 @@
                                 Email must be a valid e-mail address
                             </mat-error>
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="input-group form-group mb-3 inner-addon right-addon">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon2"><i class="fa fa-lock"></i></span>
                             </div>
-                            <input type="password" class="form-control form-control-lg" formControlName="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                                <input [type]="showPassword ? 'text' : 'password'" class="form-control form-control-lg" formControlName="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                                <div class="shw_pass">
+                                    <i alt="show" class="fa fa-eye" 
+                                    (click)="showPassword = !showPassword"
+                                    [class.hide]="showPassword"></i>
+                                    <i alt="hide" class="fa fa-eye-slash" 
+                                    (click)="showPassword = !showPassword"
+                                    [class.hide]="!showPassword"></i>
+                                  </div>
                             <mat-error class="form-text text-danger w-100" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">
                                 Please enter the password
                             </mat-error>

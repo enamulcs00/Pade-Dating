@@ -28,22 +28,27 @@ export class CalculatorComponent implements OnInit {
     return this.fb.group({
       creditLimit: new FormControl('',[Validators.required,Validators.pattern("^[0-9]*$")]),
       creditRate:new FormControl('',[Validators.required,Validators.pattern("^[0-9]*$")]),
+      _id:new FormControl(''),
     })
   }
   addRow(){
     this.pricing = this.FormMatrix.get('pricing') as FormArray;
     this.pricing.push(this.createRow());
   }
-  removeGroup(index){
-    this.pricing = this.FormMatrix.get('pricing') as FormArray;
-   this.pricing.removeAt(index);
+  removeGroup(index,a){
+    console.log(a,'Remove arr itm id');
+    if(a){
+      this.DeleteCard(a)
+    }else if(!a){
+      this.pricing = this.FormMatrix.get('pricing') as FormArray;
+      this.pricing.removeAt(index);
+    }
   }
   SavePackage()
   {
     
     console.log('Form',this.FormMatrix.value);
     let obj = {
-      
   }
     this.submitted = true
     let url = `credits`
@@ -53,7 +58,8 @@ export class CalculatorComponent implements OnInit {
       if(res.statusCode==200){
         this.submitted = false
         this.getPackages()
-        this.toastr.success(res.message)
+        this.toastr.success(res.message,'', {
+          timeOut: 700,})
       }else{
         this.toastr.error(res.message)
       }
@@ -77,7 +83,8 @@ export class CalculatorComponent implements OnInit {
         for (let x of res.data.doc) {
           control.push(this.fb.group({
             creditLimit: x.creditLimit,
-            creditRate: x.creditRate
+            creditRate: x.creditRate,
+            _id:x._id
           }));
         }
 			} else {
@@ -107,5 +114,20 @@ export class CalculatorComponent implements OnInit {
       }
       })
     }
+  }
+  DeleteCard(id){
+  
+    let url = `credits/${id}`
+     this.service.deleteApi(url).subscribe((res:any)=>{
+      if(res.statusCode==200){
+        this.getPackages()
+        this.submitted = false
+        this.toastr.success(res.message,'', {
+          timeOut: 700,})
+      }else{
+        this.toastr.error(res.message)
+      }
+      })
+    
   }
 }

@@ -142,4 +142,8 @@ this.router.navigate(['/login']);
 getToday(): string {
   return new Date().toISOString().split('T')[0]
   }
+  getCurrency()
+  {
+    return this.http.get<any>('assets/currencyUnit.json')
+  }
 }

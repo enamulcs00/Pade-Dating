@@ -1796,6 +1796,11 @@
           value: function getToday() {
             return new Date().toISOString().split('T')[0];
           }
+        }, {
+          key: "getCurrency",
+          value: function getCurrency() {
+            return this.http.get('assets/currencyUnit.json');
+          }
         }]);
 
         return ApiService;

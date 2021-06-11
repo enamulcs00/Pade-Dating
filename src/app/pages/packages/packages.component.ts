@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { Component, OnInit} from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {  ToastrService } from 'ngx-toastr';
+
 import { ApiService } from 'src/app/shared/services/api.service';
+
+
 @Component({
   selector: 'app-packages',
   templateUrl: './packages.component.html',
@@ -16,7 +19,18 @@ pageIndex :any= 1;
   packages: any;
   objId: any;
   id: any;
-  constructor(private toastr:ToastrService,private modalService: NgbModal,private fb:FormBuilder,public service:ApiService,private toast:ToastrService) {}
+  currencyArray: any;
+  currencySymbol: any;
+  
+  constructor(private toastr:ToastrService,private modalService: NgbModal,private fb:FormBuilder,public service:ApiService,private toast:ToastrService) {
+    this.service.getCurrency().subscribe((res:any)=>
+    {
+      console.log('Currency Res',res);
+      
+      this.currencyArray = res.currencyUnitArray
+      this.currencySymbol = res['INR'].symbol
+    })
+  }
   userForm = this.fb.group({
     name: new FormControl("", Validators.compose([Validators.required,
     Validators.maxLength(15)])),
@@ -25,13 +39,15 @@ pageIndex :any= 1;
       month: new FormControl("",Validators.compose([Validators.required])),
         price: this.fb.group({
           amount: new FormControl('', [Validators.required, Validators.maxLength(10)]),
-          units:new FormControl ('', [Validators.required, Validators.maxLength(1)]),
+          units:new FormControl ('', [Validators.required]),
         })
     })
   ngOnInit(): void {
     this.getPackages()
   }
   packageModal(item) {
+    this.userForm.reset()
+    this.submitted = false
     this.modalService.open(item, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
   }
   packagedelModal(item,id){
@@ -139,4 +155,5 @@ pageIndex :any= 1;
       }
     })
   }
+  
 }

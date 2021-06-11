@@ -94,10 +94,12 @@ export class ProfileComponent {
 				if (res['statusCode'] === 200) {
 					this.router.navigate(['dashboard'])
 					this.api.onUpdateUser.next("new data");
-					this.toastr.success(res["message"]);
+					this.toastr.success(res["message"],'', {
+						timeOut: 900,});
 					this.getProfile()
 				} else {
-					this.toastr.error(res["message"]);
+					this.toastr.error(res["message"],'', {
+						timeOut: 900,});
 				}
 			}, error => {
 				this.spinner.hide();

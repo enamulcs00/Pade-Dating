@@ -11,6 +11,8 @@ import { ApiService } from '../../shared/services/api.service';
 
 })
 export class Login2Component {
+	public showPassword: boolean;
+   public showPasswordOnPress: boolean;
 	submitted = false;
 	showLogin = true
 	forgotPwd = false
@@ -71,7 +73,7 @@ ngOnInit() {
 					this.flags.isLogin = false;
 					this.flags.isError = true;
 					this.toastr.error(response["message"],'', {
-						timeOut: 900,});
+						timeOut: 700,});
 				}
 			});
 		} else {
