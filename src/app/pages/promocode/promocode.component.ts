@@ -22,17 +22,16 @@ submitted:boolean = false
   giftList: any;
   giftForm:FormGroup
   gitfId: any;
-  constructor(private fb:FormBuilder,private modalService: NgbModal,private service:ApiService,private toast:ToastrService) {
+  constructor(private fb:FormBuilder,private modalService: NgbModal,public service:ApiService,private toast:ToastrService) {
 this.giftForm  = this.fb.group({
   cardName: new FormControl("", Validators.compose([Validators.required,
-  Validators.maxLength(15)])),
+  Validators.maxLength(15),Validators.pattern("^[a-zA-Z ]*$")])),
   cost: new FormControl("",Validators.compose([Validators.required,
     Validators.maxLength(10)])),
     cardsBought: new FormControl("",Validators.compose([Validators.required,Validators.maxLength(5)])),
     validFrom: new FormControl('', [Validators.required]),
     validTill:new FormControl ('', [Validators.required]),
-      
-  })
+    })
   }
 
   ngOnInit(): void {
@@ -62,6 +61,8 @@ userDetailModal(userDetail,item) {
   this.modalService.open(userDetail, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
 }
 addUserModal(addUser) {
+  this.submitted = false
+  this.giftForm.reset()
   this.modalService.open(addUser, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
 }
 private getDismissReason(reason: any): string {
@@ -72,6 +73,13 @@ private getDismissReason(reason: any): string {
   } else {
     return  `with: ${reason}`;
   }
+}
+public minValue(){
+  return this.giftForm.value.validFrom
+
+}
+public maxValue(){
+return this.giftForm.value.validTill
 }
 filterBy(ref){
 	this.status = ref
@@ -104,10 +112,10 @@ getUsers() {
 }
 addCard()
 {
-  console.log('Form',this.giftForm.value);
+  
   this.submitted = true
   let url = `giftCards`
-  if(this.giftForm.valid){
+  if(this.giftForm.valid && this.giftForm.controls['cost'].value.toString().length !=11 && this.giftForm.controls['cardsBought'].value.toString().length !=6){
     this.service.postApi(url,this.giftForm.value).subscribe((res:any)=>{
     if(res.statusCode==200){
       this.getUsers()
@@ -132,10 +140,10 @@ pageChange(event) {
    this.getUsers()
   }
 UpdateCard(){
-  console.log('Form',this.giftForm.value);
+  
   this.submitted = true
   let url = `giftCards/${this.gitfId}`
-  if(this.giftForm.valid){
+  if(this.giftForm.valid && this.giftForm.controls['cost'].value.toString().length !=11 && this.giftForm.controls['cardsBought'].value.toString().length !=6){
     this.service.putApi(url,this.giftForm.value).subscribe((res:any)=>{
     if(res.statusCode==200){
       this.getUsers()

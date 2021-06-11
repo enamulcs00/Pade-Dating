@@ -24545,863 +24545,6 @@
     },
 
     /***/
-    "./node_modules/ngx-spinner/__ivy_ngcc__/fesm2015/ngx-spinner.js":
-    /*!***********************************************************************!*\
-      !*** ./node_modules/ngx-spinner/__ivy_ngcc__/fesm2015/ngx-spinner.js ***!
-      \***********************************************************************/
-
-    /*! exports provided: DEFAULTS, LOADERS, NgxSpinner, NgxSpinnerComponent, NgxSpinnerModule, NgxSpinnerService, PRIMARY_SPINNER, ɵa */
-
-    /***/
-    function node_modulesNgxSpinner__ivy_ngcc__Fesm2015NgxSpinnerJs(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "DEFAULTS", function () {
-        return DEFAULTS;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "LOADERS", function () {
-        return LOADERS;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "NgxSpinner", function () {
-        return NgxSpinner;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "NgxSpinnerComponent", function () {
-        return NgxSpinnerComponent;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "NgxSpinnerModule", function () {
-        return NgxSpinnerModule;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "NgxSpinnerService", function () {
-        return NgxSpinnerService;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "PRIMARY_SPINNER", function () {
-        return PRIMARY_SPINNER;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ɵa", function () {
-        return SafeHtmlPipe;
-      });
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! @angular/core */
-      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-      /* harmony import */
-
-
-      var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! rxjs */
-      "./node_modules/rxjs/_esm2015/index.js");
-      /* harmony import */
-
-
-      var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! rxjs/operators */
-      "./node_modules/rxjs/_esm2015/operators/index.js");
-      /* harmony import */
-
-
-      var _angular_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @angular/animations */
-      "./node_modules/@angular/animations/__ivy_ngcc__/fesm2015/animations.js");
-      /* harmony import */
-
-
-      var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! @angular/common */
-      "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-      /* harmony import */
-
-
-      var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! @angular/platform-browser */
-      "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
-
-      var _c0 = ["overlay"];
-
-      function NgxSpinnerComponent_div_0_div_2_div_1_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div");
-        }
-      }
-
-      function NgxSpinnerComponent_div_0_div_2_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, NgxSpinnerComponent_div_0_div_2_div_1_Template, 1, 0, "div", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r2.spinner["class"]);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("color", ctx_r2.spinner.color);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r2.spinner.divArray);
-        }
-      }
-
-      function NgxSpinnerComponent_div_0_div_3_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](1, "safeHtml");
-        }
-
-        if (rf & 2) {
-          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](1, 1, ctx_r3.template), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
-        }
-      }
-
-      function NgxSpinnerComponent_div_0_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1, 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, NgxSpinnerComponent_div_0_div_2_Template, 2, 5, "div", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, NgxSpinnerComponent_div_0_div_3_Template, 2, 3, "div", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("background-color", ctx_r0.spinner.bdColor)("z-index", ctx_r0.spinner.zIndex)("position", ctx_r0.spinner.fullScreen ? "fixed" : "absolute");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("@.disabled", ctx_r0.disableAnimation)("@fadeIn", "in");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r0.template);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.template);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("z-index", ctx_r0.spinner.zIndex);
-        }
-      }
-
-      var _c1 = ["*"];
-      var LOADERS = {
-        'ball-8bits': 16,
-        'ball-atom': 4,
-        'ball-beat': 3,
-        'ball-circus': 5,
-        'ball-climbing-dot': 4,
-        'ball-clip-rotate': 1,
-        'ball-clip-rotate-multiple': 2,
-        'ball-clip-rotate-pulse': 2,
-        'ball-elastic-dots': 5,
-        'ball-fall': 3,
-        'ball-fussion': 4,
-        'ball-grid-beat': 9,
-        'ball-grid-pulse': 9,
-        'ball-newton-cradle': 4,
-        'ball-pulse': 3,
-        'ball-pulse-rise': 5,
-        'ball-pulse-sync': 3,
-        'ball-rotate': 1,
-        'ball-running-dots': 5,
-        'ball-scale': 1,
-        'ball-scale-multiple': 3,
-        'ball-scale-pulse': 2,
-        'ball-scale-ripple': 1,
-        'ball-scale-ripple-multiple': 3,
-        'ball-spin': 8,
-        'ball-spin-clockwise': 8,
-        'ball-spin-clockwise-fade': 8,
-        'ball-spin-clockwise-fade-rotating': 8,
-        'ball-spin-fade': 8,
-        'ball-spin-fade-rotating': 8,
-        'ball-spin-rotate': 2,
-        'ball-square-clockwise-spin': 8,
-        'ball-square-spin': 8,
-        'ball-triangle-path': 3,
-        'ball-zig-zag': 2,
-        'ball-zig-zag-deflect': 2,
-        'cog': 1,
-        'cube-transition': 2,
-        'fire': 3,
-        'line-scale': 5,
-        'line-scale-party': 5,
-        'line-scale-pulse-out': 5,
-        'line-scale-pulse-out-rapid': 5,
-        'line-spin-clockwise-fade': 8,
-        'line-spin-clockwise-fade-rotating': 8,
-        'line-spin-fade': 8,
-        'line-spin-fade-rotating': 8,
-        'pacman': 6,
-        'square-jelly-box': 2,
-        'square-loader': 1,
-        'square-spin': 1,
-        'timer': 1,
-        'triangle-skew-spin': 1
-      };
-      var DEFAULTS = {
-        BD_COLOR: 'rgba(51,51,51,0.8)',
-        SPINNER_COLOR: '#fff',
-        SPINNER_TYPE: 'ball-scale-multiple',
-        Z_INDEX: 99999
-      };
-      var PRIMARY_SPINNER = 'primary';
-
-      var NgxSpinner = function NgxSpinner(init) {
-        _classCallCheck(this, NgxSpinner);
-
-        Object.assign(this, init);
-      };
-
-      var NgxSpinnerService = /*#__PURE__*/function () {
-        /**
-         * Creates an instance of NgxSpinnerService.
-         * @memberof NgxSpinnerService
-         */
-        function NgxSpinnerService() {
-          _classCallCheck(this, NgxSpinnerService);
-
-          /**
-           * Spinner observable
-           *
-           * @memberof NgxSpinnerService
-           */
-          // private spinnerObservable = new ReplaySubject<NgxSpinner>(1);
-          this.spinnerObservable = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](null);
-        }
-        /**
-        * Get subscription of desired spinner
-        * @memberof NgxSpinnerService
-        **/
-
-
-        _createClass(NgxSpinnerService, [{
-          key: "getSpinner",
-          value: function getSpinner(name) {
-            return this.spinnerObservable.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(function (x) {
-              return x && x.name === name;
-            }));
-          }
-          /**
-           * To show spinner
-           *
-           * @memberof NgxSpinnerService
-           */
-
-        }, {
-          key: "show",
-          value: function show() {
-            var _this96 = this;
-
-            var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : PRIMARY_SPINNER;
-            var spinner = arguments.length > 1 ? arguments[1] : undefined;
-            return new Promise(function (resolve, _reject) {
-              setTimeout(function () {
-                if (spinner && Object.keys(spinner).length) {
-                  spinner['name'] = name;
-
-                  _this96.spinnerObservable.next(new NgxSpinner(Object.assign(Object.assign({}, spinner), {
-                    show: true
-                  })));
-
-                  resolve(true);
-                } else {
-                  _this96.spinnerObservable.next(new NgxSpinner({
-                    name: name,
-                    show: true
-                  }));
-
-                  resolve(true);
-                }
-              }, 10);
-            });
-          }
-          /**
-          * To hide spinner
-          *
-          * @memberof NgxSpinnerService
-          */
-
-        }, {
-          key: "hide",
-          value: function hide() {
-            var _this97 = this;
-
-            var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : PRIMARY_SPINNER;
-            var debounce = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
-            return new Promise(function (resolve, _reject) {
-              setTimeout(function () {
-                _this97.spinnerObservable.next(new NgxSpinner({
-                  name: name,
-                  show: false
-                }));
-
-                resolve(true);
-              }, debounce);
-            });
-          }
-        }]);
-
-        return NgxSpinnerService;
-      }();
-
-      NgxSpinnerService.ɵfac = function NgxSpinnerService_Factory(t) {
-        return new (t || NgxSpinnerService)();
-      };
-
-      NgxSpinnerService.ɵprov = Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"])({
-        factory: function NgxSpinnerService_Factory() {
-          return new NgxSpinnerService();
-        },
-        token: NgxSpinnerService,
-        providedIn: "root"
-      });
-
-      NgxSpinnerService.ctorParameters = function () {
-        return [];
-      };
-      /*@__PURE__*/
-
-
-      (function () {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxSpinnerService, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
-          args: [{
-            providedIn: 'root'
-          }]
-        }], function () {
-          return [];
-        }, null);
-      })();
-
-      var NgxSpinnerComponent = /*#__PURE__*/function () {
-        /**
-         * Creates an instance of NgxSpinnerComponent.
-         *
-         * @memberof NgxSpinnerComponent
-         */
-        function NgxSpinnerComponent(spinnerService, changeDetector) {
-          var _this98 = this;
-
-          _classCallCheck(this, NgxSpinnerComponent);
-
-          this.spinnerService = spinnerService;
-          this.changeDetector = changeDetector;
-          /**
-           * To enable/disable animation
-           *
-           * @type {boolean}
-           * @memberof NgxSpinnerComponent
-           */
-
-          this.disableAnimation = false;
-          /**
-           * Spinner Object
-           *
-           * @memberof NgxSpinnerComponent
-           */
-
-          this.spinner = new NgxSpinner();
-          /**
-           * Unsubscribe from spinner's observable
-           *
-           * @memberof NgxSpinnerComponent
-          **/
-
-          this.ngUnsubscribe = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
-          /**
-           * To set default ngx-spinner options
-           *
-           * @memberof NgxSpinnerComponent
-           */
-
-          this.setDefaultOptions = function () {
-            _this98.spinner = new NgxSpinner({
-              name: _this98.name,
-              bdColor: _this98.bdColor,
-              size: _this98.size,
-              color: _this98.color,
-              type: _this98.type,
-              fullScreen: _this98.fullScreen,
-              divArray: _this98.divArray,
-              divCount: _this98.divCount,
-              show: _this98.show,
-              zIndex: _this98.zIndex,
-              template: _this98.template,
-              showSpinner: _this98.showSpinner
-            });
-          };
-
-          this.bdColor = DEFAULTS.BD_COLOR;
-          this.zIndex = DEFAULTS.Z_INDEX;
-          this.color = DEFAULTS.SPINNER_COLOR;
-          this.type = DEFAULTS.SPINNER_TYPE;
-          this.size = 'large';
-          this.fullScreen = true;
-          this.name = PRIMARY_SPINNER;
-          this.template = null;
-          this.showSpinner = false;
-          this.divArray = [];
-          this.divCount = 0;
-          this.show = false;
-        }
-
-        _createClass(NgxSpinnerComponent, [{
-          key: "handleKeyboardEvent",
-          value: function handleKeyboardEvent(event) {
-            if (this.spinnerDOM && this.spinnerDOM.nativeElement) {
-              event.returnValue = false;
-              event.preventDefault();
-            }
-          }
-          /**
-           * Initialization method
-           *
-           * @memberof NgxSpinnerComponent
-           */
-
-        }, {
-          key: "ngOnInit",
-          value: function ngOnInit() {
-            var _this99 = this;
-
-            this.setDefaultOptions();
-            this.spinnerService.getSpinner(this.name).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.ngUnsubscribe)).subscribe(function (spinner) {
-              _this99.setDefaultOptions();
-
-              Object.assign(_this99.spinner, spinner);
-
-              if (spinner.show) {
-                _this99.onInputChange();
-              }
-
-              _this99.changeDetector.detectChanges();
-            });
-          }
-          /**
-           * On changes event for input variables
-           *
-           * @memberof NgxSpinnerComponent
-           */
-
-        }, {
-          key: "ngOnChanges",
-          value: function ngOnChanges(changes) {
-            for (var propName in changes) {
-              if (propName) {
-                var changedProp = changes[propName];
-
-                if (changedProp.isFirstChange()) {
-                  return;
-                } else if (typeof changedProp.currentValue !== 'undefined' && changedProp.currentValue !== changedProp.previousValue) {
-                  if (changedProp.currentValue !== '') {
-                    this.spinner[propName] = changedProp.currentValue;
-
-                    if (propName === 'showSpinner') {
-                      if (changedProp.currentValue) {
-                        this.spinnerService.show(this.spinner.name, this.spinner);
-                      } else {
-                        this.spinnerService.hide(this.spinner.name);
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-          /**
-           * To get class for spinner
-           *
-           * @memberof NgxSpinnerComponent
-           */
-
-        }, {
-          key: "getClass",
-          value: function getClass(type, size) {
-            this.spinner.divCount = LOADERS[type];
-            this.spinner.divArray = Array(this.spinner.divCount).fill(0).map(function (x, i) {
-              return i;
-            });
-            var sizeClass = '';
-
-            switch (size.toLowerCase()) {
-              case 'small':
-                sizeClass = 'la-sm';
-                break;
-
-              case 'medium':
-                sizeClass = 'la-2x';
-                break;
-
-              case 'large':
-                sizeClass = 'la-3x';
-                break;
-
-              default:
-                break;
-            }
-
-            return 'la-' + type + ' ' + sizeClass;
-          }
-          /**
-           * Check if input variables have changed
-           *
-           * @memberof NgxSpinnerComponent
-           */
-
-        }, {
-          key: "onInputChange",
-          value: function onInputChange() {
-            this.spinner["class"] = this.getClass(this.spinner.type, this.spinner.size);
-          }
-          /**
-           * Component destroy event
-           *
-           * @memberof NgxSpinnerComponent
-           */
-
-        }, {
-          key: "ngOnDestroy",
-          value: function ngOnDestroy() {
-            this.ngUnsubscribe.next();
-            this.ngUnsubscribe.complete();
-          }
-        }]);
-
-        return NgxSpinnerComponent;
-      }();
-
-      NgxSpinnerComponent.ɵfac = function NgxSpinnerComponent_Factory(t) {
-        return new (t || NgxSpinnerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](NgxSpinnerService), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]));
-      };
-
-      NgxSpinnerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-        type: NgxSpinnerComponent,
-        selectors: [["ngx-spinner"]],
-        viewQuery: function NgxSpinnerComponent_Query(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
-          }
-
-          if (rf & 2) {
-            var _t;
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.spinnerDOM = _t.first);
-          }
-        },
-        hostBindings: function NgxSpinnerComponent_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keydown", function NgxSpinnerComponent_keydown_HostBindingHandler($event) {
-              return ctx.handleKeyboardEvent($event);
-            }, false, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresolveDocument"]);
-          }
-        },
-        inputs: {
-          disableAnimation: "disableAnimation",
-          bdColor: "bdColor",
-          zIndex: "zIndex",
-          color: "color",
-          type: "type",
-          size: "size",
-          fullScreen: "fullScreen",
-          name: "name",
-          template: "template",
-          showSpinner: "showSpinner"
-        },
-        features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
-        ngContentSelectors: _c1,
-        decls: 1,
-        vars: 1,
-        consts: [["class", "ngx-spinner-overlay", 3, "background-color", "z-index", "position", 4, "ngIf"], [1, "ngx-spinner-overlay"], ["overlay", ""], [3, "class", "color", 4, "ngIf"], [3, "innerHTML", 4, "ngIf"], [1, "loading-text"], [4, "ngFor", "ngForOf"], [3, "innerHTML"]],
-        template: function NgxSpinnerComponent_Template(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, NgxSpinnerComponent_div_0_Template, 6, 12, "div", 0);
-          }
-
-          if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.spinner.show);
-          }
-        },
-        directives: function directives() {
-          return [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"]];
-        },
-        pipes: function pipes() {
-          return [SafeHtmlPipe];
-        },
-        styles: [".la-ball-8bits[_ngcontent-%COMP%], .la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-8bits[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-8bits.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-8bits[_ngcontent-%COMP%]{width:12px;height:12px}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;width:4px;height:4px;border-radius:0;opacity:0;transform:translate(100%,100%);-webkit-animation:ball-8bits 1s ease 0s infinite;animation:ball-8bits 1s ease 0s infinite}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-delay:-.9375s;animation-delay:-.9375s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:-.8125s;animation-delay:-.8125s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){-webkit-animation-delay:-.6875s;animation-delay:-.6875s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){-webkit-animation-delay:-.5625s;animation-delay:-.5625s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(9){-webkit-animation-delay:-.4375s;animation-delay:-.4375s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(10){-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(11){-webkit-animation-delay:-.3125s;animation-delay:-.3125s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(12){-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(13){-webkit-animation-delay:-.1875s;animation-delay:-.1875s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(14){-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(15){-webkit-animation-delay:-.0625s;animation-delay:-.0625s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(16){-webkit-animation-delay:0s;animation-delay:0s}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:-100%;left:0}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:-100%;left:33.3333333333%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:-66.6666666667%;left:66.6666666667%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:-33.3333333333%;left:100%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:0;left:100%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:33.3333333333%;left:100%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:66.6666666667%;left:66.6666666667%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:100%;left:33.3333333333%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(9){top:100%;left:0}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(10){top:100%;left:-33.3333333333%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(11){top:66.6666666667%;left:-66.6666666667%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(12){top:33.3333333333%;left:-100%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(13){top:0;left:-100%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(14){top:-33.3333333333%;left:-100%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(15){top:-66.6666666667%;left:-66.6666666667%}.la-ball-8bits[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(16){top:-100%;left:-33.3333333333%}.la-ball-8bits.la-sm[_ngcontent-%COMP%]{width:6px;height:6px}.la-ball-8bits.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:2px;height:2px}.la-ball-8bits.la-2x[_ngcontent-%COMP%]{width:24px;height:24px}.la-ball-8bits.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:8px;height:8px}.la-ball-8bits.la-3x[_ngcontent-%COMP%]{width:36px;height:36px}.la-ball-8bits.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:12px;height:12px}@-webkit-keyframes ball-8bits{0%{opacity:1}50%{opacity:1}51%{opacity:0}}@keyframes ball-8bits{0%{opacity:1}50%{opacity:1}51%{opacity:0}}.la-ball-atom[_ngcontent-%COMP%], .la-ball-atom[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-atom[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-atom.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-atom[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-atom[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-atom[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{position:absolute;top:50%;left:50%;z-index:1;width:60%;height:60%;background:#aaa;border-radius:100%;transform:translate(-50%,-50%);-webkit-animation:ball-atom-shrink 4.5s linear infinite;animation:ball-atom-shrink 4.5s linear infinite}.la-ball-atom[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child){position:absolute;left:0;z-index:0;width:100%;height:100%;background:none;-webkit-animation:ball-atom-zindex 1.5s steps(2) 0s infinite;animation:ball-atom-zindex 1.5s steps(2) 0s infinite}.la-ball-atom[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child):before{position:absolute;top:0;left:0;width:10px;height:10px;margin-top:-5px;margin-left:-5px;content:\"\";background:currentColor;border-radius:50%;opacity:.75;-webkit-animation:ball-atom-position 1.5s ease 0s infinite,ball-atom-size 1.5s ease 0s infinite;animation:ball-atom-position 1.5s ease 0s infinite,ball-atom-size 1.5s ease 0s infinite}.la-ball-atom[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:.75s;animation-delay:.75s}.la-ball-atom[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2):before{-webkit-animation-delay:0s,-1.125s;animation-delay:0s,-1.125s}.la-ball-atom[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){transform:rotate(120deg);-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-atom[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3):before{-webkit-animation-delay:-1s,-.75s;animation-delay:-1s,-.75s}.la-ball-atom[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){transform:rotate(240deg);-webkit-animation-delay:.25s;animation-delay:.25s}.la-ball-atom[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4):before{-webkit-animation-delay:-.5s,-.125s;animation-delay:-.5s,-.125s}.la-ball-atom.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-atom.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child):before{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-atom.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-atom.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child):before{width:20px;height:20px;margin-top:-10px;margin-left:-10px}.la-ball-atom.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-atom.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child):before{width:30px;height:30px;margin-top:-15px;margin-left:-15px}@-webkit-keyframes ball-atom-position{50%{top:100%;left:100%}}@keyframes ball-atom-position{50%{top:100%;left:100%}}@-webkit-keyframes ball-atom-size{50%{transform:scale(.5)}}@keyframes ball-atom-size{50%{transform:scale(.5)}}@-webkit-keyframes ball-atom-zindex{50%{z-index:10}}@keyframes ball-atom-zindex{50%{z-index:10}}@-webkit-keyframes ball-atom-shrink{50%{transform:translate(-50%,-50%) scale(.8)}}@keyframes ball-atom-shrink{50%{transform:translate(-50%,-50%) scale(.8)}}.la-ball-beat[_ngcontent-%COMP%], .la-ball-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-beat[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-beat.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-beat[_ngcontent-%COMP%]{width:54px;height:18px}.la-ball-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:10px;height:10px;margin:4px;border-radius:100%;-webkit-animation:ball-beat .7s linear -.15s infinite;animation:ball-beat .7s linear -.15s infinite}.la-ball-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2n-1){-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-beat.la-sm[_ngcontent-%COMP%]{width:26px;height:8px}.la-ball-beat.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin:2px}.la-ball-beat.la-2x[_ngcontent-%COMP%]{width:108px;height:36px}.la-ball-beat.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px;margin:8px}.la-ball-beat.la-3x[_ngcontent-%COMP%]{width:162px;height:54px}.la-ball-beat.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px;margin:12px}@-webkit-keyframes ball-beat{50%{opacity:.2;transform:scale(.75)}to{opacity:1;transform:scale(1)}}@keyframes ball-beat{50%{opacity:.2;transform:scale(.75)}to{opacity:1;transform:scale(1)}}.la-ball-circus[_ngcontent-%COMP%], .la-ball-circus[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-circus[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-circus.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-circus[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-circus[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-circus[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:0;left:-100%;display:block;width:16px;width:100%;height:16px;height:100%;border-radius:100%;opacity:.5;-webkit-animation:ball-circus-position 2.5s cubic-bezier(.25,0,.75,1) infinite,ball-circus-size 2.5s cubic-bezier(.25,0,.75,1) infinite;animation:ball-circus-position 2.5s cubic-bezier(.25,0,.75,1) infinite,ball-circus-size 2.5s cubic-bezier(.25,0,.75,1) infinite}.la-ball-circus[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-delay:0s,-.5s;animation-delay:0s,-.5s}.la-ball-circus[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:-.5s,-1s;animation-delay:-.5s,-1s}.la-ball-circus[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:-1s,-1.5s;animation-delay:-1s,-1.5s}.la-ball-circus[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){-webkit-animation-delay:-1.5s,-2s;animation-delay:-1.5s,-2s}.la-ball-circus[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){-webkit-animation-delay:-2s,-2.5s;animation-delay:-2s,-2.5s}.la-ball-circus.la-sm[_ngcontent-%COMP%], .la-ball-circus.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:8px;height:8px}.la-ball-circus.la-2x[_ngcontent-%COMP%], .la-ball-circus.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-circus.la-3x[_ngcontent-%COMP%], .la-ball-circus.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:48px;height:48px}@-webkit-keyframes ball-circus-position{50%{left:100%}}@keyframes ball-circus-position{50%{left:100%}}@-webkit-keyframes ball-circus-size{50%{transform:scale(.3)}}@keyframes ball-circus-size{50%{transform:scale(.3)}}.la-ball-climbing-dot[_ngcontent-%COMP%], .la-ball-climbing-dot[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-climbing-dot[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-climbing-dot.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-climbing-dot[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-climbing-dot[_ngcontent-%COMP%]{width:42px;height:32px}.la-ball-climbing-dot[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{position:absolute;bottom:32%;left:18%;width:14px;height:14px;border-radius:100%;transform-origin:center bottom;-webkit-animation:ball-climbing-dot-jump .6s ease-in-out infinite;animation:ball-climbing-dot-jump .6s ease-in-out infinite}.la-ball-climbing-dot[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child){position:absolute;top:0;right:0;width:14px;height:2px;border-radius:0;transform:translate(60%);-webkit-animation:ball-climbing-dot-steps 1.8s linear infinite;animation:ball-climbing-dot-steps 1.8s linear infinite}.la-ball-climbing-dot[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child):nth-child(2){-webkit-animation-delay:0ms;animation-delay:0ms}.la-ball-climbing-dot[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child):nth-child(3){-webkit-animation-delay:-.6s;animation-delay:-.6s}.la-ball-climbing-dot[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child):nth-child(4){-webkit-animation-delay:-1.2s;animation-delay:-1.2s}.la-ball-climbing-dot.la-sm[_ngcontent-%COMP%]{width:20px;height:16px}.la-ball-climbing-dot.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{width:6px;height:6px}.la-ball-climbing-dot.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child){width:6px;height:1px}.la-ball-climbing-dot.la-2x[_ngcontent-%COMP%]{width:84px;height:64px}.la-ball-climbing-dot.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{width:28px;height:28px}.la-ball-climbing-dot.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child){width:28px;height:4px}.la-ball-climbing-dot.la-3x[_ngcontent-%COMP%]{width:126px;height:96px}.la-ball-climbing-dot.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{width:42px;height:42px}.la-ball-climbing-dot.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(:first-child){width:42px;height:6px}@-webkit-keyframes ball-climbing-dot-jump{0%{transform:scaleY(.7)}20%{transform:scale(.7,1.2)}40%{transform:scale(1)}50%{bottom:125%}46%{transform:scale(1)}80%{transform:scale(.7,1.2)}90%{transform:scale(.7,1.2)}to{transform:scaleY(.7)}}@keyframes ball-climbing-dot-jump{0%{transform:scaleY(.7)}20%{transform:scale(.7,1.2)}40%{transform:scale(1)}50%{bottom:125%}46%{transform:scale(1)}80%{transform:scale(.7,1.2)}90%{transform:scale(.7,1.2)}to{transform:scaleY(.7)}}@-webkit-keyframes ball-climbing-dot-steps{0%{top:0;right:0;opacity:0}50%{opacity:1}to{top:100%;right:100%;opacity:0}}@keyframes ball-climbing-dot-steps{0%{top:0;right:0;opacity:0}50%{opacity:1}to{top:100%;right:100%;opacity:0}}.la-ball-clip-rotate-multiple[_ngcontent-%COMP%], .la-ball-clip-rotate-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-clip-rotate-multiple[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-clip-rotate-multiple.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-clip-rotate-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-clip-rotate-multiple[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-clip-rotate-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;background:transparent;border-style:solid;border-width:2px;border-radius:100%;-webkit-animation:ball-clip-rotate-multiple-rotate 1s ease-in-out infinite;animation:ball-clip-rotate-multiple-rotate 1s ease-in-out infinite}.la-ball-clip-rotate-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{position:absolute;width:32px;height:32px;border-right-color:transparent;border-left-color:transparent}.la-ball-clip-rotate-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{width:16px;height:16px;border-top-color:transparent;border-bottom-color:transparent;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-direction:reverse;animation-direction:reverse}.la-ball-clip-rotate-multiple.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-clip-rotate-multiple.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:1px}.la-ball-clip-rotate-multiple.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{width:16px;height:16px}.la-ball-clip-rotate-multiple.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{width:8px;height:8px}.la-ball-clip-rotate-multiple.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-clip-rotate-multiple.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:4px}.la-ball-clip-rotate-multiple.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{width:64px;height:64px}.la-ball-clip-rotate-multiple.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{width:32px;height:32px}.la-ball-clip-rotate-multiple.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-clip-rotate-multiple.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:6px}.la-ball-clip-rotate-multiple.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{width:96px;height:96px}.la-ball-clip-rotate-multiple.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{width:48px;height:48px}@-webkit-keyframes ball-clip-rotate-multiple-rotate{0%{transform:translate(-50%,-50%) rotate(0deg)}50%{transform:translate(-50%,-50%) rotate(180deg)}to{transform:translate(-50%,-50%) rotate(1turn)}}@keyframes ball-clip-rotate-multiple-rotate{0%{transform:translate(-50%,-50%) rotate(0deg)}50%{transform:translate(-50%,-50%) rotate(180deg)}to{transform:translate(-50%,-50%) rotate(1turn)}}.la-ball-clip-rotate-pulse[_ngcontent-%COMP%], .la-ball-clip-rotate-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-clip-rotate-pulse[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-clip-rotate-pulse.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-clip-rotate-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-clip-rotate-pulse[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-clip-rotate-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;border-radius:100%}.la-ball-clip-rotate-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{position:absolute;width:32px;height:32px;background:transparent;border-bottom-style:solid;border-top-style:solid;border-bottom-width:2px;border-top-width:2px;border-right:2px solid transparent;border-left:2px solid transparent;-webkit-animation:ball-clip-rotate-pulse-rotate 1s cubic-bezier(.09,.57,.49,.9) infinite;animation:ball-clip-rotate-pulse-rotate 1s cubic-bezier(.09,.57,.49,.9) infinite}.la-ball-clip-rotate-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{width:16px;height:16px;-webkit-animation:ball-clip-rotate-pulse-scale 1s cubic-bezier(.09,.57,.49,.9) infinite;animation:ball-clip-rotate-pulse-scale 1s cubic-bezier(.09,.57,.49,.9) infinite}.la-ball-clip-rotate-pulse.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-clip-rotate-pulse.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{width:16px;height:16px;border-width:1px}.la-ball-clip-rotate-pulse.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{width:8px;height:8px}.la-ball-clip-rotate-pulse.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-clip-rotate-pulse.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{width:64px;height:64px;border-width:4px}.la-ball-clip-rotate-pulse.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{width:32px;height:32px}.la-ball-clip-rotate-pulse.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-clip-rotate-pulse.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{width:96px;height:96px;border-width:6px}.la-ball-clip-rotate-pulse.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{width:48px;height:48px}@-webkit-keyframes ball-clip-rotate-pulse-rotate{0%{transform:translate(-50%,-50%) rotate(0deg)}50%{transform:translate(-50%,-50%) rotate(180deg)}to{transform:translate(-50%,-50%) rotate(1turn)}}@keyframes ball-clip-rotate-pulse-rotate{0%{transform:translate(-50%,-50%) rotate(0deg)}50%{transform:translate(-50%,-50%) rotate(180deg)}to{transform:translate(-50%,-50%) rotate(1turn)}}@-webkit-keyframes ball-clip-rotate-pulse-scale{0%,to{opacity:1;transform:translate(-50%,-50%) scale(1)}30%{opacity:.3;transform:translate(-50%,-50%) scale(.15)}}@keyframes ball-clip-rotate-pulse-scale{0%,to{opacity:1;transform:translate(-50%,-50%) scale(1)}30%{opacity:.3;transform:translate(-50%,-50%) scale(.15)}}.la-ball-clip-rotate[_ngcontent-%COMP%], .la-ball-clip-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-clip-rotate[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-clip-rotate.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-clip-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-clip-rotate[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-clip-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:32px;height:32px;background:transparent;border-width:2px;border-bottom-color:transparent;border-radius:100%;-webkit-animation:ball-clip-rotate .75s linear infinite;animation:ball-clip-rotate .75s linear infinite}.la-ball-clip-rotate.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-clip-rotate.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px;border-width:1px}.la-ball-clip-rotate.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-clip-rotate.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:64px;height:64px;border-width:4px}.la-ball-clip-rotate.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-clip-rotate.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:96px;height:96px;border-width:6px}@-webkit-keyframes ball-clip-rotate{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}to{transform:rotate(1turn)}}@keyframes ball-clip-rotate{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}to{transform:rotate(1turn)}}.la-ball-elastic-dots[_ngcontent-%COMP%], .la-ball-elastic-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-elastic-dots[_ngcontent-%COMP%]{display:block;color:#fff}.la-ball-elastic-dots.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-elastic-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{float:none;background-color:currentColor;border:0 solid}.la-ball-elastic-dots[_ngcontent-%COMP%]{width:120px;height:10px;font-size:0;text-align:center}.la-ball-elastic-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;width:10px;height:10px;white-space:nowrap;border-radius:100%;-webkit-animation:ball-elastic-dots-anim 1s infinite;animation:ball-elastic-dots-anim 1s infinite}.la-ball-elastic-dots.la-sm[_ngcontent-%COMP%]{width:60px;height:4px}.la-ball-elastic-dots.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px}.la-ball-elastic-dots.la-2x[_ngcontent-%COMP%]{width:240px;height:20px}.la-ball-elastic-dots.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px}.la-ball-elastic-dots.la-3x[_ngcontent-%COMP%]{width:360px;height:30px}.la-ball-elastic-dots.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px}@-webkit-keyframes ball-elastic-dots-anim{0%,to{margin:0;transform:scale(1)}50%{margin:0 5%;transform:scale(.65)}}@keyframes ball-elastic-dots-anim{0%,to{margin:0;transform:scale(1)}50%{margin:0 5%;transform:scale(.65)}}.la-ball-fall[_ngcontent-%COMP%], .la-ball-fall[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-fall[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-fall.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-fall[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-fall[_ngcontent-%COMP%]{width:54px;height:18px}.la-ball-fall[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:10px;height:10px;margin:4px;border-radius:100%;opacity:0;-webkit-animation:ball-fall 1s ease-in-out infinite;animation:ball-fall 1s ease-in-out infinite}.la-ball-fall[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-delay:-.2s;animation-delay:-.2s}.la-ball-fall[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:-.1s;animation-delay:-.1s}.la-ball-fall[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:0ms;animation-delay:0ms}.la-ball-fall.la-sm[_ngcontent-%COMP%]{width:26px;height:8px}.la-ball-fall.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin:2px}.la-ball-fall.la-2x[_ngcontent-%COMP%]{width:108px;height:36px}.la-ball-fall.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px;margin:8px}.la-ball-fall.la-3x[_ngcontent-%COMP%]{width:162px;height:54px}.la-ball-fall.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px;margin:12px}@-webkit-keyframes ball-fall{0%{opacity:0;transform:translateY(-145%)}10%{opacity:.5}20%{opacity:1;transform:translateY(0)}80%{opacity:1;transform:translateY(0)}90%{opacity:.5}to{opacity:0;transform:translateY(145%)}}@keyframes ball-fall{0%{opacity:0;transform:translateY(-145%)}10%{opacity:.5}20%{opacity:1;transform:translateY(0)}80%{opacity:1;transform:translateY(0)}90%{opacity:.5}to{opacity:0;transform:translateY(145%)}}.la-ball-fussion[_ngcontent-%COMP%], .la-ball-fussion[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-fussion[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-fussion.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-fussion[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-fussion[_ngcontent-%COMP%]{width:8px;height:8px}.la-ball-fussion[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;width:12px;height:12px;border-radius:100%;transform:translate(-50%,-50%);-webkit-animation:ball-fussion-ball1 1s ease 0s infinite;animation:ball-fussion-ball1 1s ease 0s infinite}.la-ball-fussion[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:0;left:50%;z-index:1}.la-ball-fussion[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:50%;left:100%;z-index:2;-webkit-animation-name:ball-fussion-ball2;animation-name:ball-fussion-ball2}.la-ball-fussion[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:100%;left:50%;z-index:1;-webkit-animation-name:ball-fussion-ball3;animation-name:ball-fussion-ball3}.la-ball-fussion[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:50%;left:0;z-index:2;-webkit-animation-name:ball-fussion-ball4;animation-name:ball-fussion-ball4}.la-ball-fussion.la-sm[_ngcontent-%COMP%]{width:4px;height:4px}.la-ball-fussion.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:6px;height:6px}.la-ball-fussion.la-2x[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-fussion.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%], .la-ball-fussion.la-3x[_ngcontent-%COMP%]{width:24px;height:24px}.la-ball-fussion.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:36px;height:36px}@-webkit-keyframes ball-fussion-ball1{0%{opacity:.35}50%{top:-100%;left:200%;opacity:1}to{top:50%;left:100%;z-index:2;opacity:.35}}@keyframes ball-fussion-ball1{0%{opacity:.35}50%{top:-100%;left:200%;opacity:1}to{top:50%;left:100%;z-index:2;opacity:.35}}@-webkit-keyframes ball-fussion-ball2{0%{opacity:.35}50%{top:200%;left:200%;opacity:1}to{top:100%;left:50%;z-index:1;opacity:.35}}@keyframes ball-fussion-ball2{0%{opacity:.35}50%{top:200%;left:200%;opacity:1}to{top:100%;left:50%;z-index:1;opacity:.35}}@-webkit-keyframes ball-fussion-ball3{0%{opacity:.35}50%{top:200%;left:-100%;opacity:1}to{top:50%;left:0;z-index:2;opacity:.35}}@keyframes ball-fussion-ball3{0%{opacity:.35}50%{top:200%;left:-100%;opacity:1}to{top:50%;left:0;z-index:2;opacity:.35}}@-webkit-keyframes ball-fussion-ball4{0%{opacity:.35}50%{top:-100%;left:-100%;opacity:1}to{top:0;left:50%;z-index:1;opacity:.35}}@keyframes ball-fussion-ball4{0%{opacity:.35}50%{top:-100%;left:-100%;opacity:1}to{top:0;left:50%;z-index:1;opacity:.35}}.la-ball-grid-beat[_ngcontent-%COMP%], .la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-grid-beat[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-grid-beat.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-grid-beat[_ngcontent-%COMP%]{width:36px;height:36px}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:8px;height:8px;margin:2px;border-radius:100%;-webkit-animation-name:ball-grid-beat;animation-name:ball-grid-beat;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-duration:.65s;animation-duration:.65s;-webkit-animation-delay:.03s;animation-delay:.03s}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-duration:1.02s;animation-duration:1.02s;-webkit-animation-delay:.09s;animation-delay:.09s}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-duration:1.06s;animation-duration:1.06s;-webkit-animation-delay:-.69s;animation-delay:-.69s}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){-webkit-animation-duration:1.5s;animation-duration:1.5s;-webkit-animation-delay:-.41s;animation-delay:-.41s}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){-webkit-animation-duration:1.6s;animation-duration:1.6s;-webkit-animation-delay:.04s;animation-delay:.04s}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){-webkit-animation-duration:.84s;animation-duration:.84s;-webkit-animation-delay:.07s;animation-delay:.07s}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){-webkit-animation-duration:.68s;animation-duration:.68s;-webkit-animation-delay:-.66s;animation-delay:-.66s}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){-webkit-animation-duration:.93s;animation-duration:.93s}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8), .la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(9){-webkit-animation-delay:-.76s;animation-delay:-.76s}.la-ball-grid-beat[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(9){-webkit-animation-duration:1.24s;animation-duration:1.24s}.la-ball-grid-beat.la-sm[_ngcontent-%COMP%]{width:18px;height:18px}.la-ball-grid-beat.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin:1px}.la-ball-grid-beat.la-2x[_ngcontent-%COMP%]{width:72px;height:72px}.la-ball-grid-beat.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px;margin:4px}.la-ball-grid-beat.la-3x[_ngcontent-%COMP%]{width:108px;height:108px}.la-ball-grid-beat.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:24px;height:24px;margin:6px}@-webkit-keyframes ball-grid-beat{0%{opacity:1}50%{opacity:.35}to{opacity:1}}@keyframes ball-grid-beat{0%{opacity:1}50%{opacity:.35}to{opacity:1}}.la-ball-grid-pulse[_ngcontent-%COMP%], .la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-grid-pulse[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-grid-pulse.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-grid-pulse[_ngcontent-%COMP%]{width:36px;height:36px}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:8px;height:8px;margin:2px;border-radius:100%;-webkit-animation-name:ball-grid-pulse;animation-name:ball-grid-pulse;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-duration:.65s;animation-duration:.65s;-webkit-animation-delay:.03s;animation-delay:.03s}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-duration:1.02s;animation-duration:1.02s;-webkit-animation-delay:.09s;animation-delay:.09s}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-duration:1.06s;animation-duration:1.06s;-webkit-animation-delay:-.69s;animation-delay:-.69s}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){-webkit-animation-duration:1.5s;animation-duration:1.5s;-webkit-animation-delay:-.41s;animation-delay:-.41s}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){-webkit-animation-duration:1.6s;animation-duration:1.6s;-webkit-animation-delay:.04s;animation-delay:.04s}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){-webkit-animation-duration:.84s;animation-duration:.84s;-webkit-animation-delay:.07s;animation-delay:.07s}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){-webkit-animation-duration:.68s;animation-duration:.68s;-webkit-animation-delay:-.66s;animation-delay:-.66s}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){-webkit-animation-duration:.93s;animation-duration:.93s}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8), .la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(9){-webkit-animation-delay:-.76s;animation-delay:-.76s}.la-ball-grid-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(9){-webkit-animation-duration:1.24s;animation-duration:1.24s}.la-ball-grid-pulse.la-sm[_ngcontent-%COMP%]{width:18px;height:18px}.la-ball-grid-pulse.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin:1px}.la-ball-grid-pulse.la-2x[_ngcontent-%COMP%]{width:72px;height:72px}.la-ball-grid-pulse.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px;margin:4px}.la-ball-grid-pulse.la-3x[_ngcontent-%COMP%]{width:108px;height:108px}.la-ball-grid-pulse.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:24px;height:24px;margin:6px}@-webkit-keyframes ball-grid-pulse{0%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.45)}to{opacity:1;transform:scale(1)}}@keyframes ball-grid-pulse{0%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.45)}to{opacity:1;transform:scale(1)}}.la-ball-newton-cradle[_ngcontent-%COMP%], .la-ball-newton-cradle[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-newton-cradle[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-newton-cradle.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-newton-cradle[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-newton-cradle[_ngcontent-%COMP%]{width:40px;height:10px}.la-ball-newton-cradle[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:10px;height:10px;border-radius:100%}.la-ball-newton-cradle[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation:ball-newton-cradle-left 1s ease-out 0s infinite;animation:ball-newton-cradle-left 1s ease-out 0s infinite}.la-ball-newton-cradle[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child, .la-ball-newton-cradle[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{transform:translateX(0)}.la-ball-newton-cradle[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{-webkit-animation:ball-newton-cradle-right 1s ease-out 0s infinite;animation:ball-newton-cradle-right 1s ease-out 0s infinite}.la-ball-newton-cradle.la-sm[_ngcontent-%COMP%]{width:20px;height:4px}.la-ball-newton-cradle.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px}.la-ball-newton-cradle.la-2x[_ngcontent-%COMP%]{width:80px;height:20px}.la-ball-newton-cradle.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px}.la-ball-newton-cradle.la-3x[_ngcontent-%COMP%]{width:120px;height:30px}.la-ball-newton-cradle.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px}@-webkit-keyframes ball-newton-cradle-left{25%{transform:translateX(-100%);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}50%{transform:translateX(0)}}@keyframes ball-newton-cradle-left{25%{transform:translateX(-100%);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}50%{transform:translateX(0)}}@-webkit-keyframes ball-newton-cradle-right{50%{transform:translateX(0)}75%{transform:translateX(100%);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}to{transform:translateX(0)}}@keyframes ball-newton-cradle-right{50%{transform:translateX(0)}75%{transform:translateX(100%);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}to{transform:translateX(0)}}.la-ball-pulse-rise[_ngcontent-%COMP%], .la-ball-pulse-rise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-pulse-rise[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-pulse-rise.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-pulse-rise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-pulse-rise[_ngcontent-%COMP%]{width:70px;height:14px}.la-ball-pulse-rise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:10px;height:10px;margin:2px;border-radius:100%;-webkit-animation:ball-pulse-rise-even 1s cubic-bezier(.15,.36,.9,.6) 0s infinite;animation:ball-pulse-rise-even 1s cubic-bezier(.15,.36,.9,.6) 0s infinite}.la-ball-pulse-rise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2n-1){-webkit-animation-name:ball-pulse-rise-odd;animation-name:ball-pulse-rise-odd}.la-ball-pulse-rise.la-sm[_ngcontent-%COMP%]{width:34px;height:6px}.la-ball-pulse-rise.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin:1px}.la-ball-pulse-rise.la-2x[_ngcontent-%COMP%]{width:140px;height:28px}.la-ball-pulse-rise.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px;margin:4px}.la-ball-pulse-rise.la-3x[_ngcontent-%COMP%]{width:210px;height:42px}.la-ball-pulse-rise.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px;margin:6px}@-webkit-keyframes ball-pulse-rise-even{0%{opacity:1;transform:scale(1.1)}25%{transform:translateY(-200%)}50%{opacity:.35;transform:scale(.3)}75%{transform:translateY(200%)}to{opacity:1;transform:translateY(0);transform:scale(1)}}@keyframes ball-pulse-rise-even{0%{opacity:1;transform:scale(1.1)}25%{transform:translateY(-200%)}50%{opacity:.35;transform:scale(.3)}75%{transform:translateY(200%)}to{opacity:1;transform:translateY(0);transform:scale(1)}}@-webkit-keyframes ball-pulse-rise-odd{0%{opacity:.35;transform:scale(.4)}25%{transform:translateY(200%)}50%{opacity:1;transform:scale(1.1)}75%{transform:translateY(-200%)}to{opacity:.35;transform:translateY(0);transform:scale(.75)}}@keyframes ball-pulse-rise-odd{0%{opacity:.35;transform:scale(.4)}25%{transform:translateY(200%)}50%{opacity:1;transform:scale(1.1)}75%{transform:translateY(-200%)}to{opacity:.35;transform:translateY(0);transform:scale(.75)}}.la-ball-pulse-sync[_ngcontent-%COMP%], .la-ball-pulse-sync[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-pulse-sync[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-pulse-sync.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-pulse-sync[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-pulse-sync[_ngcontent-%COMP%]{width:54px;height:18px}.la-ball-pulse-sync[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:10px;height:10px;margin:4px;border-radius:100%;-webkit-animation:ball-pulse-sync .6s ease-in-out infinite;animation:ball-pulse-sync .6s ease-in-out infinite}.la-ball-pulse-sync[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-delay:-.14s;animation-delay:-.14s}.la-ball-pulse-sync[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:-.07s;animation-delay:-.07s}.la-ball-pulse-sync[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:0s;animation-delay:0s}.la-ball-pulse-sync.la-sm[_ngcontent-%COMP%]{width:26px;height:8px}.la-ball-pulse-sync.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin:2px}.la-ball-pulse-sync.la-2x[_ngcontent-%COMP%]{width:108px;height:36px}.la-ball-pulse-sync.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px;margin:8px}.la-ball-pulse-sync.la-3x[_ngcontent-%COMP%]{width:162px;height:54px}.la-ball-pulse-sync.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px;margin:12px}@-webkit-keyframes ball-pulse-sync{33%{transform:translateY(100%)}66%{transform:translateY(-100%)}to{transform:translateY(0)}}@keyframes ball-pulse-sync{33%{transform:translateY(100%)}66%{transform:translateY(-100%)}to{transform:translateY(0)}}.la-ball-pulse[_ngcontent-%COMP%], .la-ball-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-pulse[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-pulse.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-pulse[_ngcontent-%COMP%]{width:54px;height:18px}.la-ball-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-delay:-.2s;animation-delay:-.2s}.la-ball-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:-.1s;animation-delay:-.1s}.la-ball-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:0ms;animation-delay:0ms}.la-ball-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:10px;height:10px;margin:4px;border-radius:100%;-webkit-animation:ball-pulse 1s ease infinite;animation:ball-pulse 1s ease infinite}.la-ball-pulse.la-sm[_ngcontent-%COMP%]{width:26px;height:8px}.la-ball-pulse.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin:2px}.la-ball-pulse.la-2x[_ngcontent-%COMP%]{width:108px;height:36px}.la-ball-pulse.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px;margin:8px}.la-ball-pulse.la-3x[_ngcontent-%COMP%]{width:162px;height:54px}.la-ball-pulse.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px;margin:12px}@-webkit-keyframes ball-pulse{0%,60%,to{opacity:1;transform:scale(1)}30%{opacity:.1;transform:scale(.01)}}@keyframes ball-pulse{0%,60%,to{opacity:1;transform:scale(1)}30%{opacity:.1;transform:scale(.01)}}.la-ball-rotate[_ngcontent-%COMP%], .la-ball-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-rotate[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-rotate.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-rotate[_ngcontent-%COMP%], .la-ball-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:10px;height:10px}.la-ball-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-radius:100%;-webkit-animation:ball-rotate-animation 1s cubic-bezier(.7,-.13,.22,.86) infinite;animation:ball-rotate-animation 1s cubic-bezier(.7,-.13,.22,.86) infinite}.la-ball-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after, .la-ball-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:before{position:absolute;width:inherit;height:inherit;margin:inherit;content:\"\";background:currentColor;border-radius:inherit;opacity:.8}.la-ball-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:before{top:0;left:-150%}.la-ball-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after{top:0;left:150%}.la-ball-rotate.la-sm[_ngcontent-%COMP%], .la-ball-rotate.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px}.la-ball-rotate.la-2x[_ngcontent-%COMP%], .la-ball-rotate.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px}.la-ball-rotate.la-3x[_ngcontent-%COMP%], .la-ball-rotate.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px}@-webkit-keyframes ball-rotate-animation{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}to{transform:rotate(1turn)}}@keyframes ball-rotate-animation{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}to{transform:rotate(1turn)}}.la-ball-running-dots[_ngcontent-%COMP%], .la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-running-dots[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-running-dots.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-running-dots[_ngcontent-%COMP%]{width:10px;height:10px}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;width:10px;height:10px;margin-left:-25px;border-radius:100%;-webkit-animation:ball-running-dots-animate 2s linear infinite;animation:ball-running-dots-animate 2s linear infinite}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-delay:0s;animation-delay:0s}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:-.4s;animation-delay:-.4s}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:-.8s;animation-delay:-.8s}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){-webkit-animation-delay:-1.2s;animation-delay:-1.2s}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){-webkit-animation-delay:-1.6s;animation-delay:-1.6s}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){-webkit-animation-delay:-2s;animation-delay:-2s}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){-webkit-animation-delay:-2.4s;animation-delay:-2.4s}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){-webkit-animation-delay:-2.8s;animation-delay:-2.8s}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(9){-webkit-animation-delay:-3.2s;animation-delay:-3.2s}.la-ball-running-dots[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(10){-webkit-animation-delay:-3.6s;animation-delay:-3.6s}.la-ball-running-dots.la-sm[_ngcontent-%COMP%]{width:4px;height:4px}.la-ball-running-dots.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin-left:-12px}.la-ball-running-dots.la-2x[_ngcontent-%COMP%]{width:20px;height:20px}.la-ball-running-dots.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px;margin-left:-50px}.la-ball-running-dots.la-3x[_ngcontent-%COMP%]{width:30px;height:30px}.la-ball-running-dots.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px;margin-left:-75px}@-webkit-keyframes ball-running-dots-animate{0%,to{width:100%;height:100%;transform:translateY(0) translateX(500%)}80%{transform:translateY(0) translateX(0)}85%{width:100%;height:100%;transform:translateY(-125%) translateX(0)}90%{width:200%;height:75%}95%{width:100%;height:100%;transform:translateY(-100%) translateX(500%)}}@keyframes ball-running-dots-animate{0%,to{width:100%;height:100%;transform:translateY(0) translateX(500%)}80%{transform:translateY(0) translateX(0)}85%{width:100%;height:100%;transform:translateY(-125%) translateX(0)}90%{width:200%;height:75%}95%{width:100%;height:100%;transform:translateY(-100%) translateX(500%)}}.la-ball-scale-multiple[_ngcontent-%COMP%], .la-ball-scale-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-scale-multiple[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-scale-multiple.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-scale-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-scale-multiple[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-scale-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:32px;height:32px;border-radius:100%;opacity:0;-webkit-animation:ball-scale-multiple 1s linear 0s infinite;animation:ball-scale-multiple 1s linear 0s infinite}.la-ball-scale-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:.2s;animation-delay:.2s}.la-ball-scale-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:.4s;animation-delay:.4s}.la-ball-scale-multiple.la-sm[_ngcontent-%COMP%], .la-ball-scale-multiple.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-scale-multiple.la-2x[_ngcontent-%COMP%], .la-ball-scale-multiple.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-scale-multiple.la-3x[_ngcontent-%COMP%], .la-ball-scale-multiple.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:96px;height:96px}@-webkit-keyframes ball-scale-multiple{0%{opacity:0;transform:scale(0)}5%{opacity:.75}to{opacity:0;transform:scale(1)}}@keyframes ball-scale-multiple{0%{opacity:0;transform:scale(0)}5%{opacity:.75}to{opacity:0;transform:scale(1)}}.la-ball-scale-pulse[_ngcontent-%COMP%], .la-ball-scale-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-scale-pulse[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-scale-pulse.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-scale-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-scale-pulse[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-scale-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:32px;height:32px;border-radius:100%;opacity:.5;-webkit-animation:ball-scale-pulse 2s ease-in-out infinite;animation:ball-scale-pulse 2s ease-in-out infinite}.la-ball-scale-pulse[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{-webkit-animation-delay:-1s;animation-delay:-1s}.la-ball-scale-pulse.la-sm[_ngcontent-%COMP%], .la-ball-scale-pulse.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-scale-pulse.la-2x[_ngcontent-%COMP%], .la-ball-scale-pulse.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-scale-pulse.la-3x[_ngcontent-%COMP%], .la-ball-scale-pulse.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:96px;height:96px}@-webkit-keyframes ball-scale-pulse{0%,to{transform:scale(0)}50%{transform:scale(1)}}@keyframes ball-scale-pulse{0%,to{transform:scale(0)}50%{transform:scale(1)}}.la-ball-scale-ripple-multiple[_ngcontent-%COMP%], .la-ball-scale-ripple-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-scale-ripple-multiple[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-scale-ripple-multiple.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-scale-ripple-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-scale-ripple-multiple[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-scale-ripple-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:32px;height:32px;background:transparent;border-width:2px;border-radius:100%;opacity:0;-webkit-animation:ball-scale-ripple-multiple 1.25s cubic-bezier(.21,.53,.56,.8) 0s infinite;animation:ball-scale-ripple-multiple 1.25s cubic-bezier(.21,.53,.56,.8) 0s infinite}.la-ball-scale-ripple-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-delay:0s;animation-delay:0s}.la-ball-scale-ripple-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:.25s;animation-delay:.25s}.la-ball-scale-ripple-multiple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:.5s;animation-delay:.5s}.la-ball-scale-ripple-multiple.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-scale-ripple-multiple.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px;border-width:1px}.la-ball-scale-ripple-multiple.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-scale-ripple-multiple.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:64px;height:64px;border-width:4px}.la-ball-scale-ripple-multiple.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-scale-ripple-multiple.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:96px;height:96px;border-width:6px}@-webkit-keyframes ball-scale-ripple-multiple{0%{opacity:1;transform:scale(.1)}70%{opacity:.5;transform:scale(1)}95%{opacity:0}}@keyframes ball-scale-ripple-multiple{0%{opacity:1;transform:scale(.1)}70%{opacity:.5;transform:scale(1)}95%{opacity:0}}.la-ball-scale-ripple[_ngcontent-%COMP%], .la-ball-scale-ripple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-scale-ripple[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-scale-ripple.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-scale-ripple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-scale-ripple[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-scale-ripple[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:32px;height:32px;background:transparent;border-width:2px;border-radius:100%;opacity:0;-webkit-animation:ball-scale-ripple 1s cubic-bezier(.21,.53,.56,.8) 0s infinite;animation:ball-scale-ripple 1s cubic-bezier(.21,.53,.56,.8) 0s infinite}.la-ball-scale-ripple.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-scale-ripple.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px;border-width:1px}.la-ball-scale-ripple.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-scale-ripple.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:64px;height:64px;border-width:4px}.la-ball-scale-ripple.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-scale-ripple.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:96px;height:96px;border-width:6px}@-webkit-keyframes ball-scale-ripple{0%{opacity:1;transform:scale(.1)}70%{opacity:.65;transform:scale(1)}to{opacity:0}}@keyframes ball-scale-ripple{0%{opacity:1;transform:scale(.1)}70%{opacity:.65;transform:scale(1)}to{opacity:0}}.la-ball-scale[_ngcontent-%COMP%], .la-ball-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-scale[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-scale.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-scale[_ngcontent-%COMP%], .la-ball-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-radius:100%;opacity:0;-webkit-animation:ball-scale 1s ease-in-out 0s infinite;animation:ball-scale 1s ease-in-out 0s infinite}.la-ball-scale.la-sm[_ngcontent-%COMP%], .la-ball-scale.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-scale.la-2x[_ngcontent-%COMP%], .la-ball-scale.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-scale.la-3x[_ngcontent-%COMP%], .la-ball-scale.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:96px;height:96px}@-webkit-keyframes ball-scale{0%{opacity:1;transform:scale(0)}to{opacity:0;transform:scale(1)}}@keyframes ball-scale{0%{opacity:1;transform:scale(0)}to{opacity:0;transform:scale(1)}}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%], .la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-spin-clockwise-fade-rotating.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%]{width:32px;height:32px;-webkit-animation:ball-spin-clockwise-fade-rotating-rotate 6s linear infinite;animation:ball-spin-clockwise-fade-rotating-rotate 6s linear infinite}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin-clockwise-fade-rotating 1s linear infinite;animation:ball-spin-clockwise-fade-rotating 1s linear infinite}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:5%;left:50%;-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-ball-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:0s;animation-delay:0s}.la-ball-spin-clockwise-fade-rotating.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-spin-clockwise-fade-rotating.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin-clockwise-fade-rotating.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-spin-clockwise-fade-rotating.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin-clockwise-fade-rotating.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-spin-clockwise-fade-rotating.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin-clockwise-fade-rotating-rotate{to{transform:rotate(-1turn)}}@keyframes ball-spin-clockwise-fade-rotating-rotate{to{transform:rotate(-1turn)}}@-webkit-keyframes ball-spin-clockwise-fade-rotating{50%{opacity:.25;transform:scale(.5)}to{opacity:1;transform:scale(1)}}@keyframes ball-spin-clockwise-fade-rotating{50%{opacity:.25;transform:scale(.5)}to{opacity:1;transform:scale(1)}}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%], .la-ball-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-spin-clockwise-fade.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin-clockwise-fade 1s linear infinite;animation:ball-spin-clockwise-fade 1s linear infinite}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:5%;left:50%;-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-ball-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:0s;animation-delay:0s}.la-ball-spin-clockwise-fade.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-spin-clockwise-fade.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin-clockwise-fade.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-spin-clockwise-fade.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin-clockwise-fade.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-spin-clockwise-fade.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin-clockwise-fade{50%{opacity:.25;transform:scale(.5)}to{opacity:1;transform:scale(1)}}@keyframes ball-spin-clockwise-fade{50%{opacity:.25;transform:scale(.5)}to{opacity:1;transform:scale(1)}}.la-ball-spin-clockwise[_ngcontent-%COMP%], .la-ball-spin-clockwise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-spin-clockwise[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-spin-clockwise.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-spin-clockwise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-clockwise[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-spin-clockwise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin-clockwise 1s ease-in-out infinite;animation:ball-spin-clockwise 1s ease-in-out infinite}.la-ball-spin-clockwise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:5%;left:50%;-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-ball-spin-clockwise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-ball-spin-clockwise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-ball-spin-clockwise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-spin-clockwise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-ball-spin-clockwise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-spin-clockwise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-ball-spin-clockwise[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:0s;animation-delay:0s}.la-ball-spin-clockwise.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-spin-clockwise.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin-clockwise.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-spin-clockwise.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin-clockwise.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-spin-clockwise.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin-clockwise{0%,to{opacity:1;transform:scale(1)}20%{opacity:1}80%{opacity:0;transform:scale(0)}}@keyframes ball-spin-clockwise{0%,to{opacity:1;transform:scale(1)}20%{opacity:1}80%{opacity:0;transform:scale(0)}}.la-ball-spin-fade-rotating[_ngcontent-%COMP%], .la-ball-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-spin-fade-rotating[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-spin-fade-rotating.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-fade-rotating[_ngcontent-%COMP%]{width:32px;height:32px;-webkit-animation:ball-spin-fade-rotate 6s linear infinite;animation:ball-spin-fade-rotate 6s linear infinite}.la-ball-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin-fade 1s linear infinite;animation:ball-spin-fade 1s linear infinite}.la-ball-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:5%;left:50%;-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-ball-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-ball-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-ball-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-ball-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-ball-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-ball-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-ball-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:-2s;animation-delay:-2s}.la-ball-spin-fade-rotating.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-spin-fade-rotating.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin-fade-rotating.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-spin-fade-rotating.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin-fade-rotating.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-spin-fade-rotating.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin-fade-rotate{to{transform:rotate(1turn)}}@keyframes ball-spin-fade-rotate{to{transform:rotate(1turn)}}.la-ball-spin-fade[_ngcontent-%COMP%], .la-ball-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-spin-fade[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-spin-fade.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-fade[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin-fade 1s linear infinite;animation:ball-spin-fade 1s linear infinite}.la-ball-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:5%;left:50%;-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-ball-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-ball-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-ball-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-ball-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-ball-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-ball-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-ball-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:-2s;animation-delay:-2s}.la-ball-spin-fade.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-spin-fade.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin-fade.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-spin-fade.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin-fade.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-spin-fade.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin-fade{0%,to{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(.5)}}@keyframes ball-spin-fade{0%,to{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(.5)}}.la-ball-spin-rotate[_ngcontent-%COMP%], .la-ball-spin-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-spin-rotate[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-spin-rotate.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-spin-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-rotate[_ngcontent-%COMP%]{width:32px;height:32px;-webkit-animation:ball-spin-rotate 2s linear infinite;animation:ball-spin-rotate 2s linear infinite}.la-ball-spin-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:0;width:60%;height:60%;border-radius:100%;-webkit-animation:ball-spin-bounce 2s ease-in-out infinite;animation:ball-spin-bounce 2s ease-in-out infinite}.la-ball-spin-rotate[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{top:auto;bottom:0;-webkit-animation-delay:-1s;animation-delay:-1s}.la-ball-spin-rotate.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-spin-rotate.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-spin-rotate.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}@-webkit-keyframes ball-spin-rotate{to{transform:rotate(1turn)}}@keyframes ball-spin-rotate{to{transform:rotate(1turn)}}@-webkit-keyframes ball-spin-bounce{0%,to{transform:scale(0)}50%{transform:scale(1)}}@keyframes ball-spin-bounce{0%,to{transform:scale(0)}50%{transform:scale(1)}}.la-ball-spin[_ngcontent-%COMP%], .la-ball-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-spin[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-spin.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin 1s ease-in-out infinite;animation:ball-spin 1s ease-in-out infinite}.la-ball-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:5%;left:50%;-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-ball-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-ball-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-ball-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-ball-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-ball-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-ball-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-ball-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:-2s;animation-delay:-2s}.la-ball-spin.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-spin.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-spin.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-spin.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin{0%,to{opacity:1;transform:scale(1)}20%{opacity:1}80%{opacity:0;transform:scale(0)}}@keyframes ball-spin{0%,to{opacity:1;transform:scale(1)}20%{opacity:1}80%{opacity:0;transform:scale(0)}}.la-ball-square-clockwise-spin[_ngcontent-%COMP%], .la-ball-square-clockwise-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-square-clockwise-spin[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-square-clockwise-spin.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-square-clockwise-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-square-clockwise-spin[_ngcontent-%COMP%]{width:26px;height:26px}.la-ball-square-clockwise-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;width:12px;height:12px;margin-top:-6px;margin-left:-6px;border-radius:100%;-webkit-animation:ball-square-clockwise-spin 1s ease-in-out infinite;animation:ball-square-clockwise-spin 1s ease-in-out infinite}.la-ball-square-clockwise-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:0;left:0;-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-ball-square-clockwise-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:0;left:50%;-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-ball-square-clockwise-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:0;left:100%;-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-ball-square-clockwise-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:50%;left:100%;-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-square-clockwise-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:100%;left:100%;-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-ball-square-clockwise-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:100%;left:50%;-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-square-clockwise-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:100%;left:0;-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-ball-square-clockwise-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:50%;left:0;-webkit-animation-delay:0s;animation-delay:0s}.la-ball-square-clockwise-spin.la-sm[_ngcontent-%COMP%]{width:12px;height:12px}.la-ball-square-clockwise-spin.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:6px;height:6px;margin-top:-3px;margin-left:-3px}.la-ball-square-clockwise-spin.la-2x[_ngcontent-%COMP%]{width:52px;height:52px}.la-ball-square-clockwise-spin.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:24px;height:24px;margin-top:-12px;margin-left:-12px}.la-ball-square-clockwise-spin.la-3x[_ngcontent-%COMP%]{width:78px;height:78px}.la-ball-square-clockwise-spin.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:36px;height:36px;margin-top:-18px;margin-left:-18px}@-webkit-keyframes ball-square-clockwise-spin{0%,40%,to{transform:scale(.4)}70%{transform:scale(1)}}@keyframes ball-square-clockwise-spin{0%,40%,to{transform:scale(.4)}70%{transform:scale(1)}}.la-ball-square-spin[_ngcontent-%COMP%], .la-ball-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-square-spin[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-square-spin.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-square-spin[_ngcontent-%COMP%]{width:26px;height:26px}.la-ball-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;width:12px;height:12px;margin-top:-6px;margin-left:-6px;border-radius:100%;-webkit-animation:ball-square-spin 1s ease-in-out infinite;animation:ball-square-spin 1s ease-in-out infinite}.la-ball-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:0;left:0;-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-ball-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:0;left:50%;-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-ball-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:0;left:100%;-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-ball-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:50%;left:100%;-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-ball-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:100%;left:100%;-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-ball-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:100%;left:50%;-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-ball-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:100%;left:0;-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-ball-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:50%;left:0;-webkit-animation-delay:-2s;animation-delay:-2s}.la-ball-square-spin.la-sm[_ngcontent-%COMP%]{width:12px;height:12px}.la-ball-square-spin.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:6px;height:6px;margin-top:-3px;margin-left:-3px}.la-ball-square-spin.la-2x[_ngcontent-%COMP%]{width:52px;height:52px}.la-ball-square-spin.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:24px;height:24px;margin-top:-12px;margin-left:-12px}.la-ball-square-spin.la-3x[_ngcontent-%COMP%]{width:78px;height:78px}.la-ball-square-spin.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:36px;height:36px;margin-top:-18px;margin-left:-18px}@-webkit-keyframes ball-square-spin{0%,40%,to{transform:scale(.4)}70%{transform:scale(1)}}@keyframes ball-square-spin{0%,40%,to{transform:scale(.4)}70%{transform:scale(1)}}.la-ball-triangle-path[_ngcontent-%COMP%], .la-ball-triangle-path[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-triangle-path[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-triangle-path.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-triangle-path[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-triangle-path[_ngcontent-%COMP%]{width:32px;height:32px}.la-ball-triangle-path[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:10px;height:10px;border-radius:100%}.la-ball-triangle-path[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation:ball-triangle-path-ball-one 2s ease-in-out 0s infinite;animation:ball-triangle-path-ball-one 2s ease-in-out 0s infinite}.la-ball-triangle-path[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation:ball-triangle-path-ball-two 2s ease-in-out 0s infinite;animation:ball-triangle-path-ball-two 2s ease-in-out 0s infinite}.la-ball-triangle-path[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation:ball-triangle-path-ball-tree 2s ease-in-out 0s infinite;animation:ball-triangle-path-ball-tree 2s ease-in-out 0s infinite}.la-ball-triangle-path.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-triangle-path.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px}.la-ball-triangle-path.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-triangle-path.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px}.la-ball-triangle-path.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-triangle-path.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px}@-webkit-keyframes ball-triangle-path-ball-one{0%{transform:translateY(220%)}17%{opacity:.25}33%{opacity:1;transform:translate(110%)}50%{opacity:.25}66%{opacity:1;transform:translate(220%,220%)}83%{opacity:.25}to{opacity:1;transform:translateY(220%)}}@keyframes ball-triangle-path-ball-one{0%{transform:translateY(220%)}17%{opacity:.25}33%{opacity:1;transform:translate(110%)}50%{opacity:.25}66%{opacity:1;transform:translate(220%,220%)}83%{opacity:.25}to{opacity:1;transform:translateY(220%)}}@-webkit-keyframes ball-triangle-path-ball-two{0%{transform:translate(110%)}17%{opacity:.25}33%{opacity:1;transform:translate(220%,220%)}50%{opacity:.25}66%{opacity:1;transform:translateY(220%)}83%{opacity:.25}to{opacity:1;transform:translate(110%)}}@keyframes ball-triangle-path-ball-two{0%{transform:translate(110%)}17%{opacity:.25}33%{opacity:1;transform:translate(220%,220%)}50%{opacity:.25}66%{opacity:1;transform:translateY(220%)}83%{opacity:.25}to{opacity:1;transform:translate(110%)}}@-webkit-keyframes ball-triangle-path-ball-tree{0%{transform:translate(220%,220%)}17%{opacity:.25}33%{opacity:1;transform:translateY(220%)}50%{opacity:.25}66%{opacity:1;transform:translate(110%)}83%{opacity:.25}to{opacity:1;transform:translate(220%,220%)}}@keyframes ball-triangle-path-ball-tree{0%{transform:translate(220%,220%)}17%{opacity:.25}33%{opacity:1;transform:translateY(220%)}50%{opacity:.25}66%{opacity:1;transform:translate(110%)}83%{opacity:.25}to{opacity:1;transform:translate(220%,220%)}}.la-ball-zig-zag-deflect[_ngcontent-%COMP%], .la-ball-zig-zag-deflect[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-zig-zag-deflect[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-zig-zag-deflect.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-zig-zag-deflect[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-zig-zag-deflect[_ngcontent-%COMP%]{position:relative;width:32px;height:32px}.la-ball-zig-zag-deflect[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;width:10px;height:10px;margin-top:-5px;margin-left:-5px;border-radius:100%}.la-ball-zig-zag-deflect[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation:ball-zig-deflect 1.5s linear 0s infinite;animation:ball-zig-deflect 1.5s linear 0s infinite}.la-ball-zig-zag-deflect[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{-webkit-animation:ball-zag-deflect 1.5s linear 0s infinite;animation:ball-zag-deflect 1.5s linear 0s infinite}.la-ball-zig-zag-deflect.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-zig-zag-deflect.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-zig-zag-deflect.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-zig-zag-deflect.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px;margin-top:-10px;margin-left:-10px}.la-ball-zig-zag-deflect.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-zig-zag-deflect.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px;margin-top:-15px;margin-left:-15px}@-webkit-keyframes ball-zig-deflect{17%{transform:translate(-80%,-160%)}34%{transform:translate(80%,-160%)}50%{transform:translate(0)}67%{transform:translate(80%,-160%)}84%{transform:translate(-80%,-160%)}to{transform:translate(0)}}@keyframes ball-zig-deflect{17%{transform:translate(-80%,-160%)}34%{transform:translate(80%,-160%)}50%{transform:translate(0)}67%{transform:translate(80%,-160%)}84%{transform:translate(-80%,-160%)}to{transform:translate(0)}}@-webkit-keyframes ball-zag-deflect{17%{transform:translate(80%,160%)}34%{transform:translate(-80%,160%)}50%{transform:translate(0)}67%{transform:translate(-80%,160%)}84%{transform:translate(80%,160%)}to{transform:translate(0)}}@keyframes ball-zag-deflect{17%{transform:translate(80%,160%)}34%{transform:translate(-80%,160%)}50%{transform:translate(0)}67%{transform:translate(-80%,160%)}84%{transform:translate(80%,160%)}to{transform:translate(0)}}.la-ball-zig-zag[_ngcontent-%COMP%], .la-ball-zig-zag[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-ball-zig-zag[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-ball-zig-zag.la-dark[_ngcontent-%COMP%]{color:#333}.la-ball-zig-zag[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-zig-zag[_ngcontent-%COMP%]{position:relative;width:32px;height:32px}.la-ball-zig-zag[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;width:10px;height:10px;margin-top:-5px;margin-left:-5px;border-radius:100%}.la-ball-zig-zag[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation:ball-zig-effect .7s linear 0s infinite;animation:ball-zig-effect .7s linear 0s infinite}.la-ball-zig-zag[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{-webkit-animation:ball-zag-effect .7s linear 0s infinite;animation:ball-zag-effect .7s linear 0s infinite}.la-ball-zig-zag.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-ball-zig-zag.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-zig-zag.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-ball-zig-zag.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:20px;height:20px;margin-top:-10px;margin-left:-10px}.la-ball-zig-zag.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-ball-zig-zag.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:30px;height:30px;margin-top:-15px;margin-left:-15px}@-webkit-keyframes ball-zig-effect{0%{transform:translate(0)}33%{transform:translate(-75%,-150%)}66%{transform:translate(75%,-150%)}to{transform:translate(0)}}@keyframes ball-zig-effect{0%{transform:translate(0)}33%{transform:translate(-75%,-150%)}66%{transform:translate(75%,-150%)}to{transform:translate(0)}}@-webkit-keyframes ball-zag-effect{0%{transform:translate(0)}33%{transform:translate(75%,150%)}66%{transform:translate(-75%,150%)}to{transform:translate(0)}}@keyframes ball-zag-effect{0%{transform:translate(0)}33%{transform:translate(75%,150%)}66%{transform:translate(-75%,150%)}to{transform:translate(0)}}.la-cog[_ngcontent-%COMP%], .la-cog[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-cog[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-cog.la-dark[_ngcontent-%COMP%]{color:#333}.la-cog[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-cog[_ngcontent-%COMP%]{width:31px;height:31px}.la-cog[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:100%;height:100%;background-color:transparent;border-style:dashed;border-width:2px;border-radius:100%;-webkit-animation:cog-rotate 4s linear infinite;animation:cog-rotate 4s linear infinite}.la-cog[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after{position:absolute;top:0;left:0;width:100%;height:100%;content:\"\";border:2px solid;border-radius:100%}.la-cog.la-sm[_ngcontent-%COMP%]{width:15px;height:15px}.la-cog.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%], .la-cog.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after{border-width:1px}.la-cog.la-2x[_ngcontent-%COMP%]{width:61px;height:61px}.la-cog.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%], .la-cog.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after{border-width:4px}.la-cog.la-3x[_ngcontent-%COMP%]{width:91px;height:91px}.la-cog.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%], .la-cog.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after{border-width:6px}@-webkit-keyframes cog-rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes cog-rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.la-cube-transition[_ngcontent-%COMP%], .la-cube-transition[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-cube-transition[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-cube-transition.la-dark[_ngcontent-%COMP%]{color:#333}.la-cube-transition[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-cube-transition[_ngcontent-%COMP%]{width:32px;height:32px}.la-cube-transition[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:14px;height:14px;margin-top:-7px;margin-left:-7px;border-radius:0;-webkit-animation:cube-transition 1.6s ease-in-out 0s infinite;animation:cube-transition 1.6s ease-in-out 0s infinite}.la-cube-transition[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:last-child{-webkit-animation-delay:-.8s;animation-delay:-.8s}.la-cube-transition.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-cube-transition.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:6px;height:6px;margin-top:-3px;margin-left:-3px}.la-cube-transition.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-cube-transition.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:28px;height:28px;margin-top:-14px;margin-left:-14px}.la-cube-transition.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-cube-transition.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:42px;height:42px;margin-top:-21px;margin-left:-21px}@-webkit-keyframes cube-transition{25%{top:0;left:100%;transform:scale(.5) rotate(-90deg)}50%{top:100%;left:100%;transform:scale(1) rotate(-180deg)}75%{top:100%;left:0;transform:scale(.5) rotate(-270deg)}to{top:0;left:0;transform:scale(1) rotate(-1turn)}}@keyframes cube-transition{25%{top:0;left:100%;transform:scale(.5) rotate(-90deg)}50%{top:100%;left:100%;transform:scale(1) rotate(-180deg)}75%{top:100%;left:0;transform:scale(.5) rotate(-270deg)}to{top:0;left:0;transform:scale(1) rotate(-1turn)}}.la-fire[_ngcontent-%COMP%], .la-fire[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-fire[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-fire.la-dark[_ngcontent-%COMP%]{color:#333}.la-fire[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-fire[_ngcontent-%COMP%]{width:32px;height:32px}.la-fire[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;bottom:0;left:50%;width:12px;height:12px;border-radius:0;border-radius:2px;transform:translateY(0) translateX(-50%) rotate(45deg) scale(0);-webkit-animation:fire-diamonds 1.5s linear infinite;animation:fire-diamonds 1.5s linear infinite}.la-fire[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-delay:-.85s;animation-delay:-.85s}.la-fire[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:-1.85s;animation-delay:-1.85s}.la-fire[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:-2.85s;animation-delay:-2.85s}.la-fire.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-fire.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:6px;height:6px}.la-fire.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-fire.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:24px;height:24px}.la-fire.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-fire.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:36px;height:36px}@-webkit-keyframes fire-diamonds{0%{transform:translateY(75%) translateX(-50%) rotate(45deg) scale(0)}50%{transform:translateY(-87.5%) translateX(-50%) rotate(45deg) scale(1)}to{transform:translateY(-212.5%) translateX(-50%) rotate(45deg) scale(0)}}@keyframes fire-diamonds{0%{transform:translateY(75%) translateX(-50%) rotate(45deg) scale(0)}50%{transform:translateY(-87.5%) translateX(-50%) rotate(45deg) scale(1)}to{transform:translateY(-212.5%) translateX(-50%) rotate(45deg) scale(0)}}.la-line-scale-party[_ngcontent-%COMP%], .la-line-scale-party[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-line-scale-party[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-line-scale-party.la-dark[_ngcontent-%COMP%]{color:#333}.la-line-scale-party[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-scale-party[_ngcontent-%COMP%]{width:40px;height:32px}.la-line-scale-party[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:32px;margin:0 2px;border-radius:0;-webkit-animation-name:line-scale-party;animation-name:line-scale-party;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.la-line-scale-party[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-duration:.43s;animation-duration:.43s;-webkit-animation-delay:-.23s;animation-delay:-.23s}.la-line-scale-party[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-duration:.62s;animation-duration:.62s;-webkit-animation-delay:-.32s;animation-delay:-.32s}.la-line-scale-party[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-duration:.43s;animation-duration:.43s;-webkit-animation-delay:-.44s;animation-delay:-.44s}.la-line-scale-party[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){-webkit-animation-duration:.8s;animation-duration:.8s;-webkit-animation-delay:-.31s;animation-delay:-.31s}.la-line-scale-party[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){-webkit-animation-duration:.74s;animation-duration:.74s;-webkit-animation-delay:-.24s;animation-delay:-.24s}.la-line-scale-party.la-sm[_ngcontent-%COMP%]{width:20px;height:16px}.la-line-scale-party.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:2px;height:16px;margin:0 1px}.la-line-scale-party.la-2x[_ngcontent-%COMP%]{width:80px;height:64px}.la-line-scale-party.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:8px;height:64px;margin:0 4px}.la-line-scale-party.la-3x[_ngcontent-%COMP%]{width:120px;height:96px}.la-line-scale-party.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:12px;height:96px;margin:0 6px}@-webkit-keyframes line-scale-party{0%{transform:scaleY(1)}50%{transform:scaleY(.3)}to{transform:scaleY(1)}}@keyframes line-scale-party{0%{transform:scaleY(1)}50%{transform:scaleY(.3)}to{transform:scaleY(1)}}.la-line-scale-pulse-out-rapid[_ngcontent-%COMP%], .la-line-scale-pulse-out-rapid[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-line-scale-pulse-out-rapid[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-line-scale-pulse-out-rapid.la-dark[_ngcontent-%COMP%]{color:#333}.la-line-scale-pulse-out-rapid[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-scale-pulse-out-rapid[_ngcontent-%COMP%]{width:40px;height:32px}.la-line-scale-pulse-out-rapid[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:32px;margin:0 2px;border-radius:0;-webkit-animation:line-scale-pulse-out-rapid .9s cubic-bezier(.11,.49,.38,.78) infinite;animation:line-scale-pulse-out-rapid .9s cubic-bezier(.11,.49,.38,.78) infinite}.la-line-scale-pulse-out-rapid[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:-.9s;animation-delay:-.9s}.la-line-scale-pulse-out-rapid[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2), .la-line-scale-pulse-out-rapid[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){-webkit-animation-delay:-.65s;animation-delay:-.65s}.la-line-scale-pulse-out-rapid[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child, .la-line-scale-pulse-out-rapid[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){-webkit-animation-delay:-.4s;animation-delay:-.4s}.la-line-scale-pulse-out-rapid.la-sm[_ngcontent-%COMP%]{width:20px;height:16px}.la-line-scale-pulse-out-rapid.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:2px;height:16px;margin:0 1px}.la-line-scale-pulse-out-rapid.la-2x[_ngcontent-%COMP%]{width:80px;height:64px}.la-line-scale-pulse-out-rapid.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:8px;height:64px;margin:0 4px}.la-line-scale-pulse-out-rapid.la-3x[_ngcontent-%COMP%]{width:120px;height:96px}.la-line-scale-pulse-out-rapid.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:12px;height:96px;margin:0 6px}@-webkit-keyframes line-scale-pulse-out-rapid{0%{transform:scaley(1)}80%{transform:scaley(.3)}90%{transform:scaley(1)}}@keyframes line-scale-pulse-out-rapid{0%{transform:scaley(1)}80%{transform:scaley(.3)}90%{transform:scaley(1)}}.la-line-scale-pulse-out[_ngcontent-%COMP%], .la-line-scale-pulse-out[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-line-scale-pulse-out[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-line-scale-pulse-out.la-dark[_ngcontent-%COMP%]{color:#333}.la-line-scale-pulse-out[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-scale-pulse-out[_ngcontent-%COMP%]{width:40px;height:32px}.la-line-scale-pulse-out[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:32px;margin:0 2px;border-radius:0;-webkit-animation:line-scale-pulse-out .9s cubic-bezier(.85,.25,.37,.85) infinite;animation:line-scale-pulse-out .9s cubic-bezier(.85,.25,.37,.85) infinite}.la-line-scale-pulse-out[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:-.9s;animation-delay:-.9s}.la-line-scale-pulse-out[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2), .la-line-scale-pulse-out[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){-webkit-animation-delay:-.7s;animation-delay:-.7s}.la-line-scale-pulse-out[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child, .la-line-scale-pulse-out[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-line-scale-pulse-out.la-sm[_ngcontent-%COMP%]{width:20px;height:16px}.la-line-scale-pulse-out.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:2px;height:16px;margin:0 1px}.la-line-scale-pulse-out.la-2x[_ngcontent-%COMP%]{width:80px;height:64px}.la-line-scale-pulse-out.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:8px;height:64px;margin:0 4px}.la-line-scale-pulse-out.la-3x[_ngcontent-%COMP%]{width:120px;height:96px}.la-line-scale-pulse-out.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:12px;height:96px;margin:0 6px}@-webkit-keyframes line-scale-pulse-out{0%{transform:scaley(1)}50%{transform:scaley(.3)}to{transform:scaley(1)}}@keyframes line-scale-pulse-out{0%{transform:scaley(1)}50%{transform:scaley(.3)}to{transform:scaley(1)}}.la-line-scale[_ngcontent-%COMP%], .la-line-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-line-scale[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-line-scale.la-dark[_ngcontent-%COMP%]{color:#333}.la-line-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-scale[_ngcontent-%COMP%]{width:40px;height:32px}.la-line-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:32px;margin:0 2px;border-radius:0;-webkit-animation:line-scale 1.2s ease infinite;animation:line-scale 1.2s ease infinite}.la-line-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{-webkit-animation-delay:-1.2s;animation-delay:-1.2s}.la-line-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:-1.1s;animation-delay:-1.1s}.la-line-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:-1s;animation-delay:-1s}.la-line-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){-webkit-animation-delay:-.9s;animation-delay:-.9s}.la-line-scale[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){-webkit-animation-delay:-.8s;animation-delay:-.8s}.la-line-scale.la-sm[_ngcontent-%COMP%]{width:20px;height:16px}.la-line-scale.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:2px;height:16px;margin:0 1px}.la-line-scale.la-2x[_ngcontent-%COMP%]{width:80px;height:64px}.la-line-scale.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:8px;height:64px;margin:0 4px}.la-line-scale.la-3x[_ngcontent-%COMP%]{width:120px;height:96px}.la-line-scale.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:12px;height:96px;margin:0 6px}@-webkit-keyframes line-scale{0%,40%,to{transform:scaleY(.4)}20%{transform:scaleY(1)}}@keyframes line-scale{0%,40%,to{transform:scaleY(.4)}20%{transform:scaleY(1)}}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%], .la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-line-spin-clockwise-fade-rotating.la-dark[_ngcontent-%COMP%]{color:#333}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%]{width:32px;height:32px;-webkit-animation:line-spin-clockwise-fade-rotating-rotate 6s linear infinite;animation:line-spin-clockwise-fade-rotating-rotate 6s linear infinite}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;width:2px;height:10px;margin:-5px 2px 2px -1px;border-radius:0;-webkit-animation:line-spin-clockwise-fade-rotating 1s ease-in-out infinite;animation:line-spin-clockwise-fade-rotating 1s ease-in-out infinite}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:15%;left:50%;transform:rotate(0deg);-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:25.2512626585%;left:74.7487373415%;transform:rotate(45deg);-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:50%;left:85%;transform:rotate(90deg);-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:74.7487373415%;left:74.7487373415%;transform:rotate(135deg);-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:84.9999999974%;left:50.0000000004%;transform:rotate(180deg);-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:74.7487369862%;left:25.2512627193%;transform:rotate(225deg);-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:49.9999806189%;left:15.0000039834%;transform:rotate(270deg);-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-line-spin-clockwise-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:25.2506949798%;left:25.2513989292%;transform:rotate(315deg);-webkit-animation-delay:0s;animation-delay:0s}.la-line-spin-clockwise-fade-rotating.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-line-spin-clockwise-fade-rotating.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:1px;height:4px;margin-top:-2px;margin-left:0}.la-line-spin-clockwise-fade-rotating.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-line-spin-clockwise-fade-rotating.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:20px;margin-top:-10px;margin-left:-2px}.la-line-spin-clockwise-fade-rotating.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-line-spin-clockwise-fade-rotating.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:6px;height:30px;margin-top:-15px;margin-left:-3px}@-webkit-keyframes line-spin-clockwise-fade-rotating-rotate{to{transform:rotate(-1turn)}}@keyframes line-spin-clockwise-fade-rotating-rotate{to{transform:rotate(-1turn)}}@-webkit-keyframes line-spin-clockwise-fade-rotating{50%{opacity:.2}to{opacity:1}}@keyframes line-spin-clockwise-fade-rotating{50%{opacity:.2}to{opacity:1}}.la-line-spin-clockwise-fade[_ngcontent-%COMP%], .la-line-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-line-spin-clockwise-fade[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-line-spin-clockwise-fade.la-dark[_ngcontent-%COMP%]{color:#333}.la-line-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-spin-clockwise-fade[_ngcontent-%COMP%]{width:32px;height:32px}.la-line-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;width:2px;height:10px;margin:-5px 2px 2px -1px;border-radius:0;-webkit-animation:line-spin-clockwise-fade 1s ease-in-out infinite;animation:line-spin-clockwise-fade 1s ease-in-out infinite}.la-line-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:15%;left:50%;transform:rotate(0deg);-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-line-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:25.2512626585%;left:74.7487373415%;transform:rotate(45deg);-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-line-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:50%;left:85%;transform:rotate(90deg);-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-line-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:74.7487373415%;left:74.7487373415%;transform:rotate(135deg);-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-line-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:84.9999999974%;left:50.0000000004%;transform:rotate(180deg);-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-line-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:74.7487369862%;left:25.2512627193%;transform:rotate(225deg);-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-line-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:49.9999806189%;left:15.0000039834%;transform:rotate(270deg);-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-line-spin-clockwise-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:25.2506949798%;left:25.2513989292%;transform:rotate(315deg);-webkit-animation-delay:0s;animation-delay:0s}.la-line-spin-clockwise-fade.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-line-spin-clockwise-fade.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:1px;height:4px;margin-top:-2px;margin-left:0}.la-line-spin-clockwise-fade.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-line-spin-clockwise-fade.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:20px;margin-top:-10px;margin-left:-2px}.la-line-spin-clockwise-fade.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-line-spin-clockwise-fade.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:6px;height:30px;margin-top:-15px;margin-left:-3px}@-webkit-keyframes line-spin-clockwise-fade{50%{opacity:.2}to{opacity:1}}@keyframes line-spin-clockwise-fade{50%{opacity:.2}to{opacity:1}}.la-line-spin-fade-rotating[_ngcontent-%COMP%], .la-line-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-line-spin-fade-rotating[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-line-spin-fade-rotating.la-dark[_ngcontent-%COMP%]{color:#333}.la-line-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-spin-fade-rotating[_ngcontent-%COMP%]{width:32px;height:32px;-webkit-animation:ball-spin-fade-rotating-rotate 6s linear infinite;animation:ball-spin-fade-rotating-rotate 6s linear infinite}.la-line-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;width:2px;height:10px;margin:-5px 2px 2px -1px;border-radius:0;-webkit-animation:line-spin-fade-rotating 1s ease-in-out infinite;animation:line-spin-fade-rotating 1s ease-in-out infinite}.la-line-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:15%;left:50%;transform:rotate(0deg);-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-line-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:25.2512626585%;left:74.7487373415%;transform:rotate(45deg);-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-line-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:50%;left:85%;transform:rotate(90deg);-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-line-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:74.7487373415%;left:74.7487373415%;transform:rotate(135deg);-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-line-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:84.9999999974%;left:50.0000000004%;transform:rotate(180deg);-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-line-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:74.7487369862%;left:25.2512627193%;transform:rotate(225deg);-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-line-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:49.9999806189%;left:15.0000039834%;transform:rotate(270deg);-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-line-spin-fade-rotating[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:25.2506949798%;left:25.2513989292%;transform:rotate(315deg);-webkit-animation-delay:-2s;animation-delay:-2s}.la-line-spin-fade-rotating.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-line-spin-fade-rotating.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:1px;height:4px;margin-top:-2px;margin-left:0}.la-line-spin-fade-rotating.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-line-spin-fade-rotating.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:20px;margin-top:-10px;margin-left:-2px}.la-line-spin-fade-rotating.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-line-spin-fade-rotating.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:6px;height:30px;margin-top:-15px;margin-left:-3px}@-webkit-keyframes ball-spin-fade-rotating-rotate{to{transform:rotate(1turn)}}@keyframes ball-spin-fade-rotating-rotate{to{transform:rotate(1turn)}}@-webkit-keyframes line-spin-fade-rotating{50%{opacity:.2}to{opacity:1}}@keyframes line-spin-fade-rotating{50%{opacity:.2}to{opacity:1}}.la-line-spin-fade[_ngcontent-%COMP%], .la-line-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-line-spin-fade[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-line-spin-fade.la-dark[_ngcontent-%COMP%]{color:#333}.la-line-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-spin-fade[_ngcontent-%COMP%]{width:32px;height:32px}.la-line-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:absolute;width:2px;height:10px;margin:-5px 2px 2px -1px;border-radius:0;-webkit-animation:line-spin-fade 1s ease-in-out infinite;animation:line-spin-fade 1s ease-in-out infinite}.la-line-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:15%;left:50%;transform:rotate(0deg);-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-line-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:25.2512626585%;left:74.7487373415%;transform:rotate(45deg);-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-line-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){top:50%;left:85%;transform:rotate(90deg);-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-line-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){top:74.7487373415%;left:74.7487373415%;transform:rotate(135deg);-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-line-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){top:84.9999999974%;left:50.0000000004%;transform:rotate(180deg);-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-line-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){top:74.7487369862%;left:25.2512627193%;transform:rotate(225deg);-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-line-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(7){top:49.9999806189%;left:15.0000039834%;transform:rotate(270deg);-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-line-spin-fade[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(8){top:25.2506949798%;left:25.2513989292%;transform:rotate(315deg);-webkit-animation-delay:-2s;animation-delay:-2s}.la-line-spin-fade.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-line-spin-fade.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:1px;height:4px;margin-top:-2px;margin-left:0}.la-line-spin-fade.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-line-spin-fade.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:4px;height:20px;margin-top:-10px;margin-left:-2px}.la-line-spin-fade.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-line-spin-fade.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:6px;height:30px;margin-top:-15px;margin-left:-3px}@-webkit-keyframes line-spin-fade{50%{opacity:.2}to{opacity:1}}@keyframes line-spin-fade{50%{opacity:.2}to{opacity:1}}.la-pacman[_ngcontent-%COMP%], .la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-pacman[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-pacman.la-dark[_ngcontent-%COMP%]{color:#333}.la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-pacman[_ngcontent-%COMP%]{width:32px;height:32px}.la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child, .la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){width:0;height:0;background:transparent;border-style:solid;border-right:solid transparent;border-width:16px;border-radius:100%;-webkit-animation:pacman-rotate-half-up .5s 0s infinite;animation:pacman-rotate-half-up .5s 0s infinite;position:absolute}.la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-name:pacman-rotate-half-down;animation-name:pacman-rotate-half-down;top:0}.la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3), .la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4), .la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5), .la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){position:absolute;top:50%;left:200%;width:8px;height:8px;border-radius:100%;opacity:0;-webkit-animation:pacman-balls 2s linear 0s infinite;animation:pacman-balls 2s linear 0s infinite}.la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:-1.44s;animation-delay:-1.44s}.la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4){-webkit-animation-delay:-1.94s;animation-delay:-1.94s}.la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5){-webkit-animation-delay:-2.44s;animation-delay:-2.44s}.la-pacman[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){-webkit-animation-delay:-2.94s;animation-delay:-2.94s}.la-pacman.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-pacman.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child, .la-pacman.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){border-width:8px;position:absolute}.la-pacman.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:0}.la-pacman.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3), .la-pacman.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4), .la-pacman.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5), .la-pacman.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){width:4px;height:4px}.la-pacman.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-pacman.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child, .la-pacman.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){border-width:32px;position:absolute}.la-pacman.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:0}.la-pacman.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3), .la-pacman.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4), .la-pacman.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5), .la-pacman.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){width:16px;height:16px}.la-pacman.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-pacman.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child, .la-pacman.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){border-width:48px;position:absolute}.la-pacman.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){top:0}.la-pacman.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(3), .la-pacman.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(4), .la-pacman.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(5), .la-pacman.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(6){width:24px;height:24px}@-webkit-keyframes pacman-rotate-half-up{0%,to{transform:rotate(270deg)}50%{transform:rotate(1turn)}}@keyframes pacman-rotate-half-up{0%,to{transform:rotate(270deg)}50%{transform:rotate(1turn)}}@-webkit-keyframes pacman-rotate-half-down{0%,to{transform:rotate(90deg)}50%{transform:rotate(0deg)}}@keyframes pacman-rotate-half-down{0%,to{transform:rotate(90deg)}50%{transform:rotate(0deg)}}@-webkit-keyframes pacman-balls{0%{left:200%;opacity:0;transform:translateY(-50%)}5%{opacity:.5}66%{opacity:1}67%{opacity:0}to{left:0;transform:translateY(-50%)}}@keyframes pacman-balls{0%{left:200%;opacity:0;transform:translateY(-50%)}5%{opacity:.5}66%{opacity:1}67%{opacity:0}to{left:0;transform:translateY(-50%)}}.la-square-jelly-box[_ngcontent-%COMP%], .la-square-jelly-box[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-square-jelly-box[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-square-jelly-box.la-dark[_ngcontent-%COMP%]{color:#333}.la-square-jelly-box[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-square-jelly-box[_ngcontent-%COMP%]{width:32px;height:32px}.la-square-jelly-box[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child, .la-square-jelly-box[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){position:absolute;left:0;width:100%}.la-square-jelly-box[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:first-child{top:-25%;z-index:1;height:100%;border-radius:10%;-webkit-animation:square-jelly-box-animate .6s linear -.1s infinite;animation:square-jelly-box-animate .6s linear -.1s infinite}.la-square-jelly-box[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:nth-child(2){bottom:-9%;height:10%;background:#000;border-radius:50%;opacity:.2;-webkit-animation:square-jelly-box-shadow .6s linear -.1s infinite;animation:square-jelly-box-shadow .6s linear -.1s infinite}.la-square-jelly-box.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-square-jelly-box.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-square-jelly-box.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}@-webkit-keyframes square-jelly-box-animate{17%{border-bottom-right-radius:10%}25%{transform:translateY(25%) rotate(22.5deg)}50%{border-bottom-right-radius:100%;transform:translateY(50%) scaleY(.9) rotate(45deg)}75%{transform:translateY(25%) rotate(67.5deg)}to{transform:translateY(0) rotate(90deg)}}@keyframes square-jelly-box-animate{17%{border-bottom-right-radius:10%}25%{transform:translateY(25%) rotate(22.5deg)}50%{border-bottom-right-radius:100%;transform:translateY(50%) scaleY(.9) rotate(45deg)}75%{transform:translateY(25%) rotate(67.5deg)}to{transform:translateY(0) rotate(90deg)}}@-webkit-keyframes square-jelly-box-shadow{50%{transform:scaleX(1.25)}}@keyframes square-jelly-box-shadow{50%{transform:scaleX(1.25)}}.la-square-loader[_ngcontent-%COMP%], .la-square-loader[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-square-loader[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-square-loader.la-dark[_ngcontent-%COMP%]{color:#333}.la-square-loader[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-square-loader[_ngcontent-%COMP%]{width:32px;height:32px}.la-square-loader[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:100%;height:100%;background:transparent;border-width:2px;border-radius:0;-webkit-animation:square-loader 2s ease infinite;animation:square-loader 2s ease infinite}.la-square-loader[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after{display:inline-block;width:100%;vertical-align:top;content:\"\";background-color:currentColor;-webkit-animation:square-loader-inner 2s ease-in infinite;animation:square-loader-inner 2s ease-in infinite}.la-square-loader.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-square-loader.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:1px}.la-square-loader.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-square-loader.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:4px}.la-square-loader.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}.la-square-loader.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:6px}@-webkit-keyframes square-loader{0%{transform:rotate(0deg)}25%{transform:rotate(180deg)}50%{transform:rotate(180deg)}75%{transform:rotate(1turn)}to{transform:rotate(1turn)}}@keyframes square-loader{0%{transform:rotate(0deg)}25%{transform:rotate(180deg)}50%{transform:rotate(180deg)}75%{transform:rotate(1turn)}to{transform:rotate(1turn)}}@-webkit-keyframes square-loader-inner{0%{height:0}25%{height:0}50%{height:100%}75%{height:100%}to{height:0}}@keyframes square-loader-inner{0%{height:0}25%{height:0}50%{height:100%}75%{height:100%}to{height:0}}.la-square-spin[_ngcontent-%COMP%], .la-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-square-spin[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-square-spin.la-dark[_ngcontent-%COMP%]{color:#333}.la-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-square-spin[_ngcontent-%COMP%]{width:32px;height:32px}.la-square-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:100%;height:100%;border-radius:0;-webkit-animation:square-spin 3s cubic-bezier(.09,.57,.49,.9) 0s infinite;animation:square-spin 3s cubic-bezier(.09,.57,.49,.9) 0s infinite}.la-square-spin.la-sm[_ngcontent-%COMP%]{width:16px;height:16px}.la-square-spin.la-2x[_ngcontent-%COMP%]{width:64px;height:64px}.la-square-spin.la-3x[_ngcontent-%COMP%]{width:96px;height:96px}@-webkit-keyframes square-spin{0%{transform:perspective(100px) rotateX(0) rotateY(0)}25%{transform:perspective(100px) rotateX(180deg) rotateY(0)}50%{transform:perspective(100px) rotateX(180deg) rotateY(180deg)}75%{transform:perspective(100px) rotateX(0) rotateY(180deg)}to{transform:perspective(100px) rotateX(0) rotateY(1turn)}}@keyframes square-spin{0%{transform:perspective(100px) rotateX(0) rotateY(0)}25%{transform:perspective(100px) rotateX(180deg) rotateY(0)}50%{transform:perspective(100px) rotateX(180deg) rotateY(180deg)}75%{transform:perspective(100px) rotateX(0) rotateY(180deg)}to{transform:perspective(100px) rotateX(0) rotateY(1turn)}}.la-timer[_ngcontent-%COMP%], .la-timer[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-timer[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-timer.la-dark[_ngcontent-%COMP%]{color:#333}.la-timer[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-timer[_ngcontent-%COMP%], .la-timer[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:32px;height:32px}.la-timer[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{background:transparent;border-width:2px;border-radius:100%}.la-timer[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after, .la-timer[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:before{position:absolute;top:14px;left:14px;display:block;width:2px;margin-top:-1px;margin-left:-1px;content:\"\";background:currentColor;border-radius:2px;transform-origin:1px 1px 0;-webkit-animation:timer-loader 1.25s linear infinite;animation:timer-loader 1.25s linear infinite;-webkit-animation-delay:-625ms;animation-delay:-625ms}.la-timer[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:before{height:12px}.la-timer[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after{height:8px;-webkit-animation-duration:15s;animation-duration:15s;-webkit-animation-delay:-7.5s;animation-delay:-7.5s}.la-timer.la-sm[_ngcontent-%COMP%], .la-timer.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:16px;height:16px}.la-timer.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:1px}.la-timer.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after, .la-timer.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:before{top:7px;left:7px;width:1px;margin-top:-.5px;margin-left:-.5px;border-radius:1px;transform-origin:.5px .5px 0}.la-timer.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:before{height:6px}.la-timer.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after{height:4px}.la-timer.la-2x[_ngcontent-%COMP%], .la-timer.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:64px;height:64px}.la-timer.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:4px}.la-timer.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after, .la-timer.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:before{top:28px;left:28px;width:4px;margin-top:-2px;margin-left:-2px;border-radius:4px;transform-origin:2px 2px 0}.la-timer.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:before{height:24px}.la-timer.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after{height:16px}.la-timer.la-3x[_ngcontent-%COMP%], .la-timer.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:96px;height:96px}.la-timer.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:6px}.la-timer.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after, .la-timer.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:before{top:42px;left:42px;width:6px;margin-top:-3px;margin-left:-3px;border-radius:6px;transform-origin:3px 3px 0}.la-timer.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:before{height:36px}.la-timer.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:after{height:24px}@-webkit-keyframes timer-loader{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes timer-loader{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.la-triangle-skew-spin[_ngcontent-%COMP%], .la-triangle-skew-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{position:relative;box-sizing:border-box}.la-triangle-skew-spin[_ngcontent-%COMP%]{display:block;font-size:0;color:#fff}.la-triangle-skew-spin.la-dark[_ngcontent-%COMP%]{color:#333}.la-triangle-skew-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-triangle-skew-spin[_ngcontent-%COMP%]{width:32px;height:16px}.la-triangle-skew-spin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{width:0;height:0;background:transparent;border-left:none;border-right:none;border-color:currentcolor transparent;border-style:solid;border-width:0 16px 16px;-webkit-animation:triangle-skew-spin 3s cubic-bezier(.09,.57,.49,.9) 0s infinite;animation:triangle-skew-spin 3s cubic-bezier(.09,.57,.49,.9) 0s infinite}.la-triangle-skew-spin.la-sm[_ngcontent-%COMP%]{width:16px;height:8px}.la-triangle-skew-spin.la-sm[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:0 8px 8px}.la-triangle-skew-spin.la-2x[_ngcontent-%COMP%]{width:64px;height:32px}.la-triangle-skew-spin.la-2x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:0 32px 32px}.la-triangle-skew-spin.la-3x[_ngcontent-%COMP%]{width:96px;height:48px}.la-triangle-skew-spin.la-3x[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]{border-width:0 48px 48px}@-webkit-keyframes triangle-skew-spin{0%{transform:perspective(100px) rotateX(0) rotateY(0)}25%{transform:perspective(100px) rotateX(180deg) rotateY(0)}50%{transform:perspective(100px) rotateX(180deg) rotateY(180deg)}75%{transform:perspective(100px) rotateX(0) rotateY(180deg)}to{transform:perspective(100px) rotateX(0) rotateY(1turn)}}@keyframes triangle-skew-spin{0%{transform:perspective(100px) rotateX(0) rotateY(0)}25%{transform:perspective(100px) rotateX(180deg) rotateY(0)}50%{transform:perspective(100px) rotateX(180deg) rotateY(180deg)}75%{transform:perspective(100px) rotateX(0) rotateY(180deg)}to{transform:perspective(100px) rotateX(0) rotateY(1turn)}}.ngx-spinner-overlay[_ngcontent-%COMP%]{position:fixed;top:0;left:0;width:100%;height:100%}.ngx-spinner-overlay[_ngcontent-%COMP%] > div[_ngcontent-%COMP%]:not(.loading-text){top:50%;left:50%;margin:0;position:absolute;transform:translate(-50%,-50%)}.loading-text[_ngcontent-%COMP%]{position:absolute;top:60%;left:50%;transform:translate(-50%,-60%)}"],
-        data: {
-          animation: [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["trigger"])('fadeIn', [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["state"])('in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["style"])({
-            opacity: 1
-          })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["transition"])(':enter', [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["style"])({
-            opacity: 0
-          }), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["animate"])(300)]), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["transition"])(':leave', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["animate"])(200, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["style"])({
-            opacity: 0
-          })))])]
-        },
-        changeDetection: 0
-      });
-
-      NgxSpinnerComponent.ctorParameters = function () {
-        return [{
-          type: NgxSpinnerService
-        }, {
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]
-        }];
-      };
-
-      NgxSpinnerComponent.propDecorators = {
-        bdColor: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }],
-        size: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }],
-        color: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }],
-        type: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }],
-        fullScreen: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }],
-        name: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }],
-        zIndex: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }],
-        template: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }],
-        showSpinner: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }],
-        disableAnimation: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }],
-        spinnerDOM: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-          args: ['overlay']
-        }],
-        handleKeyboardEvent: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"],
-          args: ['document:keydown', ['$event']]
-        }]
-      };
-      /*@__PURE__*/
-
-      (function () {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxSpinnerComponent, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-          args: [{
-            selector: 'ngx-spinner',
-            template: "<div [@.disabled]=\"disableAnimation\" [@fadeIn]=\"'in'\" *ngIf=\"spinner.show\" class=\"ngx-spinner-overlay\"\n  [style.background-color]=\"spinner.bdColor\" [style.z-index]=\"spinner.zIndex\"\n  [style.position]=\"spinner.fullScreen ? 'fixed' : 'absolute'\" #overlay>\n  <div *ngIf=\"!template\" [class]=\"spinner.class\" [style.color]=\"spinner.color\">\n    <div *ngFor=\"let index of spinner.divArray\"></div>\n  </div>\n  <div *ngIf=\"template\" [innerHTML]=\"template | safeHtml\"></div>\n  <div class=\"loading-text\" [style.z-index]=\"spinner.zIndex\">\n    <ng-content></ng-content>\n  </div>\n</div>",
-            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush,
-            animations: [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["trigger"])('fadeIn', [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["state"])('in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["style"])({
-              opacity: 1
-            })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["transition"])(':enter', [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["style"])({
-              opacity: 0
-            }), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["animate"])(300)]), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["transition"])(':leave', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["animate"])(200, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_3__["style"])({
-              opacity: 0
-            })))])],
-            styles: ["/*!\n * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)\n * Copyright 2015 Daniel Cardoso <@DanielCardoso>\n * Licensed under MIT\n */.la-ball-8bits,.la-ball-8bits>div{position:relative;box-sizing:border-box}.la-ball-8bits{display:block;font-size:0;color:#fff}.la-ball-8bits.la-dark{color:#333}.la-ball-8bits>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-8bits{width:12px;height:12px}.la-ball-8bits>div{position:absolute;top:50%;left:50%;width:4px;height:4px;border-radius:0;opacity:0;transform:translate(100%,100%);-webkit-animation:ball-8bits 1s ease 0s infinite;animation:ball-8bits 1s ease 0s infinite}.la-ball-8bits>div:first-child{-webkit-animation-delay:-.9375s;animation-delay:-.9375s}.la-ball-8bits>div:nth-child(2){-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-ball-8bits>div:nth-child(3){-webkit-animation-delay:-.8125s;animation-delay:-.8125s}.la-ball-8bits>div:nth-child(4){-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-ball-8bits>div:nth-child(5){-webkit-animation-delay:-.6875s;animation-delay:-.6875s}.la-ball-8bits>div:nth-child(6){-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-ball-8bits>div:nth-child(7){-webkit-animation-delay:-.5625s;animation-delay:-.5625s}.la-ball-8bits>div:nth-child(8){-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-8bits>div:nth-child(9){-webkit-animation-delay:-.4375s;animation-delay:-.4375s}.la-ball-8bits>div:nth-child(10){-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-ball-8bits>div:nth-child(11){-webkit-animation-delay:-.3125s;animation-delay:-.3125s}.la-ball-8bits>div:nth-child(12){-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-8bits>div:nth-child(13){-webkit-animation-delay:-.1875s;animation-delay:-.1875s}.la-ball-8bits>div:nth-child(14){-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-ball-8bits>div:nth-child(15){-webkit-animation-delay:-.0625s;animation-delay:-.0625s}.la-ball-8bits>div:nth-child(16){-webkit-animation-delay:0s;animation-delay:0s}.la-ball-8bits>div:first-child{top:-100%;left:0}.la-ball-8bits>div:nth-child(2){top:-100%;left:33.3333333333%}.la-ball-8bits>div:nth-child(3){top:-66.6666666667%;left:66.6666666667%}.la-ball-8bits>div:nth-child(4){top:-33.3333333333%;left:100%}.la-ball-8bits>div:nth-child(5){top:0;left:100%}.la-ball-8bits>div:nth-child(6){top:33.3333333333%;left:100%}.la-ball-8bits>div:nth-child(7){top:66.6666666667%;left:66.6666666667%}.la-ball-8bits>div:nth-child(8){top:100%;left:33.3333333333%}.la-ball-8bits>div:nth-child(9){top:100%;left:0}.la-ball-8bits>div:nth-child(10){top:100%;left:-33.3333333333%}.la-ball-8bits>div:nth-child(11){top:66.6666666667%;left:-66.6666666667%}.la-ball-8bits>div:nth-child(12){top:33.3333333333%;left:-100%}.la-ball-8bits>div:nth-child(13){top:0;left:-100%}.la-ball-8bits>div:nth-child(14){top:-33.3333333333%;left:-100%}.la-ball-8bits>div:nth-child(15){top:-66.6666666667%;left:-66.6666666667%}.la-ball-8bits>div:nth-child(16){top:-100%;left:-33.3333333333%}.la-ball-8bits.la-sm{width:6px;height:6px}.la-ball-8bits.la-sm>div{width:2px;height:2px}.la-ball-8bits.la-2x{width:24px;height:24px}.la-ball-8bits.la-2x>div{width:8px;height:8px}.la-ball-8bits.la-3x{width:36px;height:36px}.la-ball-8bits.la-3x>div{width:12px;height:12px}@-webkit-keyframes ball-8bits{0%{opacity:1}50%{opacity:1}51%{opacity:0}}@keyframes ball-8bits{0%{opacity:1}50%{opacity:1}51%{opacity:0}}.la-ball-atom,.la-ball-atom>div{position:relative;box-sizing:border-box}.la-ball-atom{display:block;font-size:0;color:#fff}.la-ball-atom.la-dark{color:#333}.la-ball-atom>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-atom{width:32px;height:32px}.la-ball-atom>div:first-child{position:absolute;top:50%;left:50%;z-index:1;width:60%;height:60%;background:#aaa;border-radius:100%;transform:translate(-50%,-50%);-webkit-animation:ball-atom-shrink 4.5s linear infinite;animation:ball-atom-shrink 4.5s linear infinite}.la-ball-atom>div:not(:first-child){position:absolute;left:0;z-index:0;width:100%;height:100%;background:none;-webkit-animation:ball-atom-zindex 1.5s steps(2) 0s infinite;animation:ball-atom-zindex 1.5s steps(2) 0s infinite}.la-ball-atom>div:not(:first-child):before{position:absolute;top:0;left:0;width:10px;height:10px;margin-top:-5px;margin-left:-5px;content:\"\";background:currentColor;border-radius:50%;opacity:.75;-webkit-animation:ball-atom-position 1.5s ease 0s infinite,ball-atom-size 1.5s ease 0s infinite;animation:ball-atom-position 1.5s ease 0s infinite,ball-atom-size 1.5s ease 0s infinite}.la-ball-atom>div:nth-child(2){-webkit-animation-delay:.75s;animation-delay:.75s}.la-ball-atom>div:nth-child(2):before{-webkit-animation-delay:0s,-1.125s;animation-delay:0s,-1.125s}.la-ball-atom>div:nth-child(3){transform:rotate(120deg);-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-atom>div:nth-child(3):before{-webkit-animation-delay:-1s,-.75s;animation-delay:-1s,-.75s}.la-ball-atom>div:nth-child(4){transform:rotate(240deg);-webkit-animation-delay:.25s;animation-delay:.25s}.la-ball-atom>div:nth-child(4):before{-webkit-animation-delay:-.5s,-.125s;animation-delay:-.5s,-.125s}.la-ball-atom.la-sm{width:16px;height:16px}.la-ball-atom.la-sm>div:not(:first-child):before{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-atom.la-2x{width:64px;height:64px}.la-ball-atom.la-2x>div:not(:first-child):before{width:20px;height:20px;margin-top:-10px;margin-left:-10px}.la-ball-atom.la-3x{width:96px;height:96px}.la-ball-atom.la-3x>div:not(:first-child):before{width:30px;height:30px;margin-top:-15px;margin-left:-15px}@-webkit-keyframes ball-atom-position{50%{top:100%;left:100%}}@keyframes ball-atom-position{50%{top:100%;left:100%}}@-webkit-keyframes ball-atom-size{50%{transform:scale(.5)}}@keyframes ball-atom-size{50%{transform:scale(.5)}}@-webkit-keyframes ball-atom-zindex{50%{z-index:10}}@keyframes ball-atom-zindex{50%{z-index:10}}@-webkit-keyframes ball-atom-shrink{50%{transform:translate(-50%,-50%) scale(.8)}}@keyframes ball-atom-shrink{50%{transform:translate(-50%,-50%) scale(.8)}}.la-ball-beat,.la-ball-beat>div{position:relative;box-sizing:border-box}.la-ball-beat{display:block;font-size:0;color:#fff}.la-ball-beat.la-dark{color:#333}.la-ball-beat>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-beat{width:54px;height:18px}.la-ball-beat>div{width:10px;height:10px;margin:4px;border-radius:100%;-webkit-animation:ball-beat .7s linear -.15s infinite;animation:ball-beat .7s linear -.15s infinite}.la-ball-beat>div:nth-child(2n-1){-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-beat.la-sm{width:26px;height:8px}.la-ball-beat.la-sm>div{width:4px;height:4px;margin:2px}.la-ball-beat.la-2x{width:108px;height:36px}.la-ball-beat.la-2x>div{width:20px;height:20px;margin:8px}.la-ball-beat.la-3x{width:162px;height:54px}.la-ball-beat.la-3x>div{width:30px;height:30px;margin:12px}@-webkit-keyframes ball-beat{50%{opacity:.2;transform:scale(.75)}to{opacity:1;transform:scale(1)}}@keyframes ball-beat{50%{opacity:.2;transform:scale(.75)}to{opacity:1;transform:scale(1)}}.la-ball-circus,.la-ball-circus>div{position:relative;box-sizing:border-box}.la-ball-circus{display:block;font-size:0;color:#fff}.la-ball-circus.la-dark{color:#333}.la-ball-circus>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-circus{width:16px;height:16px}.la-ball-circus>div{position:absolute;top:0;left:-100%;display:block;width:16px;width:100%;height:16px;height:100%;border-radius:100%;opacity:.5;-webkit-animation:ball-circus-position 2.5s cubic-bezier(.25,0,.75,1) infinite,ball-circus-size 2.5s cubic-bezier(.25,0,.75,1) infinite;animation:ball-circus-position 2.5s cubic-bezier(.25,0,.75,1) infinite,ball-circus-size 2.5s cubic-bezier(.25,0,.75,1) infinite}.la-ball-circus>div:first-child{-webkit-animation-delay:0s,-.5s;animation-delay:0s,-.5s}.la-ball-circus>div:nth-child(2){-webkit-animation-delay:-.5s,-1s;animation-delay:-.5s,-1s}.la-ball-circus>div:nth-child(3){-webkit-animation-delay:-1s,-1.5s;animation-delay:-1s,-1.5s}.la-ball-circus>div:nth-child(4){-webkit-animation-delay:-1.5s,-2s;animation-delay:-1.5s,-2s}.la-ball-circus>div:nth-child(5){-webkit-animation-delay:-2s,-2.5s;animation-delay:-2s,-2.5s}.la-ball-circus.la-sm,.la-ball-circus.la-sm>div{width:8px;height:8px}.la-ball-circus.la-2x,.la-ball-circus.la-2x>div{width:32px;height:32px}.la-ball-circus.la-3x,.la-ball-circus.la-3x>div{width:48px;height:48px}@-webkit-keyframes ball-circus-position{50%{left:100%}}@keyframes ball-circus-position{50%{left:100%}}@-webkit-keyframes ball-circus-size{50%{transform:scale(.3)}}@keyframes ball-circus-size{50%{transform:scale(.3)}}.la-ball-climbing-dot,.la-ball-climbing-dot>div{position:relative;box-sizing:border-box}.la-ball-climbing-dot{display:block;font-size:0;color:#fff}.la-ball-climbing-dot.la-dark{color:#333}.la-ball-climbing-dot>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-climbing-dot{width:42px;height:32px}.la-ball-climbing-dot>div:first-child{position:absolute;bottom:32%;left:18%;width:14px;height:14px;border-radius:100%;transform-origin:center bottom;-webkit-animation:ball-climbing-dot-jump .6s ease-in-out infinite;animation:ball-climbing-dot-jump .6s ease-in-out infinite}.la-ball-climbing-dot>div:not(:first-child){position:absolute;top:0;right:0;width:14px;height:2px;border-radius:0;transform:translate(60%);-webkit-animation:ball-climbing-dot-steps 1.8s linear infinite;animation:ball-climbing-dot-steps 1.8s linear infinite}.la-ball-climbing-dot>div:not(:first-child):nth-child(2){-webkit-animation-delay:0ms;animation-delay:0ms}.la-ball-climbing-dot>div:not(:first-child):nth-child(3){-webkit-animation-delay:-.6s;animation-delay:-.6s}.la-ball-climbing-dot>div:not(:first-child):nth-child(4){-webkit-animation-delay:-1.2s;animation-delay:-1.2s}.la-ball-climbing-dot.la-sm{width:20px;height:16px}.la-ball-climbing-dot.la-sm>div:first-child{width:6px;height:6px}.la-ball-climbing-dot.la-sm>div:not(:first-child){width:6px;height:1px}.la-ball-climbing-dot.la-2x{width:84px;height:64px}.la-ball-climbing-dot.la-2x>div:first-child{width:28px;height:28px}.la-ball-climbing-dot.la-2x>div:not(:first-child){width:28px;height:4px}.la-ball-climbing-dot.la-3x{width:126px;height:96px}.la-ball-climbing-dot.la-3x>div:first-child{width:42px;height:42px}.la-ball-climbing-dot.la-3x>div:not(:first-child){width:42px;height:6px}@-webkit-keyframes ball-climbing-dot-jump{0%{transform:scaleY(.7)}20%{transform:scale(.7,1.2)}40%{transform:scale(1)}50%{bottom:125%}46%{transform:scale(1)}80%{transform:scale(.7,1.2)}90%{transform:scale(.7,1.2)}to{transform:scaleY(.7)}}@keyframes ball-climbing-dot-jump{0%{transform:scaleY(.7)}20%{transform:scale(.7,1.2)}40%{transform:scale(1)}50%{bottom:125%}46%{transform:scale(1)}80%{transform:scale(.7,1.2)}90%{transform:scale(.7,1.2)}to{transform:scaleY(.7)}}@-webkit-keyframes ball-climbing-dot-steps{0%{top:0;right:0;opacity:0}50%{opacity:1}to{top:100%;right:100%;opacity:0}}@keyframes ball-climbing-dot-steps{0%{top:0;right:0;opacity:0}50%{opacity:1}to{top:100%;right:100%;opacity:0}}.la-ball-clip-rotate-multiple,.la-ball-clip-rotate-multiple>div{position:relative;box-sizing:border-box}.la-ball-clip-rotate-multiple{display:block;font-size:0;color:#fff}.la-ball-clip-rotate-multiple.la-dark{color:#333}.la-ball-clip-rotate-multiple>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-clip-rotate-multiple{width:32px;height:32px}.la-ball-clip-rotate-multiple>div{position:absolute;top:50%;left:50%;background:transparent;border-style:solid;border-width:2px;border-radius:100%;-webkit-animation:ball-clip-rotate-multiple-rotate 1s ease-in-out infinite;animation:ball-clip-rotate-multiple-rotate 1s ease-in-out infinite}.la-ball-clip-rotate-multiple>div:first-child{position:absolute;width:32px;height:32px;border-right-color:transparent;border-left-color:transparent}.la-ball-clip-rotate-multiple>div:last-child{width:16px;height:16px;border-top-color:transparent;border-bottom-color:transparent;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-direction:reverse;animation-direction:reverse}.la-ball-clip-rotate-multiple.la-sm{width:16px;height:16px}.la-ball-clip-rotate-multiple.la-sm>div{border-width:1px}.la-ball-clip-rotate-multiple.la-sm>div:first-child{width:16px;height:16px}.la-ball-clip-rotate-multiple.la-sm>div:last-child{width:8px;height:8px}.la-ball-clip-rotate-multiple.la-2x{width:64px;height:64px}.la-ball-clip-rotate-multiple.la-2x>div{border-width:4px}.la-ball-clip-rotate-multiple.la-2x>div:first-child{width:64px;height:64px}.la-ball-clip-rotate-multiple.la-2x>div:last-child{width:32px;height:32px}.la-ball-clip-rotate-multiple.la-3x{width:96px;height:96px}.la-ball-clip-rotate-multiple.la-3x>div{border-width:6px}.la-ball-clip-rotate-multiple.la-3x>div:first-child{width:96px;height:96px}.la-ball-clip-rotate-multiple.la-3x>div:last-child{width:48px;height:48px}@-webkit-keyframes ball-clip-rotate-multiple-rotate{0%{transform:translate(-50%,-50%) rotate(0deg)}50%{transform:translate(-50%,-50%) rotate(180deg)}to{transform:translate(-50%,-50%) rotate(1turn)}}@keyframes ball-clip-rotate-multiple-rotate{0%{transform:translate(-50%,-50%) rotate(0deg)}50%{transform:translate(-50%,-50%) rotate(180deg)}to{transform:translate(-50%,-50%) rotate(1turn)}}.la-ball-clip-rotate-pulse,.la-ball-clip-rotate-pulse>div{position:relative;box-sizing:border-box}.la-ball-clip-rotate-pulse{display:block;font-size:0;color:#fff}.la-ball-clip-rotate-pulse.la-dark{color:#333}.la-ball-clip-rotate-pulse>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-clip-rotate-pulse{width:32px;height:32px}.la-ball-clip-rotate-pulse>div{position:absolute;top:50%;left:50%;border-radius:100%}.la-ball-clip-rotate-pulse>div:first-child{position:absolute;width:32px;height:32px;background:transparent;border-bottom-style:solid;border-top-style:solid;border-bottom-width:2px;border-top-width:2px;border-right:2px solid transparent;border-left:2px solid transparent;-webkit-animation:ball-clip-rotate-pulse-rotate 1s cubic-bezier(.09,.57,.49,.9) infinite;animation:ball-clip-rotate-pulse-rotate 1s cubic-bezier(.09,.57,.49,.9) infinite}.la-ball-clip-rotate-pulse>div:last-child{width:16px;height:16px;-webkit-animation:ball-clip-rotate-pulse-scale 1s cubic-bezier(.09,.57,.49,.9) infinite;animation:ball-clip-rotate-pulse-scale 1s cubic-bezier(.09,.57,.49,.9) infinite}.la-ball-clip-rotate-pulse.la-sm{width:16px;height:16px}.la-ball-clip-rotate-pulse.la-sm>div:first-child{width:16px;height:16px;border-width:1px}.la-ball-clip-rotate-pulse.la-sm>div:last-child{width:8px;height:8px}.la-ball-clip-rotate-pulse.la-2x{width:64px;height:64px}.la-ball-clip-rotate-pulse.la-2x>div:first-child{width:64px;height:64px;border-width:4px}.la-ball-clip-rotate-pulse.la-2x>div:last-child{width:32px;height:32px}.la-ball-clip-rotate-pulse.la-3x{width:96px;height:96px}.la-ball-clip-rotate-pulse.la-3x>div:first-child{width:96px;height:96px;border-width:6px}.la-ball-clip-rotate-pulse.la-3x>div:last-child{width:48px;height:48px}@-webkit-keyframes ball-clip-rotate-pulse-rotate{0%{transform:translate(-50%,-50%) rotate(0deg)}50%{transform:translate(-50%,-50%) rotate(180deg)}to{transform:translate(-50%,-50%) rotate(1turn)}}@keyframes ball-clip-rotate-pulse-rotate{0%{transform:translate(-50%,-50%) rotate(0deg)}50%{transform:translate(-50%,-50%) rotate(180deg)}to{transform:translate(-50%,-50%) rotate(1turn)}}@-webkit-keyframes ball-clip-rotate-pulse-scale{0%,to{opacity:1;transform:translate(-50%,-50%) scale(1)}30%{opacity:.3;transform:translate(-50%,-50%) scale(.15)}}@keyframes ball-clip-rotate-pulse-scale{0%,to{opacity:1;transform:translate(-50%,-50%) scale(1)}30%{opacity:.3;transform:translate(-50%,-50%) scale(.15)}}.la-ball-clip-rotate,.la-ball-clip-rotate>div{position:relative;box-sizing:border-box}.la-ball-clip-rotate{display:block;font-size:0;color:#fff}.la-ball-clip-rotate.la-dark{color:#333}.la-ball-clip-rotate>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-clip-rotate{width:32px;height:32px}.la-ball-clip-rotate>div{width:32px;height:32px;background:transparent;border-width:2px;border-bottom-color:transparent;border-radius:100%;-webkit-animation:ball-clip-rotate .75s linear infinite;animation:ball-clip-rotate .75s linear infinite}.la-ball-clip-rotate.la-sm{width:16px;height:16px}.la-ball-clip-rotate.la-sm>div{width:16px;height:16px;border-width:1px}.la-ball-clip-rotate.la-2x{width:64px;height:64px}.la-ball-clip-rotate.la-2x>div{width:64px;height:64px;border-width:4px}.la-ball-clip-rotate.la-3x{width:96px;height:96px}.la-ball-clip-rotate.la-3x>div{width:96px;height:96px;border-width:6px}@-webkit-keyframes ball-clip-rotate{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}to{transform:rotate(1turn)}}@keyframes ball-clip-rotate{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}to{transform:rotate(1turn)}}.la-ball-elastic-dots,.la-ball-elastic-dots>div{position:relative;box-sizing:border-box}.la-ball-elastic-dots{display:block;color:#fff}.la-ball-elastic-dots.la-dark{color:#333}.la-ball-elastic-dots>div{float:none;background-color:currentColor;border:0 solid}.la-ball-elastic-dots{width:120px;height:10px;font-size:0;text-align:center}.la-ball-elastic-dots>div{display:inline-block;width:10px;height:10px;white-space:nowrap;border-radius:100%;-webkit-animation:ball-elastic-dots-anim 1s infinite;animation:ball-elastic-dots-anim 1s infinite}.la-ball-elastic-dots.la-sm{width:60px;height:4px}.la-ball-elastic-dots.la-sm>div{width:4px;height:4px}.la-ball-elastic-dots.la-2x{width:240px;height:20px}.la-ball-elastic-dots.la-2x>div{width:20px;height:20px}.la-ball-elastic-dots.la-3x{width:360px;height:30px}.la-ball-elastic-dots.la-3x>div{width:30px;height:30px}@-webkit-keyframes ball-elastic-dots-anim{0%,to{margin:0;transform:scale(1)}50%{margin:0 5%;transform:scale(.65)}}@keyframes ball-elastic-dots-anim{0%,to{margin:0;transform:scale(1)}50%{margin:0 5%;transform:scale(.65)}}.la-ball-fall,.la-ball-fall>div{position:relative;box-sizing:border-box}.la-ball-fall{display:block;font-size:0;color:#fff}.la-ball-fall.la-dark{color:#333}.la-ball-fall>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-fall{width:54px;height:18px}.la-ball-fall>div{width:10px;height:10px;margin:4px;border-radius:100%;opacity:0;-webkit-animation:ball-fall 1s ease-in-out infinite;animation:ball-fall 1s ease-in-out infinite}.la-ball-fall>div:first-child{-webkit-animation-delay:-.2s;animation-delay:-.2s}.la-ball-fall>div:nth-child(2){-webkit-animation-delay:-.1s;animation-delay:-.1s}.la-ball-fall>div:nth-child(3){-webkit-animation-delay:0ms;animation-delay:0ms}.la-ball-fall.la-sm{width:26px;height:8px}.la-ball-fall.la-sm>div{width:4px;height:4px;margin:2px}.la-ball-fall.la-2x{width:108px;height:36px}.la-ball-fall.la-2x>div{width:20px;height:20px;margin:8px}.la-ball-fall.la-3x{width:162px;height:54px}.la-ball-fall.la-3x>div{width:30px;height:30px;margin:12px}@-webkit-keyframes ball-fall{0%{opacity:0;transform:translateY(-145%)}10%{opacity:.5}20%{opacity:1;transform:translateY(0)}80%{opacity:1;transform:translateY(0)}90%{opacity:.5}to{opacity:0;transform:translateY(145%)}}@keyframes ball-fall{0%{opacity:0;transform:translateY(-145%)}10%{opacity:.5}20%{opacity:1;transform:translateY(0)}80%{opacity:1;transform:translateY(0)}90%{opacity:.5}to{opacity:0;transform:translateY(145%)}}.la-ball-fussion,.la-ball-fussion>div{position:relative;box-sizing:border-box}.la-ball-fussion{display:block;font-size:0;color:#fff}.la-ball-fussion.la-dark{color:#333}.la-ball-fussion>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-fussion{width:8px;height:8px}.la-ball-fussion>div{position:absolute;width:12px;height:12px;border-radius:100%;transform:translate(-50%,-50%);-webkit-animation:ball-fussion-ball1 1s ease 0s infinite;animation:ball-fussion-ball1 1s ease 0s infinite}.la-ball-fussion>div:first-child{top:0;left:50%;z-index:1}.la-ball-fussion>div:nth-child(2){top:50%;left:100%;z-index:2;-webkit-animation-name:ball-fussion-ball2;animation-name:ball-fussion-ball2}.la-ball-fussion>div:nth-child(3){top:100%;left:50%;z-index:1;-webkit-animation-name:ball-fussion-ball3;animation-name:ball-fussion-ball3}.la-ball-fussion>div:nth-child(4){top:50%;left:0;z-index:2;-webkit-animation-name:ball-fussion-ball4;animation-name:ball-fussion-ball4}.la-ball-fussion.la-sm{width:4px;height:4px}.la-ball-fussion.la-sm>div{width:6px;height:6px}.la-ball-fussion.la-2x{width:16px;height:16px}.la-ball-fussion.la-2x>div,.la-ball-fussion.la-3x{width:24px;height:24px}.la-ball-fussion.la-3x>div{width:36px;height:36px}@-webkit-keyframes ball-fussion-ball1{0%{opacity:.35}50%{top:-100%;left:200%;opacity:1}to{top:50%;left:100%;z-index:2;opacity:.35}}@keyframes ball-fussion-ball1{0%{opacity:.35}50%{top:-100%;left:200%;opacity:1}to{top:50%;left:100%;z-index:2;opacity:.35}}@-webkit-keyframes ball-fussion-ball2{0%{opacity:.35}50%{top:200%;left:200%;opacity:1}to{top:100%;left:50%;z-index:1;opacity:.35}}@keyframes ball-fussion-ball2{0%{opacity:.35}50%{top:200%;left:200%;opacity:1}to{top:100%;left:50%;z-index:1;opacity:.35}}@-webkit-keyframes ball-fussion-ball3{0%{opacity:.35}50%{top:200%;left:-100%;opacity:1}to{top:50%;left:0;z-index:2;opacity:.35}}@keyframes ball-fussion-ball3{0%{opacity:.35}50%{top:200%;left:-100%;opacity:1}to{top:50%;left:0;z-index:2;opacity:.35}}@-webkit-keyframes ball-fussion-ball4{0%{opacity:.35}50%{top:-100%;left:-100%;opacity:1}to{top:0;left:50%;z-index:1;opacity:.35}}@keyframes ball-fussion-ball4{0%{opacity:.35}50%{top:-100%;left:-100%;opacity:1}to{top:0;left:50%;z-index:1;opacity:.35}}.la-ball-grid-beat,.la-ball-grid-beat>div{position:relative;box-sizing:border-box}.la-ball-grid-beat{display:block;font-size:0;color:#fff}.la-ball-grid-beat.la-dark{color:#333}.la-ball-grid-beat>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-grid-beat{width:36px;height:36px}.la-ball-grid-beat>div{width:8px;height:8px;margin:2px;border-radius:100%;-webkit-animation-name:ball-grid-beat;animation-name:ball-grid-beat;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.la-ball-grid-beat>div:first-child{-webkit-animation-duration:.65s;animation-duration:.65s;-webkit-animation-delay:.03s;animation-delay:.03s}.la-ball-grid-beat>div:nth-child(2){-webkit-animation-duration:1.02s;animation-duration:1.02s;-webkit-animation-delay:.09s;animation-delay:.09s}.la-ball-grid-beat>div:nth-child(3){-webkit-animation-duration:1.06s;animation-duration:1.06s;-webkit-animation-delay:-.69s;animation-delay:-.69s}.la-ball-grid-beat>div:nth-child(4){-webkit-animation-duration:1.5s;animation-duration:1.5s;-webkit-animation-delay:-.41s;animation-delay:-.41s}.la-ball-grid-beat>div:nth-child(5){-webkit-animation-duration:1.6s;animation-duration:1.6s;-webkit-animation-delay:.04s;animation-delay:.04s}.la-ball-grid-beat>div:nth-child(6){-webkit-animation-duration:.84s;animation-duration:.84s;-webkit-animation-delay:.07s;animation-delay:.07s}.la-ball-grid-beat>div:nth-child(7){-webkit-animation-duration:.68s;animation-duration:.68s;-webkit-animation-delay:-.66s;animation-delay:-.66s}.la-ball-grid-beat>div:nth-child(8){-webkit-animation-duration:.93s;animation-duration:.93s}.la-ball-grid-beat>div:nth-child(8),.la-ball-grid-beat>div:nth-child(9){-webkit-animation-delay:-.76s;animation-delay:-.76s}.la-ball-grid-beat>div:nth-child(9){-webkit-animation-duration:1.24s;animation-duration:1.24s}.la-ball-grid-beat.la-sm{width:18px;height:18px}.la-ball-grid-beat.la-sm>div{width:4px;height:4px;margin:1px}.la-ball-grid-beat.la-2x{width:72px;height:72px}.la-ball-grid-beat.la-2x>div{width:16px;height:16px;margin:4px}.la-ball-grid-beat.la-3x{width:108px;height:108px}.la-ball-grid-beat.la-3x>div{width:24px;height:24px;margin:6px}@-webkit-keyframes ball-grid-beat{0%{opacity:1}50%{opacity:.35}to{opacity:1}}@keyframes ball-grid-beat{0%{opacity:1}50%{opacity:.35}to{opacity:1}}.la-ball-grid-pulse,.la-ball-grid-pulse>div{position:relative;box-sizing:border-box}.la-ball-grid-pulse{display:block;font-size:0;color:#fff}.la-ball-grid-pulse.la-dark{color:#333}.la-ball-grid-pulse>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-grid-pulse{width:36px;height:36px}.la-ball-grid-pulse>div{width:8px;height:8px;margin:2px;border-radius:100%;-webkit-animation-name:ball-grid-pulse;animation-name:ball-grid-pulse;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.la-ball-grid-pulse>div:first-child{-webkit-animation-duration:.65s;animation-duration:.65s;-webkit-animation-delay:.03s;animation-delay:.03s}.la-ball-grid-pulse>div:nth-child(2){-webkit-animation-duration:1.02s;animation-duration:1.02s;-webkit-animation-delay:.09s;animation-delay:.09s}.la-ball-grid-pulse>div:nth-child(3){-webkit-animation-duration:1.06s;animation-duration:1.06s;-webkit-animation-delay:-.69s;animation-delay:-.69s}.la-ball-grid-pulse>div:nth-child(4){-webkit-animation-duration:1.5s;animation-duration:1.5s;-webkit-animation-delay:-.41s;animation-delay:-.41s}.la-ball-grid-pulse>div:nth-child(5){-webkit-animation-duration:1.6s;animation-duration:1.6s;-webkit-animation-delay:.04s;animation-delay:.04s}.la-ball-grid-pulse>div:nth-child(6){-webkit-animation-duration:.84s;animation-duration:.84s;-webkit-animation-delay:.07s;animation-delay:.07s}.la-ball-grid-pulse>div:nth-child(7){-webkit-animation-duration:.68s;animation-duration:.68s;-webkit-animation-delay:-.66s;animation-delay:-.66s}.la-ball-grid-pulse>div:nth-child(8){-webkit-animation-duration:.93s;animation-duration:.93s}.la-ball-grid-pulse>div:nth-child(8),.la-ball-grid-pulse>div:nth-child(9){-webkit-animation-delay:-.76s;animation-delay:-.76s}.la-ball-grid-pulse>div:nth-child(9){-webkit-animation-duration:1.24s;animation-duration:1.24s}.la-ball-grid-pulse.la-sm{width:18px;height:18px}.la-ball-grid-pulse.la-sm>div{width:4px;height:4px;margin:1px}.la-ball-grid-pulse.la-2x{width:72px;height:72px}.la-ball-grid-pulse.la-2x>div{width:16px;height:16px;margin:4px}.la-ball-grid-pulse.la-3x{width:108px;height:108px}.la-ball-grid-pulse.la-3x>div{width:24px;height:24px;margin:6px}@-webkit-keyframes ball-grid-pulse{0%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.45)}to{opacity:1;transform:scale(1)}}@keyframes ball-grid-pulse{0%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.45)}to{opacity:1;transform:scale(1)}}.la-ball-newton-cradle,.la-ball-newton-cradle>div{position:relative;box-sizing:border-box}.la-ball-newton-cradle{display:block;font-size:0;color:#fff}.la-ball-newton-cradle.la-dark{color:#333}.la-ball-newton-cradle>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-newton-cradle{width:40px;height:10px}.la-ball-newton-cradle>div{width:10px;height:10px;border-radius:100%}.la-ball-newton-cradle>div:first-child{-webkit-animation:ball-newton-cradle-left 1s ease-out 0s infinite;animation:ball-newton-cradle-left 1s ease-out 0s infinite}.la-ball-newton-cradle>div:first-child,.la-ball-newton-cradle>div:last-child{transform:translateX(0)}.la-ball-newton-cradle>div:last-child{-webkit-animation:ball-newton-cradle-right 1s ease-out 0s infinite;animation:ball-newton-cradle-right 1s ease-out 0s infinite}.la-ball-newton-cradle.la-sm{width:20px;height:4px}.la-ball-newton-cradle.la-sm>div{width:4px;height:4px}.la-ball-newton-cradle.la-2x{width:80px;height:20px}.la-ball-newton-cradle.la-2x>div{width:20px;height:20px}.la-ball-newton-cradle.la-3x{width:120px;height:30px}.la-ball-newton-cradle.la-3x>div{width:30px;height:30px}@-webkit-keyframes ball-newton-cradle-left{25%{transform:translateX(-100%);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}50%{transform:translateX(0)}}@keyframes ball-newton-cradle-left{25%{transform:translateX(-100%);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}50%{transform:translateX(0)}}@-webkit-keyframes ball-newton-cradle-right{50%{transform:translateX(0)}75%{transform:translateX(100%);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}to{transform:translateX(0)}}@keyframes ball-newton-cradle-right{50%{transform:translateX(0)}75%{transform:translateX(100%);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}to{transform:translateX(0)}}.la-ball-pulse-rise,.la-ball-pulse-rise>div{position:relative;box-sizing:border-box}.la-ball-pulse-rise{display:block;font-size:0;color:#fff}.la-ball-pulse-rise.la-dark{color:#333}.la-ball-pulse-rise>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-pulse-rise{width:70px;height:14px}.la-ball-pulse-rise>div{width:10px;height:10px;margin:2px;border-radius:100%;-webkit-animation:ball-pulse-rise-even 1s cubic-bezier(.15,.36,.9,.6) 0s infinite;animation:ball-pulse-rise-even 1s cubic-bezier(.15,.36,.9,.6) 0s infinite}.la-ball-pulse-rise>div:nth-child(2n-1){-webkit-animation-name:ball-pulse-rise-odd;animation-name:ball-pulse-rise-odd}.la-ball-pulse-rise.la-sm{width:34px;height:6px}.la-ball-pulse-rise.la-sm>div{width:4px;height:4px;margin:1px}.la-ball-pulse-rise.la-2x{width:140px;height:28px}.la-ball-pulse-rise.la-2x>div{width:20px;height:20px;margin:4px}.la-ball-pulse-rise.la-3x{width:210px;height:42px}.la-ball-pulse-rise.la-3x>div{width:30px;height:30px;margin:6px}@-webkit-keyframes ball-pulse-rise-even{0%{opacity:1;transform:scale(1.1)}25%{transform:translateY(-200%)}50%{opacity:.35;transform:scale(.3)}75%{transform:translateY(200%)}to{opacity:1;transform:translateY(0);transform:scale(1)}}@keyframes ball-pulse-rise-even{0%{opacity:1;transform:scale(1.1)}25%{transform:translateY(-200%)}50%{opacity:.35;transform:scale(.3)}75%{transform:translateY(200%)}to{opacity:1;transform:translateY(0);transform:scale(1)}}@-webkit-keyframes ball-pulse-rise-odd{0%{opacity:.35;transform:scale(.4)}25%{transform:translateY(200%)}50%{opacity:1;transform:scale(1.1)}75%{transform:translateY(-200%)}to{opacity:.35;transform:translateY(0);transform:scale(.75)}}@keyframes ball-pulse-rise-odd{0%{opacity:.35;transform:scale(.4)}25%{transform:translateY(200%)}50%{opacity:1;transform:scale(1.1)}75%{transform:translateY(-200%)}to{opacity:.35;transform:translateY(0);transform:scale(.75)}}.la-ball-pulse-sync,.la-ball-pulse-sync>div{position:relative;box-sizing:border-box}.la-ball-pulse-sync{display:block;font-size:0;color:#fff}.la-ball-pulse-sync.la-dark{color:#333}.la-ball-pulse-sync>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-pulse-sync{width:54px;height:18px}.la-ball-pulse-sync>div{width:10px;height:10px;margin:4px;border-radius:100%;-webkit-animation:ball-pulse-sync .6s ease-in-out infinite;animation:ball-pulse-sync .6s ease-in-out infinite}.la-ball-pulse-sync>div:first-child{-webkit-animation-delay:-.14s;animation-delay:-.14s}.la-ball-pulse-sync>div:nth-child(2){-webkit-animation-delay:-.07s;animation-delay:-.07s}.la-ball-pulse-sync>div:nth-child(3){-webkit-animation-delay:0s;animation-delay:0s}.la-ball-pulse-sync.la-sm{width:26px;height:8px}.la-ball-pulse-sync.la-sm>div{width:4px;height:4px;margin:2px}.la-ball-pulse-sync.la-2x{width:108px;height:36px}.la-ball-pulse-sync.la-2x>div{width:20px;height:20px;margin:8px}.la-ball-pulse-sync.la-3x{width:162px;height:54px}.la-ball-pulse-sync.la-3x>div{width:30px;height:30px;margin:12px}@-webkit-keyframes ball-pulse-sync{33%{transform:translateY(100%)}66%{transform:translateY(-100%)}to{transform:translateY(0)}}@keyframes ball-pulse-sync{33%{transform:translateY(100%)}66%{transform:translateY(-100%)}to{transform:translateY(0)}}.la-ball-pulse,.la-ball-pulse>div{position:relative;box-sizing:border-box}.la-ball-pulse{display:block;font-size:0;color:#fff}.la-ball-pulse.la-dark{color:#333}.la-ball-pulse>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-pulse{width:54px;height:18px}.la-ball-pulse>div:first-child{-webkit-animation-delay:-.2s;animation-delay:-.2s}.la-ball-pulse>div:nth-child(2){-webkit-animation-delay:-.1s;animation-delay:-.1s}.la-ball-pulse>div:nth-child(3){-webkit-animation-delay:0ms;animation-delay:0ms}.la-ball-pulse>div{width:10px;height:10px;margin:4px;border-radius:100%;-webkit-animation:ball-pulse 1s ease infinite;animation:ball-pulse 1s ease infinite}.la-ball-pulse.la-sm{width:26px;height:8px}.la-ball-pulse.la-sm>div{width:4px;height:4px;margin:2px}.la-ball-pulse.la-2x{width:108px;height:36px}.la-ball-pulse.la-2x>div{width:20px;height:20px;margin:8px}.la-ball-pulse.la-3x{width:162px;height:54px}.la-ball-pulse.la-3x>div{width:30px;height:30px;margin:12px}@-webkit-keyframes ball-pulse{0%,60%,to{opacity:1;transform:scale(1)}30%{opacity:.1;transform:scale(.01)}}@keyframes ball-pulse{0%,60%,to{opacity:1;transform:scale(1)}30%{opacity:.1;transform:scale(.01)}}.la-ball-rotate,.la-ball-rotate>div{position:relative;box-sizing:border-box}.la-ball-rotate{display:block;font-size:0;color:#fff}.la-ball-rotate.la-dark{color:#333}.la-ball-rotate>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-rotate,.la-ball-rotate>div{width:10px;height:10px}.la-ball-rotate>div{border-radius:100%;-webkit-animation:ball-rotate-animation 1s cubic-bezier(.7,-.13,.22,.86) infinite;animation:ball-rotate-animation 1s cubic-bezier(.7,-.13,.22,.86) infinite}.la-ball-rotate>div:after,.la-ball-rotate>div:before{position:absolute;width:inherit;height:inherit;margin:inherit;content:\"\";background:currentColor;border-radius:inherit;opacity:.8}.la-ball-rotate>div:before{top:0;left:-150%}.la-ball-rotate>div:after{top:0;left:150%}.la-ball-rotate.la-sm,.la-ball-rotate.la-sm>div{width:4px;height:4px}.la-ball-rotate.la-2x,.la-ball-rotate.la-2x>div{width:20px;height:20px}.la-ball-rotate.la-3x,.la-ball-rotate.la-3x>div{width:30px;height:30px}@-webkit-keyframes ball-rotate-animation{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}to{transform:rotate(1turn)}}@keyframes ball-rotate-animation{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}to{transform:rotate(1turn)}}.la-ball-running-dots,.la-ball-running-dots>div{position:relative;box-sizing:border-box}.la-ball-running-dots{display:block;font-size:0;color:#fff}.la-ball-running-dots.la-dark{color:#333}.la-ball-running-dots>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-running-dots{width:10px;height:10px}.la-ball-running-dots>div{position:absolute;width:10px;height:10px;margin-left:-25px;border-radius:100%;-webkit-animation:ball-running-dots-animate 2s linear infinite;animation:ball-running-dots-animate 2s linear infinite}.la-ball-running-dots>div:first-child{-webkit-animation-delay:0s;animation-delay:0s}.la-ball-running-dots>div:nth-child(2){-webkit-animation-delay:-.4s;animation-delay:-.4s}.la-ball-running-dots>div:nth-child(3){-webkit-animation-delay:-.8s;animation-delay:-.8s}.la-ball-running-dots>div:nth-child(4){-webkit-animation-delay:-1.2s;animation-delay:-1.2s}.la-ball-running-dots>div:nth-child(5){-webkit-animation-delay:-1.6s;animation-delay:-1.6s}.la-ball-running-dots>div:nth-child(6){-webkit-animation-delay:-2s;animation-delay:-2s}.la-ball-running-dots>div:nth-child(7){-webkit-animation-delay:-2.4s;animation-delay:-2.4s}.la-ball-running-dots>div:nth-child(8){-webkit-animation-delay:-2.8s;animation-delay:-2.8s}.la-ball-running-dots>div:nth-child(9){-webkit-animation-delay:-3.2s;animation-delay:-3.2s}.la-ball-running-dots>div:nth-child(10){-webkit-animation-delay:-3.6s;animation-delay:-3.6s}.la-ball-running-dots.la-sm{width:4px;height:4px}.la-ball-running-dots.la-sm>div{width:4px;height:4px;margin-left:-12px}.la-ball-running-dots.la-2x{width:20px;height:20px}.la-ball-running-dots.la-2x>div{width:20px;height:20px;margin-left:-50px}.la-ball-running-dots.la-3x{width:30px;height:30px}.la-ball-running-dots.la-3x>div{width:30px;height:30px;margin-left:-75px}@-webkit-keyframes ball-running-dots-animate{0%,to{width:100%;height:100%;transform:translateY(0) translateX(500%)}80%{transform:translateY(0) translateX(0)}85%{width:100%;height:100%;transform:translateY(-125%) translateX(0)}90%{width:200%;height:75%}95%{width:100%;height:100%;transform:translateY(-100%) translateX(500%)}}@keyframes ball-running-dots-animate{0%,to{width:100%;height:100%;transform:translateY(0) translateX(500%)}80%{transform:translateY(0) translateX(0)}85%{width:100%;height:100%;transform:translateY(-125%) translateX(0)}90%{width:200%;height:75%}95%{width:100%;height:100%;transform:translateY(-100%) translateX(500%)}}.la-ball-scale-multiple,.la-ball-scale-multiple>div{position:relative;box-sizing:border-box}.la-ball-scale-multiple{display:block;font-size:0;color:#fff}.la-ball-scale-multiple.la-dark{color:#333}.la-ball-scale-multiple>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-scale-multiple{width:32px;height:32px}.la-ball-scale-multiple>div{position:absolute;top:0;left:0;width:32px;height:32px;border-radius:100%;opacity:0;-webkit-animation:ball-scale-multiple 1s linear 0s infinite;animation:ball-scale-multiple 1s linear 0s infinite}.la-ball-scale-multiple>div:nth-child(2){-webkit-animation-delay:.2s;animation-delay:.2s}.la-ball-scale-multiple>div:nth-child(3){-webkit-animation-delay:.4s;animation-delay:.4s}.la-ball-scale-multiple.la-sm,.la-ball-scale-multiple.la-sm>div{width:16px;height:16px}.la-ball-scale-multiple.la-2x,.la-ball-scale-multiple.la-2x>div{width:64px;height:64px}.la-ball-scale-multiple.la-3x,.la-ball-scale-multiple.la-3x>div{width:96px;height:96px}@-webkit-keyframes ball-scale-multiple{0%{opacity:0;transform:scale(0)}5%{opacity:.75}to{opacity:0;transform:scale(1)}}@keyframes ball-scale-multiple{0%{opacity:0;transform:scale(0)}5%{opacity:.75}to{opacity:0;transform:scale(1)}}.la-ball-scale-pulse,.la-ball-scale-pulse>div{position:relative;box-sizing:border-box}.la-ball-scale-pulse{display:block;font-size:0;color:#fff}.la-ball-scale-pulse.la-dark{color:#333}.la-ball-scale-pulse>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-scale-pulse{width:32px;height:32px}.la-ball-scale-pulse>div{position:absolute;top:0;left:0;width:32px;height:32px;border-radius:100%;opacity:.5;-webkit-animation:ball-scale-pulse 2s ease-in-out infinite;animation:ball-scale-pulse 2s ease-in-out infinite}.la-ball-scale-pulse>div:last-child{-webkit-animation-delay:-1s;animation-delay:-1s}.la-ball-scale-pulse.la-sm,.la-ball-scale-pulse.la-sm>div{width:16px;height:16px}.la-ball-scale-pulse.la-2x,.la-ball-scale-pulse.la-2x>div{width:64px;height:64px}.la-ball-scale-pulse.la-3x,.la-ball-scale-pulse.la-3x>div{width:96px;height:96px}@-webkit-keyframes ball-scale-pulse{0%,to{transform:scale(0)}50%{transform:scale(1)}}@keyframes ball-scale-pulse{0%,to{transform:scale(0)}50%{transform:scale(1)}}.la-ball-scale-ripple-multiple,.la-ball-scale-ripple-multiple>div{position:relative;box-sizing:border-box}.la-ball-scale-ripple-multiple{display:block;font-size:0;color:#fff}.la-ball-scale-ripple-multiple.la-dark{color:#333}.la-ball-scale-ripple-multiple>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-scale-ripple-multiple{width:32px;height:32px}.la-ball-scale-ripple-multiple>div{position:absolute;top:0;left:0;width:32px;height:32px;background:transparent;border-width:2px;border-radius:100%;opacity:0;-webkit-animation:ball-scale-ripple-multiple 1.25s cubic-bezier(.21,.53,.56,.8) 0s infinite;animation:ball-scale-ripple-multiple 1.25s cubic-bezier(.21,.53,.56,.8) 0s infinite}.la-ball-scale-ripple-multiple>div:first-child{-webkit-animation-delay:0s;animation-delay:0s}.la-ball-scale-ripple-multiple>div:nth-child(2){-webkit-animation-delay:.25s;animation-delay:.25s}.la-ball-scale-ripple-multiple>div:nth-child(3){-webkit-animation-delay:.5s;animation-delay:.5s}.la-ball-scale-ripple-multiple.la-sm{width:16px;height:16px}.la-ball-scale-ripple-multiple.la-sm>div{width:16px;height:16px;border-width:1px}.la-ball-scale-ripple-multiple.la-2x{width:64px;height:64px}.la-ball-scale-ripple-multiple.la-2x>div{width:64px;height:64px;border-width:4px}.la-ball-scale-ripple-multiple.la-3x{width:96px;height:96px}.la-ball-scale-ripple-multiple.la-3x>div{width:96px;height:96px;border-width:6px}@-webkit-keyframes ball-scale-ripple-multiple{0%{opacity:1;transform:scale(.1)}70%{opacity:.5;transform:scale(1)}95%{opacity:0}}@keyframes ball-scale-ripple-multiple{0%{opacity:1;transform:scale(.1)}70%{opacity:.5;transform:scale(1)}95%{opacity:0}}.la-ball-scale-ripple,.la-ball-scale-ripple>div{position:relative;box-sizing:border-box}.la-ball-scale-ripple{display:block;font-size:0;color:#fff}.la-ball-scale-ripple.la-dark{color:#333}.la-ball-scale-ripple>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-scale-ripple{width:32px;height:32px}.la-ball-scale-ripple>div{width:32px;height:32px;background:transparent;border-width:2px;border-radius:100%;opacity:0;-webkit-animation:ball-scale-ripple 1s cubic-bezier(.21,.53,.56,.8) 0s infinite;animation:ball-scale-ripple 1s cubic-bezier(.21,.53,.56,.8) 0s infinite}.la-ball-scale-ripple.la-sm{width:16px;height:16px}.la-ball-scale-ripple.la-sm>div{width:16px;height:16px;border-width:1px}.la-ball-scale-ripple.la-2x{width:64px;height:64px}.la-ball-scale-ripple.la-2x>div{width:64px;height:64px;border-width:4px}.la-ball-scale-ripple.la-3x{width:96px;height:96px}.la-ball-scale-ripple.la-3x>div{width:96px;height:96px;border-width:6px}@-webkit-keyframes ball-scale-ripple{0%{opacity:1;transform:scale(.1)}70%{opacity:.65;transform:scale(1)}to{opacity:0}}@keyframes ball-scale-ripple{0%{opacity:1;transform:scale(.1)}70%{opacity:.65;transform:scale(1)}to{opacity:0}}.la-ball-scale,.la-ball-scale>div{position:relative;box-sizing:border-box}.la-ball-scale{display:block;font-size:0;color:#fff}.la-ball-scale.la-dark{color:#333}.la-ball-scale>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-scale,.la-ball-scale>div{width:32px;height:32px}.la-ball-scale>div{border-radius:100%;opacity:0;-webkit-animation:ball-scale 1s ease-in-out 0s infinite;animation:ball-scale 1s ease-in-out 0s infinite}.la-ball-scale.la-sm,.la-ball-scale.la-sm>div{width:16px;height:16px}.la-ball-scale.la-2x,.la-ball-scale.la-2x>div{width:64px;height:64px}.la-ball-scale.la-3x,.la-ball-scale.la-3x>div{width:96px;height:96px}@-webkit-keyframes ball-scale{0%{opacity:1;transform:scale(0)}to{opacity:0;transform:scale(1)}}@keyframes ball-scale{0%{opacity:1;transform:scale(0)}to{opacity:0;transform:scale(1)}}.la-ball-spin-clockwise-fade-rotating,.la-ball-spin-clockwise-fade-rotating>div{position:relative;box-sizing:border-box}.la-ball-spin-clockwise-fade-rotating{display:block;font-size:0;color:#fff}.la-ball-spin-clockwise-fade-rotating.la-dark{color:#333}.la-ball-spin-clockwise-fade-rotating>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-clockwise-fade-rotating{width:32px;height:32px;-webkit-animation:ball-spin-clockwise-fade-rotating-rotate 6s linear infinite;animation:ball-spin-clockwise-fade-rotating-rotate 6s linear infinite}.la-ball-spin-clockwise-fade-rotating>div{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin-clockwise-fade-rotating 1s linear infinite;animation:ball-spin-clockwise-fade-rotating 1s linear infinite}.la-ball-spin-clockwise-fade-rotating>div:first-child{top:5%;left:50%;-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-ball-spin-clockwise-fade-rotating>div:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-ball-spin-clockwise-fade-rotating>div:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-ball-spin-clockwise-fade-rotating>div:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-spin-clockwise-fade-rotating>div:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-ball-spin-clockwise-fade-rotating>div:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-spin-clockwise-fade-rotating>div:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-ball-spin-clockwise-fade-rotating>div:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:0s;animation-delay:0s}.la-ball-spin-clockwise-fade-rotating.la-sm{width:16px;height:16px}.la-ball-spin-clockwise-fade-rotating.la-sm>div{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin-clockwise-fade-rotating.la-2x{width:64px;height:64px}.la-ball-spin-clockwise-fade-rotating.la-2x>div{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin-clockwise-fade-rotating.la-3x{width:96px;height:96px}.la-ball-spin-clockwise-fade-rotating.la-3x>div{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin-clockwise-fade-rotating-rotate{to{transform:rotate(-1turn)}}@keyframes ball-spin-clockwise-fade-rotating-rotate{to{transform:rotate(-1turn)}}@-webkit-keyframes ball-spin-clockwise-fade-rotating{50%{opacity:.25;transform:scale(.5)}to{opacity:1;transform:scale(1)}}@keyframes ball-spin-clockwise-fade-rotating{50%{opacity:.25;transform:scale(.5)}to{opacity:1;transform:scale(1)}}.la-ball-spin-clockwise-fade,.la-ball-spin-clockwise-fade>div{position:relative;box-sizing:border-box}.la-ball-spin-clockwise-fade{display:block;font-size:0;color:#fff}.la-ball-spin-clockwise-fade.la-dark{color:#333}.la-ball-spin-clockwise-fade>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-clockwise-fade{width:32px;height:32px}.la-ball-spin-clockwise-fade>div{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin-clockwise-fade 1s linear infinite;animation:ball-spin-clockwise-fade 1s linear infinite}.la-ball-spin-clockwise-fade>div:first-child{top:5%;left:50%;-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-ball-spin-clockwise-fade>div:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-ball-spin-clockwise-fade>div:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-ball-spin-clockwise-fade>div:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-spin-clockwise-fade>div:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-ball-spin-clockwise-fade>div:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-spin-clockwise-fade>div:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-ball-spin-clockwise-fade>div:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:0s;animation-delay:0s}.la-ball-spin-clockwise-fade.la-sm{width:16px;height:16px}.la-ball-spin-clockwise-fade.la-sm>div{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin-clockwise-fade.la-2x{width:64px;height:64px}.la-ball-spin-clockwise-fade.la-2x>div{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin-clockwise-fade.la-3x{width:96px;height:96px}.la-ball-spin-clockwise-fade.la-3x>div{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin-clockwise-fade{50%{opacity:.25;transform:scale(.5)}to{opacity:1;transform:scale(1)}}@keyframes ball-spin-clockwise-fade{50%{opacity:.25;transform:scale(.5)}to{opacity:1;transform:scale(1)}}.la-ball-spin-clockwise,.la-ball-spin-clockwise>div{position:relative;box-sizing:border-box}.la-ball-spin-clockwise{display:block;font-size:0;color:#fff}.la-ball-spin-clockwise.la-dark{color:#333}.la-ball-spin-clockwise>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-clockwise{width:32px;height:32px}.la-ball-spin-clockwise>div{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin-clockwise 1s ease-in-out infinite;animation:ball-spin-clockwise 1s ease-in-out infinite}.la-ball-spin-clockwise>div:first-child{top:5%;left:50%;-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-ball-spin-clockwise>div:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-ball-spin-clockwise>div:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-ball-spin-clockwise>div:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-spin-clockwise>div:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-ball-spin-clockwise>div:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-spin-clockwise>div:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-ball-spin-clockwise>div:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:0s;animation-delay:0s}.la-ball-spin-clockwise.la-sm{width:16px;height:16px}.la-ball-spin-clockwise.la-sm>div{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin-clockwise.la-2x{width:64px;height:64px}.la-ball-spin-clockwise.la-2x>div{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin-clockwise.la-3x{width:96px;height:96px}.la-ball-spin-clockwise.la-3x>div{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin-clockwise{0%,to{opacity:1;transform:scale(1)}20%{opacity:1}80%{opacity:0;transform:scale(0)}}@keyframes ball-spin-clockwise{0%,to{opacity:1;transform:scale(1)}20%{opacity:1}80%{opacity:0;transform:scale(0)}}.la-ball-spin-fade-rotating,.la-ball-spin-fade-rotating>div{position:relative;box-sizing:border-box}.la-ball-spin-fade-rotating{display:block;font-size:0;color:#fff}.la-ball-spin-fade-rotating.la-dark{color:#333}.la-ball-spin-fade-rotating>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-fade-rotating{width:32px;height:32px;-webkit-animation:ball-spin-fade-rotate 6s linear infinite;animation:ball-spin-fade-rotate 6s linear infinite}.la-ball-spin-fade-rotating>div{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin-fade 1s linear infinite;animation:ball-spin-fade 1s linear infinite}.la-ball-spin-fade-rotating>div:first-child{top:5%;left:50%;-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-ball-spin-fade-rotating>div:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-ball-spin-fade-rotating>div:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-ball-spin-fade-rotating>div:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-ball-spin-fade-rotating>div:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-ball-spin-fade-rotating>div:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-ball-spin-fade-rotating>div:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-ball-spin-fade-rotating>div:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:-2s;animation-delay:-2s}.la-ball-spin-fade-rotating.la-sm{width:16px;height:16px}.la-ball-spin-fade-rotating.la-sm>div{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin-fade-rotating.la-2x{width:64px;height:64px}.la-ball-spin-fade-rotating.la-2x>div{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin-fade-rotating.la-3x{width:96px;height:96px}.la-ball-spin-fade-rotating.la-3x>div{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin-fade-rotate{to{transform:rotate(1turn)}}@keyframes ball-spin-fade-rotate{to{transform:rotate(1turn)}}.la-ball-spin-fade,.la-ball-spin-fade>div{position:relative;box-sizing:border-box}.la-ball-spin-fade{display:block;font-size:0;color:#fff}.la-ball-spin-fade.la-dark{color:#333}.la-ball-spin-fade>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-fade{width:32px;height:32px}.la-ball-spin-fade>div{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin-fade 1s linear infinite;animation:ball-spin-fade 1s linear infinite}.la-ball-spin-fade>div:first-child{top:5%;left:50%;-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-ball-spin-fade>div:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-ball-spin-fade>div:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-ball-spin-fade>div:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-ball-spin-fade>div:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-ball-spin-fade>div:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-ball-spin-fade>div:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-ball-spin-fade>div:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:-2s;animation-delay:-2s}.la-ball-spin-fade.la-sm{width:16px;height:16px}.la-ball-spin-fade.la-sm>div{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin-fade.la-2x{width:64px;height:64px}.la-ball-spin-fade.la-2x>div{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin-fade.la-3x{width:96px;height:96px}.la-ball-spin-fade.la-3x>div{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin-fade{0%,to{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(.5)}}@keyframes ball-spin-fade{0%,to{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(.5)}}.la-ball-spin-rotate,.la-ball-spin-rotate>div{position:relative;box-sizing:border-box}.la-ball-spin-rotate{display:block;font-size:0;color:#fff}.la-ball-spin-rotate.la-dark{color:#333}.la-ball-spin-rotate>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin-rotate{width:32px;height:32px;-webkit-animation:ball-spin-rotate 2s linear infinite;animation:ball-spin-rotate 2s linear infinite}.la-ball-spin-rotate>div{position:absolute;top:0;width:60%;height:60%;border-radius:100%;-webkit-animation:ball-spin-bounce 2s ease-in-out infinite;animation:ball-spin-bounce 2s ease-in-out infinite}.la-ball-spin-rotate>div:last-child{top:auto;bottom:0;-webkit-animation-delay:-1s;animation-delay:-1s}.la-ball-spin-rotate.la-sm{width:16px;height:16px}.la-ball-spin-rotate.la-2x{width:64px;height:64px}.la-ball-spin-rotate.la-3x{width:96px;height:96px}@-webkit-keyframes ball-spin-rotate{to{transform:rotate(1turn)}}@keyframes ball-spin-rotate{to{transform:rotate(1turn)}}@-webkit-keyframes ball-spin-bounce{0%,to{transform:scale(0)}50%{transform:scale(1)}}@keyframes ball-spin-bounce{0%,to{transform:scale(0)}50%{transform:scale(1)}}.la-ball-spin,.la-ball-spin>div{position:relative;box-sizing:border-box}.la-ball-spin{display:block;font-size:0;color:#fff}.la-ball-spin.la-dark{color:#333}.la-ball-spin>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-spin{width:32px;height:32px}.la-ball-spin>div{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin 1s ease-in-out infinite;animation:ball-spin 1s ease-in-out infinite}.la-ball-spin>div:first-child{top:5%;left:50%;-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-ball-spin>div:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-ball-spin>div:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-ball-spin>div:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-ball-spin>div:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-ball-spin>div:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-ball-spin>div:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-ball-spin>div:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:-2s;animation-delay:-2s}.la-ball-spin.la-sm{width:16px;height:16px}.la-ball-spin.la-sm>div{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin.la-2x{width:64px;height:64px}.la-ball-spin.la-2x>div{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin.la-3x{width:96px;height:96px}.la-ball-spin.la-3x>div{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin{0%,to{opacity:1;transform:scale(1)}20%{opacity:1}80%{opacity:0;transform:scale(0)}}@keyframes ball-spin{0%,to{opacity:1;transform:scale(1)}20%{opacity:1}80%{opacity:0;transform:scale(0)}}.la-ball-square-clockwise-spin,.la-ball-square-clockwise-spin>div{position:relative;box-sizing:border-box}.la-ball-square-clockwise-spin{display:block;font-size:0;color:#fff}.la-ball-square-clockwise-spin.la-dark{color:#333}.la-ball-square-clockwise-spin>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-square-clockwise-spin{width:26px;height:26px}.la-ball-square-clockwise-spin>div{position:absolute;top:50%;left:50%;width:12px;height:12px;margin-top:-6px;margin-left:-6px;border-radius:100%;-webkit-animation:ball-square-clockwise-spin 1s ease-in-out infinite;animation:ball-square-clockwise-spin 1s ease-in-out infinite}.la-ball-square-clockwise-spin>div:first-child{top:0;left:0;-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-ball-square-clockwise-spin>div:nth-child(2){top:0;left:50%;-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-ball-square-clockwise-spin>div:nth-child(3){top:0;left:100%;-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-ball-square-clockwise-spin>div:nth-child(4){top:50%;left:100%;-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-ball-square-clockwise-spin>div:nth-child(5){top:100%;left:100%;-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-ball-square-clockwise-spin>div:nth-child(6){top:100%;left:50%;-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-ball-square-clockwise-spin>div:nth-child(7){top:100%;left:0;-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-ball-square-clockwise-spin>div:nth-child(8){top:50%;left:0;-webkit-animation-delay:0s;animation-delay:0s}.la-ball-square-clockwise-spin.la-sm{width:12px;height:12px}.la-ball-square-clockwise-spin.la-sm>div{width:6px;height:6px;margin-top:-3px;margin-left:-3px}.la-ball-square-clockwise-spin.la-2x{width:52px;height:52px}.la-ball-square-clockwise-spin.la-2x>div{width:24px;height:24px;margin-top:-12px;margin-left:-12px}.la-ball-square-clockwise-spin.la-3x{width:78px;height:78px}.la-ball-square-clockwise-spin.la-3x>div{width:36px;height:36px;margin-top:-18px;margin-left:-18px}@-webkit-keyframes ball-square-clockwise-spin{0%,40%,to{transform:scale(.4)}70%{transform:scale(1)}}@keyframes ball-square-clockwise-spin{0%,40%,to{transform:scale(.4)}70%{transform:scale(1)}}.la-ball-square-spin,.la-ball-square-spin>div{position:relative;box-sizing:border-box}.la-ball-square-spin{display:block;font-size:0;color:#fff}.la-ball-square-spin.la-dark{color:#333}.la-ball-square-spin>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-square-spin{width:26px;height:26px}.la-ball-square-spin>div{position:absolute;top:50%;left:50%;width:12px;height:12px;margin-top:-6px;margin-left:-6px;border-radius:100%;-webkit-animation:ball-square-spin 1s ease-in-out infinite;animation:ball-square-spin 1s ease-in-out infinite}.la-ball-square-spin>div:first-child{top:0;left:0;-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-ball-square-spin>div:nth-child(2){top:0;left:50%;-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-ball-square-spin>div:nth-child(3){top:0;left:100%;-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-ball-square-spin>div:nth-child(4){top:50%;left:100%;-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-ball-square-spin>div:nth-child(5){top:100%;left:100%;-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-ball-square-spin>div:nth-child(6){top:100%;left:50%;-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-ball-square-spin>div:nth-child(7){top:100%;left:0;-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-ball-square-spin>div:nth-child(8){top:50%;left:0;-webkit-animation-delay:-2s;animation-delay:-2s}.la-ball-square-spin.la-sm{width:12px;height:12px}.la-ball-square-spin.la-sm>div{width:6px;height:6px;margin-top:-3px;margin-left:-3px}.la-ball-square-spin.la-2x{width:52px;height:52px}.la-ball-square-spin.la-2x>div{width:24px;height:24px;margin-top:-12px;margin-left:-12px}.la-ball-square-spin.la-3x{width:78px;height:78px}.la-ball-square-spin.la-3x>div{width:36px;height:36px;margin-top:-18px;margin-left:-18px}@-webkit-keyframes ball-square-spin{0%,40%,to{transform:scale(.4)}70%{transform:scale(1)}}@keyframes ball-square-spin{0%,40%,to{transform:scale(.4)}70%{transform:scale(1)}}.la-ball-triangle-path,.la-ball-triangle-path>div{position:relative;box-sizing:border-box}.la-ball-triangle-path{display:block;font-size:0;color:#fff}.la-ball-triangle-path.la-dark{color:#333}.la-ball-triangle-path>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-triangle-path{width:32px;height:32px}.la-ball-triangle-path>div{position:absolute;top:0;left:0;width:10px;height:10px;border-radius:100%}.la-ball-triangle-path>div:first-child{-webkit-animation:ball-triangle-path-ball-one 2s ease-in-out 0s infinite;animation:ball-triangle-path-ball-one 2s ease-in-out 0s infinite}.la-ball-triangle-path>div:nth-child(2){-webkit-animation:ball-triangle-path-ball-two 2s ease-in-out 0s infinite;animation:ball-triangle-path-ball-two 2s ease-in-out 0s infinite}.la-ball-triangle-path>div:nth-child(3){-webkit-animation:ball-triangle-path-ball-tree 2s ease-in-out 0s infinite;animation:ball-triangle-path-ball-tree 2s ease-in-out 0s infinite}.la-ball-triangle-path.la-sm{width:16px;height:16px}.la-ball-triangle-path.la-sm>div{width:4px;height:4px}.la-ball-triangle-path.la-2x{width:64px;height:64px}.la-ball-triangle-path.la-2x>div{width:20px;height:20px}.la-ball-triangle-path.la-3x{width:96px;height:96px}.la-ball-triangle-path.la-3x>div{width:30px;height:30px}@-webkit-keyframes ball-triangle-path-ball-one{0%{transform:translateY(220%)}17%{opacity:.25}33%{opacity:1;transform:translate(110%)}50%{opacity:.25}66%{opacity:1;transform:translate(220%,220%)}83%{opacity:.25}to{opacity:1;transform:translateY(220%)}}@keyframes ball-triangle-path-ball-one{0%{transform:translateY(220%)}17%{opacity:.25}33%{opacity:1;transform:translate(110%)}50%{opacity:.25}66%{opacity:1;transform:translate(220%,220%)}83%{opacity:.25}to{opacity:1;transform:translateY(220%)}}@-webkit-keyframes ball-triangle-path-ball-two{0%{transform:translate(110%)}17%{opacity:.25}33%{opacity:1;transform:translate(220%,220%)}50%{opacity:.25}66%{opacity:1;transform:translateY(220%)}83%{opacity:.25}to{opacity:1;transform:translate(110%)}}@keyframes ball-triangle-path-ball-two{0%{transform:translate(110%)}17%{opacity:.25}33%{opacity:1;transform:translate(220%,220%)}50%{opacity:.25}66%{opacity:1;transform:translateY(220%)}83%{opacity:.25}to{opacity:1;transform:translate(110%)}}@-webkit-keyframes ball-triangle-path-ball-tree{0%{transform:translate(220%,220%)}17%{opacity:.25}33%{opacity:1;transform:translateY(220%)}50%{opacity:.25}66%{opacity:1;transform:translate(110%)}83%{opacity:.25}to{opacity:1;transform:translate(220%,220%)}}@keyframes ball-triangle-path-ball-tree{0%{transform:translate(220%,220%)}17%{opacity:.25}33%{opacity:1;transform:translateY(220%)}50%{opacity:.25}66%{opacity:1;transform:translate(110%)}83%{opacity:.25}to{opacity:1;transform:translate(220%,220%)}}.la-ball-zig-zag-deflect,.la-ball-zig-zag-deflect>div{position:relative;box-sizing:border-box}.la-ball-zig-zag-deflect{display:block;font-size:0;color:#fff}.la-ball-zig-zag-deflect.la-dark{color:#333}.la-ball-zig-zag-deflect>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-zig-zag-deflect{position:relative;width:32px;height:32px}.la-ball-zig-zag-deflect>div{position:absolute;top:50%;left:50%;width:10px;height:10px;margin-top:-5px;margin-left:-5px;border-radius:100%}.la-ball-zig-zag-deflect>div:first-child{-webkit-animation:ball-zig-deflect 1.5s linear 0s infinite;animation:ball-zig-deflect 1.5s linear 0s infinite}.la-ball-zig-zag-deflect>div:last-child{-webkit-animation:ball-zag-deflect 1.5s linear 0s infinite;animation:ball-zag-deflect 1.5s linear 0s infinite}.la-ball-zig-zag-deflect.la-sm{width:16px;height:16px}.la-ball-zig-zag-deflect.la-sm>div{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-zig-zag-deflect.la-2x{width:64px;height:64px}.la-ball-zig-zag-deflect.la-2x>div{width:20px;height:20px;margin-top:-10px;margin-left:-10px}.la-ball-zig-zag-deflect.la-3x{width:96px;height:96px}.la-ball-zig-zag-deflect.la-3x>div{width:30px;height:30px;margin-top:-15px;margin-left:-15px}@-webkit-keyframes ball-zig-deflect{17%{transform:translate(-80%,-160%)}34%{transform:translate(80%,-160%)}50%{transform:translate(0)}67%{transform:translate(80%,-160%)}84%{transform:translate(-80%,-160%)}to{transform:translate(0)}}@keyframes ball-zig-deflect{17%{transform:translate(-80%,-160%)}34%{transform:translate(80%,-160%)}50%{transform:translate(0)}67%{transform:translate(80%,-160%)}84%{transform:translate(-80%,-160%)}to{transform:translate(0)}}@-webkit-keyframes ball-zag-deflect{17%{transform:translate(80%,160%)}34%{transform:translate(-80%,160%)}50%{transform:translate(0)}67%{transform:translate(-80%,160%)}84%{transform:translate(80%,160%)}to{transform:translate(0)}}@keyframes ball-zag-deflect{17%{transform:translate(80%,160%)}34%{transform:translate(-80%,160%)}50%{transform:translate(0)}67%{transform:translate(-80%,160%)}84%{transform:translate(80%,160%)}to{transform:translate(0)}}.la-ball-zig-zag,.la-ball-zig-zag>div{position:relative;box-sizing:border-box}.la-ball-zig-zag{display:block;font-size:0;color:#fff}.la-ball-zig-zag.la-dark{color:#333}.la-ball-zig-zag>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-ball-zig-zag{position:relative;width:32px;height:32px}.la-ball-zig-zag>div{position:absolute;top:50%;left:50%;width:10px;height:10px;margin-top:-5px;margin-left:-5px;border-radius:100%}.la-ball-zig-zag>div:first-child{-webkit-animation:ball-zig-effect .7s linear 0s infinite;animation:ball-zig-effect .7s linear 0s infinite}.la-ball-zig-zag>div:last-child{-webkit-animation:ball-zag-effect .7s linear 0s infinite;animation:ball-zag-effect .7s linear 0s infinite}.la-ball-zig-zag.la-sm{width:16px;height:16px}.la-ball-zig-zag.la-sm>div{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-zig-zag.la-2x{width:64px;height:64px}.la-ball-zig-zag.la-2x>div{width:20px;height:20px;margin-top:-10px;margin-left:-10px}.la-ball-zig-zag.la-3x{width:96px;height:96px}.la-ball-zig-zag.la-3x>div{width:30px;height:30px;margin-top:-15px;margin-left:-15px}@-webkit-keyframes ball-zig-effect{0%{transform:translate(0)}33%{transform:translate(-75%,-150%)}66%{transform:translate(75%,-150%)}to{transform:translate(0)}}@keyframes ball-zig-effect{0%{transform:translate(0)}33%{transform:translate(-75%,-150%)}66%{transform:translate(75%,-150%)}to{transform:translate(0)}}@-webkit-keyframes ball-zag-effect{0%{transform:translate(0)}33%{transform:translate(75%,150%)}66%{transform:translate(-75%,150%)}to{transform:translate(0)}}@keyframes ball-zag-effect{0%{transform:translate(0)}33%{transform:translate(75%,150%)}66%{transform:translate(-75%,150%)}to{transform:translate(0)}}.la-cog,.la-cog>div{position:relative;box-sizing:border-box}.la-cog{display:block;font-size:0;color:#fff}.la-cog.la-dark{color:#333}.la-cog>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-cog{width:31px;height:31px}.la-cog>div{width:100%;height:100%;background-color:transparent;border-style:dashed;border-width:2px;border-radius:100%;-webkit-animation:cog-rotate 4s linear infinite;animation:cog-rotate 4s linear infinite}.la-cog>div:after{position:absolute;top:0;left:0;width:100%;height:100%;content:\"\";border:2px solid;border-radius:100%}.la-cog.la-sm{width:15px;height:15px}.la-cog.la-sm>div,.la-cog.la-sm>div:after{border-width:1px}.la-cog.la-2x{width:61px;height:61px}.la-cog.la-2x>div,.la-cog.la-2x>div:after{border-width:4px}.la-cog.la-3x{width:91px;height:91px}.la-cog.la-3x>div,.la-cog.la-3x>div:after{border-width:6px}@-webkit-keyframes cog-rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes cog-rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.la-cube-transition,.la-cube-transition>div{position:relative;box-sizing:border-box}.la-cube-transition{display:block;font-size:0;color:#fff}.la-cube-transition.la-dark{color:#333}.la-cube-transition>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-cube-transition{width:32px;height:32px}.la-cube-transition>div{position:absolute;top:0;left:0;width:14px;height:14px;margin-top:-7px;margin-left:-7px;border-radius:0;-webkit-animation:cube-transition 1.6s ease-in-out 0s infinite;animation:cube-transition 1.6s ease-in-out 0s infinite}.la-cube-transition>div:last-child{-webkit-animation-delay:-.8s;animation-delay:-.8s}.la-cube-transition.la-sm{width:16px;height:16px}.la-cube-transition.la-sm>div{width:6px;height:6px;margin-top:-3px;margin-left:-3px}.la-cube-transition.la-2x{width:64px;height:64px}.la-cube-transition.la-2x>div{width:28px;height:28px;margin-top:-14px;margin-left:-14px}.la-cube-transition.la-3x{width:96px;height:96px}.la-cube-transition.la-3x>div{width:42px;height:42px;margin-top:-21px;margin-left:-21px}@-webkit-keyframes cube-transition{25%{top:0;left:100%;transform:scale(.5) rotate(-90deg)}50%{top:100%;left:100%;transform:scale(1) rotate(-180deg)}75%{top:100%;left:0;transform:scale(.5) rotate(-270deg)}to{top:0;left:0;transform:scale(1) rotate(-1turn)}}@keyframes cube-transition{25%{top:0;left:100%;transform:scale(.5) rotate(-90deg)}50%{top:100%;left:100%;transform:scale(1) rotate(-180deg)}75%{top:100%;left:0;transform:scale(.5) rotate(-270deg)}to{top:0;left:0;transform:scale(1) rotate(-1turn)}}.la-fire,.la-fire>div{position:relative;box-sizing:border-box}.la-fire{display:block;font-size:0;color:#fff}.la-fire.la-dark{color:#333}.la-fire>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-fire{width:32px;height:32px}.la-fire>div{position:absolute;bottom:0;left:50%;width:12px;height:12px;border-radius:0;border-radius:2px;transform:translateY(0) translateX(-50%) rotate(45deg) scale(0);-webkit-animation:fire-diamonds 1.5s linear infinite;animation:fire-diamonds 1.5s linear infinite}.la-fire>div:first-child{-webkit-animation-delay:-.85s;animation-delay:-.85s}.la-fire>div:nth-child(2){-webkit-animation-delay:-1.85s;animation-delay:-1.85s}.la-fire>div:nth-child(3){-webkit-animation-delay:-2.85s;animation-delay:-2.85s}.la-fire.la-sm{width:16px;height:16px}.la-fire.la-sm>div{width:6px;height:6px}.la-fire.la-2x{width:64px;height:64px}.la-fire.la-2x>div{width:24px;height:24px}.la-fire.la-3x{width:96px;height:96px}.la-fire.la-3x>div{width:36px;height:36px}@-webkit-keyframes fire-diamonds{0%{transform:translateY(75%) translateX(-50%) rotate(45deg) scale(0)}50%{transform:translateY(-87.5%) translateX(-50%) rotate(45deg) scale(1)}to{transform:translateY(-212.5%) translateX(-50%) rotate(45deg) scale(0)}}@keyframes fire-diamonds{0%{transform:translateY(75%) translateX(-50%) rotate(45deg) scale(0)}50%{transform:translateY(-87.5%) translateX(-50%) rotate(45deg) scale(1)}to{transform:translateY(-212.5%) translateX(-50%) rotate(45deg) scale(0)}}.la-line-scale-party,.la-line-scale-party>div{position:relative;box-sizing:border-box}.la-line-scale-party{display:block;font-size:0;color:#fff}.la-line-scale-party.la-dark{color:#333}.la-line-scale-party>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-scale-party{width:40px;height:32px}.la-line-scale-party>div{width:4px;height:32px;margin:0 2px;border-radius:0;-webkit-animation-name:line-scale-party;animation-name:line-scale-party;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.la-line-scale-party>div:first-child{-webkit-animation-duration:.43s;animation-duration:.43s;-webkit-animation-delay:-.23s;animation-delay:-.23s}.la-line-scale-party>div:nth-child(2){-webkit-animation-duration:.62s;animation-duration:.62s;-webkit-animation-delay:-.32s;animation-delay:-.32s}.la-line-scale-party>div:nth-child(3){-webkit-animation-duration:.43s;animation-duration:.43s;-webkit-animation-delay:-.44s;animation-delay:-.44s}.la-line-scale-party>div:nth-child(4){-webkit-animation-duration:.8s;animation-duration:.8s;-webkit-animation-delay:-.31s;animation-delay:-.31s}.la-line-scale-party>div:nth-child(5){-webkit-animation-duration:.74s;animation-duration:.74s;-webkit-animation-delay:-.24s;animation-delay:-.24s}.la-line-scale-party.la-sm{width:20px;height:16px}.la-line-scale-party.la-sm>div{width:2px;height:16px;margin:0 1px}.la-line-scale-party.la-2x{width:80px;height:64px}.la-line-scale-party.la-2x>div{width:8px;height:64px;margin:0 4px}.la-line-scale-party.la-3x{width:120px;height:96px}.la-line-scale-party.la-3x>div{width:12px;height:96px;margin:0 6px}@-webkit-keyframes line-scale-party{0%{transform:scaleY(1)}50%{transform:scaleY(.3)}to{transform:scaleY(1)}}@keyframes line-scale-party{0%{transform:scaleY(1)}50%{transform:scaleY(.3)}to{transform:scaleY(1)}}.la-line-scale-pulse-out-rapid,.la-line-scale-pulse-out-rapid>div{position:relative;box-sizing:border-box}.la-line-scale-pulse-out-rapid{display:block;font-size:0;color:#fff}.la-line-scale-pulse-out-rapid.la-dark{color:#333}.la-line-scale-pulse-out-rapid>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-scale-pulse-out-rapid{width:40px;height:32px}.la-line-scale-pulse-out-rapid>div{width:4px;height:32px;margin:0 2px;border-radius:0;-webkit-animation:line-scale-pulse-out-rapid .9s cubic-bezier(.11,.49,.38,.78) infinite;animation:line-scale-pulse-out-rapid .9s cubic-bezier(.11,.49,.38,.78) infinite}.la-line-scale-pulse-out-rapid>div:nth-child(3){-webkit-animation-delay:-.9s;animation-delay:-.9s}.la-line-scale-pulse-out-rapid>div:nth-child(2),.la-line-scale-pulse-out-rapid>div:nth-child(4){-webkit-animation-delay:-.65s;animation-delay:-.65s}.la-line-scale-pulse-out-rapid>div:first-child,.la-line-scale-pulse-out-rapid>div:nth-child(5){-webkit-animation-delay:-.4s;animation-delay:-.4s}.la-line-scale-pulse-out-rapid.la-sm{width:20px;height:16px}.la-line-scale-pulse-out-rapid.la-sm>div{width:2px;height:16px;margin:0 1px}.la-line-scale-pulse-out-rapid.la-2x{width:80px;height:64px}.la-line-scale-pulse-out-rapid.la-2x>div{width:8px;height:64px;margin:0 4px}.la-line-scale-pulse-out-rapid.la-3x{width:120px;height:96px}.la-line-scale-pulse-out-rapid.la-3x>div{width:12px;height:96px;margin:0 6px}@-webkit-keyframes line-scale-pulse-out-rapid{0%{transform:scaley(1)}80%{transform:scaley(.3)}90%{transform:scaley(1)}}@keyframes line-scale-pulse-out-rapid{0%{transform:scaley(1)}80%{transform:scaley(.3)}90%{transform:scaley(1)}}.la-line-scale-pulse-out,.la-line-scale-pulse-out>div{position:relative;box-sizing:border-box}.la-line-scale-pulse-out{display:block;font-size:0;color:#fff}.la-line-scale-pulse-out.la-dark{color:#333}.la-line-scale-pulse-out>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-scale-pulse-out{width:40px;height:32px}.la-line-scale-pulse-out>div{width:4px;height:32px;margin:0 2px;border-radius:0;-webkit-animation:line-scale-pulse-out .9s cubic-bezier(.85,.25,.37,.85) infinite;animation:line-scale-pulse-out .9s cubic-bezier(.85,.25,.37,.85) infinite}.la-line-scale-pulse-out>div:nth-child(3){-webkit-animation-delay:-.9s;animation-delay:-.9s}.la-line-scale-pulse-out>div:nth-child(2),.la-line-scale-pulse-out>div:nth-child(4){-webkit-animation-delay:-.7s;animation-delay:-.7s}.la-line-scale-pulse-out>div:first-child,.la-line-scale-pulse-out>div:nth-child(5){-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-line-scale-pulse-out.la-sm{width:20px;height:16px}.la-line-scale-pulse-out.la-sm>div{width:2px;height:16px;margin:0 1px}.la-line-scale-pulse-out.la-2x{width:80px;height:64px}.la-line-scale-pulse-out.la-2x>div{width:8px;height:64px;margin:0 4px}.la-line-scale-pulse-out.la-3x{width:120px;height:96px}.la-line-scale-pulse-out.la-3x>div{width:12px;height:96px;margin:0 6px}@-webkit-keyframes line-scale-pulse-out{0%{transform:scaley(1)}50%{transform:scaley(.3)}to{transform:scaley(1)}}@keyframes line-scale-pulse-out{0%{transform:scaley(1)}50%{transform:scaley(.3)}to{transform:scaley(1)}}.la-line-scale,.la-line-scale>div{position:relative;box-sizing:border-box}.la-line-scale{display:block;font-size:0;color:#fff}.la-line-scale.la-dark{color:#333}.la-line-scale>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-scale{width:40px;height:32px}.la-line-scale>div{width:4px;height:32px;margin:0 2px;border-radius:0;-webkit-animation:line-scale 1.2s ease infinite;animation:line-scale 1.2s ease infinite}.la-line-scale>div:first-child{-webkit-animation-delay:-1.2s;animation-delay:-1.2s}.la-line-scale>div:nth-child(2){-webkit-animation-delay:-1.1s;animation-delay:-1.1s}.la-line-scale>div:nth-child(3){-webkit-animation-delay:-1s;animation-delay:-1s}.la-line-scale>div:nth-child(4){-webkit-animation-delay:-.9s;animation-delay:-.9s}.la-line-scale>div:nth-child(5){-webkit-animation-delay:-.8s;animation-delay:-.8s}.la-line-scale.la-sm{width:20px;height:16px}.la-line-scale.la-sm>div{width:2px;height:16px;margin:0 1px}.la-line-scale.la-2x{width:80px;height:64px}.la-line-scale.la-2x>div{width:8px;height:64px;margin:0 4px}.la-line-scale.la-3x{width:120px;height:96px}.la-line-scale.la-3x>div{width:12px;height:96px;margin:0 6px}@-webkit-keyframes line-scale{0%,40%,to{transform:scaleY(.4)}20%{transform:scaleY(1)}}@keyframes line-scale{0%,40%,to{transform:scaleY(.4)}20%{transform:scaleY(1)}}.la-line-spin-clockwise-fade-rotating,.la-line-spin-clockwise-fade-rotating>div{position:relative;box-sizing:border-box}.la-line-spin-clockwise-fade-rotating{display:block;font-size:0;color:#fff}.la-line-spin-clockwise-fade-rotating.la-dark{color:#333}.la-line-spin-clockwise-fade-rotating>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-spin-clockwise-fade-rotating{width:32px;height:32px;-webkit-animation:line-spin-clockwise-fade-rotating-rotate 6s linear infinite;animation:line-spin-clockwise-fade-rotating-rotate 6s linear infinite}.la-line-spin-clockwise-fade-rotating>div{position:absolute;width:2px;height:10px;margin:-5px 2px 2px -1px;border-radius:0;-webkit-animation:line-spin-clockwise-fade-rotating 1s ease-in-out infinite;animation:line-spin-clockwise-fade-rotating 1s ease-in-out infinite}.la-line-spin-clockwise-fade-rotating>div:first-child{top:15%;left:50%;transform:rotate(0deg);-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-line-spin-clockwise-fade-rotating>div:nth-child(2){top:25.2512626585%;left:74.7487373415%;transform:rotate(45deg);-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-line-spin-clockwise-fade-rotating>div:nth-child(3){top:50%;left:85%;transform:rotate(90deg);-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-line-spin-clockwise-fade-rotating>div:nth-child(4){top:74.7487373415%;left:74.7487373415%;transform:rotate(135deg);-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-line-spin-clockwise-fade-rotating>div:nth-child(5){top:84.9999999974%;left:50.0000000004%;transform:rotate(180deg);-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-line-spin-clockwise-fade-rotating>div:nth-child(6){top:74.7487369862%;left:25.2512627193%;transform:rotate(225deg);-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-line-spin-clockwise-fade-rotating>div:nth-child(7){top:49.9999806189%;left:15.0000039834%;transform:rotate(270deg);-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-line-spin-clockwise-fade-rotating>div:nth-child(8){top:25.2506949798%;left:25.2513989292%;transform:rotate(315deg);-webkit-animation-delay:0s;animation-delay:0s}.la-line-spin-clockwise-fade-rotating.la-sm{width:16px;height:16px}.la-line-spin-clockwise-fade-rotating.la-sm>div{width:1px;height:4px;margin-top:-2px;margin-left:0}.la-line-spin-clockwise-fade-rotating.la-2x{width:64px;height:64px}.la-line-spin-clockwise-fade-rotating.la-2x>div{width:4px;height:20px;margin-top:-10px;margin-left:-2px}.la-line-spin-clockwise-fade-rotating.la-3x{width:96px;height:96px}.la-line-spin-clockwise-fade-rotating.la-3x>div{width:6px;height:30px;margin-top:-15px;margin-left:-3px}@-webkit-keyframes line-spin-clockwise-fade-rotating-rotate{to{transform:rotate(-1turn)}}@keyframes line-spin-clockwise-fade-rotating-rotate{to{transform:rotate(-1turn)}}@-webkit-keyframes line-spin-clockwise-fade-rotating{50%{opacity:.2}to{opacity:1}}@keyframes line-spin-clockwise-fade-rotating{50%{opacity:.2}to{opacity:1}}.la-line-spin-clockwise-fade,.la-line-spin-clockwise-fade>div{position:relative;box-sizing:border-box}.la-line-spin-clockwise-fade{display:block;font-size:0;color:#fff}.la-line-spin-clockwise-fade.la-dark{color:#333}.la-line-spin-clockwise-fade>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-spin-clockwise-fade{width:32px;height:32px}.la-line-spin-clockwise-fade>div{position:absolute;width:2px;height:10px;margin:-5px 2px 2px -1px;border-radius:0;-webkit-animation:line-spin-clockwise-fade 1s ease-in-out infinite;animation:line-spin-clockwise-fade 1s ease-in-out infinite}.la-line-spin-clockwise-fade>div:first-child{top:15%;left:50%;transform:rotate(0deg);-webkit-animation-delay:-.875s;animation-delay:-.875s}.la-line-spin-clockwise-fade>div:nth-child(2){top:25.2512626585%;left:74.7487373415%;transform:rotate(45deg);-webkit-animation-delay:-.75s;animation-delay:-.75s}.la-line-spin-clockwise-fade>div:nth-child(3){top:50%;left:85%;transform:rotate(90deg);-webkit-animation-delay:-.625s;animation-delay:-.625s}.la-line-spin-clockwise-fade>div:nth-child(4){top:74.7487373415%;left:74.7487373415%;transform:rotate(135deg);-webkit-animation-delay:-.5s;animation-delay:-.5s}.la-line-spin-clockwise-fade>div:nth-child(5){top:84.9999999974%;left:50.0000000004%;transform:rotate(180deg);-webkit-animation-delay:-.375s;animation-delay:-.375s}.la-line-spin-clockwise-fade>div:nth-child(6){top:74.7487369862%;left:25.2512627193%;transform:rotate(225deg);-webkit-animation-delay:-.25s;animation-delay:-.25s}.la-line-spin-clockwise-fade>div:nth-child(7){top:49.9999806189%;left:15.0000039834%;transform:rotate(270deg);-webkit-animation-delay:-.125s;animation-delay:-.125s}.la-line-spin-clockwise-fade>div:nth-child(8){top:25.2506949798%;left:25.2513989292%;transform:rotate(315deg);-webkit-animation-delay:0s;animation-delay:0s}.la-line-spin-clockwise-fade.la-sm{width:16px;height:16px}.la-line-spin-clockwise-fade.la-sm>div{width:1px;height:4px;margin-top:-2px;margin-left:0}.la-line-spin-clockwise-fade.la-2x{width:64px;height:64px}.la-line-spin-clockwise-fade.la-2x>div{width:4px;height:20px;margin-top:-10px;margin-left:-2px}.la-line-spin-clockwise-fade.la-3x{width:96px;height:96px}.la-line-spin-clockwise-fade.la-3x>div{width:6px;height:30px;margin-top:-15px;margin-left:-3px}@-webkit-keyframes line-spin-clockwise-fade{50%{opacity:.2}to{opacity:1}}@keyframes line-spin-clockwise-fade{50%{opacity:.2}to{opacity:1}}.la-line-spin-fade-rotating,.la-line-spin-fade-rotating>div{position:relative;box-sizing:border-box}.la-line-spin-fade-rotating{display:block;font-size:0;color:#fff}.la-line-spin-fade-rotating.la-dark{color:#333}.la-line-spin-fade-rotating>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-spin-fade-rotating{width:32px;height:32px;-webkit-animation:ball-spin-fade-rotating-rotate 6s linear infinite;animation:ball-spin-fade-rotating-rotate 6s linear infinite}.la-line-spin-fade-rotating>div{position:absolute;width:2px;height:10px;margin:-5px 2px 2px -1px;border-radius:0;-webkit-animation:line-spin-fade-rotating 1s ease-in-out infinite;animation:line-spin-fade-rotating 1s ease-in-out infinite}.la-line-spin-fade-rotating>div:first-child{top:15%;left:50%;transform:rotate(0deg);-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-line-spin-fade-rotating>div:nth-child(2){top:25.2512626585%;left:74.7487373415%;transform:rotate(45deg);-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-line-spin-fade-rotating>div:nth-child(3){top:50%;left:85%;transform:rotate(90deg);-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-line-spin-fade-rotating>div:nth-child(4){top:74.7487373415%;left:74.7487373415%;transform:rotate(135deg);-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-line-spin-fade-rotating>div:nth-child(5){top:84.9999999974%;left:50.0000000004%;transform:rotate(180deg);-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-line-spin-fade-rotating>div:nth-child(6){top:74.7487369862%;left:25.2512627193%;transform:rotate(225deg);-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-line-spin-fade-rotating>div:nth-child(7){top:49.9999806189%;left:15.0000039834%;transform:rotate(270deg);-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-line-spin-fade-rotating>div:nth-child(8){top:25.2506949798%;left:25.2513989292%;transform:rotate(315deg);-webkit-animation-delay:-2s;animation-delay:-2s}.la-line-spin-fade-rotating.la-sm{width:16px;height:16px}.la-line-spin-fade-rotating.la-sm>div{width:1px;height:4px;margin-top:-2px;margin-left:0}.la-line-spin-fade-rotating.la-2x{width:64px;height:64px}.la-line-spin-fade-rotating.la-2x>div{width:4px;height:20px;margin-top:-10px;margin-left:-2px}.la-line-spin-fade-rotating.la-3x{width:96px;height:96px}.la-line-spin-fade-rotating.la-3x>div{width:6px;height:30px;margin-top:-15px;margin-left:-3px}@-webkit-keyframes ball-spin-fade-rotating-rotate{to{transform:rotate(1turn)}}@keyframes ball-spin-fade-rotating-rotate{to{transform:rotate(1turn)}}@-webkit-keyframes line-spin-fade-rotating{50%{opacity:.2}to{opacity:1}}@keyframes line-spin-fade-rotating{50%{opacity:.2}to{opacity:1}}.la-line-spin-fade,.la-line-spin-fade>div{position:relative;box-sizing:border-box}.la-line-spin-fade{display:block;font-size:0;color:#fff}.la-line-spin-fade.la-dark{color:#333}.la-line-spin-fade>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-line-spin-fade{width:32px;height:32px}.la-line-spin-fade>div{position:absolute;width:2px;height:10px;margin:-5px 2px 2px -1px;border-radius:0;-webkit-animation:line-spin-fade 1s ease-in-out infinite;animation:line-spin-fade 1s ease-in-out infinite}.la-line-spin-fade>div:first-child{top:15%;left:50%;transform:rotate(0deg);-webkit-animation-delay:-1.125s;animation-delay:-1.125s}.la-line-spin-fade>div:nth-child(2){top:25.2512626585%;left:74.7487373415%;transform:rotate(45deg);-webkit-animation-delay:-1.25s;animation-delay:-1.25s}.la-line-spin-fade>div:nth-child(3){top:50%;left:85%;transform:rotate(90deg);-webkit-animation-delay:-1.375s;animation-delay:-1.375s}.la-line-spin-fade>div:nth-child(4){top:74.7487373415%;left:74.7487373415%;transform:rotate(135deg);-webkit-animation-delay:-1.5s;animation-delay:-1.5s}.la-line-spin-fade>div:nth-child(5){top:84.9999999974%;left:50.0000000004%;transform:rotate(180deg);-webkit-animation-delay:-1.625s;animation-delay:-1.625s}.la-line-spin-fade>div:nth-child(6){top:74.7487369862%;left:25.2512627193%;transform:rotate(225deg);-webkit-animation-delay:-1.75s;animation-delay:-1.75s}.la-line-spin-fade>div:nth-child(7){top:49.9999806189%;left:15.0000039834%;transform:rotate(270deg);-webkit-animation-delay:-1.875s;animation-delay:-1.875s}.la-line-spin-fade>div:nth-child(8){top:25.2506949798%;left:25.2513989292%;transform:rotate(315deg);-webkit-animation-delay:-2s;animation-delay:-2s}.la-line-spin-fade.la-sm{width:16px;height:16px}.la-line-spin-fade.la-sm>div{width:1px;height:4px;margin-top:-2px;margin-left:0}.la-line-spin-fade.la-2x{width:64px;height:64px}.la-line-spin-fade.la-2x>div{width:4px;height:20px;margin-top:-10px;margin-left:-2px}.la-line-spin-fade.la-3x{width:96px;height:96px}.la-line-spin-fade.la-3x>div{width:6px;height:30px;margin-top:-15px;margin-left:-3px}@-webkit-keyframes line-spin-fade{50%{opacity:.2}to{opacity:1}}@keyframes line-spin-fade{50%{opacity:.2}to{opacity:1}}.la-pacman,.la-pacman>div{position:relative;box-sizing:border-box}.la-pacman{display:block;font-size:0;color:#fff}.la-pacman.la-dark{color:#333}.la-pacman>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-pacman{width:32px;height:32px}.la-pacman>div:first-child,.la-pacman>div:nth-child(2){width:0;height:0;background:transparent;border-style:solid;border-right:solid transparent;border-width:16px;border-radius:100%;-webkit-animation:pacman-rotate-half-up .5s 0s infinite;animation:pacman-rotate-half-up .5s 0s infinite;position:absolute}.la-pacman>div:nth-child(2){-webkit-animation-name:pacman-rotate-half-down;animation-name:pacman-rotate-half-down;top:0}.la-pacman>div:nth-child(3),.la-pacman>div:nth-child(4),.la-pacman>div:nth-child(5),.la-pacman>div:nth-child(6){position:absolute;top:50%;left:200%;width:8px;height:8px;border-radius:100%;opacity:0;-webkit-animation:pacman-balls 2s linear 0s infinite;animation:pacman-balls 2s linear 0s infinite}.la-pacman>div:nth-child(3){-webkit-animation-delay:-1.44s;animation-delay:-1.44s}.la-pacman>div:nth-child(4){-webkit-animation-delay:-1.94s;animation-delay:-1.94s}.la-pacman>div:nth-child(5){-webkit-animation-delay:-2.44s;animation-delay:-2.44s}.la-pacman>div:nth-child(6){-webkit-animation-delay:-2.94s;animation-delay:-2.94s}.la-pacman.la-sm{width:16px;height:16px}.la-pacman.la-sm>div:first-child,.la-pacman.la-sm>div:nth-child(2){border-width:8px;position:absolute}.la-pacman.la-sm>div:nth-child(2){top:0}.la-pacman.la-sm>div:nth-child(3),.la-pacman.la-sm>div:nth-child(4),.la-pacman.la-sm>div:nth-child(5),.la-pacman.la-sm>div:nth-child(6){width:4px;height:4px}.la-pacman.la-2x{width:64px;height:64px}.la-pacman.la-2x>div:first-child,.la-pacman.la-2x>div:nth-child(2){border-width:32px;position:absolute}.la-pacman.la-2x>div:nth-child(2){top:0}.la-pacman.la-2x>div:nth-child(3),.la-pacman.la-2x>div:nth-child(4),.la-pacman.la-2x>div:nth-child(5),.la-pacman.la-2x>div:nth-child(6){width:16px;height:16px}.la-pacman.la-3x{width:96px;height:96px}.la-pacman.la-3x>div:first-child,.la-pacman.la-3x>div:nth-child(2){border-width:48px;position:absolute}.la-pacman.la-3x>div:nth-child(2){top:0}.la-pacman.la-3x>div:nth-child(3),.la-pacman.la-3x>div:nth-child(4),.la-pacman.la-3x>div:nth-child(5),.la-pacman.la-3x>div:nth-child(6){width:24px;height:24px}@-webkit-keyframes pacman-rotate-half-up{0%,to{transform:rotate(270deg)}50%{transform:rotate(1turn)}}@keyframes pacman-rotate-half-up{0%,to{transform:rotate(270deg)}50%{transform:rotate(1turn)}}@-webkit-keyframes pacman-rotate-half-down{0%,to{transform:rotate(90deg)}50%{transform:rotate(0deg)}}@keyframes pacman-rotate-half-down{0%,to{transform:rotate(90deg)}50%{transform:rotate(0deg)}}@-webkit-keyframes pacman-balls{0%{left:200%;opacity:0;transform:translateY(-50%)}5%{opacity:.5}66%{opacity:1}67%{opacity:0}to{left:0;transform:translateY(-50%)}}@keyframes pacman-balls{0%{left:200%;opacity:0;transform:translateY(-50%)}5%{opacity:.5}66%{opacity:1}67%{opacity:0}to{left:0;transform:translateY(-50%)}}.la-square-jelly-box,.la-square-jelly-box>div{position:relative;box-sizing:border-box}.la-square-jelly-box{display:block;font-size:0;color:#fff}.la-square-jelly-box.la-dark{color:#333}.la-square-jelly-box>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-square-jelly-box{width:32px;height:32px}.la-square-jelly-box>div:first-child,.la-square-jelly-box>div:nth-child(2){position:absolute;left:0;width:100%}.la-square-jelly-box>div:first-child{top:-25%;z-index:1;height:100%;border-radius:10%;-webkit-animation:square-jelly-box-animate .6s linear -.1s infinite;animation:square-jelly-box-animate .6s linear -.1s infinite}.la-square-jelly-box>div:nth-child(2){bottom:-9%;height:10%;background:#000;border-radius:50%;opacity:.2;-webkit-animation:square-jelly-box-shadow .6s linear -.1s infinite;animation:square-jelly-box-shadow .6s linear -.1s infinite}.la-square-jelly-box.la-sm{width:16px;height:16px}.la-square-jelly-box.la-2x{width:64px;height:64px}.la-square-jelly-box.la-3x{width:96px;height:96px}@-webkit-keyframes square-jelly-box-animate{17%{border-bottom-right-radius:10%}25%{transform:translateY(25%) rotate(22.5deg)}50%{border-bottom-right-radius:100%;transform:translateY(50%) scaleY(.9) rotate(45deg)}75%{transform:translateY(25%) rotate(67.5deg)}to{transform:translateY(0) rotate(90deg)}}@keyframes square-jelly-box-animate{17%{border-bottom-right-radius:10%}25%{transform:translateY(25%) rotate(22.5deg)}50%{border-bottom-right-radius:100%;transform:translateY(50%) scaleY(.9) rotate(45deg)}75%{transform:translateY(25%) rotate(67.5deg)}to{transform:translateY(0) rotate(90deg)}}@-webkit-keyframes square-jelly-box-shadow{50%{transform:scaleX(1.25)}}@keyframes square-jelly-box-shadow{50%{transform:scaleX(1.25)}}.la-square-loader,.la-square-loader>div{position:relative;box-sizing:border-box}.la-square-loader{display:block;font-size:0;color:#fff}.la-square-loader.la-dark{color:#333}.la-square-loader>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-square-loader{width:32px;height:32px}.la-square-loader>div{width:100%;height:100%;background:transparent;border-width:2px;border-radius:0;-webkit-animation:square-loader 2s ease infinite;animation:square-loader 2s ease infinite}.la-square-loader>div:after{display:inline-block;width:100%;vertical-align:top;content:\"\";background-color:currentColor;-webkit-animation:square-loader-inner 2s ease-in infinite;animation:square-loader-inner 2s ease-in infinite}.la-square-loader.la-sm{width:16px;height:16px}.la-square-loader.la-sm>div{border-width:1px}.la-square-loader.la-2x{width:64px;height:64px}.la-square-loader.la-2x>div{border-width:4px}.la-square-loader.la-3x{width:96px;height:96px}.la-square-loader.la-3x>div{border-width:6px}@-webkit-keyframes square-loader{0%{transform:rotate(0deg)}25%{transform:rotate(180deg)}50%{transform:rotate(180deg)}75%{transform:rotate(1turn)}to{transform:rotate(1turn)}}@keyframes square-loader{0%{transform:rotate(0deg)}25%{transform:rotate(180deg)}50%{transform:rotate(180deg)}75%{transform:rotate(1turn)}to{transform:rotate(1turn)}}@-webkit-keyframes square-loader-inner{0%{height:0}25%{height:0}50%{height:100%}75%{height:100%}to{height:0}}@keyframes square-loader-inner{0%{height:0}25%{height:0}50%{height:100%}75%{height:100%}to{height:0}}.la-square-spin,.la-square-spin>div{position:relative;box-sizing:border-box}.la-square-spin{display:block;font-size:0;color:#fff}.la-square-spin.la-dark{color:#333}.la-square-spin>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-square-spin{width:32px;height:32px}.la-square-spin>div{width:100%;height:100%;border-radius:0;-webkit-animation:square-spin 3s cubic-bezier(.09,.57,.49,.9) 0s infinite;animation:square-spin 3s cubic-bezier(.09,.57,.49,.9) 0s infinite}.la-square-spin.la-sm{width:16px;height:16px}.la-square-spin.la-2x{width:64px;height:64px}.la-square-spin.la-3x{width:96px;height:96px}@-webkit-keyframes square-spin{0%{transform:perspective(100px) rotateX(0) rotateY(0)}25%{transform:perspective(100px) rotateX(180deg) rotateY(0)}50%{transform:perspective(100px) rotateX(180deg) rotateY(180deg)}75%{transform:perspective(100px) rotateX(0) rotateY(180deg)}to{transform:perspective(100px) rotateX(0) rotateY(1turn)}}@keyframes square-spin{0%{transform:perspective(100px) rotateX(0) rotateY(0)}25%{transform:perspective(100px) rotateX(180deg) rotateY(0)}50%{transform:perspective(100px) rotateX(180deg) rotateY(180deg)}75%{transform:perspective(100px) rotateX(0) rotateY(180deg)}to{transform:perspective(100px) rotateX(0) rotateY(1turn)}}.la-timer,.la-timer>div{position:relative;box-sizing:border-box}.la-timer{display:block;font-size:0;color:#fff}.la-timer.la-dark{color:#333}.la-timer>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-timer,.la-timer>div{width:32px;height:32px}.la-timer>div{background:transparent;border-width:2px;border-radius:100%}.la-timer>div:after,.la-timer>div:before{position:absolute;top:14px;left:14px;display:block;width:2px;margin-top:-1px;margin-left:-1px;content:\"\";background:currentColor;border-radius:2px;transform-origin:1px 1px 0;-webkit-animation:timer-loader 1.25s linear infinite;animation:timer-loader 1.25s linear infinite;-webkit-animation-delay:-625ms;animation-delay:-625ms}.la-timer>div:before{height:12px}.la-timer>div:after{height:8px;-webkit-animation-duration:15s;animation-duration:15s;-webkit-animation-delay:-7.5s;animation-delay:-7.5s}.la-timer.la-sm,.la-timer.la-sm>div{width:16px;height:16px}.la-timer.la-sm>div{border-width:1px}.la-timer.la-sm>div:after,.la-timer.la-sm>div:before{top:7px;left:7px;width:1px;margin-top:-.5px;margin-left:-.5px;border-radius:1px;transform-origin:.5px .5px 0}.la-timer.la-sm>div:before{height:6px}.la-timer.la-sm>div:after{height:4px}.la-timer.la-2x,.la-timer.la-2x>div{width:64px;height:64px}.la-timer.la-2x>div{border-width:4px}.la-timer.la-2x>div:after,.la-timer.la-2x>div:before{top:28px;left:28px;width:4px;margin-top:-2px;margin-left:-2px;border-radius:4px;transform-origin:2px 2px 0}.la-timer.la-2x>div:before{height:24px}.la-timer.la-2x>div:after{height:16px}.la-timer.la-3x,.la-timer.la-3x>div{width:96px;height:96px}.la-timer.la-3x>div{border-width:6px}.la-timer.la-3x>div:after,.la-timer.la-3x>div:before{top:42px;left:42px;width:6px;margin-top:-3px;margin-left:-3px;border-radius:6px;transform-origin:3px 3px 0}.la-timer.la-3x>div:before{height:36px}.la-timer.la-3x>div:after{height:24px}@-webkit-keyframes timer-loader{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes timer-loader{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.la-triangle-skew-spin,.la-triangle-skew-spin>div{position:relative;box-sizing:border-box}.la-triangle-skew-spin{display:block;font-size:0;color:#fff}.la-triangle-skew-spin.la-dark{color:#333}.la-triangle-skew-spin>div{display:inline-block;float:none;background-color:currentColor;border:0 solid}.la-triangle-skew-spin{width:32px;height:16px}.la-triangle-skew-spin>div{width:0;height:0;background:transparent;border-left:none;border-right:none;border-color:currentcolor transparent;border-style:solid;border-width:0 16px 16px;-webkit-animation:triangle-skew-spin 3s cubic-bezier(.09,.57,.49,.9) 0s infinite;animation:triangle-skew-spin 3s cubic-bezier(.09,.57,.49,.9) 0s infinite}.la-triangle-skew-spin.la-sm{width:16px;height:8px}.la-triangle-skew-spin.la-sm>div{border-width:0 8px 8px}.la-triangle-skew-spin.la-2x{width:64px;height:32px}.la-triangle-skew-spin.la-2x>div{border-width:0 32px 32px}.la-triangle-skew-spin.la-3x{width:96px;height:48px}.la-triangle-skew-spin.la-3x>div{border-width:0 48px 48px}@-webkit-keyframes triangle-skew-spin{0%{transform:perspective(100px) rotateX(0) rotateY(0)}25%{transform:perspective(100px) rotateX(180deg) rotateY(0)}50%{transform:perspective(100px) rotateX(180deg) rotateY(180deg)}75%{transform:perspective(100px) rotateX(0) rotateY(180deg)}to{transform:perspective(100px) rotateX(0) rotateY(1turn)}}@keyframes triangle-skew-spin{0%{transform:perspective(100px) rotateX(0) rotateY(0)}25%{transform:perspective(100px) rotateX(180deg) rotateY(0)}50%{transform:perspective(100px) rotateX(180deg) rotateY(180deg)}75%{transform:perspective(100px) rotateX(0) rotateY(180deg)}to{transform:perspective(100px) rotateX(0) rotateY(1turn)}}.ngx-spinner-overlay{position:fixed;top:0;left:0;width:100%;height:100%}.ngx-spinner-overlay>div:not(.loading-text){top:50%;left:50%;margin:0;position:absolute;transform:translate(-50%,-50%)}.loading-text{position:absolute;top:60%;left:50%;transform:translate(-50%,-60%)}"]
-          }]
-        }], function () {
-          return [{
-            type: NgxSpinnerService
-          }, {
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]
-          }];
-        }, {
-          disableAnimation: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-          }],
-          bdColor: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-          }],
-          zIndex: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-          }],
-          color: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-          }],
-          type: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-          }],
-          size: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-          }],
-          fullScreen: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-          }],
-          name: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-          }],
-          template: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-          }],
-          showSpinner: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-          }],
-          handleKeyboardEvent: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"],
-            args: ['document:keydown', ['$event']]
-          }],
-          spinnerDOM: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-            args: ['overlay']
-          }]
-        });
-      })();
-
-      var SafeHtmlPipe = /*#__PURE__*/function () {
-        function SafeHtmlPipe(_sanitizer) {
-          _classCallCheck(this, SafeHtmlPipe);
-
-          this._sanitizer = _sanitizer;
-        }
-
-        _createClass(SafeHtmlPipe, [{
-          key: "transform",
-          value: function transform(v) {
-            if (v) {
-              return this._sanitizer.bypassSecurityTrustHtml(v);
-            }
-          }
-        }]);
-
-        return SafeHtmlPipe;
-      }();
-
-      SafeHtmlPipe.ɵfac = function SafeHtmlPipe_Factory(t) {
-        return new (t || SafeHtmlPipe)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["DomSanitizer"]));
-      };
-
-      SafeHtmlPipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({
-        name: "safeHtml",
-        type: SafeHtmlPipe,
-        pure: true
-      });
-
-      SafeHtmlPipe.ctorParameters = function () {
-        return [{
-          type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["DomSanitizer"]
-        }];
-      };
-      /*@__PURE__*/
-
-
-      (function () {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SafeHtmlPipe, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"],
-          args: [{
-            name: 'safeHtml'
-          }]
-        }], function () {
-          return [{
-            type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["DomSanitizer"]
-          }];
-        }, null);
-      })();
-
-      var NgxSpinnerModule = function NgxSpinnerModule() {
-        _classCallCheck(this, NgxSpinnerModule);
-      };
-
-      NgxSpinnerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-        type: NgxSpinnerModule
-      });
-      NgxSpinnerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-        factory: function NgxSpinnerModule_Factory(t) {
-          return new (t || NgxSpinnerModule)();
-        },
-        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"]]]
-      });
-
-      (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](NgxSpinnerModule, {
-          declarations: function declarations() {
-            return [NgxSpinnerComponent, SafeHtmlPipe];
-          },
-          imports: function imports() {
-            return [_angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"]];
-          },
-          exports: function exports() {
-            return [NgxSpinnerComponent];
-          }
-        });
-      })();
-      /*@__PURE__*/
-
-
-      (function () {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxSpinnerModule, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
-          args: [{
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"]],
-            declarations: [NgxSpinnerComponent, SafeHtmlPipe],
-            exports: [NgxSpinnerComponent]
-          }]
-        }], null, null);
-      })();
-      /*
-       * Public API Surface of ngx-spinner
-       */
-
-      /**
-       * Generated bundle index. Do not edit.
-       */
-      //# sourceMappingURL=ngx-spinner.js.map
-
-      /***/
-
-    },
-
-    /***/
     "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/about/about.component.html":
     /*!****************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/about/about.component.html ***!
@@ -25557,7 +24700,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n        <form action=\"\">\n          <div class=\"row\">\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Credit Rate Exchange in terms of Dollars</label>\n            </div>\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Minimum Credit Buy Limit</label>\n            </div>\n          </div>\n      <div class=\"row\">\n        <div class=\"col-md-5\">\n            <div class=\"form-group\"><input type=\"text\" id=\"PricePer\" placeholder=\"Credit limit\" class=\"form-control\"></div>\n        </div>\n        <div class=\"col-md-5\">\n            <div class=\"form-group\"><input type=\"text\" id=\"BaseFare\" placeholder=\"Credit rate\" class=\"form-control\"></div>\n        </div>\n        <div class=\"col-md-2 \">\n         <a href=\"javascript:void()\" class=\"btn btn-primary\"><i class=\"mdi mdi-minus\"></i></a>\n      </div>      \n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-5\">\n                <div class=\"form-group\"><input type=\"text\" id=\"PricePer\" placeholder=\"Credit limit\" class=\"form-control\"></div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"form-group\"><input type=\"text\" id=\"BaseFare\" placeholder=\"Credit rate\" class=\"form-control\"></div>\n            </div>\n            <div class=\"col-md-2 \">\n             <a href=\"javascript:void()\" class=\"btn btn-primary\"><i class=\"mdi mdi-minus\"></i></a>\n          </div>      \n              </div>\n      <div class=\"row\">\n        <div class=\"col-md-12 text-right pb-3\">\n          <a href=\"javascript:void()\" class=\"btn btn-primary\"><i class=\"mdi mdi-plus\"></i> </a>\n        </div>\n      </div>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                 <button class=\"btn btn-primary\">Save</button>\n                </div>\n                \n                  </div>\n        </form>\n    </div>\n</div>";
+      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n      <div class=\"row\" *ngIf=\"addedCredit\">\n        <div class=\"col-md-12 text-right pb-3\">\n          <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"toggleEdit()\"><i class=\"mdi mdi-pencil\"></i> </a>\n        </div>\n      </div>\n        <form [formGroup]=\"FormMatrix\">\n          <div class=\"row\">\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Credit Rate Exchange in terms of Dollars</label>\n            </div>\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Minimum Credit Buy Limit</label>\n            </div>\n          </div>\n          <div formArrayName=\"pricing\" *ngFor=\"let a of FormMatrix.get('pricing').controls; let i = index\" >\n            <div [formGroupName]=\"i\">\n              <div class=\"row\">\n                <div class=\"col-md-5\">\n                   <div class=\"form-group\">\n                     <input type=\"text\" formControlName=\"creditLimit\" id=\"creditLimit\" placeholder=\"Credit limit\" class=\"form-control\" [readonly]='addedCredit'>\n                     <span *ngIf=\"submitted && a.get('creditLimit').hasError('required')\" class=\"error\">\n                      *Credit limit is required.</span>\n                      <span *ngIf=\"a.get('creditLimit').hasError('pattern')\" class=\"error\">\n                       *Credit limit should numeric only.</span>\n                    </div>\n               </div>\n               <div class=\"col-md-5\">\n                   <div class=\"form-group\">\n                     <input type=\"text\" id=\"BaseFare\" formControlName=\"creditRate\" placeholder=\"Credit rate\" class=\"form-control\" [readonly]='addedCredit'>\n                     <span *ngIf=\"submitted && a.get('creditRate').hasError('required')\" class=\"error\">\n                      *Credit rate is required.</span>\n                      <span *ngIf=\"a.get('creditRate').hasError('pattern')\" class=\"error\">\n                       *Credit rate should numeric only.</span>\n                    </div>\n               </div>\n               \n               <div class=\"col-md-2 \">\n                 \n                <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"removeGroup(i)\"><i class=\"mdi mdi-minus\"></i></a>\n             </div>      \n                 </div>\n            </div>\n          </div>\n      <div class=\"row\" *ngIf=\"!addedCredit\">\n        <div class=\"col-md-12 text-right pb-3\">\n          <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"addRow()\"><i class=\"mdi mdi-plus\"></i> </a>\n        </div>\n      </div>\n              <div class=\"row\" >\n                <div class=\"col-md-6\">\n                 <button class=\"btn btn-primary\" (click)=\"SavePackage()\" *ngIf=\"IsFormEmpty\">Save</button>\n                 <button class=\"btn btn-primary\" (click)=\"UpdatePackage()\" *ngIf=\"!addedCredit\">Update</button>\n                </div>\n                </div>\n        </form>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -25977,7 +25120,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n        <div class=\"d-block text-right\">\n            <button class=\"btn btn-primary mb-3\" (click)=\"packageModal(item)\">Add Packages</button>\n        </div>\n   \n<div class=\"row\">\n    <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Basic</h2>\n            <h1 class=\"price\">$100/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div>\n    <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Silver</h2>\n            <h1 class=\"price\">$150/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div>\n    <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Gold</h2>\n            <h1 class=\"price\">$250/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div>\n</div>\n</div>\n</div>\n\n<ng-template #item let-modal>\n    <div class=\"modal-body\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"form-group\">\n                    <label> Plan Name</label>\n                    <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\">\n                </div>\n                <div class=\"form-group\">\n                    <label> Price</label>\n                    <input type=\"text\" placeholder=\"$20\" class=\"form-control\">\n                </div>\n                <div class=\"form-group\">\n                    <label> Months</label>\n                    <input type=\"number\" placeholder=\"4 Months\" class=\"form-control\">\n                </div>\n                <div class=\"form-group\">\n                    <label> Save Upto</label>\n                    <input type=\"number\" placeholder=\"20%\" class=\"form-control\">\n                </div>\n                <button class=\"btn btn-primary\" (click)=\"modal.dismiss()\">Save</button>\n            </div>\n        </div>\n    </div>\n</ng-template>\n<ng-template #itemedit let-modal>\n    <div class=\"modal-body\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"form-group\">\n                    <label> Plan Name</label>\n                    <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\">\n                </div>\n                <div class=\"form-group\">\n                    <label> Price</label>\n                    <input type=\"text\" placeholder=\"$20\" class=\"form-control\">\n                </div>\n                <div class=\"form-group\">\n                    <label> Months</label>\n                    <input type=\"number\" placeholder=\"4 Months\" class=\"form-control\">\n                </div>\n                <div class=\"form-group\">\n                    <label> Save Upto</label>\n                    <input type=\"number\" placeholder=\"20%\" class=\"form-control\">\n                </div>\n                <button class=\"btn btn-primary\" (click)=\"modal.dismiss()\">Save</button>\n            </div>\n        </div>\n    </div>\n</ng-template>";
+      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n        <div class=\"d-block text-right\">\n            <button class=\"btn btn-primary mb-3\" (click)=\"packageModal(item)\">Add Packages</button>\n        </div>\n   \n<div class=\"row\">\n    <div class=\"col-md-4\" *ngFor=\"let item of packages\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">{{item?.name}}</h2>\n            <h1 class=\"price\">{{item?.price.units}} {{item?.price.amount}}/<span>{{item?.month}}Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">{{item?.saveUpto}}%</h4>\n            <div class=\"row\">\n<div class=\"col-md-6\">\n    <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button>\n</div>\n<div class=\"col-md-6\">\n    <button class=\"btn btn-block\" (click)=\"packagedelModal(userDelete,item._id)\">Delete</button>\n</div>\n            </div>\n            <!-- <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button> -->\n        </div>\n    </div>\n    \n    <!-- <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Silver</h2>\n            <h1 class=\"price\">$150/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div>\n    <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Gold</h2>\n            <h1 class=\"price\">$250/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div> -->\n<p *ngIf=\"totalUser==0\">Data not found!</p>\n</div>\n<mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\n</div>\n</div>\n\n<ng-template #item let-modal>\n    <div class=\"modal-body\">\n        <form [formGroup]=\"userForm\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"form-group\">\n                    <label> Plan Name</label>\n                    <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\n                        Please enter the plan name!\n                    </mat-error>\n                    <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                        First name should alphabetic!\n                    </mat-error> -->\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\n                        Maxlength should 15!\n                    </mat-error> \n                </div>\n                <div class=\"row\" formGroupName=\"price\">\n<div class=\"col-md-6\">\n    <div class=\"form-group\">\n        <label> Price</label>\n        <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\n            Please enter the price!\n        </mat-error>\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\n            Maxlength should 10!\n        </mat-error> \n    </div>\n</div>\n<div class=\"col-md-6\">\n    <div class=\"form-group\">\n        <label> Price unit</label>\n        <input type=\"text\"  maxlength=\"10\" placeholder=\"eg:- $ or ₹\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\" maxlength=\"1\">\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\n            Please enter the price unit!\n        </mat-error>\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('maxlength') && !units.hasError('required')\">\n            Maxlength should 1!\n        </mat-error> \n    </div>\n</div>\n </div>\n<div class=\"form-group\">\n                    <label> Months</label>\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\n                        Please enter the months!\n                    </mat-error>\n                    \n                    <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')\">\n                        Maxlength should 2!\n                    </mat-error>  -->\n                </div>\n                <div class=\"form-group\">\n                    <label> Save Upto</label>\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\n                        Please enter the months!\n                    </mat-error>\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\n                        Maxlength should 10!\n                    </mat-error> \n                </div>\n                <button class=\"btn btn-primary\" (click)=\"SavePackage()\">Save</button>\n            </div>\n        </div>\n    </form>\n    </div>\n</ng-template>\n<ng-template #itemedit let-modal>\n    <div class=\"modal-body\">\n        <form [formGroup]=\"userForm\">\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <div class=\"form-group\">\n                        <label> Plan Name</label>\n                        <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\n                            Please enter the plan name!\n                        </mat-error>\n                        <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                            First name should alphabetic!\n                        </mat-error> -->\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\n                            Maxlength should 15!\n                        </mat-error> \n                    </div>\n                    <div class=\"row\" formGroupName=\"price\">\n    <div class=\"col-md-6\">\n        <div class=\"form-group\">\n            <label> Price</label>\n            <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\n                Please enter the price!\n            </mat-error>\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\n                Maxlength should 10!\n            </mat-error> \n        </div>\n    </div>\n    <div class=\"col-md-6\">\n        <div class=\"form-group\">\n            <label> Price unit</label>\n            <input type=\"text\"  maxlength=\"10\" placeholder=\"eg:- $ or ₹\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\" maxlength=\"1\">\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\n                Please enter the price unit!\n            </mat-error>\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('maxlength') && !units.hasError('required')\">\n                Maxlength should 1!\n            </mat-error> \n        </div>\n    </div>\n     </div>\n    <div class=\"form-group\">\n                        <label> Months</label>\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\n                            Please enter the months!\n                        </mat-error>\n                        \n                        <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')\">\n                            Maxlength should 2!\n                        </mat-error>  -->\n                    </div>\n                    <div class=\"form-group\">\n                        <label> Save Upto</label>\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\n                            Please enter the months!\n                        </mat-error>\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\n                            Maxlength should 10!\n                        </mat-error> \n                    </div>\n                    <button class=\"btn btn-primary\" (click)=\"updatePackage()\">Update</button>\n                </div>\n            </div>\n        </form>\n    </div>\n</ng-template>\n<ng-template #userDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you want to delete this package?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n            (click)=\"deletePackage()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n<!-- <ng-template #userDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you ure want to delete this package?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n                (click)=\"deletePackage()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template> -->";
       /***/
     },
 
@@ -26097,7 +25240,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n  \n  \n    <div class=\"col-lg-12\">\n      <div class=\"card\">\n  \n        <div class=\"card-body\">\n          <div class=\"row\">\n            <div class=\"col-md-4\">\n              <form>\n                <div class=\"mb-2\">\n                  <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                </div>\n              </form>\n            </div>\n            <div class=\"col-md-8  d-flex justify-content-end\">\n              <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\n                <button class=\"btn btn-info text-white\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                  Status\n                </button>\n                <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                  <button class=\"dropdown-item\">Active</button>\n                  <button class=\"dropdown-item\">Inactive</button>\n                </div>\n              </div>            \n              <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add\n                Coupan</button>\n            </div>\n            <div class=\"table-responsive\">\n              <table class=\"table v-middle product-overview\" id=\"zero_config\">\n                <thead>\n                  <tr>\n                    <th>Card Name</th>\n                    <th>Cost </th>\n                    <th>Number of Cards Bought </th>\n                    <th>Valid From</th>\n                    <th>Valid To</th>  \n                    <th>Action</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr>\n                   \n                    <td>C43FWSSF</td>\n                      <td>$100</td>\n                      <td>2</td>\n                    <td><span class=\"text-nowrap\">10-02-2021</span></td>                  \n                    <td><span class=\"text-nowrap\">10-05-2021</span></td>                  \n                \n                    <!-- <td>\n                      <div class=\"form-check\">\n                        <div class=\"custom-control custom-radio\">\n                          <input type=\"radio\" class=\"custom-control-input\" id=\"customControlValidation2\"\n                            name=\"radio-stacked\" disabled>\n                          <label class=\"custom-control-label\" for=\"customControlValidation2\">Inactive</label>\n                        </div>\n                      </div>\n                    </td> -->\n                    <td>\n                      <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\n                        <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                          Action\n                        </button>\n  \n                        <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\" class=\" pb-5\">\n                          <!-- <button class=\"dropdown-item\" (click)=\"userprofileModal(userprofile)\"><i class=\"ti-eye\"></i>\n                            View\n                          </button> -->\n                          <button class=\"dropdown-item\" (click)=\"userDetailModal(userDetail)\"><i _ngcontent-axh-c146=\"\"\n                              class=\"ti-marker-alt\"></i> Edit</button>\n  \n                          <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete)\"><i class=\"ti-trash\"></i>\n                            Delete</button>\n                        </div>\n                      </div>\n                    </td>\n                  </tr>               \n                </tbody>\n              </table>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!-- Column -->\n    </div>\n  \n    <ng-template #content3 let-modal>\n      <div class=\"modal-header p-2\">\n        <h4 class=\"modal-title\">Driving Licence</h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n          </div>\n          <div class=\"col-md-6\">\n            <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n          </div>\n        </div>\n      </div>\n    </ng-template>\n  \n  \n    <!-- view modal -->\n    <ng-template #userprofile let-modal>\n      <div class=\"modal-body\">\n        <button type=\"button\" class=\" close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n          <i class=\"mdi mdi-close\"></i>\n        </button>\n        <div class=\"row\">\n          <!-- Column -->\n          <div class=\"col-lg-3 col-xlg-3 col-md-5\">\n            <div class=\"card\">\n              <div class=\"card-body\">\n                <div class=\"m-t-30 text-center\">\n                  <img src=\"assets/images/users/5.jpg\" class=\"rounded-circle\" width=\"120\" />\n                  <h4 class=\"card-title m-t-10\">Hanna Gover</h4>\n                </div>\n              </div>\n            </div>\n          </div>\n          <!-- Column -->\n          <!-- Column -->\n          <div class=\"col-lg-9 col-xlg-9 col-md-7\">\n            <div class=\"card custom-tabs mb-0\">\n              <div class=\"card-body\">\n                <!-- <div class=\"col-md-12 text-right\"><button class=\"btn btn-primary\">Export CSV</button></div>  -->\n                <ngb-tabset>\n                  <ngb-tab>\n                    <ng-template ngbTabTitle><b>User Detail</b></ng-template>\n                    <ng-template ngbTabContent>\n                      <div class=\"row pt-2\">\n                        <div class=\"col-md-6\">\n                          <ul class=\"list-block\">\n                            <li class=\"list-block-listing\">Name: <span class=\"font-weight-600\">Hanna Gover</span></li>\n                            <li class=\"list-block-listing\">Email: <span\n                                class=\"font-weight-600\">Hannagover@gmail.com</span>\n                            </li>\n                            <li class=\"list-block-listing\">Gender: <span class=\"font-weight-600\">Female</span>\n                            </li>\n                            <li class=\"list-block-listing\">Phone No: <span class=\"font-weight-600\">+91-7858485474</span>\n                            </li>\n                            <li class=\"list-block-listing \"> <span>Address: </span> <span class=\"font-weight-600\">3750\n                                Grove Avenue, Clinton</span>\n                            </li>\n  \n  \n                          </ul>\n                        </div>\n                        <div class=\"col-md-6\">\n                          <ul class=\"list-block\">\n  \n                            <li class=\"list-block-listing\">Total Bike: <span class=\"font-weight-600\">1</span></li>\n                            <li class=\"list-block-listing\">Bike Name: <span>Pulsar </span></li>\n                            <li class=\"list-block-listing\">Bike No: <span>HR-04-V-2433</span></li>\n                            <li class=\"list-block-listing\">Vendor Name: <span class=\"font-weight-600\">John</span></li>\n                          </ul>\n                        </div>\n                      </div>\n                    </ng-template>\n                  </ngb-tab>\n  \n                  <ngb-tab>\n                    <ng-template ngbTabTitle><b>User History</b></ng-template>\n                    <ng-template ngbTabContent>\n                      <ul class=\"user_history pl-0\">\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 1</span> </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 2</span> </li>\n                        <li class=\"user_history_list skip\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span>Location 3\n                        </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 4</span> </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 5</span> </li>\n                      </ul>\n                    </ng-template>\n                  </ngb-tab>\n                </ngb-tabset>\n              </div>\n            </div>\n          </div>\n          <!-- Column -->\n        </div>\n      </div>\n    </ng-template>\n  \n    <!-- delete modal -->\n    <ng-template #userDelete let-modal>\n      <div class=\"modal-body\">\n        <p>Are you ure want to delete this user?</p>\n        <div class=\"btn-group\">\n          <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n            (click)=\"modal.dismiss('Cross click')\">Yes</button>\n          <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n            (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n      </div>\n    </ng-template>\n  \n    <!-- edit user detail -->\n    <ng-template #userDetail let-modal>\n      <div class=\"modal-body\">\n        <div class=\"card\">\n          <form action=\"#\">\n            <div class=\"form-body\">\n                <div class=\"card-body\">\n                  <div class=\"row p-t-20\">\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Card Name</label>\n                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"J2d3ddf3\">  \n                      </div>\n                    </div>\n                    <!--/span--> \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Cost</label>\n                        <input type=\"number\" id=\"cost\" class=\"form-control\" placeholder=\"$100\">\n    \n                      </div>\n                    </div>\n                    <!--/span-->                 \n                    <!--/span-->\n                  </div>\n                  \n                  <!--/row-->\n                  <div class=\"row \">\n                  \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid From</label>\n                        <input type=\"date\" id=\"event\" class=\"form-control form-control-danger\"  >\n    \n                      </div>\n                    </div>\n                    <!--/span-->\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid To</label>\n                        <input type=\"date\" id=\"event\" class=\"form-control form-control-danger\"  >\n    \n                      </div>\n                    </div>\n                  </div>\n                  <!--/row-->\n                  <div class=\"row\">\n                    <div class=\"col-md-12\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Number of Cards Bought</label>\n                        <input type=\"number\" id=\"Address\" class=\"form-control form-control-danger\" placeholder=\"% Discount\">\n    \n                      </div>\n                    </div>\n                    <!--/span-->                \n                  </div>\n                  <!--/row-->\n                  \n                </div>\n    \n                <div class=\"form-actions\">\n                  <div class=\"card-body\">\n                    <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"modal.dismiss('Cross click')\">\n                      <i class=\"fa fa-check\"></i> Save</button>\n                    <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                  </div>\n                </div>\n              </div>\n          </form>\n        </div>\n  \n      </div>\n    </ng-template>\n  \n    <!-- add user -->\n    <ng-template #addUser let-modal>\n      <div class=\"modal-body\">\n        <div class=\"card\">\n          <form action=\"#\">\n            <div class=\"form-body\">\n                <div class=\"card-body\">\n                  <div class=\"row p-t-20\">\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Card Name</label>\n                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"J2d3ddf3\">  \n                      </div>\n                    </div>\n                    <!--/span--> \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Cost</label>\n                        <input type=\"number\" id=\"cost\" class=\"form-control\" placeholder=\"$100\">\n    \n                      </div>\n                    </div>\n                    <!--/span-->                 \n                    <!--/span-->\n                  </div>\n                  \n                  <!--/row-->\n                  <div class=\"row \">\n                  \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid From</label>\n                        <input type=\"date\" id=\"event\" class=\"form-control form-control-danger\"  >\n    \n                      </div>\n                    </div>\n                    <!--/span-->\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid To</label>\n                        <input type=\"date\" id=\"event\" class=\"form-control form-control-danger\"  >\n    \n                      </div>\n                    </div>\n                  </div>\n                  <!--/row-->\n                  <div class=\"row\">\n                    <div class=\"col-md-12\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Number of Cards Bought</label>\n                        <input type=\"number\" id=\"Address\" class=\"form-control form-control-danger\" placeholder=\"% Discount\">\n    \n                      </div>\n                    </div>\n                    <!--/span-->                \n                  </div>\n                  <!--/row-->\n                  \n                </div>\n    \n                <div class=\"form-actions\">\n                  <div class=\"card-body\">\n                    <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"modal.dismiss('Cross click')\">\n                      <i class=\"fa fa-check\"></i> Save</button>\n                    <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                  </div>\n                </div>\n              </div>\n          </form>\n        </div>\n  \n  \n      </div>\n    </ng-template>";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n  \n  \n    <div class=\"col-lg-12\">\n      <div class=\"card\">\n  \n        <div class=\"card-body\">\n          <div class=\"row\">\n            <div class=\"col-md-4\">\n              <form>\n                <div class=\"mb-2\">\n                  <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\" (keydown)=\"applyFilter($event)\">\n                </div>\n              </form>\n            </div>\n            <div class=\"col-md-8  d-flex justify-content-end\">\n              <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\n                <button class=\"btn btn-info text-white\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                  Status\n                </button>\n                <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                  <button class=\"dropdown-item\" (click)=\"filterBy('active')\">Active</button>\n                  <button class=\"dropdown-item\" (click)=\"filterBy('inactive')\">Inactive</button>\n                </div>\n              </div>            \n              <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add\n                Coupan</button>\n            </div>\n            <div class=\"table-responsive\">\n              <table class=\"table v-middle product-overview\" id=\"zero_config\">\n                <thead>\n                  <tr>\n                    <th>Card Name</th>\n                    <th>Cost </th>\n                    <th>Number of Cards Bought </th>\n                    <th>Valid From</th>\n                    <th>Valid To</th>  \n                    <th>Action</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr *ngFor=\"let item of giftList\">\n                   \n                    <td>{{item?.cardName}}</td>\n                      <td>{{item?.cost}}</td>\n                      <td>{{item?.cardsBought}}</td>\n                    <td><span class=\"text-nowrap\">{{item?.validFrom}}</span></td>                  \n                    <td><span class=\"text-nowrap\">{{item?.validTill}}</span></td>                  \n                \n                    <!-- <td>\n                      <div class=\"form-check\">\n                        <div class=\"custom-control custom-radio\">\n                          <input type=\"radio\" class=\"custom-control-input\" id=\"customControlValidation2\"\n                            name=\"radio-stacked\" disabled>\n                          <label class=\"custom-control-label\" for=\"customControlValidation2\">Inactive</label>\n                        </div>\n                      </div>\n                    </td> -->\n                    <td>\n                      <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\n                        <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                          Action\n                        </button>\n  \n                        <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\" class=\" pb-5\">\n                          <!-- <button class=\"dropdown-item\" (click)=\"userprofileModal(userprofile)\"><i class=\"ti-eye\"></i>\n                            View\n                          </button> -->\n                          <button class=\"dropdown-item\" (click)=\"userDetailModal(userDetail,item)\"><i _ngcontent-axh-c146=\"\"\n                              class=\"ti-marker-alt\"></i> Edit</button>\n  \n                          <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete,item?._id)\"><i class=\"ti-trash\"></i>\n                            Delete</button>\n                        </div>\n                      </div>\n                    </td>\n                  </tr>               \n                </tbody>\n              </table>\n            </div>\n            <p *ngIf=\"totalUser==0\">Data not found!</p>   \n          </div>\n         \n          <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\n        </div>\n      </div>\n      <!-- Column -->\n    </div>\n  \n    <ng-template #content3 let-modal>\n      <div class=\"modal-header p-2\">\n        <h4 class=\"modal-title\">Driving Licence</h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n          </div>\n          <div class=\"col-md-6\">\n            <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n          </div>\n        </div>\n      </div>\n    </ng-template>\n  \n  \n    <!-- view modal -->\n    <ng-template #userprofile let-modal>\n      <div class=\"modal-body\">\n        <button type=\"button\" class=\" close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n          <i class=\"mdi mdi-close\"></i>\n        </button>\n        <div class=\"row\">\n          <!-- Column -->\n          <div class=\"col-lg-3 col-xlg-3 col-md-5\">\n            <div class=\"card\">\n              <div class=\"card-body\">\n                <div class=\"m-t-30 text-center\">\n                  <img src=\"assets/images/users/5.jpg\" class=\"rounded-circle\" width=\"120\" />\n                  <h4 class=\"card-title m-t-10\">Hanna Gover</h4>\n                </div>\n              </div>\n            </div>\n          </div>\n          <!-- Column -->\n          <!-- Column -->\n          <div class=\"col-lg-9 col-xlg-9 col-md-7\">\n            <div class=\"card custom-tabs mb-0\">\n              <div class=\"card-body\">\n                <!-- <div class=\"col-md-12 text-right\"><button class=\"btn btn-primary\">Export CSV</button></div>  -->\n                <ngb-tabset>\n                  <ngb-tab>\n                    <ng-template ngbTabTitle><b>User Detail</b></ng-template>\n                    <ng-template ngbTabContent>\n                      <div class=\"row pt-2\">\n                        <div class=\"col-md-6\">\n                          <ul class=\"list-block\">\n                            <li class=\"list-block-listing\">Name: <span class=\"font-weight-600\">Hanna Gover</span></li>\n                            <li class=\"list-block-listing\">Email: <span\n                                class=\"font-weight-600\">Hannagover@gmail.com</span>\n                            </li>\n                            <li class=\"list-block-listing\">Gender: <span class=\"font-weight-600\">Female</span>\n                            </li>\n                            <li class=\"list-block-listing\">Phone No: <span class=\"font-weight-600\">+91-7858485474</span>\n                            </li>\n                            <li class=\"list-block-listing \"> <span>Address: </span> <span class=\"font-weight-600\">3750\n                                Grove Avenue, Clinton</span>\n                            </li>\n  \n  \n                          </ul>\n                        </div>\n                        <div class=\"col-md-6\">\n                          <ul class=\"list-block\">\n  \n                            <li class=\"list-block-listing\">Total Bike: <span class=\"font-weight-600\">1</span></li>\n                            <li class=\"list-block-listing\">Bike Name: <span>Pulsar </span></li>\n                            <li class=\"list-block-listing\">Bike No: <span>HR-04-V-2433</span></li>\n                            <li class=\"list-block-listing\">Vendor Name: <span class=\"font-weight-600\">John</span></li>\n                          </ul>\n                        </div>\n                      </div>\n                    </ng-template>\n                  </ngb-tab>\n  \n                  <ngb-tab>\n                    <ng-template ngbTabTitle><b>User History</b></ng-template>\n                    <ng-template ngbTabContent>\n                      <ul class=\"user_history pl-0\">\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 1</span> </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 2</span> </li>\n                        <li class=\"user_history_list skip\"><span class=\"user_history_list_icon active\"><i\n                              class=\"mdi mdi-map-marker\"></i></span>Location 3\n                        </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 4</span> </li>\n                        <li class=\"user_history_list\"><span class=\"user_history_list_icon\"><i\n                              class=\"mdi mdi-map-marker\"></i></span> <span>Location 5</span> </li>\n                      </ul>\n                    </ng-template>\n                  </ngb-tab>\n                </ngb-tabset>\n              </div>\n            </div>\n          </div>\n          <!-- Column -->\n        </div>\n      </div>\n    </ng-template>\n  \n    <!-- delete modal -->\n    <ng-template #userDelete let-modal>\n      <div class=\"modal-body\">\n        <p>Are you want to delete this gift card?</p>\n        <div class=\"btn-group\">\n          <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n            (click)=\"DeleteCard()\">Yes</button>\n          <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n            (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n      </div>\n    </ng-template>\n  \n    <!-- edit user detail -->\n    <ng-template #userDetail let-modal>\n      <div class=\"modal-body\">\n        <div class=\"card\">\n          <form [formGroup]=\"giftForm\">\n            <div class=\"form-body\">\n                <div class=\"card-body\">\n                  <div class=\"row p-t-20\">\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Card name</label>\n                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"J2d3ddf3\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cardName\">  \n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('required') && submitted\">\n                          Please enter the card name!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('pattern') && !giftForm.controls['cardName'].hasError('required') && !giftForm.controls['cardName'].hasError('maxlength')\">\n                          Card name should alphabetic only!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('maxlength') && !giftForm.controls['cardName'].hasError('required')\">\n                          Maxlength should 15!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span--> \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Cost</label>\n                        <input type=\"number\" id=\"cost\" class=\"form-control\" placeholder=\"$100\" onKeyDown=\"if(this.value.length==11 && event.keyCode!=8)\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cost\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].hasError('required') && submitted\">\n                          Please enter the cost!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].value?.toString().length>=11\">\n                          Maxlength should 10!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                 \n                    <!--/span-->\n                  </div>\n                  \n                  <!--/row-->\n                  <div class=\"row \">\n                  \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid From</label>\n                        <input type=\"date\" id=\"event\" [min]=\"service.getToday()\" [max]=\"maxValue()\" onkeydown=\"return false\" class=\"form-control form-control-danger\"  formControlName=\"validFrom\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validFrom'].hasError('required') && submitted\">\n                          Please enter valid from the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                    <!--/span-->\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid To</label>\n                        <input type=\"date\" id=\"event\" [min]=\"minValue() || service.getToday()\" onkeydown=\"event.preventDefault()\" class=\"form-control form-control-danger\" formControlName=\"validTill\" >\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validTill'].hasError('required') && submitted\">\n                          Please enter valid to the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                  </div>\n                  <!--/row-->\n                  <div class=\"row\">\n                    <div class=\"col-md-12\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Number of Cards Bought</label>\n                        <input type=\"number\" id=\"Address\" onKeyDown=\"if(this.value.length==6 && event.keyCode!=8) return false;\" class=\"form-control form-control-danger\" placeholder=\"eg:- 10\" formControlName=\"cardsBought\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].hasError('required') && submitted\">\n                          Please number of cards bought!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].value?.toString().length>=6\">\n                          Maxlength should 5!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                \n                  </div>\n                  <!--/row-->\n                  \n                </div>\n    \n                <div class=\"form-actions\">\n                  <div class=\"card-body\">\n                    <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"UpdateCard()\">\n                      <i class=\"fa fa-check\"></i> Update</button>\n                    <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                  </div>\n                </div>\n              </div>\n          </form>\n        </div>\n  \n      </div>\n    </ng-template>\n  \n    <!-- add user -->\n    <ng-template #addUser let-modal>\n      <div class=\"modal-body\">\n        <div class=\"card\">\n          <form [formGroup]=\"giftForm\">\n            <div class=\"form-body\">\n                <div class=\"card-body\">\n                  <div class=\"row p-t-20\">\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Card name</label>\n                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"J2d3ddf3\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cardName\">  \n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('required') && submitted\">\n                          Please enter the card name!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('pattern') && !giftForm.controls['cardName'].hasError('required') && !giftForm.controls['cardName'].hasError('maxlength')\">\n                          Card name should alphabetic only!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardName'].hasError('maxlength') && !giftForm.controls['cardName'].hasError('required')\">\n                          Maxlength should 15!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span--> \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        <label class=\"control-label\">Cost</label>\n                        <input type=\"number\" id=\"cost\" class=\"form-control\" onKeyDown=\"if(this.value.length==11 && event.keyCode!=8) return false;\" placeholder=\"$100\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"cost\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].hasError('required') && submitted\">\n                          Please enter the cost!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cost'].value?.toString().length>=11\">\n                          Maxlength should 10!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                 \n                    <!--/span-->\n                  </div>\n                  \n                  <!--/row-->\n                  <div class=\"row \">\n                  \n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid From</label>\n                        <input type=\"date\" id=\"event\" [min]=\"service.getToday()\" [max]=\"maxValue()\" onkeydown=\"return false\" class=\"form-control form-control-danger\"  formControlName=\"validFrom\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validFrom'].hasError('required') && submitted\">\n                          Please enter valid from the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                    <!--/span-->\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Valid To</label>\n                        <input type=\"date\" id=\"event\" [min]=\"minValue() || service.getToday()\" onkeydown=\"event.preventDefault()\" class=\"form-control form-control-danger\" formControlName=\"validTill\" >\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['validTill'].hasError('required') && submitted\">\n                          Please enter valid to the date!\n                      </mat-error>\n                      </div>\n                    </div>\n                  </div>\n                  <!--/row-->\n                  <div class=\"row\">\n                    <div class=\"col-md-12\">\n                      <div class=\"form-group has-danger\">\n                        <label class=\"control-label\">Number of Cards Bought</label>\n                        <input type=\"number\" id=\"Address\" onKeyDown=\"if(this.value.length==6 && event.keyCode!=8) return false;\" class=\"form-control form-control-danger\" placeholder=\"eg:- 10\" formControlName=\"cardsBought\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].hasError('required') && submitted\">\n                          Please number of cards bought!\n                      </mat-error>\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"giftForm.controls['cardsBought'].value?.toString().length>=6\">\n                          Maxlength should 5!\n                      </mat-error> \n                      </div>\n                    </div>\n                    <!--/span-->                \n                  </div>\n                  <!--/row-->\n                  \n                </div>\n    \n                <div class=\"form-actions\">\n                  <div class=\"card-body\">\n                    <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"addCard()\">\n                      <i class=\"fa fa-check\"></i> Save</button>\n                    <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                  </div>\n                </div>\n              </div>\n          </form>\n        </div>\n  \n  \n      </div>\n    </ng-template>";
       /***/
     },
 
@@ -26137,7 +25280,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <ul ngbNav #nav=\"ngbNav\" [(activeId)]=\"active\" class=\"nav-tabs cstm_tabs\">\n        <li [ngbNavItem]=\"1\">\n            <a class=\"ord_tab_hd\" ngbNavLink> User Reports </a>\n            <ng-template ngbNavContent>\n                <div class=\"col-lg-12\">\n                    <div class=\"card\">\n                        <div class=\"card-body\">\n                            <div class=\"row\">\n                                <div class=\"col-md-4\">\n                                    <form>\n                                        <div class=\"mb-2\">\n                                            <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                                        </div>\n                                    </form>\n                                </div>\n                                <div class=\"col-md-8 text-right\">\n                                    <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addreviewModal(addreview)\"><i class=\"sl-icon-plus\"></i> Add User</button> -->\n                                </div>\n                                <div class=\"table-responsi\">\n                                    <table class=\"table v-middle product-overview\" id=\"zero_config\">\n                                        <thead>\n                                            <tr>\n                                                <th>Photo</th>\n                                                <th>Name</th>\n                                                <th>Email Id</th>\n                                                <th class=\"text-nowrap\">Reported issue</th>\n                                                <th> Description </th>\n                                                <th>Action</th>\n                                            </tr>\n                                        </thead>\n                                        <tbody>\n                                            <tr>\n                                                <td>\n                                                    <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                                </td>\n                                                <td>Ronny </td>\n                                                <td>Hannagover@gmail.com </td>\n                                                <td> Reason 1 </td>\n                                                <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                                <td>\n                                                    <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                                </td>\n                                            </tr>\n                                            <tr>\n                                                <td>\n                                                    <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                                </td>\n                                                <td>Ronny </td>\n                                                <td>Hannagover@gmail.com </td>\n                                                <td> Reason 2 </td>\n                                                <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                                <td>\n                                                    <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                                </td>\n                                            </tr>\n                                            <tr>\n                                                <td>\n                                                    <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                                </td>\n                                                <td>Ronny </td>\n                                                <td>Hannagover@gmail.com </td>\n                                                <td> Reason 3 </td>\n                                                <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                                <td>\n                                                    <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                                </td>\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                    <mat-paginator [length]=\"100\" [pageSize]=\"10\" [pageSizeOptions]=\"[5, 10, 25, 100]\">\n                                    </mat-paginator>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </ng-template>\n        </li>\n        <li [ngbNavItem]=\"2\">\n            <a class=\"ord_tab_hd\" ngbNavLink> Service Provider Reports </a>\n            <ng-template ngbNavContent>\n                <div class=\"col-lg-12\">\n                    <div class=\"card\">\n                        <div class=\"card-body\">\n                            <div class=\"row\">\n                                <div class=\"col-md-4\">\n                                    <form>\n                                        <div class=\"mb-2\">\n                                            <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                                        </div>\n                                    </form>\n                                </div>\n                                <div class=\"col-md-8 text-right\">\n                                    <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addreviewModal(addreview)\"><i class=\"sl-icon-plus\"></i> Add\n                  User</button> -->\n                                </div>\n                                <div class=\"table-responsi\">\n                                    <table class=\"table v-middle product-overview\" id=\"zero_config\">\n                                        <thead>\n                                            <tr>\n                                                <th>Photo</th>\n                                                <th>Name</th>\n                                                <th>Email Id</th>\n                                                <th class=\"text-nowrap\">Reported issue</th>\n                                                <th> Description </th>\n                                                <th>Action</th>\n                                            </tr>\n                                        </thead>\n                                        <tbody>\n                                            <tr>\n                                                <td>\n                                                    <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                                </td>\n                                                <td> Jason </td>\n                                                <td>Hannagover@gmail.com </td>\n                                                <td> Reason 1 </td>\n                                                <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                                <td>\n                                                    <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                                </td>\n                                            </tr>\n                                            <tr>\n                                                <td>\n                                                    <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                                </td>\n                                                <td> James </td>\n                                                <td>Hannagover@gmail.com </td>\n                                                <td> Reason 2 </td>\n                                                <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                                <td>\n                                                    <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                                </td>\n                                            </tr>\n                                            <tr>\n                                                <td>\n                                                    <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                                </td>\n                                                <td> Sam </td>\n                                                <td>Hannagover@gmail.com </td>\n                                                <td> Reason 3 </td>\n                                                <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                                <td>\n                                                    <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                                </td>\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                    <mat-paginator [length]=\"100\" [pageSize]=\"10\" [pageSizeOptions]=\"[5, 10, 25, 100]\">\n                                    </mat-paginator>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </ng-template>\n        </li>\n    </ul>\n    <div [ngbNavOutlet]=\"nav\" class=\"mt-2\"></div>\n    <!-- Column -->\n</div>\n\n<!-- view modal -->\n<ng-template #review let-modal>\n    <div class=\"modal-body\">\n        <button type=\"button\" class=\" close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n  <i class=\"mdi mdi-close\"></i>\n</button>\n        <div class=\"row\">\n            <!-- Column -->\n            <div class=\"col-lg-12 col-xlg-12 col-md-12\">\n                <div class=\"card custom-tabs mb-0\">\n                    <div class=\"card-body\">\n                        <div class=\"row pt-2\">\n                            <div class=\"col-md-12\">\n                                <p>\n                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,\n                                    content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites\n                                    still in their infancy.\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- Column -->\n        </div>\n    </div>\n</ng-template>\n<!-- add review -->\n<ng-template #addreview let-modal>\n    <div class=\"modal-body\">\n        <div class=\"card\">\n            <form action=\"#\">\n                <div class=\"form-body\">\n                    <div class=\"card-body\">\n                        <div class=\"row p-t-20\">\n                            <div class=\"col-md-12\">\n                                <div class=\"form-group\">\n                                    <label class=\"control-label\">Add Review</label>\n                                    <textarea class=\"form-control\" placeholder=\"Message\" rows=\"10\"></textarea>\n                                </div>\n                            </div>\n                            <!--/span-->\n                        </div>\n                        <!--/row-->\n                    </div>\n                    <div class=\"form-actions\">\n                        <div class=\"card-body\">\n                            <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"modal.dismiss('Cross click')\">\n            <i class=\"fa fa-check\"></i> Submit</button>\n                            <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                        </div>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</ng-template>\n\n<!-- delete modal -->\n<ng-template #reviewDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you ure want to delete this Report ?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    \n    <!-- Column -->\n    <div class=\"col-lg-12\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <form>\n                            <div class=\"mb-2\">\n                                <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                            </div>\n                        </form>\n                    </div>\n                    <div class=\"col-md-8 text-right\">\n                        <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addreviewModal(addreview)\"><i class=\"sl-icon-plus\"></i> Add User</button> -->\n                    </div>\n                    <div class=\"table-responsi\">\n                        <table class=\"table v-middle product-overview\" id=\"zero_config\">\n                            <thead>\n                                <tr>\n                                    <th>Photo</th>\n                                    <th>Name</th>\n                                    <th>Email Id</th>\n                                    <th class=\"text-nowrap\">Reported issue</th>\n                                    <th> Description </th>\n                                    <th>Action</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr>\n                                    <td>\n                                        <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                    </td>\n                                    <td>Ronny </td>\n                                    <td>Hannagover@gmail.com </td>\n                                    <td> Reason 1 </td>\n                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                    <td>\n                                        <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>\n                                        <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                    </td>\n                                    <td>Ronny </td>\n                                    <td>Hannagover@gmail.com </td>\n                                    <td> Reason 2 </td>\n                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                    <td>\n                                        <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>\n                                        <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                    </td>\n                                    <td>Ronny </td>\n                                    <td>Hannagover@gmail.com </td>\n                                    <td> Reason 3 </td>\n                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                    <td>\n                                        <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                        <mat-paginator [length]=\"100\" [pageSize]=\"10\" [pageSizeOptions]=\"[5, 10, 25, 100]\">\n                        </mat-paginator>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<!-- view modal -->\n<ng-template #review let-modal>\n    <div class=\"modal-body\">\n        <button type=\"button\" class=\" close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n  <i class=\"mdi mdi-close\"></i>\n</button>\n        <div class=\"row\">\n            <!-- Column -->\n            <div class=\"col-lg-12 col-xlg-12 col-md-12\">\n                <div class=\"card custom-tabs mb-0\">\n                    <div class=\"card-body\">\n                        <div class=\"row pt-2\">\n                            <div class=\"col-md-12\">\n                                <p>\n                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,\n                                    content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites\n                                    still in their infancy.\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- Column -->\n        </div>\n    </div>\n</ng-template>\n<!-- add review -->\n<ng-template #addreview let-modal>\n    <div class=\"modal-body\">\n        <div class=\"card\">\n            <form action=\"#\">\n                <div class=\"form-body\">\n                    <div class=\"card-body\">\n                        <div class=\"row p-t-20\">\n                            <div class=\"col-md-12\">\n                                <div class=\"form-group\">\n                                    <label class=\"control-label\">Add Review</label>\n                                    <textarea class=\"form-control\" placeholder=\"Message\" rows=\"10\"></textarea>\n                                </div>\n                            </div>\n                            <!--/span-->\n                        </div>\n                        <!--/row-->\n                    </div>\n                    <div class=\"form-actions\">\n                        <div class=\"card-body\">\n                            <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"modal.dismiss('Cross click')\">\n            <i class=\"fa fa-check\"></i> Submit</button>\n                            <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                        </div>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</ng-template>\n\n<!-- delete modal -->\n<ng-template #reviewDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you ure want to delete this Report ?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n";
       /***/
     },
 
@@ -26417,7 +25560,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12 col-xlg-3 col-md-5\">\n        <a routerLink=\"/pages/users\" class=\"btn btn-primary mb-3\">Back</a>\n        <!-- <a (click)=\"history.back()\" class=\"btn btn-primary mb-3\">Back</a> -->\n        <div class=\"card\">\n            <div class=\"row\">\n                <div class=\"col-md-3\">\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && !user.image\">\n                        <div class=\" text-center\">\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'MALE'\" src=\"assets/images/users/avatar_male.jpg\" class=\"rounded-circle\" width=\"150\" />\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'FEMALE'\" src=\"assets/images/users/avatar_female.jpg\" class=\"rounded-circle\" width=\"150\" />\n                        <img *ngIf=\"!user.image && !user.gender\" src=\"assets/images/users/agent.jpg\" class=\"rounded-circle\" width=\"150\" />\n                        </div>\n                    </div>\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && user.image\">\n                        <div class=\" text-center\">\n                        <img [src]=imageUrl class=\"rounded-circle\" width=\"100\" />\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-9 pr-0 pt-2 pb-2\" *ngIf=\"user\">\n                    <div class=\"row pt-2 ml-0 mr-0 \">\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Name: <span class=\"font-weight-600\">{{user?.firstName}} {{user?.lastName}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Contact: <span class=\"font-weight-600\">{{user?.countryCode}}-{{user?.phoneNo}}</span>\n                                  \n                                    <!-- <li class=\"list-block-listing pr-2 pb-2\">User ID: <span class=\"font-weight-600\">elite2345</span></li> -->\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n\n                                <li class=\"list-block-listing pr-2 pb-2\">Dob: <span class=\"font-weight-600\">{{user?.dateofbirth}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Country: <span class=\"font-weight-600\">{{user?.country}}</span></li>\n\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Email: <span class=\"font-weight-600\"> {{user?.email }}</span>\n                                </li>\n                                <li class=\"list-block-listing pr-2 pb-2\"> Username: <span class=\"font-weight-600\">{{user?.username}}</span></li>\n                            </ul>\n                        </div>\n                      \n                    </div>\n               \n                </div>\n            </div>\n            <!-- end row -->\n\n        </div>\n    </div>\n    <!-- Column -->\n    <!-- Column -->\n    <!-- <div class=\"col-lg-12\">\n        <h4 class=\"pt-2\">Order History</h4>\n        <div class=\"card \">\n\n            <div class=\"card-body\">\n                <div class=\"row pb-2\">\n                    <div class=\"col-md-4\">\n                        <div>\n                            <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                        </div>\n                    </div>\n                    <div class=\"col-md-8 text-right\">\n                        <div ngbDropdown class=\"d-inline-block \">\n                            <button class=\"btn btn-info text-white\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                All\n              </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\">Completed Orders</button>\n                                <button class=\"dropdown-item\">Cancelled Orders</button>\n                                <button class=\"dropdown-item\">Pending Orders</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"table-responsive\">\n                    <table mat-table class=\"w-100\" [dataSource]=\"dataSource\" matSort>                   \n\n                      \n                        <ng-container matColumnDef=\"hotelName\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.hotelName}} </td>\n                        </ng-container>\n                          <ng-container matColumnDef=\"productname\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Services </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.productname}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"orderdate\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Date </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.orderdate}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"price\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"><b>$</b>{{row.price}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"Reviews_sp\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Reviews by service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.Reviews_sp}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Status </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> <button class=\"btn\" [ngClass]=\"row.status == 'Cancelled' ? 'btn-outline-danger': (row.status == 'Pending') ? 'btn-outline-info' : 'btn-outline-success' \">{{row.status}}</button> </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                    </table>\n\n                    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n                </div>\n            </div>\n        </div>\n    </div> -->\n    <!-- Column -->\n</div>\n<div class=\"row\">\n    <div class=\"col-md-12\">\n        <h4>User History</h4>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/2.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n</div>\n\n\n    \n    <div class=\"card\">\n        <div class=\"card-body\">\n            <h4>Photo/Video</h4>\n          <div class=\"row mt-3\">\n            <div class=\"col-md-3\">\n              <figure class=\"mb-0 p-2 border\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox)\"><img src=\"assets/images/img3.jpg\" class=\"img-fluid\"></a></figure>\n            </div>\n            <div class=\"col-md-3\">\n              <figure class=\"mb-0 p-2 border\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox)\"><img src=\"assets/images/img3.jpg\" class=\"img-fluid\"></a></figure>\n            </div>\n          </div>\n        </div>\n      </div>\n      <ng-template #videobox let-modal>\n          <div class=\"modal-body\">\n              <button class=\"btn close-icon\" (click)=\"modal.dismiss()\"><i class=\"mdi mdi-close\"></i></button>\n            <iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/XncoZAkq_Qs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n          </div>\n        </ng-template>\n\n<!-- <ng-template #discount let-modal>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title\">Coupons</h4>\n    <button type=\"button\" class=\"close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n   <div class=\"table-reponsive\">\n     <table class=\"table table-sm\">\n      <tbody>\n       <tr>\n       <td class=\"align-middle\">Get 20% OFF On Food Orders</td>\n       <td><button class=\"food-code btn btn-success\">\n        Food20\n       </button></td>\n      </tr>\n      <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       </tbody>\n     </table>\n   </div>\n  </div>\n\n</ng-template> -->\n";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12 col-xlg-3 col-md-5\">\n        <a routerLink=\"/pages/users\" class=\"btn btn-primary mb-3\">Back</a>\n        <!-- <a (click)=\"history.back()\" class=\"btn btn-primary mb-3\">Back</a> -->\n        <div class=\"card\">\n            <div class=\"row\">\n                <div class=\"col-md-3\">\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && !user.image\">\n                        <div class=\" text-center\">\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'MALE'\" src=\"assets/images/users/avatar_male.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'FEMALE'\" src=\"assets/images/users/avatar_female.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        <img *ngIf=\"!user.image && !user.gender\" src=\"assets/images/users/agent.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        </div>\n                    </div>\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && user.image\">\n                        <div class=\" text-center\">\n                        <img [src]=imageUrl class=\"rounded-circle\" width=\"100\" height=\"100\"/>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-9 pr-0 pt-2 pb-2\" *ngIf=\"user\">\n                    <div class=\"row pt-2 ml-0 mr-0 \">\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Name: <span class=\"font-weight-600\">{{user?.firstName}} {{user?.lastName}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Contact: <span class=\"font-weight-600\">{{user?.countryCode}}-{{user?.phoneNo}}</span>\n                                  \n                                    <!-- <li class=\"list-block-listing pr-2 pb-2\">User ID: <span class=\"font-weight-600\">elite2345</span></li> -->\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n\n                                <li class=\"list-block-listing pr-2 pb-2\">Dob: <span class=\"font-weight-600\">{{user?.dateofbirth}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Country: <span class=\"font-weight-600\">{{user?.country}}</span></li>\n\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Email: <span class=\"font-weight-600\"> {{user?.email }}</span>\n                                </li>\n                                <li class=\"list-block-listing pr-2 pb-2\"> Username: <span class=\"font-weight-600\">{{user?.username}}</span></li>\n                            </ul>\n                        </div>\n                      \n                    </div>\n               \n                </div>\n            </div>\n            <!-- end row -->\n\n        </div>\n    </div>\n    <!-- Column -->\n    <!-- Column -->\n    <!-- <div class=\"col-lg-12\">\n        <h4 class=\"pt-2\">Order History</h4>\n        <div class=\"card \">\n\n            <div class=\"card-body\">\n                <div class=\"row pb-2\">\n                    <div class=\"col-md-4\">\n                        <div>\n                            <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                        </div>\n                    </div>\n                    <div class=\"col-md-8 text-right\">\n                        <div ngbDropdown class=\"d-inline-block \">\n                            <button class=\"btn btn-info text-white\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                All\n              </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\">Completed Orders</button>\n                                <button class=\"dropdown-item\">Cancelled Orders</button>\n                                <button class=\"dropdown-item\">Pending Orders</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"table-responsive\">\n                    <table mat-table class=\"w-100\" [dataSource]=\"dataSource\" matSort>                   \n\n                      \n                        <ng-container matColumnDef=\"hotelName\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.hotelName}} </td>\n                        </ng-container>\n                          <ng-container matColumnDef=\"productname\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Services </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.productname}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"orderdate\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Date </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.orderdate}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"price\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"><b>$</b>{{row.price}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"Reviews_sp\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Reviews by service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.Reviews_sp}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Status </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> <button class=\"btn\" [ngClass]=\"row.status == 'Cancelled' ? 'btn-outline-danger': (row.status == 'Pending') ? 'btn-outline-info' : 'btn-outline-success' \">{{row.status}}</button> </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                    </table>\n\n                    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n                </div>\n            </div>\n        </div>\n    </div> -->\n    <!-- Column -->\n</div>\n<div class=\"row\">\n    <div class=\"col-md-12\">\n        <h4>User History</h4>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/2.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n</div>\n\n\n    \n    <div class=\"card\">\n        <div class=\"card-body\">\n            <h4>Photo/Video</h4>\n          <div class=\"row mt-3\">\n            <div class=\"col-md-3\">\n              <figure class=\"mb-0 p-2 border\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox)\"><img src=\"assets/images/img3.jpg\" class=\"img-fluid\"></a></figure>\n            </div>\n            <div class=\"col-md-3\">\n              <figure class=\"mb-0 p-2 border\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox)\"><img src=\"assets/images/img3.jpg\" class=\"img-fluid\"></a></figure>\n            </div>\n          </div>\n        </div>\n      </div>\n      <ng-template #videobox let-modal>\n          <div class=\"modal-body\">\n              <button class=\"btn close-icon\" (click)=\"modal.dismiss()\"><i class=\"mdi mdi-close\"></i></button>\n            <iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/XncoZAkq_Qs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n          </div>\n        </ng-template>\n\n<!-- <ng-template #discount let-modal>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title\">Coupons</h4>\n    <button type=\"button\" class=\"close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n   <div class=\"table-reponsive\">\n     <table class=\"table table-sm\">\n      <tbody>\n       <tr>\n       <td class=\"align-middle\">Get 20% OFF On Food Orders</td>\n       <td><button class=\"food-code btn btn-success\">\n        Food20\n       </button></td>\n      </tr>\n      <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       </tbody>\n     </table>\n   </div>\n  </div>\n\n</ng-template> -->\n";
       /***/
     },
 
@@ -26437,7 +25580,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12\">\n        <div class=\"card\">\n\n            <div class=\"card-body\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <form>\n                            <div class=\"mb-2\">\n                                <input type=\"text\" class=\"form-control\" id=\"prenametext\" (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Search\">\n                            </div>\n                        </form>\n                    </div>\n                    <div class=\"col-md-8  d-flex justify-content-end\">\n                        <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\n                            <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                                All\n                            </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\">All</button>\n                                <button class=\"dropdown-item\">Active</button>\n                                <button class=\"dropdown-item\">Inactive</button>\n                            </div>\n                        </div>\n                        <button class=\"btn btn-primary mb-2 mr-2\" (click)=\"openLink()\"><i class=\"sl-icon-cloud-download\"></i> Export CSV</button>\n                        <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add User</button>\n                    </div>\n                </div>\n                <div class=\"table-responsive\">\n                    <table mat-table class=\" w-100\" [dataSource]=\"dataSource\" matSort>\n\n                        <ng-container matColumnDef=\"name\">\n                            <th mat-header-cell *matHeaderCellDef> Name </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.firstName}} {{row.lastName}}</td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"contact\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Contact </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.phoneNo}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"email\">\n                            <th mat-header-cell *matHeaderCellDef>Email </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.email}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"address\">\n                            <th mat-header-cell *matHeaderCellDef>Address </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.address}} </td>\n                        </ng-container>\n                        \n                        <ng-container matColumnDef=\"username\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Username </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.username}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"dateofbirth\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">DOB </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.dateofbirth}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"gender\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Gender </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.gender}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Status </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <mat-slide-toggle [checked]=\"row.isBlocked === true ? true : false\" (change)=\"blockUsers(row, $event.checked)\">\n                                </mat-slide-toggle>\n                            </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"action\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Action </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\n                                    <button class=\"btn btn-outline-primary btn-sm\" id=\"dropdownBasic1\"\n                                        ngbDropdownToggle>\n                                        Action\n                                    </button>\n\n                                    <!-- <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" routerLink=\"/pages/users_detail\"><i class=\"ti-eye\"></i>\n                                            Accept\n                                        </a>\n\n                                        <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Reject</button>\n                                    </div> -->\n\n                                    <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" (click)=\"viewUserDetail(row)\" style=\"cursor: default;\"><i class=\"ti-eye\"></i>\n                                            View\n                                        </a>\n                                        <button class=\"dropdown-item\" (click)=\"userEditModal(userEdit, row)\"><i\n                                                _ngcontent-axh-c146=\"\" class=\"ti-marker-alt\"></i> Edit</button>\n\n                                        <button class=\"dropdown-item\" (click)=\"deleteUser(userDelete, row)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Delete</button>\n                                    </div>\n                                </div>\n                            </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                    </table>\n                </div>\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n            </div>\n        </div>\n    </div>\n\n    <ng-template #content3 let-modal>\n        <div class=\"modal-header p-2\">\n            <h4 class=\"modal-title\">Driving Licence</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div class=\"modal-body\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n            </div>\n        </div>\n    </ng-template>\n\n\n    <!-- delete modal -->\n    <ng-template #userDelete let-modal>\n        <div class=\"modal-body\">\n            <p>Are you ure want to delete this user?</p>\n            <div class=\"btn-group\">\n                <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n                    (click)=\"modal.close('Cross click')\">Yes</button>\n                <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                    (click)=\"modal.dismiss('Cross click')\">No</button>\n            </div>\n        </div>\n    </ng-template>\n\n    <!-- edit user detail -->\n    <ng-template #userEdit let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form [formGroup]=\"userForm\" >\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">First Name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" formControlName=\"firstName\" placeholder=\"John\">\n\n                                    </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Last Name</label>\n                                        <input type=\"text\" id=\"lastName\" class=\"form-control\" formControlName=\"lastName\" placeholder=\"doe\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <!-- <div class=\"custom-file\">\n                                                <input class=\"custom-file-input\" id=\"inputGroupFile01\" type=\"file\">\n                                                <label class=\"custom-file-label\"for=\"inputGroupFile01\">Choosefile<label>\n                                            </div> -->\n                                            <div class=\"custom-file\">\n                                                <div class=\"user_img\">\n                                                    <figure *ngIf=\"userImage\">\n                                                        <img [src]=\"userImage\" />\n                                                    </figure>\n                                                </div>\n                                            </div>\n                                            <div class=\"custom-file\">\n                                                <input  class=\"custom-file-input\" type=\"file\" accept=\"image/*\" (change)=\"profilePic($event)\" />\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Contact</label>\n                                        <input type=\"number\" id=\"firstName\" class=\"form-control\" formControlName=\"phoneNo\" placeholder=\"No.\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"firstName\" class=\"form-control\" formControlName=\"email\"\n                                            placeholder=\"example@gmail.com\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Username</label>\n                                        <input type=\"text\" id=\"email\" class=\"form-control\" formControlName=\"username\"\n                                            placeholder=\"#46543343\">\n                                    </div>\n                                </div>\n\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">DOB</label>\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" formControlName=\"dateofbirth\"\n                                            placeholder=\"Pincode\">\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">City</label>\n                                        <input type=\"text\" id=\"city\" class=\"form-control\" formControlName=\"city\"\n                                            placeholder=\"Berlin\">\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <!-- <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Pincode</label>\n                                        <input type=\"text\" id=\"email\" class=\"form-control\" formControlName=\"username\"\n                                            placeholder=\"Pincode\">\n                                    </div>\n                                </div> -->\n                                <!--/span-->\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"5\" class=\"form-control\" formControlName=\"address\"\n                                            placeholder=\"#433 New garden Complex\"></textarea>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-primary mr-3\"\n                                    (click)=\"modal.dismiss('Cross click')\">\n                                    <i class=\"fa fa-check\"></i> Update</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n\n        </div>\n    </ng-template>\n\n    <!-- add user -->\n    <ng-template #addUser let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form action=\"#\">\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <div class=\"custom-file\"><input class=\"custom-file-input\"\n                                                    id=\"inputGroupFile01\" type=\"file\"><label class=\"custom-file-label\"\n                                                    for=\"inputGroupFile01\">Choose file</label></div>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Contact No</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\n                                            placeholder=\"example@gmail.com\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <input type=\"text\" id=\"Address\" class=\"form-control form-control-danger\"\n                                            placeholder=\"Address\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Gender</label>\n                                        <select class=\"form-control custom-select\" data-placeholder=\"Choose a Category\"\n                                            tabindex=\"1\">\n                                            <option value=\"Category 1\">Male</option>\n                                            <option value=\"Category 2\">Female</option>\n                                        </select>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Bike Name</label>\n                                        <input type=\"text\" id=\"bike_name\" name=\"bike_name\" class=\"form-control\"\n                                            placeholder=\"Bike name\">\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Bike No</label>\n                                        <input type=\"text\" id=\"bike_no\" name=\"bike_no\" class=\"form-control\"\n                                            placeholder=\"Bike No\">\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Status</label>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio1\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio1\">Active</label>\n                                        </div>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio2\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio2\">Inactive</label>\n                                        </div>\n                                    </div>\n\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\n                                    (click)=\"modal.dismiss('Cross click')\">\n                                    <i class=\"fa fa-check\"></i> Add</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n\n        </div>\n    </ng-template>";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12\">\n        <div class=\"card\">\n\n            <div class=\"card-body\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <form>\n                            <div class=\"mb-2\">\n                                <input type=\"text\" class=\"form-control\" id=\"prenametext\" (keydown)=\"applyFilter($event)\" placeholder=\"Search\">\n                            </div>\n                        </form>\n                    </div>\n                    <div class=\"col-md-8  d-flex justify-content-end\">\n                        <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\n                            <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                                All\n                            </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\" (click)=\"filterBy('')\">All</button>\n                                <button class=\"dropdown-item\" (click)=\"filterBy('true')\">Active</button>\n                                <button class=\"dropdown-item\" (click)=\"filterBy('false')\">Inactive</button>\n                            </div>\n                        </div>\n                        <button class=\"btn btn-primary mb-2 mr-2\" (click)=\"openLink()\"><i class=\"sl-icon-cloud-download\"></i> Export CSV</button>\n                        <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add User</button> -->\n                    </div>\n                </div>\n                <div class=\"table-responsive\">\n                    <table mat-table class=\" w-100\" [dataSource]=\"dataSource\" matSort>\n\n                        <ng-container matColumnDef=\"name\">\n                            <th mat-header-cell *matHeaderCellDef> Name </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.firstName}} {{row.lastName}}</td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"contact\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Contact </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.phoneNo}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"email\">\n                            <th mat-header-cell *matHeaderCellDef>Email </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.email}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"address\">\n                            <th mat-header-cell *matHeaderCellDef>Address </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.address}} </td>\n                        </ng-container>\n                        \n                        <ng-container matColumnDef=\"username\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Username </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.username}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"dateofbirth\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">DOB </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.dateofbirth}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"gender\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Gender </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.gender}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Status </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <mat-slide-toggle [checked]=\"row.isBlocked === true ? true : false\" (change)=\"blockUsers(row, $event.checked)\">\n                                    {{row.isBlocked === true ? \"Blocked\" :\"Unblocked\"}}\n                                </mat-slide-toggle>\n                            </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"action\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Action </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\n                                    <button class=\"btn btn-outline-primary btn-sm\" id=\"dropdownBasic1\"\n                                        ngbDropdownToggle>\n                                        Action\n                                    </button>\n\n                                    <!-- <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" routerLink=\"/pages/users_detail\"><i class=\"ti-eye\"></i>\n                                            Accept\n                                        </a>\n\n                                        <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Reject</button>\n                                    </div> -->\n\n                                    <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" (click)=\"viewUserDetail(row)\" style=\"cursor: default;\"><i class=\"ti-eye\"></i>\n                                            View\n                                        </a>\n                                        <button class=\"dropdown-item\" (click)=\"userEditModal(userEdit, row)\"><i\n                                                _ngcontent-axh-c146=\"\" class=\"ti-marker-alt\"></i> Edit</button>\n\n                                        <button class=\"dropdown-item\" (click)=\"deleteUser(userDelete, row)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Delete</button>\n                                    </div>\n                                </div>\n                            </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                        <tr class=\"mat-row\" *matNoDataRow>\n                            <td class=\"mat-cell\" colspan=\"9\">Data not found!</td>\n                          </tr>\n                    </table>\n                </div>\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\n            </div>\n        </div>\n    </div>\n\n    <ng-template #content3 let-modal>\n        <div class=\"modal-header p-2\">\n            <h4 class=\"modal-title\">Driving Licence</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div class=\"modal-body\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n            </div>\n        </div>\n    </ng-template>\n\n\n    <!-- delete modal -->\n    <ng-template #userDelete let-modal>\n        <div class=\"modal-body\">\n            <p>Are you want to delete this user?</p>\n            <div class=\"btn-group\">\n                <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n                    (click)=\"modal.close('Cross click')\">Yes</button>\n                <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                    (click)=\"modal.dismiss('Cross click')\">No</button>\n            </div>\n        </div>\n    </ng-template>\n\n    <!-- edit user detail -->\n    <ng-template #userEdit let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form [formGroup]=\"userForm\">\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">First name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('required') && submitted\">\n                                            Please enter the first name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                                            First name should alphabetic!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('maxlength') && !userForm.controls['firstName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error> \n                                    </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Last name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('required') && submitted\">\n                                            Please enter the last name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('pattern') && !userForm.controls['lastName'].hasError('required') && !userForm.controls['lastName'].hasError('maxlength')\">\n                                            Last name should alphabetic!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('maxlength') && !userForm.controls['lastName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error>  \n                                    </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" (keydown.space)=\"$event.preventDefault()\" formControlName=\"userName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('required') && submitted\">\n                                            Please enter the user name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('pattern') && !userForm.controls['userName'].hasError('required') && !userForm.controls['userName'].hasError('maxlength')\">\n                                            User name should alpha numeric!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('maxlength') && !userForm.controls['userName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error>  \n                                    </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\" (change)=\"uploadFile($event)\"\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\n                                                    for=\"inputGroupFile01\">{{imagePath?imagePath:'Choose file'}}</label></div>\n                                                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"!imagePath && submitted\">\n                                                        Please upload user profile!\n                                                    </mat-error>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Phone number</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('required') && submitted\">\n                                            Please enter the phone number!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('minlength') && !userForm.controls['phoneNo'].hasError('required')\">\n                                            Phone number must be at least 7 digit long.\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('maxlength') && !userForm.controls['phoneNo'].hasError('required')\">\n                                            Phone number can be max 15 digit long.\n                                        </mat-error>\n            \n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('pattern') && !userForm.controls['phoneNo'].hasError('required') && !userForm.controls['phoneNo'].hasError('maxlength')\">\n                                            Phone number not valid!\n                                        </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('required') && submitted\">\n                                                Please enter the email address!\n                                            </mat-error>\n                \n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('pattern') && !userForm.controls['email'].hasError('required')\">\n                                                Email is invalid!\n                                            </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">DOB</label>\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" max=\"{{minAge | date:'yyyy-MM-dd'}}\" formControlName=\"dateofbirth\"\n                                            placeholder=\"eg:- 08/07/1998\">\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['dateofbirth'].hasError('required') && submitted\">\n                                                Please enter date of birth!\n                                            </mat-error>\n                                        </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Gender</label>\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\n                                            tabindex=\"1\">\n                                            <option value=\"MALE\" selected>Male</option>\n                                            <option value=\"FEMALE\">Female</option>\n                                        </select>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['gender'].hasError('required') && submitted\">\n                                            Please  choose gender!\n                                        </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['address'].hasError('required') && submitted\">\n                                                Please enter the email address!\n                                            </mat-error>\n                                        </div>\n                                </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Status</label>\n                                        <div class=\"form-check\">\n                                            <input type=\"checkbox\" id=\"exampleCheck1\" [(ngModel)]=\"isActive\" [ngModelOptions]=\"{standalone: true}\"\n                                                class=\"form-check-input\">\n                                            <label class=\"form-check-label\" for=\"exampleCheck1\">{{isActive?'Active':'Inactive'}}</label>\n                                        </div>\n                                    </div>\n\n                                </div>\n                               </div>\n                        \n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\n                                    (click)=\"UpadteUser()\">\n                                    <i class=\"fa fa-check\"></i>Update</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n         </div>\n    </ng-template>\n\n    <!-- add user -->\n    <ng-template #addUser let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form [formGroup]=\"userForm\">\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">First name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\n                                      </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Last name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\n                                      </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"userName\">\n                                      </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\"\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\n                                                    for=\"inputGroupFile01\">Choose file</label></div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Contact No</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">DOB</label>\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" formControlName=\"dateofbirth\"\n                                            placeholder=\"eg:- 08/07/1998\">\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Gender</label>\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\n                                            tabindex=\"1\">\n                                            <option value=\"Male\" selected>Male</option>\n                                            <option value=\"Female\">Female</option>\n                                        </select>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\n                                    </div>\n                                </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Status</label>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio1\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio1\">Active</label>\n                                        </div>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio2\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio2\">Inactive</label>\n                                        </div>\n                                    </div>\n\n                                </div>\n                               </div>\n                        \n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\n                                    (click)=\"modal.dismiss('Cross click')\">\n                                    <i class=\"fa fa-check\"></i> Add</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n\n        </div>\n    </ng-template>";
       /***/
     },
 
@@ -27577,14 +26720,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this100 = this;
+            var _this96 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this100.closeResult = "Closed with: ".concat(result);
+              _this96.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this100.closeResult = "Dismissed ".concat(_this100.getDismissReason(reason));
+              _this96.closeResult = "Dismissed ".concat(_this96.getDismissReason(reason));
             });
           }
         }, {
@@ -27682,7 +26825,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2NhbGN1bGF0b3IvY2FsY3VsYXRvci5jb21wb25lbnQuY3NzIn0= */";
+      __webpack_exports__["default"] = ".error{\n    color: red;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY2FsY3VsYXRvci9jYWxjdWxhdG9yLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxVQUFVO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9jYWxjdWxhdG9yL2NhbGN1bGF0b3IuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5lcnJvcntcbiAgICBjb2xvcjogcmVkO1xufSJdfQ== */";
       /***/
     },
 
@@ -27711,6 +26854,24 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+      /* harmony import */
+
+
+      var ngx_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ngx-toastr */
+      "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
+      /* harmony import */
+
+
+      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! src/app/shared/services/api.service */
+      "./src/app/shared/services/api.service.ts");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -27733,20 +26894,152 @@
       };
 
       var CalculatorComponent = /*#__PURE__*/function () {
-        function CalculatorComponent() {
+        function CalculatorComponent(fb, toastr, service) {
           _classCallCheck(this, CalculatorComponent);
+
+          this.fb = fb;
+          this.toastr = toastr;
+          this.service = service;
+          this.IsFormEmpty = true;
+          this.submitted = false;
+          this.addedCredit = false;
         }
 
         _createClass(CalculatorComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {}
+          value: function ngOnInit() {
+            this.getPackages();
+            this.FormMatrix = this.fb.group({
+              pricing: this.fb.array([])
+            });
+          }
+        }, {
+          key: "createRow",
+          value: function createRow() {
+            return this.fb.group({
+              creditLimit: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern("^[0-9]*$")]),
+              creditRate: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern("^[0-9]*$")])
+            });
+          }
+        }, {
+          key: "addRow",
+          value: function addRow() {
+            this.pricing = this.FormMatrix.get('pricing');
+            this.pricing.push(this.createRow());
+          }
+        }, {
+          key: "removeGroup",
+          value: function removeGroup(index) {
+            this.pricing = this.FormMatrix.get('pricing');
+            this.pricing.removeAt(index);
+          }
+        }, {
+          key: "SavePackage",
+          value: function SavePackage() {
+            var _this97 = this;
+
+            console.log('Form', this.FormMatrix.value);
+            var obj = {};
+            this.submitted = true;
+            var url = "credits";
+
+            if (this.FormMatrix.valid) {
+              this.addedCredit = true;
+              this.service.postApi(url, this.FormMatrix.controls['pricing'].value).subscribe(function (res) {
+                if (res.statusCode == 200) {
+                  _this97.submitted = false;
+
+                  _this97.getPackages();
+
+                  _this97.toastr.success(res.message);
+                } else {
+                  _this97.toastr.error(res.message);
+                }
+              });
+            }
+          }
+        }, {
+          key: "toggleEdit",
+          value: function toggleEdit() {
+            this.addedCredit = false;
+          }
+        }, {
+          key: "getPackages",
+          value: function getPackages() {
+            var _this98 = this;
+
+            var url = "credits";
+            this.service.getApi(url).subscribe(function (res) {
+              if (res.statusCode === 200) {
+                console.log('Credit get', res);
+                _this98.packages = res.data.doc;
+
+                if (res.data.doc.length > 0) {
+                  _this98.addedCredit = true;
+                  _this98.IsFormEmpty = false;
+                }
+
+                var control = _this98.FormMatrix.controls.pricing;
+
+                var _iterator13 = _createForOfIteratorHelper(res.data.doc),
+                    _step13;
+
+                try {
+                  for (_iterator13.s(); !(_step13 = _iterator13.n()).done;) {
+                    var x = _step13.value;
+                    control.push(_this98.fb.group({
+                      creditLimit: x.creditLimit,
+                      creditRate: x.creditRate
+                    }));
+                  }
+                } catch (err) {
+                  _iterator13.e(err);
+                } finally {
+                  _iterator13.f();
+                }
+              } else {
+                _this98.toastr.error(res["message"]);
+              }
+            });
+          }
+        }, {
+          key: "UpdatePackage",
+          value: function UpdatePackage() {
+            var _this99 = this;
+
+            console.log('Form', this.FormMatrix.value);
+            var obj = {};
+            this.submitted = true;
+            var url = "credits/".concat(this.id);
+
+            if (this.FormMatrix.valid) {
+              this.addedCredit = true;
+              this.service.putApi(url, this.FormMatrix.controls['pricing'].value).subscribe(function (res) {
+                if (res.statusCode == 200) {
+                  _this99.submitted = false;
+
+                  _this99.getPackages();
+
+                  _this99.toastr.success(res.message);
+                } else {
+                  _this99.toastr.error(res.message);
+                }
+              });
+            }
+          }
         }]);
 
         return CalculatorComponent;
       }();
 
       CalculatorComponent.ctorParameters = function () {
-        return [];
+        return [{
+          type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]
+        }, {
+          type: ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastrService"]
+        }, {
+          type: src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]
+        }];
       };
 
       CalculatorComponent = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -27757,7 +27050,7 @@
         styles: [__importDefault(__webpack_require__(
         /*! ./calculator.component.css */
         "./src/app/pages/calculator/calculator.component.css"))["default"]]
-      }), __metadata("design:paramtypes", [])], CalculatorComponent);
+      }), __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"], ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastrService"], src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]])], CalculatorComponent);
       /***/
     },
 
@@ -27942,14 +27235,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this101 = this;
+            var _this100 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this101.closeResult = "Closed with: ".concat(result);
+              _this100.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this101.closeResult = "Dismissed ".concat(_this101.getDismissReason(reason));
+              _this100.closeResult = "Dismissed ".concat(_this100.getDismissReason(reason));
             });
           }
         }, {
@@ -28212,14 +27505,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this102 = this;
+            var _this101 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this102.closeResult = "Closed with: ".concat(result);
+              _this101.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this102.closeResult = "Dismissed ".concat(_this102.getDismissReason(reason));
+              _this101.closeResult = "Dismissed ".concat(_this101.getDismissReason(reason));
             });
           }
         }, {
@@ -29715,14 +29008,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this103 = this;
+            var _this102 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this103.closeResult = "Closed with: ".concat(result);
+              _this102.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this103.closeResult = "Dismissed ".concat(_this103.getDismissReason(reason));
+              _this102.closeResult = "Dismissed ".concat(_this102.getDismissReason(reason));
             });
           }
         }, {
@@ -30694,9 +29987,27 @@
       /* harmony import */
 
 
-      var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+      /* harmony import */
+
+
+      var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @ng-bootstrap/ng-bootstrap */
       "./node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/ng-bootstrap.js");
+      /* harmony import */
+
+
+      var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ngx-toastr */
+      "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
+      /* harmony import */
+
+
+      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! src/app/shared/services/api.service */
+      "./src/app/shared/services/api.service.ts");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -30719,15 +30030,33 @@
       };
 
       var PackagesComponent = /*#__PURE__*/function () {
-        function PackagesComponent(modalService) {
+        function PackagesComponent(toastr, modalService, fb, service, toast) {
           _classCallCheck(this, PackagesComponent);
 
+          this.toastr = toastr;
           this.modalService = modalService;
+          this.fb = fb;
+          this.service = service;
+          this.toast = toast;
+          this.submitted = false;
+          this.pageSize = 6;
+          this.pageIndex = 1;
+          this.userForm = this.fb.group({
+            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(15)])),
+            saveUpto: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(10)])),
+            month: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])),
+            price: this.fb.group({
+              amount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(10)]),
+              units: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(1)])
+            })
+          });
         }
 
         _createClass(PackagesComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {}
+          value: function ngOnInit() {
+            this.getPackages();
+          }
         }, {
           key: "packageModal",
           value: function packageModal(item) {
@@ -30738,13 +30067,153 @@
             });
           }
         }, {
+          key: "packagedelModal",
+          value: function packagedelModal(item, id) {
+            this.id = id;
+            this.modalService.open(item, {
+              backdropClass: 'light-blue-backdrop',
+              centered: true,
+              size: 'sm'
+            });
+          }
+        }, {
           key: "packageEditModal",
-          value: function packageEditModal(itemedit) {
+          value: function packageEditModal(itemedit, item) {
+            this.objId = item._id;
+            this.submitted = false;
+            this.userForm.controls['name'].setValue(item.name);
+            this.userForm.controls['saveUpto'].setValue(item.saveUpto);
+            this.userForm.controls['price'].setValue(item.price);
+            this.userForm.controls['month'].setValue(item.month);
             this.modalService.open(itemedit, {
               backdropClass: 'light-blue-backdrop',
               centered: true,
               size: 'lg'
             });
+          }
+        }, {
+          key: "SavePackage",
+          value: function SavePackage() {
+            var _this103 = this;
+
+            console.log('Form', this.userForm.value.pric);
+            var obj = {
+              "name": this.userForm.value.name,
+              "price": this.userForm.value.price,
+              "month": this.userForm.value.month,
+              "saveUpto": this.userForm.value.saveUpto
+            };
+            this.submitted = true;
+            var url = "packages";
+
+            if (this.userForm.valid) {
+              this.service.postApi(url, obj).subscribe(function (res) {
+                if (res.statusCode == 200) {
+                  _this103.getPackages();
+
+                  _this103.submitted = false;
+
+                  _this103.toast.success(res.message);
+
+                  _this103.modalService.dismissAll();
+
+                  _this103.userForm.reset();
+                } else {
+                  _this103.toast.error(res.message);
+                }
+              });
+            }
+          }
+        }, {
+          key: "pageChange",
+          value: function pageChange(event) {
+            console.log('ev page', event);
+            this.pageSize = event.pageSize;
+
+            if (event.pageIndex == 0) {
+              this.pageIndex = 1;
+            } else {
+              this.pageIndex = event.pageIndex;
+            }
+
+            this.getPackages();
+          }
+        }, {
+          key: "getPackages",
+          value: function getPackages() {
+            var _this104 = this;
+
+            var url = "packages?page=".concat(this.pageIndex, "&count=").concat(this.pageSize);
+            this.service.getApi(url).subscribe(function (res) {
+              if (res.statusCode === 200) {
+                _this104.packages = res.data.doc;
+                _this104.totalUser = res.data.itemCount;
+                console.log('Total pack', _this104.totalUser, res);
+              } else {
+                _this104.toastr.error(res["message"]);
+
+                _this104.totalUser = 0;
+              }
+            });
+          }
+        }, {
+          key: "updatePackage",
+          value: function updatePackage() {
+            var _this105 = this;
+
+            console.log('Form', this.userForm.value.pric);
+            var obj = {
+              "name": this.userForm.value.name,
+              "price": this.userForm.value.price,
+              "month": this.userForm.value.month,
+              "saveUpto": this.userForm.value.saveUpto
+            };
+            this.submitted = true;
+            var url = "packages/".concat(this.objId);
+
+            if (this.userForm.valid) {
+              this.service.putApi(url, obj).subscribe(function (res) {
+                if (res.statusCode == 200) {
+                  _this105.getPackages();
+
+                  _this105.submitted = false;
+
+                  _this105.toast.success('Package data updated successfully.');
+
+                  _this105.modalService.dismissAll();
+                } else {
+                  _this105.toast.error(res.message);
+                }
+              });
+            }
+          }
+        }, {
+          key: "deletePackage",
+          value: function deletePackage() {
+            var _this106 = this;
+
+            var url = "packages/".concat(this.id);
+            this.service.deleteApi(url).subscribe(function (res) {
+              if (res.statusCode == 200) {
+                _this106.toastr.success(res.message);
+
+                _this106.modalService.dismissAll();
+
+                _this106.getPackages();
+              } else {
+                _this106.toastr.error(res.message);
+              }
+            });
+          }
+        }, {
+          key: "amount",
+          get: function get() {
+            return this.userForm.get('price.amount');
+          }
+        }, {
+          key: "units",
+          get: function get() {
+            return this.userForm.get('price.units');
           }
         }]);
 
@@ -30753,7 +30222,15 @@
 
       PackagesComponent.ctorParameters = function () {
         return [{
-          type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]
+          type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]
+        }, {
+          type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"]
+        }, {
+          type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]
+        }, {
+          type: src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]
+        }, {
+          type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]
         }];
       };
 
@@ -30765,7 +30242,7 @@
         styles: [__importDefault(__webpack_require__(
         /*! ./packages.component.scss */
         "./src/app/pages/packages/packages.component.scss"))["default"]]
-      }), __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]])], PackagesComponent);
+      }), __metadata("design:paramtypes", [ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"], src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]])], PackagesComponent);
       /***/
     },
 
@@ -30851,373 +30328,379 @@
       /* harmony import */
 
 
-      var _revenue_management_revenue_management_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _calculator_calculator_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! ./calculator/calculator.component */
+      "./src/app/pages/calculator/calculator.component.ts");
+      /* harmony import */
+
+
+      var _revenue_management_revenue_management_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ./revenue-management/revenue-management.component */
       "./src/app/pages/revenue-management/revenue-management.component.ts");
       /* harmony import */
 
 
-      var _reviews_reviews_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _reviews_reviews_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ./reviews/reviews.component */
       "./src/app/pages/reviews/reviews.component.ts");
       /* harmony import */
 
 
-      var _analytics_analytics_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _analytics_analytics_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ./analytics/analytics.component */
       "./src/app/pages/analytics/analytics.component.ts");
       /* harmony import */
 
 
-      var _pages_cms_cms_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _pages_cms_cms_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ./pages/cms/cms.component */
       "./src/app/pages/pages/cms/cms.component.ts");
       /* harmony import */
 
 
-      var _about_about_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _about_about_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! ./about/about.component */
       "./src/app/pages/about/about.component.ts");
       /* harmony import */
 
 
-      var ngx_quill__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var ngx_quill__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! ngx-quill */
       "./node_modules/ngx-quill/__ivy_ngcc__/fesm2015/ngx-quill.js");
       /* harmony import */
 
 
-      var _contact_contact_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      var _contact_contact_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! ./contact/contact.component */
       "./src/app/pages/contact/contact.component.ts");
       /* harmony import */
 
 
-      var _faq_faq_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      var _faq_faq_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
       /*! ./faq/faq.component */
       "./src/app/pages/faq/faq.component.ts");
       /* harmony import */
 
 
-      var ng_chartist__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      var ng_chartist__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
       /*! ng-chartist */
       "./node_modules/ng-chartist/__ivy_ngcc__/fesm2015/ng-chartist.js");
       /* harmony import */
 
 
-      var ng2_charts__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      var ng2_charts__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! ng2-charts */
       "./node_modules/ng2-charts/__ivy_ngcc__/fesm2015/ng2-charts.js");
       /* harmony import */
 
 
-      var _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      var _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
       /*! @swimlane/ngx-charts */
       "./node_modules/@swimlane/ngx-charts/__ivy_ngcc__/fesm2015/swimlane-ngx-charts.js");
       /* harmony import */
 
 
-      var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
       /*! @swimlane/ngx-datatable */
       "./node_modules/@swimlane/ngx-datatable/__ivy_ngcc__/fesm2015/swimlane-ngx-datatable.js");
       /* harmony import */
 
 
-      var _notification_notification_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+      var _notification_notification_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
       /*! ./notification/notification.component */
       "./src/app/pages/notification/notification.component.ts");
       /* harmony import */
 
 
-      var _vendors_vendors_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+      var _vendors_vendors_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
       /*! ./vendors/vendors.component */
       "./src/app/pages/vendors/vendors.component.ts");
       /* harmony import */
 
 
-      var _events_events_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+      var _events_events_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
       /*! ./events/events.component */
       "./src/app/pages/events/events.component.ts");
       /* harmony import */
 
 
-      var _rewards_rewards_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+      var _rewards_rewards_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
       /*! ./rewards/rewards.component */
       "./src/app/pages/rewards/rewards.component.ts");
       /* harmony import */
 
 
-      var _vendordetail_vendordetail_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+      var _vendordetail_vendordetail_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
       /*! ./vendordetail/vendordetail.component */
       "./src/app/pages/vendordetail/vendordetail.component.ts");
       /* harmony import */
 
 
-      var _userhistory_userhistory_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+      var _userhistory_userhistory_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
       /*! ./userhistory/userhistory.component */
       "./src/app/pages/userhistory/userhistory.component.ts");
       /* harmony import */
 
 
-      var _promocode_promocode_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
+      var _promocode_promocode_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
       /*! ./promocode/promocode.component */
       "./src/app/pages/promocode/promocode.component.ts");
       /* harmony import */
 
 
-      var _vendorhistory_vendorhistory_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
+      var _vendorhistory_vendorhistory_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
       /*! ./vendorhistory/vendorhistory.component */
       "./src/app/pages/vendorhistory/vendorhistory.component.ts");
       /* harmony import */
 
 
-      var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
+      var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
       /*! @angular/material/slide-toggle */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/slide-toggle.js");
       /* harmony import */
 
 
-      var _angular_material_expansion__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
+      var _angular_material_expansion__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(
       /*! @angular/material/expansion */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/expansion.js");
       /* harmony import */
 
 
-      var _users_detail_users_detail_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(
+      var _users_detail_users_detail_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(
       /*! ./users-detail/users-detail.component */
       "./src/app/pages/users-detail/users-detail.component.ts");
       /* harmony import */
 
 
-      var _food_categories_food_categories_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(
+      var _food_categories_food_categories_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(
       /*! ./food-categories/food-categories.component */
       "./src/app/pages/food-categories/food-categories.component.ts");
       /* harmony import */
 
 
-      var _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(
+      var _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(
       /*! ./inventory/inventory.component */
       "./src/app/pages/inventory/inventory.component.ts");
       /* harmony import */
 
 
-      var _orderlist_orderlist_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(
+      var _orderlist_orderlist_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(
       /*! ./orderlist/orderlist.component */
       "./src/app/pages/orderlist/orderlist.component.ts");
       /* harmony import */
 
 
-      var _banner_banner_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(
+      var _banner_banner_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(
       /*! ./banner/banner.component */
       "./src/app/pages/banner/banner.component.ts");
       /* harmony import */
 
 
-      var _privacy_policy_privacy_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(
+      var _privacy_policy_privacy_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(
       /*! ./privacy-policy/privacy.component */
       "./src/app/pages/privacy-policy/privacy.component.ts");
       /* harmony import */
 
 
-      var _admin_admin_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(
+      var _admin_admin_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(
       /*! ./admin/admin.component */
       "./src/app/pages/admin/admin.component.ts");
       /* harmony import */
 
 
-      var _food_items_food_items_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(
+      var _food_items_food_items_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(
       /*! ./food-items/food-items.component */
       "./src/app/pages/food-items/food-items.component.ts");
       /* harmony import */
 
 
-      var _angular_material_select__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(
+      var _angular_material_select__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(
       /*! @angular/material/select */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/select.js");
       /* harmony import */
 
 
-      var _driver_driver_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(
+      var _driver_driver_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(
       /*! ./driver/driver.component */
       "./src/app/pages/driver/driver.component.ts");
       /* harmony import */
 
 
-      var _driverdetail_driverdetail_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(
+      var _driverdetail_driverdetail_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(
       /*! ./driverdetail/driverdetail.component */
       "./src/app/pages/driverdetail/driverdetail.component.ts");
       /* harmony import */
 
 
-      var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(
+      var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(
       /*! @angular/material/datepicker */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/datepicker.js");
       /* harmony import */
 
 
-      var _angular_material_table__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(
+      var _angular_material_table__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(
       /*! @angular/material/table */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/table.js");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(
       /*! @angular/material/form-field */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/form-field.js");
       /* harmony import */
 
 
-      var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(
+      var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(
       /*! @angular/material/paginator */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/paginator.js");
       /* harmony import */
 
 
-      var _angular_material_sort__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(
+      var _angular_material_sort__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(
       /*! @angular/material/sort */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/sort.js");
       /* harmony import */
 
 
-      var _orderdetail_orderdetail_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(
+      var _orderdetail_orderdetail_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(
       /*! ./orderdetail/orderdetail.component */
       "./src/app/pages/orderdetail/orderdetail.component.ts");
       /* harmony import */
 
 
-      var _adminform_adminform_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(
+      var _adminform_adminform_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(
       /*! ./adminform/adminform.component */
       "./src/app/pages/adminform/adminform.component.ts");
       /* harmony import */
 
 
-      var _notificationhistory_notificationhistory_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(
+      var _notificationhistory_notificationhistory_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(
       /*! ./notificationhistory/notificationhistory.component */
       "./src/app/pages/notificationhistory/notificationhistory.component.ts");
       /* harmony import */
 
 
-      var _store_store_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(
+      var _store_store_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(
       /*! ./store/store.component */
       "./src/app/pages/store/store.component.ts");
       /* harmony import */
 
 
-      var _restaurants_restaurants_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(
+      var _restaurants_restaurants_component__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(
       /*! ./restaurants/restaurants.component */
       "./src/app/pages/restaurants/restaurants.component.ts");
       /* harmony import */
 
 
-      var _support_support_component__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(
+      var _support_support_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(
       /*! ./support/support.component */
       "./src/app/pages/support/support.component.ts");
       /* harmony import */
 
 
-      var _geofence_geofence_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(
+      var _geofence_geofence_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(
       /*! ./geofence/geofence.component */
       "./src/app/pages/geofence/geofence.component.ts");
       /* harmony import */
 
 
-      var _geofencelist_geofencelist_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(
+      var _geofencelist_geofencelist_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(
       /*! ./geofencelist/geofencelist.component */
       "./src/app/pages/geofencelist/geofencelist.component.ts");
       /* harmony import */
 
 
-      var _agm_core__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(
+      var _agm_core__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(
       /*! @agm/core */
       "./node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js");
       /* harmony import */
 
 
-      var _geofencedit_geofencedit_component__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(
+      var _geofencedit_geofencedit_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(
       /*! ./geofencedit/geofencedit.component */
       "./src/app/pages/geofencedit/geofencedit.component.ts");
       /* harmony import */
 
 
-      var _product_sale_product_sale_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(
+      var _product_sale_product_sale_component__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(
       /*! ./product-sale/product-sale.component */
       "./src/app/pages/product-sale/product-sale.component.ts");
       /* harmony import */
 
 
-      var _addvendor_addvendor_component__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(
+      var _addvendor_addvendor_component__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(
       /*! ./addvendor/addvendor.component */
       "./src/app/pages/addvendor/addvendor.component.ts");
       /* harmony import */
 
 
-      var _editvendor_editvendor_component__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(
+      var _editvendor_editvendor_component__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(
       /*! ./editvendor/editvendor.component */
       "./src/app/pages/editvendor/editvendor.component.ts");
       /* harmony import */
 
 
-      var _vendorcategory_vendorcategory_component__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(
+      var _vendorcategory_vendorcategory_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(
       /*! ./vendorcategory/vendorcategory.component */
       "./src/app/pages/vendorcategory/vendorcategory.component.ts");
       /* harmony import */
 
 
-      var _vendororderlist_vendororderlist_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(
+      var _vendororderlist_vendororderlist_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(
       /*! ./vendororderlist/vendororderlist.component */
       "./src/app/pages/vendororderlist/vendororderlist.component.ts");
       /* harmony import */
 
 
-      var _vendorbusiness_vendorbusiness_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(
+      var _vendorbusiness_vendorbusiness_component__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(
       /*! ./vendorbusiness/vendorbusiness.component */
       "./src/app/pages/vendorbusiness/vendorbusiness.component.ts");
       /* harmony import */
 
 
-      var _trucklist_trucklist_component__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(
+      var _trucklist_trucklist_component__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(
       /*! ./trucklist/trucklist.component */
       "./src/app/pages/trucklist/trucklist.component.ts");
       /* harmony import */
 
 
-      var _truckcategory_truckcategory_component__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(
+      var _truckcategory_truckcategory_component__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(
       /*! ./truckcategory/truckcategory.component */
       "./src/app/pages/truckcategory/truckcategory.component.ts");
       /* harmony import */
 
 
-      var _trucklocation_trucklocation_component__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(
+      var _trucklocation_trucklocation_component__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(
       /*! ./trucklocation/trucklocation.component */
       "./src/app/pages/trucklocation/trucklocation.component.ts");
       /* harmony import */
 
 
-      var _terms_terms_component__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(
+      var _terms_terms_component__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(
       /*! ./terms/terms.component */
       "./src/app/pages/terms/terms.component.ts");
       /* harmony import */
 
 
-      var _suggestions_suggestions_component__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(
+      var _suggestions_suggestions_component__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(
       /*! ./suggestions/suggestions.component */
       "./src/app/pages/suggestions/suggestions.component.ts");
       /* harmony import */
 
 
-      var _report_report_component__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(
+      var _report_report_component__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(
       /*! ./report/report.component */
       "./src/app/pages/report/report.component.ts");
       /* harmony import */
 
 
-      var _reason_reason_component__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(
+      var _reason_reason_component__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(
       /*! ./reason/reason.component */
       "./src/app/pages/reason/reason.component.ts");
       /* harmony import */
 
 
-      var _packages_packages_component__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(
+      var _packages_packages_component__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(
       /*! ./packages/packages.component */
       "./src/app/pages/packages/packages.component.ts");
 
@@ -31234,7 +30717,6 @@
       // import { ToursComponent } from './tours/tours.component';
       // import { DestinationComponent } from './destination/destination.component';
       // import { HotelsComponent } from './hotels/hotels.component';
-      // import { CalculatorComponent } from './calculator/calculator.component';
 
 
       var PagesModule = function PagesModule() {
@@ -31242,13 +30724,12 @@
       };
 
       PagesModule = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(_pages_routing__WEBPACK_IMPORTED_MODULE_5__["PagesRoutes"]), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_30__["MatSlideToggleModule"], _angular_material_expansion__WEBPACK_IMPORTED_MODULE_31__["MatExpansionModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__["NgbModule"], ngx_quill__WEBPACK_IMPORTED_MODULE_15__["QuillModule"].forRoot(), ng2_charts__WEBPACK_IMPORTED_MODULE_19__["ChartsModule"], ng_chartist__WEBPACK_IMPORTED_MODULE_18__["ChartistModule"], _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_20__["NgxChartsModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_21__["NgxDatatableModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_40__["MatSelectModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_43__["MatDatepickerModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_44__["MatTableModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_45__["MatFormFieldModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_46__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_47__["MatSortModule"], _agm_core__WEBPACK_IMPORTED_MODULE_56__["AgmCoreModule"]],
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(_pages_routing__WEBPACK_IMPORTED_MODULE_5__["PagesRoutes"]), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_31__["MatSlideToggleModule"], _angular_material_expansion__WEBPACK_IMPORTED_MODULE_32__["MatExpansionModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__["NgbModule"], ngx_quill__WEBPACK_IMPORTED_MODULE_16__["QuillModule"].forRoot(), ng2_charts__WEBPACK_IMPORTED_MODULE_20__["ChartsModule"], ng_chartist__WEBPACK_IMPORTED_MODULE_19__["ChartistModule"], _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_21__["NgxChartsModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_22__["NgxDatatableModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_41__["MatSelectModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_44__["MatDatepickerModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_45__["MatTableModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_46__["MatFormFieldModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_47__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_48__["MatSortModule"], _agm_core__WEBPACK_IMPORTED_MODULE_57__["AgmCoreModule"]],
         declarations: [_helper_classes_hc_component__WEBPACK_IMPORTED_MODULE_6__["HelperclassesComponent"], _invoice_invoice_component__WEBPACK_IMPORTED_MODULE_7__["InvoiceComponent"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_8__["ProfileComponent"], _users_users_component__WEBPACK_IMPORTED_MODULE_9__["UsersComponent"], // BikesComponent,
         // ToursComponent,
         // DestinationComponent,
         // HotelsComponent,
-        // CalculatorComponent,
-        _revenue_management_revenue_management_component__WEBPACK_IMPORTED_MODULE_10__["RevenueManagementComponent"], _reviews_reviews_component__WEBPACK_IMPORTED_MODULE_11__["ReviewsComponent"], _analytics_analytics_component__WEBPACK_IMPORTED_MODULE_12__["AnalyticsComponent"], _pages_cms_cms_component__WEBPACK_IMPORTED_MODULE_13__["CmsComponent"], _about_about_component__WEBPACK_IMPORTED_MODULE_14__["AboutComponent"], _contact_contact_component__WEBPACK_IMPORTED_MODULE_16__["ContactComponent"], _faq_faq_component__WEBPACK_IMPORTED_MODULE_17__["FaqComponent"], _notification_notification_component__WEBPACK_IMPORTED_MODULE_22__["NotificationComponent"], _vendors_vendors_component__WEBPACK_IMPORTED_MODULE_23__["VendorsComponent"], _events_events_component__WEBPACK_IMPORTED_MODULE_24__["EventsComponent"], _rewards_rewards_component__WEBPACK_IMPORTED_MODULE_25__["RewardsComponent"], _vendordetail_vendordetail_component__WEBPACK_IMPORTED_MODULE_26__["VendordetailComponent"], _userhistory_userhistory_component__WEBPACK_IMPORTED_MODULE_27__["UserhistoryComponent"], _users_detail_users_detail_component__WEBPACK_IMPORTED_MODULE_32__["UsersDetailComponent"], _promocode_promocode_component__WEBPACK_IMPORTED_MODULE_28__["PromocodeComponent"], _vendorhistory_vendorhistory_component__WEBPACK_IMPORTED_MODULE_29__["VendorhistoryComponent"], _food_categories_food_categories_component__WEBPACK_IMPORTED_MODULE_33__["FoodCategoriesComponent"], _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_34__["InventoryComponent"], _orderlist_orderlist_component__WEBPACK_IMPORTED_MODULE_35__["OrderlistComponent"], _banner_banner_component__WEBPACK_IMPORTED_MODULE_36__["BannerComponent"], _privacy_policy_privacy_component__WEBPACK_IMPORTED_MODULE_37__["PrivacyComponent"], _admin_admin_component__WEBPACK_IMPORTED_MODULE_38__["AdminComponent"], _food_items_food_items_component__WEBPACK_IMPORTED_MODULE_39__["FoodItemsComponent"], _driver_driver_component__WEBPACK_IMPORTED_MODULE_41__["DriverComponent"], _driverdetail_driverdetail_component__WEBPACK_IMPORTED_MODULE_42__["DriverdetailComponent"], _orderdetail_orderdetail_component__WEBPACK_IMPORTED_MODULE_48__["OrderdetailComponent"], _adminform_adminform_component__WEBPACK_IMPORTED_MODULE_49__["AdminformComponent"], _notificationhistory_notificationhistory_component__WEBPACK_IMPORTED_MODULE_50__["NotificationhistoryComponent"], _store_store_component__WEBPACK_IMPORTED_MODULE_51__["StoreComponent"], _restaurants_restaurants_component__WEBPACK_IMPORTED_MODULE_52__["RestaurantsComponent"], _support_support_component__WEBPACK_IMPORTED_MODULE_53__["SupportComponent"], _geofence_geofence_component__WEBPACK_IMPORTED_MODULE_54__["GeofenceComponent"], _geofencelist_geofencelist_component__WEBPACK_IMPORTED_MODULE_55__["GeofencelistComponent"], _geofencedit_geofencedit_component__WEBPACK_IMPORTED_MODULE_57__["GeofenceditComponent"], _product_sale_product_sale_component__WEBPACK_IMPORTED_MODULE_58__["ProductSaleComponent"], _addvendor_addvendor_component__WEBPACK_IMPORTED_MODULE_59__["AddvendorComponent"], _editvendor_editvendor_component__WEBPACK_IMPORTED_MODULE_60__["EditvendorComponent"], _vendorcategory_vendorcategory_component__WEBPACK_IMPORTED_MODULE_61__["VendorcategoryComponent"], _vendororderlist_vendororderlist_component__WEBPACK_IMPORTED_MODULE_62__["VendororderlistComponent"], _vendorbusiness_vendorbusiness_component__WEBPACK_IMPORTED_MODULE_63__["VendorbusinessComponent"], _trucklist_trucklist_component__WEBPACK_IMPORTED_MODULE_64__["TrucklistComponent"], _truckcategory_truckcategory_component__WEBPACK_IMPORTED_MODULE_65__["TruckcategoryComponent"], _trucklocation_trucklocation_component__WEBPACK_IMPORTED_MODULE_66__["TrucklocationComponent"], _terms_terms_component__WEBPACK_IMPORTED_MODULE_67__["TermsComponent"], _suggestions_suggestions_component__WEBPACK_IMPORTED_MODULE_68__["SuggestionsComponent"], _report_report_component__WEBPACK_IMPORTED_MODULE_69__["ReportComponent"], _reason_reason_component__WEBPACK_IMPORTED_MODULE_70__["ReasonComponent"], _packages_packages_component__WEBPACK_IMPORTED_MODULE_71__["PackagesComponent"]]
+        _calculator_calculator_component__WEBPACK_IMPORTED_MODULE_10__["CalculatorComponent"], _revenue_management_revenue_management_component__WEBPACK_IMPORTED_MODULE_11__["RevenueManagementComponent"], _reviews_reviews_component__WEBPACK_IMPORTED_MODULE_12__["ReviewsComponent"], _analytics_analytics_component__WEBPACK_IMPORTED_MODULE_13__["AnalyticsComponent"], _pages_cms_cms_component__WEBPACK_IMPORTED_MODULE_14__["CmsComponent"], _about_about_component__WEBPACK_IMPORTED_MODULE_15__["AboutComponent"], _contact_contact_component__WEBPACK_IMPORTED_MODULE_17__["ContactComponent"], _faq_faq_component__WEBPACK_IMPORTED_MODULE_18__["FaqComponent"], _notification_notification_component__WEBPACK_IMPORTED_MODULE_23__["NotificationComponent"], _vendors_vendors_component__WEBPACK_IMPORTED_MODULE_24__["VendorsComponent"], _events_events_component__WEBPACK_IMPORTED_MODULE_25__["EventsComponent"], _rewards_rewards_component__WEBPACK_IMPORTED_MODULE_26__["RewardsComponent"], _vendordetail_vendordetail_component__WEBPACK_IMPORTED_MODULE_27__["VendordetailComponent"], _userhistory_userhistory_component__WEBPACK_IMPORTED_MODULE_28__["UserhistoryComponent"], _users_detail_users_detail_component__WEBPACK_IMPORTED_MODULE_33__["UsersDetailComponent"], _promocode_promocode_component__WEBPACK_IMPORTED_MODULE_29__["PromocodeComponent"], _vendorhistory_vendorhistory_component__WEBPACK_IMPORTED_MODULE_30__["VendorhistoryComponent"], _food_categories_food_categories_component__WEBPACK_IMPORTED_MODULE_34__["FoodCategoriesComponent"], _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_35__["InventoryComponent"], _orderlist_orderlist_component__WEBPACK_IMPORTED_MODULE_36__["OrderlistComponent"], _banner_banner_component__WEBPACK_IMPORTED_MODULE_37__["BannerComponent"], _privacy_policy_privacy_component__WEBPACK_IMPORTED_MODULE_38__["PrivacyComponent"], _admin_admin_component__WEBPACK_IMPORTED_MODULE_39__["AdminComponent"], _food_items_food_items_component__WEBPACK_IMPORTED_MODULE_40__["FoodItemsComponent"], _driver_driver_component__WEBPACK_IMPORTED_MODULE_42__["DriverComponent"], _driverdetail_driverdetail_component__WEBPACK_IMPORTED_MODULE_43__["DriverdetailComponent"], _orderdetail_orderdetail_component__WEBPACK_IMPORTED_MODULE_49__["OrderdetailComponent"], _adminform_adminform_component__WEBPACK_IMPORTED_MODULE_50__["AdminformComponent"], _notificationhistory_notificationhistory_component__WEBPACK_IMPORTED_MODULE_51__["NotificationhistoryComponent"], _store_store_component__WEBPACK_IMPORTED_MODULE_52__["StoreComponent"], _restaurants_restaurants_component__WEBPACK_IMPORTED_MODULE_53__["RestaurantsComponent"], _support_support_component__WEBPACK_IMPORTED_MODULE_54__["SupportComponent"], _geofence_geofence_component__WEBPACK_IMPORTED_MODULE_55__["GeofenceComponent"], _geofencelist_geofencelist_component__WEBPACK_IMPORTED_MODULE_56__["GeofencelistComponent"], _geofencedit_geofencedit_component__WEBPACK_IMPORTED_MODULE_58__["GeofenceditComponent"], _product_sale_product_sale_component__WEBPACK_IMPORTED_MODULE_59__["ProductSaleComponent"], _addvendor_addvendor_component__WEBPACK_IMPORTED_MODULE_60__["AddvendorComponent"], _editvendor_editvendor_component__WEBPACK_IMPORTED_MODULE_61__["EditvendorComponent"], _vendorcategory_vendorcategory_component__WEBPACK_IMPORTED_MODULE_62__["VendorcategoryComponent"], _vendororderlist_vendororderlist_component__WEBPACK_IMPORTED_MODULE_63__["VendororderlistComponent"], _vendorbusiness_vendorbusiness_component__WEBPACK_IMPORTED_MODULE_64__["VendorbusinessComponent"], _trucklist_trucklist_component__WEBPACK_IMPORTED_MODULE_65__["TrucklistComponent"], _truckcategory_truckcategory_component__WEBPACK_IMPORTED_MODULE_66__["TruckcategoryComponent"], _trucklocation_trucklocation_component__WEBPACK_IMPORTED_MODULE_67__["TrucklocationComponent"], _terms_terms_component__WEBPACK_IMPORTED_MODULE_68__["TermsComponent"], _suggestions_suggestions_component__WEBPACK_IMPORTED_MODULE_69__["SuggestionsComponent"], _report_report_component__WEBPACK_IMPORTED_MODULE_70__["ReportComponent"], _reason_reason_component__WEBPACK_IMPORTED_MODULE_71__["ReasonComponent"], _packages_packages_component__WEBPACK_IMPORTED_MODULE_72__["PackagesComponent"]]
       })], PagesModule);
       /***/
     },
@@ -32727,7 +32208,7 @@
 
       var ProfileComponent = /*#__PURE__*/function () {
         function ProfileComponent(fb, api, router, toastr, spinner) {
-          var _this104 = this;
+          var _this107 = this;
 
           _classCallCheck(this, ProfileComponent);
 
@@ -32740,9 +32221,9 @@
 
           this.setValues = function (data) {
             if (data) {
-              data.image && (_this104.userImage = data.image);
+              data.image && (_this107.userImage = data.image);
 
-              _this104.userForm.patchValue({
+              _this107.userForm.patchValue({
                 fullName: data.fullName,
                 // countryCode: data.countryCode,
                 // password: data.password,
@@ -32751,7 +32232,7 @@
               });
 
               if (data.image) {
-                _this104.userImage = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].imagesUrl + data.image;
+                _this107.userImage = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].imagesUrl + data.image;
               }
             }
           }; // this.id = JSON.parse(localStorage.getItem("id"));
@@ -32772,26 +32253,26 @@
         }, {
           key: "getProfile",
           value: function getProfile() {
-            var _this105 = this;
+            var _this108 = this;
 
             this.spinner.show();
             this.api.getProfile().subscribe(function (res) {
               if (res['statusCode'] === 200) {
-                _this105.userDetail = res["data"];
+                _this108.userDetail = res["data"];
 
-                _this105.setValues(_this105.userDetail);
+                _this108.setValues(_this108.userDetail);
               } else {
-                _this105.toastr.error(res["message"]);
+                _this108.toastr.error(res["message"]);
               }
             }, function (error) {
-              _this105.spinner.hide();
+              _this108.spinner.hide();
             });
           }
         }, {
           key: "profilePic",
           value: function profilePic(event) {
             return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-              var _this106 = this;
+              var _this109 = this;
 
               var reader;
               return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -32805,7 +32286,7 @@
                         reader.readAsDataURL(event.target.files[0]);
 
                         reader.onload = function (event) {
-                          _this106.userImage = event.target.result;
+                          _this109.userImage = event.target.result;
                         };
                       }
 
@@ -32820,7 +32301,7 @@
         }, {
           key: "update",
           value: function update() {
-            var _this107 = this;
+            var _this110 = this;
 
             this.submitted = true;
 
@@ -32834,18 +32315,18 @@
               this.spinner.show();
               this.api.updateProfile(formData).subscribe(function (res) {
                 if (res['statusCode'] === 200) {
-                  _this107.router.navigate(['dashboard']);
+                  _this110.router.navigate(['dashboard']);
 
-                  _this107.api.onUpdateUser.next("new data");
+                  _this110.api.onUpdateUser.next("new data");
 
-                  _this107.toastr.success(res["message"]);
+                  _this110.toastr.success(res["message"]);
 
-                  _this107.getProfile();
+                  _this110.getProfile();
                 } else {
-                  _this107.toastr.error(res["message"]);
+                  _this110.toastr.error(res["message"]);
                 }
               }, function (error) {
-                _this107.spinner.hide();
+                _this110.spinner.hide();
               });
             }
           }
@@ -32924,9 +32405,27 @@
       /* harmony import */
 
 
-      var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+      /* harmony import */
+
+
+      var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @ng-bootstrap/ng-bootstrap */
       "./node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/ng-bootstrap.js");
+      /* harmony import */
+
+
+      var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ngx-toastr */
+      "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
+      /* harmony import */
+
+
+      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! src/app/shared/services/api.service */
+      "./src/app/shared/services/api.service.ts");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -32949,27 +32448,44 @@
       };
 
       var PromocodeComponent = /*#__PURE__*/function () {
-        function PromocodeComponent(modalService) {
+        function PromocodeComponent(fb, modalService, service, toast) {
           _classCallCheck(this, PromocodeComponent);
 
+          this.fb = fb;
           this.modalService = modalService;
+          this.service = service;
+          this.toast = toast;
+          this.submitted = false;
+          this.pageSize = 10;
+          this.pageIndex = 1;
+          this.minAge = 18;
+          this.status = 'active';
+          this.giftForm = this.fb.group({
+            cardName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(15), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern("^[a-zA-Z ]*$")])),
+            cost: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(10)])),
+            cardsBought: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(5)])),
+            validFrom: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
+            validTill: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])
+          });
         }
 
         _createClass(PromocodeComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {} // This is for the first modal
+          value: function ngOnInit() {
+            this.getUsers();
+          } // This is for the first modal
 
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this108 = this;
+            var _this111 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this108.closeResult = "Closed with: ".concat(result);
+              _this111.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this108.closeResult = "Dismissed ".concat(_this108.getDismissReason(reason));
+              _this111.closeResult = "Dismissed ".concat(_this111.getDismissReason(reason));
             });
           }
         }, {
@@ -32992,7 +32508,8 @@
           }
         }, {
           key: "userDeleteModal",
-          value: function userDeleteModal(userDelete) {
+          value: function userDeleteModal(userDelete, id) {
+            this.gitfId = id;
             this.modalService.open(userDelete, {
               backdropClass: 'light-blue-backdrop',
               centered: true,
@@ -33001,7 +32518,9 @@
           }
         }, {
           key: "userDetailModal",
-          value: function userDetailModal(userDetail) {
+          value: function userDetailModal(userDetail, item) {
+            this.gitfId = item._id;
+            this.giftForm.patchValue(item);
             this.modalService.open(userDetail, {
               backdropClass: 'light-blue-backdrop',
               centered: true,
@@ -33011,6 +32530,8 @@
         }, {
           key: "addUserModal",
           value: function addUserModal(addUser) {
+            this.submitted = false;
+            this.giftForm.reset();
             this.modalService.open(addUser, {
               backdropClass: 'light-blue-backdrop',
               centered: true,
@@ -33020,13 +32541,150 @@
         }, {
           key: "getDismissReason",
           value: function getDismissReason(reason) {
-            if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ModalDismissReasons"].ESC) {
+            if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ModalDismissReasons"].ESC) {
               return 'by pressing ESC';
-            } else if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ModalDismissReasons"].BACKDROP_CLICK) {
+            } else if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ModalDismissReasons"].BACKDROP_CLICK) {
               return 'by clicking on a backdrop';
             } else {
               return "with: ".concat(reason);
             }
+          }
+        }, {
+          key: "minValue",
+          value: function minValue() {
+            return this.giftForm.value.validFrom;
+          }
+        }, {
+          key: "maxValue",
+          value: function maxValue() {
+            return this.giftForm.value.validTill;
+          }
+        }, {
+          key: "filterBy",
+          value: function filterBy(ref) {
+            this.status = ref;
+            this.searchBy = null;
+            this.getUsers();
+          }
+        }, {
+          key: "applyFilter",
+          value: function applyFilter(event) {
+            var _this112 = this;
+
+            console.log('apply fil call', event.target.value);
+            window.clearTimeout(this.timer);
+            this.timer = window.setTimeout(function () {
+              var filterValue = event.target.value;
+              _this112.searchBy = filterValue;
+              _this112.pageIndex = 1;
+
+              _this112.getUsers();
+            }, 1000);
+          }
+        }, {
+          key: "getUsers",
+          value: function getUsers() {
+            var _this113 = this;
+
+            var url = "giftCards?count=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : '') + (this.status ? '&status=' + this.status : ''));
+            this.service.getApi(url).subscribe(function (res) {
+              if (res.statusCode === 200) {
+                console.log('FGift', res);
+                _this113.giftList = res.data.doc;
+                _this113.totalUser = res.data.itemCount;
+                console.log('Total user', _this113.totalUser, res);
+              } else {
+                _this113.toast.error(res["message"]);
+
+                _this113.totalUser = 0;
+              }
+            });
+          }
+        }, {
+          key: "addCard",
+          value: function addCard() {
+            var _this114 = this;
+
+            this.submitted = true;
+            var url = "giftCards";
+
+            if (this.giftForm.valid && this.giftForm.controls['cost'].value.toString().length != 11 && this.giftForm.controls['cardsBought'].value.toString().length != 6) {
+              this.service.postApi(url, this.giftForm.value).subscribe(function (res) {
+                if (res.statusCode == 200) {
+                  _this114.getUsers();
+
+                  _this114.submitted = false;
+
+                  _this114.toast.success('Gift card added successfully');
+
+                  _this114.modalService.dismissAll();
+
+                  _this114.giftForm.reset();
+                } else {
+                  _this114.toast.error(res.message);
+                }
+              });
+            }
+          }
+        }, {
+          key: "pageChange",
+          value: function pageChange(event) {
+            console.log('ev page', event);
+            this.pageSize = event.pageSize;
+
+            if (event.pageIndex == 0) {
+              this.pageIndex = 1;
+            } else {
+              this.pageIndex = event.pageIndex;
+            }
+
+            this.getUsers();
+          }
+        }, {
+          key: "UpdateCard",
+          value: function UpdateCard() {
+            var _this115 = this;
+
+            this.submitted = true;
+            var url = "giftCards/".concat(this.gitfId);
+
+            if (this.giftForm.valid && this.giftForm.controls['cost'].value.toString().length != 11 && this.giftForm.controls['cardsBought'].value.toString().length != 6) {
+              this.service.putApi(url, this.giftForm.value).subscribe(function (res) {
+                if (res.statusCode == 200) {
+                  _this115.getUsers();
+
+                  _this115.submitted = false;
+
+                  _this115.toast.success('Gift card updated successfully');
+
+                  _this115.modalService.dismissAll();
+
+                  _this115.giftForm.reset();
+                } else {
+                  _this115.toast.error(res.message);
+                }
+              });
+            }
+          }
+        }, {
+          key: "DeleteCard",
+          value: function DeleteCard() {
+            var _this116 = this;
+
+            var url = "giftCards/".concat(this.gitfId);
+            this.service.deleteApi(url).subscribe(function (res) {
+              if (res.statusCode == 200) {
+                _this116.getUsers();
+
+                _this116.submitted = false;
+
+                _this116.toast.success('Gift card deleted successfully');
+
+                _this116.modalService.dismissAll();
+              } else {
+                _this116.toast.error(res.message);
+              }
+            });
           }
         }]);
 
@@ -33035,7 +32693,13 @@
 
       PromocodeComponent.ctorParameters = function () {
         return [{
-          type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]
+          type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]
+        }, {
+          type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"]
+        }, {
+          type: src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]
+        }, {
+          type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]
         }];
       };
 
@@ -33047,7 +32711,7 @@
         styles: [__importDefault(__webpack_require__(
         /*! ./promocode.component.css */
         "./src/app/pages/promocode/promocode.component.css"))["default"]]
-      }), __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]])], PromocodeComponent);
+      }), __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"], src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]])], PromocodeComponent);
       /***/
     },
 
@@ -33934,9 +33598,27 @@
       /* harmony import */
 
 
-      var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @ng-bootstrap/ng-bootstrap */
       "./node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/ng-bootstrap.js");
+      /* harmony import */
+
+
+      var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ngx-toastr */
+      "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
+      /* harmony import */
+
+
+      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! src/app/shared/services/api.service */
+      "./src/app/shared/services/api.service.ts");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -33959,16 +33641,23 @@
       };
 
       var ReviewsComponent = /*#__PURE__*/function () {
-        function ReviewsComponent(modalService) {
+        function ReviewsComponent(modalService, api, router, toastr) {
           _classCallCheck(this, ReviewsComponent);
 
           this.modalService = modalService;
+          this.api = api;
+          this.router = router;
+          this.toastr = toastr;
+          this.pageSize = 10;
+          this.pageIndex = 1;
           this.active = 1;
         }
 
         _createClass(ReviewsComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {}
+          value: function ngOnInit() {
+            this.getUsers();
+          }
         }, {
           key: "reviewModal",
           value: function reviewModal(review) {
@@ -33999,13 +33688,30 @@
         }, {
           key: "getDismissReason",
           value: function getDismissReason(reason) {
-            if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ModalDismissReasons"].ESC) {
+            if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ModalDismissReasons"].ESC) {
               return 'by pressing ESC';
-            } else if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ModalDismissReasons"].BACKDROP_CLICK) {
+            } else if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ModalDismissReasons"].BACKDROP_CLICK) {
               return 'by clicking on a backdrop';
             } else {
               return "with: ".concat(reason);
             }
+          }
+        }, {
+          key: "getUsers",
+          value: function getUsers() {
+            var _this117 = this;
+
+            var url = "reviews?count=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : ''));
+            this.api.getApi(url).subscribe(function (res) {
+              if (res.statusCode === 200) {
+                _this117.totalUser = res.data.itemCount;
+                console.log('Total rev', _this117.totalUser, res);
+              } else {
+                _this117.toastr.error(res["message"]);
+
+                _this117.totalUser = 0;
+              }
+            });
           }
         }]);
 
@@ -34014,7 +33720,13 @@
 
       ReviewsComponent.ctorParameters = function () {
         return [{
-          type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]
+          type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"]
+        }, {
+          type: src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
+        }, {
+          type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]
         }];
       };
 
@@ -34026,7 +33738,7 @@
         styles: [__importDefault(__webpack_require__(
         /*! ./reviews.component.css */
         "./src/app/pages/reviews/reviews.component.css"))["default"]]
-      }), __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]])], ReviewsComponent);
+      }), __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"], src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]])], ReviewsComponent);
       /***/
     },
 
@@ -34678,14 +34390,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this109 = this;
+            var _this118 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this109.closeResult = "Closed with: ".concat(result);
+              _this118.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this109.closeResult = "Dismissed ".concat(_this109.getDismissReason(reason));
+              _this118.closeResult = "Dismissed ".concat(_this118.getDismissReason(reason));
             });
           }
         }, {
@@ -35405,7 +35117,7 @@
 
       var UsersDetailComponent = /*#__PURE__*/function () {
         function UsersDetailComponent(modalService, fb, api, router, route, toastr) {
-          var _this110 = this;
+          var _this119 = this;
 
           _classCallCheck(this, UsersDetailComponent);
 
@@ -35422,7 +35134,7 @@
 
           this.setValues = function (data) {
             if (data) {
-              data.image && (_this110.imageUrl = data.image); // this.userForm.patchValue({
+              data.image && (_this119.imageUrl = data.image); // this.userForm.patchValue({
               // 	fullName: data.fullName,
               // 	countryCode: data.countryCode,
               // 	password: data.password,
@@ -35431,7 +35143,7 @@
               // });
 
               if (data.image) {
-                _this110.imageUrl;
+                _this119.imageUrl;
               }
             }
           };
@@ -35480,10 +35192,10 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this111 = this;
+            var _this120 = this;
 
             this.route.params.subscribe(function (params) {
-              _this111.id = params["id"]; // this.getOutlettById(this.id);
+              _this120.id = params["id"]; // this.getOutlettById(this.id);
             });
             console.log("id: ", this.id);
             this.imageUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].imagesUrl;
@@ -35492,29 +35204,22 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this112 = this;
+            var _this121 = this;
 
             this.api.users().subscribe(function (res) {
               if (res['statusCode'] === 200) {
-                _this112.getAllUsers = res["data"]["data"];
-                console.log("getAllUsers: ", _this112.getAllUsers);
-                _this112.user = _this112.getAllUsers.find(function (x) {
-                  return x._id === _this112.id;
+                _this121.getAllUsers = res["data"]["data"];
+                console.log("getAllUsers: ", _this121.getAllUsers);
+                _this121.user = _this121.getAllUsers.find(function (x) {
+                  return x._id === _this121.id;
                 });
 
-                _this112.setValues(_this112.user);
+                _this121.setValues(_this121.user);
 
-                console.log("user: ", _this112.user);
+                console.log("user obj: ", _this121.user);
               } else {
-                _this112.toastr.error(res["message"]);
+                _this121.toastr.error(res["message"]);
               }
-            }, function (error) {
-              _this112.toastr.error('Something went wrong, please try again!', 'Oops!', {
-                timeOut: 3000,
-                closeButton: true
-              });
-
-              console.log(error);
             });
           }
         }, {
@@ -35721,38 +35426,6 @@
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
       };
 
-      var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
-        function adopt(value) {
-          return value instanceof P ? value : new P(function (resolve) {
-            resolve(value);
-          });
-        }
-
-        return new (P || (P = Promise))(function (resolve, reject) {
-          function fulfilled(value) {
-            try {
-              step(generator.next(value));
-            } catch (e) {
-              reject(e);
-            }
-          }
-
-          function rejected(value) {
-            try {
-              step(generator["throw"](value));
-            } catch (e) {
-              reject(e);
-            }
-          }
-
-          function step(result) {
-            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-          }
-
-          step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
-      };
-
       var __importDefault = undefined && undefined.__importDefault || function (mod) {
         return mod && mod.__esModule ? mod : {
           "default": mod
@@ -35761,7 +35434,7 @@
 
       var UsersComponent = /*#__PURE__*/function () {
         function UsersComponent(modalService, fb, formBuilder, api, router, toastr, spinner, comm) {
-          var _this113 = this;
+          var _this122 = this;
 
           _classCallCheck(this, UsersComponent);
 
@@ -35773,13 +35446,18 @@
           this.toastr = toastr;
           this.spinner = spinner;
           this.comm = comm;
+          this.submitted = false;
+          this.isActive = false;
           this.displayedColumns = ['name', 'email', 'contact', 'username', 'dateofbirth', 'gender', 'address', 'status', 'action'];
           this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"]();
           this.exportLink = '';
+          this.pageSize = 10;
+          this.pageIndex = 1;
+          this.minAge = 18;
 
           this.setValues = function (data) {
             if (data) {
-              _this113.userForm.patchValue({
+              _this122.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35798,7 +35476,7 @@
 
 
               if (data.image) {
-                _this113.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this122.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
             }
           };
@@ -35852,96 +35530,55 @@
             status: "",
             action: "1"
           }];
+          var today = new Date();
+          this.minAge = new Date(today.getFullYear() - this.minAge, today.getMonth(), today.getDate());
         }
 
         _createClass(UsersComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
             this.getUsers();
-            this.spinner.show();
             this.userForm = this.formBuilder.group({
-              firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(18), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("^[a-zA-Z ]*$")])),
-              lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(16), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("^[a-zA-Z ]*$")])),
-              username: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(16), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("^[a-zA-Z ]*$")])),
+              firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(15), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("^[a-zA-Z ]*$")])),
+              lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(15), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("^[a-zA-Z ]*$")])),
+              userName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(15), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern(/^[a-zA-Z0-9]+$/)])),
               // countryCode: new FormControl("", Validators.compose([Validators.required])),
-              phoneNo: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(15), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(7), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("^[0-9]*$")]),
-              email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required,, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")])),
-              dateofbirth: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
-              city: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
-              // country: new FormControl("", Validators.compose([Validators.required])),
-              address: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("")
+              phoneNo: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(15), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(7), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-s./0-9]*$')]),
+              email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required,, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/)])),
+              dateofbirth: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+              address: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+              image: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+              gender: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
             });
-          }
-        }, {
-          key: "ngAfterViewInit",
-          value: function ngAfterViewInit() {} // this.dataSource.paginator = this.paginator;
-          // this.dataSource.sort = this.sort;
-          // getUserById(){
-          // 	this.api.users().subscribe(res => {
-          // 		if (res['statusCode'] === 200) {
-          // 			this.userDetail = res["data"];
-          // 			this.setValues(this.userDetail);
-          // 		} else {
-          // 			this.toastr.error(res["message"]);
-          // 		}
-          // 	}, error => {
-          // 		this.toastr.error('Something went wrong, please try again!', 'Oops!', { timeOut: 3000, closeButton: true });
-          // 		console.log(error)
-          // 	})	
-          // }
-
-        }, {
-          key: "profilePic",
-          value: function profilePic(event) {
-            return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-              var _this114 = this;
-
-              var reader;
-              return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                while (1) {
-                  switch (_context2.prev = _context2.next) {
-                    case 0:
-                      this.File = event.target.files[0];
-
-                      if (event.target.files && event.target.files[0]) {
-                        reader = new FileReader();
-                        reader.readAsDataURL(event.target.files[0]);
-
-                        reader.onload = function (event) {
-                          _this114.userImage = event.target.result;
-                        };
-                      }
-
-                    case 2:
-                    case "end":
-                      return _context2.stop();
-                  }
-                }
-              }, _callee2, this);
-            }));
           }
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this115 = this;
+            var _this123 = this;
 
-            this.api.users().subscribe(function (res) {
-              if (res['statusCode'] === 200) {
-                _this115.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res["data"]["data"]);
-                _this115.exportLink = res["data"]["exportLink"];
-                _this115.dataSource.paginator = _this115.paginator;
-                _this115.dataSource.sort = _this115.sort;
+            var url = "users?limit=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : '') + (this.IsJective ? '&isActive=' + this.IsJective : ''));
+            this.api.getApi(url).subscribe(function (res) {
+              if (res.statusCode === 200) {
+                _this123.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res.data.data);
+                _this123.exportLink = res.data.exportLink;
+                _this123.dataSource.paginator = _this123.paginator;
+                _this123.dataSource.sort = _this123.sort;
+                _this123.totalUser = res.data.itemCount;
+                console.log('Total user', _this123.totalUser, res);
               } else {
-                _this115.toastr.error(res["message"]);
-              }
-            }, function (error) {
-              _this115.toastr.error('Something went wrong, please try again!', 'Oops!', {
-                timeOut: 3000,
-                closeButton: true
-              });
+                _this123.toastr.error(res["message"]);
 
-              console.log(error);
+                _this123.totalUser = 0;
+              }
             });
+          }
+        }, {
+          key: "pageChange",
+          value: function pageChange(event) {
+            console.log('ev page', event);
+            this.pageSize = event.pageSize;
+            this.pageIndex = event.pageIndex;
+            this.getUsers();
           }
         }, {
           key: "viewUserDetail",
@@ -35951,34 +35588,29 @@
         }, {
           key: "userEditModal",
           value: function userEditModal(userEdit, data) {
-            var _this116 = this;
+            var _this124 = this;
 
-            console.log(data);
+            this.isActive = data.isActive;
+            this.objId = data._id;
+            this.files = data.image;
+            this.imagePath = data.image.split('/').pop();
+            this.userForm.controls['firstName'].setValue(data.firstName);
+            this.userForm.controls['lastName'].setValue(data.lastName);
+            this.userForm.controls['email'].setValue(data.email);
+            this.userForm.controls['phoneNo'].setValue(data.phoneNo);
+            this.userForm.controls['dateofbirth'].setValue(data.dateofbirth);
+            this.userForm.controls['userName'].setValue(data.username);
+            this.userForm.controls['address'].setValue(data.address);
+            this.userForm.controls['gender'].setValue(data.gender || 'MALE');
+            this.userForm.controls['image'].setValue(data.image);
             this.modalService.open(userEdit, {
               backdropClass: 'light-blue-backdrop',
               centered: true,
               size: 'lg'
-            }) // onSubmit() {
-            // 	this.modalService.dismissAll();
-            // 	var data = this.userForm.value;
-            // 		data['id'] = data._id
-            // 		let formData = new FormData();
-            // 		formData.append("data", JSON.stringify(data));
-            // 		formData.append("pic", this.File);
-            // 		this.api.updateUser(data).subscribe(response => {
-            // 		  if (response['statusCode'] === 200) {
-            // 			this.toastr.success(response['message']);
-            // 			this.getUsers();
-            // 		  } else {
-            // 			this.toastr.error(response['message']);
-            // 		  }
-            // 		});
-            // 	// console.log("res:", this.editProfileForm.getRawValue());
-            // }
-            .result.then(function (result) {
-              _this116.closeResult = "Closed with: ".concat(result);
+            }).result.then(function (result) {
+              _this124.closeResult = "Closed with: ".concat(result);
 
-              _this116.userForm.patchValue({
+              _this124.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35991,34 +35623,41 @@
               });
 
               if (data.image) {
-                _this116.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this124.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
 
               if (result) {
-                var data = _this116.userForm.value;
+                var data = _this124.userForm.value;
                 data['id'] = data._id;
                 var formData = new FormData();
                 formData.append("data", JSON.stringify(data));
-                formData.append("pic", _this116.File);
+                formData.append("pic", _this124.File);
 
-                _this116.api.updateUser(data).subscribe(function (response) {
+                _this124.api.updateUser(data).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this116.toastr.success(response['message']);
+                    _this124.toastr.success(response['message']);
 
-                    _this116.getUsers();
+                    _this124.getUsers();
                   } else {
-                    _this116.toastr.error(response['message']);
+                    _this124.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this116.closeResult = "Dismissed ".concat(_this116.getDismissReason(reason));
+              _this124.closeResult = "Dismissed ".concat(_this124.getDismissReason(reason));
             });
+          }
+        }, {
+          key: "filterBy",
+          value: function filterBy(ref) {
+            this.IsJective = ref;
+            this.searchBy = null;
+            this.getUsers();
           }
         }, {
           key: "blockUsers",
           value: function blockUsers(item, status) {
-            var _this117 = this;
+            var _this125 = this;
 
             console.log("item: ", item);
 
@@ -36034,18 +35673,16 @@
             };
             this.api.blockUsers(item._id, data).subscribe(function (response) {
               if (response['statusCode'] === 200) {
-                _this117.toastr.success(response['message']);
-
-                _this117.getUsers();
+                _this125.getUsers();
               } else {
-                _this117.toastr.error(response['message']);
+                _this125.toastr.error(response['message']);
               }
             });
           }
         }, {
           key: "deleteUser",
           value: function deleteUser(userModal, list) {
-            var _this118 = this;
+            var _this126 = this;
 
             // const message = 'Are you sure you want to delete ' + list.firstName + ' ' + list.lastName + ' ?';
             this.modalService.open(userModal, {
@@ -36053,25 +35690,25 @@
               centered: true,
               size: 'sm'
             }).result.then(function (result) {
-              _this118.closeResult = "Closed with: ".concat(result);
+              _this126.closeResult = "Closed with: ".concat(result);
 
               if (result) {
                 var data = {
                   id: list._id
                 };
 
-                _this118.api.deleteUser(list._id).subscribe(function (response) {
+                _this126.api.deleteUser(list._id).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this118.toastr.success(response['message']);
+                    _this126.toastr.success(response['message']);
 
-                    _this118.getUsers();
+                    _this126.getUsers();
                   } else {
-                    _this118.toastr.error(response['message']);
+                    _this126.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this118.closeResult = "Dismissed ".concat(_this118.getDismissReason(reason));
+              _this126.closeResult = "Dismissed ".concat(_this126.getDismissReason(reason));
             });
           }
         }, {
@@ -36090,25 +35727,30 @@
           }
         }, {
           key: "applyFilter",
-          value: function applyFilter(filterValue) {
-            this.dataSource.filter = filterValue.trim().toLowerCase();
+          value: function applyFilter(event) {
+            var _this127 = this;
 
-            if (this.dataSource.paginator) {
-              this.dataSource.paginator.firstPage();
-            }
+            window.clearTimeout(this.timer);
+            this.timer = window.setTimeout(function () {
+              var filterValue = event.target.value;
+              _this127.searchBy = filterValue;
+              _this127.pageIndex = 1;
+
+              _this127.getUsers();
+            }, 1000);
           } // This is for the first modal
 
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this119 = this;
+            var _this128 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this119.closeResult = "Closed with: ".concat(result);
+              _this128.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this119.closeResult = "Dismissed ".concat(_this119.getDismissReason(reason));
+              _this128.closeResult = "Dismissed ".concat(_this128.getDismissReason(reason));
             });
           }
         }, {
@@ -36167,6 +35809,77 @@
               return 'by clicking on a backdrop';
             } else {
               return "with: ".concat(reason);
+            }
+          }
+        }, {
+          key: "sendFile",
+          value: function sendFile(fileData) {
+            var _this129 = this;
+
+            var url = "uploadFile";
+            var formdata = new FormData();
+            formdata.append('file', fileData);
+            this.api.postApi(url, formdata).subscribe(function (res) {
+              console.log(res.data);
+
+              if (res.statusCode == 200) {
+                _this129.toastr.success('File updated successfully');
+
+                console.log("upload data res=>>", res.data);
+                _this129.files = res.data.filePath;
+              } else {
+                _this129.toastr.error(res.message);
+              }
+            });
+          }
+        }, {
+          key: "uploadFile",
+          value: function uploadFile(event) {
+            if (event.target.files && event.target.files[0]) {
+              var type = event.target.files[0].type;
+
+              if (type === 'image/png' || type === 'image/jpg' || type === 'image/jpeg') {
+                var fileData = event.target.files[0];
+                this.sendFile(fileData);
+                var reader = new FileReader();
+                this.imagePath = fileData.name;
+              }
+            }
+          }
+        }, {
+          key: "UpadteUser",
+          value: function UpadteUser() {
+            var _this130 = this;
+
+            this.submitted = true;
+            var url = "users/".concat(this.objId);
+            var obj = {
+              "firstName": this.userForm.controls['firstName'].value,
+              "lastName": this.userForm.controls['lastName'].value,
+              "gender": this.userForm.controls['gender'].value,
+              "address": this.userForm.controls['address'].value,
+              "image": this.files,
+              "phoneNo": this.userForm.controls['phoneNo'].value,
+              "email": this.userForm.controls['email'].value,
+              "dateofbirth": this.userForm.controls['dateofbirth'].value,
+              "username": this.userForm.controls['userName'].value,
+              "isActive": this.isActive
+            };
+
+            if (this.userForm.valid) {
+              this.api.putApi(url, obj).subscribe(function (res) {
+                if (res.statusCode == 200) {
+                  _this130.submitted = false;
+
+                  _this130.toastr.success(res.message);
+
+                  _this130.getUsers();
+
+                  _this130.modalService.dismissAll();
+                } else {
+                  _this130.toastr.error(res.message);
+                }
+              });
             }
           }
         }]);
@@ -37149,14 +36862,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this120 = this;
+            var _this131 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this120.closeResult = "Closed with: ".concat(result);
+              _this131.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this120.closeResult = "Dismissed ".concat(_this120.getDismissReason(reason));
+              _this131.closeResult = "Dismissed ".concat(_this131.getDismissReason(reason));
             });
           }
         }, {

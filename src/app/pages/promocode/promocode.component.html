@@ -197,7 +197,7 @@
     <!-- delete modal -->
     <ng-template #userDelete let-modal>
       <div class="modal-body">
-        <p>Are you ure want to delete this gift card?</p>
+        <p>Are you want to delete this gift card?</p>
         <div class="btn-group">
           <button type="button" class="btn btn-primary mr-2" aria-label="Close"
             (click)="DeleteCard()">Yes</button>
@@ -217,16 +217,30 @@
                   <div class="row p-t-20">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="control-label">Card Name</label>
+                        <label class="control-label">Card name</label>
                         <input type="text" id="firstName" class="form-control" placeholder="J2d3ddf3" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="cardName">  
+                        <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cardName'].hasError('required') && submitted">
+                          Please enter the card name!
+                      </mat-error>
+                      <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cardName'].hasError('pattern') && !giftForm.controls['cardName'].hasError('required') && !giftForm.controls['cardName'].hasError('maxlength')">
+                          Card name should alphabetic only!
+                      </mat-error>
+                      <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cardName'].hasError('maxlength') && !giftForm.controls['cardName'].hasError('required')">
+                          Maxlength should 15!
+                      </mat-error> 
                       </div>
                     </div>
                     <!--/span--> 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="control-label">Cost</label>
-                        <input type="number" id="cost" class="form-control" placeholder="$100" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="cost">
-    
+                        <input type="number" id="cost" class="form-control" placeholder="$100" onKeyDown="if(this.value.length==11 && event.keyCode!=8)" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="cost">
+                        <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cost'].hasError('required') && submitted">
+                          Please enter the cost!
+                      </mat-error>
+                      <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cost'].value?.toString().length>=11">
+                          Maxlength should 10!
+                      </mat-error> 
                       </div>
                     </div>
                     <!--/span-->                 
@@ -239,16 +253,20 @@
                     <div class="col-md-6">
                       <div class="form-group has-danger">
                         <label class="control-label">Valid From</label>
-                        <input type="date" id="event" class="form-control form-control-danger"  formControlName="validFrom">
-    
+                        <input type="date" id="event" [min]="service.getToday()" [max]="maxValue()" onkeydown="return false" class="form-control form-control-danger"  formControlName="validFrom">
+                        <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['validFrom'].hasError('required') && submitted">
+                          Please enter valid from the date!
+                      </mat-error>
                       </div>
                     </div>
                     <!--/span-->
                     <div class="col-md-6">
                       <div class="form-group has-danger">
                         <label class="control-label">Valid To</label>
-                        <input type="date" id="event" class="form-control form-control-danger" formControlName="validTill" >
-    
+                        <input type="date" id="event" [min]="minValue() || service.getToday()" onkeydown="event.preventDefault()" class="form-control form-control-danger" formControlName="validTill" >
+                        <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['validTill'].hasError('required') && submitted">
+                          Please enter valid to the date!
+                      </mat-error>
                       </div>
                     </div>
                   </div>
@@ -257,8 +275,13 @@
                     <div class="col-md-12">
                       <div class="form-group has-danger">
                         <label class="control-label">Number of Cards Bought</label>
-                        <input type="number" id="Address" class="form-control form-control-danger" placeholder="% Discount" formControlName="cardsBought">
-    
+                        <input type="number" id="Address" onKeyDown="if(this.value.length==6 && event.keyCode!=8) return false;" class="form-control form-control-danger" placeholder="eg:- 10" formControlName="cardsBought">
+                        <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cardsBought'].hasError('required') && submitted">
+                          Please number of cards bought!
+                      </mat-error>
+                      <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cardsBought'].value?.toString().length>=6">
+                          Maxlength should 5!
+                      </mat-error> 
                       </div>
                     </div>
                     <!--/span-->                
@@ -291,16 +314,30 @@
                   <div class="row p-t-20">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="control-label">Card Name</label>
+                        <label class="control-label">Card name</label>
                         <input type="text" id="firstName" class="form-control" placeholder="J2d3ddf3" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="cardName">  
+                        <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cardName'].hasError('required') && submitted">
+                          Please enter the card name!
+                      </mat-error>
+                      <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cardName'].hasError('pattern') && !giftForm.controls['cardName'].hasError('required') && !giftForm.controls['cardName'].hasError('maxlength')">
+                          Card name should alphabetic only!
+                      </mat-error>
+                      <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cardName'].hasError('maxlength') && !giftForm.controls['cardName'].hasError('required')">
+                          Maxlength should 15!
+                      </mat-error> 
                       </div>
                     </div>
                     <!--/span--> 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="control-label">Cost</label>
-                        <input type="number" id="cost" class="form-control" placeholder="$100" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="cost">
-    
+                        <input type="number" id="cost" class="form-control" onKeyDown="if(this.value.length==11 && event.keyCode!=8) return false;" placeholder="$100" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="cost">
+                        <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cost'].hasError('required') && submitted">
+                          Please enter the cost!
+                      </mat-error>
+                      <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cost'].value?.toString().length>=11">
+                          Maxlength should 10!
+                      </mat-error> 
                       </div>
                     </div>
                     <!--/span-->                 
@@ -313,16 +350,20 @@
                     <div class="col-md-6">
                       <div class="form-group has-danger">
                         <label class="control-label">Valid From</label>
-                        <input type="date" id="event" class="form-control form-control-danger"  formControlName="validFrom">
-    
+                        <input type="date" id="event" [min]="service.getToday()" [max]="maxValue()" onkeydown="return false" class="form-control form-control-danger"  formControlName="validFrom">
+                        <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['validFrom'].hasError('required') && submitted">
+                          Please enter valid from the date!
+                      </mat-error>
                       </div>
                     </div>
                     <!--/span-->
                     <div class="col-md-6">
                       <div class="form-group has-danger">
                         <label class="control-label">Valid To</label>
-                        <input type="date" id="event" class="form-control form-control-danger" formControlName="validTill" >
-    
+                        <input type="date" id="event" [min]="minValue() || service.getToday()" onkeydown="event.preventDefault()" class="form-control form-control-danger" formControlName="validTill" >
+                        <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['validTill'].hasError('required') && submitted">
+                          Please enter valid to the date!
+                      </mat-error>
                       </div>
                     </div>
                   </div>
@@ -331,8 +372,13 @@
                     <div class="col-md-12">
                       <div class="form-group has-danger">
                         <label class="control-label">Number of Cards Bought</label>
-                        <input type="number" id="Address" class="form-control form-control-danger" placeholder="% Discount" formControlName="cardsBought">
-    
+                        <input type="number" id="Address" onKeyDown="if(this.value.length==6 && event.keyCode!=8) return false;" class="form-control form-control-danger" placeholder="eg:- 10" formControlName="cardsBought">
+                        <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cardsBought'].hasError('required') && submitted">
+                          Please number of cards bought!
+                      </mat-error>
+                      <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['cardsBought'].value?.toString().length>=6">
+                          Maxlength should 5!
+                      </mat-error> 
                       </div>
                     </div>
                     <!--/span-->                

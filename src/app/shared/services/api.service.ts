@@ -139,4 +139,7 @@ export class ApiService {
 sessionStorage.removeItem('admin');
 this.router.navigate(['/login']);
 }
+getToday(): string {
+  return new Date().toISOString().split('T')[0]
+  }
 }

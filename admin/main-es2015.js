@@ -762,9 +762,6 @@ let NavigationComponent = class NavigationComponent {
                     this.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].imagesUrl + this.userDetail.image;
                 }
             }
-            else {
-                this.toastr.error(res["message"]);
-            }
         });
     }
     logout() {
@@ -812,8 +809,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/dialog.js");
+/* harmony import */ var _services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/api.service */ "./src/app/shared/services/api.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -828,47 +824,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 let ErrorInterceptor = class ErrorInterceptor {
-    constructor(toaster, router, _mat) {
-        this.toaster = toaster;
-        this.router = router;
-        this._mat = _mat;
+    constructor(accountService, toastr) {
+        this.accountService = accountService;
+        this.toastr = toastr;
     }
     intercept(request, next) {
         return next.handle(request).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(err => {
-            if (['token_not_provided', 'token_invalid', 'token_expired'].indexOf(err.error.error) >= 0) {
-                sessionStorage.removeItem("admin");
-                sessionStorage.removeItem("token");
-                this.router.navigate(['/login']);
-                if (this._mat.openDialogs) {
-                    this._mat.closeAll();
-                }
+            var _a;
+            console.log('err Intercep', err);
+            if ([401, 403].includes(err.status)) {
+                this.toastr.error('Session has been expired', 'Please login', {
+                    timeOut: 1200,
+                });
+                this.accountService.logout();
             }
-            else if (err.error.msg != undefined) {
-                this.toaster.error(err.error.msg, 'Oops!');
+            const error = ((_a = err.error) === null || _a === void 0 ? void 0 : _a.message) || err.statusText;
+            if (![401, 403, 200].includes(err.status)) {
+                console.log('If not 200 inter cal', err, error);
+                this.toastr.error(error, '', {
+                    timeOut: 1000,
+                });
             }
-            else if (err.error.error != undefined) {
-                this.toaster.error(err.error.error, 'Oops!');
-            }
-            else {
-                if (typeof err.error == 'string') {
-                    this.toaster.error(err.error, 'Oops!');
-                }
-            }
-            const error = err.error.error_description || err.error.message || err.statusText;
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
         }));
     }
 };
 ErrorInterceptor.ctorParameters = () => [
-    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
-    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"] }
+    { type: _services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"] },
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"] }
 ];
 ErrorInterceptor = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-    __metadata("design:paramtypes", [ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]])
+    __metadata("design:paramtypes", [_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]])
 ], ErrorInterceptor);
 
 
@@ -886,44 +874,47 @@ ErrorInterceptor = __decorate([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JwtInterceptor", function() { return JwtInterceptor; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/__ivy_ngcc__/fesm2015/ngx-spinner.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/api.service */ "./src/app/shared/services/api.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 
 
 let JwtInterceptor = class JwtInterceptor {
-    intercept(request, next) {
-        const clonedReq = this.handleRequest(request);
-        // this.common.showSpinner();
-        return next.handle(clonedReq);
+    constructor(spinner, service) {
+        this.spinner = spinner;
+        this.service = service;
     }
-    handleRequest(request) {
-        const token = sessionStorage.getItem("token");
-        let authReq;
-        authReq = request.clone({
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
-                "Content-Type": "application/json",
-                authorization: token ? 'Bearer' + ' ' + token : ""
-            })
+    intercept(req, next) {
+        //console.log("hi");
+        this.token = sessionStorage.getItem('token');
+        this.spinner.show();
+        //console.log(this.token);
+        let tokenizedReq = req.clone({
+            setHeaders: {
+                authorization: `${this.token}`
+            }
         });
-        if ((request.method.toLowerCase() == "post" ||
-            request.method.toLowerCase() == "put") &&
-            request.body instanceof FormData) {
-            authReq = request.clone({
-                headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
-                    authorization: token ? 'Bearer' + ' ' + token : ""
-                })
-            });
-        }
-        return authReq;
+        return next.handle(tokenizedReq).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["finalize"])(() => this.spinner.hide()));
     }
 };
+JwtInterceptor.ctorParameters = () => [
+    { type: ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"] },
+    { type: _services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"] }
+];
 JwtInterceptor = __decorate([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+    __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"], _services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]])
 ], JwtInterceptor);
 
 
@@ -944,6 +935,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -957,8 +949,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 let ApiService = class ApiService {
-    constructor(http) {
+    constructor(router, http) {
+        this.router = router;
         this.http = http;
         this.messageSource = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"]('d');
         this.currentMessage = this.messageSource.asObservable();
@@ -1027,15 +1021,50 @@ let ApiService = class ApiService {
     postApi(endPoint, body) {
         return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + endPoint, body);
     }
+    putApi(endPoint, body) {
+        return this.http.put(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + endPoint, body);
+    }
+    getApi(url) {
+        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + url);
+    }
+    deleteApi(url) {
+        return this.http.delete(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + url);
+    }
+    getUsers(count, page, search, status) {
+        let param = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"];
+        param = param.append('limit', count);
+        param = param.append('page', page);
+        //console.log(status);
+        if (search != null) {
+            param = param.append('search', search);
+        }
+        if (status === 1) {
+            param = param.append('status', status);
+        }
+        else if (status === 0) {
+            param = param.append('status', status);
+        }
+        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + 'users', { params: param });
+    }
+    logout() {
+        sessionStorage.clear();
+        sessionStorage.removeItem('admin');
+        this.router.navigate(['/login']);
+    }
+    getToday() {
+        return new Date().toISOString().split('T')[0];
+    }
 };
 ApiService.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
 ];
 ApiService = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
         providedIn: 'root'
     }),
-    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
 ], ApiService);
 
 
@@ -1232,31 +1261,31 @@ const ROUTES = [
         extralink: false,
         submenu: []
     },
-    // {
-    //   path: '',
-    //   title: 'Manage Report',
-    //   icon: 'mdi mdi-account-alert',
-    //   class: '',
-    //   extralink: false,
-    //   submenu: [
-    //     {
-    //       path: '/pages/reason',
-    //       title: 'Reasons',
-    //       icon: '',
-    //       class: '',
-    //       extralink: false,
-    //       submenu: []
-    //     },
-    //     {
-    //       path: '/pages/report',
-    //       title: 'Reports',
-    //       icon: '',
-    //       class: '',
-    //       extralink: false,
-    //       submenu: []
-    //     }
-    //   ]
-    // },
+    {
+        path: '',
+        title: 'Manage Report',
+        icon: 'mdi mdi-account-alert',
+        class: '',
+        extralink: false,
+        submenu: [
+            {
+                path: '/pages/reason',
+                title: 'Reasons',
+                icon: '',
+                class: '',
+                extralink: false,
+                submenu: []
+            },
+            {
+                path: '/pages/report',
+                title: 'Reports',
+                icon: '',
+                class: '',
+                extralink: false,
+                submenu: []
+            }
+        ]
+    },
     {
         path: '/pages/calculator',
         title: 'Manage Credits',

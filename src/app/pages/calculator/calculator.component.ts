@@ -11,9 +11,11 @@ import { ApiService } from 'src/app/shared/services/api.service';
 export class CalculatorComponent implements OnInit {
   pricing: FormArray;
   FormMatrix:FormGroup
+  IsFormEmpty:boolean = true
   submitted:boolean = false
   addedCredit:boolean = false
   packages: any;
+  id: any;
   constructor(private fb:FormBuilder,private toastr:ToastrService,private service:ApiService) { }
 
   ngOnInit(): void {
@@ -38,7 +40,7 @@ export class CalculatorComponent implements OnInit {
   }
   SavePackage()
   {
-    this.addedCredit = true
+    
     console.log('Form',this.FormMatrix.value);
     let obj = {
       
@@ -46,6 +48,7 @@ export class CalculatorComponent implements OnInit {
     this.submitted = true
     let url = `credits`
     if(this.FormMatrix.valid){
+      this.addedCredit = true
       this.service.postApi(url,this.FormMatrix.controls['pricing'].value).subscribe((res:any)=>{
       if(res.statusCode==200){
         this.submitted = false
@@ -66,6 +69,10 @@ export class CalculatorComponent implements OnInit {
 			if (res.statusCode === 200) {
         console.log('Credit get',res);
         this.packages = res.data.doc
+        if(res.data.doc.length>0){
+          this.addedCredit = true
+          this.IsFormEmpty = false
+        }
         let control = <FormArray>this.FormMatrix.controls.pricing;
         for (let x of res.data.doc) {
           control.push(this.fb.group({
@@ -78,4 +85,27 @@ export class CalculatorComponent implements OnInit {
 			}
 		})
 	}
+  UpdatePackage()
+
+  {
+    
+    console.log('Form',this.FormMatrix.value);
+    let obj = {
+      
+  }
+    this.submitted = true
+    let url = `credits/${this.id}`
+    if(this.FormMatrix.valid){
+      this.addedCredit = true
+      this.service.putApi(url,this.FormMatrix.controls['pricing'].value).subscribe((res:any)=>{
+      if(res.statusCode==200){
+        this.submitted = false
+        this.getPackages()
+        this.toastr.success(res.message)
+      }else{
+        this.toastr.error(res.message)
+      }
+      })
+    }
+  }
 }

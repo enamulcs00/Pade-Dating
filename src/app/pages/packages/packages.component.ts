@@ -36,7 +36,7 @@ pageIndex :any= 1;
   }
   packagedelModal(item,id){
     this.id = id
-    this.modalService.open(item, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
+    this.modalService.open(item, {backdropClass: 'light-blue-backdrop',centered: true,size: 'sm'});
   }
   packageEditModal(itemedit,item) {
     this.objId = item._id

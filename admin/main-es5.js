@@ -1309,8 +1309,6 @@
                 if (_this3.userDetail.image) {
                   _this3.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].imagesUrl + _this3.userDetail.image;
                 }
-              } else {
-                _this3.toastr.error(res["message"]);
               }
             });
           }
@@ -1399,15 +1397,9 @@
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! @angular/router */
-      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-      /* harmony import */
-
-
-      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! @angular/material/dialog */
-      "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/dialog.js");
+      var _services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../services/api.service */
+      "./src/app/shared/services/api.service.ts");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -1424,12 +1416,11 @@
       };
 
       var ErrorInterceptor = /*#__PURE__*/function () {
-        function ErrorInterceptor(toaster, router, _mat) {
+        function ErrorInterceptor(accountService, toastr) {
           _classCallCheck(this, ErrorInterceptor);
 
-          this.toaster = toaster;
-          this.router = router;
-          this._mat = _mat;
+          this.accountService = accountService;
+          this.toastr = toastr;
         }
 
         _createClass(ErrorInterceptor, [{
@@ -1438,26 +1429,28 @@
             var _this4 = this;
 
             return next.handle(request).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err) {
-              if (['token_not_provided', 'token_invalid', 'token_expired'].indexOf(err.error.error) >= 0) {
-                sessionStorage.removeItem("admin");
-                sessionStorage.removeItem("token");
+              var _a;
 
-                _this4.router.navigate(['/login']);
+              console.log('err Intercep', err);
 
-                if (_this4._mat.openDialogs) {
-                  _this4._mat.closeAll();
-                }
-              } else if (err.error.msg != undefined) {
-                _this4.toaster.error(err.error.msg, 'Oops!');
-              } else if (err.error.error != undefined) {
-                _this4.toaster.error(err.error.error, 'Oops!');
-              } else {
-                if (typeof err.error == 'string') {
-                  _this4.toaster.error(err.error, 'Oops!');
-                }
+              if ([401, 403].includes(err.status)) {
+                _this4.toastr.error('Session has been expired', 'Please login', {
+                  timeOut: 1200
+                });
+
+                _this4.accountService.logout();
               }
 
-              var error = err.error.error_description || err.error.message || err.statusText;
+              var error = ((_a = err.error) === null || _a === void 0 ? void 0 : _a.message) || err.statusText;
+
+              if (![401, 403, 200].includes(err.status)) {
+                console.log('If not 200 inter cal', err, error);
+
+                _this4.toastr.error(error, '', {
+                  timeOut: 1000
+                });
+              }
+
               return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
             }));
           }
@@ -1468,15 +1461,13 @@
 
       ErrorInterceptor.ctorParameters = function () {
         return [{
+          type: _services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]
+        }, {
           type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]
-        }, {
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
-        }, {
-          type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]
         }];
       };
 
-      ErrorInterceptor = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(), __metadata("design:paramtypes", [ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]])], ErrorInterceptor);
+      ErrorInterceptor = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(), __metadata("design:paramtypes", [_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]])], ErrorInterceptor);
       /***/
     },
 
@@ -1508,9 +1499,21 @@
       /* harmony import */
 
 
-      var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! @angular/common/http */
-      "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+      var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ngx-spinner */
+      "./node_modules/ngx-spinner/__ivy_ngcc__/fesm2015/ngx-spinner.js");
+      /* harmony import */
+
+
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! rxjs/operators */
+      "./node_modules/rxjs/_esm2015/operators/index.js");
+      /* harmony import */
+
+
+      var _services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../services/api.service */
+      "./src/app/shared/services/api.service.ts");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -1522,46 +1525,50 @@
         return c > 3 && r && Object.defineProperty(target, key, r), r;
       };
 
+      var __metadata = undefined && undefined.__metadata || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+      };
+
       var JwtInterceptor = /*#__PURE__*/function () {
-        function JwtInterceptor() {
+        function JwtInterceptor(spinner, service) {
           _classCallCheck(this, JwtInterceptor);
+
+          this.spinner = spinner;
+          this.service = service;
         }
 
         _createClass(JwtInterceptor, [{
           key: "intercept",
-          value: function intercept(request, next) {
-            var clonedReq = this.handleRequest(request); // this.common.showSpinner();
+          value: function intercept(req, next) {
+            var _this5 = this;
 
-            return next.handle(clonedReq);
-          }
-        }, {
-          key: "handleRequest",
-          value: function handleRequest(request) {
-            var token = sessionStorage.getItem("token");
-            var authReq;
-            authReq = request.clone({
-              headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
-                "Content-Type": "application/json",
-                authorization: token ? 'Bearer' + ' ' + token : ""
-              })
+            //console.log("hi");
+            this.token = sessionStorage.getItem('token');
+            this.spinner.show(); //console.log(this.token);
+
+            var tokenizedReq = req.clone({
+              setHeaders: {
+                authorization: "".concat(this.token)
+              }
             });
-
-            if ((request.method.toLowerCase() == "post" || request.method.toLowerCase() == "put") && request.body instanceof FormData) {
-              authReq = request.clone({
-                headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
-                  authorization: token ? 'Bearer' + ' ' + token : ""
-                })
-              });
-            }
-
-            return authReq;
+            return next.handle(tokenizedReq).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["finalize"])(function () {
+              return _this5.spinner.hide();
+            }));
           }
         }]);
 
         return JwtInterceptor;
       }();
 
-      JwtInterceptor = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()], JwtInterceptor);
+      JwtInterceptor.ctorParameters = function () {
+        return [{
+          type: ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"]
+        }, {
+          type: _services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]
+        }];
+      };
+
+      JwtInterceptor = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(), __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"], _services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]])], JwtInterceptor);
       /***/
     },
 
@@ -1608,6 +1615,12 @@
       var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! rxjs */
       "./node_modules/rxjs/_esm2015/index.js");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -1624,9 +1637,10 @@
       };
 
       var ApiService = /*#__PURE__*/function () {
-        function ApiService(http) {
+        function ApiService(router, http) {
           _classCallCheck(this, ApiService);
 
+          this.router = router;
           this.http = http;
           this.messageSource = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"]('d');
           this.currentMessage = this.messageSource.asObservable();
@@ -1734,6 +1748,54 @@
           value: function postApi(endPoint, body) {
             return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + endPoint, body);
           }
+        }, {
+          key: "putApi",
+          value: function putApi(endPoint, body) {
+            return this.http.put(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + endPoint, body);
+          }
+        }, {
+          key: "getApi",
+          value: function getApi(url) {
+            return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + url);
+          }
+        }, {
+          key: "deleteApi",
+          value: function deleteApi(url) {
+            return this.http["delete"](_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + url);
+          }
+        }, {
+          key: "getUsers",
+          value: function getUsers(count, page, search, status) {
+            var param = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]();
+            param = param.append('limit', count);
+            param = param.append('page', page); //console.log(status);
+
+            if (search != null) {
+              param = param.append('search', search);
+            }
+
+            if (status === 1) {
+              param = param.append('status', status);
+            } else if (status === 0) {
+              param = param.append('status', status);
+            }
+
+            return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + 'users', {
+              params: param
+            });
+          }
+        }, {
+          key: "logout",
+          value: function logout() {
+            sessionStorage.clear();
+            sessionStorage.removeItem('admin');
+            this.router.navigate(['/login']);
+          }
+        }, {
+          key: "getToday",
+          value: function getToday() {
+            return new Date().toISOString().split('T')[0];
+          }
         }]);
 
         return ApiService;
@@ -1741,13 +1803,15 @@
 
       ApiService.ctorParameters = function () {
         return [{
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+        }, {
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
         }];
       };
 
       ApiService = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
         providedIn: 'root'
-      }), __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])], ApiService);
+      }), __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])], ApiService);
       /***/
     },
 
@@ -1976,32 +2040,28 @@
         "class": '',
         extralink: false,
         submenu: []
-      }, // {
-      //   path: '',
-      //   title: 'Manage Report',
-      //   icon: 'mdi mdi-account-alert',
-      //   class: '',
-      //   extralink: false,
-      //   submenu: [
-      //     {
-      //       path: '/pages/reason',
-      //       title: 'Reasons',
-      //       icon: '',
-      //       class: '',
-      //       extralink: false,
-      //       submenu: []
-      //     },
-      //     {
-      //       path: '/pages/report',
-      //       title: 'Reports',
-      //       icon: '',
-      //       class: '',
-      //       extralink: false,
-      //       submenu: []
-      //     }
-      //   ]
-      // },
-      {
+      }, {
+        path: '',
+        title: 'Manage Report',
+        icon: 'mdi mdi-account-alert',
+        "class": '',
+        extralink: false,
+        submenu: [{
+          path: '/pages/reason',
+          title: 'Reasons',
+          icon: '',
+          "class": '',
+          extralink: false,
+          submenu: []
+        }, {
+          path: '/pages/report',
+          title: 'Reports',
+          icon: '',
+          "class": '',
+          extralink: false,
+          submenu: []
+        }]
+      }, {
         path: '/pages/calculator',
         title: 'Manage Credits',
         icon: 'mdi mdi-calculator',
@@ -2222,7 +2282,7 @@
 
       var SpinnerComponent = /*#__PURE__*/function () {
         function SpinnerComponent(router, document) {
-          var _this5 = this;
+          var _this6 = this;
 
           _classCallCheck(this, SpinnerComponent);
 
@@ -2232,12 +2292,12 @@
           this.backgroundColor = 'rgba(0, 115, 170, 0.69)';
           this.router.events.subscribe(function (event) {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationStart"]) {
-              _this5.isSpinnerVisible = true;
+              _this6.isSpinnerVisible = true;
             } else if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"] || event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationCancel"] || event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationError"]) {
-              _this5.isSpinnerVisible = false;
+              _this6.isSpinnerVisible = false;
             }
           }, function () {
-            _this5.isSpinnerVisible = false;
+            _this6.isSpinnerVisible = false;
           });
         }
 

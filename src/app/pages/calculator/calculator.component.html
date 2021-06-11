@@ -18,12 +18,22 @@
             <div [formGroupName]="i">
               <div class="row">
                 <div class="col-md-5">
-                   <div class="form-group"><input type="text" formControlName="creditLimit" id="creditLimit" placeholder="Credit limit" class="form-control" [readonly]='addedCredit'>
-                   </div>
+                   <div class="form-group">
+                     <input type="text" formControlName="creditLimit" id="creditLimit" placeholder="Credit limit" class="form-control" [readonly]='addedCredit'>
+                     <span *ngIf="submitted && a.get('creditLimit').hasError('required')" class="error">
+                      *Credit limit is required.</span>
+                      <span *ngIf="a.get('creditLimit').hasError('pattern')" class="error">
+                       *Credit limit should numeric only.</span>
+                    </div>
                </div>
                <div class="col-md-5">
-                   <div class="form-group"><input type="text" id="BaseFare" formControlName="creditRate" placeholder="Credit rate" class="form-control" [readonly]='addedCredit'>
-                   </div>
+                   <div class="form-group">
+                     <input type="text" id="BaseFare" formControlName="creditRate" placeholder="Credit rate" class="form-control" [readonly]='addedCredit'>
+                     <span *ngIf="submitted && a.get('creditRate').hasError('required')" class="error">
+                      *Credit rate is required.</span>
+                      <span *ngIf="a.get('creditRate').hasError('pattern')" class="error">
+                       *Credit rate should numeric only.</span>
+                    </div>
                </div>
                
                <div class="col-md-2 ">
@@ -33,17 +43,17 @@
                  </div>
             </div>
           </div>
-      <div class="row">
+      <div class="row" *ngIf="!addedCredit">
         <div class="col-md-12 text-right pb-3">
           <a href="javascript:void()" class="btn btn-primary" (click)="addRow()"><i class="mdi mdi-plus"></i> </a>
         </div>
       </div>
-              <div class="row">
+              <div class="row" >
                 <div class="col-md-6">
-                 <button class="btn btn-primary" (click)="SavePackage()">Save</button>
+                 <button class="btn btn-primary" (click)="SavePackage()" *ngIf="IsFormEmpty">Save</button>
+                 <button class="btn btn-primary" (click)="UpdatePackage()" *ngIf="!addedCredit">Update</button>
                 </div>
-                
-                  </div>
+                </div>
         </form>
     </div>
 </div>
