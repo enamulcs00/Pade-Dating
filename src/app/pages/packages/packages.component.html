@@ -157,13 +157,15 @@
     <div class="col-md-6">
         <div class="form-group">
             <label> Price unit</label>
-            <input type="text"  maxlength="10" placeholder="eg:- $ or ₹" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="units" maxlength="1">
+            <input type="text" list="brow" maxlength="10" placeholder="eg:- $ or ₹" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="units">
+            <datalist id="brow">
+                <option [value]="code?.symbol" *ngFor="let code of currencyArray">
+                
+               </datalist>
             <mat-error class="form-text text-danger w-100" *ngIf="units.hasError('required') && submitted">
                 Please enter the price unit!
             </mat-error>
-            <mat-error class="form-text text-danger w-100" *ngIf="units.hasError('maxlength') && !units.hasError('required')">
-                Maxlength should 1!
-            </mat-error> 
+            
         </div>
     </div>
      </div>
