@@ -20,8 +20,9 @@
                   Status
                 </button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button class="dropdown-item" (click)="filterBy('active')">Active</button>
-                  <button class="dropdown-item" (click)="filterBy('inactive')">Inactive</button>
+                  <button class="dropdown-item" (click)="filterBy('')">All</button>
+                  <button class="dropdown-item" (click)="filterBy('true')">Active</button>
+                  <button class="dropdown-item" (click)="filterBy('false')">Inactive</button>
                 </div>
               </div>            
               <button class="btn btn-seconadary mb-2" (click)="addUserModal(addUser)"><i class="sl-icon-plus"></i> Add
@@ -35,7 +36,8 @@
                     <th>Cost </th>
                     <th>Number of Cards Bought </th>
                     <th>Valid From</th>
-                    <th>Valid To</th>  
+                    <th>Valid Till</th>  
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -44,19 +46,15 @@
                    
                     <td>{{item?.cardName}}</td>
                       <td>{{item?.cost}}</td>
-                      <td>{{item?.cardsBought}}</td>
-                    <td><span class="text-nowrap">{{item?.validFrom}}</span></td>                  
-                    <td><span class="text-nowrap">{{item?.validTill}}</span></td>                  
+                      <td class="text-center">{{item?.cardsBought}}</td>
+                    <td><span class="text-nowrap">{{item?.validFrom |date}}</span></td>                  
+                    <td><span class="text-nowrap">{{item?.validTill |date}}</span></td>                  
                 
-                    <!-- <td>
-                      <div class="form-check">
-                        <div class="custom-control custom-radio">
-                          <input type="radio" class="custom-control-input" id="customControlValidation2"
-                            name="radio-stacked" disabled>
-                          <label class="custom-control-label" for="customControlValidation2">Inactive</label>
-                        </div>
-                      </div>
-                    </td> -->
+                    <td>
+                      <mat-slide-toggle [checked]="item?.isActive == true ? true : false" (change)="blockUsers(item?._id, $event.checked)">
+                        {{item?.isActive == true ? "Active" :"Inactive"}}
+                    </mat-slide-toggle>
+                    </td>
                     <td>
                       <div ngbDropdown placement="bottom" class="d-inline-block" container="body">
                         <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
@@ -262,10 +260,10 @@
                     <!--/span-->
                     <div class="col-md-6">
                       <div class="form-group has-danger">
-                        <label class="control-label">Valid To</label>
+                        <label class="control-label">Valid Till</label>
                         <input type="date" id="event" [min]="minValue() || service.getToday()" onkeydown="event.preventDefault()" class="form-control form-control-danger" formControlName="validTill" >
                         <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['validTill'].hasError('required') && submitted">
-                          Please enter valid to the date!
+                          Please enter valid till the date!
                       </mat-error>
                       </div>
                     </div>
@@ -359,10 +357,10 @@
                     <!--/span-->
                     <div class="col-md-6">
                       <div class="form-group has-danger">
-                        <label class="control-label">Valid To</label>
+                        <label class="control-label">Valid Till</label>
                         <input type="date" id="event" [min]="minValue() || service.getToday()" onkeydown="event.preventDefault()" class="form-control form-control-danger" formControlName="validTill" >
                         <mat-error class="form-text text-danger w-100" *ngIf="giftForm.controls['validTill'].hasError('required') && submitted">
-                          Please enter valid to the date!
+                          Please enter valid till the date!
                       </mat-error>
                       </div>
                     </div>

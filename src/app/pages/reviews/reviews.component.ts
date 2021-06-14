@@ -16,13 +16,18 @@ export class ReviewsComponent implements OnInit {
   closeResult: string;
   totalUser: number;
   searchBy: string;
+  Reviews: any;
+  Review: any;
   ngOnInit(): void {
     this.getUsers()
   }
   constructor(private modalService: NgbModal,	private api: ApiService,
 		private router: Router,
 		private toastr: ToastrService,) {}
-  reviewModal(review) {
+  reviewModal(review,reviews) {
+    this.Review = reviews
+    console.log('Rev',reviews);
+    
     this.modalService.open(review, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
   }
   addreviewModal(addreview) {
@@ -43,7 +48,10 @@ export class ReviewsComponent implements OnInit {
   getUsers() {
 		let url = `reviews?count=${(this.pageSize?(this.pageSize) : '')+(this.pageIndex ? ('&page=' + this.pageIndex) : '')+ (this.searchBy ? ('&search=' + this.searchBy) : '')}`
 		this.api.getApi(url).subscribe((res:any) => {
+      console.log('Review api called',res);
+      
 			if (res.statusCode === 200) {
+        this.Reviews = res.data.doc
 				this.totalUser = res.data.itemCount
 				console.log('Total rev',this.totalUser,res);
 			} else {

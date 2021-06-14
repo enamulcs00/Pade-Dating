@@ -18,7 +18,7 @@ submitted:boolean = false
 	minAge: any = 18;
 	searchBy: any;
 	totalUser:number;
-  status: string= 'active';
+  status: string;
   giftList: any;
   giftForm:FormGroup
   gitfId: any;
@@ -97,7 +97,7 @@ applyFilter(event: any) {
   }, 1000)
 }
 getUsers() {
-  let url = `giftCards?count=${(this.pageSize?(this.pageSize) : '')+(this.pageIndex ? ('&page=' + this.pageIndex) : '')+ (this.searchBy ? ('&search=' + this.searchBy) : '')+ (this.status ? ('&status=' + this.status) : '')}`
+  let url = `giftCards?count=${(this.pageSize?(this.pageSize) : '')+(this.pageIndex ? ('&page=' + this.pageIndex) : '')+ (this.searchBy ? ('&search=' + this.searchBy) : '')+ (this.status ? ('&isActive=' + this.status) : '')}`
   this.service.getApi(url).subscribe((res:any) => {
     if (res.statusCode === 200) {
      console.log('FGift',res);
@@ -173,5 +173,21 @@ DeleteCard(){
     }
     })
   
+}
+blockUsers(id, status) {
+  console.log('status',status);
+  
+  let url = `giftCards/${id}`
+  const data = {
+    
+    isActive: status
+  };
+  this.service.putApi(url, data).subscribe(response => {
+    if (response['statusCode'] === 200) {
+    this.getUsers();
+    } else {
+      this.toast.error(response['message']);
+    }
+  });
 }
 }

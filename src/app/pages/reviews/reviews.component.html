@@ -29,50 +29,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let item of Reviews">
                                     <td>
                                         <img src="assets/images/users/2.jpg" alt="iMac" width="60" class="rounded-circle">
                                     </td>
                                     <td>Ronny </td>
                                     <td>Hannagover@gmail.com </td>
                                     <td>
-                                        <p class="text-warning mb-0 text-nowrap"> <i class="fas fa-star "> </i> <i class="fas fa-star"> </i>
-                                            <i class="fas fa-star"> </i> <i class="fas fa-star"> </i> </p>
+                                        <ngb-rating class="text-warning" [max]="item?.rating" style="font-size: xx-large;" [rate]="item?.rating" [readonly]="true"></ngb-rating>
+                                        <!-- <p class="text-warning mb-0 text-nowrap"> <i class="fas fa-star "> </i> <i class="fas fa-star"> </i>
+                                            <i class="fas fa-star"> </i> <i class="fas fa-star"> </i> </p> -->
                                     </td>
-                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href="javascript:void(0)" (click)="reviewModal(review)">Read More</a></td>
+                                    <td>{{item?.review  | slice:0:20 }}... <a href="javascript:void(0)" (click)="reviewModal(review,item?.review)">Read More</a></td>
                                     <!-- <td> James </td> -->
-                                    <td>
-                                        <button class="btn btn-danger" (click)="reviewDeleteModal(reviewDelete)"><i class="ti-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="assets/images/users/2.jpg" alt="iMac" width="60" class="rounded-circle">
-                                    </td>
-                                    <td>Ronny </td>
-                                    <td>Hannagover@gmail.com </td>
-                                    <td>
-                                        <p class="text-warning mb-0 text-nowrap"> <i class="fas fa-star "> </i> <i class="fas fa-star"> </i>
-                                            <i class="fas fa-star"> </i> <i class="fas fa-star"> </i> </p>
-                                    </td>
-                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href="javascript:void(0)" (click)="reviewModal(review)">Read More</a></td>
-                                    <!-- <td> Sam </td> -->
-                                    <td>
-                                        <button class="btn btn-danger" (click)="reviewDeleteModal(reviewDelete)"><i class="ti-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="assets/images/users/2.jpg" alt="iMac" width="60" class="rounded-circle">
-                                    </td>
-                                    <td>Ronny </td>
-                                    <td>Hannagover@gmail.com </td>
-                                    <td>
-                                        <p class="text-warning mb-0 text-nowrap"> <i class="fas fa-star "> </i> <i class="fas fa-star"> </i>
-                                            <i class="fas fa-star"> </i> <i class="fas fa-star"> </i> </p>
-                                    </td>
-                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href="javascript:void(0)" (click)="reviewModal(review)">Read More</a></td>
-                                    <!-- <td> Jason </td> -->
                                     <td>
                                         <button class="btn btn-danger" (click)="reviewDeleteModal(reviewDelete)"><i class="ti-trash"></i></button>
                                     </td>
@@ -105,9 +74,7 @@
                         <div class="row pt-2">
                             <div class="col-md-12">
                                 <p>
-                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                                    content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites
-                                    still in their infancy.
+                                    {{Review}}
                                 </p>
                             </div>
                         </div>
