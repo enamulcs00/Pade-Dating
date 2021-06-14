@@ -84,7 +84,7 @@
     <div class="form-group">
         <label> Price unit</label>
         <input type="text" list="brow"
-         placeholder="eg:- $ or ₹" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="units">
+         placeholder="eg:- $ or Rs" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="units">
          <datalist id="brow">
             <option [value]="code?.symbol" *ngFor="let code of currencyArray">
             
@@ -157,7 +157,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label> Price unit</label>
-            <input type="text" list="brow" maxlength="10" placeholder="eg:- $ or ₹" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="units">
+            <input type="text" list="brow" maxlength="10" placeholder="eg:- $ or Rs" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="units">
             <datalist id="brow">
                 <option [value]="code?.symbol" *ngFor="let code of currencyArray">
                 
