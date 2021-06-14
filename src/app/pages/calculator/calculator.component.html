@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-      <div class="row" *ngIf="addedCredit">
+      <div class="row" *ngIf="addedCredit && totalUser">
         <div class="col-md-12 text-right pb-3">
           <a href="javascript:void()" class="btn btn-primary" (click)="toggleEdit()"><i class="mdi mdi-pencil"></i> </a>
         </div>
@@ -19,7 +19,7 @@
               <div class="row">
                 <div class="col-md-5">
                    <div class="form-group">
-                     <input type="text" formControlName="creditLimit" id="creditLimit" placeholder="Credit limit" class="form-control" [readonly]='addedCredit'>
+                     <input type="text" formControlName="creditLimit" id="creditLimit" placeholder="Credit limit" class="form-control" [readonly]='addedCredit && totalUser'>
                      <span *ngIf="submitted && a.get('creditLimit').hasError('required')" class="error">
                       *Credit limit is required.</span>
                       <span *ngIf="a.get('creditLimit').hasError('pattern')" class="error">
@@ -28,7 +28,7 @@
                </div>
                <div class="col-md-5">
                    <div class="form-group">
-                     <input type="text" id="BaseFare" formControlName="creditRate" placeholder="Credit rate" class="form-control" [readonly]='addedCredit'>
+                     <input type="text" id="BaseFare" formControlName="creditRate" placeholder="Credit rate" class="form-control" [readonly]='addedCredit && totalUser'>
                      <span *ngIf="submitted && a.get('creditRate').hasError('required')" class="error">
                       *Credit rate is required.</span>
                       <span *ngIf="a.get('creditRate').hasError('pattern')" class="error">
@@ -37,23 +37,25 @@
                </div>
                
                <div class="col-md-2 ">
-                <a href="javascript:void()" class="btn btn-primary" (click)="removeGroup(i,a.get('_id').value)"><i class="mdi mdi-minus"></i></a>&nbsp;&nbsp;
-                <a href="javascript:void()" class="btn btn-primary" (click)="UpdatePackage(a.get('_id').value,a.get('creditRate').value,a.get('creditLimit').value)" *ngIf="!addedCredit && a.get('_id').value"><i class="mdi mdi-update" title="Update"></i></a>
-             </div>      
+                <a href="javascript:void()" class="btn btn-primary" (click)="removeGroup(i,a.get('_id').value)"><i class="mdi mdi-minus" title="Remove"></i></a>&nbsp;
+                <a href="javascript:void()" class="btn btn-primary" (click)="UpdatePackage(a.get('_id').value,a.get('creditRate').value,a.get('creditLimit').value)" *ngIf="!addedCredit && a.get('_id').value"><i class="mdi mdi-update" title="Update"></i></a>&nbsp;
+                <a href="javascript:void()" class="btn btn-primary" (click)="AddSingleRow(a.get('creditRate').value,a.get('creditLimit').value)" *ngIf="!a.get('_id').value && totalUser"><i class="fa fa-paper-plane" title="Add single row"></i></a>
+               </div>      
                  </div>
             </div>
           </div>
-      <div class="row" *ngIf="!addedCredit">
+      <div class="row" *ngIf="!addedCredit || !totalUser">
         <div class="col-md-12 text-right pb-3">
-          <a href="javascript:void()" class="btn btn-primary" (click)="addRow()"><i class="mdi mdi-plus"></i> </a>
+          <a href="javascript:void()" class="btn btn-primary" (click)="addRow()"><i class="mdi mdi-plus" title="Add row"></i> </a>
         </div>
       </div>
               <div class="row" >
                 <div class="col-md-6">
-                 <button class="btn btn-primary" (click)="SavePackage()" *ngIf="IsFormEmpty">Save</button>
+                 <button class="btn btn-primary" (click)="SavePackage()" *ngIf="totalUser==0">Save</button>
                  <!-- <button class="btn btn-primary" (click)="UpdatePackage()" *ngIf="!addedCredit">Update</button> -->
                 </div>
                 </div>
         </form>
     </div>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" [length]="totalUser" (page)="pageChange($event)"></mat-paginator>
 </div>

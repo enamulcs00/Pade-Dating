@@ -24700,7 +24700,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n      <div class=\"row\" *ngIf=\"addedCredit\">\n        <div class=\"col-md-12 text-right pb-3\">\n          <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"toggleEdit()\"><i class=\"mdi mdi-pencil\"></i> </a>\n        </div>\n      </div>\n        <form [formGroup]=\"FormMatrix\">\n          <div class=\"row\">\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Credit Rate Exchange in terms of Dollars</label>\n            </div>\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Minimum Credit Buy Limit</label>\n            </div>\n          </div>\n          <div formArrayName=\"pricing\" *ngFor=\"let a of FormMatrix.get('pricing').controls; let i = index\" >\n            <div [formGroupName]=\"i\">\n              <div class=\"row\">\n                <div class=\"col-md-5\">\n                   <div class=\"form-group\">\n                     <input type=\"text\" formControlName=\"creditLimit\" id=\"creditLimit\" placeholder=\"Credit limit\" class=\"form-control\" [readonly]='addedCredit'>\n                     <span *ngIf=\"submitted && a.get('creditLimit').hasError('required')\" class=\"error\">\n                      *Credit limit is required.</span>\n                      <span *ngIf=\"a.get('creditLimit').hasError('pattern')\" class=\"error\">\n                       *Credit limit should numeric only.</span>\n                    </div>\n               </div>\n               <div class=\"col-md-5\">\n                   <div class=\"form-group\">\n                     <input type=\"text\" id=\"BaseFare\" formControlName=\"creditRate\" placeholder=\"Credit rate\" class=\"form-control\" [readonly]='addedCredit'>\n                     <span *ngIf=\"submitted && a.get('creditRate').hasError('required')\" class=\"error\">\n                      *Credit rate is required.</span>\n                      <span *ngIf=\"a.get('creditRate').hasError('pattern')\" class=\"error\">\n                       *Credit rate should numeric only.</span>\n                    </div>\n               </div>\n               \n               <div class=\"col-md-2 \">\n                <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"removeGroup(i,a.get('_id').value)\"><i class=\"mdi mdi-minus\"></i></a>&nbsp;&nbsp;\n                <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"UpdatePackage(a.get('_id').value,a.get('creditRate').value,a.get('creditLimit').value)\" *ngIf=\"!addedCredit && a.get('_id').value\"><i class=\"mdi mdi-update\" title=\"Update\"></i></a>\n             </div>      \n                 </div>\n            </div>\n          </div>\n      <div class=\"row\" *ngIf=\"!addedCredit\">\n        <div class=\"col-md-12 text-right pb-3\">\n          <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"addRow()\"><i class=\"mdi mdi-plus\"></i> </a>\n        </div>\n      </div>\n              <div class=\"row\" >\n                <div class=\"col-md-6\">\n                 <button class=\"btn btn-primary\" (click)=\"SavePackage()\" *ngIf=\"IsFormEmpty\">Save</button>\n                 <!-- <button class=\"btn btn-primary\" (click)=\"UpdatePackage()\" *ngIf=\"!addedCredit\">Update</button> -->\n                </div>\n                </div>\n        </form>\n    </div>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n      <div class=\"row\" *ngIf=\"addedCredit && totalUser\">\n        <div class=\"col-md-12 text-right pb-3\">\n          <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"toggleEdit()\"><i class=\"mdi mdi-pencil\"></i> </a>\n        </div>\n      </div>\n        <form [formGroup]=\"FormMatrix\">\n          <div class=\"row\">\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Credit Rate Exchange in terms of Dollars</label>\n            </div>\n            <div class=\"col-md-5\">\n              <label class=\"control-label\">Minimum Credit Buy Limit</label>\n            </div>\n          </div>\n          <div formArrayName=\"pricing\" *ngFor=\"let a of FormMatrix.get('pricing').controls; let i = index\" >\n            <div [formGroupName]=\"i\">\n              <div class=\"row\">\n                <div class=\"col-md-5\">\n                   <div class=\"form-group\">\n                     <input type=\"text\" formControlName=\"creditLimit\" id=\"creditLimit\" placeholder=\"Credit limit\" class=\"form-control\" [readonly]='addedCredit && totalUser'>\n                     <span *ngIf=\"submitted && a.get('creditLimit').hasError('required')\" class=\"error\">\n                      *Credit limit is required.</span>\n                      <span *ngIf=\"a.get('creditLimit').hasError('pattern')\" class=\"error\">\n                       *Credit limit should numeric only.</span>\n                    </div>\n               </div>\n               <div class=\"col-md-5\">\n                   <div class=\"form-group\">\n                     <input type=\"text\" id=\"BaseFare\" formControlName=\"creditRate\" placeholder=\"Credit rate\" class=\"form-control\" [readonly]='addedCredit && totalUser'>\n                     <span *ngIf=\"submitted && a.get('creditRate').hasError('required')\" class=\"error\">\n                      *Credit rate is required.</span>\n                      <span *ngIf=\"a.get('creditRate').hasError('pattern')\" class=\"error\">\n                       *Credit rate should numeric only.</span>\n                    </div>\n               </div>\n               \n               <div class=\"col-md-2 \">\n                <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"removeGroup(i,a.get('_id').value)\"><i class=\"mdi mdi-minus\" title=\"Remove\"></i></a>&nbsp;\n                <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"UpdatePackage(a.get('_id').value,a.get('creditRate').value,a.get('creditLimit').value)\" *ngIf=\"!addedCredit && a.get('_id').value\"><i class=\"mdi mdi-update\" title=\"Update\"></i></a>&nbsp;\n                <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"AddSingleRow(a.get('creditRate').value,a.get('creditLimit').value)\" *ngIf=\"!a.get('_id').value && totalUser\"><i class=\"fa fa-paper-plane\" title=\"Add single row\"></i></a>\n               </div>      \n                 </div>\n            </div>\n          </div>\n      <div class=\"row\" *ngIf=\"!addedCredit || !totalUser\">\n        <div class=\"col-md-12 text-right pb-3\">\n          <a href=\"javascript:void()\" class=\"btn btn-primary\" (click)=\"addRow()\"><i class=\"mdi mdi-plus\" title=\"Add row\"></i> </a>\n        </div>\n      </div>\n              <div class=\"row\" >\n                <div class=\"col-md-6\">\n                 <button class=\"btn btn-primary\" (click)=\"SavePackage()\" *ngIf=\"totalUser==0\">Save</button>\n                 <!-- <button class=\"btn btn-primary\" (click)=\"UpdatePackage()\" *ngIf=\"!addedCredit\">Update</button> -->\n                </div>\n                </div>\n        </form>\n    </div>\n    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [pageSize]=\"10\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\n</div>\n";
       /***/
     },
 
@@ -25120,7 +25120,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n        <div class=\"d-block text-right\">\n            <button class=\"btn btn-primary mb-3\" (click)=\"packageModal(item)\">Add Packages</button>\n        </div>\n   \n<div class=\"row\">\n    <div class=\"col-md-4\" *ngFor=\"let item of packages\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">{{item?.name}}</h2>\n            <h1 class=\"price\">{{item?.price.units}} {{item?.price.amount}}/<span>{{item?.month}}Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">{{item?.saveUpto}}%</h4>\n            <div class=\"row\">\n<div class=\"col-md-6\">\n    <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button>\n</div>\n<div class=\"col-md-6\">\n    <button class=\"btn btn-block\" (click)=\"packagedelModal(userDelete,item._id)\">Delete</button>\n</div>\n            </div>\n            <!-- <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button> -->\n        </div>\n    </div>\n    \n    <!-- <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Silver</h2>\n            <h1 class=\"price\">$150/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div>\n    <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Gold</h2>\n            <h1 class=\"price\">$250/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div> -->\n<p *ngIf=\"totalUser==0\">Data not found!</p>\n</div>\n<mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\n</div>\n</div>\n\n<ng-template #item let-modal>\n    <div class=\"modal-body\">\n        <form [formGroup]=\"userForm\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"form-group\">\n                    <label> Plan Name</label>\n                    <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\n                        Please enter the plan name!\n                    </mat-error>\n                    <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                        First name should alphabetic!\n                    </mat-error> -->\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\n                        Maxlength should 15!\n                    </mat-error> \n                </div>\n                <div class=\"row\" formGroupName=\"price\">\n<div class=\"col-md-6\">\n    <div class=\"form-group\">\n        <label> Price</label>\n        <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\n            Please enter the price!\n        </mat-error>\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\n            Maxlength should 10!\n        </mat-error> \n    </div>\n</div>\n<div class=\"col-md-6\">\n    <div class=\"form-group\">\n        <label> Price unit</label>\n        <input type=\"text\" list=\"brow\"\n         placeholder=\"eg:- $ or ₹\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\">\n         <datalist id=\"brow\">\n            <option [value]=\"code?.symbol\" *ngFor=\"let code of currencyArray\">\n            \n           </datalist>\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\n            Please enter the price unit!\n        </mat-error>\n        \n    </div>\n</div>\n </div>\n<div class=\"form-group\">\n                    <label> Months</label>\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\n                        Please enter the months!\n                    </mat-error>\n                    \n                    <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')\">\n                        Maxlength should 2!\n                    </mat-error>  -->\n                </div>\n                <div class=\"form-group\">\n                    <label> Save Upto</label>\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\n                        Please enter the months!\n                    </mat-error>\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\n                        Maxlength should 10!\n                    </mat-error> \n                </div>\n                <button class=\"btn btn-primary\" (click)=\"SavePackage()\">Save</button>\n            </div>\n        </div>\n    </form>\n    </div>\n</ng-template>\n<ng-template #itemedit let-modal>\n    <div class=\"modal-body\">\n        <form [formGroup]=\"userForm\">\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <div class=\"form-group\">\n                        <label> Plan Name</label>\n                        <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\n                            Please enter the plan name!\n                        </mat-error>\n                        <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                            First name should alphabetic!\n                        </mat-error> -->\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\n                            Maxlength should 15!\n                        </mat-error> \n                    </div>\n                    <div class=\"row\" formGroupName=\"price\">\n    <div class=\"col-md-6\">\n        <div class=\"form-group\">\n            <label> Price</label>\n            <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\n                Please enter the price!\n            </mat-error>\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\n                Maxlength should 10!\n            </mat-error> \n        </div>\n    </div>\n    <div class=\"col-md-6\">\n        <div class=\"form-group\">\n            <label> Price unit</label>\n            <input type=\"text\"  maxlength=\"10\" placeholder=\"eg:- $ or ₹\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\" maxlength=\"1\">\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\n                Please enter the price unit!\n            </mat-error>\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('maxlength') && !units.hasError('required')\">\n                Maxlength should 1!\n            </mat-error> \n        </div>\n    </div>\n     </div>\n    <div class=\"form-group\">\n                        <label> Months</label>\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\n                            Please enter the months!\n                        </mat-error>\n                        \n                        <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')\">\n                            Maxlength should 2!\n                        </mat-error>  -->\n                    </div>\n                    <div class=\"form-group\">\n                        <label> Save Upto</label>\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\n                            Please enter the months!\n                        </mat-error>\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\n                            Maxlength should 10!\n                        </mat-error> \n                    </div>\n                    <button class=\"btn btn-primary\" (click)=\"updatePackage()\">Update</button>\n                </div>\n            </div>\n        </form>\n    </div>\n</ng-template>\n<ng-template #userDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you want to delete this package?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n            (click)=\"deletePackage()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n<!-- <ng-template #userDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you ure want to delete this package?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n                (click)=\"deletePackage()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template> -->";
+      __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n        <div class=\"d-block text-right\">\n            <button class=\"btn btn-primary mb-3\" (click)=\"packageModal(item)\">Add Packages</button>\n        </div>\n   \n<div class=\"row\">\n    <div class=\"col-md-4\" *ngFor=\"let item of packages\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">{{item?.name}}</h2>\n            <h1 class=\"price\">{{item?.price.units}} {{item?.price.amount}}/<span>{{item?.month}}Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">{{item?.saveUpto}}%</h4>\n            <div class=\"row\">\n<div class=\"col-md-6\">\n    <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button>\n</div>\n<div class=\"col-md-6\">\n    <button class=\"btn btn-block\" (click)=\"packagedelModal(userDelete,item._id)\">Delete</button>\n</div>\n            </div>\n            <!-- <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button> -->\n        </div>\n    </div>\n    \n    <!-- <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Silver</h2>\n            <h1 class=\"price\">$150/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div>\n    <div class=\"col-md-4\">\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \n            <h2 class=\"pb-3\">Gold</h2>\n            <h1 class=\"price\">$250/<span>12 Months</span></h1>\n            <h4 class=\"pt-3 pb-3\">Save Upto 50%</h4>\n            \n            <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit)\">Edit</button>\n        </div>\n    </div> -->\n<p *ngIf=\"totalUser==0\">Data not found!</p>\n</div>\n<mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\n</div>\n</div>\n\n<ng-template #item let-modal>\n    <div class=\"modal-body\">\n        <form [formGroup]=\"userForm\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"form-group\">\n                    <label> Plan Name</label>\n                    <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\n                        Please enter the plan name!\n                    </mat-error>\n                    <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                        First name should alphabetic!\n                    </mat-error> -->\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\n                        Maxlength should 15!\n                    </mat-error> \n                </div>\n                <div class=\"row\" formGroupName=\"price\">\n<div class=\"col-md-6\">\n    <div class=\"form-group\">\n        <label> Price</label>\n        <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\n            Please enter the price!\n        </mat-error>\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\n            Maxlength should 10!\n        </mat-error> \n    </div>\n</div>\n<div class=\"col-md-6\">\n    <div class=\"form-group\">\n        <label> Price unit</label>\n        <input type=\"text\" list=\"brow\"\n         placeholder=\"eg:- $ or ₹\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\">\n         <datalist id=\"brow\">\n            <option [value]=\"code?.symbol\" *ngFor=\"let code of currencyArray\">\n            \n           </datalist>\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\n            Please enter the price unit!\n        </mat-error>\n        \n    </div>\n</div>\n </div>\n<div class=\"form-group\">\n                    <label> Months</label>\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\n                        Please enter the months!\n                    </mat-error>\n                    \n                    <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')\">\n                        Maxlength should 2!\n                    </mat-error>  -->\n                </div>\n                <div class=\"form-group\">\n                    <label> Save Upto</label>\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\n                        Please enter the months!\n                    </mat-error>\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\n                        Maxlength should 10!\n                    </mat-error> \n                </div>\n                <button class=\"btn btn-primary\" (click)=\"SavePackage()\">Save</button>\n            </div>\n        </div>\n    </form>\n    </div>\n</ng-template>\n<ng-template #itemedit let-modal>\n    <div class=\"modal-body\">\n        <form [formGroup]=\"userForm\">\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <div class=\"form-group\">\n                        <label> Plan Name</label>\n                        <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\n                            Please enter the plan name!\n                        </mat-error>\n                        <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                            First name should alphabetic!\n                        </mat-error> -->\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\n                            Maxlength should 15!\n                        </mat-error> \n                    </div>\n                    <div class=\"row\" formGroupName=\"price\">\n    <div class=\"col-md-6\">\n        <div class=\"form-group\">\n            <label> Price</label>\n            <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\n                Please enter the price!\n            </mat-error>\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\n                Maxlength should 10!\n            </mat-error> \n        </div>\n    </div>\n    <div class=\"col-md-6\">\n        <div class=\"form-group\">\n            <label> Price unit</label>\n            <input type=\"text\" list=\"brow\" maxlength=\"10\" placeholder=\"eg:- $ or ₹\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\">\n            <datalist id=\"brow\">\n                <option [value]=\"code?.symbol\" *ngFor=\"let code of currencyArray\">\n                \n               </datalist>\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\n                Please enter the price unit!\n            </mat-error>\n            \n        </div>\n    </div>\n     </div>\n    <div class=\"form-group\">\n                        <label> Months</label>\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\n                            Please enter the months!\n                        </mat-error>\n                        \n                        <!-- <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')\">\n                            Maxlength should 2!\n                        </mat-error>  -->\n                    </div>\n                    <div class=\"form-group\">\n                        <label> Save Upto</label>\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\n                            Please enter the months!\n                        </mat-error>\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\n                            Maxlength should 10!\n                        </mat-error> \n                    </div>\n                    <button class=\"btn btn-primary\" (click)=\"updatePackage()\">Update</button>\n                </div>\n            </div>\n        </form>\n    </div>\n</ng-template>\n<ng-template #userDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you want to delete this package?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n            (click)=\"deletePackage()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n<!-- <ng-template #userDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you ure want to delete this package?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n                (click)=\"deletePackage()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template> -->";
       /***/
     },
 
@@ -26903,15 +26903,15 @@
           this.IsFormEmpty = true;
           this.submitted = false;
           this.addedCredit = false;
+          this.pageSize = 10;
+          this.pageIndex = 1;
+          this.IsAnotherRowAdded = false;
         }
 
         _createClass(CalculatorComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
             this.getPackages();
-            this.FormMatrix = this.fb.group({
-              pricing: this.fb.array([])
-            });
           }
         }, {
           key: "createRow",
@@ -26941,18 +26941,19 @@
             }
           }
         }, {
-          key: "SavePackage",
-          value: function SavePackage() {
+          key: "AddSingleRow",
+          value: function AddSingleRow(creditRate, creditLimit) {
             var _this97 = this;
 
-            console.log('Form', this.FormMatrix.value);
-            var obj = {};
-            this.submitted = true;
             var url = "credits";
+            this.submitted = true;
+            var obj = [{
+              "creditLimit": creditLimit,
+              "creditRate": creditRate
+            }];
 
             if (this.FormMatrix.valid) {
-              this.addedCredit = true;
-              this.service.postApi(url, this.FormMatrix.controls['pricing'].value).subscribe(function (res) {
+              this.service.postApi(url, obj).subscribe(function (res) {
                 if (res.statusCode == 200) {
                   _this97.submitted = false;
 
@@ -26968,6 +26969,34 @@
             }
           }
         }, {
+          key: "SavePackage",
+          value: function SavePackage() {
+            var _this98 = this;
+
+            this.FormMatrix.controls['pricing'].value.forEach(function (v) {
+              return delete v._id;
+            });
+            this.submitted = true;
+            var url = "credits";
+
+            if (this.FormMatrix.valid) {
+              this.addedCredit = true;
+              this.service.postApi(url, this.FormMatrix.controls['pricing'].value).subscribe(function (res) {
+                if (res.statusCode == 200) {
+                  _this98.submitted = false;
+
+                  _this98.getPackages();
+
+                  _this98.toastr.success(res.message, '', {
+                    timeOut: 700
+                  });
+                } else {
+                  _this98.toastr.error(res.message);
+                }
+              });
+            }
+          }
+        }, {
           key: "toggleEdit",
           value: function toggleEdit() {
             this.addedCredit = false;
@@ -26975,20 +27004,31 @@
         }, {
           key: "getPackages",
           value: function getPackages() {
-            var _this98 = this;
+            var _this99 = this;
 
-            var url = "credits";
+            var url = "credits?page=".concat(this.pageIndex, "&count=").concat(this.pageSize);
             this.service.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
                 console.log('Credit get', res);
-                _this98.packages = res.data.doc;
+                _this99.packages = res.data.doc;
+                _this99.totalUser = res.data.itemCount;
 
-                if (res.data.doc.length > 0) {
-                  _this98.addedCredit = true;
-                  _this98.IsFormEmpty = false;
+                if (res.data.itemCount != 0) {
+                  _this99.FormMatrix = _this99.fb.group({
+                    pricing: _this99.fb.array([])
+                  });
+                } else if (res.data.itemCount == 0) {
+                  _this99.FormMatrix = _this99.fb.group({
+                    pricing: _this99.fb.array([_this99.createRow()])
+                  });
                 }
 
-                var control = _this98.FormMatrix.controls.pricing;
+                if (res.data.doc.length > 0) {
+                  _this99.addedCredit = true;
+                  _this99.IsFormEmpty = false;
+                }
+
+                var control = _this99.FormMatrix.controls.pricing;
 
                 var _iterator13 = _createForOfIteratorHelper(res.data.doc),
                     _step13;
@@ -26996,7 +27036,7 @@
                 try {
                   for (_iterator13.s(); !(_step13 = _iterator13.n()).done;) {
                     var x = _step13.value;
-                    control.push(_this98.fb.group({
+                    control.push(_this99.fb.group({
                       creditLimit: x.creditLimit,
                       creditRate: x.creditRate,
                       _id: x._id
@@ -27008,14 +27048,14 @@
                   _iterator13.f();
                 }
               } else {
-                _this98.toastr.error(res["message"]);
+                _this99.toastr.error(res["message"]);
               }
             });
           }
         }, {
           key: "UpdatePackage",
           value: function UpdatePackage(id, rate, limit) {
-            var _this99 = this;
+            var _this100 = this;
 
             var obj = {
               "creditLimit": limit,
@@ -27028,36 +27068,52 @@
               this.addedCredit = true;
               this.service.putApi(url, obj).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this99.submitted = false;
+                  _this100.submitted = false;
 
-                  _this99.getPackages();
+                  _this100.getPackages();
 
-                  _this99.toastr.success(res.message, '', {
+                  _this100.toastr.success(res.message, '', {
                     timeOut: 700
                   });
                 } else {
-                  _this99.toastr.error(res.message);
+                  _this100.toastr.error(res.message);
                 }
               });
             }
           }
         }, {
+          key: "pageChange",
+          value: function pageChange(event) {
+            console.log('ev page', event);
+            this.pageSize = event.pageSize;
+
+            if (event.pageIndex == 0) {
+              this.pageIndex = 1;
+            } else {
+              this.pageIndex = event.pageIndex;
+            }
+
+            this.getPackages();
+          }
+        }, {
           key: "DeleteCard",
           value: function DeleteCard(id) {
-            var _this100 = this;
+            var _this101 = this;
 
             var url = "credits/".concat(id);
             this.service.deleteApi(url).subscribe(function (res) {
               if (res.statusCode == 200) {
-                _this100.getPackages();
+                _this101.getPackages();
 
-                _this100.submitted = false;
+                _this101.submitted = false;
 
-                _this100.toastr.success(res.message, '', {
-                  timeOut: 700
+                _this101.toastr.success(res.message, '', {
+                  timeOut: 300
                 });
               } else {
-                _this100.toastr.error(res.message);
+                _this101.toastr.error(res.message, '', {
+                  timeOut: 400
+                });
               }
             });
           }
@@ -27269,14 +27325,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this101 = this;
+            var _this102 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this101.closeResult = "Closed with: ".concat(result);
+              _this102.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this101.closeResult = "Dismissed ".concat(_this101.getDismissReason(reason));
+              _this102.closeResult = "Dismissed ".concat(_this102.getDismissReason(reason));
             });
           }
         }, {
@@ -27539,14 +27595,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this102 = this;
+            var _this103 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this102.closeResult = "Closed with: ".concat(result);
+              _this103.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this102.closeResult = "Dismissed ".concat(_this102.getDismissReason(reason));
+              _this103.closeResult = "Dismissed ".concat(_this103.getDismissReason(reason));
             });
           }
         }, {
@@ -29042,14 +29098,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this103 = this;
+            var _this104 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this103.closeResult = "Closed with: ".concat(result);
+              _this104.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this103.closeResult = "Dismissed ".concat(_this103.getDismissReason(reason));
+              _this104.closeResult = "Dismissed ".concat(_this104.getDismissReason(reason));
             });
           }
         }, {
@@ -30065,7 +30121,7 @@
 
       var PackagesComponent = /*#__PURE__*/function () {
         function PackagesComponent(toastr, modalService, fb, service, toast) {
-          var _this104 = this;
+          var _this105 = this;
 
           _classCallCheck(this, PackagesComponent);
 
@@ -30088,8 +30144,7 @@
           });
           this.service.getCurrency().subscribe(function (res) {
             console.log('Currency Res', res);
-            _this104.currencyArray = res.currencyUnitArray;
-            _this104.currencySymbol = res['INR'].symbol;
+            _this105.currencyArray = res.currencyUnitArray;
           });
         }
 
@@ -30137,7 +30192,7 @@
         }, {
           key: "SavePackage",
           value: function SavePackage() {
-            var _this105 = this;
+            var _this106 = this;
 
             console.log('Form', this.userForm.value.pric);
             var obj = {
@@ -30152,17 +30207,17 @@
             if (this.userForm.valid) {
               this.service.postApi(url, obj).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this105.getPackages();
+                  _this106.getPackages();
 
-                  _this105.submitted = false;
+                  _this106.submitted = false;
 
-                  _this105.toast.success(res.message);
+                  _this106.toast.success(res.message);
 
-                  _this105.modalService.dismissAll();
+                  _this106.modalService.dismissAll();
 
-                  _this105.userForm.reset();
+                  _this106.userForm.reset();
                 } else {
-                  _this105.toast.error(res.message);
+                  _this106.toast.error(res.message);
                 }
               });
             }
@@ -30184,25 +30239,25 @@
         }, {
           key: "getPackages",
           value: function getPackages() {
-            var _this106 = this;
+            var _this107 = this;
 
             var url = "packages?page=".concat(this.pageIndex, "&count=").concat(this.pageSize);
             this.service.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
-                _this106.packages = res.data.doc;
-                _this106.totalUser = res.data.itemCount;
-                console.log('Total pack', _this106.totalUser, res);
+                _this107.packages = res.data.doc;
+                _this107.totalUser = res.data.itemCount;
+                console.log('Total pack', _this107.totalUser, res);
               } else {
-                _this106.toastr.error(res["message"]);
+                _this107.toastr.error(res["message"]);
 
-                _this106.totalUser = 0;
+                _this107.totalUser = 0;
               }
             });
           }
         }, {
           key: "updatePackage",
           value: function updatePackage() {
-            var _this107 = this;
+            var _this108 = this;
 
             console.log('Form', this.userForm.value.pric);
             var obj = {
@@ -30217,15 +30272,15 @@
             if (this.userForm.valid) {
               this.service.putApi(url, obj).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this107.getPackages();
+                  _this108.getPackages();
 
-                  _this107.submitted = false;
+                  _this108.submitted = false;
 
-                  _this107.toast.success('Package data updated successfully.');
+                  _this108.toast.success('Package data updated successfully.');
 
-                  _this107.modalService.dismissAll();
+                  _this108.modalService.dismissAll();
                 } else {
-                  _this107.toast.error(res.message);
+                  _this108.toast.error(res.message);
                 }
               });
             }
@@ -30233,18 +30288,18 @@
         }, {
           key: "deletePackage",
           value: function deletePackage() {
-            var _this108 = this;
+            var _this109 = this;
 
             var url = "packages/".concat(this.id);
             this.service.deleteApi(url).subscribe(function (res) {
               if (res.statusCode == 200) {
-                _this108.toastr.success(res.message);
+                _this109.toastr.success(res.message);
 
-                _this108.modalService.dismissAll();
+                _this109.modalService.dismissAll();
 
-                _this108.getPackages();
+                _this109.getPackages();
               } else {
-                _this108.toastr.error(res.message);
+                _this109.toastr.error(res.message);
               }
             });
           }
@@ -32251,7 +32306,7 @@
 
       var ProfileComponent = /*#__PURE__*/function () {
         function ProfileComponent(fb, api, router, toastr, spinner) {
-          var _this109 = this;
+          var _this110 = this;
 
           _classCallCheck(this, ProfileComponent);
 
@@ -32264,9 +32319,9 @@
 
           this.setValues = function (data) {
             if (data) {
-              data.image && (_this109.userImage = data.image);
+              data.image && (_this110.userImage = data.image);
 
-              _this109.userForm.patchValue({
+              _this110.userForm.patchValue({
                 fullName: data.fullName,
                 // countryCode: data.countryCode,
                 // password: data.password,
@@ -32275,7 +32330,7 @@
               });
 
               if (data.image) {
-                _this109.userImage = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].imagesUrl + data.image;
+                _this110.userImage = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].imagesUrl + data.image;
               }
             }
           }; // this.id = JSON.parse(localStorage.getItem("id"));
@@ -32296,26 +32351,26 @@
         }, {
           key: "getProfile",
           value: function getProfile() {
-            var _this110 = this;
+            var _this111 = this;
 
             this.spinner.show();
             this.api.getProfile().subscribe(function (res) {
               if (res['statusCode'] === 200) {
-                _this110.userDetail = res["data"];
+                _this111.userDetail = res["data"];
 
-                _this110.setValues(_this110.userDetail);
+                _this111.setValues(_this111.userDetail);
               } else {
-                _this110.toastr.error(res["message"]);
+                _this111.toastr.error(res["message"]);
               }
             }, function (error) {
-              _this110.spinner.hide();
+              _this111.spinner.hide();
             });
           }
         }, {
           key: "profilePic",
           value: function profilePic(event) {
             return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-              var _this111 = this;
+              var _this112 = this;
 
               var reader;
               return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -32329,7 +32384,7 @@
                         reader.readAsDataURL(event.target.files[0]);
 
                         reader.onload = function (event) {
-                          _this111.userImage = event.target.result;
+                          _this112.userImage = event.target.result;
                         };
                       }
 
@@ -32344,7 +32399,7 @@
         }, {
           key: "update",
           value: function update() {
-            var _this112 = this;
+            var _this113 = this;
 
             this.submitted = true;
 
@@ -32358,22 +32413,22 @@
               this.spinner.show();
               this.api.updateProfile(formData).subscribe(function (res) {
                 if (res['statusCode'] === 200) {
-                  _this112.router.navigate(['dashboard']);
+                  _this113.router.navigate(['dashboard']);
 
-                  _this112.api.onUpdateUser.next("new data");
+                  _this113.api.onUpdateUser.next("new data");
 
-                  _this112.toastr.success(res["message"], '', {
+                  _this113.toastr.success(res["message"], '', {
                     timeOut: 900
                   });
 
-                  _this112.getProfile();
+                  _this113.getProfile();
                 } else {
-                  _this112.toastr.error(res["message"], '', {
+                  _this113.toastr.error(res["message"], '', {
                     timeOut: 900
                   });
                 }
               }, function (error) {
-                _this112.spinner.hide();
+                _this113.spinner.hide();
               });
             }
           }
@@ -32525,14 +32580,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this113 = this;
+            var _this114 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this113.closeResult = "Closed with: ".concat(result);
+              _this114.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this113.closeResult = "Dismissed ".concat(_this113.getDismissReason(reason));
+              _this114.closeResult = "Dismissed ".concat(_this114.getDismissReason(reason));
             });
           }
         }, {
@@ -32616,41 +32671,41 @@
         }, {
           key: "applyFilter",
           value: function applyFilter(event) {
-            var _this114 = this;
+            var _this115 = this;
 
             console.log('apply fil call', event.target.value);
             window.clearTimeout(this.timer);
             this.timer = window.setTimeout(function () {
               var filterValue = event.target.value;
-              _this114.searchBy = filterValue;
-              _this114.pageIndex = 1;
+              _this115.searchBy = filterValue;
+              _this115.pageIndex = 1;
 
-              _this114.getUsers();
+              _this115.getUsers();
             }, 1000);
           }
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this115 = this;
+            var _this116 = this;
 
             var url = "giftCards?count=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : '') + (this.status ? '&status=' + this.status : ''));
             this.service.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
                 console.log('FGift', res);
-                _this115.giftList = res.data.doc;
-                _this115.totalUser = res.data.itemCount;
-                console.log('Total user', _this115.totalUser, res);
+                _this116.giftList = res.data.doc;
+                _this116.totalUser = res.data.itemCount;
+                console.log('Total user', _this116.totalUser, res);
               } else {
-                _this115.toast.error(res["message"]);
+                _this116.toast.error(res["message"]);
 
-                _this115.totalUser = 0;
+                _this116.totalUser = 0;
               }
             });
           }
         }, {
           key: "addCard",
           value: function addCard() {
-            var _this116 = this;
+            var _this117 = this;
 
             this.submitted = true;
             var url = "giftCards";
@@ -32658,17 +32713,17 @@
             if (this.giftForm.valid && this.giftForm.controls['cost'].value.toString().length != 11 && this.giftForm.controls['cardsBought'].value.toString().length != 6) {
               this.service.postApi(url, this.giftForm.value).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this116.getUsers();
+                  _this117.getUsers();
 
-                  _this116.submitted = false;
+                  _this117.submitted = false;
 
-                  _this116.toast.success('Gift card added successfully');
+                  _this117.toast.success('Gift card added successfully');
 
-                  _this116.modalService.dismissAll();
+                  _this117.modalService.dismissAll();
 
-                  _this116.giftForm.reset();
+                  _this117.giftForm.reset();
                 } else {
-                  _this116.toast.error(res.message);
+                  _this117.toast.error(res.message);
                 }
               });
             }
@@ -32690,7 +32745,7 @@
         }, {
           key: "UpdateCard",
           value: function UpdateCard() {
-            var _this117 = this;
+            var _this118 = this;
 
             this.submitted = true;
             var url = "giftCards/".concat(this.gitfId);
@@ -32698,17 +32753,17 @@
             if (this.giftForm.valid && this.giftForm.controls['cost'].value.toString().length != 11 && this.giftForm.controls['cardsBought'].value.toString().length != 6) {
               this.service.putApi(url, this.giftForm.value).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this117.getUsers();
+                  _this118.getUsers();
 
-                  _this117.submitted = false;
+                  _this118.submitted = false;
 
-                  _this117.toast.success('Gift card updated successfully');
+                  _this118.toast.success('Gift card updated successfully');
 
-                  _this117.modalService.dismissAll();
+                  _this118.modalService.dismissAll();
 
-                  _this117.giftForm.reset();
+                  _this118.giftForm.reset();
                 } else {
-                  _this117.toast.error(res.message);
+                  _this118.toast.error(res.message);
                 }
               });
             }
@@ -32716,20 +32771,20 @@
         }, {
           key: "DeleteCard",
           value: function DeleteCard() {
-            var _this118 = this;
+            var _this119 = this;
 
             var url = "giftCards/".concat(this.gitfId);
             this.service.deleteApi(url).subscribe(function (res) {
               if (res.statusCode == 200) {
-                _this118.getUsers();
+                _this119.getUsers();
 
-                _this118.submitted = false;
+                _this119.submitted = false;
 
-                _this118.toast.success('Gift card deleted successfully');
+                _this119.toast.success('Gift card deleted successfully');
 
-                _this118.modalService.dismissAll();
+                _this119.modalService.dismissAll();
               } else {
-                _this118.toast.error(res.message);
+                _this119.toast.error(res.message);
               }
             });
           }
@@ -33746,17 +33801,17 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this119 = this;
+            var _this120 = this;
 
             var url = "reviews?count=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : ''));
             this.api.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
-                _this119.totalUser = res.data.itemCount;
-                console.log('Total rev', _this119.totalUser, res);
+                _this120.totalUser = res.data.itemCount;
+                console.log('Total rev', _this120.totalUser, res);
               } else {
-                _this119.toastr.error(res["message"]);
+                _this120.toastr.error(res["message"]);
 
-                _this119.totalUser = 0;
+                _this120.totalUser = 0;
               }
             });
           }
@@ -34437,14 +34492,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this120 = this;
+            var _this121 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this120.closeResult = "Closed with: ".concat(result);
+              _this121.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this120.closeResult = "Dismissed ".concat(_this120.getDismissReason(reason));
+              _this121.closeResult = "Dismissed ".concat(_this121.getDismissReason(reason));
             });
           }
         }, {
@@ -35164,7 +35219,7 @@
 
       var UsersDetailComponent = /*#__PURE__*/function () {
         function UsersDetailComponent(modalService, fb, api, router, route, toastr) {
-          var _this121 = this;
+          var _this122 = this;
 
           _classCallCheck(this, UsersDetailComponent);
 
@@ -35181,7 +35236,7 @@
 
           this.setValues = function (data) {
             if (data) {
-              data.image && (_this121.imageUrl = data.image); // this.userForm.patchValue({
+              data.image && (_this122.imageUrl = data.image); // this.userForm.patchValue({
               // 	fullName: data.fullName,
               // 	countryCode: data.countryCode,
               // 	password: data.password,
@@ -35190,7 +35245,7 @@
               // });
 
               if (data.image) {
-                _this121.imageUrl;
+                _this122.imageUrl;
               }
             }
           };
@@ -35239,10 +35294,10 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this122 = this;
+            var _this123 = this;
 
             this.route.params.subscribe(function (params) {
-              _this122.id = params["id"]; // this.getOutlettById(this.id);
+              _this123.id = params["id"]; // this.getOutlettById(this.id);
             });
             console.log("id: ", this.id);
             this.imageUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].imagesUrl;
@@ -35251,21 +35306,21 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this123 = this;
+            var _this124 = this;
 
             this.api.users().subscribe(function (res) {
               if (res['statusCode'] === 200) {
-                _this123.getAllUsers = res["data"]["data"];
-                console.log("getAllUsers: ", _this123.getAllUsers);
-                _this123.user = _this123.getAllUsers.find(function (x) {
-                  return x._id === _this123.id;
+                _this124.getAllUsers = res["data"]["data"];
+                console.log("getAllUsers: ", _this124.getAllUsers);
+                _this124.user = _this124.getAllUsers.find(function (x) {
+                  return x._id === _this124.id;
                 });
 
-                _this123.setValues(_this123.user);
+                _this124.setValues(_this124.user);
 
-                console.log("user obj: ", _this123.user);
+                console.log("user obj: ", _this124.user);
               } else {
-                _this123.toastr.error(res["message"]);
+                _this124.toastr.error(res["message"]);
               }
             });
           }
@@ -35481,7 +35536,7 @@
 
       var UsersComponent = /*#__PURE__*/function () {
         function UsersComponent(modalService, fb, formBuilder, api, router, toastr, spinner, comm) {
-          var _this124 = this;
+          var _this125 = this;
 
           _classCallCheck(this, UsersComponent);
 
@@ -35504,7 +35559,7 @@
 
           this.setValues = function (data) {
             if (data) {
-              _this124.userForm.patchValue({
+              _this125.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35523,7 +35578,7 @@
 
 
               if (data.image) {
-                _this124.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this125.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
             }
           };
@@ -35601,21 +35656,21 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this125 = this;
+            var _this126 = this;
 
             var url = "users?limit=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : '') + (this.IsJective ? '&isBlock=' + this.IsJective : ''));
             this.api.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
-                _this125.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res.data.data);
-                _this125.exportLink = res.data.exportLink;
-                _this125.dataSource.paginator = _this125.paginator;
-                _this125.dataSource.sort = _this125.sort;
-                _this125.totalUser = res.data.itemCount;
-                console.log('Total user', _this125.totalUser, res);
+                _this126.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res.data.data);
+                _this126.exportLink = res.data.exportLink;
+                _this126.dataSource.paginator = _this126.paginator;
+                _this126.dataSource.sort = _this126.sort;
+                _this126.totalUser = res.data.itemCount;
+                console.log('Total user', _this126.totalUser, res);
               } else {
-                _this125.toastr.error(res["message"]);
+                _this126.toastr.error(res["message"]);
 
-                _this125.totalUser = 0;
+                _this126.totalUser = 0;
               }
             });
           }
@@ -35635,7 +35690,7 @@
         }, {
           key: "userEditModal",
           value: function userEditModal(userEdit, data) {
-            var _this126 = this;
+            var _this127 = this;
 
             this.isActive = data.isActive;
             this.objId = data._id;
@@ -35655,9 +35710,9 @@
               centered: true,
               size: 'lg'
             }).result.then(function (result) {
-              _this126.closeResult = "Closed with: ".concat(result);
+              _this127.closeResult = "Closed with: ".concat(result);
 
-              _this126.userForm.patchValue({
+              _this127.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35670,28 +35725,28 @@
               });
 
               if (data.image) {
-                _this126.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this127.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
 
               if (result) {
-                var data = _this126.userForm.value;
+                var data = _this127.userForm.value;
                 data['id'] = data._id;
                 var formData = new FormData();
                 formData.append("data", JSON.stringify(data));
-                formData.append("pic", _this126.File);
+                formData.append("pic", _this127.File);
 
-                _this126.api.updateUser(data).subscribe(function (response) {
+                _this127.api.updateUser(data).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this126.toastr.success(response['message']);
+                    _this127.toastr.success(response['message']);
 
-                    _this126.getUsers();
+                    _this127.getUsers();
                   } else {
-                    _this126.toastr.error(response['message']);
+                    _this127.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this126.closeResult = "Dismissed ".concat(_this126.getDismissReason(reason));
+              _this127.closeResult = "Dismissed ".concat(_this127.getDismissReason(reason));
             });
           }
         }, {
@@ -35704,7 +35759,7 @@
         }, {
           key: "blockUsers",
           value: function blockUsers(item, status) {
-            var _this127 = this;
+            var _this128 = this;
 
             console.log("item: ", item);
 
@@ -35720,16 +35775,16 @@
             };
             this.api.blockUsers(item._id, data).subscribe(function (response) {
               if (response['statusCode'] === 200) {
-                _this127.getUsers();
+                _this128.getUsers();
               } else {
-                _this127.toastr.error(response['message']);
+                _this128.toastr.error(response['message']);
               }
             });
           }
         }, {
           key: "deleteUser",
           value: function deleteUser(userModal, list) {
-            var _this128 = this;
+            var _this129 = this;
 
             // const message = 'Are you sure you want to delete ' + list.firstName + ' ' + list.lastName + ' ?';
             this.modalService.open(userModal, {
@@ -35737,25 +35792,25 @@
               centered: true,
               size: 'sm'
             }).result.then(function (result) {
-              _this128.closeResult = "Closed with: ".concat(result);
+              _this129.closeResult = "Closed with: ".concat(result);
 
               if (result) {
                 var data = {
                   id: list._id
                 };
 
-                _this128.api.deleteUser(list._id).subscribe(function (response) {
+                _this129.api.deleteUser(list._id).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this128.toastr.success(response['message']);
+                    _this129.toastr.success(response['message']);
 
-                    _this128.getUsers();
+                    _this129.getUsers();
                   } else {
-                    _this128.toastr.error(response['message']);
+                    _this129.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this128.closeResult = "Dismissed ".concat(_this128.getDismissReason(reason));
+              _this129.closeResult = "Dismissed ".concat(_this129.getDismissReason(reason));
             });
           }
         }, {
@@ -35775,29 +35830,29 @@
         }, {
           key: "applyFilter",
           value: function applyFilter(event) {
-            var _this129 = this;
+            var _this130 = this;
 
             window.clearTimeout(this.timer);
             this.timer = window.setTimeout(function () {
               var filterValue = event.target.value;
-              _this129.searchBy = filterValue;
-              _this129.pageIndex = 1;
+              _this130.searchBy = filterValue;
+              _this130.pageIndex = 1;
 
-              _this129.getUsers();
+              _this130.getUsers();
             }, 1000);
           } // This is for the first modal
 
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this130 = this;
+            var _this131 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this130.closeResult = "Closed with: ".concat(result);
+              _this131.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this130.closeResult = "Dismissed ".concat(_this130.getDismissReason(reason));
+              _this131.closeResult = "Dismissed ".concat(_this131.getDismissReason(reason));
             });
           }
         }, {
@@ -35861,7 +35916,7 @@
         }, {
           key: "sendFile",
           value: function sendFile(fileData) {
-            var _this131 = this;
+            var _this132 = this;
 
             var url = "uploadFile";
             var formdata = new FormData();
@@ -35870,12 +35925,12 @@
               console.log(res.data);
 
               if (res.statusCode == 200) {
-                _this131.toastr.success('File updated successfully');
+                _this132.toastr.success('File updated successfully');
 
                 console.log("upload data res=>>", res.data);
-                _this131.files = res.data.filePath;
+                _this132.files = res.data.filePath;
               } else {
-                _this131.toastr.error(res.message);
+                _this132.toastr.error(res.message);
               }
             });
           }
@@ -35896,7 +35951,7 @@
         }, {
           key: "UpadteUser",
           value: function UpadteUser() {
-            var _this132 = this;
+            var _this133 = this;
 
             this.submitted = true;
             var url = "users/".concat(this.objId);
@@ -35916,15 +35971,15 @@
             if (this.userForm.valid) {
               this.api.putApi(url, obj).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this132.submitted = false;
+                  _this133.submitted = false;
 
-                  _this132.toastr.success(res.message);
+                  _this133.toastr.success(res.message);
 
-                  _this132.getUsers();
+                  _this133.getUsers();
 
-                  _this132.modalService.dismissAll();
+                  _this133.modalService.dismissAll();
                 } else {
-                  _this132.toastr.error(res.message);
+                  _this133.toastr.error(res.message);
                 }
               });
             }
@@ -36909,14 +36964,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this133 = this;
+            var _this134 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this133.closeResult = "Closed with: ".concat(result);
+              _this134.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this133.closeResult = "Dismissed ".concat(_this133.getDismissReason(reason));
+              _this134.closeResult = "Dismissed ".concat(_this134.getDismissReason(reason));
             });
           }
         }, {

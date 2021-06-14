@@ -16,13 +16,14 @@ export class CalculatorComponent implements OnInit {
   addedCredit:boolean = false
   packages: any;
   id: any;
+  totalUser:number;
+  pageSize: any= 10;
+  pageIndex :any= 1;
+  IsAnotherRowAdded:boolean = false
   constructor(private fb:FormBuilder,private toastr:ToastrService,private service:ApiService) { }
 
   ngOnInit(): void {
     this.getPackages()
-    this.FormMatrix = this.fb.group({
-      pricing: this.fb.array([])
-    })
   }
   createRow() {
     return this.fb.group({
@@ -44,12 +45,27 @@ export class CalculatorComponent implements OnInit {
       this.pricing.removeAt(index);
     }
   }
+  AddSingleRow(creditRate,creditLimit){
+    let url = `credits`
+  this.submitted = true
+    let obj = [{
+      "creditLimit" : creditLimit,
+      "creditRate" : creditRate
+  }]
+  if(this.FormMatrix.valid){
+    this.service.postApi(url,obj).subscribe((res:any)=>{
+      if(res.statusCode==200){
+        this.submitted = false
+        this.getPackages()
+        this.toastr.success(res.message,'', {
+          timeOut: 700,})
+      }else{
+        this.toastr.error(res.message)
+      }
+})}}
   SavePackage()
   {
-    
-    console.log('Form',this.FormMatrix.value);
-    let obj = {
-  }
+  this.FormMatrix.controls['pricing'].value.forEach(v => delete v._id)
     this.submitted = true
     let url = `credits`
     if(this.FormMatrix.valid){
@@ -70,11 +86,21 @@ export class CalculatorComponent implements OnInit {
     this.addedCredit = false
   }
   getPackages() {
-		let url = `credits`
+		let url = `credits?page=${this.pageIndex}&count=${this.pageSize}`
 		this.service.getApi(url).subscribe((res:any) => {
 			if (res.statusCode === 200) {
         console.log('Credit get',res);
         this.packages = res.data.doc
+        this.totalUser = res.data.itemCount
+        if(res.data.itemCount != 0){
+          this.FormMatrix = this.fb.group({
+            pricing: this.fb.array([])
+          })
+        }else if(res.data.itemCount ==0){
+          this.FormMatrix = this.fb.group({
+            pricing: this.fb.array([this.createRow()])
+          })
+        }
         if(res.data.doc.length>0){
           this.addedCredit = true
           this.IsFormEmpty = false
@@ -115,17 +141,27 @@ export class CalculatorComponent implements OnInit {
       })
     }
   }
+  pageChange(event) {
+    console.log('ev page',event);
+    this.pageSize=event.pageSize;
+    if(event.pageIndex==0){
+      this.pageIndex = 1
+    }else{
+      this.pageIndex=event.pageIndex;
+    }
+     this.getPackages()
+    }
   DeleteCard(id){
-  
-    let url = `credits/${id}`
+   let url = `credits/${id}`
      this.service.deleteApi(url).subscribe((res:any)=>{
       if(res.statusCode==200){
         this.getPackages()
         this.submitted = false
         this.toastr.success(res.message,'', {
-          timeOut: 700,})
+          timeOut: 300,})
       }else{
-        this.toastr.error(res.message)
+        this.toastr.error(res.message,'', {
+          timeOut: 400,})
       }
       })
     

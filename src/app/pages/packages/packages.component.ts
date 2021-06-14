@@ -20,7 +20,7 @@ pageIndex :any= 1;
   objId: any;
   id: any;
   currencyArray: any;
-  currencySymbol: any;
+  
   
   constructor(private toastr:ToastrService,private modalService: NgbModal,private fb:FormBuilder,public service:ApiService,private toast:ToastrService) {
     this.service.getCurrency().subscribe((res:any)=>
@@ -28,7 +28,7 @@ pageIndex :any= 1;
       console.log('Currency Res',res);
       
       this.currencyArray = res.currencyUnitArray
-      this.currencySymbol = res['INR'].symbol
+      
     })
   }
   userForm = this.fb.group({
