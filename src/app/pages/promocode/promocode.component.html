@@ -80,7 +80,7 @@
             <p *ngIf="totalUser==0">Data not found!</p>   
           </div>
          
-          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalUser" (page)="pageChange($event)"></mat-paginator>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalUser" [pageSize]="pageSize" (page)="pageChange($event)"></mat-paginator>
         </div>
       </div>
       <!-- Column -->
