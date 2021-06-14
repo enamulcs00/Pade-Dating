@@ -14,7 +14,7 @@ import { ApiService } from 'src/app/shared/services/api.service';
 export class PackagesComponent implements OnInit {
 submitted:boolean = false
 totalUser: number;
-pageSize: any= 6;
+pageSize: any= 10;
 pageIndex :any= 1;
   packages: any;
   objId: any;

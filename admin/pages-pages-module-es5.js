@@ -25340,7 +25340,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <form>\n                            <div class=\"mb-2\">\n                                <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                            </div>\n                        </form>\n                    </div>\n                    <div class=\"col-md-8 text-right\">\n                        <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addreviewModal(addreview)\"><i class=\"sl-icon-plus\"></i> Add\n        User</button> -->\n                    </div>\n                    <div class=\"table-responsi\">\n                        <table class=\"table v-middle product-overview\" id=\"zero_config\">\n                            <thead>\n                                <tr>\n                                    <th>Photo</th>\n                                    <th>Name</th>\n                                    <th>Email Id</th>\n                                    <th>Rating</th>\n                                    <th>Review</th>\n                                    <!-- <th class=\"text-nowrap\">To Service Provider</th> -->\n                                    <th>Action</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor=\"let item of Reviews\">\n                                    <td>\n                                        <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                    </td>\n                                    <td>Ronny </td>\n                                    <td>Hannagover@gmail.com </td>\n                                    <td>\n                                        <ngb-rating class=\"text-warning\" [max]=\"item?.rating\" style=\"font-size: xx-large;\" [rate]=\"item?.rating\" [readonly]=\"true\"></ngb-rating>\n                                        <!-- <p class=\"text-warning mb-0 text-nowrap\"> <i class=\"fas fa-star \"> </i> <i class=\"fas fa-star\"> </i>\n                                            <i class=\"fas fa-star\"> </i> <i class=\"fas fa-star\"> </i> </p> -->\n                                    </td>\n                                    <td>{{item?.review  | slice:0:20 }}... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review,item?.review)\">Read More</a></td>\n                                    <!-- <td> James </td> -->\n                                    <td>\n                                        <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                        <mat-paginator [length]=\"100\" [pageSize]=\"pageSize\" [pageSizeOptions]=\"[5, 10, 25, 100]\">\n                        </mat-paginator>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  \n    <!-- Column -->\n</div>\n\n<!-- view modal -->\n<ng-template #review let-modal>\n    <div class=\"modal-body\">\n        <button type=\"button\" class=\" close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <i class=\"mdi mdi-close\"></i>\n    </button>\n        <div class=\"row\">\n\n            <!-- Column -->\n            <div class=\"col-lg-12 col-xlg-12 col-md-12\">\n                <div class=\"card custom-tabs mb-0\">\n                    <div class=\"card-body\">\n                        <div class=\"row pt-2\">\n                            <div class=\"col-md-12\">\n                                <p>\n                                    {{Review}}\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- Column -->\n        </div>\n    </div>\n</ng-template>\n<!-- add review -->\n<ng-template #addreview let-modal>\n    <div class=\"modal-body\">\n        <div class=\"card\">\n            <form action=\"#\">\n                <div class=\"form-body\">\n                    <div class=\"card-body\">\n                        <div class=\"row p-t-20\">\n                            <div class=\"col-md-12\">\n                                <div class=\"form-group\">\n                                    <label class=\"control-label\">Add Review</label>\n                                    <textarea class=\"form-control\" placeholder=\"Message\" rows=\"10\"></textarea>\n                                </div>\n                            </div>\n                            <!--/span-->\n                        </div>\n                        <!--/row-->\n                    </div>\n                    <div class=\"form-actions\">\n                        <div class=\"card-body\">\n                            <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"modal.dismiss('Cross click')\">\n                <i class=\"fa fa-check\"></i> Submit</button>\n                            <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                        </div>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</ng-template>\n<!-- delete modal -->\n<ng-template #reviewDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you ure want to delete this review ?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <form>\n                            <div class=\"mb-2\">\n                                <input type=\"text\" class=\"form-control\" id=\"prenametext\" (keydown)=\"applyFilter($event)\" placeholder=\"Search\">\n                            </div>\n                        </form>\n                    </div>\n                    <div class=\"col-md-8 text-right\">\n                        <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addreviewModal(addreview)\"><i class=\"sl-icon-plus\"></i> Add\n        User</button> -->\n                    </div>\n                    <div class=\"table-responsi\">\n                        <table class=\"table v-middle product-overview\" id=\"zero_config\">\n                            <thead>\n                                <tr>\n                                    <th>Photo</th>\n                                    <th>Name</th>\n                                    <th>Email Id</th>\n                                    <th>Rating</th>\n                                    <th>Review</th>\n                                    <!-- <th class=\"text-nowrap\">To Service Provider</th> -->\n                                    <th>Action</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor=\"let item of Reviews\">\n                                    <td>\n                                        <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                    </td>\n                                    <td>{{item?.userData.firstName+\" \"+item?.userData.lastName}}</td>\n                                    <td>{{item?.userData.email}}</td>\n                                    <td>\n                                        <ngb-rating class=\"text-warning\" [max]=\"item?.rating\" style=\"font-size: xx-large;\" [rate]=\"item?.rating\" [readonly]=\"true\"></ngb-rating>\n                                        <!-- <p class=\"text-warning mb-0 text-nowrap\"> <i class=\"fas fa-star \"> </i> <i class=\"fas fa-star\"> </i>\n                                            <i class=\"fas fa-star\"> </i> <i class=\"fas fa-star\"> </i> </p> -->\n                                    </td>\n                                    <td>{{item?.review  | slice:0:20 }}... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review,item?.review)\">Read More</a></td>\n                                    <!-- <td> James </td> -->\n                                    <td>\n                                        <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete,item?._id)\"><i class=\"ti-trash\"></i></button>\n                                    </td>\n                                </tr>\n                            </tbody>\n                            \n                        </table>\n                        <p *ngIf=\"!totalUser\">Data not found!</p>\n                        <mat-paginator [length]=\"totalUser\" [pageSize]=\"pageSize\" [pageSizeOptions]=\"[5, 10, 25, 100]\" (page)=\"pageChange($event)\">\n                        </mat-paginator>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  \n    <!-- Column -->\n</div>\n\n<!-- view modal -->\n<ng-template #review let-modal>\n    <div class=\"modal-body\">\n        <button type=\"button\" class=\" close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <i class=\"mdi mdi-close\"></i>\n    </button>\n        <div class=\"row\">\n\n            <!-- Column -->\n            <div class=\"col-lg-12 col-xlg-12 col-md-12\">\n                <div class=\"card custom-tabs mb-0\">\n                    <div class=\"card-body\">\n                        <div class=\"row pt-2\">\n                            <div class=\"col-md-12\">\n                                <p>\n                                    {{Review}}\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- Column -->\n        </div>\n    </div>\n</ng-template>\n<!-- add review -->\n<ng-template #addreview let-modal>\n    <div class=\"modal-body\">\n        <div class=\"card\">\n            <form action=\"#\">\n                <div class=\"form-body\">\n                    <div class=\"card-body\">\n                        <div class=\"row p-t-20\">\n                            <div class=\"col-md-12\">\n                                <div class=\"form-group\">\n                                    <label class=\"control-label\">Add Review</label>\n                                    <textarea class=\"form-control\" placeholder=\"Message\" rows=\"10\"></textarea>\n                                </div>\n                            </div>\n                            <!--/span-->\n                        </div>\n                        <!--/row-->\n                    </div>\n                    <div class=\"form-actions\">\n                        <div class=\"card-body\">\n                            <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"modal.dismiss('Cross click')\">\n                <i class=\"fa fa-check\"></i> Submit</button>\n                            <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                        </div>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</ng-template>\n<!-- delete modal -->\n<ng-template #reviewDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you want to delete this review ?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\" (click)=\"deleteItem()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n";
       /***/
     },
 
@@ -25580,7 +25580,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12\">\n        <div class=\"card\">\n\n            <div class=\"card-body\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <form>\n                            <div class=\"mb-2\">\n                                <input type=\"text\" class=\"form-control\" id=\"prenametext\" (keydown)=\"applyFilter($event)\" placeholder=\"Search\">\n                            </div>\n                        </form>\n                    </div>\n                    <div class=\"col-md-8  d-flex justify-content-end\">\n                        <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\n                            <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                                All\n                            </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\" (click)=\"filterBy('')\">All</button>\n                                <button class=\"dropdown-item\" (click)=\"filterBy('true')\">Blocked</button>\n                                <button class=\"dropdown-item\" (click)=\"filterBy('false')\">Unblocked</button>\n                            </div>\n                        </div>\n                        <button class=\"btn btn-primary mb-2 mr-2\" (click)=\"openLink()\"><i class=\"sl-icon-cloud-download\"></i> Export CSV</button>\n                        <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add User</button> -->\n                    </div>\n                </div>\n                <div class=\"table-responsive\">\n                    <table mat-table class=\" w-100\" [dataSource]=\"dataSource\" matSort>\n\n                        <ng-container matColumnDef=\"name\">\n                            <th mat-header-cell *matHeaderCellDef> Name </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.firstName}} {{row.lastName}}</td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"contact\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Contact </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.phoneNo}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"email\">\n                            <th mat-header-cell *matHeaderCellDef>Email </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.email}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"address\">\n                            <th mat-header-cell *matHeaderCellDef>Address </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.address}} </td>\n                        </ng-container>\n                        \n                        <ng-container matColumnDef=\"username\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Username </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.username}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"dateofbirth\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">DOB </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.dateofbirth}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"gender\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Gender </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.gender}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Status </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <mat-slide-toggle [checked]=\"row.isBlocked === true ? true : false\" (change)=\"blockUsers(row, $event.checked)\">\n                                    {{row.isBlocked === true ? \"Blocked\" :\"Unblocked\"}}\n                                </mat-slide-toggle>\n                            </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"action\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Action </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\n                                    <button class=\"btn btn-outline-primary btn-sm\" id=\"dropdownBasic1\"\n                                        ngbDropdownToggle>\n                                        Action\n                                    </button>\n\n                                    <!-- <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" routerLink=\"/pages/users_detail\"><i class=\"ti-eye\"></i>\n                                            Accept\n                                        </a>\n\n                                        <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Reject</button>\n                                    </div> -->\n\n                                    <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" (click)=\"viewUserDetail(row)\" style=\"cursor: default;\"><i class=\"ti-eye\"></i>\n                                            View\n                                        </a>\n                                        <button class=\"dropdown-item\" (click)=\"userEditModal(userEdit, row)\"><i\n                                                _ngcontent-axh-c146=\"\" class=\"ti-marker-alt\"></i> Edit</button>\n\n                                        <button class=\"dropdown-item\" (click)=\"deleteUser(userDelete, row)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Delete</button>\n                                    </div>\n                                </div>\n                            </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                        <tr class=\"mat-row\" *matNoDataRow>\n                            <td class=\"mat-cell\" colspan=\"9\">Data not found!</td>\n                          </tr>\n                    </table>\n                </div>\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" [pageSize]=\"pageSize\" (page)=\"pageChange($event)\"></mat-paginator>\n            </div>\n        </div>\n    </div>\n\n    <ng-template #content3 let-modal>\n        <div class=\"modal-header p-2\">\n            <h4 class=\"modal-title\">Driving Licence</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div class=\"modal-body\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n            </div>\n        </div>\n    </ng-template>\n\n\n    <!-- delete modal -->\n    <ng-template #userDelete let-modal>\n        <div class=\"modal-body\">\n            <p>Are you want to delete this user?</p>\n            <div class=\"btn-group\">\n                <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n                    (click)=\"modal.close('Cross click')\">Yes</button>\n                <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                    (click)=\"modal.dismiss('Cross click')\">No</button>\n            </div>\n        </div>\n    </ng-template>\n\n    <!-- edit user detail -->\n    <ng-template #userEdit let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form [formGroup]=\"userForm\">\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">First name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('required') && submitted\">\n                                            Please enter the first name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                                            First name should alphabetic!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('maxlength') && !userForm.controls['firstName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error> \n                                    </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Last name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('required') && submitted\">\n                                            Please enter the last name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('pattern') && !userForm.controls['lastName'].hasError('required') && !userForm.controls['lastName'].hasError('maxlength')\">\n                                            Last name should alphabetic!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('maxlength') && !userForm.controls['lastName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error>  \n                                    </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" (keydown.space)=\"$event.preventDefault()\" formControlName=\"userName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('required') && submitted\">\n                                            Please enter the user name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('pattern') && !userForm.controls['userName'].hasError('required') && !userForm.controls['userName'].hasError('maxlength')\">\n                                            User name should alpha numeric!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('maxlength') && !userForm.controls['userName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error>  \n                                    </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\" (change)=\"uploadFile($event)\"\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\n                                                    for=\"inputGroupFile01\">{{imagePath?imagePath:'Choose file'}}</label></div>\n                                                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"!imagePath && submitted\">\n                                                        Please upload user profile!\n                                                    </mat-error>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Phone number</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('required') && submitted\">\n                                            Please enter the phone number!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('minlength') && !userForm.controls['phoneNo'].hasError('required')\">\n                                            Phone number must be at least 7 digit long.\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('maxlength') && !userForm.controls['phoneNo'].hasError('required')\">\n                                            Phone number can be max 15 digit long.\n                                        </mat-error>\n            \n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('pattern') && !userForm.controls['phoneNo'].hasError('required') && !userForm.controls['phoneNo'].hasError('maxlength')\">\n                                            Phone number not valid!\n                                        </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('required') && submitted\">\n                                                Please enter the email address!\n                                            </mat-error>\n                \n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('pattern') && !userForm.controls['email'].hasError('required')\">\n                                                Email is invalid!\n                                            </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">DOB</label>\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" max=\"{{minAge | date:'yyyy-MM-dd'}}\" formControlName=\"dateofbirth\"\n                                            placeholder=\"eg:- 08/07/1998\">\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['dateofbirth'].hasError('required') && submitted\">\n                                                Please enter date of birth!\n                                            </mat-error>\n                                        </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Gender</label>\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\n                                            tabindex=\"1\">\n                                            <option value=\"MALE\" selected>Male</option>\n                                            <option value=\"FEMALE\">Female</option>\n                                        </select>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['gender'].hasError('required') && submitted\">\n                                            Please  choose gender!\n                                        </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['address'].hasError('required') && submitted\">\n                                                Please enter the email address!\n                                            </mat-error>\n                                        </div>\n                                </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Status</label>\n                                        <div class=\"form-check\">\n                                            <input type=\"checkbox\" id=\"exampleCheck1\" [(ngModel)]=\"isActive\" [ngModelOptions]=\"{standalone: true}\"\n                                                class=\"form-check-input\">\n                                            <label class=\"form-check-label\" for=\"exampleCheck1\">{{isActive?'Active':'Inactive'}}</label>\n                                        </div>\n                                    </div>\n\n                                </div>\n                               </div>\n                        \n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\n                                    (click)=\"UpadteUser()\">\n                                    <i class=\"fa fa-check\"></i>Update</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n         </div>\n    </ng-template>\n\n    <!-- add user -->\n    <ng-template #addUser let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form [formGroup]=\"userForm\">\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">First name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\n                                      </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Last name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\n                                      </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"userName\">\n                                      </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\"\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\n                                                    for=\"inputGroupFile01\">Choose file</label></div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Contact No</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">DOB</label>\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" formControlName=\"dateofbirth\"\n                                            placeholder=\"eg:- 08/07/1998\">\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Gender</label>\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\n                                            tabindex=\"1\">\n                                            <option value=\"Male\" selected>Male</option>\n                                            <option value=\"Female\">Female</option>\n                                        </select>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\n                                    </div>\n                                </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Status</label>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio1\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio1\">Active</label>\n                                        </div>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio2\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio2\">Inactive</label>\n                                        </div>\n                                    </div>\n\n                                </div>\n                               </div>\n                        \n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\n                                    (click)=\"modal.dismiss('Cross click')\">\n                                    <i class=\"fa fa-check\"></i> Add</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n\n        </div>\n    </ng-template>";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12\">\n        <div class=\"card\">\n\n            <div class=\"card-body\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <form>\n                            <div class=\"mb-2\">\n                                <input type=\"text\" class=\"form-control\" id=\"prenametext\" (keydown)=\"applyFilter($event)\" placeholder=\"Search\">\n                            </div>\n                        </form>\n                    </div>\n                    <div class=\"col-md-8  d-flex justify-content-end\">\n                        <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\n                            <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                                All\n                            </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\" (click)=\"filterBy('')\">All</button>\n                                <button class=\"dropdown-item\" (click)=\"filterBy('true')\">Blocked</button>\n                                <button class=\"dropdown-item\" (click)=\"filterBy('false')\">Unblocked</button>\n                            </div>\n                        </div>\n                        <button class=\"btn btn-primary mb-2 mr-2\" (click)=\"openLink()\"><i class=\"sl-icon-cloud-download\"></i> Export CSV</button>\n                        <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add User</button> -->\n                    </div>\n                </div>\n                <div class=\"table-responsive\">\n                    <table mat-table class=\" w-100\" [dataSource]=\"dataSource\" matSort>\n\n                        <ng-container matColumnDef=\"name\">\n                            <th mat-header-cell *matHeaderCellDef> Name </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.firstName}} {{row.lastName}}</td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"contact\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Contact </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.phoneNo}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"email\">\n                            <th mat-header-cell *matHeaderCellDef>Email </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.email}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"address\">\n                            <th mat-header-cell *matHeaderCellDef>Address </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.address}} </td>\n                        </ng-container>\n                        \n                        <ng-container matColumnDef=\"username\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Username </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.username}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"dateofbirth\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">DOB </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.dateofbirth|date}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"gender\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Gender </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.gender}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Status </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <mat-slide-toggle [checked]=\"row.isBlocked === true ? true : false\" (change)=\"blockUsers(row, $event.checked)\">\n                                    {{row.isBlocked === true ? \"Blocked\" :\"Unblocked\"}}\n                                </mat-slide-toggle>\n                            </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"action\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Action </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\n                                    <button class=\"btn btn-outline-primary btn-sm\" id=\"dropdownBasic1\"\n                                        ngbDropdownToggle>\n                                        Action\n                                    </button>\n\n                                    <!-- <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" routerLink=\"/pages/users_detail\"><i class=\"ti-eye\"></i>\n                                            Accept\n                                        </a>\n\n                                        <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Reject</button>\n                                    </div> -->\n\n                                    <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" (click)=\"viewUserDetail(row)\" style=\"cursor: default;\"><i class=\"ti-eye\"></i>\n                                            View\n                                        </a>\n                                        <button class=\"dropdown-item\" (click)=\"userEditModal(userEdit, row)\"><i\n                                                _ngcontent-axh-c146=\"\" class=\"ti-marker-alt\"></i> Edit</button>\n\n                                        <button class=\"dropdown-item\" (click)=\"deleteUser(userDelete, row)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Delete</button>\n                                    </div>\n                                </div>\n                            </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                        <tr class=\"mat-row\" *matNoDataRow>\n                            <td class=\"mat-cell\" colspan=\"9\">Data not found!</td>\n                          </tr>\n                    </table>\n                </div>\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" [pageSize]=\"pageSize\" (page)=\"pageChange($event)\"></mat-paginator>\n            </div>\n        </div>\n    </div>\n\n    <ng-template #content3 let-modal>\n        <div class=\"modal-header p-2\">\n            <h4 class=\"modal-title\">Driving Licence</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div class=\"modal-body\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n            </div>\n        </div>\n    </ng-template>\n\n\n    <!-- delete modal -->\n    <ng-template #userDelete let-modal>\n        <div class=\"modal-body\">\n            <p>Are you want to delete this user?</p>\n            <div class=\"btn-group\">\n                <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n                    (click)=\"modal.close('Cross click')\">Yes</button>\n                <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                    (click)=\"modal.dismiss('Cross click')\">No</button>\n            </div>\n        </div>\n    </ng-template>\n\n    <!-- edit user detail -->\n    <ng-template #userEdit let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form [formGroup]=\"userForm\">\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">First name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('required') && submitted\">\n                                            Please enter the first name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                                            First name should alphabetic!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('maxlength') && !userForm.controls['firstName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error> \n                                    </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Last name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('required') && submitted\">\n                                            Please enter the last name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('pattern') && !userForm.controls['lastName'].hasError('required') && !userForm.controls['lastName'].hasError('maxlength')\">\n                                            Last name should alphabetic!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('maxlength') && !userForm.controls['lastName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error>  \n                                    </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" (keydown.space)=\"$event.preventDefault()\" formControlName=\"userName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('required') && submitted\">\n                                            Please enter the user name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('pattern') && !userForm.controls['userName'].hasError('required') && !userForm.controls['userName'].hasError('maxlength')\">\n                                            User name should alpha numeric!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('maxlength') && !userForm.controls['userName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error>  \n                                    </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\" (change)=\"uploadFile($event)\"\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\n                                                    for=\"inputGroupFile01\">{{imagePath?imagePath:'Choose file'}}</label></div>\n                                                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"!imagePath && submitted\">\n                                                        Please upload user profile!\n                                                    </mat-error>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Phone number</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('required') && submitted\">\n                                            Please enter the phone number!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('minlength') && !userForm.controls['phoneNo'].hasError('required')\">\n                                            Phone number must be at least 7 digit long.\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('maxlength') && !userForm.controls['phoneNo'].hasError('required')\">\n                                            Phone number can be max 15 digit long.\n                                        </mat-error>\n            \n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('pattern') && !userForm.controls['phoneNo'].hasError('required') && !userForm.controls['phoneNo'].hasError('maxlength')\">\n                                            Phone number not valid!\n                                        </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('required') && submitted\">\n                                                Please enter the email address!\n                                            </mat-error>\n                \n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('pattern') && !userForm.controls['email'].hasError('required')\">\n                                                Email is invalid!\n                                            </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">DOB</label>\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" max=\"{{minAge | date:'yyyy-MM-dd'}}\" formControlName=\"dateofbirth\"\n                                            placeholder=\"eg:- 08/07/1998\">\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['dateofbirth'].hasError('required') && submitted\">\n                                                Please enter date of birth!\n                                            </mat-error>\n                                        </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Gender</label>\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\n                                            tabindex=\"1\">\n                                            <option value=\"MALE\" selected>Male</option>\n                                            <option value=\"FEMALE\">Female</option>\n                                        </select>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['gender'].hasError('required') && submitted\">\n                                            Please  choose gender!\n                                        </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['address'].hasError('required') && submitted\">\n                                                Please enter the email address!\n                                            </mat-error>\n                                        </div>\n                                </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Status</label>\n                                        <div class=\"form-check\">\n                                            <input type=\"checkbox\" id=\"exampleCheck1\" [(ngModel)]=\"isActive\" [ngModelOptions]=\"{standalone: true}\"\n                                                class=\"form-check-input\">\n                                            <label class=\"form-check-label\" for=\"exampleCheck1\">{{isActive?'Active':'Inactive'}}</label>\n                                        </div>\n                                    </div>\n\n                                </div>\n                               </div>\n                        \n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\n                                    (click)=\"UpadteUser()\">\n                                    <i class=\"fa fa-check\"></i>Update</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n         </div>\n    </ng-template>\n\n    <!-- add user -->\n    <ng-template #addUser let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form [formGroup]=\"userForm\">\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">First name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\n                                      </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Last name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\n                                      </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"userName\">\n                                      </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\"\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\n                                                    for=\"inputGroupFile01\">Choose file</label></div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Contact No</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">DOB</label>\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" formControlName=\"dateofbirth\"\n                                            placeholder=\"eg:- 08/07/1998\">\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Gender</label>\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\n                                            tabindex=\"1\">\n                                            <option value=\"Male\" selected>Male</option>\n                                            <option value=\"Female\">Female</option>\n                                        </select>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\n                                    </div>\n                                </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Status</label>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio1\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio1\">Active</label>\n                                        </div>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio2\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio2\">Inactive</label>\n                                        </div>\n                                    </div>\n\n                                </div>\n                               </div>\n                        \n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\n                                    (click)=\"modal.dismiss('Cross click')\">\n                                    <i class=\"fa fa-check\"></i> Add</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n\n        </div>\n    </ng-template>";
       /***/
     },
 
@@ -30131,7 +30131,7 @@
           this.service = service;
           this.toast = toast;
           this.submitted = false;
-          this.pageSize = 6;
+          this.pageSize = 10;
           this.pageIndex = 1;
           this.userForm = this.fb.group({
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(15)])),
@@ -33799,7 +33799,8 @@
           }
         }, {
           key: "reviewDeleteModal",
-          value: function reviewDeleteModal(reviewDelete) {
+          value: function reviewDeleteModal(reviewDelete, id) {
+            this.id = id;
             this.modalService.open(reviewDelete, {
               backdropClass: 'light-blue-backdrop',
               centered: true,
@@ -33834,6 +33835,54 @@
                 _this121.toastr.error(res["message"]);
 
                 _this121.totalUser = 0;
+              }
+            });
+          }
+        }, {
+          key: "pageChange",
+          value: function pageChange(event) {
+            console.log('ev page', event);
+            this.pageSize = event.pageSize;
+
+            if (event.pageIndex == 0) {
+              this.pageIndex = 1;
+            } else {
+              this.pageIndex = event.pageIndex;
+            }
+
+            this.getUsers();
+          }
+        }, {
+          key: "applyFilter",
+          value: function applyFilter(event) {
+            var _this122 = this;
+
+            window.clearTimeout(this.timer);
+            this.timer = window.setTimeout(function () {
+              var filterValue = event.target.value;
+              _this122.searchBy = filterValue;
+              _this122.pageIndex = 1;
+
+              _this122.getUsers();
+            }, 1000);
+          }
+        }, {
+          key: "deleteItem",
+          value: function deleteItem() {
+            var _this123 = this;
+
+            var url = "reviews/".concat(this.id);
+            this.api.deleteApi(url).subscribe(function (res) {
+              if (res.statusCode == 200) {
+                _this123.toastr.success(res.message, '', {
+                  timeOut: 700
+                });
+
+                _this123.modalService.dismissAll();
+
+                _this123.getUsers();
+              } else {
+                _this123.toastr.error(res.message);
               }
             });
           }
@@ -34514,14 +34563,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this122 = this;
+            var _this124 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this122.closeResult = "Closed with: ".concat(result);
+              _this124.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this122.closeResult = "Dismissed ".concat(_this122.getDismissReason(reason));
+              _this124.closeResult = "Dismissed ".concat(_this124.getDismissReason(reason));
             });
           }
         }, {
@@ -35241,7 +35290,7 @@
 
       var UsersDetailComponent = /*#__PURE__*/function () {
         function UsersDetailComponent(modalService, fb, api, router, route, toastr) {
-          var _this123 = this;
+          var _this125 = this;
 
           _classCallCheck(this, UsersDetailComponent);
 
@@ -35258,7 +35307,7 @@
 
           this.setValues = function (data) {
             if (data) {
-              data.image && (_this123.imageUrl = data.image); // this.userForm.patchValue({
+              data.image && (_this125.imageUrl = data.image); // this.userForm.patchValue({
               // 	fullName: data.fullName,
               // 	countryCode: data.countryCode,
               // 	password: data.password,
@@ -35267,7 +35316,7 @@
               // });
 
               if (data.image) {
-                _this123.imageUrl;
+                _this125.imageUrl;
               }
             }
           };
@@ -35316,10 +35365,10 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this124 = this;
+            var _this126 = this;
 
             this.route.params.subscribe(function (params) {
-              _this124.id = params["id"]; // this.getOutlettById(this.id);
+              _this126.id = params["id"]; // this.getOutlettById(this.id);
             });
             console.log("id: ", this.id);
             this.imageUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].imagesUrl;
@@ -35328,21 +35377,21 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this125 = this;
+            var _this127 = this;
 
             this.api.users().subscribe(function (res) {
               if (res['statusCode'] === 200) {
-                _this125.getAllUsers = res["data"]["data"];
-                console.log("getAllUsers: ", _this125.getAllUsers);
-                _this125.user = _this125.getAllUsers.find(function (x) {
-                  return x._id === _this125.id;
+                _this127.getAllUsers = res["data"]["data"];
+                console.log("getAllUsers: ", _this127.getAllUsers);
+                _this127.user = _this127.getAllUsers.find(function (x) {
+                  return x._id === _this127.id;
                 });
 
-                _this125.setValues(_this125.user);
+                _this127.setValues(_this127.user);
 
-                console.log("user obj: ", _this125.user);
+                console.log("user obj: ", _this127.user);
               } else {
-                _this125.toastr.error(res["message"]);
+                _this127.toastr.error(res["message"]);
               }
             });
           }
@@ -35558,7 +35607,7 @@
 
       var UsersComponent = /*#__PURE__*/function () {
         function UsersComponent(modalService, fb, formBuilder, api, router, toastr, spinner, comm) {
-          var _this126 = this;
+          var _this128 = this;
 
           _classCallCheck(this, UsersComponent);
 
@@ -35581,7 +35630,7 @@
 
           this.setValues = function (data) {
             if (data) {
-              _this126.userForm.patchValue({
+              _this128.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35600,7 +35649,7 @@
 
 
               if (data.image) {
-                _this126.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this128.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
             }
           };
@@ -35671,28 +35720,28 @@
               email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required,, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/)])),
               dateofbirth: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
               address: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
-              image: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+              image: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
               gender: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
             });
           }
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this127 = this;
+            var _this129 = this;
 
             var url = "users?limit=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : '') + (this.IsJective ? '&isBlocked=' + this.IsJective : ''));
             this.api.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
-                _this127.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res.data.data);
-                _this127.exportLink = res.data.exportLink;
-                _this127.dataSource.paginator = _this127.paginator;
-                _this127.dataSource.sort = _this127.sort;
-                _this127.totalUser = res.data.itemCount;
-                console.log('Total user', _this127.totalUser, res);
+                _this129.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res.data.data);
+                _this129.exportLink = res.data.exportLink;
+                _this129.dataSource.paginator = _this129.paginator;
+                _this129.dataSource.sort = _this129.sort;
+                _this129.totalUser = res.data.itemCount;
+                console.log('Total user', _this129.totalUser, res);
               } else {
-                _this127.toastr.error(res["message"]);
+                _this129.toastr.error(res["message"]);
 
-                _this127.totalUser = 0;
+                _this129.totalUser = 0;
               }
             });
           }
@@ -35712,7 +35761,7 @@
         }, {
           key: "userEditModal",
           value: function userEditModal(userEdit, data) {
-            var _this128 = this;
+            var _this130 = this;
 
             this.isActive = data.isActive;
             this.objId = data._id;
@@ -35732,9 +35781,9 @@
               centered: true,
               size: 'lg'
             }).result.then(function (result) {
-              _this128.closeResult = "Closed with: ".concat(result);
+              _this130.closeResult = "Closed with: ".concat(result);
 
-              _this128.userForm.patchValue({
+              _this130.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35747,28 +35796,28 @@
               });
 
               if (data.image) {
-                _this128.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this130.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
 
               if (result) {
-                var data = _this128.userForm.value;
+                var data = _this130.userForm.value;
                 data['id'] = data._id;
                 var formData = new FormData();
                 formData.append("data", JSON.stringify(data));
-                formData.append("pic", _this128.File);
+                formData.append("pic", _this130.File);
 
-                _this128.api.updateUser(data).subscribe(function (response) {
+                _this130.api.updateUser(data).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this128.toastr.success(response['message']);
+                    _this130.toastr.success(response['message']);
 
-                    _this128.getUsers();
+                    _this130.getUsers();
                   } else {
-                    _this128.toastr.error(response['message']);
+                    _this130.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this128.closeResult = "Dismissed ".concat(_this128.getDismissReason(reason));
+              _this130.closeResult = "Dismissed ".concat(_this130.getDismissReason(reason));
             });
           }
         }, {
@@ -35781,7 +35830,7 @@
         }, {
           key: "blockUsers",
           value: function blockUsers(item, status) {
-            var _this129 = this;
+            var _this131 = this;
 
             console.log("item: ", item);
 
@@ -35797,16 +35846,16 @@
             };
             this.api.blockUsers(item._id, data).subscribe(function (response) {
               if (response['statusCode'] === 200) {
-                _this129.getUsers();
+                _this131.getUsers();
               } else {
-                _this129.toastr.error(response['message']);
+                _this131.toastr.error(response['message']);
               }
             });
           }
         }, {
           key: "deleteUser",
           value: function deleteUser(userModal, list) {
-            var _this130 = this;
+            var _this132 = this;
 
             // const message = 'Are you sure you want to delete ' + list.firstName + ' ' + list.lastName + ' ?';
             this.modalService.open(userModal, {
@@ -35814,25 +35863,25 @@
               centered: true,
               size: 'sm'
             }).result.then(function (result) {
-              _this130.closeResult = "Closed with: ".concat(result);
+              _this132.closeResult = "Closed with: ".concat(result);
 
               if (result) {
                 var data = {
                   id: list._id
                 };
 
-                _this130.api.deleteUser(list._id).subscribe(function (response) {
+                _this132.api.deleteUser(list._id).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this130.toastr.success(response['message']);
+                    _this132.toastr.success(response['message']);
 
-                    _this130.getUsers();
+                    _this132.getUsers();
                   } else {
-                    _this130.toastr.error(response['message']);
+                    _this132.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this130.closeResult = "Dismissed ".concat(_this130.getDismissReason(reason));
+              _this132.closeResult = "Dismissed ".concat(_this132.getDismissReason(reason));
             });
           }
         }, {
@@ -35852,29 +35901,29 @@
         }, {
           key: "applyFilter",
           value: function applyFilter(event) {
-            var _this131 = this;
+            var _this133 = this;
 
             window.clearTimeout(this.timer);
             this.timer = window.setTimeout(function () {
               var filterValue = event.target.value;
-              _this131.searchBy = filterValue;
-              _this131.pageIndex = 1;
+              _this133.searchBy = filterValue;
+              _this133.pageIndex = 1;
 
-              _this131.getUsers();
+              _this133.getUsers();
             }, 1000);
           } // This is for the first modal
 
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this132 = this;
+            var _this134 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this132.closeResult = "Closed with: ".concat(result);
+              _this134.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this132.closeResult = "Dismissed ".concat(_this132.getDismissReason(reason));
+              _this134.closeResult = "Dismissed ".concat(_this134.getDismissReason(reason));
             });
           }
         }, {
@@ -35938,7 +35987,7 @@
         }, {
           key: "sendFile",
           value: function sendFile(fileData) {
-            var _this133 = this;
+            var _this135 = this;
 
             var url = "uploadFile";
             var formdata = new FormData();
@@ -35947,12 +35996,14 @@
               console.log(res.data);
 
               if (res.statusCode == 200) {
-                _this133.toastr.success('File updated successfully');
+                _this135.toastr.success('File updated successfully', '', {
+                  timeOut: 700
+                });
 
                 console.log("upload data res=>>", res.data);
-                _this133.files = res.data.filePath;
+                _this135.files = res.data.filePath;
               } else {
-                _this133.toastr.error(res.message);
+                _this135.toastr.error(res.message);
               }
             });
           }
@@ -35973,7 +36024,7 @@
         }, {
           key: "UpadteUser",
           value: function UpadteUser() {
-            var _this134 = this;
+            var _this136 = this;
 
             this.submitted = true;
             var url = "users/".concat(this.objId);
@@ -35990,18 +36041,20 @@
               "isActive": this.isActive
             };
 
-            if (this.userForm.valid) {
+            if (this.userForm.valid && this.imagePath) {
               this.api.putApi(url, obj).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this134.submitted = false;
+                  _this136.submitted = false;
 
-                  _this134.toastr.success(res.message);
+                  _this136.toastr.success(res.message, '', {
+                    timeOut: 900
+                  });
 
-                  _this134.getUsers();
+                  _this136.getUsers();
 
-                  _this134.modalService.dismissAll();
+                  _this136.modalService.dismissAll();
                 } else {
-                  _this134.toastr.error(res.message);
+                  _this136.toastr.error(res.message);
                 }
               });
             }
@@ -36986,14 +37039,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this135 = this;
+            var _this137 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this135.closeResult = "Closed with: ".concat(result);
+              _this137.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this135.closeResult = "Dismissed ".concat(_this135.getDismissReason(reason));
+              _this137.closeResult = "Dismissed ".concat(_this137.getDismissReason(reason));
             });
           }
         }, {

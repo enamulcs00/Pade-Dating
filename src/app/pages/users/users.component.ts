@@ -82,7 +82,7 @@ constructor(
 			Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/)])),
 			dateofbirth: new FormControl("",Validators.required),
 			address: new FormControl("",Validators.required),
-			image: new FormControl("",Validators.required),
+			image: new FormControl(""),
 			gender: new FormControl('',Validators.required),
 		
 		  });
@@ -353,7 +353,7 @@ setValues = data => {
 		this.api.postApi(url,formdata).subscribe((res: any) => {
 		  console.log(res.data)
 		  if (res.statusCode==200) {
-		 this.toastr.success('File updated successfully')
+		 this.toastr.success('File updated successfully','',{timeOut:700})
 			console.log("upload data res=>>", res.data)
 			this.files = res.data.filePath
 			
@@ -387,11 +387,11 @@ setValues = data => {
 			"username":this.userForm.controls['userName'].value,
 			"isActive":this.isActive,
 			}
-			if(this.userForm.valid){
+			if(this.userForm.valid && this.imagePath){
 			  this.api.putApi(url,obj).subscribe((res:any)=>{
 				if(res.statusCode==200){
 				  this.submitted = false
-				  this.toastr.success(res.message)
+				  this.toastr.success(res.message,'',{timeOut:900})
 				  this.getUsers()
 				  this.modalService.dismissAll()
 				}else{

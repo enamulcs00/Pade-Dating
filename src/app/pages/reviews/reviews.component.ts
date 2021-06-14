@@ -18,6 +18,7 @@ export class ReviewsComponent implements OnInit {
   searchBy: string;
   Reviews: any;
   Review: any;
+  id: any;
   ngOnInit(): void {
     this.getUsers()
   }
@@ -33,7 +34,8 @@ export class ReviewsComponent implements OnInit {
   addreviewModal(addreview) {
     this.modalService.open(addreview, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
   }
-  reviewDeleteModal(reviewDelete) {
+  reviewDeleteModal(reviewDelete,id) {
+    this.id = id
     this.modalService.open(reviewDelete, {backdropClass: 'light-blue-backdrop',centered: true,size: 'sm'});
   }
   private getDismissReason(reason: any): string {
@@ -60,4 +62,36 @@ export class ReviewsComponent implements OnInit {
 			}
 		})
 	}
+  pageChange(event) {
+    console.log('ev page',event);
+    this.pageSize=event.pageSize;
+    if(event.pageIndex==0){
+      this.pageIndex = 1
+    }else{
+      this.pageIndex=event.pageIndex;
+    }
+     this.getUsers()
+    }
+    timer: number;
+    applyFilter(event: any) {
+      window.clearTimeout(this.timer);
+      this.timer = window.setTimeout(() => {
+        let filterValue = (event.target as HTMLInputElement).value;
+        this.searchBy=filterValue;
+        this.pageIndex=1;
+        this.getUsers();
+      }, 1000)
+    }
+    deleteItem(){
+      let url = `reviews/${this.id}`
+      this.api.deleteApi(url).subscribe((res:any)=>{
+        if(res.statusCode==200){
+          this.toastr.success(res.message,'',{timeOut:700})
+          this.modalService.dismissAll()
+          this.getUsers()
+        }else{
+          this.toastr.error(res.message)
+        }
+      })
+    }
 }
