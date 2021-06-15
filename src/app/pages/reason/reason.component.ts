@@ -1,102 +1,79 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource, } from '@angular/material/table';
-
-export interface UserData {
-  name: string,
-  completedOrders:string,
-  // id: string,
-  cancelledOrders:string,
-  totalOrders:string,
-  paymentnotcomplete:string,
-  contact:string,
-  email:string;
- status:string,
-  action:string,
-  address:string,
-  pendingOrders:string
-}
-
+import { ApiService } from 'src/app/shared/services/api.service';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-reason',
   templateUrl: './reason.component.html',
   styleUrls: ['./reason.component.css']
 })
 export class ReasonComponent implements OnInit {
-
-  closeResult: string;
-
-  //table: any
-  displayedColumns: string[] = [ 'name', 'action'];
-  dataSource: MatTableDataSource<UserData>;
-
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
-
-  constructor(private modalService: NgbModal) {
-    this.dataSource = new MatTableDataSource(this.table);
+closeResult: string;
+AddCalled:boolean = false
+totalUser: number;
+pageSize: any= 10;
+pageIndex :any= 1;
+  id: any;
+  Items: any;
+  constructor(private FormBuilder:FormBuilder,private router:Router,private modalService: NgbModal,public service:ApiService ,private toastr:ToastrService) {
   }
+  reasonForm = this.FormBuilder.group({
+  reason : ['', [Validators.required,Validators.maxLength(100)]],
+  })
   reviewModal(review) {
     this.modalService.open(review, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
   }
   ngOnInit(): void {
+    this.getReason()
   }
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
-
-  table = [
-    {
-      name: 'Sandy',
-      // id: "#sand334553",
-      contact:"+91-33434343",
-      email:"sand@example.com",
-      address:"#454 1st Block, Rammurthy, Bangalore-560016",
-      completedOrders:"50",
-      cancelledOrders:"0",
-      paymentnotcomplete:"0",
-      pendingOrders:"0",
-      totalOrders:"50",
-      status:"",
-      action:"1",
-    },
-    {
-      name: 'Rohan',
-      // id: "#rohan334553",
-      contact:"+91-33434343",
-      email:"sand@example.com",
-      address:"#454 1st Block, Rammurthy, Bangalore-560016",
-      completedOrders:"10",
-      cancelledOrders:"0",
-      paymentnotcomplete:"0",
-      pendingOrders:"30",
-      totalOrders:"40",
-      status:"",
-      action:"1",
-    },
-    {
-      name: 'john',
-      // id: "#rohan334553",
-      contact:"+91-33434343",
-      email:"sand@example.com",
-      address:"#454 1st Block, Rammurthy, Bangalore-560016",
-      completedOrders:"20",
-      cancelledOrders:"10",
-      paymentnotcomplete:"0",
-      pendingOrders:"10",
-      totalOrders:"30",
-      status:"",
-      action:"1",
-    },
-  ]
-
-
-  deletemodal(deletereason) {
+  deletemodal(deletereason,id) {
+    this.id = id.id
+    
     this.modalService.open(deletereason, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
   }
-
+  getReason(){
+  let url = `reasons`
+     this.service.getApi(url).subscribe((res:any)=>{
+       console.log('Reason',res);
+       if(res.statusCode==200){
+         this.Items = res.data.value
+         this.totalUser = res.data.length
+       }else{
+      this.toastr.error(res.message,'',{timeOut:600})
+      console.log('Else called',res);
+      this.totalUser = 0
+   }})
+  }
+  Delete(){
+    let url = `reason/${this.id}`
+   this.service.deleteApi(url).subscribe((res:any)=>{
+      if(res.statusCode==200){
+        this.toastr.success(res.message,'',{timeOut:600})
+        this.modalService.dismissAll()
+        this.getReason()
+      }else{
+  this.toastr.error(res.message,'',{timeOut:600})
+  
+  }})
+  }
+  Add(){
+    this.AddCalled = true
+let url = `reasons`
+if(this.reasonForm.valid){
+  this.service.postApi(url,this.reasonForm.value).subscribe((res:any)=>{
+    console.log('Added',res);
+    if(res.success==true){
+      this.toastr.success(res.message)
+      this.AddCalled = false
+      this.modalService.dismissAll()
+      this.getReason()
+      this.reasonForm.reset()
+    }else{
+      this.toastr.error(res.message,'',{timeOut:600})
+      }
+  })
+}
+}
 }

@@ -220,20 +220,21 @@
     <div class="card">
         <div class="card-body">
             <h4>Photo/Video</h4>
-          <div class="row mt-3">
-            <div class="col-md-3">
-              <figure class="mb-0 p-2 border"><a href="javascript:void()" (click)="videoBoxModal(videobox)"><img src="assets/images/img3.jpg" class="img-fluid"></a></figure>
+          <div class="row">
+            <div class="col-md-3" *ngFor="let item of user?.docImage">
+              <figure class="mb-0 p-2"><a href="javascript:void()" (click)="videoBoxModal(videobox,item?.source)"><img [src]="item.thumb?item.thumb:'assets/images/img3.jpg'" 
+             class="img-fluid"></a></figure>
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
               <figure class="mb-0 p-2 border"><a href="javascript:void()" (click)="videoBoxModal(videobox)"><img src="assets/images/img3.jpg" class="img-fluid"></a></figure>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
       <ng-template #videobox let-modal>
           <div class="modal-body">
-              <button class="btn close-icon" (click)="modal.dismiss()"><i class="mdi mdi-close"></i></button>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/XncoZAkq_Qs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <button class="btn close-icon" (click)="modal.dismiss('Cross click')"><i class="mdi mdi-close"></i></button>
+            <video width="100%" height="315"  controls autoplay [src]="sourceLink?sourceLink:'https://youtu.be/linlz7-Pnvw'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></video>
           </div>
         </ng-template>
 

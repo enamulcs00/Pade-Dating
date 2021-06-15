@@ -158,10 +158,10 @@ export class CalculatorComponent implements OnInit {
         this.getPackages()
         this.submitted = false
         this.toastr.success(res.message,'', {
-          timeOut: 300,})
+          timeOut: 700,})
       }else{
         this.toastr.error(res.message,'', {
-          timeOut: 400,})
+          timeOut: 700,})
       }
       })
     

@@ -25260,7 +25260,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-11 text-right mb-3\">\n        <a (click)=\"reviewModal(addreason)\" class=\"d-inline-block p-2 theme_btn\">Add Reason</a>\n    </div>\n    <div class=\"col-md-3\">\n        <div class=\"card\">\n            <div class=\"card-body d-flex\">\n                <h3 style=\"width: 80%; margin: 0px;\"> Reason 1 </h3>\n                <a class=\"dlt_btn\" (click)=\"deletemodal(deletereason)\">\n                    <i class=\"ti-trash\"></i>\n                </a>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-md-3\">\n        <div class=\"card\">\n            <div class=\"card-body d-flex\">\n                <h3 style=\"width: 80%; margin: 0px;\"> Reason 2 </h3>\n                <a class=\"dlt_btn\" (click)=\"deletemodal(deletereason)\">\n                    <i class=\"ti-trash\"></i>\n                </a>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-md-3\">\n        <div class=\"card\">\n            <div class=\"card-body d-flex\">\n                <h3 style=\"width: 80%; margin: 0px;\"> Reason 3 </h3>\n                <a class=\"dlt_btn\" (click)=\"deletemodal(deletereason)\">\n                    <i class=\"ti-trash\"></i>\n                </a>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-md-3\">\n        <div class=\"card\">\n            <div class=\"card-body d-flex\">\n                <h3 style=\"width: 80%; margin: 0px;\"> Reason 4 </h3>\n                <a class=\"dlt_btn\" (click)=\"deletemodal(deletereason)\">\n                    <i class=\"ti-trash\"></i>\n                </a>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-md-3\">\n        <div class=\"card\">\n            <div class=\"card-body d-flex\">\n                <h3 style=\"width: 80%; margin: 0px;\"> Reason 5 </h3>\n                <a class=\"dlt_btn\" (click)=\"deletemodal(deletereason)\">\n                    <i class=\"ti-trash\"></i>\n                </a>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-md-3\">\n        <div class=\"card\">\n            <div class=\"card-body d-flex\">\n                <h3 style=\"width: 80%; margin: 0px;\"> Reason 6 </h3>\n                <a class=\"dlt_btn\" (click)=\"deletemodal(deletereason)\">\n                    <i class=\"ti-trash\"></i>\n                </a>\n            </div>\n        </div>\n    </div>\n</div>\n<ng-template #addreason let-modal>\n    <div class=\"modal-header p-2\">\n        <h4 class=\"modal-title\">Add Reason</h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n    </div>\n    <div class=\"modal-body\">\n        <div class=\"row\">\n            <div class=\"col-12\">\n                <div class=\"col-md-12\">\n                    <div class=\"form-group\">\n                        <label class=\"control-label\">Add Reason</label>\n                        <input type=\"text\" placeholder=\"Reason Name\" class=\"form-control\">\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12\">\n                <button type=\"submit\" class=\"btn btn-success\"> Save </button>\n            </div>\n        </div>\n    </div>\n</ng-template>\n<!-- delete modal -->\n<ng-template #deletereason let-modal>\n    <div class=\"modal-body\">\n        <p>Are you ure want to delete this reason ?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-11 text-right mb-3\">\n        <a (click)=\"reviewModal(addreason)\" class=\"d-inline-block p-2 theme_btn\">Add Reason</a>\n    </div>\n    <div class=\"col-md-3\" *ngFor=\"let item of Items; index as i\">\n        <div class=\"card\">\n            <div class=\"card-body d-flex\">\n                <h3 style=\"width: 80%; margin: 0px;\"> Reason {{i+1}} </h3>\n                <a class=\"dlt_btn bg-primary\" [ngbPopover]=\"item?.text\" popoverClass=\"my-custom-class\" popoverTitle=\"{{'Reason' +' '+ (i+1)}}\"\n                [openDelay]=\"300\" [closeDelay]=\"500\" triggers=\"mouseenter:mouseleave\">\n                    <i class=\"ti-info text-white\"></i>\n                </a>&nbsp;\n                <a class=\"dlt_btn\" (click)=\"deletemodal(deletereason,item,item?.text)\">\n                    <i class=\"ti-trash\"></i>\n                </a>\n            </div>\n        </div>\n    </div>\n    \n</div>\n<ng-template #addreason let-modal>\n    <div class=\"modal-header p-2\">\n        <h4 class=\"modal-title\">Add Reason</h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n    </div>\n    <div class=\"modal-body\">\n        <form [formGroup]=\"reasonForm\">\n            <div class=\"row\">\n                <div class=\"col-12\">\n                    <div class=\"col-md-12\">\n                        <div class=\"form-group\">\n                            <label class=\"control-label\">Add Reason</label>\n                            <input type=\"text\" placeholder=\"Reason Name\" class=\"form-control\" formControlName=\"reason\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\">\n                            <p class=\"error\" *ngIf=\"AddCalled && reasonForm.invalid\">\n                                Please enter the reason!</p>\n                            <p class=\"error\" *ngIf=\"reasonForm.controls['reason'].hasError('maxlength')\">\n                                Maxlength should 100!</p>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-12\">\n                    <button type=\"submit\" class=\"btn btn-success\" (click)=\"Add()\"> Save </button>\n                </div>\n            </div>\n        </form>\n    </div>\n</ng-template>\n<!-- delete modal -->\n<ng-template #deletereason let-modal>\n    <div class=\"modal-body\">\n        <p>Are you want to delete this reason ?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\" (click)=\"Delete()\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n";
       /***/
     },
 
@@ -25280,7 +25280,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    \n    <!-- Column -->\n    <div class=\"col-lg-12\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <form>\n                            <div class=\"mb-2\">\n                                <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                            </div>\n                        </form>\n                    </div>\n                    <div class=\"col-md-8 text-right\">\n                        <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addreviewModal(addreview)\"><i class=\"sl-icon-plus\"></i> Add User</button> -->\n                    </div>\n                    <div class=\"table-responsi\">\n                        <table class=\"table v-middle product-overview\" id=\"zero_config\">\n                            <thead>\n                                <tr>\n                                    <th>Photo</th>\n                                    <th>Name</th>\n                                    <th>Email Id</th>\n                                    <th class=\"text-nowrap\">Reported issue</th>\n                                    <th> Description </th>\n                                    <th>Action</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr>\n                                    <td>\n                                        <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                    </td>\n                                    <td>Ronny </td>\n                                    <td>Hannagover@gmail.com </td>\n                                    <td> Reason 1 </td>\n                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                    <td>\n                                        <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>\n                                        <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                    </td>\n                                    <td>Ronny </td>\n                                    <td>Hannagover@gmail.com </td>\n                                    <td> Reason 2 </td>\n                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                    <td>\n                                        <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>\n                                        <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                    </td>\n                                    <td>Ronny </td>\n                                    <td>Hannagover@gmail.com </td>\n                                    <td> Reason 3 </td>\n                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                    <td>\n                                        <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                        <mat-paginator [length]=\"100\" [pageSize]=\"10\" [pageSizeOptions]=\"[5, 10, 25, 100]\">\n                        </mat-paginator>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<!-- view modal -->\n<ng-template #review let-modal>\n    <div class=\"modal-body\">\n        <button type=\"button\" class=\" close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n  <i class=\"mdi mdi-close\"></i>\n</button>\n        <div class=\"row\">\n            <!-- Column -->\n            <div class=\"col-lg-12 col-xlg-12 col-md-12\">\n                <div class=\"card custom-tabs mb-0\">\n                    <div class=\"card-body\">\n                        <div class=\"row pt-2\">\n                            <div class=\"col-md-12\">\n                                <p>\n                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,\n                                    content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites\n                                    still in their infancy.\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- Column -->\n        </div>\n    </div>\n</ng-template>\n<!-- add review -->\n<ng-template #addreview let-modal>\n    <div class=\"modal-body\">\n        <div class=\"card\">\n            <form action=\"#\">\n                <div class=\"form-body\">\n                    <div class=\"card-body\">\n                        <div class=\"row p-t-20\">\n                            <div class=\"col-md-12\">\n                                <div class=\"form-group\">\n                                    <label class=\"control-label\">Add Review</label>\n                                    <textarea class=\"form-control\" placeholder=\"Message\" rows=\"10\"></textarea>\n                                </div>\n                            </div>\n                            <!--/span-->\n                        </div>\n                        <!--/row-->\n                    </div>\n                    <div class=\"form-actions\">\n                        <div class=\"card-body\">\n                            <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"modal.dismiss('Cross click')\">\n            <i class=\"fa fa-check\"></i> Submit</button>\n                            <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                        </div>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</ng-template>\n\n<!-- delete modal -->\n<ng-template #reviewDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you ure want to delete this Report ?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    \n    <!-- Column -->\n    <div class=\"col-lg-12\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <form>\n                            <div class=\"mb-2\">\n                                <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                            </div>\n                        </form>\n                    </div>\n                    <div class=\"col-md-8 text-right\">\n                        <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addreviewModal(addreview)\"><i class=\"sl-icon-plus\"></i> Add User</button> -->\n                    </div>\n                    <div class=\"table-responsi\">\n                        <table class=\"table v-middle product-overview\" id=\"zero_config\">\n                            <thead>\n                                <tr>\n                                    <th>Photo</th>\n                                    <th>Name</th>\n                                    <th>Email Id</th>\n                                    <th class=\"text-nowrap\">Reported issue</th>\n                                    <th> Description </th>\n                                    <th>Action</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr>\n                                    <td>\n                                        <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                    </td>\n                                    <td>Ronny </td>\n                                    <td>Hannagover@gmail.com </td>\n                                    <td> Reason 1 </td>\n                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                    <td>\n                                        <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>\n                                        <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                    </td>\n                                    <td>Ronny </td>\n                                    <td>Hannagover@gmail.com </td>\n                                    <td> Reason 2 </td>\n                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                    <td>\n                                        <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>\n                                        <img src=\"assets/images/users/2.jpg\" alt=\"iMac\" width=\"60\" class=\"rounded-circle\">\n                                    </td>\n                                    <td>Ronny </td>\n                                    <td>Hannagover@gmail.com </td>\n                                    <td> Reason 3 </td>\n                                    <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and use for dummy content all type site and use for dummy content..... <a href=\"javascript:void(0)\" (click)=\"reviewModal(review)\">Read More</a></td>\n                                    <td>\n                                        <button class=\"btn btn-danger\" (click)=\"reviewDeleteModal(reviewDelete)\"><i class=\"ti-trash\"></i></button>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                        <mat-paginator [length]=\"totalUser\" [pageSize]=\"pageSize\" [pageSizeOptions]=\"[5, 10, 25, 100]\" (page)=\"pageChange($event)\">\n                        </mat-paginator>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<!-- view modal -->\n<ng-template #review let-modal>\n    <div class=\"modal-body\">\n        <button type=\"button\" class=\" close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n  <i class=\"mdi mdi-close\"></i>\n</button>\n        <div class=\"row\">\n            <!-- Column -->\n            <div class=\"col-lg-12 col-xlg-12 col-md-12\">\n                <div class=\"card custom-tabs mb-0\">\n                    <div class=\"card-body\">\n                        <div class=\"row pt-2\">\n                            <div class=\"col-md-12\">\n                                <p>\n                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,\n                                    content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites\n                                    still in their infancy.\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- Column -->\n        </div>\n    </div>\n</ng-template>\n<!-- add review -->\n<ng-template #addreview let-modal>\n    <div class=\"modal-body\">\n        <div class=\"card\">\n            <form action=\"#\">\n                <div class=\"form-body\">\n                    <div class=\"card-body\">\n                        <div class=\"row p-t-20\">\n                            <div class=\"col-md-12\">\n                                <div class=\"form-group\">\n                                    <label class=\"control-label\">Add Review</label>\n                                    <textarea class=\"form-control\" placeholder=\"Message\" rows=\"10\"></textarea>\n                                </div>\n                            </div>\n                            <!--/span-->\n                        </div>\n                        <!--/row-->\n                    </div>\n                    <div class=\"form-actions\">\n                        <div class=\"card-body\">\n                            <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"modal.dismiss('Cross click')\">\n            <i class=\"fa fa-check\"></i> Submit</button>\n                            <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                        </div>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</ng-template>\n\n<!-- delete modal -->\n<ng-template #reviewDelete let-modal>\n    <div class=\"modal-body\">\n        <p>Are you ure want to delete this Report ?</p>\n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">Yes</button>\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">No</button>\n        </div>\n    </div>\n</ng-template>\n";
       /***/
     },
 
@@ -25560,7 +25560,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12 col-xlg-3 col-md-5\">\n        <a routerLink=\"/pages/users\" class=\"btn btn-primary mb-3\">Back</a>\n        <!-- <a (click)=\"history.back()\" class=\"btn btn-primary mb-3\">Back</a> -->\n        <div class=\"card\">\n            <div class=\"row\">\n                <div class=\"col-md-3\">\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && !user.image\">\n                        <div class=\" text-center\">\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'MALE'\" src=\"assets/images/users/avatar_male.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'FEMALE'\" src=\"assets/images/users/avatar_female.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        <img *ngIf=\"!user.image && !user.gender\" src=\"assets/images/users/agent.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        </div>\n                    </div>\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && user.image\">\n                        <div class=\" text-center\">\n                        <img [src]=imageUrl class=\"rounded-circle\" width=\"100\" height=\"100\"/>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-9 pr-0 pt-2 pb-2\" *ngIf=\"user\">\n                    <div class=\"row pt-2 ml-0 mr-0 \">\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Name: <span class=\"font-weight-600\">{{user?.firstName}} {{user?.lastName}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Contact: <span class=\"font-weight-600\">{{user?.countryCode}}-{{user?.phoneNo}}</span>\n                                  \n                                    <!-- <li class=\"list-block-listing pr-2 pb-2\">User ID: <span class=\"font-weight-600\">elite2345</span></li> -->\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n\n                                <li class=\"list-block-listing pr-2 pb-2\">Dob: <span class=\"font-weight-600\">{{user?.dateofbirth}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Country: <span class=\"font-weight-600\">{{user?.country}}</span></li>\n\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Email: <span class=\"font-weight-600\"> {{user?.email }}</span>\n                                </li>\n                                <li class=\"list-block-listing pr-2 pb-2\"> Username: <span class=\"font-weight-600\">{{user?.username}}</span></li>\n                            </ul>\n                        </div>\n                      \n                    </div>\n               \n                </div>\n            </div>\n            <!-- end row -->\n\n        </div>\n    </div>\n    <!-- Column -->\n    <!-- Column -->\n    <!-- <div class=\"col-lg-12\">\n        <h4 class=\"pt-2\">Order History</h4>\n        <div class=\"card \">\n\n            <div class=\"card-body\">\n                <div class=\"row pb-2\">\n                    <div class=\"col-md-4\">\n                        <div>\n                            <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                        </div>\n                    </div>\n                    <div class=\"col-md-8 text-right\">\n                        <div ngbDropdown class=\"d-inline-block \">\n                            <button class=\"btn btn-info text-white\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                All\n              </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\">Completed Orders</button>\n                                <button class=\"dropdown-item\">Cancelled Orders</button>\n                                <button class=\"dropdown-item\">Pending Orders</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"table-responsive\">\n                    <table mat-table class=\"w-100\" [dataSource]=\"dataSource\" matSort>                   \n\n                      \n                        <ng-container matColumnDef=\"hotelName\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.hotelName}} </td>\n                        </ng-container>\n                          <ng-container matColumnDef=\"productname\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Services </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.productname}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"orderdate\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Date </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.orderdate}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"price\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"><b>$</b>{{row.price}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"Reviews_sp\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Reviews by service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.Reviews_sp}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Status </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> <button class=\"btn\" [ngClass]=\"row.status == 'Cancelled' ? 'btn-outline-danger': (row.status == 'Pending') ? 'btn-outline-info' : 'btn-outline-success' \">{{row.status}}</button> </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                    </table>\n\n                    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n                </div>\n            </div>\n        </div>\n    </div> -->\n    <!-- Column -->\n</div>\n<div class=\"row\">\n    <div class=\"col-md-12\">\n        <h4>User History</h4>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/2.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n</div>\n\n\n    \n    <div class=\"card\">\n        <div class=\"card-body\">\n            <h4>Photo/Video</h4>\n          <div class=\"row mt-3\">\n            <div class=\"col-md-3\">\n              <figure class=\"mb-0 p-2 border\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox)\"><img src=\"assets/images/img3.jpg\" class=\"img-fluid\"></a></figure>\n            </div>\n            <div class=\"col-md-3\">\n              <figure class=\"mb-0 p-2 border\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox)\"><img src=\"assets/images/img3.jpg\" class=\"img-fluid\"></a></figure>\n            </div>\n          </div>\n        </div>\n      </div>\n      <ng-template #videobox let-modal>\n          <div class=\"modal-body\">\n              <button class=\"btn close-icon\" (click)=\"modal.dismiss()\"><i class=\"mdi mdi-close\"></i></button>\n            <iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/XncoZAkq_Qs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n          </div>\n        </ng-template>\n\n<!-- <ng-template #discount let-modal>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title\">Coupons</h4>\n    <button type=\"button\" class=\"close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n   <div class=\"table-reponsive\">\n     <table class=\"table table-sm\">\n      <tbody>\n       <tr>\n       <td class=\"align-middle\">Get 20% OFF On Food Orders</td>\n       <td><button class=\"food-code btn btn-success\">\n        Food20\n       </button></td>\n      </tr>\n      <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       </tbody>\n     </table>\n   </div>\n  </div>\n\n</ng-template> -->\n";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12 col-xlg-3 col-md-5\">\n        <a routerLink=\"/pages/users\" class=\"btn btn-primary mb-3\">Back</a>\n        <!-- <a (click)=\"history.back()\" class=\"btn btn-primary mb-3\">Back</a> -->\n        <div class=\"card\">\n            <div class=\"row\">\n                <div class=\"col-md-3\">\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && !user.image\">\n                        <div class=\" text-center\">\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'MALE'\" src=\"assets/images/users/avatar_male.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'FEMALE'\" src=\"assets/images/users/avatar_female.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        <img *ngIf=\"!user.image && !user.gender\" src=\"assets/images/users/agent.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        </div>\n                    </div>\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && user.image\">\n                        <div class=\" text-center\">\n                        <img [src]=imageUrl class=\"rounded-circle\" width=\"100\" height=\"100\"/>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-9 pr-0 pt-2 pb-2\" *ngIf=\"user\">\n                    <div class=\"row pt-2 ml-0 mr-0 \">\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Name: <span class=\"font-weight-600\">{{user?.firstName}} {{user?.lastName}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Contact: <span class=\"font-weight-600\">{{user?.countryCode}}-{{user?.phoneNo}}</span>\n                                  \n                                    <!-- <li class=\"list-block-listing pr-2 pb-2\">User ID: <span class=\"font-weight-600\">elite2345</span></li> -->\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n\n                                <li class=\"list-block-listing pr-2 pb-2\">Dob: <span class=\"font-weight-600\">{{user?.dateofbirth}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Country: <span class=\"font-weight-600\">{{user?.country}}</span></li>\n\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Email: <span class=\"font-weight-600\"> {{user?.email }}</span>\n                                </li>\n                                <li class=\"list-block-listing pr-2 pb-2\"> Username: <span class=\"font-weight-600\">{{user?.username}}</span></li>\n                            </ul>\n                        </div>\n                      \n                    </div>\n               \n                </div>\n            </div>\n            <!-- end row -->\n\n        </div>\n    </div>\n    <!-- Column -->\n    <!-- Column -->\n    <!-- <div class=\"col-lg-12\">\n        <h4 class=\"pt-2\">Order History</h4>\n        <div class=\"card \">\n\n            <div class=\"card-body\">\n                <div class=\"row pb-2\">\n                    <div class=\"col-md-4\">\n                        <div>\n                            <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                        </div>\n                    </div>\n                    <div class=\"col-md-8 text-right\">\n                        <div ngbDropdown class=\"d-inline-block \">\n                            <button class=\"btn btn-info text-white\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                All\n              </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\">Completed Orders</button>\n                                <button class=\"dropdown-item\">Cancelled Orders</button>\n                                <button class=\"dropdown-item\">Pending Orders</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"table-responsive\">\n                    <table mat-table class=\"w-100\" [dataSource]=\"dataSource\" matSort>                   \n\n                      \n                        <ng-container matColumnDef=\"hotelName\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.hotelName}} </td>\n                        </ng-container>\n                          <ng-container matColumnDef=\"productname\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Services </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.productname}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"orderdate\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Date </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.orderdate}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"price\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"><b>$</b>{{row.price}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"Reviews_sp\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Reviews by service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.Reviews_sp}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Status </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> <button class=\"btn\" [ngClass]=\"row.status == 'Cancelled' ? 'btn-outline-danger': (row.status == 'Pending') ? 'btn-outline-info' : 'btn-outline-success' \">{{row.status}}</button> </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                    </table>\n\n                    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n                </div>\n            </div>\n        </div>\n    </div> -->\n    <!-- Column -->\n</div>\n<div class=\"row\">\n    <div class=\"col-md-12\">\n        <h4>User History</h4>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/2.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n</div>\n\n\n    \n    <div class=\"card\">\n        <div class=\"card-body\">\n            <h4>Photo/Video</h4>\n          <div class=\"row\">\n            <div class=\"col-md-3\" *ngFor=\"let item of user?.docImage\">\n              <figure class=\"mb-0 p-2\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox,item?.source)\"><img [src]=\"item.thumb?item.thumb:'assets/images/img3.jpg'\" \n             class=\"img-fluid\"></a></figure>\n            </div>\n            <!-- <div class=\"col-md-3\">\n              <figure class=\"mb-0 p-2 border\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox)\"><img src=\"assets/images/img3.jpg\" class=\"img-fluid\"></a></figure>\n            </div> -->\n          </div>\n        </div>\n      </div>\n      <ng-template #videobox let-modal>\n          <div class=\"modal-body\">\n              <button class=\"btn close-icon\" (click)=\"modal.dismiss('Cross click')\"><i class=\"mdi mdi-close\"></i></button>\n            <video width=\"100%\" height=\"315\"  controls autoplay [src]=\"sourceLink?sourceLink:'https://youtu.be/linlz7-Pnvw'\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></video>\n          </div>\n        </ng-template>\n\n<!-- <ng-template #discount let-modal>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title\">Coupons</h4>\n    <button type=\"button\" class=\"close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n   <div class=\"table-reponsive\">\n     <table class=\"table table-sm\">\n      <tbody>\n       <tr>\n       <td class=\"align-middle\">Get 20% OFF On Food Orders</td>\n       <td><button class=\"food-code btn btn-success\">\n        Food20\n       </button></td>\n      </tr>\n      <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       </tbody>\n     </table>\n   </div>\n  </div>\n\n</ng-template> -->\n";
       /***/
     },
 
@@ -25580,7 +25580,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12\">\n        <div class=\"card\">\n\n            <div class=\"card-body\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <form>\n                            <div class=\"mb-2\">\n                                <input type=\"text\" class=\"form-control\" id=\"prenametext\" (keydown)=\"applyFilter($event)\" placeholder=\"Search\">\n                            </div>\n                        </form>\n                    </div>\n                    <div class=\"col-md-8  d-flex justify-content-end\">\n                        <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\n                            <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                                All\n                            </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\" (click)=\"filterBy('')\">All</button>\n                                <button class=\"dropdown-item\" (click)=\"filterBy('true')\">Blocked</button>\n                                <button class=\"dropdown-item\" (click)=\"filterBy('false')\">Unblocked</button>\n                            </div>\n                        </div>\n                        <button class=\"btn btn-primary mb-2 mr-2\" (click)=\"openLink()\"><i class=\"sl-icon-cloud-download\"></i> Export CSV</button>\n                        <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add User</button> -->\n                    </div>\n                </div>\n                <div class=\"table-responsive\">\n                    <table mat-table class=\" w-100\" [dataSource]=\"dataSource\" matSort>\n\n                        <ng-container matColumnDef=\"name\">\n                            <th mat-header-cell *matHeaderCellDef> Name </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.firstName}} {{row.lastName}}</td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"contact\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Contact </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.phoneNo}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"email\">\n                            <th mat-header-cell *matHeaderCellDef>Email </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.email}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"address\">\n                            <th mat-header-cell *matHeaderCellDef>Address </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.address}} </td>\n                        </ng-container>\n                        \n                        <ng-container matColumnDef=\"username\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Username </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.username}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"dateofbirth\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">DOB </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.dateofbirth|date}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"gender\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Gender </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.gender}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Status </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <mat-slide-toggle [checked]=\"row.isBlocked === true ? true : false\" (change)=\"blockUsers(row, $event.checked)\">\n                                    {{row.isBlocked === true ? \"Blocked\" :\"Unblocked\"}}\n                                </mat-slide-toggle>\n                            </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"action\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Action </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\n                                    <button class=\"btn btn-outline-primary btn-sm\" id=\"dropdownBasic1\"\n                                        ngbDropdownToggle>\n                                        Action\n                                    </button>\n\n                                    <!-- <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" routerLink=\"/pages/users_detail\"><i class=\"ti-eye\"></i>\n                                            Accept\n                                        </a>\n\n                                        <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Reject</button>\n                                    </div> -->\n\n                                    <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" (click)=\"viewUserDetail(row)\" style=\"cursor: default;\"><i class=\"ti-eye\"></i>\n                                            View\n                                        </a>\n                                        <button class=\"dropdown-item\" (click)=\"userEditModal(userEdit, row)\"><i\n                                                _ngcontent-axh-c146=\"\" class=\"ti-marker-alt\"></i> Edit</button>\n\n                                        <button class=\"dropdown-item\" (click)=\"deleteUser(userDelete, row)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Delete</button>\n                                    </div>\n                                </div>\n                            </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                        <tr class=\"mat-row\" *matNoDataRow>\n                            <td class=\"mat-cell\" colspan=\"9\">Data not found!</td>\n                          </tr>\n                    </table>\n                </div>\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" [pageSize]=\"pageSize\" (page)=\"pageChange($event)\"></mat-paginator>\n            </div>\n        </div>\n    </div>\n\n    <ng-template #content3 let-modal>\n        <div class=\"modal-header p-2\">\n            <h4 class=\"modal-title\">Driving Licence</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div class=\"modal-body\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n            </div>\n        </div>\n    </ng-template>\n\n\n    <!-- delete modal -->\n    <ng-template #userDelete let-modal>\n        <div class=\"modal-body\">\n            <p>Are you want to delete this user?</p>\n            <div class=\"btn-group\">\n                <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n                    (click)=\"modal.close('Cross click')\">Yes</button>\n                <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                    (click)=\"modal.dismiss('Cross click')\">No</button>\n            </div>\n        </div>\n    </ng-template>\n\n    <!-- edit user detail -->\n    <ng-template #userEdit let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form [formGroup]=\"userForm\">\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">First name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('required') && submitted\">\n                                            Please enter the first name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                                            First name should alphabetic!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('maxlength') && !userForm.controls['firstName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error> \n                                    </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Last name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('required') && submitted\">\n                                            Please enter the last name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('pattern') && !userForm.controls['lastName'].hasError('required') && !userForm.controls['lastName'].hasError('maxlength')\">\n                                            Last name should alphabetic!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('maxlength') && !userForm.controls['lastName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error>  \n                                    </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" (keydown.space)=\"$event.preventDefault()\" formControlName=\"userName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('required') && submitted\">\n                                            Please enter the user name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('pattern') && !userForm.controls['userName'].hasError('required') && !userForm.controls['userName'].hasError('maxlength')\">\n                                            User name should alpha numeric!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('maxlength') && !userForm.controls['userName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error>  \n                                    </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\" (change)=\"uploadFile($event)\"\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\n                                                    for=\"inputGroupFile01\">{{imagePath?imagePath:'Choose file'}}</label></div>\n                                                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"!imagePath && submitted\">\n                                                        Please upload user profile!\n                                                    </mat-error>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Phone number</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('required') && submitted\">\n                                            Please enter the phone number!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('minlength') && !userForm.controls['phoneNo'].hasError('required')\">\n                                            Phone number must be at least 7 digit long.\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('maxlength') && !userForm.controls['phoneNo'].hasError('required')\">\n                                            Phone number can be max 15 digit long.\n                                        </mat-error>\n            \n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('pattern') && !userForm.controls['phoneNo'].hasError('required') && !userForm.controls['phoneNo'].hasError('maxlength')\">\n                                            Phone number not valid!\n                                        </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('required') && submitted\">\n                                                Please enter the email address!\n                                            </mat-error>\n                \n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('pattern') && !userForm.controls['email'].hasError('required')\">\n                                                Email is invalid!\n                                            </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">DOB</label>\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" max=\"{{minAge | date:'yyyy-MM-dd'}}\" formControlName=\"dateofbirth\"\n                                            placeholder=\"eg:- 08/07/1998\">\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['dateofbirth'].hasError('required') && submitted\">\n                                                Please enter date of birth!\n                                            </mat-error>\n                                        </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Gender</label>\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\n                                            tabindex=\"1\">\n                                            <option value=\"MALE\" selected>Male</option>\n                                            <option value=\"FEMALE\">Female</option>\n                                        </select>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['gender'].hasError('required') && submitted\">\n                                            Please  choose gender!\n                                        </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['address'].hasError('required') && submitted\">\n                                                Please enter the email address!\n                                            </mat-error>\n                                        </div>\n                                </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Status</label>\n                                        <div class=\"form-check\">\n                                            <input type=\"checkbox\" id=\"exampleCheck1\" [(ngModel)]=\"isActive\" [ngModelOptions]=\"{standalone: true}\"\n                                                class=\"form-check-input\">\n                                            <label class=\"form-check-label\" for=\"exampleCheck1\">{{isActive?'Active':'Inactive'}}</label>\n                                        </div>\n                                    </div>\n\n                                </div>\n                               </div>\n                        \n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\n                                    (click)=\"UpadteUser()\">\n                                    <i class=\"fa fa-check\"></i>Update</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n         </div>\n    </ng-template>\n\n    <!-- add user -->\n    <ng-template #addUser let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form [formGroup]=\"userForm\">\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">First name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\n                                      </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Last name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\n                                      </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"userName\">\n                                      </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\"\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\n                                                    for=\"inputGroupFile01\">Choose file</label></div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Contact No</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">DOB</label>\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" formControlName=\"dateofbirth\"\n                                            placeholder=\"eg:- 08/07/1998\">\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Gender</label>\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\n                                            tabindex=\"1\">\n                                            <option value=\"Male\" selected>Male</option>\n                                            <option value=\"Female\">Female</option>\n                                        </select>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\n                                    </div>\n                                </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Status</label>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio1\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio1\">Active</label>\n                                        </div>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio2\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio2\">Inactive</label>\n                                        </div>\n                                    </div>\n\n                                </div>\n                               </div>\n                        \n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\n                                    (click)=\"modal.dismiss('Cross click')\">\n                                    <i class=\"fa fa-check\"></i> Add</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n\n        </div>\n    </ng-template>";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12\">\n        <div class=\"card\">\n\n            <div class=\"card-body\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <form>\n                            <div class=\"mb-2\">\n                                <input type=\"text\" class=\"form-control\" id=\"prenametext\" (keydown)=\"applyFilter($event)\" placeholder=\"Search\">\n                            </div>\n                        </form>\n                    </div>\n                    <div class=\"col-md-8  d-flex justify-content-end\">\n                        <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\n                            <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                                All\n                            </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\" (click)=\"filterBy('')\">All</button>\n                                <button class=\"dropdown-item\" (click)=\"filterBy('true')\">Blocked</button>\n                                <button class=\"dropdown-item\" (click)=\"filterBy('false')\">Unblocked</button>\n                            </div>\n                        </div>\n                        <button class=\"btn btn-primary mb-2 mr-2\" (click)=\"openLink()\"><i class=\"sl-icon-cloud-download\"></i> Export CSV</button>\n                        <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add User</button> -->\n                    </div>\n                </div>\n                <div class=\"table-responsive\">\n                    <table mat-table class=\" w-100\" [dataSource]=\"dataSource\" matSort>\n                        <ng-container matColumnDef=\"image\">\n                            <th mat-header-cell *matHeaderCellDef> Image </th>\n                            <td mat-cell *matCellDef=\"let row\">\n                                <span class=\"img-small\"><img [src]=\"row.image\" alt=\"wedding\" width=\"80\" height=\"80\"\n                                    class=\"rounded\"></span>\n                            </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"name\">\n                            <th mat-header-cell *matHeaderCellDef> Name </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.firstName}} {{row.lastName}}</td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"contact\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Contact </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.phoneNo}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"email\">\n                            <th mat-header-cell *matHeaderCellDef>Email </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.email}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"address\">\n                            <th mat-header-cell *matHeaderCellDef>Address </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.address}} </td>\n                        </ng-container>\n                        \n                        <ng-container matColumnDef=\"username\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Username </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.username}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"dateofbirth\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">DOB </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.dateofbirth|date}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"gender\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Gender </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.gender}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Status </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <mat-slide-toggle [checked]=\"row.isBlocked === true ? true : false\" (change)=\"blockUsers(row, $event.checked)\">\n                                    {{row.isBlocked === true ? \"Blocked\" :\"Unblocked\"}}\n                                </mat-slide-toggle>\n                            </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"action\">\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Action </th>\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\n                                <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\n                                    <button class=\"btn btn-outline-primary btn-sm\" id=\"dropdownBasic1\"\n                                        ngbDropdownToggle>\n                                        Action\n                                    </button>\n\n                                    <!-- <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" routerLink=\"/pages/users_detail\"><i class=\"ti-eye\"></i>\n                                            Accept\n                                        </a>\n\n                                        <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Reject</button>\n                                    </div> -->\n\n                                    <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                        <a class=\"dropdown-item\" (click)=\"viewUserDetail(row)\" style=\"cursor: default;\"><i class=\"ti-eye\"></i>\n                                            View\n                                        </a>\n                                        <button class=\"dropdown-item\" (click)=\"userEditModal(userEdit, row)\"><i\n                                                _ngcontent-axh-c146=\"\" class=\"ti-marker-alt\"></i> Edit</button>\n\n                                        <button class=\"dropdown-item\" (click)=\"deleteUser(userDelete, row)\"><i\n                                                class=\"ti-trash\"></i>\n                                            Delete</button>\n                                    </div>\n                                </div>\n                            </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                        <tr class=\"mat-row\" *matNoDataRow>\n                            <td class=\"mat-cell\" colspan=\"9\">Data not found!</td>\n                          </tr>\n                    </table>\n                </div>\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" [pageSize]=\"pageSize\" (page)=\"pageChange($event)\"></mat-paginator>\n            </div>\n        </div>\n    </div>\n\n    <ng-template #content3 let-modal>\n        <div class=\"modal-header p-2\">\n            <h4 class=\"modal-title\">Driving Licence</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div class=\"modal-body\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n                <div class=\"col-md-6\">\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\n                </div>\n            </div>\n        </div>\n    </ng-template>\n\n\n    <!-- delete modal -->\n    <ng-template #userDelete let-modal>\n        <div class=\"modal-body\">\n            <p>Are you want to delete this user?</p>\n            <div class=\"btn-group\">\n                <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\n                    (click)=\"modal.close('Cross click')\">Yes</button>\n                <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\n                    (click)=\"modal.dismiss('Cross click')\">No</button>\n            </div>\n        </div>\n    </ng-template>\n\n    <!-- edit user detail -->\n    <ng-template #userEdit let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form [formGroup]=\"userForm\">\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">First name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('required') && submitted\">\n                                            Please enter the first name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\n                                            First name should alphabetic!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('maxlength') && !userForm.controls['firstName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error> \n                                    </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Last name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('required') && submitted\">\n                                            Please enter the last name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('pattern') && !userForm.controls['lastName'].hasError('required') && !userForm.controls['lastName'].hasError('maxlength')\">\n                                            Last name should alphabetic!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('maxlength') && !userForm.controls['lastName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error>  \n                                    </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" (keydown.space)=\"$event.preventDefault()\" formControlName=\"userName\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('required') && submitted\">\n                                            Please enter the user name!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('pattern') && !userForm.controls['userName'].hasError('required') && !userForm.controls['userName'].hasError('maxlength')\">\n                                            User name should alpha numeric!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('maxlength') && !userForm.controls['userName'].hasError('required')\">\n                                            Maxlength should 15!\n                                        </mat-error>  \n                                    </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\" (change)=\"uploadFile($event)\"\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\n                                                    for=\"inputGroupFile01\">{{imagePath?imagePath:'Choose file'}}</label></div>\n                                                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"!imagePath && submitted\">\n                                                        Please upload user profile!\n                                                    </mat-error>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Phone number</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('required') && submitted\">\n                                            Please enter the phone number!\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('minlength') && !userForm.controls['phoneNo'].hasError('required')\">\n                                            Phone number must be at least 7 digit long.\n                                        </mat-error>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('maxlength') && !userForm.controls['phoneNo'].hasError('required')\">\n                                            Phone number can be max 15 digit long.\n                                        </mat-error>\n            \n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('pattern') && !userForm.controls['phoneNo'].hasError('required') && !userForm.controls['phoneNo'].hasError('maxlength')\">\n                                            Phone number not valid!\n                                        </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('required') && submitted\">\n                                                Please enter the email address!\n                                            </mat-error>\n                \n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('pattern') && !userForm.controls['email'].hasError('required')\">\n                                                Email is invalid!\n                                            </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">DOB</label>\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" max=\"{{minAge | date:'yyyy-MM-dd'}}\" formControlName=\"dateofbirth\"\n                                            placeholder=\"eg:- 08/07/1998\">\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['dateofbirth'].hasError('required') && submitted\">\n                                                Please enter date of birth!\n                                            </mat-error>\n                                        </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Gender</label>\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\n                                            tabindex=\"1\">\n                                            <option value=\"MALE\" selected>Male</option>\n                                            <option value=\"FEMALE\">Female</option>\n                                        </select>\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['gender'].hasError('required') && submitted\">\n                                            Please  choose gender!\n                                        </mat-error>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['address'].hasError('required') && submitted\">\n                                                Please enter the email address!\n                                            </mat-error>\n                                        </div>\n                                </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Status</label>\n                                        <div class=\"form-check\">\n                                            <input type=\"checkbox\" id=\"exampleCheck1\" [(ngModel)]=\"isBlocked\" [ngModelOptions]=\"{standalone: true}\"\n                                                class=\"form-check-input\">\n                                            <label class=\"form-check-label\" for=\"exampleCheck1\">{{isBlocked?'Blocked':'Unblock'}}</label>\n                                        </div>\n                                    </div>\n\n                                </div>\n                               </div>\n                        \n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\n                                    (click)=\"UpadteUser()\">\n                                    <i class=\"fa fa-check\"></i>Update</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n         </div>\n    </ng-template>\n\n    <!-- add user -->\n    <ng-template #addUser let-modal>\n        <div class=\"modal-body\">\n            <div class=\"card\">\n                <form [formGroup]=\"userForm\">\n                    <div class=\"form-body\">\n                        <div class=\"card-body\">\n                            <div class=\"row p-t-20\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">First name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\n                                      </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Last name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\n                                      </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Name</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"userName\">\n                                      </div>\n                                     </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-success\">\n                                        <div class=\"form-group\">\n                                            <label class=\"control-label\">Upload User Profile</label>\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\"\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\n                                                    for=\"inputGroupFile01\">Choose file</label></div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <!--/row-->\n                            <div class=\"row \">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Contact No</label>\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Email</label>\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\n\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">DOB</label>\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" formControlName=\"dateofbirth\"\n                                            placeholder=\"eg:- 08/07/1998\">\n                                    </div>\n                                </div>\n                                <!--/span-->\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">Gender</label>\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\n                                            tabindex=\"1\">\n                                            <option value=\"Male\" selected>Male</option>\n                                            <option value=\"Female\">Female</option>\n                                        </select>\n                                    </div>\n                                </div>\n                                <!--/span-->\n                            </div>\n                            <!--/row-->\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group has-danger\">\n                                        <label class=\"control-label\">Address</label>\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\n                                    </div>\n                                </div>\n                                \n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label class=\"control-label\">User Status</label>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio1\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio1\">Active</label>\n                                        </div>\n                                        <div class=\"custom-control custom-radio\">\n                                            <input type=\"radio\" id=\"customRadio2\" name=\"customRadio\"\n                                                class=\"custom-control-input\">\n                                            <label class=\"custom-control-label\" for=\"customRadio2\">Inactive</label>\n                                        </div>\n                                    </div>\n\n                                </div>\n                               </div>\n                        \n                        </div>\n\n                        <div class=\"form-actions\">\n                            <div class=\"card-body\">\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\n                                    (click)=\"modal.dismiss('Cross click')\">\n                                    <i class=\"fa fa-check\"></i> Add</button>\n                                <button type=\"button\" class=\"btn btn-dark\"\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n            </div>\n\n        </div>\n    </ng-template>";
       /***/
     },
 
@@ -27108,11 +27108,11 @@
                 _this101.submitted = false;
 
                 _this101.toastr.success(res.message, '', {
-                  timeOut: 300
+                  timeOut: 700
                 });
               } else {
                 _this101.toastr.error(res.message, '', {
-                  timeOut: 400
+                  timeOut: 700
                 });
               }
             });
@@ -32850,7 +32850,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3JlYXNvbi9yZWFzb24uY29tcG9uZW50LmNzcyJ9 */";
+      __webpack_exports__["default"] = "\n    .my-custom-class {\n      background: aliceblue;\n      font-size: 125%;\n    }\n    .my-custom-class .arrow::after {\n      border-top-color: aliceblue;\n    }\n    .error{\n      color: red;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvcmVhc29uL3JlYXNvbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7SUFDSTtNQUNFLHFCQUFxQjtNQUNyQixlQUFlO0lBQ2pCO0lBQ0E7TUFDRSwyQkFBMkI7SUFDN0I7SUFDRjtNQUNJLFVBQVU7RUFDZCIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3JlYXNvbi9yZWFzb24uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgIC5teS1jdXN0b20tY2xhc3Mge1xuICAgICAgYmFja2dyb3VuZDogYWxpY2VibHVlO1xuICAgICAgZm9udC1zaXplOiAxMjUlO1xuICAgIH1cbiAgICAubXktY3VzdG9tLWNsYXNzIC5hcnJvdzo6YWZ0ZXIge1xuICAgICAgYm9yZGVyLXRvcC1jb2xvcjogYWxpY2VibHVlO1xuICAgIH1cbiAgLmVycm9ye1xuICAgICAgY29sb3I6IHJlZDtcbiAgfSJdfQ== */";
       /***/
     },
 
@@ -32888,21 +32888,27 @@
       /* harmony import */
 
 
-      var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/material/paginator */
-      "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/paginator.js");
+      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! src/app/shared/services/api.service */
+      "./src/app/shared/services/api.service.ts");
       /* harmony import */
 
 
-      var _angular_material_sort__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @angular/material/sort */
-      "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/sort.js");
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
       /* harmony import */
 
 
-      var _angular_material_table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! @angular/material/table */
-      "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/table.js");
+      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var ngx_toastr__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ngx-toastr */
+      "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -32925,53 +32931,20 @@
       };
 
       var ReasonComponent = /*#__PURE__*/function () {
-        function ReasonComponent(modalService) {
+        function ReasonComponent(FormBuilder, router, modalService, service, toastr) {
           _classCallCheck(this, ReasonComponent);
 
-          this.modalService = modalService; //table: any
-
-          this.displayedColumns = ['name', 'action'];
-          this.table = [{
-            name: 'Sandy',
-            // id: "#sand334553",
-            contact: "+91-33434343",
-            email: "sand@example.com",
-            address: "#454 1st Block, Rammurthy, Bangalore-560016",
-            completedOrders: "50",
-            cancelledOrders: "0",
-            paymentnotcomplete: "0",
-            pendingOrders: "0",
-            totalOrders: "50",
-            status: "",
-            action: "1"
-          }, {
-            name: 'Rohan',
-            // id: "#rohan334553",
-            contact: "+91-33434343",
-            email: "sand@example.com",
-            address: "#454 1st Block, Rammurthy, Bangalore-560016",
-            completedOrders: "10",
-            cancelledOrders: "0",
-            paymentnotcomplete: "0",
-            pendingOrders: "30",
-            totalOrders: "40",
-            status: "",
-            action: "1"
-          }, {
-            name: 'john',
-            // id: "#rohan334553",
-            contact: "+91-33434343",
-            email: "sand@example.com",
-            address: "#454 1st Block, Rammurthy, Bangalore-560016",
-            completedOrders: "20",
-            cancelledOrders: "10",
-            paymentnotcomplete: "0",
-            pendingOrders: "10",
-            totalOrders: "30",
-            status: "",
-            action: "1"
-          }];
-          this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](this.table);
+          this.FormBuilder = FormBuilder;
+          this.router = router;
+          this.modalService = modalService;
+          this.service = service;
+          this.toastr = toastr;
+          this.AddCalled = false;
+          this.pageSize = 10;
+          this.pageIndex = 1;
+          this.reasonForm = this.FormBuilder.group({
+            reason: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(100)]]
+          });
         }
 
         _createClass(ReasonComponent, [{
@@ -32985,21 +32958,92 @@
           }
         }, {
           key: "ngOnInit",
-          value: function ngOnInit() {}
-        }, {
-          key: "ngAfterViewInit",
-          value: function ngAfterViewInit() {
-            this.dataSource.paginator = this.paginator;
-            this.dataSource.sort = this.sort;
+          value: function ngOnInit() {
+            this.getReason();
           }
         }, {
           key: "deletemodal",
-          value: function deletemodal(deletereason) {
+          value: function deletemodal(deletereason, id) {
+            this.id = id.id;
             this.modalService.open(deletereason, {
               backdropClass: 'light-blue-backdrop',
               centered: true,
               size: 'lg'
             });
+          }
+        }, {
+          key: "getReason",
+          value: function getReason() {
+            var _this121 = this;
+
+            var url = "reasons";
+            this.service.getApi(url).subscribe(function (res) {
+              console.log('Reason', res);
+
+              if (res.statusCode == 200) {
+                _this121.Items = res.data.value;
+                _this121.totalUser = res.data.length;
+              } else {
+                _this121.toastr.error(res.message, '', {
+                  timeOut: 600
+                });
+
+                console.log('Else called', res);
+                _this121.totalUser = 0;
+              }
+            });
+          }
+        }, {
+          key: "Delete",
+          value: function Delete() {
+            var _this122 = this;
+
+            var url = "reason/".concat(this.id);
+            this.service.deleteApi(url).subscribe(function (res) {
+              if (res.statusCode == 200) {
+                _this122.toastr.success(res.message, '', {
+                  timeOut: 600
+                });
+
+                _this122.modalService.dismissAll();
+
+                _this122.getReason();
+              } else {
+                _this122.toastr.error(res.message, '', {
+                  timeOut: 600
+                });
+              }
+            });
+          }
+        }, {
+          key: "Add",
+          value: function Add() {
+            var _this123 = this;
+
+            this.AddCalled = true;
+            var url = "reasons";
+
+            if (this.reasonForm.valid) {
+              this.service.postApi(url, this.reasonForm.value).subscribe(function (res) {
+                console.log('Added', res);
+
+                if (res.success == true) {
+                  _this123.toastr.success(res.message);
+
+                  _this123.AddCalled = false;
+
+                  _this123.modalService.dismissAll();
+
+                  _this123.getReason();
+
+                  _this123.reasonForm.reset();
+                } else {
+                  _this123.toastr.error(res.message, '', {
+                    timeOut: 600
+                  });
+                }
+              });
+            }
           }
         }]);
 
@@ -33008,24 +33052,18 @@
 
       ReasonComponent.ctorParameters = function () {
         return [{
+          type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+        }, {
           type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]
+        }, {
+          type: src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+        }, {
+          type: ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"]
         }];
       };
 
-      ReasonComponent.propDecorators = {
-        paginator: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-          args: [_angular_material_paginator__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"], {
-            "static": true
-          }]
-        }],
-        sort: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-          args: [_angular_material_sort__WEBPACK_IMPORTED_MODULE_3__["MatSort"], {
-            "static": true
-          }]
-        }]
-      };
       ReasonComponent = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
         selector: 'app-reason',
         template: __importDefault(__webpack_require__(
@@ -33034,7 +33072,7 @@
         styles: [__importDefault(__webpack_require__(
         /*! ./reason.component.css */
         "./src/app/pages/reason/reason.component.css"))["default"]]
-      }), __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]])], ReasonComponent);
+      }), __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"], src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"]])], ReasonComponent);
       /***/
     },
 
@@ -33089,6 +33127,18 @@
       var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @ng-bootstrap/ng-bootstrap */
       "./node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/ng-bootstrap.js");
+      /* harmony import */
+
+
+      var ngx_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ngx-toastr */
+      "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
+      /* harmony import */
+
+
+      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! src/app/shared/services/api.service */
+      "./src/app/shared/services/api.service.ts");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -33111,16 +33161,22 @@
       };
 
       var ReportComponent = /*#__PURE__*/function () {
-        function ReportComponent(modalService) {
+        function ReportComponent(modalService, service, toastr) {
           _classCallCheck(this, ReportComponent);
 
           this.modalService = modalService;
+          this.service = service;
+          this.toastr = toastr;
           this.active = 1;
+          this.pageSize = 10;
+          this.pageIndex = 1;
         }
 
         _createClass(ReportComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {}
+          value: function ngOnInit() {
+            this.getUsers();
+          }
         }, {
           key: "reviewModal",
           value: function reviewModal(review) {
@@ -33159,6 +33215,74 @@
               return "with: ".concat(reason);
             }
           }
+        }, {
+          key: "getUsers",
+          value: function getUsers() {
+            var _this124 = this;
+
+            var url = "reports?count=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : ''));
+            this.service.getApi(url).subscribe(function (res) {
+              console.log('Review api called', res);
+
+              if (res.statusCode === 200) {
+                _this124.Reports = res.data.doc;
+                _this124.totalUser = res.data.itemCount;
+                console.log('Total rev', _this124.totalUser, res);
+              } else {
+                _this124.toastr.error(res["message"]);
+
+                _this124.totalUser = 0;
+              }
+            });
+          }
+        }, {
+          key: "pageChange",
+          value: function pageChange(event) {
+            console.log('ev page', event);
+            this.pageSize = event.pageSize;
+
+            if (event.pageIndex == 0) {
+              this.pageIndex = 1;
+            } else {
+              this.pageIndex = event.pageIndex;
+            }
+
+            this.getUsers();
+          }
+        }, {
+          key: "applyFilter",
+          value: function applyFilter(event) {
+            var _this125 = this;
+
+            window.clearTimeout(this.timer);
+            this.timer = window.setTimeout(function () {
+              var filterValue = event.target.value;
+              _this125.searchBy = filterValue;
+              _this125.pageIndex = 1;
+
+              _this125.getUsers();
+            }, 1000);
+          }
+        }, {
+          key: "deleteItem",
+          value: function deleteItem() {
+            var _this126 = this;
+
+            var url = "reports/".concat(this.id);
+            this.service.deleteApi(url).subscribe(function (res) {
+              if (res.statusCode == 200) {
+                _this126.toastr.success(res.message, '', {
+                  timeOut: 700
+                });
+
+                _this126.modalService.dismissAll();
+
+                _this126.getUsers();
+              } else {
+                _this126.toastr.error(res.message);
+              }
+            });
+          }
         }]);
 
         return ReportComponent;
@@ -33167,6 +33291,10 @@
       ReportComponent.ctorParameters = function () {
         return [{
           type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]
+        }, {
+          type: src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]
+        }, {
+          type: ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastrService"]
         }];
       };
 
@@ -33178,7 +33306,7 @@
         styles: [__importDefault(__webpack_require__(
         /*! ./report.component.css */
         "./src/app/pages/report/report.component.css"))["default"]]
-      }), __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]])], ReportComponent);
+      }), __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"], src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastrService"]])], ReportComponent);
       /***/
     },
 
@@ -33821,20 +33949,20 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this121 = this;
+            var _this127 = this;
 
             var url = "reviews?count=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : ''));
             this.api.getApi(url).subscribe(function (res) {
               console.log('Review api called', res);
 
               if (res.statusCode === 200) {
-                _this121.Reviews = res.data.doc;
-                _this121.totalUser = res.data.itemCount;
-                console.log('Total rev', _this121.totalUser, res);
+                _this127.Reviews = res.data.doc;
+                _this127.totalUser = res.data.itemCount;
+                console.log('Total rev', _this127.totalUser, res);
               } else {
-                _this121.toastr.error(res["message"]);
+                _this127.toastr.error(res["message"]);
 
-                _this121.totalUser = 0;
+                _this127.totalUser = 0;
               }
             });
           }
@@ -33855,34 +33983,34 @@
         }, {
           key: "applyFilter",
           value: function applyFilter(event) {
-            var _this122 = this;
+            var _this128 = this;
 
             window.clearTimeout(this.timer);
             this.timer = window.setTimeout(function () {
               var filterValue = event.target.value;
-              _this122.searchBy = filterValue;
-              _this122.pageIndex = 1;
+              _this128.searchBy = filterValue;
+              _this128.pageIndex = 1;
 
-              _this122.getUsers();
+              _this128.getUsers();
             }, 1000);
           }
         }, {
           key: "deleteItem",
           value: function deleteItem() {
-            var _this123 = this;
+            var _this129 = this;
 
             var url = "reviews/".concat(this.id);
             this.api.deleteApi(url).subscribe(function (res) {
               if (res.statusCode == 200) {
-                _this123.toastr.success(res.message, '', {
+                _this129.toastr.success(res.message, '', {
                   timeOut: 700
                 });
 
-                _this123.modalService.dismissAll();
+                _this129.modalService.dismissAll();
 
-                _this123.getUsers();
+                _this129.getUsers();
               } else {
-                _this123.toastr.error(res.message);
+                _this129.toastr.error(res.message);
               }
             });
           }
@@ -34563,14 +34691,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this124 = this;
+            var _this130 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this124.closeResult = "Closed with: ".concat(result);
+              _this130.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this124.closeResult = "Dismissed ".concat(_this124.getDismissReason(reason));
+              _this130.closeResult = "Dismissed ".concat(_this130.getDismissReason(reason));
             });
           }
         }, {
@@ -35184,7 +35312,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".match_box {\n  width: 100px;\n  height: 100px;\n  overflow: hidden;\n  margin: 0px 20px;\n}\n\n.heart-box {\n  width: 60px;\n  height: 60px;\n  background-color: #172b4d;\n  color: #fff;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 30px;\n  position: absolute;\n  top: 40px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdXNlcnMtZGV0YWlsL3VzZXJzLWRldGFpbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtBQUNwQjs7QUFDQTtFQUNJLFdBQVc7RUFDWCxZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixTQUFTO0FBRWIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy91c2Vycy1kZXRhaWwvdXNlcnMtZGV0YWlsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdGNoX2JveHtcbiAgICB3aWR0aDogMTAwcHg7XG4gICAgaGVpZ2h0OiAxMDBweDtcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgIG1hcmdpbjogMHB4IDIwcHg7XG59XG4uaGVhcnQtYm94e1xuICAgIHdpZHRoOiA2MHB4O1xuICAgIGhlaWdodDogNjBweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTcyYjRkO1xuICAgIGNvbG9yOiAjZmZmO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgZm9udC1zaXplOiAzMHB4O1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICB0b3A6IDQwcHg7XG59Il19 */";
+      __webpack_exports__["default"] = ".match_box {\n  width: 100px;\n  height: 100px;\n  overflow: hidden;\n  margin: 0px 20px;\n}\n\n.heart-box {\n  width: 60px;\n  height: 60px;\n  background-color: #172b4d;\n  color: #fff;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 30px;\n  position: absolute;\n  top: 40px;\n}\n\nimg {\n  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);\n  float: left;\n  width: 200px;\n  height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdXNlcnMtZGV0YWlsL3VzZXJzLWRldGFpbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtBQUNwQjs7QUFDQTtFQUNJLFdBQVc7RUFDWCxZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixTQUFTO0FBRWI7O0FBQUE7RUFDSSw4Q0FBOEM7RUFDOUMsV0FBVztFQUNYLFlBQWE7RUFDYixhQUFhO0VBQ2Isb0JBQWlCO0tBQWpCLGlCQUFpQjtBQUdyQiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3VzZXJzLWRldGFpbC91c2Vycy1kZXRhaWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWF0Y2hfYm94e1xuICAgIHdpZHRoOiAxMDBweDtcbiAgICBoZWlnaHQ6IDEwMHB4O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgbWFyZ2luOiAwcHggMjBweDtcbn1cbi5oZWFydC1ib3h7XG4gICAgd2lkdGg6IDYwcHg7XG4gICAgaGVpZ2h0OiA2MHB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMxNzJiNGQ7XG4gICAgY29sb3I6ICNmZmY7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICBmb250LXNpemU6IDMwcHg7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHRvcDogNDBweDtcbn1cbmltZyB7XG4gICAgYm94LXNoYWRvdzogMCAwIDJweCAxcHggcmdiYSgwLCAxNDAsIDE4NiwgMC41KTtcbiAgICBmbG9hdDogbGVmdDtcbiAgICB3aWR0aDogIDIwMHB4O1xuICAgIGhlaWdodDogMjAwcHg7XG4gICAgb2JqZWN0LWZpdDogY292ZXI7XG4gIH0iXX0= */";
       /***/
     },
 
@@ -35290,7 +35418,7 @@
 
       var UsersDetailComponent = /*#__PURE__*/function () {
         function UsersDetailComponent(modalService, fb, api, router, route, toastr) {
-          var _this125 = this;
+          var _this131 = this;
 
           _classCallCheck(this, UsersDetailComponent);
 
@@ -35307,7 +35435,7 @@
 
           this.setValues = function (data) {
             if (data) {
-              data.image && (_this125.imageUrl = data.image); // this.userForm.patchValue({
+              data.image && (_this131.imageUrl = data.image); // this.userForm.patchValue({
               // 	fullName: data.fullName,
               // 	countryCode: data.countryCode,
               // 	password: data.password,
@@ -35316,7 +35444,7 @@
               // });
 
               if (data.image) {
-                _this125.imageUrl;
+                _this131.imageUrl;
               }
             }
           };
@@ -35365,10 +35493,10 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this126 = this;
+            var _this132 = this;
 
             this.route.params.subscribe(function (params) {
-              _this126.id = params["id"]; // this.getOutlettById(this.id);
+              _this132.id = params["id"]; // this.getOutlettById(this.id);
             });
             console.log("id: ", this.id);
             this.imageUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].imagesUrl;
@@ -35377,27 +35505,29 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this127 = this;
+            var _this133 = this;
 
             this.api.users().subscribe(function (res) {
               if (res['statusCode'] === 200) {
-                _this127.getAllUsers = res["data"]["data"];
-                console.log("getAllUsers: ", _this127.getAllUsers);
-                _this127.user = _this127.getAllUsers.find(function (x) {
-                  return x._id === _this127.id;
+                _this133.getAllUsers = res["data"]["data"];
+                console.log("getAllUsers: ", _this133.getAllUsers);
+                _this133.user = _this133.getAllUsers.find(function (x) {
+                  return x._id === _this133.id;
                 });
 
-                _this127.setValues(_this127.user);
+                _this133.setValues(_this133.user);
 
-                console.log("user obj: ", _this127.user);
+                console.log("user obj: ", _this133.user);
               } else {
-                _this127.toastr.error(res["message"]);
+                _this133.toastr.error(res["message"]);
               }
             });
           }
         }, {
           key: "videoBoxModal",
-          value: function videoBoxModal(videobox) {
+          value: function videoBoxModal(videobox, src) {
+            this.sourceLink = src;
+            console.log('Sor', src);
             this.modalService.open(videobox, {
               backdropClass: 'light-blue-backdrop',
               centered: true,
@@ -35489,7 +35619,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "\n@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700\");\n/*******************************/\n/*******************************/\n/*Theme Colors*/\n/*Topbar Colors*/\n/*Sidebar Colors*/\n/*Boxed layout width*/\n/*Shadow*/\n/* transitions */\n/* Dark transparent bg */\n/* ***************************** */\n/* ***************************** */\n/* *\n * Table Of Content\n *\n *  1. Color system\n *  2. Options\n *  3. Body\n *  4. Typography\n *  5. Breadcrumbs\n *  6. Cards\n *  7. Dropdowns\n *  8. Buttons\n *  9. Typography\n *  10. Progress bars\n *  11. Tables\n *  12. Forms\n *  14. Component */\n/*******************\nTimeline page\n******************/\n.list-block-listing {\n  line-height: 30px;\n}\n.user_history {\n  padding: 0px 0px;\n}\n.user_history_list {\n  list-style: none;\n  padding: 15px 0px;\n  display: flex;\n  padding-left: 45px;\n  position: relative;\n  align-items: center;\n}\n.user_history_list_icon {\n  width: 38px;\n  height: 38px;\n  background: #f8f9fa;\n  position: absolute;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 50%;\n  border: 1px solid #ced4da;\n  left: 0;\n  font-size: 18px;\n}\n.user_history_list_icon:before {\n  content: '';\n  position: absolute;\n  height: 18px;\n  width: 4px;\n  background-color: #ced4da;\n  bottom: -17px;\n}\n.user_history_list_icon.active {\n  background: #4f5467;\n  color: #fff;\n}\n.user_history_list_icon.active:before {\n  background-color: #4f5467;\n}\n.user_history_list:last-child_icon:before {\n  display: none;\n}\n.user_history_list .skip {\n  color: #e9ecef;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hc3NldHMvc2Nzcy92YXJpYWJsZS5zY3NzIiwic3JjL2FwcC9wYWdlcy91c2Vycy91c2Vycy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBTUEsa0ZBQVk7QUFOWixnQ0FBQTtBQUlBLGdDQUFBO0FBSUEsZUFBQTtBQWdCQSxnQkFBQTtBQVNBLGlCQUFBO0FBZUEscUJBQUE7QUFJQSxTQUFBO0FBT0EsZ0JBQUE7QUFJQSx3QkFBQTtBQXNCQSxrQ0FBQTtBQUlBLGtDQUFBO0FBR0E7Ozs7Ozs7Ozs7Ozs7OzttQkNqRW1CO0FBeEJuQjs7a0JBMkJrQjtBQXRCbEI7RUFDSSxpQkFBaUI7QUF3QnJCO0FBdEJBO0VBQ0ksZ0JBQWdCO0FBeUJwQjtBQXZCQTtFQUNJLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsYUFBYTtFQUNiLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsbUJBQW1CO0FBMEJ2QjtBQXpCQztFQUNHLFdBQVc7RUFDWCxZQUFZO0VBQ1osbUJEdUZjO0VDdEZkLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLHlCRG1GYztFQ2xGZCxPQUFPO0VBQ1AsZUFBZTtBQTRCbkI7QUF4Q0U7RUFlTSxXQUFVO0VBQ1Ysa0JBQWtCO0VBQ2xCLFlBQVc7RUFDWCxVQUFTO0VBQ1QseUJEMEVVO0VDekVWLGFBQWE7QUE2QnJCO0FBakRFO0VBdUJNLG1CRHlFVTtFQ3hFVixXRGlFSTtBQ25DWjtBQXRERTtFQTBCVSx5QkRzRU07QUN0Q2xCO0FBakVBO0VBeUNZLGFBQWE7QUE0QnpCO0FBckVBO0VBOENJLGNEb0RjO0FDekJsQiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3VzZXJzL3VzZXJzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiovXG5cbi8vIEN1c3RvbSBWYXJpYWJsZXNcblxuLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiovXG5cbkBpbXBvcnQgdXJsKCdodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9UG9wcGluczozMDAsNDAwLDUwMCw2MDAsNzAwJyk7XG5cbi8qVGhlbWUgQ29sb3JzKi9cblxuJHRoZW1lY29sb3I6ICMzNTkxRkY7XG4kdGhlbWVjb2xvci1kYXJrOiAjMDI4ZWUxO1xuJHRoZW1lY29sb3ItYWx0OiAjMjZjNmRhO1xuJHRoZW1lLWxpZ2h0OiAjZmZmO1xuJHRoZW1lLWRhcms6ICMyMTI1Mjk7XG4kc2tpbjE6ICMzNTg3ZDg7XG4kc2tpbjI6ICNkODM5Mzk7XG4kc2tpbjM6ICMxN2E5OTE7XG4kc2tpbjQ6ICM2NjU5Zjc7XG4kc2tpbjcgOiNFQzc1RjY7XG4kc2tpbjUgOiMxNzJiNGQ7XG47XG4kc2tpbjY6ICNmZmY7XG5cbi8qVG9wYmFyIENvbG9ycyovXG5cbiR0b3BiYXI6ICR0aGVtZS1saWdodDtcbiR0b3BiYXItaGVpZ2h0OiA2NHB4O1xuJHRvcGJhci1uYXZsaW5rLXBhZGRpbmc6IDBweCAxNXB4O1xuJHRvcGJhci1uYXZsaW5rLWZvbnQtc2l6ZTogMC44NzVyZW07XG4kdG9wYmFyLW5hdmxpbmstaGVpZ2h0OiA0NXB4O1xuJHRvcGJhci1uYXZicmFuZC1wYWRkaW5nOiAwIDE1cHggMCAxNXB4O1xuXG4vKlNpZGViYXIgQ29sb3JzKi9cblxuJHNpZGViYXI6JHNraW41IDtcbiRzaWRlYmFyLWFsdDogI2U4ZWZmMDtcbiRzaWRlYmFyLXRleHQ6ICNmZmY7XG4kc2lkZWJhci1pY29uczogcmdiKDAsXG4wLFxuMCk7XG4kc2lkZWJhci10ZXh0LWRhcms6ICMyMTI1Mjk7XG4kc2lkZWJhci10ZXh0LWRhcms6ICMyMTI1Mjk7XG4kc2lkZWJhci1pY29ucy1kYXJrOiAjNGY1NDY3O1xuJHNpZGViYXItd2lkdGgtZnVsbDogMjUwcHg7XG4kc2lkZWJhci13aWR0aC1pY29uYmFyOiAxODBweDtcbiRzaWRlYmFyLXdpZHRoLW1pbmk6IDcwcHg7XG5cbi8qQm94ZWQgbGF5b3V0IHdpZHRoKi9cblxuJGJveGVkLXdpZHRoOiAxMjAwcHg7XG5cbi8qU2hhZG93Ki9cblxuJHNoYWRvdzogMXB4IDBweCAyMHB4IHJnYmEoMCxcbjAsXG4wLFxuMC4wOCk7XG5cbi8qIHRyYW5zaXRpb25zICovXG5cbiR0cmFuc2l0aW9uczogMC4ycyBlYXNlLWluO1xuXG4vKiBEYXJrIHRyYW5zcGFyZW50IGJnICovXG5cbiR0cmFuc3BhcmVudC1kYXJrLWJnOiByZ2JhKDAsXG4wLFxuMCxcbjAuMDUpO1xuJGxmdDogbGVmdDtcbiRyZ3Q6IHJpZ2h0O1xuJGNhcmQtYWx0OiAjZTRlOWVmO1xuJXNxdWFyZSB7XG4gICAgYm9yZGVyLXJhZGl1czogMHB4O1xufVxuXG4lcm90YXRlNDUge1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDQ1ZGVnKTtcbiAgICAtbXMtdHJhbnNmb3JtOiByb3RhdGUoNDVkZWcpO1xuICAgIC13ZWJraXQtdHJhbnNmb3JtOiByb3RhdGUoNDVkZWcpO1xuICAgIC1vLXRyYW5zZm9ybTogcm90YXRlKDQ1ZGVnKTtcbiAgICAtbW96LXRyYW5zZm9ybTogcm90YXRlKDQ1ZGVnKTtcbn1cblxuXG4vKiAqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiAqL1xuXG4vLyBCb290c3RyYXAgb3ZlcnJpZGVzXG5cbi8qICoqKioqKioqKioqKioqKioqKioqKioqKioqKioqICovXG5cblxuLyogKlxuICogVGFibGUgT2YgQ29udGVudFxuICpcbiAqICAxLiBDb2xvciBzeXN0ZW1cbiAqICAyLiBPcHRpb25zXG4gKiAgMy4gQm9keVxuICogIDQuIFR5cG9ncmFwaHlcbiAqICA1LiBCcmVhZGNydW1ic1xuICogIDYuIENhcmRzXG4gKiAgNy4gRHJvcGRvd25zXG4gKiAgOC4gQnV0dG9uc1xuICogIDkuIFR5cG9ncmFwaHlcbiAqICAxMC4gUHJvZ3Jlc3MgYmFyc1xuICogIDExLiBUYWJsZXNcbiAqICAxMi4gRm9ybXNcbiAqICAxNC4gQ29tcG9uZW50ICovXG5cbi8vQ29sb3Igc3lzdGVtXG4kd2hpdGU6ICNmZmYgIWRlZmF1bHQ7XG4kZ3JheS0xMDA6ICNmOGY5ZmEgIWRlZmF1bHQ7XG4kZ3JheS0yMDA6ICNlOWVjZWYgIWRlZmF1bHQ7XG4kZ3JheS0zMDA6ICNkZWUyZTYgIWRlZmF1bHQ7XG4kZ3JheS00MDA6ICNjZWQ0ZGEgIWRlZmF1bHQ7XG4kZ3JheS01MDA6ICNhMWFhYjIgIWRlZmF1bHQ7XG4kZ3JheS02MDA6ICM2Yzc1N2QgIWRlZmF1bHQ7XG4kZ3JheS03MDA6ICM0ZjU0NjcgIWRlZmF1bHQ7XG4kZ3JheS04MDA6ICMzNDNhNDAgIWRlZmF1bHQ7XG4kZ3JheS05MDA6ICMyMTI1MjkgIWRlZmF1bHQ7XG4kYmxhY2s6ICMwMDAgIWRlZmF1bHQ7XG4kYmx1ZTogI2ZiYjAzYiAhZGVmYXVsdDtcbiRpbmRpZ286ICM2NjEwZjIgIWRlZmF1bHQ7XG4kcHVycGxlOiAjNzQ2MGVlICFkZWZhdWx0O1xuJHBpbms6ICNlODNlOGMgIWRlZmF1bHQ7XG4kcmVkOiAjZWY2ZTZlICFkZWZhdWx0O1xuJGxpZ2h0LWluZm86ICNlNmYyZmEgIWRlZmF1bHQ7XG4kbGlnaHQtZGFuZ2VyOiAjZmFlNmU2ICFkZWZhdWx0O1xuJGxpZ2h0LXN1Y2Nlc3M6ICNlOWY5ZjcgIWRlZmF1bHQ7XG4kbGlnaHQtd2FybmluZzogI2Y4ZWZkNyAhZGVmYXVsdDtcbiRvcmFuZ2U6ICNmYjhjMDAgIWRlZmF1bHQ7XG4keWVsbG93OiAjZmZiYzM0ICFkZWZhdWx0O1xuJGdyZWVuOiAjMjJjNmFiICFkZWZhdWx0O1xuJGdyZWVuMTogIzVhZTUwZSAhZGVmYXVsdDtcbiR0ZWFsOiAjMjBjOTk3ICFkZWZhdWx0O1xuJGN5YW46ICMwMWMwYzggIWRlZmF1bHQ7XG4kcHJpbWFyeTojMTcyYjRkICFkZWZhdWx0O1xuJHRleHQtbXV0ZWQ6ICRncmF5LTUwMCAhZGVmYXVsdDtcbiRZZWxsb3ctR3JlZW46I2NlZGY2YTtcbiRjb2xvcnM6ICggYmx1ZTogJGJsdWUsXG5pbmRpZ286ICRpbmRpZ28sXG5wdXJwbGU6ICRwdXJwbGUsXG5waW5rOiAkcGluayxcbnJlZDogJHJlZCxcbm9yYW5nZTogJG9yYW5nZSxcbnllbGxvdzogJHllbGxvdyxcbmdyZWVuOiAkZ3JlZW4sXG50ZWFsOiAkdGVhbCxcbmN5YW46ICRjeWFuLFxud2hpdGU6ICR3aGl0ZSxcbmdyYXk6ICRncmF5LTYwMCxcbmdyYXktZGFyazogJGdyYXktODAwLFxubGlnaHQtaW5mbzogJGxpZ2h0LWluZm8sXG5saWdodC1kYW5nZXI6ICRsaWdodC1kYW5nZXIsXG5saWdodC1zdWNjZXNzOiAkbGlnaHQtc3VjY2VzcyxcbmxpZ2h0LXdhcm5pbmc6ICRsaWdodC13YXJuaW5nKTtcbiRwcmltYXJ5OiAkYmx1ZSAhZGVmYXVsdDtcbiRzZWNvbmRhcnk6ICRncmF5LTYwMCAhZGVmYXVsdDtcbiRzdWNjZXNzOiAkZ3JlZW4gIWRlZmF1bHQ7XG4kaW5mbzogJGJsdWUgIWRlZmF1bHQ7XG4kd2FybmluZzogJHllbGxvdyAhZGVmYXVsdDtcbiRkYW5nZXI6ICRyZWQgIWRlZmF1bHQ7XG4kbGlnaHQ6ICRncmF5LTEwMCAhZGVmYXVsdDtcbiRkYXJrOiAkZ3JheS04MDAgIWRlZmF1bHQ7XG4kY3lhbjogJGN5YW4gIWRlZmF1bHQ7XG4kb3JhbmdlOiAkb3JhbmdlICFkZWZhdWx0O1xuJHRoZW1lLWNvbG9yczogKCkgIWRlZmF1bHQ7XG4kdGhlbWUtY29sb3JzOiBtYXAtbWVyZ2UoICggJ3ByaW1hcnknOiAkcHJpbWFyeSwgJ3NlY29uZGFyeSc6ICRzZWNvbmRhcnksICdzdWNjZXNzJzogJHN1Y2Nlc3MsICdpbmZvJzogJGluZm8sICd3YXJuaW5nJzogJHdhcm5pbmcsICdkYW5nZXInOiAkZGFuZ2VyLCAnbGlnaHQnOiAkbGlnaHQsICdkYXJrJzogJGRhcmssICdjeWFuJzogJGN5YW4sICdvcmFuZ2UnOiAkb3JhbmdlLCAncHVycGxlJzogJHB1cnBsZSwgJ2xpZ2h0LWluZm8nOiAkbGlnaHQtaW5mbywgJ2xpZ2h0LWRhbmdlcic6ICRsaWdodC1kYW5nZXIsICdsaWdodC1zdWNjZXNzJzogJGxpZ2h0LXN1Y2Nlc3MsICdsaWdodC13YXJuaW5nJzogJGxpZ2h0LXdhcm5pbmcpLFxuJHRoZW1lLWNvbG9ycyk7XG4vLyBRdWlja2x5IG1vZGlmeSBnbG9iYWwgc3R5bGluZyBieSBlbmFibGluZyBvciBkaXNhYmxpbmcgb3B0aW9uYWwgZmVhdHVyZXMuXG4kZW5hYmxlLWNhcmV0OiB0cnVlICFkZWZhdWx0O1xuJGVuYWJsZS1yb3VuZGVkOiB0cnVlICFkZWZhdWx0O1xuJGVuYWJsZS1zaGFkb3dzOiBmYWxzZSAhZGVmYXVsdDtcbiRlbmFibGUtZ3JhZGllbnRzOiBmYWxzZSAhZGVmYXVsdDtcbiRlbmFibGUtdHJhbnNpdGlvbnM6IHRydWUgIWRlZmF1bHQ7XG4kZW5hYmxlLWhvdmVyLW1lZGlhLXF1ZXJ5OiBmYWxzZSAhZGVmYXVsdDtcbiRlbmFibGUtZ3JpZC1jbGFzc2VzOiB0cnVlICFkZWZhdWx0O1xuJGVuYWJsZS1wcmludC1zdHlsZXM6IHRydWUgIWRlZmF1bHQ7XG4vLyBCb2R5XG4vLyBTZXR0aW5ncyBmb3IgdGhlICBlbGVtZW50LlxuJG1haW4tYm9keS1iZzogI2ZmZiAhZGVmYXVsdDtcbiRib2R5LWJnOiAjZmZmO1xuJGJvZHktY29sb3I6ICMzZTU1NjkgIWRlZmF1bHQ7XG4kZ3JpZC1ndXR0ZXItd2lkdGg6IDIwcHggIWRlZmF1bHQ7XG4vLyBUeXBvZ3JhcGh5XG4vLyBGb250LCBsaW5lLWhlaWdodCwgYW5kIGNvbG9yIGZvciBib2R5IHRleHQsIGhlYWRpbmdzLCBhbmQgbW9yZS5cbiRmb250LXNpemUtYmFzZTogMC44NzVyZW07XG4kZm9udC1mYW1pbHktc2Fucy1zZXJpZjogJ1BvcHBpbnMnLFxuc2Fucy1zZXJpZiAhZGVmYXVsdDtcbiRmb250LXdlaWdodC1saWdodDogMzAwICFkZWZhdWx0O1xuJGZvbnQtd2VpZ2h0LW5vcm1hbDogMzAwICFkZWZhdWx0O1xuJGZvbnQtd2VpZ2h0LW1lZGl1bTogNTAwICFkZWZhdWx0O1xuJGZvbnQtd2VpZ2h0LWJvbGQ6IDYwMCAhZGVmYXVsdDtcbiRoMS1mb250LXNpemU6IDM2cHggIWRlZmF1bHQ7XG4kaDItZm9udC1zaXplOiAzMHB4ICFkZWZhdWx0O1xuJGgzLWZvbnQtc2l6ZTogMjJweCAhZGVmYXVsdDtcbiRoNC1mb250LXNpemU6IDE4cHggIWRlZmF1bHQ7XG4kaDUtZm9udC1zaXplOiAxNnB4ICFkZWZhdWx0O1xuJGg2LWZvbnQtc2l6ZTogMTRweCAhZGVmYXVsdDtcbiRoZWFkaW5ncy1tYXJnaW4tYm90dG9tOiAoMXJlbSAvIDIpICFkZWZhdWx0O1xuJGhlYWRpbmdzLWZvbnQtd2VpZ2h0OiA1MDAgIWRlZmF1bHQ7XG4kaGVhZGluZ3MtY29sb3I6IGluaGVyaXQgIWRlZmF1bHQ7XG4vLyBCcmVhZGNydW1ic1xuJGJyZWFkY3J1bWItYmc6ICRib2R5LWJnO1xuJGJyZWFkY3J1bWItbWFyZ2luLWJvdHRvbTogMS41cmVtO1xuLy8gQ2FyZHNcbiRjYXJkLWJvcmRlci13aWR0aDogMXB4ICFkZWZhdWx0O1xuJGNhcmQtYm9yZGVyLWNvbG9yOiAkZ3JheS0yMDAgIWRlZmF1bHQ7XG4kY2FyZC1ib3JkZXItcmFkaXVzOiAwcHggIWRlZmF1bHQ7XG4vLyBEcm9wZG93bnNcbiRkcm9wZG93bi1pdGVtLXBhZGRpbmcteDogMXJlbSAhZGVmYXVsdDtcbiRkcm9wZG93bi1pdGVtLXBhZGRpbmcteTogMC42NXJlbSAhZGVmYXVsdDtcbiRkcm9wZG93bi1ib3JkZXItY29sb3I6ICRncmF5LTIwMDtcbiRkcm9wZG93bi1kaXZpZGVyLWJnOiAkZ3JheS0xMDA7XG4vLyBCdXR0b25zXG4kYnRuLXNlY29uZGFyeS1ib3JkZXI6ICRncmF5LTMwMDtcbi8vIFByb2dyZXNzIGJhcnNcbiRwcm9ncmVzcy1iZzogJGdyYXktMTAwO1xuLy8gVGFibGVzXG4kdGFibGUtYmctYWNjZW50OiAkZ3JheS0xMDA7XG4kdGFibGUtYmctaG92ZXI6ICRncmF5LTEwMDtcbiR0YWJsZS1ob3Zlci1iZzogJGdyYXktMTAwICFkZWZhdWx0O1xuJHRhYmxlLWNlbGwtcGFkZGluZzogMXJlbSAhZGVmYXVsdDtcbiR0YWJsZS1iZy1sZXZlbDogLTEwICFkZWZhdWx0O1xuJHRhYmxlLWJnLWxldmVsMjogMSAhZGVmYXVsdDtcbiR0YWJsZS1iZy1sZXZlbDM6IC01ICFkZWZhdWx0O1xuLy8gQ29tcG9uZW50c1xuJGNvbXBvbmVudC1hY3RpdmUtY29sb3I6ICR3aGl0ZSAhZGVmYXVsdDtcbiRjb21wb25lbnQtYWN0aXZlLWJnOiAkdGhlbWVjb2xvciAhZGVmYXVsdDtcbiRiYWRnZS1waWxsLXBhZGRpbmcteDogMC4yZW0gIWRlZmF1bHQ7XG4kYmFkZ2UtcGlsbC1wYWRkaW5nLXk6IDFlbSAhZGVmYXVsdDtcbi8vIEZvcm1zXG4kaW5wdXQtZ3JvdXAtYWRkb24tYmc6ICRncmF5LTEwMDtcbiRpbnB1dC1ib3JkZXItY29sb3I6ICRncmF5LTIwMDtcbiRpbnB1dC1ncm91cC1hZGRvbi1ib3JkZXItY29sb3I6ICRncmF5LTIwMDtcbiRpbnB1dC1idG4tZm9jdXMtY29sb3I6IHJnYmEoMCxcbjAsXG4wLFxuMC4yNSkgIWRlZmF1bHQ7XG4kaW5wdXQtZm9jdXMtYm9yZGVyLWNvbG9yOiByZ2JhKDAsXG4wLFxuMCxcbjAuMjUpICFkZWZhdWx0O1xuJGN1c3RvbS1jb250cm9sLWluZGljYXRvci1hY3RpdmUtYmc6IHJnYmEoMCxcbjAsXG4wLFxuMzUlKSAhZGVmYXVsdDtcbiRjdXN0b20tc2VsZWN0LWluZGljYXRvcjogdXJsKC4uLy4uL2Fzc2V0cy9pbWFnZXMvY3VzdG9tLXNlbGVjdC5wbmcpICFkZWZhdWx0O1xuJGlucHV0LWJ0bi1mb2N1cy1ib3gtc2hhZG93OiB0cmFuc3BhcmVudCAhZGVmYXVsdDtcbiRjdXN0b20tc2VsZWN0LWZvY3VzLWJveC1zaGFkb3c6IHRyYW5zcGFyZW50ICFkZWZhdWx0O1xuJGN1c3RvbS1zZWxlY3QtaW5kaWNhdG9yOiBzdHItcmVwbGFjZSh1cmwoJycpLFxuJyUyMycpICFkZWZhdWx0O1xuLy8gRGVmaW5lIGNvbW1vbiBwYWRkaW5nIGFuZCBib3JkZXIgcmFkaXVzIHNpemVzIGFuZCBtb3JlLlxuJGJvcmRlci13aWR0aDogMXB4ICFkZWZhdWx0O1xuJGJvcmRlci1jb2xvcjogJGdyYXktMjAwICFkZWZhdWx0O1xuJGJvcmRlci1yYWRpdXM6IDJweCAhZGVmYXVsdDtcbiRib3JkZXItcmFkaXVzLWxnOiAycHggIWRlZmF1bHQ7XG4kYm9yZGVyLXJhZGl1cy1zbTogMXB4ICFkZWZhdWx0O1xuLy8gUHJvZ3Jlc3MgYmFyc1xuJHByb2dyZXNzLWhlaWdodDogNXB4ICFkZWZhdWx0O1xuLy8gVGFic1xuJG5hdi10YWJzLWxpbmstYWN0aXZlLWJnOiAkd2hpdGUgIWRlZmF1bHQ7XG4vLyBHcmlkIGJyZWFrcG9pbnRzXG4vLyBEZWZpbmUgdGhlIG1pbmltdW0gZGltZW5zaW9ucyBhdCB3aGljaCB5b3VyIGxheW91dCB3aWxsIGNoYW5nZSxcbi8vIGFkYXB0aW5nIHRvIGRpZmZlcmVudCBzY3JlZW4gc2l6ZXMsIGZvciB1c2UgaW4gbWVkaWEgcXVlcmllcy5cbiRncmlkLWJyZWFrcG9pbnRzOiAoIHhzOiAwLFxuc206IDU3NnB4LFxubWQ6IDc2OHB4LFxubGc6IDk5MnB4LFxueGw6IDE2MDBweCkgIWRlZmF1bHQ7XG4vLyBOYXZiYXJcbiRuYXZiYXItZGFyay1jb2xvcjogcmdiYSgkd2hpdGUsXG4wLjgpICFkZWZhdWx0O1xuJG5hdmJhci1kYXJrLWhvdmVyLWNvbG9yOiByZ2JhKCR3aGl0ZSxcbjEpICFkZWZhdWx0O1xuIiwiQGltcG9ydCAnLi4vLi4vLi4vYXNzZXRzL3Njc3MvdmFyaWFibGUuc2Nzcyc7XG5cblxuLyoqKioqKioqKioqKioqKioqKipcblRpbWVsaW5lIHBhZ2VcbioqKioqKioqKioqKioqKioqKi9cbi8vIHVzZXItY29tcG9uZW50cyBzY3NzXG5cbi5saXN0LWJsb2NrLWxpc3Rpbmd7XG4gICAgbGluZS1oZWlnaHQ6IDMwcHg7XG59XG4udXNlcl9oaXN0b3J5e1xuICAgIHBhZGRpbmc6IDBweCAwcHg7XG59XG4udXNlcl9oaXN0b3J5X2xpc3R7IFxuICAgIGxpc3Qtc3R5bGU6IG5vbmU7IFxuICAgIHBhZGRpbmc6IDE1cHggMHB4O1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgcGFkZGluZy1sZWZ0OiA0NXB4O1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICZfaWNvbntcbiAgICB3aWR0aDogMzhweDsgXG4gICAgaGVpZ2h0OiAzOHB4O1xuICAgIGJhY2tncm91bmQ6ICRncmF5LTEwMDtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XG4gICAgYm9yZGVyOiAxcHggc29saWQgJGdyYXktNDAwO1xuICAgIGxlZnQ6IDA7XG4gICAgZm9udC1zaXplOiAxOHB4O1xuICAgXG4gICAgJjpiZWZvcmV7XG4gICAgICAgIGNvbnRlbnQ6Jyc7XG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgaGVpZ2h0OjE4cHg7XG4gICAgICAgIHdpZHRoOjRweDtcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogJGdyYXktNDAwO1xuICAgICAgICBib3R0b206IC0xN3B4O1xuICAgIH1cbiAgICAmLmFjdGl2ZXtcbiAgICAgICAgYmFja2dyb3VuZDogJGdyYXktNzAwO1xuICAgICAgICBjb2xvcjogJHdoaXRlO1xuICAgICAgICAmOmJlZm9yZXtcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICRncmF5LTcwMDtcbiAgICAgICAgfVxuICAgIH1cbiAgICBcbn1cbiY6bGFzdC1jaGlsZHtcbiAgICAmX2ljb257XG4gICAgICAgICY6YmVmb3Jle1xuICAgICAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICAgICAgfVxuICAgIH0gIFxufVxuLnNraXB7XG4gICAgY29sb3I6JGdyYXktMjAwO1xufVxufSJdfQ== */";
+      __webpack_exports__["default"] = "\n@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700\");\n/*******************************/\n/*******************************/\n/*Theme Colors*/\n/*Topbar Colors*/\n/*Sidebar Colors*/\n/*Boxed layout width*/\n/*Shadow*/\n/* transitions */\n/* Dark transparent bg */\n/* ***************************** */\n/* ***************************** */\n/* *\n * Table Of Content\n *\n *  1. Color system\n *  2. Options\n *  3. Body\n *  4. Typography\n *  5. Breadcrumbs\n *  6. Cards\n *  7. Dropdowns\n *  8. Buttons\n *  9. Typography\n *  10. Progress bars\n *  11. Tables\n *  12. Forms\n *  14. Component */\n/*******************\nTimeline page\n******************/\n.list-block-listing {\n  line-height: 30px;\n}\n.user_history {\n  padding: 0px 0px;\n}\n.user_history_list {\n  list-style: none;\n  padding: 15px 0px;\n  display: flex;\n  padding-left: 45px;\n  position: relative;\n  align-items: center;\n}\n.user_history_list_icon {\n  width: 38px;\n  height: 38px;\n  background: #f8f9fa;\n  position: absolute;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 50%;\n  border: 1px solid #ced4da;\n  left: 0;\n  font-size: 18px;\n}\n.user_history_list_icon:before {\n  content: '';\n  position: absolute;\n  height: 18px;\n  width: 4px;\n  background-color: #ced4da;\n  bottom: -17px;\n}\n.user_history_list_icon.active {\n  background: #4f5467;\n  color: #fff;\n}\n.user_history_list_icon.active:before {\n  background-color: #4f5467;\n}\n.user_history_list:last-child_icon:before {\n  display: none;\n}\n.user_history_list .skip {\n  color: #e9ecef;\n}\nimg {\n  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hc3NldHMvc2Nzcy92YXJpYWJsZS5zY3NzIiwic3JjL2FwcC9wYWdlcy91c2Vycy91c2Vycy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBTUEsa0ZBQVk7QUFOWixnQ0FBQTtBQUlBLGdDQUFBO0FBSUEsZUFBQTtBQWdCQSxnQkFBQTtBQVNBLGlCQUFBO0FBZUEscUJBQUE7QUFJQSxTQUFBO0FBT0EsZ0JBQUE7QUFJQSx3QkFBQTtBQXNCQSxrQ0FBQTtBQUlBLGtDQUFBO0FBR0E7Ozs7Ozs7Ozs7Ozs7OzttQkNqRW1CO0FBeEJuQjs7a0JBMkJrQjtBQXRCbEI7RUFDSSxpQkFBaUI7QUF3QnJCO0FBdEJBO0VBQ0ksZ0JBQWdCO0FBeUJwQjtBQXZCQTtFQUNJLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsYUFBYTtFQUNiLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsbUJBQW1CO0FBMEJ2QjtBQXpCQztFQUNHLFdBQVc7RUFDWCxZQUFZO0VBQ1osbUJEdUZjO0VDdEZkLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLHlCRG1GYztFQ2xGZCxPQUFPO0VBQ1AsZUFBZTtBQTRCbkI7QUF4Q0U7RUFlTSxXQUFVO0VBQ1Ysa0JBQWtCO0VBQ2xCLFlBQVc7RUFDWCxVQUFTO0VBQ1QseUJEMEVVO0VDekVWLGFBQWE7QUE2QnJCO0FBakRFO0VBdUJNLG1CRHlFVTtFQ3hFVixXRGlFSTtBQ25DWjtBQXRERTtFQTBCVSx5QkRzRU07QUN0Q2xCO0FBakVBO0VBeUNZLGFBQWE7QUE0QnpCO0FBckVBO0VBOENJLGNEb0RjO0FDekJsQjtBQXhCQTtFQUNJLDhDQUE4QztBQTJCbEQiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy91c2Vycy91c2Vycy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqL1xuXG4vLyBDdXN0b20gVmFyaWFibGVzXG5cbi8qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqL1xuXG5AaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVBvcHBpbnM6MzAwLDQwMCw1MDAsNjAwLDcwMCcpO1xuXG4vKlRoZW1lIENvbG9ycyovXG5cbiR0aGVtZWNvbG9yOiAjMzU5MUZGO1xuJHRoZW1lY29sb3ItZGFyazogIzAyOGVlMTtcbiR0aGVtZWNvbG9yLWFsdDogIzI2YzZkYTtcbiR0aGVtZS1saWdodDogI2ZmZjtcbiR0aGVtZS1kYXJrOiAjMjEyNTI5O1xuJHNraW4xOiAjMzU4N2Q4O1xuJHNraW4yOiAjZDgzOTM5O1xuJHNraW4zOiAjMTdhOTkxO1xuJHNraW40OiAjNjY1OWY3O1xuJHNraW43IDojRUM3NUY2O1xuJHNraW41IDojMTcyYjRkO1xuO1xuJHNraW42OiAjZmZmO1xuXG4vKlRvcGJhciBDb2xvcnMqL1xuXG4kdG9wYmFyOiAkdGhlbWUtbGlnaHQ7XG4kdG9wYmFyLWhlaWdodDogNjRweDtcbiR0b3BiYXItbmF2bGluay1wYWRkaW5nOiAwcHggMTVweDtcbiR0b3BiYXItbmF2bGluay1mb250LXNpemU6IDAuODc1cmVtO1xuJHRvcGJhci1uYXZsaW5rLWhlaWdodDogNDVweDtcbiR0b3BiYXItbmF2YnJhbmQtcGFkZGluZzogMCAxNXB4IDAgMTVweDtcblxuLypTaWRlYmFyIENvbG9ycyovXG5cbiRzaWRlYmFyOiRza2luNSA7XG4kc2lkZWJhci1hbHQ6ICNlOGVmZjA7XG4kc2lkZWJhci10ZXh0OiAjZmZmO1xuJHNpZGViYXItaWNvbnM6IHJnYigwLFxuMCxcbjApO1xuJHNpZGViYXItdGV4dC1kYXJrOiAjMjEyNTI5O1xuJHNpZGViYXItdGV4dC1kYXJrOiAjMjEyNTI5O1xuJHNpZGViYXItaWNvbnMtZGFyazogIzRmNTQ2NztcbiRzaWRlYmFyLXdpZHRoLWZ1bGw6IDI1MHB4O1xuJHNpZGViYXItd2lkdGgtaWNvbmJhcjogMTgwcHg7XG4kc2lkZWJhci13aWR0aC1taW5pOiA3MHB4O1xuXG4vKkJveGVkIGxheW91dCB3aWR0aCovXG5cbiRib3hlZC13aWR0aDogMTIwMHB4O1xuXG4vKlNoYWRvdyovXG5cbiRzaGFkb3c6IDFweCAwcHggMjBweCByZ2JhKDAsXG4wLFxuMCxcbjAuMDgpO1xuXG4vKiB0cmFuc2l0aW9ucyAqL1xuXG4kdHJhbnNpdGlvbnM6IDAuMnMgZWFzZS1pbjtcblxuLyogRGFyayB0cmFuc3BhcmVudCBiZyAqL1xuXG4kdHJhbnNwYXJlbnQtZGFyay1iZzogcmdiYSgwLFxuMCxcbjAsXG4wLjA1KTtcbiRsZnQ6IGxlZnQ7XG4kcmd0OiByaWdodDtcbiRjYXJkLWFsdDogI2U0ZTllZjtcbiVzcXVhcmUge1xuICAgIGJvcmRlci1yYWRpdXM6IDBweDtcbn1cblxuJXJvdGF0ZTQ1IHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSg0NWRlZyk7XG4gICAgLW1zLXRyYW5zZm9ybTogcm90YXRlKDQ1ZGVnKTtcbiAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDQ1ZGVnKTtcbiAgICAtby10cmFuc2Zvcm06IHJvdGF0ZSg0NWRlZyk7XG4gICAgLW1vei10cmFuc2Zvcm06IHJvdGF0ZSg0NWRlZyk7XG59XG5cblxuLyogKioqKioqKioqKioqKioqKioqKioqKioqKioqKiogKi9cblxuLy8gQm9vdHN0cmFwIG92ZXJyaWRlc1xuXG4vKiAqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiAqL1xuXG5cbi8qICpcbiAqIFRhYmxlIE9mIENvbnRlbnRcbiAqXG4gKiAgMS4gQ29sb3Igc3lzdGVtXG4gKiAgMi4gT3B0aW9uc1xuICogIDMuIEJvZHlcbiAqICA0LiBUeXBvZ3JhcGh5XG4gKiAgNS4gQnJlYWRjcnVtYnNcbiAqICA2LiBDYXJkc1xuICogIDcuIERyb3Bkb3duc1xuICogIDguIEJ1dHRvbnNcbiAqICA5LiBUeXBvZ3JhcGh5XG4gKiAgMTAuIFByb2dyZXNzIGJhcnNcbiAqICAxMS4gVGFibGVzXG4gKiAgMTIuIEZvcm1zXG4gKiAgMTQuIENvbXBvbmVudCAqL1xuXG4vL0NvbG9yIHN5c3RlbVxuJHdoaXRlOiAjZmZmICFkZWZhdWx0O1xuJGdyYXktMTAwOiAjZjhmOWZhICFkZWZhdWx0O1xuJGdyYXktMjAwOiAjZTllY2VmICFkZWZhdWx0O1xuJGdyYXktMzAwOiAjZGVlMmU2ICFkZWZhdWx0O1xuJGdyYXktNDAwOiAjY2VkNGRhICFkZWZhdWx0O1xuJGdyYXktNTAwOiAjYTFhYWIyICFkZWZhdWx0O1xuJGdyYXktNjAwOiAjNmM3NTdkICFkZWZhdWx0O1xuJGdyYXktNzAwOiAjNGY1NDY3ICFkZWZhdWx0O1xuJGdyYXktODAwOiAjMzQzYTQwICFkZWZhdWx0O1xuJGdyYXktOTAwOiAjMjEyNTI5ICFkZWZhdWx0O1xuJGJsYWNrOiAjMDAwICFkZWZhdWx0O1xuJGJsdWU6ICNmYmIwM2IgIWRlZmF1bHQ7XG4kaW5kaWdvOiAjNjYxMGYyICFkZWZhdWx0O1xuJHB1cnBsZTogIzc0NjBlZSAhZGVmYXVsdDtcbiRwaW5rOiAjZTgzZThjICFkZWZhdWx0O1xuJHJlZDogI2VmNmU2ZSAhZGVmYXVsdDtcbiRsaWdodC1pbmZvOiAjZTZmMmZhICFkZWZhdWx0O1xuJGxpZ2h0LWRhbmdlcjogI2ZhZTZlNiAhZGVmYXVsdDtcbiRsaWdodC1zdWNjZXNzOiAjZTlmOWY3ICFkZWZhdWx0O1xuJGxpZ2h0LXdhcm5pbmc6ICNmOGVmZDcgIWRlZmF1bHQ7XG4kb3JhbmdlOiAjZmI4YzAwICFkZWZhdWx0O1xuJHllbGxvdzogI2ZmYmMzNCAhZGVmYXVsdDtcbiRncmVlbjogIzIyYzZhYiAhZGVmYXVsdDtcbiRncmVlbjE6ICM1YWU1MGUgIWRlZmF1bHQ7XG4kdGVhbDogIzIwYzk5NyAhZGVmYXVsdDtcbiRjeWFuOiAjMDFjMGM4ICFkZWZhdWx0O1xuJHByaW1hcnk6IzE3MmI0ZCAhZGVmYXVsdDtcbiR0ZXh0LW11dGVkOiAkZ3JheS01MDAgIWRlZmF1bHQ7XG4kWWVsbG93LUdyZWVuOiNjZWRmNmE7XG4kY29sb3JzOiAoIGJsdWU6ICRibHVlLFxuaW5kaWdvOiAkaW5kaWdvLFxucHVycGxlOiAkcHVycGxlLFxucGluazogJHBpbmssXG5yZWQ6ICRyZWQsXG5vcmFuZ2U6ICRvcmFuZ2UsXG55ZWxsb3c6ICR5ZWxsb3csXG5ncmVlbjogJGdyZWVuLFxudGVhbDogJHRlYWwsXG5jeWFuOiAkY3lhbixcbndoaXRlOiAkd2hpdGUsXG5ncmF5OiAkZ3JheS02MDAsXG5ncmF5LWRhcms6ICRncmF5LTgwMCxcbmxpZ2h0LWluZm86ICRsaWdodC1pbmZvLFxubGlnaHQtZGFuZ2VyOiAkbGlnaHQtZGFuZ2VyLFxubGlnaHQtc3VjY2VzczogJGxpZ2h0LXN1Y2Nlc3MsXG5saWdodC13YXJuaW5nOiAkbGlnaHQtd2FybmluZyk7XG4kcHJpbWFyeTogJGJsdWUgIWRlZmF1bHQ7XG4kc2Vjb25kYXJ5OiAkZ3JheS02MDAgIWRlZmF1bHQ7XG4kc3VjY2VzczogJGdyZWVuICFkZWZhdWx0O1xuJGluZm86ICRibHVlICFkZWZhdWx0O1xuJHdhcm5pbmc6ICR5ZWxsb3cgIWRlZmF1bHQ7XG4kZGFuZ2VyOiAkcmVkICFkZWZhdWx0O1xuJGxpZ2h0OiAkZ3JheS0xMDAgIWRlZmF1bHQ7XG4kZGFyazogJGdyYXktODAwICFkZWZhdWx0O1xuJGN5YW46ICRjeWFuICFkZWZhdWx0O1xuJG9yYW5nZTogJG9yYW5nZSAhZGVmYXVsdDtcbiR0aGVtZS1jb2xvcnM6ICgpICFkZWZhdWx0O1xuJHRoZW1lLWNvbG9yczogbWFwLW1lcmdlKCAoICdwcmltYXJ5JzogJHByaW1hcnksICdzZWNvbmRhcnknOiAkc2Vjb25kYXJ5LCAnc3VjY2Vzcyc6ICRzdWNjZXNzLCAnaW5mbyc6ICRpbmZvLCAnd2FybmluZyc6ICR3YXJuaW5nLCAnZGFuZ2VyJzogJGRhbmdlciwgJ2xpZ2h0JzogJGxpZ2h0LCAnZGFyayc6ICRkYXJrLCAnY3lhbic6ICRjeWFuLCAnb3JhbmdlJzogJG9yYW5nZSwgJ3B1cnBsZSc6ICRwdXJwbGUsICdsaWdodC1pbmZvJzogJGxpZ2h0LWluZm8sICdsaWdodC1kYW5nZXInOiAkbGlnaHQtZGFuZ2VyLCAnbGlnaHQtc3VjY2Vzcyc6ICRsaWdodC1zdWNjZXNzLCAnbGlnaHQtd2FybmluZyc6ICRsaWdodC13YXJuaW5nKSxcbiR0aGVtZS1jb2xvcnMpO1xuLy8gUXVpY2tseSBtb2RpZnkgZ2xvYmFsIHN0eWxpbmcgYnkgZW5hYmxpbmcgb3IgZGlzYWJsaW5nIG9wdGlvbmFsIGZlYXR1cmVzLlxuJGVuYWJsZS1jYXJldDogdHJ1ZSAhZGVmYXVsdDtcbiRlbmFibGUtcm91bmRlZDogdHJ1ZSAhZGVmYXVsdDtcbiRlbmFibGUtc2hhZG93czogZmFsc2UgIWRlZmF1bHQ7XG4kZW5hYmxlLWdyYWRpZW50czogZmFsc2UgIWRlZmF1bHQ7XG4kZW5hYmxlLXRyYW5zaXRpb25zOiB0cnVlICFkZWZhdWx0O1xuJGVuYWJsZS1ob3Zlci1tZWRpYS1xdWVyeTogZmFsc2UgIWRlZmF1bHQ7XG4kZW5hYmxlLWdyaWQtY2xhc3NlczogdHJ1ZSAhZGVmYXVsdDtcbiRlbmFibGUtcHJpbnQtc3R5bGVzOiB0cnVlICFkZWZhdWx0O1xuLy8gQm9keVxuLy8gU2V0dGluZ3MgZm9yIHRoZSAgZWxlbWVudC5cbiRtYWluLWJvZHktYmc6ICNmZmYgIWRlZmF1bHQ7XG4kYm9keS1iZzogI2ZmZjtcbiRib2R5LWNvbG9yOiAjM2U1NTY5ICFkZWZhdWx0O1xuJGdyaWQtZ3V0dGVyLXdpZHRoOiAyMHB4ICFkZWZhdWx0O1xuLy8gVHlwb2dyYXBoeVxuLy8gRm9udCwgbGluZS1oZWlnaHQsIGFuZCBjb2xvciBmb3IgYm9keSB0ZXh0LCBoZWFkaW5ncywgYW5kIG1vcmUuXG4kZm9udC1zaXplLWJhc2U6IDAuODc1cmVtO1xuJGZvbnQtZmFtaWx5LXNhbnMtc2VyaWY6ICdQb3BwaW5zJyxcbnNhbnMtc2VyaWYgIWRlZmF1bHQ7XG4kZm9udC13ZWlnaHQtbGlnaHQ6IDMwMCAhZGVmYXVsdDtcbiRmb250LXdlaWdodC1ub3JtYWw6IDMwMCAhZGVmYXVsdDtcbiRmb250LXdlaWdodC1tZWRpdW06IDUwMCAhZGVmYXVsdDtcbiRmb250LXdlaWdodC1ib2xkOiA2MDAgIWRlZmF1bHQ7XG4kaDEtZm9udC1zaXplOiAzNnB4ICFkZWZhdWx0O1xuJGgyLWZvbnQtc2l6ZTogMzBweCAhZGVmYXVsdDtcbiRoMy1mb250LXNpemU6IDIycHggIWRlZmF1bHQ7XG4kaDQtZm9udC1zaXplOiAxOHB4ICFkZWZhdWx0O1xuJGg1LWZvbnQtc2l6ZTogMTZweCAhZGVmYXVsdDtcbiRoNi1mb250LXNpemU6IDE0cHggIWRlZmF1bHQ7XG4kaGVhZGluZ3MtbWFyZ2luLWJvdHRvbTogKDFyZW0gLyAyKSAhZGVmYXVsdDtcbiRoZWFkaW5ncy1mb250LXdlaWdodDogNTAwICFkZWZhdWx0O1xuJGhlYWRpbmdzLWNvbG9yOiBpbmhlcml0ICFkZWZhdWx0O1xuLy8gQnJlYWRjcnVtYnNcbiRicmVhZGNydW1iLWJnOiAkYm9keS1iZztcbiRicmVhZGNydW1iLW1hcmdpbi1ib3R0b206IDEuNXJlbTtcbi8vIENhcmRzXG4kY2FyZC1ib3JkZXItd2lkdGg6IDFweCAhZGVmYXVsdDtcbiRjYXJkLWJvcmRlci1jb2xvcjogJGdyYXktMjAwICFkZWZhdWx0O1xuJGNhcmQtYm9yZGVyLXJhZGl1czogMHB4ICFkZWZhdWx0O1xuLy8gRHJvcGRvd25zXG4kZHJvcGRvd24taXRlbS1wYWRkaW5nLXg6IDFyZW0gIWRlZmF1bHQ7XG4kZHJvcGRvd24taXRlbS1wYWRkaW5nLXk6IDAuNjVyZW0gIWRlZmF1bHQ7XG4kZHJvcGRvd24tYm9yZGVyLWNvbG9yOiAkZ3JheS0yMDA7XG4kZHJvcGRvd24tZGl2aWRlci1iZzogJGdyYXktMTAwO1xuLy8gQnV0dG9uc1xuJGJ0bi1zZWNvbmRhcnktYm9yZGVyOiAkZ3JheS0zMDA7XG4vLyBQcm9ncmVzcyBiYXJzXG4kcHJvZ3Jlc3MtYmc6ICRncmF5LTEwMDtcbi8vIFRhYmxlc1xuJHRhYmxlLWJnLWFjY2VudDogJGdyYXktMTAwO1xuJHRhYmxlLWJnLWhvdmVyOiAkZ3JheS0xMDA7XG4kdGFibGUtaG92ZXItYmc6ICRncmF5LTEwMCAhZGVmYXVsdDtcbiR0YWJsZS1jZWxsLXBhZGRpbmc6IDFyZW0gIWRlZmF1bHQ7XG4kdGFibGUtYmctbGV2ZWw6IC0xMCAhZGVmYXVsdDtcbiR0YWJsZS1iZy1sZXZlbDI6IDEgIWRlZmF1bHQ7XG4kdGFibGUtYmctbGV2ZWwzOiAtNSAhZGVmYXVsdDtcbi8vIENvbXBvbmVudHNcbiRjb21wb25lbnQtYWN0aXZlLWNvbG9yOiAkd2hpdGUgIWRlZmF1bHQ7XG4kY29tcG9uZW50LWFjdGl2ZS1iZzogJHRoZW1lY29sb3IgIWRlZmF1bHQ7XG4kYmFkZ2UtcGlsbC1wYWRkaW5nLXg6IDAuMmVtICFkZWZhdWx0O1xuJGJhZGdlLXBpbGwtcGFkZGluZy15OiAxZW0gIWRlZmF1bHQ7XG4vLyBGb3Jtc1xuJGlucHV0LWdyb3VwLWFkZG9uLWJnOiAkZ3JheS0xMDA7XG4kaW5wdXQtYm9yZGVyLWNvbG9yOiAkZ3JheS0yMDA7XG4kaW5wdXQtZ3JvdXAtYWRkb24tYm9yZGVyLWNvbG9yOiAkZ3JheS0yMDA7XG4kaW5wdXQtYnRuLWZvY3VzLWNvbG9yOiByZ2JhKDAsXG4wLFxuMCxcbjAuMjUpICFkZWZhdWx0O1xuJGlucHV0LWZvY3VzLWJvcmRlci1jb2xvcjogcmdiYSgwLFxuMCxcbjAsXG4wLjI1KSAhZGVmYXVsdDtcbiRjdXN0b20tY29udHJvbC1pbmRpY2F0b3ItYWN0aXZlLWJnOiByZ2JhKDAsXG4wLFxuMCxcbjM1JSkgIWRlZmF1bHQ7XG4kY3VzdG9tLXNlbGVjdC1pbmRpY2F0b3I6IHVybCguLi8uLi9hc3NldHMvaW1hZ2VzL2N1c3RvbS1zZWxlY3QucG5nKSAhZGVmYXVsdDtcbiRpbnB1dC1idG4tZm9jdXMtYm94LXNoYWRvdzogdHJhbnNwYXJlbnQgIWRlZmF1bHQ7XG4kY3VzdG9tLXNlbGVjdC1mb2N1cy1ib3gtc2hhZG93OiB0cmFuc3BhcmVudCAhZGVmYXVsdDtcbiRjdXN0b20tc2VsZWN0LWluZGljYXRvcjogc3RyLXJlcGxhY2UodXJsKCcnKSxcbiclMjMnKSAhZGVmYXVsdDtcbi8vIERlZmluZSBjb21tb24gcGFkZGluZyBhbmQgYm9yZGVyIHJhZGl1cyBzaXplcyBhbmQgbW9yZS5cbiRib3JkZXItd2lkdGg6IDFweCAhZGVmYXVsdDtcbiRib3JkZXItY29sb3I6ICRncmF5LTIwMCAhZGVmYXVsdDtcbiRib3JkZXItcmFkaXVzOiAycHggIWRlZmF1bHQ7XG4kYm9yZGVyLXJhZGl1cy1sZzogMnB4ICFkZWZhdWx0O1xuJGJvcmRlci1yYWRpdXMtc206IDFweCAhZGVmYXVsdDtcbi8vIFByb2dyZXNzIGJhcnNcbiRwcm9ncmVzcy1oZWlnaHQ6IDVweCAhZGVmYXVsdDtcbi8vIFRhYnNcbiRuYXYtdGFicy1saW5rLWFjdGl2ZS1iZzogJHdoaXRlICFkZWZhdWx0O1xuLy8gR3JpZCBicmVha3BvaW50c1xuLy8gRGVmaW5lIHRoZSBtaW5pbXVtIGRpbWVuc2lvbnMgYXQgd2hpY2ggeW91ciBsYXlvdXQgd2lsbCBjaGFuZ2UsXG4vLyBhZGFwdGluZyB0byBkaWZmZXJlbnQgc2NyZWVuIHNpemVzLCBmb3IgdXNlIGluIG1lZGlhIHF1ZXJpZXMuXG4kZ3JpZC1icmVha3BvaW50czogKCB4czogMCxcbnNtOiA1NzZweCxcbm1kOiA3NjhweCxcbmxnOiA5OTJweCxcbnhsOiAxNjAwcHgpICFkZWZhdWx0O1xuLy8gTmF2YmFyXG4kbmF2YmFyLWRhcmstY29sb3I6IHJnYmEoJHdoaXRlLFxuMC44KSAhZGVmYXVsdDtcbiRuYXZiYXItZGFyay1ob3Zlci1jb2xvcjogcmdiYSgkd2hpdGUsXG4xKSAhZGVmYXVsdDtcbiIsIkBpbXBvcnQgJy4uLy4uLy4uL2Fzc2V0cy9zY3NzL3ZhcmlhYmxlLnNjc3MnO1xuXG5cbi8qKioqKioqKioqKioqKioqKioqXG5UaW1lbGluZSBwYWdlXG4qKioqKioqKioqKioqKioqKiovXG4vLyB1c2VyLWNvbXBvbmVudHMgc2Nzc1xuXG4ubGlzdC1ibG9jay1saXN0aW5ne1xuICAgIGxpbmUtaGVpZ2h0OiAzMHB4O1xufVxuLnVzZXJfaGlzdG9yeXtcbiAgICBwYWRkaW5nOiAwcHggMHB4O1xufVxuLnVzZXJfaGlzdG9yeV9saXN0eyBcbiAgICBsaXN0LXN0eWxlOiBub25lOyBcbiAgICBwYWRkaW5nOiAxNXB4IDBweDtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIHBhZGRpbmctbGVmdDogNDVweDtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAmX2ljb257XG4gICAgd2lkdGg6IDM4cHg7IFxuICAgIGhlaWdodDogMzhweDtcbiAgICBiYWNrZ3JvdW5kOiAkZ3JheS0xMDA7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICRncmF5LTQwMDtcbiAgICBsZWZ0OiAwO1xuICAgIGZvbnQtc2l6ZTogMThweDtcbiAgIFxuICAgICY6YmVmb3Jle1xuICAgICAgICBjb250ZW50OicnO1xuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgIGhlaWdodDoxOHB4O1xuICAgICAgICB3aWR0aDo0cHg7XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICRncmF5LTQwMDtcbiAgICAgICAgYm90dG9tOiAtMTdweDtcbiAgICB9XG4gICAgJi5hY3RpdmV7XG4gICAgICAgIGJhY2tncm91bmQ6ICRncmF5LTcwMDtcbiAgICAgICAgY29sb3I6ICR3aGl0ZTtcbiAgICAgICAgJjpiZWZvcmV7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkZ3JheS03MDA7XG4gICAgICAgIH1cbiAgICB9XG4gICAgXG59XG4mOmxhc3QtY2hpbGR7XG4gICAgJl9pY29ue1xuICAgICAgICAmOmJlZm9yZXtcbiAgICAgICAgICAgIGRpc3BsYXk6IG5vbmU7XG4gICAgICAgIH1cbiAgICB9ICBcbn1cbi5za2lwe1xuICAgIGNvbG9yOiRncmF5LTIwMDtcbn1cbn1cbmltZyB7XG4gICAgYm94LXNoYWRvdzogMCAwIDJweCAxcHggcmdiYSgwLCAxNDAsIDE4NiwgMC41KTtcbiAgfSJdfQ== */";
       /***/
     },
 
@@ -35607,7 +35737,7 @@
 
       var UsersComponent = /*#__PURE__*/function () {
         function UsersComponent(modalService, fb, formBuilder, api, router, toastr, spinner, comm) {
-          var _this128 = this;
+          var _this134 = this;
 
           _classCallCheck(this, UsersComponent);
 
@@ -35620,8 +35750,8 @@
           this.spinner = spinner;
           this.comm = comm;
           this.submitted = false;
-          this.isActive = false;
-          this.displayedColumns = ['name', 'email', 'contact', 'username', 'dateofbirth', 'gender', 'address', 'status', 'action'];
+          this.isBlocked = false;
+          this.displayedColumns = ['image', 'name', 'email', 'contact', 'username', 'dateofbirth', 'gender', 'address', 'status', 'action'];
           this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"]();
           this.exportLink = '';
           this.pageSize = 10;
@@ -35630,7 +35760,7 @@
 
           this.setValues = function (data) {
             if (data) {
-              _this128.userForm.patchValue({
+              _this134.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35649,7 +35779,7 @@
 
 
               if (data.image) {
-                _this128.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this134.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
             }
           };
@@ -35727,21 +35857,21 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this129 = this;
+            var _this135 = this;
 
             var url = "users?limit=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : '') + (this.IsJective ? '&isBlocked=' + this.IsJective : ''));
             this.api.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
-                _this129.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res.data.data);
-                _this129.exportLink = res.data.exportLink;
-                _this129.dataSource.paginator = _this129.paginator;
-                _this129.dataSource.sort = _this129.sort;
-                _this129.totalUser = res.data.itemCount;
-                console.log('Total user', _this129.totalUser, res);
+                _this135.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res.data.data);
+                _this135.exportLink = res.data.exportLink;
+                _this135.dataSource.paginator = _this135.paginator;
+                _this135.dataSource.sort = _this135.sort;
+                _this135.totalUser = res.data.itemCount;
+                console.log('Total user', _this135.totalUser, res);
               } else {
-                _this129.toastr.error(res["message"]);
+                _this135.toastr.error(res["message"]);
 
-                _this129.totalUser = 0;
+                _this135.totalUser = 0;
               }
             });
           }
@@ -35761,9 +35891,9 @@
         }, {
           key: "userEditModal",
           value: function userEditModal(userEdit, data) {
-            var _this130 = this;
+            var _this136 = this;
 
-            this.isActive = data.isActive;
+            this.isBlocked = data.isBlocked;
             this.objId = data._id;
             this.files = data.image;
             this.imagePath = data.image.split('/').pop();
@@ -35781,9 +35911,9 @@
               centered: true,
               size: 'lg'
             }).result.then(function (result) {
-              _this130.closeResult = "Closed with: ".concat(result);
+              _this136.closeResult = "Closed with: ".concat(result);
 
-              _this130.userForm.patchValue({
+              _this136.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35796,28 +35926,28 @@
               });
 
               if (data.image) {
-                _this130.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this136.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
 
               if (result) {
-                var data = _this130.userForm.value;
+                var data = _this136.userForm.value;
                 data['id'] = data._id;
                 var formData = new FormData();
                 formData.append("data", JSON.stringify(data));
-                formData.append("pic", _this130.File);
+                formData.append("pic", _this136.File);
 
-                _this130.api.updateUser(data).subscribe(function (response) {
+                _this136.api.updateUser(data).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this130.toastr.success(response['message']);
+                    _this136.toastr.success(response['message']);
 
-                    _this130.getUsers();
+                    _this136.getUsers();
                   } else {
-                    _this130.toastr.error(response['message']);
+                    _this136.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this130.closeResult = "Dismissed ".concat(_this130.getDismissReason(reason));
+              _this136.closeResult = "Dismissed ".concat(_this136.getDismissReason(reason));
             });
           }
         }, {
@@ -35830,7 +35960,7 @@
         }, {
           key: "blockUsers",
           value: function blockUsers(item, status) {
-            var _this131 = this;
+            var _this137 = this;
 
             console.log("item: ", item);
 
@@ -35846,16 +35976,16 @@
             };
             this.api.blockUsers(item._id, data).subscribe(function (response) {
               if (response['statusCode'] === 200) {
-                _this131.getUsers();
+                _this137.getUsers();
               } else {
-                _this131.toastr.error(response['message']);
+                _this137.toastr.error(response['message']);
               }
             });
           }
         }, {
           key: "deleteUser",
           value: function deleteUser(userModal, list) {
-            var _this132 = this;
+            var _this138 = this;
 
             // const message = 'Are you sure you want to delete ' + list.firstName + ' ' + list.lastName + ' ?';
             this.modalService.open(userModal, {
@@ -35863,25 +35993,25 @@
               centered: true,
               size: 'sm'
             }).result.then(function (result) {
-              _this132.closeResult = "Closed with: ".concat(result);
+              _this138.closeResult = "Closed with: ".concat(result);
 
               if (result) {
                 var data = {
                   id: list._id
                 };
 
-                _this132.api.deleteUser(list._id).subscribe(function (response) {
+                _this138.api.deleteUser(list._id).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this132.toastr.success(response['message']);
+                    _this138.toastr.success(response['message']);
 
-                    _this132.getUsers();
+                    _this138.getUsers();
                   } else {
-                    _this132.toastr.error(response['message']);
+                    _this138.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this132.closeResult = "Dismissed ".concat(_this132.getDismissReason(reason));
+              _this138.closeResult = "Dismissed ".concat(_this138.getDismissReason(reason));
             });
           }
         }, {
@@ -35901,29 +36031,29 @@
         }, {
           key: "applyFilter",
           value: function applyFilter(event) {
-            var _this133 = this;
+            var _this139 = this;
 
             window.clearTimeout(this.timer);
             this.timer = window.setTimeout(function () {
               var filterValue = event.target.value;
-              _this133.searchBy = filterValue;
-              _this133.pageIndex = 1;
+              _this139.searchBy = filterValue;
+              _this139.pageIndex = 1;
 
-              _this133.getUsers();
+              _this139.getUsers();
             }, 1000);
           } // This is for the first modal
 
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this134 = this;
+            var _this140 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this134.closeResult = "Closed with: ".concat(result);
+              _this140.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this134.closeResult = "Dismissed ".concat(_this134.getDismissReason(reason));
+              _this140.closeResult = "Dismissed ".concat(_this140.getDismissReason(reason));
             });
           }
         }, {
@@ -35987,7 +36117,7 @@
         }, {
           key: "sendFile",
           value: function sendFile(fileData) {
-            var _this135 = this;
+            var _this141 = this;
 
             var url = "uploadFile";
             var formdata = new FormData();
@@ -35996,14 +36126,14 @@
               console.log(res.data);
 
               if (res.statusCode == 200) {
-                _this135.toastr.success('File updated successfully', '', {
+                _this141.toastr.success('File updated successfully', '', {
                   timeOut: 700
                 });
 
                 console.log("upload data res=>>", res.data);
-                _this135.files = res.data.filePath;
+                _this141.files = res.data.filePath;
               } else {
-                _this135.toastr.error(res.message);
+                _this141.toastr.error(res.message);
               }
             });
           }
@@ -36024,7 +36154,7 @@
         }, {
           key: "UpadteUser",
           value: function UpadteUser() {
-            var _this136 = this;
+            var _this142 = this;
 
             this.submitted = true;
             var url = "users/".concat(this.objId);
@@ -36038,23 +36168,23 @@
               "email": this.userForm.controls['email'].value,
               "dateofbirth": this.userForm.controls['dateofbirth'].value,
               "username": this.userForm.controls['userName'].value,
-              "isActive": this.isActive
+              "isBlocked": this.isBlocked
             };
 
             if (this.userForm.valid && this.imagePath) {
               this.api.putApi(url, obj).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this136.submitted = false;
+                  _this142.submitted = false;
 
-                  _this136.toastr.success(res.message, '', {
+                  _this142.toastr.success(res.message, '', {
                     timeOut: 900
                   });
 
-                  _this136.getUsers();
+                  _this142.getUsers();
 
-                  _this136.modalService.dismissAll();
+                  _this142.modalService.dismissAll();
                 } else {
-                  _this136.toastr.error(res.message);
+                  _this142.toastr.error(res.message);
                 }
               });
             }
@@ -37039,14 +37169,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this137 = this;
+            var _this143 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this137.closeResult = "Closed with: ".concat(result);
+              _this143.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this137.closeResult = "Dismissed ".concat(_this137.getDismissReason(reason));
+              _this143.closeResult = "Dismissed ".concat(_this143.getDismissReason(reason));
             });
           }
         }, {

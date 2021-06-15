@@ -39,7 +39,7 @@ export class UsersDetailComponent implements AfterViewInit    {
   getAllUsers: any;
   user: any;
   imageUrl: any;
-
+  sourceLink:any;
   constructor(
     private modalService: NgbModal,
     private fb: FormBuilder,
@@ -99,7 +99,10 @@ export class UsersDetailComponent implements AfterViewInit    {
 	}
 
 
-  videoBoxModal(videobox) {
+  videoBoxModal(videobox,src) {
+    this.sourceLink = src
+    console.log('Sor',src);
+    
     this.modalService.open(videobox, {backdropClass: 'light-blue-backdrop',centered: true,size: 'md'});
   }
 

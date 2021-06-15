@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<router-outlet>\n    <app-spinner></app-spinner>\n</router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<router-outlet>\n<app-spinner></app-spinner>\n<ngx-spinner bdColor=\"rgba(51,51,51,0.8)\"\nsize=\"medium\"\ncolor=\"#FFBDC0\"\ntype=\"ball-spin-clockwise-fade\"><p style=\"font-size: 20px; color: white\">Loading...</p>\n</ngx-spinner>\n</router-outlet>");
 
 /***/ }),
 

@@ -21,10 +21,11 @@ export class UsersComponent implements OnInit {
 	closeResult: string;
 	imagePath:any;
 	submitted:boolean = false
-	isActive:boolean = false
+	isBlocked:boolean = false
 	userForm: FormGroup;
 	allUsers: UserData[];
 	displayedColumns: string[] = [
+		'image',
 		'name',
 		'email',
 		'contact',
@@ -142,7 +143,7 @@ setValues = data => {
 	}
 
 	userEditModal(userEdit,data) {
-		this.isActive = data.isActive
+		this.isBlocked = data.isBlocked
 		this.objId = data._id
 		this.files = data.image
 		this.imagePath = data.image.split('/').pop()
@@ -385,7 +386,7 @@ setValues = data => {
 			"email":this.userForm.controls['email'].value,
 			"dateofbirth":this.userForm.controls['dateofbirth'].value,
 			"username":this.userForm.controls['userName'].value,
-			"isActive":this.isActive,
+			"isBlocked":this.isBlocked,
 			}
 			if(this.userForm.valid && this.imagePath){
 			  this.api.putApi(url,obj).subscribe((res:any)=>{
