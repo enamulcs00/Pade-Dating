@@ -1801,6 +1801,13 @@
           value: function getCurrency() {
             return this.http.get('assets/currencyUnit.json');
           }
+        }, {
+          key: "AlphabetOnly",
+          value: function AlphabetOnly(event) {
+            var pattAlpha = /^([a-zA-Z ])*$/;
+            var resultAlpha = pattAlpha.test(event.key);
+            return resultAlpha;
+          }
         }]);
 
         return ApiService;

@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource, } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from '../../shared/services/api.service';
 import { environment } from 'src/environments/environment';
@@ -39,6 +39,9 @@ export class UsersDetailComponent implements AfterViewInit    {
   getAllUsers: any;
   user: any;
   imageUrl: any;
+  pageSize: any= 40;
+  pageIndex :any= 1;
+	totalUser:number;
   sourceLink:any;
   constructor(
     private modalService: NgbModal,
@@ -47,9 +50,6 @@ export class UsersDetailComponent implements AfterViewInit    {
 		private router: Router,
     private route: ActivatedRoute,
 		private toastr: ToastrService,) {
-    // const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-
-    // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(this.table);
   }
 
@@ -69,11 +69,12 @@ export class UsersDetailComponent implements AfterViewInit    {
   }
 
   getUsers() {
-		this.api.users().subscribe(res => {
-			if (res['statusCode'] === 200) {
-        this.getAllUsers = res["data"]["data"]
-        console.log("getAllUsers: ", this.getAllUsers)
-        this.user = this.getAllUsers.find((x:any) => x._id === this.id);
+    let url = `users/${this.id}?limit=${this.pageSize}&page=${this.pageIndex}`
+		this.api.getApi(url).subscribe(res => {
+      console.log('Res',res);
+      if (res['statusCode'] === 200) {
+        this.user = res["data"]
+        console.log("getAllUsers: ", this.user)
         this.setValues(this.user);
         console.log("user obj: ", this.user)
 			} else {
@@ -81,17 +82,10 @@ export class UsersDetailComponent implements AfterViewInit    {
 			}
 		})
 	}
-
+  
   setValues = data => {
 		if (data) {
 			data.image && (this.imageUrl = data.image);
-			// this.userForm.patchValue({
-			// 	fullName: data.fullName,
-			// 	countryCode: data.countryCode,
-			// 	password: data.password,
-			// 	phoneNo: data.phoneNo,
-			// 	email: data.email
-			// });
 			if (data.image) {
 				this.imageUrl
 			}

@@ -146,4 +146,13 @@ getToday(): string {
   {
     return this.http.get<any>('assets/currencyUnit.json')
   }
+  AlphabetOnly(event){
+
+    let pattAlpha = /^([a-zA-Z ])*$/;
+   
+    let resultAlpha = pattAlpha.test(event.key);
+   
+    return resultAlpha;
+   
+     }
 }

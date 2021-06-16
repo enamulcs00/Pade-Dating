@@ -1057,6 +1057,11 @@ let ApiService = class ApiService {
     getCurrency() {
         return this.http.get('assets/currencyUnit.json');
     }
+    AlphabetOnly(event) {
+        let pattAlpha = /^([a-zA-Z ])*$/;
+        let resultAlpha = pattAlpha.test(event.key);
+        return resultAlpha;
+    }
 };
 ApiService.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
