@@ -26,7 +26,7 @@ export interface UserData {
   styleUrls: ['./users-detail.component.scss']
 })
 export class UsersDetailComponent implements AfterViewInit    {
-
+IsUser:boolean = false
   history = window.history;
   closeResult: string;
   //table: any
@@ -43,6 +43,7 @@ export class UsersDetailComponent implements AfterViewInit    {
   pageIndex :any= 1;
 	totalUser:number;
   sourceLink:any;
+  userHistory: any;
   constructor(
     private modalService: NgbModal,
     private fb: FormBuilder,
@@ -66,14 +67,17 @@ export class UsersDetailComponent implements AfterViewInit    {
     console.log("id: ", this.id)
     this.imageUrl = environment.imagesUrl;
     this.getUsers()
+    this.getUsersHistory()
   }
 
   getUsers() {
-    let url = `users/${this.id}?limit=${this.pageSize}&page=${this.pageIndex}`
+    let url = `users/${this.id}`
 		this.api.getApi(url).subscribe(res => {
       console.log('Res',res);
       if (res['statusCode'] === 200) {
         this.user = res["data"]
+        console.log('User tst',(this.user.docImage.length==0)?(this.IsUser = true):(this.IsUser = false));
+         (this.user.docImage.length==0)?(this.IsUser = true):(this.IsUser = false)
         console.log("getAllUsers: ", this.user)
         this.setValues(this.user);
         console.log("user obj: ", this.user)
@@ -82,7 +86,19 @@ export class UsersDetailComponent implements AfterViewInit    {
 			}
 		})
 	}
-  
+  getUsersHistory() {
+    let url = `conversationHistory?limit=${this.pageSize}&page=${this.pageIndex}&id=607d5c862bd1dd4b28fb07e8`
+		this.api.getApi(url).subscribe((res:any) => {
+      console.log('Res',res);
+      if (res['statusCode'] === 200) {
+        this.userHistory = res["data"]
+        console.log('History',this.userHistory);
+        
+			} else {
+				this.toastr.error(res["message"]);
+			}
+		})
+	}
   setValues = data => {
 		if (data) {
 			data.image && (this.imageUrl = data.image);
@@ -143,6 +159,17 @@ export class UsersDetailComponent implements AfterViewInit    {
       this.dataSource.paginator.firstPage();
     }
   }
+  public convertMS( milliseconds ) {
+    var day, hour, minute, seconds;
+    seconds = Math.ceil(milliseconds / 1000);
+    minute = Math.ceil(seconds / 60);
+    seconds = seconds % 60;
+    hour = Math.ceil(minute / 60);
+    minute = minute % 60;
+    day = Math.ceil(hour / 24);
+    hour = hour % 24;
+    return  hour
+}
 }
 
 /** Builds and returns a new User. */

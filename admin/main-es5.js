@@ -1400,6 +1400,12 @@
       var _services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../services/api.service */
       "./src/app/shared/services/api.service.ts");
+      /* harmony import */
+
+
+      var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @ng-bootstrap/ng-bootstrap */
+      "./node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/ng-bootstrap.js");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -1416,11 +1422,12 @@
       };
 
       var ErrorInterceptor = /*#__PURE__*/function () {
-        function ErrorInterceptor(accountService, toastr) {
+        function ErrorInterceptor(accountService, toastr, modalService) {
           _classCallCheck(this, ErrorInterceptor);
 
           this.accountService = accountService;
           this.toastr = toastr;
+          this.modalService = modalService;
         }
 
         _createClass(ErrorInterceptor, [{
@@ -1438,6 +1445,8 @@
                   timeOut: 1200
                 });
 
+                _this4.modalService.dismissAll();
+
                 _this4.accountService.logout();
               }
 
@@ -1445,6 +1454,10 @@
 
               if (![401, 403, 200].includes(err.status)) {
                 console.log('If not 200 inter cal', err, error);
+
+                if (err.status == 0) {
+                  _this4.accountService.logout();
+                }
 
                 _this4.toastr.error(error, '', {
                   timeOut: 1000
@@ -1464,10 +1477,12 @@
           type: _services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]
         }, {
           type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]
+        }, {
+          type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbModal"]
         }];
       };
 
-      ErrorInterceptor = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(), __metadata("design:paramtypes", [_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]])], ErrorInterceptor);
+      ErrorInterceptor = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(), __metadata("design:paramtypes", [_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbModal"]])], ErrorInterceptor);
       /***/
     },
 

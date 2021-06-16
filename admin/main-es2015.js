@@ -810,6 +810,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
 /* harmony import */ var _services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/api.service */ "./src/app/shared/services/api.service.ts");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/ng-bootstrap.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -824,10 +825,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 let ErrorInterceptor = class ErrorInterceptor {
-    constructor(accountService, toastr) {
+    constructor(accountService, toastr, modalService) {
         this.accountService = accountService;
         this.toastr = toastr;
+        this.modalService = modalService;
     }
     intercept(request, next) {
         return next.handle(request).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(err => {
@@ -837,11 +840,15 @@ let ErrorInterceptor = class ErrorInterceptor {
                 this.toastr.error('Session has been expired', 'Please login', {
                     timeOut: 1200,
                 });
+                this.modalService.dismissAll();
                 this.accountService.logout();
             }
             const error = ((_a = err.error) === null || _a === void 0 ? void 0 : _a.message) || err.statusText;
             if (![401, 403, 200].includes(err.status)) {
                 console.log('If not 200 inter cal', err, error);
+                if (err.status == 0) {
+                    this.accountService.logout();
+                }
                 this.toastr.error(error, '', {
                     timeOut: 1000,
                 });
@@ -852,11 +859,12 @@ let ErrorInterceptor = class ErrorInterceptor {
 };
 ErrorInterceptor.ctorParameters = () => [
     { type: _services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"] },
-    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"] }
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"] },
+    { type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbModal"] }
 ];
 ErrorInterceptor = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-    __metadata("design:paramtypes", [_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]])
+    __metadata("design:paramtypes", [_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbModal"]])
 ], ErrorInterceptor);
 
 

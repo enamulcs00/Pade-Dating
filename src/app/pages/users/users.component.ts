@@ -127,8 +127,10 @@ setValues = data => {
 				console.log('Total user',this.totalUser,res);
 				
 			} else {
-				this.toastr.error(res["message"]);
+			//	this.toastr.error(res["message"]);
 				this.totalUser = 0
+				console.log('Else called in User',res);
+				
 			}
 		})
 	}

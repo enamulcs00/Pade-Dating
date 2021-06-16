@@ -30,8 +30,7 @@ pageIndex :any= 1;
   }
   deletemodal(deletereason,id) {
     this.id = id.id
-    
-    this.modalService.open(deletereason, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
+    this.modalService.open(deletereason, {backdropClass: 'light-blue-backdrop',centered: true,size: 'sm'});
   }
   getReason(){
   let url = `reasons`
@@ -65,7 +64,7 @@ if(this.reasonForm.valid){
   this.service.postApi(url,this.reasonForm.value).subscribe((res:any)=>{
     console.log('Added',res);
     if(res.success==true){
-      this.toastr.success(res.message)
+      this.toastr.success(res.message,'',{timeOut:1000})
       this.AddCalled = false
       this.modalService.dismissAll()
       this.getReason()

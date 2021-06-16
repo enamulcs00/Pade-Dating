@@ -14,6 +14,7 @@ import { ApiService } from 'src/app/shared/services/api.service';
 export class PackagesComponent implements OnInit {
 submitted:boolean = false
 totalUser: number;
+InRange:boolean = false
 pageSize: any= 10;
 pageIndex :any= 1;
   packages: any;
@@ -66,8 +67,11 @@ pageIndex :any= 1;
   }
   SavePackage()
   {
-    console.log('Form',this.userForm.value.pric);
-    let obj = {
+    if(this.currencyArray.find((item)=>item.symbol===this.userForm.value.price.units)==undefined){
+      this.units.reset()
+      this.toast.error('Please select price unit from dropdown')
+    }
+   let obj = {
       "name" : this.userForm.value.name,
       "price" :this.userForm.value.price,
       "month" : this.userForm.value.month,
@@ -121,6 +125,10 @@ pageIndex :any= 1;
 	}
   updatePackage()
   {
+    if(this.currencyArray.find((item)=>item.symbol===this.userForm.value.price.units)==undefined){
+      this.units.reset()
+      this.toast.error('Please select price unit from dropdown')
+    }
     console.log('Form',this.userForm.value.pric);
     let obj = {
       "name" : this.userForm.value.name,

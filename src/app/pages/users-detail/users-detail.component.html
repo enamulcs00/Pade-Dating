@@ -123,7 +123,7 @@
     <div class="col-md-12">
         <h4>User History</h4>
     </div>
-    <div class="col-md-4 mb-3">
+    <div class="col-md-4 mb-3" *ngFor="let item of userHistory">
         <div class="d-flex border p-3 align-items-center justify-content-center">
             <div class="text-center">
             <figure class="rounded-circle match_box">
@@ -139,9 +139,9 @@
             <h4 class="mt-2">David</h4>
             </div>            
         </div>
-        <div class="bg-primary text-white p-2 text-center">Conversation time: 2 Hours</div>
+        <div class="bg-primary text-white p-2 text-center">Conversation time: {{convertMS(item?.connectionHistory)}} Hours</div>
     </div>
-    <div class="col-md-4 mb-3">
+    <!-- <div class="col-md-4 mb-3">
         <div class="d-flex border p-3 align-items-center justify-content-center">
             <div class="text-center">
             <figure class="rounded-circle match_box">
@@ -212,7 +212,7 @@
             </div>            
         </div>
         <div class="bg-primary text-white p-2 text-center">Conversation time: 2 Hours</div>
-    </div>
+    </div> -->
 </div>
 
 
@@ -221,10 +221,11 @@
         <div class="card-body">
             <h4>Photo/Video</h4>
           <div class="row">
-            <div class="col-md-3" *ngFor="let item of user?.docImage">
-              <figure class="mb-0 p-2"><a href="javascript:void()" (click)="videoBoxModal(videobox,item?.source)"><img [src]="item.thumb?item.thumb:'assets/images/vidnot.png'" 
+            <div class="col-md-2" *ngFor="let item of user?.docImage">
+              <figure class="mb-0 p-2"><a href="javascript:void()" (click)="videoBoxModal(videobox,item?.source)"><img [src]="item.thumb?item.thumb:'assets/images/image-not-found.jpg'" 
              class="img-fluid"></a></figure>
-            </div>
+         </div>
+         <b style="padding-left: 25%;" *ngIf="IsUser">Photo/Video not available</b>
             <!-- <div class="col-md-3">
               <figure class="mb-0 p-2 border"><a href="javascript:void()" (click)="videoBoxModal(videobox)"><img src="assets/images/img3.jpg" class="img-fluid"></a></figure>
             </div> -->

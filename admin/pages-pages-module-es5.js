@@ -25560,7 +25560,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12 col-xlg-3 col-md-5\">\n        <a routerLink=\"/pages/users\" class=\"btn btn-primary mb-3\">Back</a>\n        <!-- <a (click)=\"history.back()\" class=\"btn btn-primary mb-3\">Back</a> -->\n        <div class=\"card\">\n            <div class=\"row\">\n                <div class=\"col-md-3\">\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && !user.image\">\n                        <div class=\" text-center\">\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'MALE'\" src=\"assets/images/users/avatar_male.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'FEMALE'\" src=\"assets/images/users/avatar_female.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        <img *ngIf=\"!user.image && !user.gender\" src=\"assets/images/users/agent.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        </div>\n                    </div>\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && user.image\">\n                        <div class=\" text-center\">\n                        <img [src]=imageUrl class=\"rounded-circle\" width=\"100\" height=\"100\"/>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-9 pr-0 pt-2 pb-2\" *ngIf=\"user\">\n                    <div class=\"row pt-2 ml-0 mr-0 \">\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Name: <span class=\"font-weight-600\">{{user?.firstName}} {{user?.lastName}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Contact: <span class=\"font-weight-600\">{{user?.countryCode}}-{{user?.phoneNo}}</span>\n                                  \n                                    <!-- <li class=\"list-block-listing pr-2 pb-2\">User ID: <span class=\"font-weight-600\">elite2345</span></li> -->\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n\n                                <li class=\"list-block-listing pr-2 pb-2\">Dob: <span class=\"font-weight-600\">{{user?.dateofbirth}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Country: <span class=\"font-weight-600\">{{user?.country}}</span></li>\n\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Email: <span class=\"font-weight-600\"> {{user?.email }}</span>\n                                </li>\n                                <li class=\"list-block-listing pr-2 pb-2\"> Username: <span class=\"font-weight-600\">{{user?.username}}</span></li>\n                            </ul>\n                        </div>\n                      \n                    </div>\n               \n                </div>\n            </div>\n            <!-- end row -->\n\n        </div>\n    </div>\n    <!-- Column -->\n    <!-- Column -->\n    <!-- <div class=\"col-lg-12\">\n        <h4 class=\"pt-2\">Order History</h4>\n        <div class=\"card \">\n\n            <div class=\"card-body\">\n                <div class=\"row pb-2\">\n                    <div class=\"col-md-4\">\n                        <div>\n                            <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                        </div>\n                    </div>\n                    <div class=\"col-md-8 text-right\">\n                        <div ngbDropdown class=\"d-inline-block \">\n                            <button class=\"btn btn-info text-white\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                All\n              </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\">Completed Orders</button>\n                                <button class=\"dropdown-item\">Cancelled Orders</button>\n                                <button class=\"dropdown-item\">Pending Orders</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"table-responsive\">\n                    <table mat-table class=\"w-100\" [dataSource]=\"dataSource\" matSort>                   \n\n                      \n                        <ng-container matColumnDef=\"hotelName\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.hotelName}} </td>\n                        </ng-container>\n                          <ng-container matColumnDef=\"productname\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Services </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.productname}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"orderdate\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Date </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.orderdate}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"price\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"><b>$</b>{{row.price}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"Reviews_sp\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Reviews by service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.Reviews_sp}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Status </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> <button class=\"btn\" [ngClass]=\"row.status == 'Cancelled' ? 'btn-outline-danger': (row.status == 'Pending') ? 'btn-outline-info' : 'btn-outline-success' \">{{row.status}}</button> </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                    </table>\n\n                    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n                </div>\n            </div>\n        </div>\n    </div> -->\n    <!-- Column -->\n</div>\n<div class=\"row\">\n    <div class=\"col-md-12\">\n        <h4>User History</h4>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/2.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n</div>\n\n\n    \n    <div class=\"card\">\n        <div class=\"card-body\">\n            <h4>Photo/Video</h4>\n          <div class=\"row\">\n            <div class=\"col-md-3\" *ngFor=\"let item of user?.docImage\">\n              <figure class=\"mb-0 p-2\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox,item?.source)\"><img [src]=\"item.thumb?item.thumb:'assets/images/vidnot.png'\" \n             class=\"img-fluid\"></a></figure>\n            </div>\n            <!-- <div class=\"col-md-3\">\n              <figure class=\"mb-0 p-2 border\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox)\"><img src=\"assets/images/img3.jpg\" class=\"img-fluid\"></a></figure>\n            </div> -->\n          </div>\n        </div>\n      </div>\n      <ng-template #videobox let-modal>\n          <div class=\"modal-body\">\n              <button class=\"btn close-icon\" (click)=\"modal.dismiss('Cross click')\"><i class=\"mdi mdi-close\"></i></button>\n            <video width=\"100%\" height=\"315\"  controls autoplay [src]=\"sourceLink?sourceLink:'https://youtu.be/linlz7-Pnvw'\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></video>\n          </div>\n        </ng-template>\n\n<!-- <ng-template #discount let-modal>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title\">Coupons</h4>\n    <button type=\"button\" class=\"close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n   <div class=\"table-reponsive\">\n     <table class=\"table table-sm\">\n      <tbody>\n       <tr>\n       <td class=\"align-middle\">Get 20% OFF On Food Orders</td>\n       <td><button class=\"food-code btn btn-success\">\n        Food20\n       </button></td>\n      </tr>\n      <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       </tbody>\n     </table>\n   </div>\n  </div>\n\n</ng-template> -->\n";
+      __webpack_exports__["default"] = "<div class=\"row\">\n    <!-- Column -->\n    <div class=\"col-lg-12 col-xlg-3 col-md-5\">\n        <a routerLink=\"/pages/users\" class=\"btn btn-primary mb-3\">Back</a>\n        <!-- <a (click)=\"history.back()\" class=\"btn btn-primary mb-3\">Back</a> -->\n        <div class=\"card\">\n            <div class=\"row\">\n                <div class=\"col-md-3\">\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && !user.image\">\n                        <div class=\" text-center\">\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'MALE'\" src=\"assets/images/users/avatar_male.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        <img *ngIf=\"!user.image && (user.gender || !user.gender) == 'FEMALE'\" src=\"assets/images/users/avatar_female.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        <img *ngIf=\"!user.image && !user.gender\" src=\"assets/images/users/agent.jpg\" class=\"rounded-circle\" width=\"150\" height=\"150\"/>\n                        </div>\n                    </div>\n                    <div class=\"card-body p-3 bg-light\" *ngIf=\"user && user.image\">\n                        <div class=\" text-center\">\n                        <img [src]=imageUrl class=\"rounded-circle\" width=\"100\" height=\"100\"/>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-9 pr-0 pt-2 pb-2\" *ngIf=\"user\">\n                    <div class=\"row pt-2 ml-0 mr-0 \">\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Name: <span class=\"font-weight-600\">{{user?.firstName}} {{user?.lastName}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Contact: <span class=\"font-weight-600\">{{user?.countryCode}}-{{user?.phoneNo}}</span>\n                                  \n                                    <!-- <li class=\"list-block-listing pr-2 pb-2\">User ID: <span class=\"font-weight-600\">elite2345</span></li> -->\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n\n                                <li class=\"list-block-listing pr-2 pb-2\">Dob: <span class=\"font-weight-600\">{{user?.dateofbirth}}</span></li>\n                                <li class=\"list-block-listing pr-2 pb-2\">Country: <span class=\"font-weight-600\">{{user?.country}}</span></li>\n\n                            </ul>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <ul class=\"list-block pl-0 list-style-none\">\n                                <li class=\"list-block-listing pr-2 pb-2\">Email: <span class=\"font-weight-600\"> {{user?.email }}</span>\n                                </li>\n                                <li class=\"list-block-listing pr-2 pb-2\"> Username: <span class=\"font-weight-600\">{{user?.username}}</span></li>\n                            </ul>\n                        </div>\n                      \n                    </div>\n               \n                </div>\n            </div>\n            <!-- end row -->\n\n        </div>\n    </div>\n    <!-- Column -->\n    <!-- Column -->\n    <!-- <div class=\"col-lg-12\">\n        <h4 class=\"pt-2\">Order History</h4>\n        <div class=\"card \">\n\n            <div class=\"card-body\">\n                <div class=\"row pb-2\">\n                    <div class=\"col-md-4\">\n                        <div>\n                            <input type=\"text\" class=\"form-control\" id=\"prenametext\" placeholder=\"Search\">\n                        </div>\n                    </div>\n                    <div class=\"col-md-8 text-right\">\n                        <div ngbDropdown class=\"d-inline-block \">\n                            <button class=\"btn btn-info text-white\" id=\"dropdownBasic1\" ngbDropdownToggle>\n                All\n              </button>\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\n                                <button class=\"dropdown-item\">Completed Orders</button>\n                                <button class=\"dropdown-item\">Cancelled Orders</button>\n                                <button class=\"dropdown-item\">Pending Orders</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"table-responsive\">\n                    <table mat-table class=\"w-100\" [dataSource]=\"dataSource\" matSort>                   \n\n                      \n                        <ng-container matColumnDef=\"hotelName\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.hotelName}} </td>\n                        </ng-container>\n                          <ng-container matColumnDef=\"productname\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Services </th>\n                            <td mat-cell *matCellDef=\"let row\"> {{row.productname}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"orderdate\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Date </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.orderdate}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"price\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"><b>$</b>{{row.price}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"Reviews_sp\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Reviews by service Provider </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> {{row.Reviews_sp}} </td>\n                        </ng-container>\n                        <ng-container matColumnDef=\"status\">\n                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Status </th>\n                            <td mat-cell *matCellDef=\"let row\" [style.color]=\"row.color\"> <button class=\"btn\" [ngClass]=\"row.status == 'Cancelled' ? 'btn-outline-danger': (row.status == 'Pending') ? 'btn-outline-info' : 'btn-outline-success' \">{{row.status}}</button> </td>\n                        </ng-container>\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                    </table>\n\n                    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n                </div>\n            </div>\n        </div>\n    </div> -->\n    <!-- Column -->\n</div>\n<div class=\"row\">\n    <div class=\"col-md-12\">\n        <h4>User History</h4>\n    </div>\n    <div class=\"col-md-4 mb-3\" *ngFor=\"let item of userHistory\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: {{convertMS(item?.connectionHistory)}} Hours</div>\n    </div>\n    <!-- <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/d3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/3.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div>\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"d-flex border p-3 align-items-center justify-content-center\">\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/agent.jpg\" class=\"img-fluid\">                \n            </figure>\n            <h4 class=\"mt-2\">Emma Stone</h4>\n        </div>\n            <span class=\"border rounded-circle heart-box\"><i class=\" mdi mdi-heart\"></i></span>\n            <div class=\"text-center\">\n            <figure class=\"rounded-circle match_box\">\n                <img src=\"assets/images/users/2.jpg\" class=\"img-fluid\">               \n            </figure>\n            <h4 class=\"mt-2\">David</h4>\n            </div>            \n        </div>\n        <div class=\"bg-primary text-white p-2 text-center\">Conversation time: 2 Hours</div>\n    </div> -->\n</div>\n\n\n    \n    <div class=\"card\">\n        <div class=\"card-body\">\n            <h4>Photo/Video</h4>\n          <div class=\"row\">\n            <div class=\"col-md-2\" *ngFor=\"let item of user?.docImage\">\n              <figure class=\"mb-0 p-2\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox,item?.source)\"><img [src]=\"item.thumb?item.thumb:'assets/images/image-not-found.jpg'\" \n             class=\"img-fluid\"></a></figure>\n         </div>\n         <b style=\"padding-left: 25%;\" *ngIf=\"IsUser\">Photo/Video not available</b>\n            <!-- <div class=\"col-md-3\">\n              <figure class=\"mb-0 p-2 border\"><a href=\"javascript:void()\" (click)=\"videoBoxModal(videobox)\"><img src=\"assets/images/img3.jpg\" class=\"img-fluid\"></a></figure>\n            </div> -->\n          </div>\n        </div>\n      </div>\n      <ng-template #videobox let-modal>\n          <div class=\"modal-body\">\n              <button class=\"btn close-icon\" (click)=\"modal.dismiss('Cross click')\"><i class=\"mdi mdi-close\"></i></button>\n            <video width=\"100%\" height=\"315\"  controls autoplay [src]=\"sourceLink?sourceLink:'https://youtu.be/linlz7-Pnvw'\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></video>\n          </div>\n        </ng-template>\n\n<!-- <ng-template #discount let-modal>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title\">Coupons</h4>\n    <button type=\"button\" class=\"close-icon\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n   <div class=\"table-reponsive\">\n     <table class=\"table table-sm\">\n      <tbody>\n       <tr>\n       <td class=\"align-middle\">Get 20% OFF On Food Orders</td>\n       <td><button class=\"food-code btn btn-success\">\n        Food20\n       </button></td>\n      </tr>\n      <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       <tr>\n        <td class=\"align-middle\">Get 60% OFF On Food Orders</td>\n        <td><button class=\"food-code btn btn-success\">\n         Food60\n        </button></td>\n       </tr>\n       </tbody>\n     </table>\n   </div>\n  </div>\n\n</ng-template> -->\n";
       /***/
     },
 
@@ -30131,6 +30131,7 @@
           this.service = service;
           this.toast = toast;
           this.submitted = false;
+          this.InRange = false;
           this.pageSize = 10;
           this.pageIndex = 1;
           this.userForm = this.fb.group({
@@ -30194,7 +30195,13 @@
           value: function SavePackage() {
             var _this106 = this;
 
-            console.log('Form', this.userForm.value.pric);
+            if (this.currencyArray.find(function (item) {
+              return item.symbol === _this106.userForm.value.price.units;
+            }) == undefined) {
+              this.units.reset();
+              this.toast.error('Please select price unit from dropdown');
+            }
+
             var obj = {
               "name": this.userForm.value.name,
               "price": this.userForm.value.price,
@@ -30258,6 +30265,13 @@
           key: "updatePackage",
           value: function updatePackage() {
             var _this108 = this;
+
+            if (this.currencyArray.find(function (item) {
+              return item.symbol === _this108.userForm.value.price.units;
+            }) == undefined) {
+              this.units.reset();
+              this.toast.error('Please select price unit from dropdown');
+            }
 
             console.log('Form', this.userForm.value.pric);
             var obj = {
@@ -32968,7 +32982,7 @@
             this.modalService.open(deletereason, {
               backdropClass: 'light-blue-backdrop',
               centered: true,
-              size: 'lg'
+              size: 'sm'
             });
           }
         }, {
@@ -33028,7 +33042,9 @@
                 console.log('Added', res);
 
                 if (res.success == true) {
-                  _this123.toastr.success(res.message);
+                  _this123.toastr.success(res.message, '', {
+                    timeOut: 1000
+                  });
 
                   _this123.AddCalled = false;
 
@@ -35428,6 +35444,7 @@
           this.router = router;
           this.route = route;
           this.toastr = toastr;
+          this.IsUser = false;
           this.history = window.history; //table: any
 
           this.displayedColumns = ['hotelName', 'productname', 'orderdate', 'Reviews_sp', 'price', 'status'];
@@ -35495,18 +35512,21 @@
             console.log("id: ", this.id);
             this.imageUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].imagesUrl;
             this.getUsers();
+            this.getUsersHistory();
           }
         }, {
           key: "getUsers",
           value: function getUsers() {
             var _this133 = this;
 
-            var url = "users/".concat(this.id, "?limit=").concat(this.pageSize, "&page=").concat(this.pageIndex);
+            var url = "users/".concat(this.id);
             this.api.getApi(url).subscribe(function (res) {
               console.log('Res', res);
 
               if (res['statusCode'] === 200) {
                 _this133.user = res["data"];
+                console.log('User tst', _this133.user.docImage.length == 0 ? _this133.IsUser = true : _this133.IsUser = false);
+                _this133.user.docImage.length == 0 ? _this133.IsUser = true : _this133.IsUser = false;
                 console.log("getAllUsers: ", _this133.user);
 
                 _this133.setValues(_this133.user);
@@ -35514,6 +35534,23 @@
                 console.log("user obj: ", _this133.user);
               } else {
                 _this133.toastr.error(res["message"]);
+              }
+            });
+          }
+        }, {
+          key: "getUsersHistory",
+          value: function getUsersHistory() {
+            var _this134 = this;
+
+            var url = "conversationHistory?limit=".concat(this.pageSize, "&page=").concat(this.pageIndex, "&id=607d5c862bd1dd4b28fb07e8");
+            this.api.getApi(url).subscribe(function (res) {
+              console.log('Res', res);
+
+              if (res['statusCode'] === 200) {
+                _this134.userHistory = res["data"];
+                console.log('History', _this134.userHistory);
+              } else {
+                _this134.toastr.error(res["message"]);
               }
             });
           }
@@ -35537,6 +35574,19 @@
             if (this.dataSource.paginator) {
               this.dataSource.paginator.firstPage();
             }
+          }
+        }, {
+          key: "convertMS",
+          value: function convertMS(milliseconds) {
+            var day, hour, minute, seconds;
+            seconds = Math.ceil(milliseconds / 1000);
+            minute = Math.ceil(seconds / 60);
+            seconds = seconds % 60;
+            hour = Math.ceil(minute / 60);
+            minute = minute % 60;
+            day = Math.ceil(hour / 24);
+            hour = hour % 24;
+            return hour;
           }
         }]);
 
@@ -35731,7 +35781,7 @@
 
       var UsersComponent = /*#__PURE__*/function () {
         function UsersComponent(modalService, fb, formBuilder, api, router, toastr, spinner, comm) {
-          var _this134 = this;
+          var _this135 = this;
 
           _classCallCheck(this, UsersComponent);
 
@@ -35754,7 +35804,7 @@
 
           this.setValues = function (data) {
             if (data) {
-              _this134.userForm.patchValue({
+              _this135.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35773,7 +35823,7 @@
 
 
               if (data.image) {
-                _this134.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this135.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
             }
           };
@@ -35851,21 +35901,21 @@
         }, {
           key: "getUsers",
           value: function getUsers() {
-            var _this135 = this;
+            var _this136 = this;
 
             var url = "users?limit=".concat((this.pageSize ? this.pageSize : '') + (this.pageIndex ? '&page=' + this.pageIndex : '') + (this.searchBy ? '&search=' + this.searchBy : '') + (this.IsJective ? '&isBlocked=' + this.IsJective : ''));
             this.api.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
-                _this135.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res.data.data);
-                _this135.exportLink = res.data.exportLink;
-                _this135.dataSource.paginator = _this135.paginator;
-                _this135.dataSource.sort = _this135.sort;
-                _this135.totalUser = res.data.itemCount;
-                console.log('Total user', _this135.totalUser, res);
+                _this136.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res.data.data);
+                _this136.exportLink = res.data.exportLink;
+                _this136.dataSource.paginator = _this136.paginator;
+                _this136.dataSource.sort = _this136.sort;
+                _this136.totalUser = res.data.itemCount;
+                console.log('Total user', _this136.totalUser, res);
               } else {
-                _this135.toastr.error(res["message"]);
-
-                _this135.totalUser = 0;
+                //	this.toastr.error(res["message"]);
+                _this136.totalUser = 0;
+                console.log('Else called in User', res);
               }
             });
           }
@@ -35885,7 +35935,7 @@
         }, {
           key: "userEditModal",
           value: function userEditModal(userEdit, data) {
-            var _this136 = this;
+            var _this137 = this;
 
             this.isBlocked = data.isBlocked;
             this.objId = data._id;
@@ -35905,9 +35955,9 @@
               centered: true,
               size: 'lg'
             }).result.then(function (result) {
-              _this136.closeResult = "Closed with: ".concat(result);
+              _this137.closeResult = "Closed with: ".concat(result);
 
-              _this136.userForm.patchValue({
+              _this137.userForm.patchValue({
                 firstName: data.firstName,
                 lastName: data.lastName,
                 // countryCode: data.countryCode,
@@ -35920,28 +35970,28 @@
               });
 
               if (data.image) {
-                _this136.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
+                _this137.userImage = src_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].imagesUrl + data.image;
               }
 
               if (result) {
-                var data = _this136.userForm.value;
+                var data = _this137.userForm.value;
                 data['id'] = data._id;
                 var formData = new FormData();
                 formData.append("data", JSON.stringify(data));
-                formData.append("pic", _this136.File);
+                formData.append("pic", _this137.File);
 
-                _this136.api.updateUser(data).subscribe(function (response) {
+                _this137.api.updateUser(data).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this136.toastr.success(response['message']);
+                    _this137.toastr.success(response['message']);
 
-                    _this136.getUsers();
+                    _this137.getUsers();
                   } else {
-                    _this136.toastr.error(response['message']);
+                    _this137.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this136.closeResult = "Dismissed ".concat(_this136.getDismissReason(reason));
+              _this137.closeResult = "Dismissed ".concat(_this137.getDismissReason(reason));
             });
           }
         }, {
@@ -35954,7 +36004,7 @@
         }, {
           key: "blockUsers",
           value: function blockUsers(item, status) {
-            var _this137 = this;
+            var _this138 = this;
 
             console.log("item: ", item);
 
@@ -35970,16 +36020,16 @@
             };
             this.api.blockUsers(item._id, data).subscribe(function (response) {
               if (response['statusCode'] === 200) {
-                _this137.getUsers();
+                _this138.getUsers();
               } else {
-                _this137.toastr.error(response['message']);
+                _this138.toastr.error(response['message']);
               }
             });
           }
         }, {
           key: "deleteUser",
           value: function deleteUser(userModal, list) {
-            var _this138 = this;
+            var _this139 = this;
 
             // const message = 'Are you sure you want to delete ' + list.firstName + ' ' + list.lastName + ' ?';
             this.modalService.open(userModal, {
@@ -35987,25 +36037,25 @@
               centered: true,
               size: 'sm'
             }).result.then(function (result) {
-              _this138.closeResult = "Closed with: ".concat(result);
+              _this139.closeResult = "Closed with: ".concat(result);
 
               if (result) {
                 var data = {
                   id: list._id
                 };
 
-                _this138.api.deleteUser(list._id).subscribe(function (response) {
+                _this139.api.deleteUser(list._id).subscribe(function (response) {
                   if (response['statusCode'] === 200) {
-                    _this138.toastr.success(response['message']);
+                    _this139.toastr.success(response['message']);
 
-                    _this138.getUsers();
+                    _this139.getUsers();
                   } else {
-                    _this138.toastr.error(response['message']);
+                    _this139.toastr.error(response['message']);
                   }
                 });
               }
             }, function (reason) {
-              _this138.closeResult = "Dismissed ".concat(_this138.getDismissReason(reason));
+              _this139.closeResult = "Dismissed ".concat(_this139.getDismissReason(reason));
             });
           }
         }, {
@@ -36025,29 +36075,29 @@
         }, {
           key: "applyFilter",
           value: function applyFilter(event) {
-            var _this139 = this;
+            var _this140 = this;
 
             window.clearTimeout(this.timer);
             this.timer = window.setTimeout(function () {
               var filterValue = event.target.value;
-              _this139.searchBy = filterValue;
-              _this139.pageIndex = 1;
+              _this140.searchBy = filterValue;
+              _this140.pageIndex = 1;
 
-              _this139.getUsers();
+              _this140.getUsers();
             }, 1000);
           } // This is for the first modal
 
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this140 = this;
+            var _this141 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this140.closeResult = "Closed with: ".concat(result);
+              _this141.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this140.closeResult = "Dismissed ".concat(_this140.getDismissReason(reason));
+              _this141.closeResult = "Dismissed ".concat(_this141.getDismissReason(reason));
             });
           }
         }, {
@@ -36111,7 +36161,7 @@
         }, {
           key: "sendFile",
           value: function sendFile(fileData) {
-            var _this141 = this;
+            var _this142 = this;
 
             var url = "uploadFile";
             var formdata = new FormData();
@@ -36120,14 +36170,14 @@
               console.log(res.data);
 
               if (res.statusCode == 200) {
-                _this141.toastr.success('File updated successfully', '', {
+                _this142.toastr.success('File updated successfully', '', {
                   timeOut: 700
                 });
 
                 console.log("upload data res=>>", res.data);
-                _this141.files = res.data.filePath;
+                _this142.files = res.data.filePath;
               } else {
-                _this141.toastr.error(res.message);
+                _this142.toastr.error(res.message);
               }
             });
           }
@@ -36148,7 +36198,7 @@
         }, {
           key: "UpadteUser",
           value: function UpadteUser() {
-            var _this142 = this;
+            var _this143 = this;
 
             this.submitted = true;
             var url = "users/".concat(this.objId);
@@ -36168,17 +36218,17 @@
             if (this.userForm.valid && this.imagePath) {
               this.api.putApi(url, obj).subscribe(function (res) {
                 if (res.statusCode == 200) {
-                  _this142.submitted = false;
+                  _this143.submitted = false;
 
-                  _this142.toastr.success(res.message, '', {
+                  _this143.toastr.success(res.message, '', {
                     timeOut: 900
                   });
 
-                  _this142.getUsers();
+                  _this143.getUsers();
 
-                  _this142.modalService.dismissAll();
+                  _this143.modalService.dismissAll();
                 } else {
-                  _this142.toastr.error(res.message);
+                  _this143.toastr.error(res.message);
                 }
               });
             }
@@ -37163,14 +37213,14 @@
         }, {
           key: "open1",
           value: function open1(content1) {
-            var _this143 = this;
+            var _this144 = this;
 
             this.modalService.open(content1, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this143.closeResult = "Closed with: ".concat(result);
+              _this144.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this143.closeResult = "Dismissed ".concat(_this143.getDismissReason(reason));
+              _this144.closeResult = "Dismissed ".concat(_this144.getDismissReason(reason));
             });
           }
         }, {
