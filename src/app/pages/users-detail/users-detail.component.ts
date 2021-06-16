@@ -38,6 +38,7 @@ IsUser:boolean = false
   id: any;
   getAllUsers: any;
   user: any;
+  IsNoData:boolean = false
   imageUrl: any;
   pageSize: any= 40;
   pageIndex :any= 1;
@@ -87,13 +88,15 @@ IsUser:boolean = false
 		})
 	}
   getUsersHistory() {
-    let url = `conversationHistory?limit=${this.pageSize}&page=${this.pageIndex}&id=607d5c862bd1dd4b28fb07e8`
+    let url = `matchDuration/${this.id}`
 		this.api.getApi(url).subscribe((res:any) => {
-      console.log('Res',res);
+      console.log('Res of history',res);
       if (res['statusCode'] === 200) {
         this.userHistory = res["data"]
         console.log('History',this.userHistory);
-        
+        if(this.userHistory.length==0){
+          this.IsNoData = true
+        }
 			} else {
 				this.toastr.error(res["message"]);
 			}
@@ -161,12 +164,12 @@ IsUser:boolean = false
   }
   public convertMS( milliseconds ) {
     var day, hour, minute, seconds;
-    seconds = Math.ceil(milliseconds / 1000);
-    minute = Math.ceil(seconds / 60);
+    seconds = Math.round(milliseconds / 1000);
+    minute = Math.round(seconds / 60);
     seconds = seconds % 60;
-    hour = Math.ceil(minute / 60);
+    hour = Math.round(minute / 60);
     minute = minute % 60;
-    day = Math.ceil(hour / 24);
+    day = Math.round(hour / 24);
     hour = hour % 24;
     return  hour
 }

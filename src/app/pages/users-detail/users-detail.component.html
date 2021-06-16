@@ -127,20 +127,21 @@
         <div class="d-flex border p-3 align-items-center justify-content-center">
             <div class="text-center">
             <figure class="rounded-circle match_box">
-                <img src="assets/images/users/agent.jpg" class="img-fluid">                
+                <img [src]="item?.partner.image?item?.partner.image:'assets/images/users/agent.jpg'" class="img-fluid">                
             </figure>
-            <h4 class="mt-2">Emma Stone</h4>
+            <h4 class="mt-2">{{item?.partner.firstName +" "+item?.partner.lastName}}</h4>
         </div>
             <span class="border rounded-circle heart-box"><i class=" mdi mdi-heart"></i></span>
             <div class="text-center">
             <figure class="rounded-circle match_box">
-                <img src="assets/images/users/d3.jpg" class="img-fluid">               
+                <img [src]="item?.mine.image?item?.mine.image:'assets/images/users/d3.jpg'" class="img-fluid">               
             </figure>
-            <h4 class="mt-2">David</h4>
+            <h4 class="mt-2">{{item?.mine.firstName +" "+item?.mine.lastName}}</h4>
             </div>            
         </div>
-        <div class="bg-primary text-white p-2 text-center">Conversation time: {{convertMS(item?.connectionHistory)}} Hours</div>
+        <div class="bg-primary text-white p-2 text-center">Conversation time: {{convertMS(item?.chatDuration)}} Hours</div>
     </div>
+    <b style="padding-left: 25%;" *ngIf="IsNoData">This user has no history.</b>
     <!-- <div class="col-md-4 mb-3">
         <div class="d-flex border p-3 align-items-center justify-content-center">
             <div class="text-center">
