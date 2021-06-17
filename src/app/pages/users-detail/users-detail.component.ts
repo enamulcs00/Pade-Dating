@@ -112,11 +112,14 @@ IsUser:boolean = false
 	}
 
 
-  videoBoxModal(videobox,src) {
+  videoBoxModal(videobox,src,thumb) {
     this.sourceLink = src
     console.log('Sor',src);
-    
-    this.modalService.open(videobox, {backdropClass: 'light-blue-backdrop',centered: true,size: 'md'});
+    if(thumb){
+      this.modalService.open(videobox, {backdropClass: 'light-blue-backdrop',centered: true,size: 'md'});
+    }else{
+      this.toastr.error('Video not found','',{timeOut:700})
+    }
   }
 
   table = [
