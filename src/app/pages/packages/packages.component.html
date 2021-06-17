@@ -10,7 +10,7 @@
         <span class="h1"><i class="fas fa-chess-king "></i></span> 
             <h2 class="pb-3">{{item?.name}}</h2>
             <h1 class="price">{{item?.price.units}} {{item?.price.amount}}/<span>{{item?.month}}Months</span></h1>
-            <h4 class="pt-3 pb-3">{{item?.saveUpto}}%</h4>
+            <h4 class="pt-3 pb-3">{{'Save up to :'+' '+ item?.saveUpto}}%</h4>
             <div class="row">
 <div class="col-md-6">
     <button class="btn btn-block" (click)="packageEditModal(itemedit,item)">Edit</button>
