@@ -36,6 +36,7 @@ IsUser:boolean = false
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   id: any;
+  IsImage:boolean = false
   getAllUsers: any;
   user: any;
   IsNoData:boolean = false
@@ -112,16 +113,16 @@ IsUser:boolean = false
 	}
 
 
-  videoBoxModal(videobox,src,thumb) {
-    this.sourceLink = src
-    console.log('Sor',src);
-    if(thumb){
-      this.modalService.open(videobox, {backdropClass: 'light-blue-backdrop',centered: true,size: 'md'});
-    }else{
-      this.toastr.error('Video not found','',{timeOut:700})
+  videoBoxModal(videobox,src,type) {
+    if(type=='video'){
+      this.IsImage = false
+      this.sourceLink = src
+    }else if(type=='image'){
+      this.IsImage = true
+      this.sourceLink = src
     }
-  }
-
+      this.modalService.open(videobox, {backdropClass: 'light-blue-backdrop',centered: true,size:(type=='video')?'md':'sm'});
+    }
   table = [
     {
       hotelName: 'Sam',
