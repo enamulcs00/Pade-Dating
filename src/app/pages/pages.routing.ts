@@ -55,6 +55,8 @@ import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { ReportComponent } from './report/report.component';
 import { ReasonComponent } from './reason/reason.component';
 import { PackagesComponent } from './packages/packages.component';
+import { LoyaltyComponent } from './loyalty/loyalty.component';
+// import { LoyaltyComponent } from './Loyalty/loyalty.component';
 
 
 export const PagesRoutes: Routes = [
@@ -667,6 +669,17 @@ export const PagesRoutes: Routes = [
           urls: [
             { title: 'Dashboard', url: '/packages' },
             { title: ' Category' }
+          ]
+        }
+      },
+      {
+        path: 'loyalty',
+        component: LoyaltyComponent,
+        data: {
+          title: 'Loyalty Points',
+          urls: [
+            { title: 'Dashboard', url: '/loyalty' },
+            { title: ' loyalty' }
           ]
         }
       },

@@ -165,13 +165,21 @@ export const ROUTES: RouteInfo[] = [
   //   ]
   // },
     {
-        path: '/pages/calculator',
-        title: 'Manage Credits',
-        icon: 'mdi mdi-calculator',
+        path: '/pages/loyalty',
+        title: 'Loyalty Points',
+        icon: 'mdi mdi-star-circle',
         class: '',
         extralink: false,
         submenu: []
     },
+    // {
+    //     path: '/pages/calculator',
+    //     title: 'Manage Credits',
+    //     icon: 'mdi mdi-calculator',
+    //     class: '',
+    //     extralink: false,
+    //     submenu: []
+    // },
     // {
     //     path: '/pages/rewards',
     //     title: 'Discount',

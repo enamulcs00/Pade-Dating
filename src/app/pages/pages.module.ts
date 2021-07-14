@@ -78,6 +78,7 @@ import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { ReportComponent } from './report/report.component';
 import { ReasonComponent } from './reason/reason.component';
 import { PackagesComponent } from './packages/packages.component';
+import { LoyaltyComponent } from './loyalty/loyalty.component';
 
 
 @NgModule({
@@ -161,7 +162,8 @@ CommonModule,
     SuggestionsComponent,
     ReportComponent,
     ReasonComponent,
-    PackagesComponent
+    PackagesComponent,
+    LoyaltyComponent
     
   ]
 })
