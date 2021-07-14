@@ -1,8 +1,13 @@
 import { AfterViewInit, Component, OnInit,ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource, } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource, } from '@angular/material/table';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder} from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { ApiService } from '../../shared/services/api.service';
+import { environment } from 'src/environments/environment';
 
 export interface UserData {
   hotelName: string,
@@ -21,7 +26,8 @@ export interface UserData {
   styleUrls: ['./users-detail.component.scss']
 })
 export class UsersDetailComponent implements AfterViewInit    {
-
+IsUser:boolean = false
+  history = window.history;
   closeResult: string;
   //table: any
   displayedColumns: string[] = [ 'hotelName' ,'productname', 'orderdate', 'Reviews_sp','price','status'];
@@ -29,11 +35,24 @@ export class UsersDetailComponent implements AfterViewInit    {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-
-  constructor(private modalService: NgbModal) {
-    // const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-
-    // Assign the data to the data source for the table to render
+  id: any;
+  IsImage:boolean = false
+  getAllUsers: any;
+  user: any;
+  IsNoData:boolean = false
+  imageUrl: any;
+  pageSize: any= 40;
+  pageIndex :any= 1;
+	totalUser:number;
+  sourceLink:any;
+  userHistory: any;
+  constructor(
+    private modalService: NgbModal,
+    private fb: FormBuilder,
+		private api: ApiService,
+		private router: Router,
+    private route: ActivatedRoute,
+		private toastr: ToastrService,) {
     this.dataSource = new MatTableDataSource(this.table);
   }
 
@@ -42,11 +61,68 @@ export class UsersDetailComponent implements AfterViewInit    {
     this.dataSource.sort = this.sort;
   }
 
-
-  videoBoxModal(videobox) {
-    this.modalService.open(videobox, {backdropClass: 'light-blue-backdrop',centered: true,size: 'md'});
+  ngOnInit(){
+    this.route.params.subscribe(params => {
+      this.id = params["id"];
+      // this.getOutlettById(this.id);
+    });
+    console.log("id: ", this.id)
+    this.imageUrl = environment.imagesUrl;
+    this.getUsers()
+    this.getUsersHistory()
   }
 
+  getUsers() {
+    let url = `users/${this.id}`
+		this.api.getApi(url).subscribe(res => {
+      console.log('Res',res);
+      if (res['statusCode'] === 200) {
+        this.user = res["data"]
+        console.log('User tst',(this.user.docImage.length==0)?(this.IsUser = true):(this.IsUser = false));
+         (this.user.docImage.length==0)?(this.IsUser = true):(this.IsUser = false)
+        console.log("getAllUsers: ", this.user)
+        this.setValues(this.user);
+        console.log("user obj: ", this.user)
+			} else {
+				this.toastr.error(res["message"]);
+			}
+		})
+	}
+  getUsersHistory() {
+    let url = `matchDuration/${this.id}`
+		this.api.getApi(url).subscribe((res:any) => {
+      console.log('Res of history',res);
+      if (res['statusCode'] === 200) {
+        this.userHistory = res["data"]
+        console.log('History',this.userHistory);
+        if(this.userHistory.length==0){
+          this.IsNoData = true
+        }
+			} else {
+				this.toastr.error(res["message"]);
+			}
+		})
+	}
+  setValues = data => {
+		if (data) {
+			data.image && (this.imageUrl = data.image);
+			if (data.image) {
+				this.imageUrl
+			}
+		}
+	}
+
+
+  videoBoxModal(videobox,src,type) {
+    if(type=='video'){
+      this.IsImage = false
+      this.sourceLink = src
+    }else if(type=='image'){
+      this.IsImage = true
+      this.sourceLink = src
+    }
+      this.modalService.open(videobox, {backdropClass: 'light-blue-backdrop',centered: true,size:(type=='video')?'md':'sm'});
+    }
   table = [
     {
       hotelName: 'Sam',
@@ -90,6 +166,17 @@ export class UsersDetailComponent implements AfterViewInit    {
       this.dataSource.paginator.firstPage();
     }
   }
+  public convertMS( milliseconds ) {
+    var day, hour, minute, seconds;
+    seconds = Math.round(milliseconds / 1000);
+    minute = Math.round(seconds / 60);
+    seconds = seconds % 60;
+    hour = Math.round(minute / 60);
+    minute = minute % 60;
+    day = Math.round(hour / 24);
+    hour = hour % 24;
+    return  hour
+}
 }
 
 /** Builds and returns a new User. */

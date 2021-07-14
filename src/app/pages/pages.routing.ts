@@ -86,7 +86,7 @@ export const PagesRoutes: Routes = [
         }
       },
       {
-        path: 'users_detail',
+        path: 'users_detail/:id',
         component: UsersDetailComponent,
         data: {
           title: 'Users Detail',
@@ -207,6 +207,7 @@ export const PagesRoutes: Routes = [
         }
       },
       {
+        canActivate: [AuthGuard] ,
         path: 'profile',
         component: ProfileComponent,
         data: {

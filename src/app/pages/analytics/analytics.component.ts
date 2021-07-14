@@ -16,7 +16,7 @@ export interface Chart {
 @Component({
   selector: 'app-analytics',
   templateUrl: './analytics.component.html',
-  styleUrls: ['./analytics.component.scss']
+  styleUrls: ['./analytics.component.css']
 })
 export class AnalyticsComponent implements OnInit {
 
