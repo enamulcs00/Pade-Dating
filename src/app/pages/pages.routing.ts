@@ -56,6 +56,7 @@ import { ReportComponent } from './report/report.component';
 import { ReasonComponent } from './reason/reason.component';
 import { PackagesComponent } from './packages/packages.component';
 import { LoyaltyComponent } from './loyalty/loyalty.component';
+import { AuthGuard } from '../shared/guards/auth.guard';
 // import { LoyaltyComponent } from './Loyalty/loyalty.component';
 
 

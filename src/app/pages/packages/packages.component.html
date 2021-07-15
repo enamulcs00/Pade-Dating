@@ -218,3 +218,114 @@
         </div>
     </div>
 </ng-template> -->
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+      <a ngbNavLink>One Month</a>
+      <ng-template ngbNavContent>          
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>Country</th>
+                    <th>Unit Type</th>
+                    <th>Plan Price</th>                   
+                    <th>Likes</th>
+                    <th>Matches</th>
+                    <th>Send</th>
+                    <th>Received</th>
+                    <th>Read</th> 
+                    <th>Picture</th> 
+                    <th>Video</th> 
+                    <th>Action</th> 
+                </tr>
+                <tr>
+                    <td>US</td>
+                    <td>$</td>
+                    <td>500</td>
+                    <td>Unlimted</td>
+                    <td>25</td>
+                    <td>Unlimted</td>
+                    <td>Unlimted</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>
+                        <div ngbDropdown container="body">
+                            <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
+                            <div ngbDropdownMenu>
+                                <button ngbDropdownItem>Add</button>
+                              <button ngbDropdownItem>Edit</button>
+                              <button ngbDropdownItem>Delete</button>
+                            </div>
+                          </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+      </ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink>Three Months</a>
+      <ng-template ngbNavContent><div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>Country</th>
+                <th>Unit Type</th>
+                <th>Plan Price</th>
+                <th>Country</th>
+                <th>Likes</th>
+                <th>Matches</th>
+                <th>Send</th>
+                <th>Received</th>
+                <th>Read</th> 
+                <th>Picture</th> 
+                <th>Video</th> 
+                <th>Action</th> 
+            </tr>
+        </table>
+    </div></ng-template>
+    </li>
+    <li ngbNavItem>
+        <a ngbNavLink>Six Months</a>
+        <ng-template ngbNavContent><div class="table-responsive">
+          <table class="table">
+              <tr>
+                  <th>Country</th>
+                  <th>Unit Type</th>
+                  <th>Plan Price</th>
+                  <th>Country</th>
+                  <th>Likes</th>
+                  <th>Matches</th>
+                  <th>Send</th>
+                  <th>Received</th>
+                  <th>Read</th> 
+                  <th>Picture</th> 
+                  <th>Video</th> 
+                  <th>Action</th> 
+
+              </tr>
+          </table>
+      </div></ng-template>
+      </li>
+      <li ngbNavItem>
+        <a ngbNavLink>One Year</a>
+        <ng-template ngbNavContent><div class="table-responsive">
+          <table class="table">
+              <tr>
+                  <th>Country</th>
+                  <th>Unit Type</th>
+                  <th>Plan Price</th>
+                  <th>Country</th>
+                  <th>Likes</th>
+                  <th>Matches</th>
+                  <th>Send</th>
+                  <th>Received</th>
+                  <th>Read</th> 
+                  <th>Picture</th> 
+                  <th>Video</th> 
+                  <th>Action</th> 
+              </tr>
+          </table>
+      </div></ng-template>
+      </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
