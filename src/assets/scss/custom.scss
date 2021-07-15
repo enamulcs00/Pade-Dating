@@ -142,3 +142,16 @@ ul,li{
         font-weight: normal;
       }
     }
+    .custom-nav{
+      border-bottom: none;
+      .nav-link{
+        border: none;
+    color: #172b4d;
+    margin-right: 10px;
+    background: rgba(23, 44, 79, 0.178);
+        &.active{
+          background: rgba(23, 44, 79, 1);
+          color:$white;
+        }
+      }
+    }

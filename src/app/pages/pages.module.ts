@@ -79,6 +79,10 @@ import { ReportComponent } from './report/report.component';
 import { ReasonComponent } from './reason/reason.component';
 import { PackagesComponent } from './packages/packages.component';
 import { LoyaltyComponent } from './loyalty/loyalty.component';
+import { OneMonthComponent } from './packages/one-month/one-month.component';
+import { ThreeMonthComponent } from './packages/three-month/three-month.component';
+import { SixMonthComponent } from './packages/six-month/six-month.component';
+import { OneYearComponent } from './packages/one-year/one-year.component';
 
 
 @NgModule({
@@ -163,7 +167,11 @@ CommonModule,
     ReportComponent,
     ReasonComponent,
     PackagesComponent,
-    LoyaltyComponent
+    LoyaltyComponent,
+    OneMonthComponent,
+    ThreeMonthComponent,
+    SixMonthComponent,
+    OneYearComponent
     
   ]
 })

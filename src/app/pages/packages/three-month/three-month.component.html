@@ -1,0 +1,228 @@
+  <div class="row pt-2 pb-2">
+      <div class="col-md-12 text-right">
+        <button class="btn btn-primary" (click)="addSubscriptionModal(addSubscription)">Add</button>
+      </div>
+  </div>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>Country</th>
+            <th>Unit Type</th>
+            <th>Plan Price</th>                   
+            <th>Likes</th>
+            <th>Matches</th>
+            <th>Send</th>
+            <th>Received</th>
+            <th>Read</th> 
+            <th>Picture</th> 
+            <th>Video</th> 
+            <th>Action</th> 
+        </tr>
+        <tr>
+            <td>US</td>
+            <td>$</td>
+            <td>500</td>
+            <td>Unlimted</td>
+            <td>25</td>
+            <td>Unlimted</td>
+            <td>Unlimted</td>
+            <td>50</td>
+            <td>3</td>
+            <td>2</td>
+            <td>
+                <div ngbDropdown container="body">
+                    <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
+                    <div ngbDropdownMenu>
+                        <!-- <button ngbDropdownItem (click)="addSubscriptionModal(addSubscription)">Add</button> -->
+                    <button ngbDropdownItem (click)="editSubscriptionModal(editSubscription)">Edit</button>
+                    <button ngbDropdownItem (click)="delSubscriptionModal(delSubscription)" >Delete</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<ng-template #addSubscription let-modal>
+    <div class="modal-body">
+      <div class="card">
+          <h4 class="bg-primary text-white p-3">Add Three Month Plan</h4>
+        <div class="card-body">
+          <div class="row">
+            <!-- <div class="col-md-6 ">
+              <div class="form-group">
+                <label>Promo Code</label>
+                <input type="text" class="form-control">
+              </div>
+            </div> -->        
+            <div class="col-md-6 ">
+              <div class="form-group">
+                <label>Country Name</label>
+                <select class="custom-select col-12" id="example-month-input2">
+                  <option selected="">India</option>
+                  <option value="free">Aus</option>
+                  <option value="Discount">England</option>
+                </select>
+              </div>
+            </div>
+          
+          
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="">Unit Type </label>
+                <input type="text" placeholder="$" class="form-control" readonly>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Plan Price </label>
+                  <input type="text" placeholder="500" class="form-control">
+                </div>
+              </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="">Likes </label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="">Matches </label>
+                <input type="number" placeholder="25" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Received </label>
+                  <input type="text" placeholder="Unlimted" class="form-control">
+                </div>
+              </div> 
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Send </label>
+                  <input type="text" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Read </label>
+                  <input type="text" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Picture </label>
+                  <input type="Number" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Videos </label>
+                  <input type="number" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mr-3" (click)="modal.dismiss('Cross click')">Save</button>
+        <button type="submit" class="btn btn-danger mr-3" (click)="modal.dismiss('Cross click')">Cancel</button>
+    </div>
+  </ng-template>
+
+  <ng-template #editSubscription let-modal>
+    <div class="modal-body">
+      <div class="card">
+          <h4 class="bg-primary text-white p-3">Edit Three Month Plan</h4>
+        <div class="card-body">
+          <div class="row">
+            <!-- <div class="col-md-6 ">
+              <div class="form-group">
+                <label>Promo Code</label>
+                <input type="text" class="form-control">
+              </div>
+            </div> -->        
+            <div class="col-md-6 ">
+              <div class="form-group">
+                <label>Country Name</label>
+                <select class="custom-select col-12" id="example-month-input2">
+                  <option selected="">India</option>
+                  <option value="free">Aus</option>
+                  <option value="Discount">England</option>
+                </select>
+              </div>
+            </div>
+          
+          
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="">Unit Type </label>
+                <input type="text" placeholder="$" class="form-control" readonly>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Plan Price </label>
+                  <input type="text" placeholder="500" class="form-control">
+                </div>
+              </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="">Likes </label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="">Matches </label>
+                <input type="number" placeholder="25" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Received </label>
+                  <input type="text" placeholder="Unlimted" class="form-control">
+                </div>
+              </div> 
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Send </label>
+                  <input type="text" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Read </label>
+                  <input type="text" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Picture </label>
+                  <input type="Number" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Videos </label>
+                  <input type="number" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mr-3" (click)="modal.dismiss('Cross click')">Update</button>
+        <button type="submit" class="btn btn-danger mr-3" (click)="modal.dismiss('Cross click')">Cancel</button>
+    </div>
+  </ng-template>
+
+  <ng-template #delSubscription let-modal>
+    <div class="modal-body">
+      <p>Are you sure you want to delete?</p>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary mr-2" aria-label="Close"
+          (click)="modal.dismiss('Cross click')">Yes</button>
+        <button type="button" class="btn btn-seconadary" aria-label="Close"
+          (click)="modal.dismiss('Cross click')">No</button>
+      </div>
+    </div>
+  </ng-template>

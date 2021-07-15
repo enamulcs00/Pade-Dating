@@ -163,5 +163,12 @@ pageIndex :any= 1;
       }
     })
   }
-  
+  addSubscriptionModal(addSubscription) {
+    this.modalService.open(addSubscription, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
+    // alert("Hello")
+  }
+  editSubscriptionModal(editSubscription) {
+    this.modalService.open(editSubscription, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
+    // alert("Hello")
+  }
 }

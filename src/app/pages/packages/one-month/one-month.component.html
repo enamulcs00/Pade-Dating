@@ -1,0 +1,299 @@
+<div class="row pt-2 pb-2">
+    <div class="col-md-12 text-right">
+      <button class="btn btn-primary" (click)="addSubscriptionModal(addSubscription)">Add</button>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>Country</th>
+            <th>Unit Type</th>
+            <th>Plan Price</th>                   
+            <th>Likes</th>
+            <th>Matches</th>
+            <th>Send</th>
+            <th>Received</th>
+            <th>Read</th> 
+            <th>Picture</th> 
+            <th>Video</th> 
+            <th>Action</th> 
+        </tr>
+        <tr>
+            <td>Australia</td>
+            <td>$</td>
+            <td>300</td>
+            <td>Unlimted</td>
+            <td>25</td>
+            <td>Unlimted</td>
+            <td>Unlimted</td>
+            <td>40</td>
+            <td>30</td>
+            <td>20</td>
+            <td>
+                <div ngbDropdown container="body">
+                    <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
+                    <div ngbDropdownMenu>
+                        <!-- <button ngbDropdownItem (click)="addSubscriptionModal(addSubscription)">Add</button> -->
+                    <button ngbDropdownItem (click)="editSubscriptionModal(editSubscription)">Edit</button>
+                    <button ngbDropdownItem (click)="delSubscriptionModal(delSubscription)" >Delete</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<ng-template #addSubscription let-modal>
+    <div class="modal-body">
+      <div class="card">
+          <h4 class="bg-primary text-white p-3">Add One Year Plan</h4>
+        <div class="card-body">
+          <div class="row">
+            <!-- <div class="col-md-6 ">
+              <div class="form-group">
+                <label>Promo Code</label>
+                <input type="text" class="form-control">
+              </div>
+            </div> -->        
+            <div class="col-md-6 ">
+              <div class="form-group">
+                <label>Country Name</label>
+                <select class="custom-select col-12" id="example-month-input2">
+                  <option selected="">India</option>
+                  <option value="free">Aus</option>
+                  <option value="Discount">England</option>
+                </select>
+              </div>
+            </div>
+          
+          
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="">Unit Type </label>
+                <input type="text" placeholder="$" class="form-control" readonly>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Plan Price </label>
+                  <input type="text" placeholder="500" class="form-control">
+                </div>
+              </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                  <div class="d-flex">
+                    <label for="" class="mr-auto">Likes</label>
+                    <div class="custom-control custom-radio "><input class="custom-control-input" id="customControlValidation1" name="likes" type="radio"><label  class="custom-control-label" for="customControlValidation1">Unlimted</label></div>
+                    <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="customControlValidation2" name="likes" type="radio"><label  class="custom-control-label" for="customControlValidation2">Limted</label></div>
+
+                </div>
+               
+                <input type="text"  placeholder="100"  class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="d-flex">
+                    <label for="" class="mr-auto">Matches</label>
+                    <div class="custom-control custom-radio "><input class="custom-control-input" id="Matches1" name="matches" type="radio"><label  class="custom-control-label" for="Matches1">Unlimted</label></div>
+                    <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Matches2" name="matches" type="radio"><label  class="custom-control-label" for="Matches2">Limted</label></div>
+
+                </div>
+                <input type="number" placeholder="25" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="d-flex">
+                        <label for="" class="mr-auto">Received</label>
+                        <div class="custom-control custom-radio "><input class="custom-control-input" id="Received1" name="recieved" type="radio"><label  class="custom-control-label" for="Received1">Unlimted</label></div>
+                        <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Received2" name="recieved" type="radio"><label  class="custom-control-label" for="Received2">Limted</label></div>
+    
+                    </div>
+                
+                  <input type="text" placeholder="40" class="form-control">
+                </div>
+              </div> 
+              <div class="col-md-6">
+                <div class="form-group">
+                    <div class="d-flex">
+                        <label for="" class="mr-auto">Send</label>
+                        <div class="custom-control custom-radio "><input class="custom-control-input" id="Send1" name="send" type="radio"><label  class="custom-control-label" for="Send1">Unlimted</label></div>
+                        <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Send2" name="send" type="radio"><label  class="custom-control-label" for="Send2">Limted</label></div>
+    
+                    </div>
+                  <input type="text" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                    <div class="d-flex">
+                        <label for="" class="mr-auto">Read</label>
+                        <div class="custom-control custom-radio "><input class="custom-control-input" id="Read1" name="read" type="radio"><label  class="custom-control-label" for="Read1">Unlimted</label></div>
+                        <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Read2" name="read" type="radio"><label  class="custom-control-label" for="Read2">Limted</label></div>
+    
+                    </div>
+                  <input type="text" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                    <div class="d-flex">
+                        <label for="" class="mr-auto">Picture</label>
+                        <div class="custom-control custom-radio "><input class="custom-control-input" id="Picture1" name="picture" type="radio"><label  class="custom-control-label" for="Picture1">Unlimted</label></div>
+                        <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Picture2" name="picture" type="radio"><label  class="custom-control-label" for="Picture2">Limted</label></div>
+    
+                    </div>
+                  <input type="Number" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                    <div class="d-flex">
+                        <label for="" class="mr-auto">Video</label>
+                        <div class="custom-control custom-radio "><input class="custom-control-input" id="Video1" name="video" type="radio"><label  class="custom-control-label" for="Video1">Unlimted</label></div>
+                        <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Video2" name="video" type="radio"><label  class="custom-control-label" for="Video2">Limted</label></div>
+    
+                    </div>
+                  <input type="number" placeholder="Unlimted" class="form-control">
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mr-3" (click)="modal.dismiss('Cross click')">Save</button>
+        <button type="submit" class="btn btn-danger mr-3" (click)="modal.dismiss('Cross click')">Cancel</button>
+    </div>
+  </ng-template>
+<ng-template #editSubscription let-modal>
+    <div class="modal-body">
+      <div class="card">
+          <h4 class="bg-primary text-white p-3">Edit One Year Plan</h4>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <!-- <div class="col-md-6 ">
+                      <div class="form-group">
+                        <label>Promo Code</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div> -->        
+                    <div class="col-md-6 ">
+                      <div class="form-group">
+                        <label>Country Name</label>
+                        <select class="custom-select col-12" id="example-month-input2">
+                          <option selected="">India</option>
+                          <option value="free">Aus</option>
+                          <option value="Discount">England</option>
+                        </select>
+                      </div>
+                    </div>
+                  
+                  
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="">Unit Type </label>
+                        <input type="text" placeholder="$" class="form-control" readonly>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="">Plan Price </label>
+                          <input type="text" placeholder="500" class="form-control">
+                        </div>
+                      </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                          <div class="d-flex">
+                            <label for="" class="mr-auto">Likes</label>
+                            <div class="custom-control custom-radio "><input class="custom-control-input" id="customControlValidation1" name="likes" type="radio" (onchange)="enableDisable($event,'unlimited')"><label  class="custom-control-label" for="customControlValidation1">Unlimted</label></div>
+                            <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="customControlValidation2" name="likes" type="radio" (onchange)="enableDisable($event,'limited')" ><label  class="custom-control-label" for="customControlValidation2">Limted</label></div>
+                        </div>
+                        <input type="text"  placeholder="100"  class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <div class="d-flex">
+                            <label for="" class="mr-auto">Matches</label>
+                            <div class="custom-control custom-radio "><input class="custom-control-input" id="Matches1" name="matches" type="radio"><label  class="custom-control-label" for="Matches1">Unlimted</label></div>
+                            <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Matches2" name="matches" type="radio"><label  class="custom-control-label" for="Matches2">Limted</label></div>
+        
+                        </div>
+                        <input type="number" placeholder="25" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="d-flex">
+                                <label for="" class="mr-auto">Received</label>
+                                <div class="custom-control custom-radio "><input class="custom-control-input" id="Received1" name="recieved" type="radio"><label  class="custom-control-label" for="Received1">Unlimted</label></div>
+                                <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Received2" name="recieved" type="radio"><label  class="custom-control-label" for="Received2">Limted</label></div>
+            
+                            </div>
+                        
+                          <input type="text" placeholder="40" class="form-control">
+                        </div>
+                      </div> 
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="d-flex">
+                                <label for="" class="mr-auto">Send</label>
+                                <div class="custom-control custom-radio "><input class="custom-control-input" id="Send1" name="send" type="radio"><label  class="custom-control-label" for="Send1">Unlimted</label></div>
+                                <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Send2" name="send" type="radio"><label  class="custom-control-label" for="Send2">Limted</label></div>
+            
+                            </div>
+                          <input type="text" placeholder="Unlimted" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="d-flex">
+                                <label for="" class="mr-auto">Read</label>
+                                <div class="custom-control custom-radio "><input class="custom-control-input" id="Read1" name="read" type="radio"><label  class="custom-control-label" for="Read1">Unlimted</label></div>
+                                <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Read2" name="read" type="radio"><label  class="custom-control-label" for="Read2">Limted</label></div>
+            
+                            </div>
+                          <input type="text" placeholder="Unlimted" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="d-flex">
+                                <label for="" class="mr-auto">Picture</label>
+                                <div class="custom-control custom-radio "><input class="custom-control-input" id="Picture1" name="picture" type="radio"><label  class="custom-control-label" for="Picture1">Unlimted</label></div>
+                                <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Picture2" name="picture" type="radio"><label  class="custom-control-label" for="Picture2">Limted</label></div>
+            
+                            </div>
+                          <input type="Number" placeholder="Unlimted" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="d-flex">
+                                <label for="" class="mr-auto">Video</label>
+                                <div class="custom-control custom-radio "><input class="custom-control-input" id="Video1" name="video" type="radio"><label  class="custom-control-label" for="Video1">Unlimted</label></div>
+                                <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Video2" name="video" type="radio"><label  class="custom-control-label" for="Video2">Limted</label></div>
+            
+                            </div>
+                          <input type="number" placeholder="Unlimted" class="form-control">
+                        </div>
+                      </div>
+                  </div>
+            </form>    
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mr-3" (click)="modal.dismiss('Cross click')">Save</button>
+        <button type="submit" class="btn btn-danger mr-3" (click)="modal.dismiss('Cross click')">Cancel</button>
+    </div>
+  </ng-template>
+  <ng-template #delSubscription let-modal>
+    <div class="modal-body">
+      <p>Are you sure you want to delete?</p>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary mr-2" aria-label="Close"
+          (click)="modal.dismiss('Cross click')">Yes</button>
+        <button type="button" class="btn btn-seconadary" aria-label="Close"
+          (click)="modal.dismiss('Cross click')">No</button>
+      </div>
+    </div>
+  </ng-template>

@@ -1,4 +1,4 @@
-<div class="card">
+<!-- <div class="card">
     <div class="card-body">
         <div class="d-block text-right">
             <button class="btn btn-primary mb-3" (click)="packageModal(item)">Add Packages</button>
@@ -19,30 +19,10 @@
     <button class="btn btn-block" (click)="packagedelModal(userDelete,item._id)">Delete</button>
 </div>
             </div>
-            <!-- <button class="btn btn-block" (click)="packageEditModal(itemedit,item)">Edit</button> -->
+            < <button class="btn btn-block" (click)="packageEditModal(itemedit,item)">Edit</button>
         </div>
-    </div>
-    
-    <!-- <div class="col-md-4">
-        <div class="package-box border text-center p-4 text-white rounded bg-primary">
-        <span class="h1"><i class="fas fa-chess-king "></i></span> 
-            <h2 class="pb-3">Silver</h2>
-            <h1 class="price">$150/<span>12 Months</span></h1>
-            <h4 class="pt-3 pb-3">Save Upto 50%</h4>
-            
-            <button class="btn btn-block" (click)="packageEditModal(itemedit)">Edit</button>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="package-box border text-center p-4 text-white rounded bg-primary">
-        <span class="h1"><i class="fas fa-chess-king "></i></span> 
-            <h2 class="pb-3">Gold</h2>
-            <h1 class="price">$250/<span>12 Months</span></h1>
-            <h4 class="pt-3 pb-3">Save Upto 50%</h4>
-            
-            <button class="btn btn-block" (click)="packageEditModal(itemedit)">Edit</button>
-        </div>
-    </div> -->
+    </div>    
+   
 <p *ngIf="totalUser==0">Data not found!</p>
 </div>
 <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="pageSize" [length]="totalUser" (page)="pageChange($event)"></mat-paginator>
@@ -60,9 +40,9 @@
                     <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['name'].hasError('required') && submitted">
                         Please enter the plan name!
                     </mat-error>
-                    <!-- <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')">
+                    <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')">
                         First name should alphabetic!
-                    </mat-error> -->
+                    </mat-error> 
                     <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')">
                         Maxlength should 15!
                     </mat-error> 
@@ -101,11 +81,8 @@
                     <input type="number" min="0" max="100" placeholder="4 Months" class="form-control" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="month">
                     <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['month'].hasError('required') && submitted">
                         Please enter the months!
-                    </mat-error>
-                    
-                    <!-- <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')">
-                        Maxlength should 2!
-                    </mat-error>  -->
+                    </mat-error>                    
+                 
                 </div>
                 <div class="form-group">
                     <label> Save Upto</label>
@@ -134,9 +111,9 @@
                         <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['name'].hasError('required') && submitted">
                             Please enter the plan name!
                         </mat-error>
-                        <!-- <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')">
+                         <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')">
                             First name should alphabetic!
-                        </mat-error> -->
+                        </mat-error>
                         <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')">
                             Maxlength should 15!
                         </mat-error> 
@@ -175,10 +152,7 @@
                         <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['month'].hasError('required') && submitted">
                             Please enter the months!
                         </mat-error>
-                        
-                        <!-- <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['month'].hasError('maxlength') && !userForm.controls['month'].hasError('required')">
-                            Maxlength should 2!
-                        </mat-error>  -->
+                    
                     </div>
                     <div class="form-group">
                         <label> Save Upto</label>
@@ -206,126 +180,33 @@
                 (click)="modal.dismiss('Cross click')">No</button>
         </div>
     </div>
-</ng-template>
-<!-- <ng-template #userDelete let-modal>
-    <div class="modal-body">
-        <p>Are you ure want to delete this package?</p>
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary mr-2" aria-label="Close"
-                (click)="deletePackage()">Yes</button>
-            <button type="button" class="btn btn-seconadary" aria-label="Close"
-                (click)="modal.dismiss('Cross click')">No</button>
-        </div>
-    </div>
 </ng-template> -->
-<ul ngbNav #nav="ngbNav" class="nav-tabs">
+<h3 class="mb-3">Subscription Plans</h3>
+<ul ngbNav #nav="ngbNav" class="nav-tabs custom-nav">
+   
     <li ngbNavItem>
       <a ngbNavLink>One Month</a>
       <ng-template ngbNavContent>          
-        <div class="table-responsive">
-            <table class="table">
-                <tr>
-                    <th>Country</th>
-                    <th>Unit Type</th>
-                    <th>Plan Price</th>                   
-                    <th>Likes</th>
-                    <th>Matches</th>
-                    <th>Send</th>
-                    <th>Received</th>
-                    <th>Read</th> 
-                    <th>Picture</th> 
-                    <th>Video</th> 
-                    <th>Action</th> 
-                </tr>
-                <tr>
-                    <td>US</td>
-                    <td>$</td>
-                    <td>500</td>
-                    <td>Unlimted</td>
-                    <td>25</td>
-                    <td>Unlimted</td>
-                    <td>Unlimted</td>
-                    <td>50</td>
-                    <td>3</td>
-                    <td>2</td>
-                    <td>
-                        <div ngbDropdown container="body">
-                            <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
-                            <div ngbDropdownMenu>
-                                <button ngbDropdownItem>Add</button>
-                              <button ngbDropdownItem>Edit</button>
-                              <button ngbDropdownItem>Delete</button>
-                            </div>
-                          </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
+        <app-one-month></app-one-month>
       </ng-template>
     </li>
     <li ngbNavItem>
       <a ngbNavLink>Three Months</a>
-      <ng-template ngbNavContent><div class="table-responsive">
-        <table class="table">
-            <tr>
-                <th>Country</th>
-                <th>Unit Type</th>
-                <th>Plan Price</th>
-                <th>Country</th>
-                <th>Likes</th>
-                <th>Matches</th>
-                <th>Send</th>
-                <th>Received</th>
-                <th>Read</th> 
-                <th>Picture</th> 
-                <th>Video</th> 
-                <th>Action</th> 
-            </tr>
-        </table>
-    </div></ng-template>
+      <ng-template ngbNavContent>
+        <app-three-month></app-three-month>
+</ng-template>
     </li>
     <li ngbNavItem>
         <a ngbNavLink>Six Months</a>
-        <ng-template ngbNavContent><div class="table-responsive">
-          <table class="table">
-              <tr>
-                  <th>Country</th>
-                  <th>Unit Type</th>
-                  <th>Plan Price</th>
-                  <th>Country</th>
-                  <th>Likes</th>
-                  <th>Matches</th>
-                  <th>Send</th>
-                  <th>Received</th>
-                  <th>Read</th> 
-                  <th>Picture</th> 
-                  <th>Video</th> 
-                  <th>Action</th> 
-
-              </tr>
-          </table>
-      </div></ng-template>
+        <ng-template ngbNavContent>
+        <app-six-month></app-six-month>
+    </ng-template>
       </li>
       <li ngbNavItem>
         <a ngbNavLink>One Year</a>
-        <ng-template ngbNavContent><div class="table-responsive">
-          <table class="table">
-              <tr>
-                  <th>Country</th>
-                  <th>Unit Type</th>
-                  <th>Plan Price</th>
-                  <th>Country</th>
-                  <th>Likes</th>
-                  <th>Matches</th>
-                  <th>Send</th>
-                  <th>Received</th>
-                  <th>Read</th> 
-                  <th>Picture</th> 
-                  <th>Video</th> 
-                  <th>Action</th> 
-              </tr>
-          </table>
-      </div></ng-template>
+        <ng-template ngbNavContent>
+            <app-one-year></app-one-year>
+    </ng-template>
       </li>
   </ul>
   <div [ngbNavOutlet]="nav"></div>
