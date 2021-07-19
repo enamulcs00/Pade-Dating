@@ -331,7 +331,7 @@ setValues = data => {
 	}
 	userDeleteModal(userDelete) {
 		this.modalService.open(userDelete, { backdropClass: 'light-blue-backdrop', centered: true, size: 'sm' }).result.then(x=>{
-			alert(x);
+			// alert(x);
 		});
 	}
 	userDetailModal(userDetail) {

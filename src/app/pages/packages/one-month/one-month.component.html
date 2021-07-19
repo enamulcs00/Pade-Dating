@@ -1,289 +1,356 @@
 <div class="row pt-2 pb-2">
     <div class="col-md-12 text-right">
-      <button class="btn btn-primary" (click)="addSubscriptionModal(addSubscription)">Add</button>
+      <button class="btn btn-seconadary mb-2" (click)="addSubscriptionModal(addSubscription)"><i class="sl-icon-plus"></i> Add Package</button>
     </div>
 </div>
-<div class="table-responsive">
-    <table class="table">
-        <tr>
-            <th>Country</th>
-            <th>Unit Type</th>
-            <th>Plan Price</th>                   
-            <th>Likes</th>
-            <th>Matches</th>
-            <th>Send</th>
-            <th>Received</th>
-            <th>Read</th> 
-            <th>Picture</th> 
-            <th>Video</th> 
-            <th>Action</th> 
-        </tr>
-        <tr>
-            <td>Australia</td>
-            <td>$</td>
-            <td>300</td>
-            <td>Unlimted</td>
-            <td>25</td>
-            <td>Unlimted</td>
-            <td>Unlimted</td>
-            <td>40</td>
-            <td>30</td>
-            <td>20</td>
-            <td>
-                <div ngbDropdown container="body">
-                    <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
-                    <div ngbDropdownMenu>
-                        <!-- <button ngbDropdownItem (click)="addSubscriptionModal(addSubscription)">Add</button> -->
-                    <button ngbDropdownItem (click)="editSubscriptionModal(editSubscription)">Edit</button>
-                    <button ngbDropdownItem (click)="delSubscriptionModal(delSubscription)" >Delete</button>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </table>
+<div class="col-lg-12">
+	<div class="card">
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-4">
+					<!-- <form>
+						<div class="mb-2">
+							<input type="text" class="form-control" id="prenametext" (keydown)="applyFilter($event)" placeholder="Search">
+						</div>
+					</form> -->
+				</div>
+				<div class="col-md-8  d-flex justify-content-end">
+					<!-- <button class="btn btn-primary mb-2 mr-2" (click)="openLink()"><i class="sl-icon-cloud-download"></i> Export CSV</button> -->
+					<!-- <button class="btn btn-seconadary mb-2" (click)="addUserModal(addUser)"><i class="sl-icon-plus"></i> Add User</button> -->
+				</div>
+			</div>
+			<div class="table-responsive">
+				<table mat-table class=" w-100" [dataSource]="dataSource" matSort>
+					<ng-container matColumnDef="name">
+						<th mat-header-cell *matHeaderCellDef> Package Name </th>
+						<td mat-cell *matCellDef="let row"> {{row.name}}</td>
+					</ng-container>
+
+					<ng-container matColumnDef="type">
+						<th mat-header-cell *matHeaderCellDef> Package Type </th>
+						<td mat-cell *matCellDef="let row"> 
+							<span *ngIf="row.type == 1">1 Month</span>
+							<span *ngIf="row.type == 3">3 Month</span>
+							<span *ngIf="row.type == 6">6 Month</span>
+							<span *ngIf="row.type == 12">12 Month</span>
+						</td>
+					</ng-container>
+
+					<ng-container matColumnDef="countryName">
+						<th mat-header-cell *matHeaderCellDef> Country </th>
+						<td mat-cell *matCellDef="let row"> {{row.countryName}}</td>
+					</ng-container>
+
+					<ng-container matColumnDef="price">
+						<th mat-header-cell *matHeaderCellDef class="text-nowrap">Plan Price </th>
+						<td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.price.units}} {{row.price.amount}}</td>
+					</ng-container>
+
+					<ng-container matColumnDef="likes">
+						<th mat-header-cell *matHeaderCellDef>Likes </th>
+						<td mat-cell *matCellDef="let row"> {{
+							(row.likes.type == 'UNLIMITED')?'UNLIMITED':row.likes.count	
+						}} </td>
+					</ng-container>
+
+					<ng-container matColumnDef="matches">
+						<th mat-header-cell *matHeaderCellDef class="text-nowrap">Matches </th>
+						<td mat-cell *matCellDef="let row"> {{(row.matches.type == 'UNLIMITED')?'UNLIMITED':row.matches.count}} </td>
+					</ng-container>
+
+					<ng-container matColumnDef="received">
+						<th mat-header-cell *matHeaderCellDef class="text-nowrap">Received </th>
+						<td mat-cell *matCellDef="let row" class="text-nowrap"> {{(row.received.type == 'UNLIMITED')?'UNLIMITED':row.received.count}} </td>
+					</ng-container>
+
+					<ng-container matColumnDef="send">
+						<th mat-header-cell *matHeaderCellDef class="text-nowrap">Send </th>
+						<td mat-cell *matCellDef="let row" class="text-nowrap"> {{(row.send.type == 'UNLIMITED')?'UNLIMITED':row.send.count}} </td>
+					</ng-container>
+
+					<ng-container matColumnDef="read">
+						<th mat-header-cell *matHeaderCellDef class="text-nowrap">Read </th>
+						<td mat-cell *matCellDef="let row" class="text-nowrap"> {{(row.read.type == 'UNLIMITED')?'UNLIMITED':row.read.count}} </td>
+					</ng-container>
+
+					<ng-container matColumnDef="picture">
+						<th mat-header-cell *matHeaderCellDef class="text-nowrap">Picture </th>
+						<td mat-cell *matCellDef="let row" class="text-nowrap"> {{(row.picture.type == 'UNLIMITED')?'UNLIMITED':row.picture.count}} </td>
+					</ng-container>
+
+					<ng-container matColumnDef="video">
+						<th mat-header-cell *matHeaderCellDef class="text-nowrap">Video </th>
+						<td mat-cell *matCellDef="let row" class="text-nowrap"> {{(row.video.type == 'UNLIMITED')?'UNLIMITED':row.video.count}} </td>
+					</ng-container>
+
+					<!-- <ng-container matColumnDef="status">
+						<th mat-header-cell *matHeaderCellDef class="text-nowrap"> Status </th>
+						<td mat-cell *matCellDef="let row" class="text-nowrap">
+							<mat-slide-toggle [checked]="row.isBlocked === true ? true : false" (change)="blockUsers(row, $event.checked)">
+								{{row.isBlocked === true ? "Blocked" :"Unblocked"}}
+							</mat-slide-toggle>
+						</td>
+					</ng-container> -->
+
+					<ng-container matColumnDef="action">
+						<th mat-header-cell *matHeaderCellDef class="text-nowrap"> Action </th>
+						<td mat-cell *matCellDef="let row" class="text-nowrap">
+							<div ngbDropdown placement="bottom" class="d-inline-block" container="body">
+								<button class="btn btn-outline-primary btn-sm" id="dropdownBasic1"
+									ngbDropdownToggle>
+									Action
+								</button>
+
+								<!-- <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+									<a class="dropdown-item" routerLink="/pages/users_detail"><i class="ti-eye"></i>
+										Accept
+									</a>
+
+									<button class="dropdown-item" (click)="userDeleteModal(userDelete)"><i
+											class="ti-trash"></i>
+										Reject</button>
+								</div> -->
+
+								<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+									<!-- <a class="dropdown-item" (click)="viewUserDetail(row)" style="cursor: default;"><i class="ti-eye"></i>
+										View
+									</a> -->
+									<button class="dropdown-item" (click)="addSubscriptionModal(addSubscription, row)"><i
+											_ngcontent-axh-c146="" class="ti-marker-alt"></i> Edit</button>
+
+									<button class="dropdown-item" (click)="deletePackage(delSubscription, row)"><i
+											class="ti-trash"></i>
+										Delete</button>
+								</div>
+							</div>
+						</td>
+					</ng-container>
+					<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+					<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+					<tr class="mat-row" *matNoDataRow>
+						<td class="mat-cell" colspan="9">Data not found!</td>
+					  </tr>
+				</table>
+			</div>
+			<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalUser" [pageSize]="pageSize" (page)="pageChange($event)"></mat-paginator>
+		</div>
+	</div>
 </div>
+
 <ng-template #addSubscription let-modal>
     <div class="modal-body">
       <div class="card">
-          <h4 class="bg-primary text-white p-3">Add One Year Plan</h4>
+          <h4 *ngIf="!id" class="bg-primary text-white p-3">Add One Month Plan</h4>
+          <h4 *ngIf="id" class="bg-primary text-white p-3">Edit One Month Plan</h4>
         <div class="card-body">
-          <div class="row">
-            <!-- <div class="col-md-6 ">
-              <div class="form-group">
-                <label>Promo Code</label>
-                <input type="text" class="form-control">
-              </div>
-            </div> -->        
-            <div class="col-md-6 ">
-              <div class="form-group">
-                <label>Country Name</label>
-                <select class="custom-select col-12" id="example-month-input2">
-                  <option selected="">India</option>
-                  <option value="free">Aus</option>
-                  <option value="Discount">England</option>
-                </select>
-              </div>
-            </div>
-          
-          
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="">Unit Type </label>
-                <input type="text" placeholder="$" class="form-control" readonly>
-              </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                  <label for="">Plan Price </label>
-                  <input type="text" placeholder="500" class="form-control">
-                </div>
-              </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                  <div class="d-flex">
-                    <label for="" class="mr-auto">Likes</label>
-                    <div class="custom-control custom-radio "><input class="custom-control-input" id="customControlValidation1" name="likes" type="radio"><label  class="custom-control-label" for="customControlValidation1">Unlimted</label></div>
-                    <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="customControlValidation2" name="likes" type="radio"><label  class="custom-control-label" for="customControlValidation2">Limted</label></div>
+			<!-- <pre>{{ addPakageForm.value | json }}</pre> -->
+			<form [formGroup]="addPakageForm">
+				<div class="row">
+					<div class="col-md-12 ">
+						<div class="form-group">
+							<label>Package Name</label>
+							<input type="text" formControlName="name" placeholder="Enter Package Name" class="form-control">
+							<mat-error
+							*ngIf="(addPakageForm.get('name').touched || addPakageForm.get('name').dirty) && addPakageForm.get('name').hasError('required')">
+								Package name is required!
+							</mat-error>
+						</div>
+					</div>       
 
-                </div>
-               
-                <input type="text"  placeholder="100"  class="form-control">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <div class="d-flex">
-                    <label for="" class="mr-auto">Matches</label>
-                    <div class="custom-control custom-radio "><input class="custom-control-input" id="Matches1" name="matches" type="radio"><label  class="custom-control-label" for="Matches1">Unlimted</label></div>
-                    <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Matches2" name="matches" type="radio"><label  class="custom-control-label" for="Matches2">Limted</label></div>
+					<div class="col-md-6 ">
+						<div class="form-group">
+							<label>Country Name</label>
+							<select formControlName="countryName" class="custom-select col-12" id="example-month-input2" placeholder="Select country" (click)="onChangeUnit($event)">
+							<option *ngFor="let country of countries" [value]="country.countryNameEn">{{ country.countryNameEn }}</option>
+							</select>
+							<mat-error
+							*ngIf="(addPakageForm.get('countryName').touched || addPakageForm.get('countryName').dirty) && addPakageForm.get('countryName').hasError('required')">
+								Country is required!
+							</mat-error>
+						</div>
+					</div>
+				
+				
+					<ng-container [formGroup]="addPakageForm.get('price')">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="">Unit Type </label>
+								<input type="text" formControlName="units" placeholder="$" class="form-control" readonly>
+							</div>
+						</div>
+	
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="">Plan Price </label>
+								<input type="text" formControlName="amount" placeholder="Enter Plan Price" class="form-control">
+								<mat-error
+									*ngIf="(addPakageForm.get('price').get('amount').touched || addPakageForm.get('price').get('amount').dirty) && addPakageForm.get('price').get('amount').hasError('required')">
+									Plan price is required!
+								</mat-error>
+							</div>
+						</div>
+					</ng-container>
 
-                </div>
-                <input type="number" placeholder="25" class="form-control">
-              </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="d-flex">
-                        <label for="" class="mr-auto">Received</label>
-                        <div class="custom-control custom-radio "><input class="custom-control-input" id="Received1" name="recieved" type="radio"><label  class="custom-control-label" for="Received1">Unlimted</label></div>
-                        <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Received2" name="recieved" type="radio"><label  class="custom-control-label" for="Received2">Limted</label></div>
-    
-                    </div>
-                
-                  <input type="text" placeholder="40" class="form-control">
-                </div>
-              </div> 
-              <div class="col-md-6">
-                <div class="form-group">
-                    <div class="d-flex">
-                        <label for="" class="mr-auto">Send</label>
-                        <div class="custom-control custom-radio "><input class="custom-control-input" id="Send1" name="send" type="radio"><label  class="custom-control-label" for="Send1">Unlimted</label></div>
-                        <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Send2" name="send" type="radio"><label  class="custom-control-label" for="Send2">Limted</label></div>
-    
-                    </div>
-                  <input type="text" placeholder="Unlimted" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                    <div class="d-flex">
-                        <label for="" class="mr-auto">Read</label>
-                        <div class="custom-control custom-radio "><input class="custom-control-input" id="Read1" name="read" type="radio"><label  class="custom-control-label" for="Read1">Unlimted</label></div>
-                        <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Read2" name="read" type="radio"><label  class="custom-control-label" for="Read2">Limted</label></div>
-    
-                    </div>
-                  <input type="text" placeholder="Unlimted" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                    <div class="d-flex">
-                        <label for="" class="mr-auto">Picture</label>
-                        <div class="custom-control custom-radio "><input class="custom-control-input" id="Picture1" name="picture" type="radio"><label  class="custom-control-label" for="Picture1">Unlimted</label></div>
-                        <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Picture2" name="picture" type="radio"><label  class="custom-control-label" for="Picture2">Limted</label></div>
-    
-                    </div>
-                  <input type="Number" placeholder="Unlimted" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                    <div class="d-flex">
-                        <label for="" class="mr-auto">Video</label>
-                        <div class="custom-control custom-radio "><input class="custom-control-input" id="Video1" name="video" type="radio"><label  class="custom-control-label" for="Video1">Unlimted</label></div>
-                        <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Video2" name="video" type="radio"><label  class="custom-control-label" for="Video2">Limted</label></div>
-    
-                    </div>
-                  <input type="number" placeholder="Unlimted" class="form-control">
-                </div>
-              </div>
-          </div>
+					<div class="col-md-6" [formGroup]="addPakageForm.get('likes')">
+						<div class="form-group">
+							<div class="d-flex">
+								<label for="" class="mr-auto">Likes</label>
+								<div class="custom-control custom-radio ">
+									<input formControlName="type" [value]="'UNLIMITED'" class="custom-control-input" id="customControlValidation1" type="radio">
+									<label  class="custom-control-label" for="customControlValidation1">Unlimted</label>
+								</div>
+								<div class="custom-control custom-radio ml-2">
+									<input formControlName="type" [value]="'LIMITED'" class="custom-control-input" id="customControlValidation2" type="radio">
+									
+									<label  class="custom-control-label" for="customControlValidation2">Limted</label>
+								</div>
+							</div>
+							<input type="number" formControlName="count" placeholder="Unlimted"  class="form-control">
+							<mat-error
+								*ngIf="(addPakageForm.get('likes').get('count').touched || addPakageForm.get('likes').get('count').dirty) && addPakageForm.get('likes').get('count').hasError('required')">
+								Total number of count is required!
+							</mat-error>
+						</div>
+					</div>
+
+					<div class="col-md-6" [formGroup]="addPakageForm.get('matches')">
+						<div class="form-group">
+							<div class="d-flex">
+								<label for="" class="mr-auto">Matches</label>
+								<div class="custom-control custom-radio ">
+									<input formControlName="type" [value]="'UNLIMITED'" class="custom-control-input" id="customControlValidation3" type="radio">
+									<label  class="custom-control-label" for="customControlValidation3">Unlimted</label>
+								</div>
+								<div class="custom-control custom-radio ml-2">
+									<input formControlName="type" [value]="'LIMITED'" class="custom-control-input" id="customControlValidation4" type="radio">
+									
+									<label  class="custom-control-label" for="customControlValidation4">Limted</label>
+								</div>
+							</div>
+							<input type="number" formControlName="count" placeholder="Unlimted" class="form-control">
+							<mat-error
+								*ngIf="(addPakageForm.get('matches').get('count').touched || addPakageForm.get('matches').get('count').dirty) && addPakageForm.get('matches').get('count').hasError('required')">
+								Total number of count is required!
+							</mat-error>
+						</div>
+					</div>
+
+					<div class="col-md-6" [formGroup]="addPakageForm.get('received')">
+						<div class="form-group">
+							<div class="d-flex">
+								<label for="" class="mr-auto">Received</label>
+								<div class="custom-control custom-radio ">
+									<input formControlName="type" [value]="'UNLIMITED'" class="custom-control-input" id="customControlValidation5" type="radio">
+									<label  class="custom-control-label" for="customControlValidation5">Unlimted</label>
+								</div>
+								<div class="custom-control custom-radio ml-2">
+									<input formControlName="type" [value]="'LIMITED'" class="custom-control-input" id="customControlValidation6" type="radio">
+									
+									<label  class="custom-control-label" for="customControlValidation6">Limted</label>
+								</div>
+							</div>
+						<input type="number" formControlName="count" placeholder="Unlimted" class="form-control">
+						<mat-error
+							*ngIf="(addPakageForm.get('received').get('count').touched || addPakageForm.get('received').get('count').dirty) && addPakageForm.get('received').get('count').hasError('required')">
+								Total number of count is required!
+							</mat-error>
+						</div>
+					</div> 
+
+					<div class="col-md-6" [formGroup]="addPakageForm.get('send')">
+						<div class="form-group">
+							<div class="d-flex">
+								<label for="" class="mr-auto">Send</label>
+								<div class="custom-control custom-radio ">
+									<input formControlName="type" [value]="'UNLIMITED'" class="custom-control-input" id="customControlValidation7" type="radio">
+									<label  class="custom-control-label" for="customControlValidation7">Unlimted</label>
+								</div>
+								<div class="custom-control custom-radio ml-2">
+									<input formControlName="type" [value]="'LIMITED'" class="custom-control-input" id="customControlValidation8" type="radio">
+									
+									<label  class="custom-control-label" for="customControlValidation8">Limted</label>
+								</div>
+							</div>
+						<input type="number" formControlName="count" placeholder="Unlimted" class="form-control">
+						<mat-error
+							*ngIf="(addPakageForm.get('send').get('count').touched || addPakageForm.get('send').get('count').dirty) && addPakageForm.get('send').get('count').hasError('required')">
+								Total number of count is required!
+							</mat-error>
+						</div>
+					</div>
+
+					<div class="col-md-6" [formGroup]="addPakageForm.get('read')">
+						<div class="form-group">
+							<div class="d-flex">
+								<label for="" class="mr-auto">Read</label>
+								<div class="custom-control custom-radio ">
+									<input formControlName="type" [value]="'UNLIMITED'" class="custom-control-input" id="customControlValidation9" type="radio">
+									<label  class="custom-control-label" for="customControlValidation9">Unlimted</label>
+								</div>
+								<div class="custom-control custom-radio ml-2">
+									<input formControlName="type" [value]="'LIMITED'" class="custom-control-input" id="customControlValidation10" type="radio">
+									
+									<label  class="custom-control-label" for="customControlValidation10">Limted</label>
+								</div>
+							</div>
+							<input type="number" formControlName="count" placeholder="Unlimted" class="form-control">
+							<mat-error
+								*ngIf="(addPakageForm.get('read').get('count').touched || addPakageForm.get('read').get('count').dirty) && addPakageForm.get('read').get('count').hasError('required')">
+								Total number of count is required!
+							</mat-error>
+						</div>
+					</div>
+
+					<div class="col-md-6" [formGroup]="addPakageForm.get('picture')">
+						<div class="form-group">
+							<div class="d-flex">
+								<label for="" class="mr-auto">Picture</label>
+								<div class="custom-control custom-radio ">
+									<input formControlName="type" [value]="'UNLIMITED'" class="custom-control-input" id="customControlValidation11" type="radio">
+									<label  class="custom-control-label" for="customControlValidation11">Unlimted</label>
+								</div>
+								<div class="custom-control custom-radio ml-2">
+									<input formControlName="type" [value]="'LIMITED'" class="custom-control-input" id="customControlValidation12" type="radio">
+									
+									<label  class="custom-control-label" for="customControlValidation12">Limted</label>
+								</div>
+							</div>
+							<input type="number" formControlName="count" placeholder="Unlimted" class="form-control">
+							<mat-error
+								*ngIf="(addPakageForm.get('picture').get('count').touched || addPakageForm.get('picture').get('count').dirty) && addPakageForm.get('picture').get('count').hasError('required')">
+								Total number of count is required!
+							</mat-error>
+						</div>
+					</div>
+
+					<div class="col-md-6" [formGroup]="addPakageForm.get('video')">
+						<div class="form-group">
+							<div class="d-flex">
+								<label for="" class="mr-auto">Video</label>
+								<div class="custom-control custom-radio ">
+									<input formControlName="type" [value]="'UNLIMITED'" class="custom-control-input" id="customControlValidation13" type="radio">
+									<label  class="custom-control-label" for="customControlValidation13">Unlimted</label>
+								</div>
+								<div class="custom-control custom-radio ml-2">
+									<input formControlName="type" [value]="'LIMITED'" class="custom-control-input" id="customControlValidation14" type="radio">
+									
+									<label  class="custom-control-label" for="customControlValidation14">Limted</label>
+								</div>
+							</div>
+							<input type="number" formControlName="count" placeholder="Unlimted" class="form-control">
+							<mat-error
+								*ngIf="(addPakageForm.get('video').get('count').touched || addPakageForm.get('video').get('count').dirty) && addPakageForm.get('video').get('count').hasError('required')">
+								Total number of count is required!
+							</mat-error>
+						</div>
+					</div>
+				</div>
+			</form>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary mr-3" (click)="modal.dismiss('Cross click')">Save</button>
-        <button type="submit" class="btn btn-danger mr-3" (click)="modal.dismiss('Cross click')">Cancel</button>
-    </div>
-  </ng-template>
-<ng-template #editSubscription let-modal>
-    <div class="modal-body">
-      <div class="card">
-          <h4 class="bg-primary text-white p-3">Edit One Year Plan</h4>
-        <div class="card-body">
-            <form>
-                <div class="row">
-                    <!-- <div class="col-md-6 ">
-                      <div class="form-group">
-                        <label>Promo Code</label>
-                        <input type="text" class="form-control">
-                      </div>
-                    </div> -->        
-                    <div class="col-md-6 ">
-                      <div class="form-group">
-                        <label>Country Name</label>
-                        <select class="custom-select col-12" id="example-month-input2">
-                          <option selected="">India</option>
-                          <option value="free">Aus</option>
-                          <option value="Discount">England</option>
-                        </select>
-                      </div>
-                    </div>
-                  
-                  
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="">Unit Type </label>
-                        <input type="text" placeholder="$" class="form-control" readonly>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="">Plan Price </label>
-                          <input type="text" placeholder="500" class="form-control">
-                        </div>
-                      </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                          <div class="d-flex">
-                            <label for="" class="mr-auto">Likes</label>
-                            <div class="custom-control custom-radio "><input class="custom-control-input" id="customControlValidation1" name="likes" type="radio" (onchange)="enableDisable($event,'unlimited')"><label  class="custom-control-label" for="customControlValidation1">Unlimted</label></div>
-                            <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="customControlValidation2" name="likes" type="radio" (onchange)="enableDisable($event,'limited')" ><label  class="custom-control-label" for="customControlValidation2">Limted</label></div>
-                        </div>
-                        <input type="text"  placeholder="100"  class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="d-flex">
-                            <label for="" class="mr-auto">Matches</label>
-                            <div class="custom-control custom-radio "><input class="custom-control-input" id="Matches1" name="matches" type="radio"><label  class="custom-control-label" for="Matches1">Unlimted</label></div>
-                            <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Matches2" name="matches" type="radio"><label  class="custom-control-label" for="Matches2">Limted</label></div>
-        
-                        </div>
-                        <input type="number" placeholder="25" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="d-flex">
-                                <label for="" class="mr-auto">Received</label>
-                                <div class="custom-control custom-radio "><input class="custom-control-input" id="Received1" name="recieved" type="radio"><label  class="custom-control-label" for="Received1">Unlimted</label></div>
-                                <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Received2" name="recieved" type="radio"><label  class="custom-control-label" for="Received2">Limted</label></div>
-            
-                            </div>
-                        
-                          <input type="text" placeholder="40" class="form-control">
-                        </div>
-                      </div> 
-                      <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="d-flex">
-                                <label for="" class="mr-auto">Send</label>
-                                <div class="custom-control custom-radio "><input class="custom-control-input" id="Send1" name="send" type="radio"><label  class="custom-control-label" for="Send1">Unlimted</label></div>
-                                <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Send2" name="send" type="radio"><label  class="custom-control-label" for="Send2">Limted</label></div>
-            
-                            </div>
-                          <input type="text" placeholder="Unlimted" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="d-flex">
-                                <label for="" class="mr-auto">Read</label>
-                                <div class="custom-control custom-radio "><input class="custom-control-input" id="Read1" name="read" type="radio"><label  class="custom-control-label" for="Read1">Unlimted</label></div>
-                                <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Read2" name="read" type="radio"><label  class="custom-control-label" for="Read2">Limted</label></div>
-            
-                            </div>
-                          <input type="text" placeholder="Unlimted" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="d-flex">
-                                <label for="" class="mr-auto">Picture</label>
-                                <div class="custom-control custom-radio "><input class="custom-control-input" id="Picture1" name="picture" type="radio"><label  class="custom-control-label" for="Picture1">Unlimted</label></div>
-                                <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Picture2" name="picture" type="radio"><label  class="custom-control-label" for="Picture2">Limted</label></div>
-            
-                            </div>
-                          <input type="Number" placeholder="Unlimted" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="d-flex">
-                                <label for="" class="mr-auto">Video</label>
-                                <div class="custom-control custom-radio "><input class="custom-control-input" id="Video1" name="video" type="radio"><label  class="custom-control-label" for="Video1">Unlimted</label></div>
-                                <div class="custom-control custom-radio ml-2"><input class="custom-control-input" id="Video2" name="video" type="radio"><label  class="custom-control-label" for="Video2">Limted</label></div>
-            
-                            </div>
-                          <input type="number" placeholder="Unlimted" class="form-control">
-                        </div>
-                      </div>
-                  </div>
-            </form>    
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary mr-3" (click)="modal.dismiss('Cross click')">Save</button>
-        <button type="submit" class="btn btn-danger mr-3" (click)="modal.dismiss('Cross click')">Cancel</button>
+		<button type="submit" class="btn btn-primary mr-3" *ngIf="!id" (click)="submit()">Save</button>
+		<button type="submit" class="btn btn-primary mr-3" *ngIf="id" (click)="update()">Update</button>
+        <button type="submit" class="btn btn-danger mr-3" (click)="cancelBtn()">Cancel</button>
     </div>
   </ng-template>
   <ng-template #delSubscription let-modal>
@@ -291,9 +358,9 @@
       <p>Are you sure you want to delete?</p>
       <div class="btn-group">
         <button type="button" class="btn btn-primary mr-2" aria-label="Close"
-          (click)="modal.dismiss('Cross click')">Yes</button>
+          (click)="modal.close(true)">Yes</button>
         <button type="button" class="btn btn-seconadary" aria-label="Close"
-          (click)="modal.dismiss('Cross click')">No</button>
+          (click)="modal.close(false)">No</button>
       </div>
     </div>
   </ng-template>

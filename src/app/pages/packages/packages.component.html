@@ -187,25 +187,25 @@
     <li ngbNavItem>
       <a ngbNavLink>One Month</a>
       <ng-template ngbNavContent>          
-        <app-one-month></app-one-month>
+        <app-one-month *ngIf="countries" [countries]="countries"></app-one-month>
       </ng-template>
     </li>
     <li ngbNavItem>
       <a ngbNavLink>Three Months</a>
       <ng-template ngbNavContent>
-        <app-three-month></app-three-month>
+        <app-three-month *ngIf="countries" [countries]="countries"></app-three-month>
 </ng-template>
     </li>
     <li ngbNavItem>
         <a ngbNavLink>Six Months</a>
         <ng-template ngbNavContent>
-        <app-six-month></app-six-month>
+        <app-six-month *ngIf="countries" [countries]="countries"></app-six-month>
     </ng-template>
       </li>
       <li ngbNavItem>
         <a ngbNavLink>One Year</a>
         <ng-template ngbNavContent>
-            <app-one-year></app-one-year>
+            <app-one-year *ngIf="countries" [countries]="countries"></app-one-year>
     </ng-template>
       </li>
   </ul>
