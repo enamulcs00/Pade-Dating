@@ -13,7 +13,7 @@ declare var $: any;
 	styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements AfterViewInit {
-
+	@Output() toggleSidebar = new EventEmitter<void>();
 	public config: PerfectScrollbarConfigInterface = {};
 
 	public showSearch = false;
