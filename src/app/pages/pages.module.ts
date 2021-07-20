@@ -83,7 +83,7 @@ import { OneMonthComponent } from './packages/one-month/one-month.component';
 import { ThreeMonthComponent } from './packages/three-month/three-month.component';
 import { SixMonthComponent } from './packages/six-month/six-month.component';
 import { OneYearComponent } from './packages/one-year/one-year.component';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
@@ -105,7 +105,8 @@ CommonModule,
     MatFormFieldModule,
     MatPaginatorModule,
     MatSortModule,
-    AgmCoreModule
+    AgmCoreModule,
+    MatProgressSpinnerModule
   
   ],
   declarations: [

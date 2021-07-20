@@ -8,11 +8,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/shared/services/api.service';
+import { merge, of as observableOf, of, Subject, Subscription } from 'rxjs';
+import { debounceTime, delay, distinctUntilChanged, map, mergeMap, startWith, switchMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-one-year',
-  templateUrl: './one-year.component.html',
-  styleUrls: ['./one-year.component.css']
+	selector: 'app-one-year',
+	templateUrl: './one-year.component.html',
+	styleUrls: ['./one-year.component.css']
 })
 export class OneYearComponent implements OnInit {
 
@@ -36,12 +38,20 @@ export class OneYearComponent implements OnInit {
 	];
 	dataSource = new MatTableDataSource<any>();
 	pageSize: any = 10;
-	pageIndex: any = 1;
+	pageIndex: any = 0;
 	totalCount: number;
-	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-	@ViewChild(MatSort, { static: true }) sort: MatSort;
+	// @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+	@ViewChild(MatPaginator) paginator: MatPaginator;
+
+	// @ViewChild(MatSort, { static: true }) sort: MatSort;
 	packageData: any;
 	closeResult: string;
+
+	isDelete = {
+		value: '',
+		event: new Subject()
+	};
+	isLoadingResults: boolean = false;
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -49,7 +59,7 @@ export class OneYearComponent implements OnInit {
 		public service: ApiService,
 		private toast: ToastrService,
 		private router: Router,
-    	private route: ActivatedRoute,
+		private route: ActivatedRoute,
 	) {
 
 	}
@@ -184,6 +194,26 @@ export class OneYearComponent implements OnInit {
 		this.getAllPackages()
 	}
 
+	ngAfterViewInit() {
+		merge(this.paginator.page, this.isDelete.event)
+			.pipe(
+				startWith({}),
+				switchMap(() => {
+					this.isLoadingResults = true;
+					return this.service.getAllPackages(this.paginator.pageIndex + 1, this.paginator.pageSize);
+				}),
+				map((data: any) => {
+					this.isLoadingResults = false;
+					if (data === null) {
+						return [];
+					}
+					this.totalCount = data.data.itemCount;
+					return data.data.doc;
+				})
+			).subscribe(data => this.dataSource = data);
+
+	}
+
 	onChangeUnit(countryName) {
 		let value = this.addPakageForm.get('countryName').value;
 		if (value != null && value != '') {
@@ -196,52 +226,51 @@ export class OneYearComponent implements OnInit {
 		}
 	}
 
-	addSubscriptionModal(addSubscription, row=null) {
-		if(row != null) {
+	addSubscriptionModal(addSubscription, row = null) {
+		if (row != null) {
 			this.id = row?._id
 		} else {
 			this.id = null;
 		}
 		console.log("row ", row)
-		// setValues = data => {
-			if (row && this.addPakageForm) {
-				this.addPakageForm.patchValue({
-					name : row.name,
-					countryName : row.countryName,
-					type : row.type,
-					price : {
-						amount:row.price.amount,
-						units : row.price.units
-					},
-					likes : {
-						type : row.likes.type,
-						count : row.likes.count
-					},
-					matches : {
-						type : row.matches.type,
-						count : row.matches.count
-					},
-					received : {
-						type : row.received.type,
-						count : row.received.count
-					},
-					read : {
-						type : row.read.type,
-						count : row.read.count
-					},
-					send : {
-						type : row.send.type,
-						count : row.send.count
-					},
-					picture : {
-						type : row.picture.type,
-						count : row.picture.count
-					},
-					video : {
-						type:row.video.type,
-						count : row.video.count
-					},
-				})
+		if (row && this.addPakageForm) {
+			this.addPakageForm.patchValue({
+				name: row.name,
+				countryName: row.countryName,
+				type: row.type,
+				price: {
+					amount: row.price.amount,
+					units: row.price.units
+				},
+				likes: {
+					type: row.likes.type,
+					count: row.likes.count
+				},
+				matches: {
+					type: row.matches.type,
+					count: row.matches.count
+				},
+				received: {
+					type: row.received.type,
+					count: row.received.count
+				},
+				read: {
+					type: row.read.type,
+					count: row.read.count
+				},
+				send: {
+					type: row.send.type,
+					count: row.send.count
+				},
+				picture: {
+					type: row.picture.type,
+					count: row.picture.count
+				},
+				video: {
+					type: row.video.type,
+					count: row.video.count
+				},
+			})
 		}
 		this.modalService.open(addSubscription, { backdropClass: 'light-blue-backdrop', centered: true, size: 'lg' });
 	}
@@ -262,43 +291,43 @@ export class OneYearComponent implements OnInit {
 	deletePackage(delSubscription, list) {
 		// const message = 'Are you sure you want to delete ' + list.firstName + ' ' + list.lastName + ' ?';
 		console.log(delSubscription, list);
-		
-		this.modalService.open(delSubscription,  { ariaLabelledBy: 'modal-basic-title', centered: true, size: 'sm' }).result.then((result) => {
+
+		this.modalService.open(delSubscription, { ariaLabelledBy: 'modal-basic-title', centered: true, size: 'sm' }).result.then((result) => {
 			this.closeResult = `Closed with: ${result}`;
 			console.log("this.closeResult:", this.closeResult);
-			
+
 			if (result) {
 				const data = {
-				  id: list._id,
+					id: list._id,
 				};
 				this.service.deletePackage(list._id).subscribe(response => {
-				  if (response['statusCode'] === 200) {
-					this.toast.success(response['message']);
-					this.getAllPackages();
-				  } else {
-					this.toast.error(response['message']);
-				  }
+					if (response['statusCode'] === 200) {
+						this.toast.success(response['message']);
+						this.isDelete.event.next();
+					} else {
+						this.toast.error(response['message']);
+					}
 				});
-			  }
+			}
 		}, (reason) => {
 			this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
 		});
 	}
 
 	getAllPackages() {
-		this.service.getAllPackages(this.pageIndex, this.pageSize).subscribe((res: any) => {
-			if (res.statusCode === 200) {
-				console.log("res", res)
-				this.dataSource = new MatTableDataSource<any>(res.data.doc);
-				console.log("DataSource", this.dataSource)
-				this.dataSource.paginator = this.paginator;
-				this.dataSource.sort = this.sort;
-				this.totalCount = res.data.itemCount;
-			} else {
-				this.totalCount = 0
+		// this.service.getAllPackages(this.pageIndex + 1, this.pageSize).subscribe((res: any) => {
+		// 	if (res.statusCode === 200) {
+		// 		console.log("res", res)
+		// 		this.dataSource = new MatTableDataSource<any>(res.data.doc);
+		// 		// console.log("DataSource", this.dataSource)
+		// 		// this.dataSource.paginator = this.paginator;
+		// 		// this.dataSource.sort = this.sort;
+		// 		this.totalCount = res.data.itemCount;
+		// 	} else {
+		// 		this.totalCount = 0
 
-			}
-		})
+		// 	}
+		// })
 	}
 
 	pageChange(event) {
@@ -315,7 +344,8 @@ export class OneYearComponent implements OnInit {
 				if (res.statusCode == 200) {
 					this.toast.success(res.message, '', { timeOut: 900 })
 					this.modalService.dismissAll()
-					this.getAllPackages()
+					// this.getAllPackages()
+					this.isDelete.event.next();
 					this.cancelBtn();
 				} else {
 					this.toast.error(res.message)
@@ -336,7 +366,8 @@ export class OneYearComponent implements OnInit {
 				if (res.statusCode == 200) {
 					this.toast.success(res.message, '', { timeOut: 900 })
 					this.modalService.dismissAll()
-					this.getAllPackages()
+					// this.getAllPackages()
+					this.isDelete.event.next();
 
 				} else {
 					this.toast.error(res.message)
@@ -349,7 +380,7 @@ export class OneYearComponent implements OnInit {
 		}
 	}
 
-	cancelBtn(){
+	cancelBtn() {
 		this.addPakageForm.controls.type.setValue(12);
 		this.addPakageForm.controls.name.setValue('');
 		this.addPakageForm.controls.countryName.setValue('');
@@ -390,5 +421,6 @@ export class OneYearComponent implements OnInit {
 			this.addPakageForm.markAsUntouched();
 			this.addPakageForm.markAsPristine();
 		}, 1000);
+		this.modalService.dismissAll()
 	}
 }
