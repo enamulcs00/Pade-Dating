@@ -5,19 +5,19 @@
     <div class="col-md-6">
         <div class="form-group">
         <label>Welcome Points</label>
-        <input type="text" placeholder="Add Welcome Points" class="form-control" >
+        <input type="text" placeholder="Add Welcome Points" class="form-control" disabled>
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
         <label>Monthly Subscription Points</label>
-        <input type="text" placeholder="Monthly Subscription Points" class="form-control" >
+        <input type="text" placeholder="Monthly Subscription Points" class="form-control" disabled>
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
         <label>Subscription Extend </label>
-        <input type="number" placeholder="10%" class="form-control" >
+        <input type="number" placeholder="10%" class="form-control" disabled>
         </div>
     </div>
     <!-- <div class="col-md-6">
@@ -27,6 +27,7 @@
         </div>
     </div> -->
     <div class="col-md-12">
-        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-outline-primary mr-2" id="editbtn" (click)="btnChangeContent()">Edit</button>
+        <!-- <button class="btn btn-primary">Save</button> -->
     </div>
 </div>
