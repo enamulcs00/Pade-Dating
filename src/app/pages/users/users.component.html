@@ -8,21 +8,27 @@
                     <div class="col-md-4">
                         <form>
                             <div class="mb-2">
-                                <input type="text" class="form-control" id="prenametext" (keydown)="applyFilter($event)" placeholder="Search">
+                                <!-- <input type="text" class="form-control" id="prenametext" (keydown)="applyFilter($event)" placeholder="Search"> -->
+                                <input type="text" class="form-control" (keyup)='keyUp.next($event)' placeholder="Search"  name="name">
                             </div>
                         </form>
                     </div>
                     <div class="col-md-8  d-flex justify-content-end">
-                        <div ngbDropdown class="d-inline-block mb-2 mr-2">
+                        <select class="form-control mr-2 select-box" name="status" (change)="filterBy(IsActive)" [(ngModel)]="IsActive">
+                            <option [value]="''" selected>All</option>
+                            <option [value]="true">Block</option>
+                            <option [value]="false">Unbloack</option>
+                         </select>
+                        <!-- <div ngbDropdown class="d-inline-block mb-2 mr-2">
                             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
                                 All
                             </button>
                             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                <button class="dropdown-item" (click)="filterBy('')">All</button>
-                                <button class="dropdown-item" (click)="filterBy('true')">Blocked</button>
-                                <button class="dropdown-item" (click)="filterBy('false')">Unblocked</button>
+                                <button class="dropdown-item" value="0" (click)="filterBy('')">All</button>
+                                <button class="dropdown-item" value="1" (click)="filterBy('true')">Blocked</button>
+                                <button class="dropdown-item" value="2" (click)="filterBy('false')">Unblocked</button>
                             </div>
-                        </div>
+                        </div> -->
                         <button class="btn btn-primary mb-2 mr-2" (click)="openLink()"><i class="sl-icon-cloud-download"></i> Export CSV</button>
                         <!-- <button class="btn btn-seconadary mb-2" (click)="addUserModal(addUser)"><i class="sl-icon-plus"></i> Add User</button> -->
                     </div>
@@ -118,7 +124,9 @@
                           </tr>
                     </table>
                 </div>
-                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalUser" [pageSize]="pageSize" (page)="pageChange($event)"></mat-paginator>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" [length]="totalUser" [pageSize]="5">
+                </mat-paginator>
+                <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalUser" [pageSize]="pageSize" (page)="pageChange($event)"></mat-paginator> -->
             </div>
         </div>
     </div>

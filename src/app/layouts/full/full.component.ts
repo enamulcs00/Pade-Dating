@@ -61,6 +61,7 @@ export class FullComponent implements OnInit {
       case 'iconbar':
         if (this.innerWidth < 1170) {
           this.options.sidebartype = 'mini-sidebar';
+          // document.querySelector(".logo-icon").classList.add('box');
         } else {
           this.options.sidebartype = this.defaultSidebar;
         }

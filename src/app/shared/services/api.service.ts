@@ -76,9 +76,26 @@ export class ApiService {
 		return this.http.get(environment.apiUrl + "users/" + id,);
 	}
 
-	users() {
-		return this.http.get(environment.apiUrl + "users");
-	}
+	// users() {
+	// 	return this.http.get(environment.apiUrl + "users");
+	// }
+
+	// users(page, count, search, isBlocked) {
+	// 	return this.http.get(environment.apiUrl + "users/?page=" + page + "&count=" + count+ "&search=" +search+ "&isBlocked=" +isBlocked);
+	// }
+
+	users(params: any) {
+        return this.http.get<any>(`${environment.apiUrl}users${this.obj_to_query(params)}`)
+    }
+    obj_to_query(obj) {
+        var parts = [];
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                parts.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
+            }
+        }
+        return "?" + parts.join('&');
+    }
 
 	getServiceprovider() {
 		return this.http.get(environment.apiUrl + "getServiceprovider");

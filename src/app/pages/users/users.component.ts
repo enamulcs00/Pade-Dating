@@ -11,6 +11,8 @@ import { UserData } from '../../pages/model/UserData'
 import { NgxSpinnerService } from 'src/app/shared/services/spinner.service';
 import { CommonService } from 'src/app/shared/services/common.service'
 import { environment } from 'src/environments/environment';
+import { merge, of as observableOf, of, Subject, Subscription } from 'rxjs';
+import { debounceTime, delay, distinctUntilChanged, map, mergeMap, startWith, switchMap } from 'rxjs/operators';
 
 @Component({
 	selector: 'app-users',
@@ -19,9 +21,9 @@ import { environment } from 'src/environments/environment';
 })
 export class UsersComponent implements OnInit {
 	closeResult: string;
-	imagePath:any;
-	submitted:boolean = false
-	isBlocked:boolean = false
+	imagePath: any;
+	submitted: boolean = false
+	isBlocked: boolean = false
 	userForm: FormGroup;
 	allUsers: UserData[];
 	displayedColumns: string[] = [
@@ -45,14 +47,24 @@ export class UsersComponent implements OnInit {
 	userImage: any;
 	File: any;
 	files: any;
-	pageSize: any= 10;
-    pageIndex :any= 1;
+	pageSize: any = 10;
+	pageIndex: any = 1;
 	objId: any;
 	minAge: any = 18;
-	searchBy: any;
-	totalUser:number;
-	IsJective:boolean
-constructor(
+	searchBy: any = '';
+	totalUser: number;
+	IsActive: any = '';
+	public keyUp = new Subject<KeyboardEvent>();
+    private subscription: Subscription;
+
+	// statusMethod= [
+	// 	{ id: '0', label: 'All' },
+	// 	{ id: '1', label: 'Blocked' },
+	// 	{ id: '2', label: 'Unblocked' },
+	// ];
+
+	
+	constructor(
 		private modalService: NgbModal,
 		private fb: FormBuilder,
 		private formBuilder: FormBuilder,
@@ -64,87 +76,143 @@ constructor(
 	) {
 		var today = new Date();
 		this.minAge = new Date(today.getFullYear() - this.minAge, today.getMonth(), today.getDate());
+		
 	}
 	ngOnInit(): void {
 		this.getUsers()
-	
-         this.userForm = this.formBuilder.group({
+
+		this.userForm = this.formBuilder.group({
 			firstName: new FormControl("", Validators.compose([Validators.required,
-			Validators.maxLength(15),Validators.pattern("^[a-zA-Z ]*$")])),
-			lastName: new FormControl("",Validators.compose([Validators.required,
-			  Validators.maxLength(15),Validators.pattern("^[a-zA-Z ]*$")])),
-			  userName: new FormControl("",Validators.compose([Validators.required,
-				Validators.maxLength(15),Validators.pattern(/^[a-zA-Z0-9]+$/)])),
+			Validators.maxLength(15), Validators.pattern("^[a-zA-Z ]*$")])),
+			lastName: new FormControl("", Validators.compose([Validators.required,
+			Validators.maxLength(15), Validators.pattern("^[a-zA-Z ]*$")])),
+			userName: new FormControl("", Validators.compose([Validators.required,
+			Validators.maxLength(15), Validators.pattern(/^[a-zA-Z0-9]+$/)])),
 			// countryCode: new FormControl("", Validators.compose([Validators.required])),
 			phoneNo: new FormControl("", [Validators.required, Validators.maxLength(15),
 			Validators.minLength(7),
 			Validators.pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-s./0-9]*$')]),
 			email: new FormControl("", Validators.compose([Validators.required, ,
 			Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/)])),
-			dateofbirth: new FormControl("",Validators.required),
-			address: new FormControl("",Validators.required),
+			dateofbirth: new FormControl("", Validators.required),
+			address: new FormControl("", Validators.required),
 			image: new FormControl(""),
-			gender: new FormControl('',Validators.required),
-		
-		  });
-		  
+			gender: new FormControl('', Validators.required),
+
+		});
+
 	}
 
-setValues = data => {
+	ngAfterViewInit() {
+
+		this.subscription = this.keyUp.pipe(
+            map((event: any) => {
+                this.isDelete.value = event.target.value;
+                return event.target.value;
+            }),
+            debounceTime(500),
+            distinctUntilChanged(),
+            mergeMap(search => of(search).pipe(
+                delay(500),
+            )),
+        ).subscribe(x => {
+            this.isDelete.event.next('data');
+        });
+
+		merge(this.paginator.page, this.isDelete.event)
+			.pipe(
+				startWith({}),
+				switchMap(() => {
+					this.isLoadingResults = true;
+					let forms = {
+						limit: this.paginator.pageSize,
+						Page: this.paginator.pageIndex + 1
+					};
+					if (this.isDelete.value != '') {
+						forms['search'] = this.isDelete.value;
+						forms['Page'] = 1;
+					}
+
+					if(this.IsActive != null && this.IsActive != '') {
+						forms['isBlocked'] = this.IsActive;
+					}
+					
+					// return this._common.getGuides(forms);
+					return this.api.users(forms);
+				}),
+				map((data: any) => {
+					this.isLoadingResults = false;
+					if (data === null) {
+						return [];
+					}
+					this.totalUser = data.data.itemCount;
+					return data.data.data;
+				})
+			).subscribe(data => this.dataSource = data);
+
+	}
+
+	setValues = data => {
 		if (data) {
-		  this.userForm.patchValue({
-			firstName: data.firstName,
-			lastName: data.lastName,
-			// countryCode: data.countryCode,
-			username: data.username,
-			phoneNo: data.phoneNo,
-			email: data.email,
-			dateofbirth: data.dateofbirth,
-			city: data.city,
-			address: data.address,
-		  });
-		//   if (data && data.emergencyPhone) {
-		// 	this.userForm.controls.emergencyPhone.patchValue({
-		// 	  phone: data.emergencyPhone.phone,
-		// 	  countryCode: data.emergencyPhone.countryCode
-		// 	})
-		//   }
-		  if (data.image) {
-			this.userImage = environment.imagesUrl + data.image;
-		  }
+			this.userForm.patchValue({
+				firstName: data.firstName,
+				lastName: data.lastName,
+				// countryCode: data.countryCode,
+				username: data.username,
+				phoneNo: data.phoneNo,
+				email: data.email,
+				dateofbirth: data.dateofbirth,
+				city: data.city,
+				address: data.address,
+			});
+			//   if (data && data.emergencyPhone) {
+			// 	this.userForm.controls.emergencyPhone.patchValue({
+			// 	  phone: data.emergencyPhone.phone,
+			// 	  countryCode: data.emergencyPhone.countryCode
+			// 	})
+			//   }
+			if (data.image) {
+				this.userImage = environment.imagesUrl + data.image;
+			}
 		}
-	  };
+	};
+
+	isDelete = {
+		value: '',
+		event: new Subject()
+	};
+	isLoadingResults: boolean = false;
 
 	getUsers() {
-		let url = `users?limit=${(this.pageSize?(this.pageSize) : '')+(this.pageIndex ? ('&page=' + this.pageIndex) : '')+ (this.searchBy ? ('&search=' + this.searchBy) : '')+ (this.IsJective ? ('&isBlocked=' + this.IsJective) : '')}`
-		this.api.getApi(url).subscribe((res:any) => {
-			if (res.statusCode === 200) {
-				this.dataSource = new MatTableDataSource<UserData>(res.data.data);
-				this.exportLink = res.data.exportLink;
-				this.dataSource.paginator = this.paginator;
-				this.dataSource.sort = this.sort;
-				this.totalUser = res.data.itemCount
-				console.log('Total user',this.totalUser,res);
-				
-			} else {
-			//	this.toastr.error(res["message"]);
-				this.totalUser = 0
-				console.log('Else called in User',res);
-				
-			}
-		})
+		// let url = `users?limit=${(this.pageSize?(this.pageSize) : '')+(this.pageIndex ? ('&page=' + this.pageIndex) : '')+ (this.searchBy ? ('&search=' + this.searchBy) : '')+ (this.IsActive ? ('&isBlocked=' + this.IsActive) : '')}`
+		// this.api.getApi(url).subscribe((res:any) => {
+		// 	if (res.statusCode === 200) {
+		// 		this.dataSource = new MatTableDataSource<UserData>(res.data.data);
+		// 		this.exportLink = res.data.exportLink;
+		// 		this.dataSource.paginator = this.paginator;
+		// 		this.dataSource.sort = this.sort;
+		// 		this.totalUser = res.data.itemCount
+		// 		console.log('Total user',this.totalUser,res);
+
+		// 	} else {
+		// 	//	this.toastr.error(res["message"]);
+		// 		this.totalUser = 0
+		// 		console.log('Else called in User',res);
+
+		// 	}
+		// })
 	}
 	pageChange(event) {
-		console.log('ev page',event);
-		this.pageSize=event.pageSize;
-	     this.pageIndex=event.pageIndex;
-		 this.getUsers()
-	  }
-	viewUserDetail(item){
-		this.router.navigateByUrl("/pages/users_detail/"+item._id);
+		console.log('ev page', event);
+		this.pageSize = event.pageSize;
+		this.pageIndex = event.pageIndex;
+		this.getUsers()
+	}
+	viewUserDetail(item) {
+		this.router.navigateByUrl("/pages/users_detail/" + item._id);
 	}
 
-	userEditModal(userEdit,data) {
+	userEditModal(userEdit, data) {
 		this.isBlocked = data.isBlocked
 		this.objId = data._id
 		this.files = data.image
@@ -159,47 +227,50 @@ setValues = data => {
 		this.userForm.controls['gender'].setValue(data.gender || 'MALE')
 		this.userForm.controls['image'].setValue(data.image)
 		this.modalService.open(userEdit, { backdropClass: 'light-blue-backdrop', centered: true, size: 'lg' })
-		
-		.result.then((result) => {
-			this.closeResult = `Closed with: ${result}`;
-			this.userForm.patchValue({
-				firstName: data.firstName,
-				lastName: data.lastName,
-				// countryCode: data.countryCode,
-				username: data.username,
-				phoneNo: data.phoneNo,
-				email: data.email,
-				dateofbirth: data.dateofbirth,
-				city: data.city,
-				address: data.address,
-		});
-		if (data.image) {
-			this.userImage = environment.imagesUrl + data.image;
-		  }
-			if (result) {
-				var data = this.userForm.value;
-				data['id'] = data._id
-				let formData = new FormData();
-				formData.append("data", JSON.stringify(data));
-				formData.append("pic", this.File);
-				this.api.updateUser(data).subscribe(response => {
-				  if (response['statusCode'] === 200) {
-					this.toastr.success(response['message']);
-					this.getUsers();
-				  } else {
-					this.toastr.error(response['message']);
-				  }
+
+			.result.then((result) => {
+				this.closeResult = `Closed with: ${result}`;
+				this.userForm.patchValue({
+					firstName: data.firstName,
+					lastName: data.lastName,
+					// countryCode: data.countryCode,
+					username: data.username,
+					phoneNo: data.phoneNo,
+					email: data.email,
+					dateofbirth: data.dateofbirth,
+					city: data.city,
+					address: data.address,
 				});
-			  }
-		}, (reason) => {
-			this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-		});
+				if (data.image) {
+					this.userImage = environment.imagesUrl + data.image;
+				}
+				if (result) {
+					var data = this.userForm.value;
+					data['id'] = data._id
+					let formData = new FormData();
+					formData.append("data", JSON.stringify(data));
+					formData.append("pic", this.File);
+					this.api.updateUser(data).subscribe(response => {
+						if (response['statusCode'] === 200) {
+							this.toastr.success(response['message']);
+							// this.getUsers();
+							this.isDelete.event.next();
+						} else {
+							this.toastr.error(response['message']);
+						}
+					});
+				}
+			}, (reason) => {
+				this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+			});
 	}
-	filterBy(ref){
-	this.IsJective = ref
-	this.searchBy = null
-	this.getUsers()	
+	filterBy(ref) {
+		this.IsActive = ref
+		console.log(this.IsActive)
+		this.isDelete.event.next();
+		
 	}
+
 	blockUsers(item, status) {
 		console.log("item: ", item);
 		if (status.checked) {
@@ -213,30 +284,33 @@ setValues = data => {
 		};
 		this.api.blockUsers(item._id, data).subscribe(response => {
 			if (response['statusCode'] === 200) {
-			this.getUsers();
+				// this.getUsers();
+				this.toastr.success(response['message']);
+				this.isDelete.event.next();
 			} else {
 				this.toastr.error(response['message']);
 			}
 		});
 	}
 
-	deleteUser(userModal,list) {
+	deleteUser(userModal, list) {
 		// const message = 'Are you sure you want to delete ' + list.firstName + ' ' + list.lastName + ' ?';
 		this.modalService.open(userModal, { ariaLabelledBy: 'modal-basic-title', centered: true, size: 'sm' }).result.then((result) => {
 			this.closeResult = `Closed with: ${result}`;
 			if (result) {
 				const data = {
-				  id: list._id,
+					id: list._id,
 				};
 				this.api.deleteUser(list._id).subscribe(response => {
-				  if (response['statusCode'] === 200) {
-					this.toastr.success(response['message']);
-					this.getUsers();
-				  } else {
-					this.toastr.error(response['message']);
-				  }
+					if (response['statusCode'] === 200) {
+						this.toastr.success(response['message']);
+						// this.getUsers();
+						this.isDelete.event.next();
+					} else {
+						this.toastr.error(response['message']);
+					}
 				});
-			  }
+			}
 		}, (reason) => {
 			this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
 		});
@@ -305,16 +379,17 @@ setValues = data => {
 
 	]
 	timer: number;
-  deleteId:any;
-  applyFilter(event: any) {
-    window.clearTimeout(this.timer);
-    this.timer = window.setTimeout(() => {
-      let filterValue = (event.target as HTMLInputElement).value;
-      this.searchBy=filterValue;
-      this.pageIndex=1;
-      this.getUsers();
-    }, 1000)
-  }
+	deleteId: any;
+	applyFilter(event: any) {
+		window.clearTimeout(this.timer);
+		this.timer = window.setTimeout(() => {
+			let filterValue = (event.target as HTMLInputElement).value;
+			this.searchBy = filterValue;
+			this.pageIndex = 1;
+			//   this.getUsers();
+			this.isDelete.event.next();
+		}, 1000)
+	}
 	// This is for the first modal
 	open1(content1) {
 		this.modalService.open(content1, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -330,7 +405,7 @@ setValues = data => {
 		this.modalService.open(userDelete, { backdropClass: 'light-blue-backdrop', centered: true, size: 'lg' });
 	}
 	userDeleteModal(userDelete) {
-		this.modalService.open(userDelete, { backdropClass: 'light-blue-backdrop', centered: true, size: 'sm' }).result.then(x=>{
+		this.modalService.open(userDelete, { backdropClass: 'light-blue-backdrop', centered: true, size: 'sm' }).result.then(x => {
 			// alert(x);
 		});
 	}
@@ -351,56 +426,57 @@ setValues = data => {
 	}
 	sendFile(fileData) {
 		let url = `uploadFile`
-	   let formdata = new FormData()
+		let formdata = new FormData()
 		formdata.append('file', fileData);
-		this.api.postApi(url,formdata).subscribe((res: any) => {
-		  console.log(res.data)
-		  if (res.statusCode==200) {
-		 this.toastr.success('File updated successfully','',{timeOut:700})
-			console.log("upload data res=>>", res.data)
-			this.files = res.data.filePath
-			
-		  } else {
-			this.toastr.error(res.message)
-		  }
-		});
-	  }
-	  uploadFile(event) {
-		if (event.target.files && event.target.files[0]) {
-		  var type = event.target.files[0].type;
-		  if (type === 'image/png' || type === 'image/jpg' || type === 'image/jpeg') {
-			let fileData = event.target.files[0];
-			this.sendFile(fileData)
-			 var reader = new FileReader()
-			 this.imagePath = fileData.name
-		}}}
-		UpadteUser()
-		{
-		  this.submitted = true
-		  let url = `users/${this.objId}`
-	   let  obj = {
-			"firstName":  this.userForm.controls['firstName'].value,
-			"lastName":this.userForm.controls['lastName'].value,
-			"gender":this.userForm.controls['gender'].value,
-			 "address":this.userForm.controls['address'].value,
-			"image":this.files,
-			"phoneNo":this.userForm.controls['phoneNo'].value,
-			"email":this.userForm.controls['email'].value,
-			"dateofbirth":this.userForm.controls['dateofbirth'].value,
-			"username":this.userForm.controls['userName'].value,
-			"isBlocked":this.isBlocked,
+		this.api.postApi(url, formdata).subscribe((res: any) => {
+			console.log(res.data)
+			if (res.statusCode == 200) {
+				this.toastr.success('File updated successfully', '', { timeOut: 700 })
+				console.log("upload data res=>>", res.data)
+				this.files = res.data.filePath
+
+			} else {
+				this.toastr.error(res.message)
 			}
-			if(this.userForm.valid && this.imagePath){
-			  this.api.putApi(url,obj).subscribe((res:any)=>{
-				if(res.statusCode==200){
-				  this.submitted = false
-				  this.toastr.success(res.message,'',{timeOut:900})
-				  this.getUsers()
-				  this.modalService.dismissAll()
-				}else{
-				  this.toastr.error(res.message)
-				}
-			  })
+		});
+	}
+	uploadFile(event) {
+		if (event.target.files && event.target.files[0]) {
+			var type = event.target.files[0].type;
+			if (type === 'image/png' || type === 'image/jpg' || type === 'image/jpeg') {
+				let fileData = event.target.files[0];
+				this.sendFile(fileData)
+				var reader = new FileReader()
+				this.imagePath = fileData.name
 			}
 		}
+	}
+	UpadteUser() {
+		this.submitted = true
+		let url = `users/${this.objId}`
+		let obj = {
+			"firstName": this.userForm.controls['firstName'].value,
+			"lastName": this.userForm.controls['lastName'].value,
+			"gender": this.userForm.controls['gender'].value,
+			"address": this.userForm.controls['address'].value,
+			"image": this.files,
+			"phoneNo": this.userForm.controls['phoneNo'].value,
+			"email": this.userForm.controls['email'].value,
+			"dateofbirth": this.userForm.controls['dateofbirth'].value,
+			"username": this.userForm.controls['userName'].value,
+			"isBlocked": this.isBlocked,
+		}
+		if (this.userForm.valid && this.imagePath) {
+			this.api.putApi(url, obj).subscribe((res: any) => {
+				if (res.statusCode == 200) {
+					this.submitted = false
+					this.toastr.success(res.message, '', { timeOut: 900 })
+					this.getUsers()
+					this.modalService.dismissAll()
+				} else {
+					this.toastr.error(res.message)
+				}
+			})
+		}
+	}
 }
