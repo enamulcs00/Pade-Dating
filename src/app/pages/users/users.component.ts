@@ -126,7 +126,7 @@ export class UsersComponent implements OnInit {
 					this.isLoadingResults = true;
 					let forms = {
 						limit: this.paginator.pageSize,
-						Page: this.paginator.pageIndex + 1
+						page: this.paginator.pageIndex + 1
 					};
 					if (this.isDelete.value != '') {
 						forms['search'] = this.isDelete.value;
@@ -138,6 +138,7 @@ export class UsersComponent implements OnInit {
 					}
 					
 					// return this._common.getGuides(forms);
+					console.log(forms)
 					return this.api.users(forms);
 				}),
 				map((data: any) => {
@@ -206,7 +207,7 @@ export class UsersComponent implements OnInit {
 		console.log('ev page', event);
 		this.pageSize = event.pageSize;
 		this.pageIndex = event.pageIndex;
-		this.getUsers()
+		this.isDelete.event.next();
 	}
 	viewUserDetail(item) {
 		this.router.navigateByUrl("/pages/users_detail/" + item._id);
