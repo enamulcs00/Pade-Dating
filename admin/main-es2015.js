@@ -1562,8 +1562,8 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // baseUrl : 'http://dev.webdevelopmentsolution.net:3004/api/v1/admin/',
-    apiUrl: 'http://dev.webdevelopmentsolution.net:3004/api/v1/admin/',
-    imagesUrl: 'http://dev.webdevelopmentsolution.net:3004/',
+    apiUrl: 'https://dev.webdevelopmentsolution.net:3004/api/v1/admin/',
+    imagesUrl: 'https://dev.webdevelopmentsolution.net:3004/',
 };
 /*
  * In development mode, to ignore zone related error stack frames such as

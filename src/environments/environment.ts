@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   // baseUrl : 'http://dev.webdevelopmentsolution.net:3004/api/v1/admin/',
-  apiUrl : 'http://dev.webdevelopmentsolution.net:3004/api/v1/admin/',
-	imagesUrl: 'http://dev.webdevelopmentsolution.net:3004/',
+  apiUrl : 'https://dev.webdevelopmentsolution.net:3004/api/v1/admin/',
+	imagesUrl: 'https://dev.webdevelopmentsolution.net:3004/',
 };
 
 /*
