@@ -1,4 +1,10 @@
 (function () {
+  function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
@@ -162,7 +168,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"card-group\">\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center \">Total Users</h4>\r\n            <h2>1200</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-primary css-bar-20\">\r\n                        <i class=\"display-6 mdi mdi-account-circle\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12056</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">New Users </h4>\r\n            <h2>100</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-danger css-bar-20\">\r\n                        <i class=\"display-6 mdi mdi-star-circle\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 21456</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">Total Matches </h4>\r\n            <h2>1200</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-success css-bar-20\">\r\n                        <i class=\"display-6 fas fa-heart\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12465</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">New Matches </h4>\r\n            <h2>200</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-success css-bar-20\">\r\n                        <i class=\"display-6 fas fa-heart\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12465</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n</div>\r\n<!-- End Row -->\r\n";
+      __webpack_exports__["default"] = "<div class=\"card-group\">\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center \">Total Users</h4>\r\n            <h2>{{totalUsers}}</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-primary css-bar-100\">\r\n                        <i class=\"display-6 mdi mdi-account-circle\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12056</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">New Users </h4>\r\n            <h2>{{newUsers}}</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-primary css-bar-100\">\r\n                        <i class=\"display-6 mdi mdi-star-circle\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 21456</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">Total Matches </h4>\r\n            <h2>{{totalMatches}}</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-danger css-bar-100\">\r\n                        <i class=\"display-6 fas fa-heart\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12465</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">New Matches </h4>\r\n            <h2>{{newMatches}}</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-danger css-bar-100\">\r\n                        <i class=\"display-6 fas fa-heart\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12465</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n</div>\r\n<!-- End Row -->\r\n";
       /***/
     },
 
@@ -322,7 +328,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\r\n    <!-- Column -->\r\n    <!-- <div class=\"col-md-6 \">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <div class=\"d-flex align-items-center\">\r\n                    <div>\r\n                        <span class=\"btn-circle btn-lg btn btn-outline-secondary\">\r\n                            <i class=\"sl-icon-people\"></i>\r\n                        </span>\r\n                    </div>\r\n                    <div class=\"m-l-10\">\r\n                        <h4 class=\"card-title \">Total Sales</h4>\r\n                        <h3>$600</h3>\r\n                    </div>\r\n                    <div class=\"ml-auto\">\r\n                        <select class=\"custom-select b-0\">\r\n                            <option selected=\"\">Weekly</option>\r\n                            <option value=\"1\">Monthly</option>\r\n                        </select>\r\n                    </div>\r\n                </div>\r\n                <canvas baseChart [datasets]=\"barChartData\" [labels]=\"barChartLabels1\" [options]=\"barChartOptions\" [legend]=\"barChartLegend\" [chartType]=\"barChartType\" (chartHover)=\"chartHovered($event)\" [colors]=\"barChartColors1\" (chartClick)=\"chartClicked($event)\">\r\n            </canvas>\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"col-md-6 \">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <div class=\"d-flex align-items-center\">\r\n                    <div>\r\n                        <span class=\"btn-circle btn-lg btn btn-outline-secondary\">\r\n                            <i class=\"sl-icon-people\"></i>\r\n                        </span>\r\n                    </div>\r\n                    <div class=\"m-l-10\">\r\n                        <h4 class=\"card-title \">Total Revenue </h4>\r\n                        <h3>$400</h3>\r\n                    </div>\r\n\r\n                    <div class=\"ml-auto\">\r\n                        <select class=\"custom-select b-0\">\r\n                            <option selected=\"\">Weekly</option>\r\n                            <option value=\"1\">Monthly</option>\r\n                        </select>\r\n                        <!--<ul class=\"list-inline font-12 dl m-r-10\">\r\n                            <li class=\"list-inline-item\">\r\n                                <i class=\"fas fa-dot-circle text-info\"></i> Users\r\n                            </li>\r\n                             <li class=\"list-inline-item\">\r\n                                <i class=\"fas fa-dot-circle text-danger\"></i> Iphone</li>\r\n                        </ul>-->\r\n                    </div>\r\n                </div>\r\n                <canvas baseChart [datasets]=\"barChartData1\" [labels]=\"barChartLabels2\" [options]=\"barChartOptions\" [legend]=\"barChartLegend\" [chartType]=\"barChartType\" (chartHover)=\"chartHovered($event)\" [colors]=\"barChartColors1\" (chartClick)=\"chartClicked($event)\">\r\n            </canvas>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+      __webpack_exports__["default"] = "<div class=\"row\">\r\n    <!-- Column -->\r\n    <!-- <div class=\"col-md-6 \">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <div class=\"d-flex align-items-center\">\r\n                    <div>\r\n                        <span class=\"btn-circle btn-lg btn btn-outline-secondary\">\r\n                            <i class=\"sl-icon-people\"></i>\r\n                        </span>\r\n                    </div>\r\n                    <div class=\"m-l-10\">\r\n                        <h4 class=\"card-title \">Total Sales</h4>\r\n                        <h3>$600</h3>\r\n                    </div>\r\n                    <div class=\"ml-auto\">\r\n                        <select class=\"custom-select b-0\">\r\n                            <option selected=\"\">Weekly</option>\r\n                            <option value=\"1\">Monthly</option>\r\n                        </select>\r\n                    </div>\r\n                </div>\r\n                <canvas baseChart [datasets]=\"barChartData\" [labels]=\"barChartLabels1\" [options]=\"barChartOptions\" [legend]=\"barChartLegend\" [chartType]=\"barChartType\" (chartHover)=\"chartHovered($event)\" [colors]=\"barChartColors1\" (chartClick)=\"chartClicked($event)\">\r\n            </canvas>\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"col-md-6 \">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <div class=\"d-flex align-items-center\">\r\n                    <div>\r\n                        <span class=\"btn-circle btn-lg btn btn-outline-secondary\">\r\n                            <i class=\"sl-icon-people\"></i>\r\n                        </span>\r\n                    </div>\r\n                    <div class=\"m-l-10\">\r\n                        <h4 class=\"card-title \">Total Revenue </h4>\r\n                        <h3>${{earning}}</h3>\r\n                    </div>\r\n\r\n                    <div class=\"ml-auto\">\r\n                        <select class=\"custom-select b-0\" (change)=\"filterData($event.target.value)\">\r\n                            <option value=\"weekly\">Weekly</option>\r\n                            <option value=\"monthly\">Monthly</option>\r\n                        </select>\r\n                        <!--<ul class=\"list-inline font-12 dl m-r-10\">\r\n                            <li class=\"list-inline-item\">\r\n                                <i class=\"fas fa-dot-circle text-info\"></i> Users\r\n                            </li>\r\n                             <li class=\"list-inline-item\">\r\n                                <i class=\"fas fa-dot-circle text-danger\"></i> Iphone</li>\r\n                        </ul>-->\r\n                    </div>\r\n                </div>\r\n                <canvas baseChart [datasets]=\"barChartData1\" [labels]=\"barChartLabels2\" [options]=\"barChartOptions\" [legend]=\"barChartLegend\" [chartType]=\"barChartType\" (chartHover)=\"chartHovered($event)\" [colors]=\"barChartColors1\" (chartClick)=\"chartClicked($event)\">\r\n            </canvas>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
       /***/
     },
 
@@ -1761,6 +1767,36 @@
 
 
       var c3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(c3__WEBPACK_IMPORTED_MODULE_1__);
+      /* harmony import */
+
+
+      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! src/app/shared/services/api.service */
+      "./src/app/shared/services/api.service.ts");
+      /* harmony import */
+
+
+      var src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! src/app/shared/services/spinner.service */
+      "./src/app/shared/services/spinner.service.ts");
+      /* harmony import */
+
+
+      var src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! src/app/shared/services/common.service */
+      "./src/app/shared/services/common.service.ts");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var ngx_toastr__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ngx-toastr */
+      "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -1783,14 +1819,23 @@
       };
 
       var InfocardComponent = /*#__PURE__*/function () {
-        function InfocardComponent() {
+        function InfocardComponent(api, router, toastr, spinner, comm) {
           _classCallCheck(this, InfocardComponent);
 
+          this.api = api;
+          this.router = router;
+          this.toastr = toastr;
+          this.spinner = spinner;
+          this.comm = comm;
+          this.totalUsers = 0;
+          this.newUsers = 0;
+          this.totalMatches = 0;
+          this.newMatches = 0;
           this.lineChartData = [{
             data: [12, 19, 3, 5, 2, 3],
-            label: 'Balance $'
+            label: "Balance $"
           }];
-          this.lineChartLabels = ['2012', '2013', '2014', '2015', '2016', '2017'];
+          this.lineChartLabels = ["2012", "2013", "2014", "2015", "2016", "2017"];
           this.lineChartOptions = {
             responsive: true,
             elements: {
@@ -1820,18 +1865,37 @@
             }
           };
           this.lineChartColors = [{
-            backgroundColor: 'transparent',
-            borderColor: '#4dc8ff',
-            pointBackgroundColor: '#4dc8ff',
-            pointBorderColor: '#4dc8ff',
-            pointHoverBackgroundColor: '#4dc8ff',
-            pointHoverBorderColor: '#4dc8ff'
+            backgroundColor: "transparent",
+            borderColor: "#4dc8ff",
+            pointBackgroundColor: "#4dc8ff",
+            pointBorderColor: "#4dc8ff",
+            pointHoverBackgroundColor: "#4dc8ff",
+            pointHoverBorderColor: "#4dc8ff"
           }];
           this.lineChartLegend = false;
-          this.lineChartType = 'line';
+          this.lineChartType = "line";
+          this.getDashboardData();
         }
 
         _createClass(InfocardComponent, [{
+          key: "getDashboardData",
+          value: function getDashboardData() {
+            var _this = this;
+
+            this.api.dashboard("weekly").subscribe(function (res) {
+              var _a, _b, _c, _d;
+
+              if (res.statusCode == 200) {
+                _this.totalUsers = (_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.totaluser;
+                _this.newUsers = (_b = res === null || res === void 0 ? void 0 : res.data) === null || _b === void 0 ? void 0 : _b.newUser;
+                _this.totalMatches = (_c = res === null || res === void 0 ? void 0 : res.data) === null || _c === void 0 ? void 0 : _c.totalNewUserMatch;
+                _this.newMatches = (_d = res === null || res === void 0 ? void 0 : res.data) === null || _d === void 0 ? void 0 : _d.newUserMatch;
+              } else {
+                _this.toastr.error(res["message"]);
+              }
+            });
+          }
+        }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
             // (<any>('#ravenue')).sparkline([6, 10, 9, 11, 9, 10, 12], {
@@ -1844,10 +1908,10 @@
             //     barColor: '#2961ff'
             // });
             var chart = c3__WEBPACK_IMPORTED_MODULE_1__["generate"]({
-              bindto: '#foo',
+              bindto: "#foo",
               data: {
-                columns: [['data', 91.4]],
-                type: 'gauge'
+                columns: [["data", 91.4]],
+                type: "gauge"
               },
               gauge: {
                 label: {
@@ -1858,7 +1922,7 @@
                 },
                 min: 0,
                 max: 100,
-                units: ' %',
+                units: " %",
                 width: 15
               },
               legend: {
@@ -1868,7 +1932,7 @@
                 height: 80
               },
               color: {
-                pattern: ['#7e74fb']
+                pattern: ["#7e74fb"]
               }
             });
           }
@@ -1878,15 +1942,25 @@
       }();
 
       InfocardComponent.ctorParameters = function () {
-        return [];
+        return [{
+          type: src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
+        }, {
+          type: ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrService"]
+        }, {
+          type: src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"]
+        }, {
+          type: src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]
+        }];
       };
 
       InfocardComponent = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-        selector: 'app-info-card',
+        selector: "app-info-card",
         template: __importDefault(__webpack_require__(
         /*! raw-loader!./info-card.component.html */
         "./node_modules/raw-loader/dist/cjs.js!./src/app/dashboards/dashboard-components/info-card/info-card.component.html"))["default"]
-      }), __metadata("design:paramtypes", [])], InfocardComponent);
+      }), __metadata("design:paramtypes", [src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrService"], src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"], src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]])], InfocardComponent);
       /***/
     },
 
@@ -2707,6 +2781,36 @@
 
 
       var c3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(c3__WEBPACK_IMPORTED_MODULE_1__);
+      /* harmony import */
+
+
+      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! src/app/shared/services/api.service */
+      "./src/app/shared/services/api.service.ts");
+      /* harmony import */
+
+
+      var src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! src/app/shared/services/spinner.service */
+      "./src/app/shared/services/spinner.service.ts");
+      /* harmony import */
+
+
+      var src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! src/app/shared/services/common.service */
+      "./src/app/shared/services/common.service.ts");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var ngx_toastr__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ngx-toastr */
+      "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -2729,14 +2833,21 @@
       };
 
       var SalesComponent = /*#__PURE__*/function () {
-        function SalesComponent() {
+        function SalesComponent(api, router, toastr, spinner, comm) {
           _classCallCheck(this, SalesComponent);
 
-          // Barchart
+          this.api = api;
+          this.router = router;
+          this.toastr = toastr;
+          this.spinner = spinner;
+          this.comm = comm;
+          this.type = "weekly";
+          this.earning = 0; // Barchart
+
           this.barChart = {
-            type: 'Bar',
+            type: "Bar",
             data: {
-              labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+              labels: ["M", "T", "W", "T", "F", "S", "S"],
               series: [[50, 40, 30, 70, 50, 20, 30]]
             },
             options: {
@@ -2758,9 +2869,9 @@
           }; // Line chart
 
           this.lineChart = {
-            type: 'Line',
+            type: "Line",
             data: {
-              labels: ['1PM', '2PM', '3PM', '4PM', '5PM', '6PM'],
+              labels: ["1PM", "2PM", "3PM", "4PM", "5PM", "6PM"],
               series: [[2, 0, 5, 2, 5, 2]]
             },
             options: {
@@ -2783,42 +2894,92 @@
           // bar chart
 
           this.lineChartLegend = true;
-          this.lineChartType = 'line';
+          this.lineChartType = "line";
           this.barChartOptions = {
             scaleShowVerticalLines: false,
             responsive: true,
             barThickness: 10
           };
-          this.barChartLabels = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-          this.barChartType = 'bar';
+          this.barChartLabels = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+          this.barChartType = "bar";
           this.barChartLegend = true;
           this.barChartData = [{
             data: [65, 59, 80, 81, 56, 55, 40, 65, 64, 2, 3, 55],
-            label: 'Sales'
+            label: "Sales"
           }];
           this.barChartColors = [{
-            backgroundColor: '#36bea6'
+            backgroundColor: "#36bea6"
           }]; //   user
 
-          this.barChartLabels1 = ['Area 1', 'Area 2', 'Area 3', 'Area 4', 'Area 5', 'Area 6', 'Area 7', 'Area 8', 'Area 9'];
+          this.barChartLabels1 = ["Area 1", "Area 2", "Area 3", "Area 4", "Area 5", "Area 6", "Area 7", "Area 8", "Area 9"];
           this.barChartColors1 = [{
-            backgroundColor: '#EC75F6'
+            backgroundColor: "#EC75F6"
           }];
           this.barChartData1 = [{
-            data: [65, 59, 80, 81, 56, 55, 40, 65, 64, 2, 3, 55],
-            label: 'Revenue'
+            data: [0, 0, 0, 0, 0, 0, 0],
+            label: "Revenue"
           }];
-          this.barChartLabels2 = ['Area 1', 'Area 2', 'Area 3', 'Area 4', 'Area 5', 'Area 6', 'Area 7', 'Area 8', 'Area 9'];
+          this.barChartLabels2 = ["M", "T", "W", "T", "F", "S", "S"];
+          this.getDashboardData();
         }
 
         _createClass(SalesComponent, [{
+          key: "filterData",
+          value: function filterData(value) {
+            this.type = value;
+            this.getDashboardData();
+          }
+        }, {
+          key: "getDashboardData",
+          value: function getDashboardData() {
+            var _this2 = this;
+
+            this.api.dashboard(this.type).subscribe(function (res) {
+              if (res.statusCode == 200) {
+                _this2.earning = res.data.totalEarning;
+                _this2.barChartData1 = [{
+                  data: [],
+                  label: "Revenue"
+                }];
+                _this2.barChartLabels2 = [];
+                var graphData = [];
+                var labelData = [];
+
+                var _iterator = _createForOfIteratorHelper(res.data.dataToSend),
+                    _step;
+
+                try {
+                  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                    var obj = _step.value;
+                    labelData.push(obj.name);
+                    graphData.push(obj.totalAmount);
+                  }
+                } catch (err) {
+                  _iterator.e(err);
+                } finally {
+                  _iterator.f();
+                }
+
+                console.log("data", graphData);
+                console.log("label", labelData);
+                _this2.barChartData1 = [{
+                  data: graphData,
+                  label: "Revenue"
+                }];
+                _this2.barChartLabels2 = labelData;
+              } else {
+                _this2.toastr.error(res["message"]);
+              }
+            });
+          }
+        }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
             var chart2 = c3__WEBPACK_IMPORTED_MODULE_1__["generate"]({
-              bindto: '#product-sales',
+              bindto: "#product-sales",
               data: {
-                columns: [['user', 5, 6, 3, 7, 9, 10, 14, 12, 11, 9, 8, 7, 10, 6, 12, 10, 8]],
-                type: 'spline'
+                columns: [["user", 5, 6, 3, 7, 9, 10, 14, 12, 11, 9, 8, 7, 10, 6, 12, 10, 8]],
+                type: "spline"
               },
               axis: {
                 y: {
@@ -2845,7 +3006,7 @@
                 hide: false
               },
               color: {
-                pattern: ['#fbb03b']
+                pattern: ["#fbb03b"]
               }
             });
           } // events
@@ -2864,18 +3025,28 @@
       }();
 
       SalesComponent.ctorParameters = function () {
-        return [];
+        return [{
+          type: src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
+        }, {
+          type: ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrService"]
+        }, {
+          type: src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"]
+        }, {
+          type: src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]
+        }];
       };
 
       SalesComponent = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-        selector: 'app-sales',
+        selector: "app-sales",
         template: __importDefault(__webpack_require__(
         /*! raw-loader!./sales.component.html */
         "./node_modules/raw-loader/dist/cjs.js!./src/app/dashboards/dashboard-components/sales/sales.component.html"))["default"],
         styles: [__importDefault(__webpack_require__(
         /*! ./sales.component.scss */
         "./src/app/dashboards/dashboard-components/sales/sales.component.scss"))["default"]]
-      }), __metadata("design:paramtypes", [])], SalesComponent);
+      }), __metadata("design:paramtypes", [src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrService"], src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"], src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]])], SalesComponent);
       /***/
     },
 

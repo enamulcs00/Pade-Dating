@@ -1,25 +1,26 @@
 <div class="row">
-    <!-- Column -->
-    <div class="col-lg-12">
-        <div class="card">
+  <!-- Column -->
+  <div class="col-lg-12">
+    <div class="card">
 
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <form>
-                            <div class="mb-2">
-                                <!-- <input type="text" class="form-control" id="prenametext" (keydown)="applyFilter($event)" placeholder="Search"> -->
-                                <input type="text" class="form-control" (keyup)='keyUp.next($event)' placeholder="Search"  name="name">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-8  d-flex justify-content-end">
-                        <select class="form-control mr-2 select-box" name="status" (change)="filterBy(IsActive)" [(ngModel)]="IsActive">
-                            <option [value]="''" selected>All</option>
-                            <option [value]="true">Block</option>
-                            <option [value]="false">Unbloack</option>
-                         </select>
-                        <!-- <div ngbDropdown class="d-inline-block mb-2 mr-2">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <form>
+              <div class="mb-2">
+                <!-- <input type="text" class="form-control" id="prenametext" (keydown)="applyFilter($event)" placeholder="Search"> -->
+                <input type="text" class="form-control" (keyup)='keyUp.next($event)' placeholder="Search" name="name">
+              </div>
+            </form>
+          </div>
+          <div class="col-md-8  d-flex justify-content-end">
+            <select class="form-control mr-2 select-box" name="status" (change)="filterBy(IsActive)"
+              [(ngModel)]="IsActive">
+              <option [value]="''" selected>All</option>
+              <option [value]="true">Block</option>
+              <option [value]="false">Unbloack</option>
+            </select>
+            <!-- <div ngbDropdown class="d-inline-block mb-2 mr-2">
                             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
                                 All
                             </button>
@@ -29,71 +30,72 @@
                                 <button class="dropdown-item" value="2" (click)="filterBy('false')">Unblocked</button>
                             </div>
                         </div> -->
-                        <button class="btn btn-primary mb-2 mr-2" (click)="openLink()"><i class="sl-icon-cloud-download"></i> Export CSV</button>
-                        <!-- <button class="btn btn-seconadary mb-2" (click)="addUserModal(addUser)"><i class="sl-icon-plus"></i> Add User</button> -->
-                    </div>
-                </div>
-                <div class="table-responsive">
-                    <table mat-table class=" w-100" [dataSource]="dataSource" matSort>
-                        <ng-container matColumnDef="image">
-                            <th mat-header-cell *matHeaderCellDef> Image </th>
-                            <td mat-cell *matCellDef="let row">
-                                <span class="img-small"><img [src]="row.image?row.image:'assets/images/gallery/noimage.png'" alt="wedding" width="80" height="80"
-                                    class="rounded"></span>
-                            </td>
-                        </ng-container>
-                        <ng-container matColumnDef="name">
-                            <th mat-header-cell *matHeaderCellDef> Name </th>
-                            <td mat-cell *matCellDef="let row"> {{row.firstName}} {{row.lastName}}</td>
-                        </ng-container>
+            <button class="btn btn-primary mb-2 mr-2" (click)="openLink()"><i class="sl-icon-cloud-download"></i> Export
+              CSV</button>
+            <!-- <button class="btn btn-seconadary mb-2" (click)="addUserModal(addUser)"><i class="sl-icon-plus"></i> Add User</button> -->
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table mat-table class=" w-100" [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="image">
+              <th mat-header-cell *matHeaderCellDef> Image </th>
+              <td mat-cell *matCellDef="let row">
+                <span class="img-small"><img [src]="row.image?row.image:'assets/images/gallery/noimage.png'"
+                    alt="wedding" width="80" height="80" class="rounded"></span>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.firstName}} {{row.lastName}}</td>
+            </ng-container>
 
-                        <ng-container matColumnDef="contact">
-                            <th mat-header-cell *matHeaderCellDef class="text-nowrap">Contact </th>
-                            <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.phoneNo}} </td>
-                        </ng-container>
+            <ng-container matColumnDef="contact">
+              <th mat-header-cell *matHeaderCellDef class="text-nowrap">Contact </th>
+              <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.phoneNo}} </td>
+            </ng-container>
 
-                        <ng-container matColumnDef="email">
-                            <th mat-header-cell *matHeaderCellDef>Email </th>
-                            <td mat-cell *matCellDef="let row"> {{row.email}} </td>
-                        </ng-container>
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef>Email </th>
+              <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+            </ng-container>
 
-                        <ng-container matColumnDef="address">
-                            <th mat-header-cell *matHeaderCellDef>Address </th>
-                            <td mat-cell *matCellDef="let row"> {{row.address}} </td>
-                        </ng-container>
-                        
-                        <ng-container matColumnDef="username">
-                            <th mat-header-cell *matHeaderCellDef class="text-nowrap">Username </th>
-                            <td mat-cell *matCellDef="let row"> {{row.username}} </td>
-                        </ng-container>
-                        <ng-container matColumnDef="dateofbirth">
-                            <th mat-header-cell *matHeaderCellDef class="text-nowrap">DOB </th>
-                            <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.dateofbirth|date}} </td>
-                        </ng-container>
-                        <ng-container matColumnDef="gender">
-                            <th mat-header-cell *matHeaderCellDef class="text-nowrap">Gender </th>
-                            <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.gender}} </td>
-                        </ng-container>
+            <ng-container matColumnDef="address">
+              <th mat-header-cell *matHeaderCellDef>Address </th>
+              <td mat-cell *matCellDef="let row"> {{row.address}} </td>
+            </ng-container>
 
-                        <ng-container matColumnDef="status">
-                            <th mat-header-cell *matHeaderCellDef class="text-nowrap"> Status </th>
-                            <td mat-cell *matCellDef="let row" class="text-nowrap">
-                                <mat-slide-toggle [checked]="row.isBlocked === true ? true : false" (change)="blockUsers(row, $event.checked)">
-                                    {{row.isBlocked === true ? "Blocked" :"Unblocked"}}
-                                </mat-slide-toggle>
-                            </td>
-                        </ng-container>
+            <ng-container matColumnDef="username">
+              <th mat-header-cell *matHeaderCellDef class="text-nowrap">Username </th>
+              <td mat-cell *matCellDef="let row"> {{row.username}} </td>
+            </ng-container>
+            <ng-container matColumnDef="dateofbirth">
+              <th mat-header-cell *matHeaderCellDef class="text-nowrap">DOB </th>
+              <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.dateofbirth|date}} </td>
+            </ng-container>
+            <ng-container matColumnDef="gender">
+              <th mat-header-cell *matHeaderCellDef class="text-nowrap">Gender </th>
+              <td mat-cell *matCellDef="let row" class="text-nowrap"> {{row.gender}} </td>
+            </ng-container>
 
-                        <ng-container matColumnDef="action">
-                            <th mat-header-cell *matHeaderCellDef class="text-nowrap"> Action </th>
-                            <td mat-cell *matCellDef="let row" class="text-nowrap">
-                                <div ngbDropdown placement="bottom" class="d-inline-block" container="body">
-                                    <button class="btn btn-outline-primary btn-sm" id="dropdownBasic1"
-                                        ngbDropdownToggle>
-                                        Action
-                                    </button>
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef class="text-nowrap"> Status </th>
+              <td mat-cell *matCellDef="let row" class="text-nowrap">
+                <mat-slide-toggle [checked]="row.isBlocked === true ? true : false"
+                  (change)="blockUsers(row, $event.checked)">
+                  {{row.isBlocked === true ? "Blocked" :"Unblocked"}}
+                </mat-slide-toggle>
+              </td>
+            </ng-container>
 
-                                    <!-- <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef class="text-nowrap"> Action </th>
+              <td mat-cell *matCellDef="let row" class="text-nowrap">
+                <div ngbDropdown placement="bottom" class="d-inline-block" container="body">
+                  <button class="btn btn-outline-primary btn-sm" id="dropdownBasic1" ngbDropdownToggle>
+                    Action
+                  </button>
+
+                  <!-- <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                                         <a class="dropdown-item" routerLink="/pages/users_detail"><i class="ti-eye"></i>
                                             Accept
                                         </a>
@@ -103,368 +105,394 @@
                                             Reject</button>
                                     </div> -->
 
-                                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                        <a class="dropdown-item" (click)="viewUserDetail(row)" style="cursor: default;"><i class="ti-eye"></i>
-                                            View
-                                        </a>
-                                        <button class="dropdown-item" (click)="userEditModal(userEdit, row)"><i
-                                                _ngcontent-axh-c146="" class="ti-marker-alt"></i> Edit</button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <a style="cursor: pointer;" class="dropdown-item" (click)="viewUserDetail(row)"
+                      ><i class="ti-eye"></i>
+                      View
+                    </a>
+                    <button style="cursor: pointer;" class="dropdown-item" (click)="userEditModal(userEdit, row)"><i
+                        _ngcontent-axh-c146="" class="ti-marker-alt"></i> Edit</button>
 
-                                        <button class="dropdown-item" (click)="deleteUser(userDelete, row)"><i
-                                                class="ti-trash"></i>
-                                            Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                        </ng-container>
-                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                        <tr class="mat-row" *matNoDataRow>
-                            <td class="mat-cell" colspan="9">Data not found!</td>
-                          </tr>
-                    </table>
+                    <button style="cursor: pointer;" class="dropdown-item" (click)="deleteUser(userDelete, row)"><i
+                        class="ti-trash"></i>
+                      Delete</button>
+                  </div>
                 </div>
-                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalUser" [pageSize]="pageSize">
-                </mat-paginator>
-                <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalUser" [pageSize]="pageSize" (page)="pageChange($event)"></mat-paginator> -->
-            </div>
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="9">Data not found!</td>
+            </tr>
+          </table>
         </div>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalUser" [pageSize]="pageSize">
+        </mat-paginator>
+        <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalUser" [pageSize]="pageSize" (page)="pageChange($event)"></mat-paginator> -->
+      </div>
     </div>
+  </div>
 
-    <ng-template #content3 let-modal>
-        <div class="modal-header p-2">
-            <h4 class="modal-title">Driving Licence</h4>
-            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                <span aria-hidden="true">&times;</span>
-            </button>
+  <ng-template #content3 let-modal>
+    <div class="modal-header p-2">
+      <h4 class="modal-title">Driving Licence</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-6">
+          <figure class=""><img src="assets/images/gallery/driving-licence.jpg" class="img-fluid"></figure>
         </div>
-        <div class="modal-body">
-            <div class="row">
+        <div class="col-md-6">
+          <figure class=""><img src="assets/images/gallery/driving-licence.jpg" class="img-fluid"></figure>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+
+  <!-- delete modal -->
+  <ng-template #userDelete let-modal>
+    <div class="modal-body">
+      <p>Are you want to delete this user?</p>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary mr-2" aria-label="Close"
+          (click)="modal.close('Cross click')">Yes</button>
+        <button type="button" class="btn btn-seconadary" aria-label="Close"
+          (click)="modal.dismiss('Cross click')">No</button>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- edit user detail -->
+  <ng-template #userEdit let-modal>
+    <div class="modal-body">
+      <div class="card">
+        <form [formGroup]="userForm">
+          <div class="form-body">
+            <div class="card-body">
+              <div class="row p-t-20">
                 <div class="col-md-6">
-                    <figure class=""><img src="assets/images/gallery/driving-licence.jpg" class="img-fluid"></figure>
+                  <div class="form-group">
+                    <label class="control-label">First name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="John doe" #ref
+                      (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="firstName">
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['firstName'].hasError('required') && submitted">
+                      Please enter the first name!
+                    </mat-error>
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')">
+                      First name should alphabetic!
+                    </mat-error>
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['firstName'].hasError('maxlength') && !userForm.controls['firstName'].hasError('required')">
+                      Maxlength should 15!
+                    </mat-error>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Last name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="John doe" #ref
+                      (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="lastName">
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['lastName'].hasError('required') && submitted">
+                      Please enter the last name!
+                    </mat-error>
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['lastName'].hasError('pattern') && !userForm.controls['lastName'].hasError('required') && !userForm.controls['lastName'].hasError('maxlength')">
+                      Last name should alphabetic!
+                    </mat-error>
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['lastName'].hasError('maxlength') && !userForm.controls['lastName'].hasError('required')">
+                      Maxlength should 15!
+                    </mat-error>
+                  </div>
                 </div>
                 <div class="col-md-6">
-                    <figure class=""><img src="assets/images/gallery/driving-licence.jpg" class="img-fluid"></figure>
+                  <div class="form-group">
+                    <label class="control-label">User name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="John doe"
+                      (keydown.space)="$event.preventDefault()" formControlName="userName">
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['userName'].hasError('required') && submitted">
+                      Please enter the user name!
+                    </mat-error>
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['userName'].hasError('pattern') && !userForm.controls['userName'].hasError('required') && !userForm.controls['userName'].hasError('maxlength')">
+                      User name should alpha numeric!
+                    </mat-error>
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['userName'].hasError('maxlength') && !userForm.controls['userName'].hasError('required')">
+                      Maxlength should 15!
+                    </mat-error>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </ng-template>
 
-
-    <!-- delete modal -->
-    <ng-template #userDelete let-modal>
-        <div class="modal-body">
-            <p>Are you want to delete this user?</p>
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary mr-2" aria-label="Close"
-                    (click)="modal.close('Cross click')">Yes</button>
-                <button type="button" class="btn btn-seconadary" aria-label="Close"
-                    (click)="modal.dismiss('Cross click')">No</button>
-            </div>
-        </div>
-    </ng-template>
-
-    <!-- edit user detail -->
-    <ng-template #userEdit let-modal>
-        <div class="modal-body">
-            <div class="card">
-                <form [formGroup]="userForm">
-                    <div class="form-body">
-                        <div class="card-body">
-                            <div class="row p-t-20">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">First name</label>
-                                        <input type="text" id="firstName" class="form-control" placeholder="John doe" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="firstName">
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['firstName'].hasError('required') && submitted">
-                                            Please enter the first name!
-                                        </mat-error>
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')">
-                                            First name should alphabetic!
-                                        </mat-error>
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['firstName'].hasError('maxlength') && !userForm.controls['firstName'].hasError('required')">
-                                            Maxlength should 15!
-                                        </mat-error> 
-                                    </div>
-                                     </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Last name</label>
-                                        <input type="text" id="firstName" class="form-control" placeholder="John doe" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="lastName">
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['lastName'].hasError('required') && submitted">
-                                            Please enter the last name!
-                                        </mat-error>
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['lastName'].hasError('pattern') && !userForm.controls['lastName'].hasError('required') && !userForm.controls['lastName'].hasError('maxlength')">
-                                            Last name should alphabetic!
-                                        </mat-error>
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['lastName'].hasError('maxlength') && !userForm.controls['lastName'].hasError('required')">
-                                            Maxlength should 15!
-                                        </mat-error>  
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">User name</label>
-                                        <input type="text" id="firstName" class="form-control" placeholder="John doe" (keydown.space)="$event.preventDefault()" formControlName="userName">
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['userName'].hasError('required') && submitted">
-                                            Please enter the user name!
-                                        </mat-error>
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['userName'].hasError('pattern') && !userForm.controls['userName'].hasError('required') && !userForm.controls['userName'].hasError('maxlength')">
-                                            User name should alpha numeric!
-                                        </mat-error>
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['userName'].hasError('maxlength') && !userForm.controls['userName'].hasError('required')">
-                                            Maxlength should 15!
-                                        </mat-error>  
-                                    </div>
-                                     </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="form-group has-success">
-                                        <div class="form-group">
-                                            <label class="control-label">Upload User Profile</label>
-                                            <div class="custom-file text-nowrap text-truncate"><input class="custom-file-input" (change)="uploadFile($event)"
-                                                    id="inputGroupFile01" type="file" name="image"><label class="custom-file-label"
-                                                    for="inputGroupFile01">{{imagePath?imagePath:'Choose file'}}</label></div>
-                                                    <mat-error class="form-text text-danger w-100" *ngIf="!imagePath && submitted">
-                                                        Please upload user profile!
-                                                    </mat-error>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/row-->
-                            <div class="row ">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Phone number</label>
-                                        <input type="text" id="firstName" class="form-control" placeholder="eg:-894681814" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="phoneNo">
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['phoneNo'].hasError('required') && submitted">
-                                            Please enter the phone number!
-                                        </mat-error>
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['phoneNo'].hasError('minlength') && !userForm.controls['phoneNo'].hasError('required')">
-                                            Phone number must be at least 7 digit long.
-                                        </mat-error>
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['phoneNo'].hasError('maxlength') && !userForm.controls['phoneNo'].hasError('required')">
-                                            Phone number can be max 15 digit long.
-                                        </mat-error>
-            
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['phoneNo'].hasError('pattern') && !userForm.controls['phoneNo'].hasError('required') && !userForm.controls['phoneNo'].hasError('maxlength')">
-                                            Phone number not valid!
-                                        </mat-error>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group has-danger">
-                                        <label class="control-label">Email</label>
-                                        <input type="email" id="email" class="form-control form-control-danger"
-                                            placeholder="example@gmail.com" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="email">
-                                            <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['email'].hasError('required') && submitted">
-                                                Please enter the email address!
-                                            </mat-error>
-                
-                                            <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['email'].hasError('pattern') && !userForm.controls['email'].hasError('required')">
-                                                Email is invalid!
-                                            </mat-error>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
-                            <!--/row-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group has-danger">
-                                        <label class="control-label">DOB</label>
-                                        <input type="date" id="date" class="form-control" max="{{minAge | date:'yyyy-MM-dd'}}" formControlName="dateofbirth"
-                                            placeholder="eg:- 08/07/1998">
-                                            <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['dateofbirth'].hasError('required') && submitted">
-                                                Please enter date of birth!
-                                            </mat-error>
-                                        </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Gender</label>
-                                        <select class="form-control custom-select" formControlName="gender" data-placeholder="Choose a Category"
-                                            tabindex="1">
-                                            <option value="MALE" selected>Male</option>
-                                            <option value="FEMALE">Female</option>
-                                        </select>
-                                        <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['gender'].hasError('required') && submitted">
-                                            Please  choose gender!
-                                        </mat-error>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
-                            <!--/row-->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group has-danger">
-                                        <label class="control-label">Address</label>
-                                        <textarea name="" id="" cols="30" rows="3" class="form-control" formControlName="address"
-                                            placeholder="#433 New garden Complex" #ref (keydown.space)="!ref.value?$event.preventDefault():null"></textarea>
-                                            <mat-error class="form-text text-danger w-100" *ngIf="userForm.controls['address'].hasError('required') && submitted">
-                                                Please enter the email address!
-                                            </mat-error>
-                                        </div>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">User Status</label>
-                                        <div class="form-check">
-                                            <input type="checkbox" id="exampleCheck1" [(ngModel)]="isBlocked" [ngModelOptions]="{standalone: true}"
-                                                class="form-check-input">
-                                            <label class="form-check-label" for="exampleCheck1">{{isBlocked?'Blocked':'Unblock'}}</label>
-                                        </div>
-                                    </div>
-
-                                </div>
-                               </div>
-                        
-                        </div>
-
-                        <div class="form-actions">
-                            <div class="card-body">
-                                <button type="submit" class="btn btn-success mr-3"
-                                    (click)="UpadteUser()">
-                                    <i class="fa fa-check"></i>Update</button>
-                                <button type="button" class="btn btn-dark"
-                                    (click)="modal.dismiss('Cross click')">Cancel</button>
-                            </div>
-                        </div>
+                <div class="col-md-6">
+                  <div class="form-group has-success">
+                    <div class="form-group">
+                      <label class="control-label">Upload User Profile</label>
+                      <div class="custom-file text-nowrap text-truncate"><input class="custom-file-input"
+                          (change)="uploadFile($event)" id="inputGroupFile01" type="file" name="image"><label
+                          class="custom-file-label" for="inputGroupFile01">{{imagePath?imagePath:'Choose file'}}</label>
+                      </div>
+                      <mat-error class="form-text text-danger w-100" *ngIf="!imagePath && submitted">
+                        Please upload user profile!
+                      </mat-error>
                     </div>
-                </form>
-            </div>
-         </div>
-    </ng-template>
+                  </div>
+                </div>
+              </div>
+              <!--/row-->
+              <div class="row ">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Phone number</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="eg:-894681814" #ref
+                      (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="phoneNo">
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['phoneNo'].hasError('required') && submitted">
+                      Please enter the phone number!
+                    </mat-error>
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['phoneNo'].hasError('minlength') && !userForm.controls['phoneNo'].hasError('required')">
+                      Phone number must be at least 7 digit long.
+                    </mat-error>
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['phoneNo'].hasError('maxlength') && !userForm.controls['phoneNo'].hasError('required')">
+                      Phone number can be max 15 digit long.
+                    </mat-error>
 
-    <!-- add user -->
-    <ng-template #addUser let-modal>
-        <div class="modal-body">
-            <div class="card">
-                <form [formGroup]="userForm">
-                    <div class="form-body">
-                        <div class="card-body">
-                            <div class="row p-t-20">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">First name</label>
-                                        <input type="text" id="firstName" class="form-control" placeholder="John doe" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="firstName">
-                                      </div>
-                                     </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Last name</label>
-                                        <input type="text" id="firstName" class="form-control" placeholder="John doe" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="lastName">
-                                      </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">User Name</label>
-                                        <input type="text" id="firstName" class="form-control" placeholder="John doe" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="userName">
-                                      </div>
-                                     </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="form-group has-success">
-                                        <div class="form-group">
-                                            <label class="control-label">Upload User Profile</label>
-                                            <div class="custom-file text-nowrap text-truncate"><input class="custom-file-input"
-                                                    id="inputGroupFile01" type="file" name="image"><label class="custom-file-label"
-                                                    for="inputGroupFile01">Choose file</label></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/row-->
-                            <div class="row ">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Contact No</label>
-                                        <input type="text" id="firstName" class="form-control" placeholder="eg:-894681814" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="phoneNo">
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['phoneNo'].hasError('pattern') && !userForm.controls['phoneNo'].hasError('required') && !userForm.controls['phoneNo'].hasError('maxlength')">
+                      Phone number not valid!
+                    </mat-error>
+                  </div>
+                </div>
+                <!--/span-->
+                <div class="col-md-6">
+                  <div class="form-group has-danger">
+                    <label class="control-label">Email</label>
+                    <input type="email" id="email" class="form-control form-control-danger"
+                      placeholder="example@gmail.com" #ref (keydown.space)="!ref.value?$event.preventDefault():null"
+                      formControlName="email">
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['email'].hasError('required') && submitted">
+                      Please enter the email address!
+                    </mat-error>
 
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group has-danger">
-                                        <label class="control-label">Email</label>
-                                        <input type="email" id="email" class="form-control form-control-danger"
-                                            placeholder="example@gmail.com" #ref (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="email">
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['email'].hasError('pattern') && !userForm.controls['email'].hasError('required')">
+                      Email is invalid!
+                    </mat-error>
+                  </div>
+                </div>
+                <!--/span-->
+              </div>
+              <!--/row-->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group has-danger">
+                    <label class="control-label">DOB</label>
+                    <input type="date" id="date" class="form-control" max="{{minAge | date:'yyyy-MM-dd'}}"
+                      formControlName="dateofbirth" placeholder="eg:- 08/07/1998">
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['dateofbirth'].hasError('required') && submitted">
+                      Please enter date of birth!
+                    </mat-error>
+                  </div>
+                </div>
+                <!--/span-->
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Gender</label>
+                    <select class="form-control custom-select" formControlName="gender"
+                      data-placeholder="Choose a Category" tabindex="1">
+                      <option value="MALE" selected>Male</option>
+                      <option value="FEMALE">Female</option>
+                    </select>
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['gender'].hasError('required') && submitted">
+                      Please choose gender!
+                    </mat-error>
+                  </div>
+                </div>
+                <!--/span-->
+              </div>
+              <!--/row-->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group has-danger">
+                    <label class="control-label">Address</label>
+                    <textarea name="" id="" cols="30" rows="3" class="form-control" formControlName="address"
+                      placeholder="#433 New garden Complex" #ref
+                      (keydown.space)="!ref.value?$event.preventDefault():null"></textarea>
+                    <mat-error class="form-text text-danger w-100"
+                      *ngIf="userForm.controls['address'].hasError('required') && submitted">
+                      Please enter the email address!
+                    </mat-error>
+                  </div>
+                </div>
 
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
-                            <!--/row-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group has-danger">
-                                        <label class="control-label">DOB</label>
-                                        <input type="date" id="date" class="form-control" formControlName="dateofbirth"
-                                            placeholder="eg:- 08/07/1998">
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Gender</label>
-                                        <select class="form-control custom-select" formControlName="gender" data-placeholder="Choose a Category"
-                                            tabindex="1">
-                                            <option value="Male" selected>Male</option>
-                                            <option value="Female">Female</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
-                            <!--/row-->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group has-danger">
-                                        <label class="control-label">Address</label>
-                                        <textarea name="" id="" cols="30" rows="3" class="form-control" formControlName="address"
-                                            placeholder="#433 New garden Complex" #ref (keydown.space)="!ref.value?$event.preventDefault():null"></textarea>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">User Status</label>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio1" name="customRadio"
-                                                class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio1">Active</label>
-                                        </div>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio2" name="customRadio"
-                                                class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio2">Inactive</label>
-                                        </div>
-                                    </div>
-
-                                </div>
-                               </div>
-                        
-                        </div>
-
-                        <div class="form-actions">
-                            <div class="card-body">
-                                <button type="submit" class="btn btn-success mr-3"
-                                    (click)="modal.dismiss('Cross click')">
-                                    <i class="fa fa-check"></i> Add</button>
-                                <button type="button" class="btn btn-dark"
-                                    (click)="modal.dismiss('Cross click')">Cancel</button>
-                            </div>
-                        </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">User Status</label>
+                    <div class="form-check">
+                      <input type="checkbox" id="exampleCheck1" [(ngModel)]="isBlocked"
+                        [ngModelOptions]="{standalone: true}" class="form-check-input">
+                      <label class="form-check-label" for="exampleCheck1">{{isBlocked?'Blocked':'Unblock'}}</label>
                     </div>
-                </form>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
 
-        </div>
-    </ng-template>
+            <div class="form-actions">
+              <div class="card-body">
+                <button type="submit" class="btn btn-success mr-3" (click)="UpadteUser()">
+                  <i class="fa fa-check"></i>Update</button>
+                <button type="button" class="btn btn-dark" (click)="modal.dismiss('Cross click')">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- add user -->
+  <ng-template #addUser let-modal>
+    <div class="modal-body">
+      <div class="card">
+        <form [formGroup]="userForm">
+          <div class="form-body">
+            <div class="card-body">
+              <div class="row p-t-20">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">First name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="John doe" #ref
+                      (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="firstName">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Last name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="John doe" #ref
+                      (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="lastName">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">User Name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="John doe" #ref
+                      (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="userName">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group has-success">
+                    <div class="form-group">
+                      <label class="control-label">Upload User Profile</label>
+                      <div class="custom-file text-nowrap text-truncate"><input class="custom-file-input"
+                          id="inputGroupFile01" type="file" name="image"><label class="custom-file-label"
+                          for="inputGroupFile01">Choose file</label></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/row-->
+              <div class="row ">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Contact No</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="eg:-894681814" #ref
+                      (keydown.space)="!ref.value?$event.preventDefault():null" formControlName="phoneNo">
+
+                  </div>
+                </div>
+                <!--/span-->
+                <div class="col-md-6">
+                  <div class="form-group has-danger">
+                    <label class="control-label">Email</label>
+                    <input type="email" id="email" class="form-control form-control-danger"
+                      placeholder="example@gmail.com" #ref (keydown.space)="!ref.value?$event.preventDefault():null"
+                      formControlName="email">
+
+                  </div>
+                </div>
+                <!--/span-->
+              </div>
+              <!--/row-->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group has-danger">
+                    <label class="control-label">DOB</label>
+                    <input type="date" id="date" class="form-control" formControlName="dateofbirth"
+                      placeholder="eg:- 08/07/1998">
+                  </div>
+                </div>
+                <!--/span-->
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Gender</label>
+                    <select class="form-control custom-select" formControlName="gender"
+                      data-placeholder="Choose a Category" tabindex="1">
+                      <option value="Male" selected>Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                  </div>
+                </div>
+                <!--/span-->
+              </div>
+              <!--/row-->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group has-danger">
+                    <label class="control-label">Address</label>
+                    <textarea name="" id="" cols="30" rows="3" class="form-control" formControlName="address"
+                      placeholder="#433 New garden Complex" #ref
+                      (keydown.space)="!ref.value?$event.preventDefault():null"></textarea>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">User Status</label>
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadio1">Active</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadio2">Inactive</label>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-actions">
+              <div class="card-body">
+                <button type="submit" class="btn btn-success mr-3" (click)="modal.dismiss('Cross click')">
+                  <i class="fa fa-check"></i> Add</button>
+                <button type="button" class="btn btn-dark" (click)="modal.dismiss('Cross click')">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </ng-template>

@@ -191,4 +191,8 @@ export class ApiService {
 	deletePackage(id) {
 		return this.http.delete(environment.apiUrl + "packages/" + id);
 	}
+
+	dashboard(type){
+		return this.http.get(environment.apiUrl + "dashboard?type=" + type);
+	}
 }

@@ -100,7 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card-group\">\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center \">Total Users</h4>\r\n            <h2>1200</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-primary css-bar-20\">\r\n                        <i class=\"display-6 mdi mdi-account-circle\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12056</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">New Users </h4>\r\n            <h2>100</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-danger css-bar-20\">\r\n                        <i class=\"display-6 mdi mdi-star-circle\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 21456</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">Total Matches </h4>\r\n            <h2>1200</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-success css-bar-20\">\r\n                        <i class=\"display-6 fas fa-heart\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12465</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">New Matches </h4>\r\n            <h2>200</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-success css-bar-20\">\r\n                        <i class=\"display-6 fas fa-heart\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12465</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n</div>\r\n<!-- End Row -->\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card-group\">\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center \">Total Users</h4>\r\n            <h2>{{totalUsers}}</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-primary css-bar-100\">\r\n                        <i class=\"display-6 mdi mdi-account-circle\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12056</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">New Users </h4>\r\n            <h2>{{newUsers}}</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-primary css-bar-100\">\r\n                        <i class=\"display-6 mdi mdi-star-circle\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 21456</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n    <!-- Column -->\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">Total Matches </h4>\r\n            <h2>{{totalMatches}}</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-danger css-bar-100\">\r\n                        <i class=\"display-6 fas fa-heart\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12465</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"card-body text-center\">\r\n            <h4 class=\"text-center\">New Matches </h4>\r\n            <h2>{{newMatches}}</h2>\r\n            <div class=\"row p-t-10 p-b-10\">\r\n                <!-- Column -->\r\n                <div class=\"col text-center align-self-center\">\r\n                    <div data-label=\"20%\" class=\"css-bar m-b-0 css-bar-danger css-bar-100\">\r\n                        <i class=\"display-6 fas fa-heart\"></i>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <!-- <div class=\"row\">\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-up text-success\"></i>\r\n                        <br> 12465</h4>\r\n                </div>\r\n                <div class=\"col-md-6 col-sm-12\">\r\n                    <h4 class=\"font-medium m-b-0\">\r\n                        <i class=\"ti-angle-down text-danger\"></i>\r\n                        <br> 145</h4>\r\n                </div>\r\n            </div> -->\r\n        </div>\r\n    </div>\r\n    <!-- Column -->\r\n</div>\r\n<!-- End Row -->\r\n");
 
 /***/ }),
 
@@ -204,7 +204,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\r\n    <!-- Column -->\r\n    <!-- <div class=\"col-md-6 \">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <div class=\"d-flex align-items-center\">\r\n                    <div>\r\n                        <span class=\"btn-circle btn-lg btn btn-outline-secondary\">\r\n                            <i class=\"sl-icon-people\"></i>\r\n                        </span>\r\n                    </div>\r\n                    <div class=\"m-l-10\">\r\n                        <h4 class=\"card-title \">Total Sales</h4>\r\n                        <h3>$600</h3>\r\n                    </div>\r\n                    <div class=\"ml-auto\">\r\n                        <select class=\"custom-select b-0\">\r\n                            <option selected=\"\">Weekly</option>\r\n                            <option value=\"1\">Monthly</option>\r\n                        </select>\r\n                    </div>\r\n                </div>\r\n                <canvas baseChart [datasets]=\"barChartData\" [labels]=\"barChartLabels1\" [options]=\"barChartOptions\" [legend]=\"barChartLegend\" [chartType]=\"barChartType\" (chartHover)=\"chartHovered($event)\" [colors]=\"barChartColors1\" (chartClick)=\"chartClicked($event)\">\r\n            </canvas>\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"col-md-6 \">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <div class=\"d-flex align-items-center\">\r\n                    <div>\r\n                        <span class=\"btn-circle btn-lg btn btn-outline-secondary\">\r\n                            <i class=\"sl-icon-people\"></i>\r\n                        </span>\r\n                    </div>\r\n                    <div class=\"m-l-10\">\r\n                        <h4 class=\"card-title \">Total Revenue </h4>\r\n                        <h3>$400</h3>\r\n                    </div>\r\n\r\n                    <div class=\"ml-auto\">\r\n                        <select class=\"custom-select b-0\">\r\n                            <option selected=\"\">Weekly</option>\r\n                            <option value=\"1\">Monthly</option>\r\n                        </select>\r\n                        <!--<ul class=\"list-inline font-12 dl m-r-10\">\r\n                            <li class=\"list-inline-item\">\r\n                                <i class=\"fas fa-dot-circle text-info\"></i> Users\r\n                            </li>\r\n                             <li class=\"list-inline-item\">\r\n                                <i class=\"fas fa-dot-circle text-danger\"></i> Iphone</li>\r\n                        </ul>-->\r\n                    </div>\r\n                </div>\r\n                <canvas baseChart [datasets]=\"barChartData1\" [labels]=\"barChartLabels2\" [options]=\"barChartOptions\" [legend]=\"barChartLegend\" [chartType]=\"barChartType\" (chartHover)=\"chartHovered($event)\" [colors]=\"barChartColors1\" (chartClick)=\"chartClicked($event)\">\r\n            </canvas>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\r\n    <!-- Column -->\r\n    <!-- <div class=\"col-md-6 \">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <div class=\"d-flex align-items-center\">\r\n                    <div>\r\n                        <span class=\"btn-circle btn-lg btn btn-outline-secondary\">\r\n                            <i class=\"sl-icon-people\"></i>\r\n                        </span>\r\n                    </div>\r\n                    <div class=\"m-l-10\">\r\n                        <h4 class=\"card-title \">Total Sales</h4>\r\n                        <h3>$600</h3>\r\n                    </div>\r\n                    <div class=\"ml-auto\">\r\n                        <select class=\"custom-select b-0\">\r\n                            <option selected=\"\">Weekly</option>\r\n                            <option value=\"1\">Monthly</option>\r\n                        </select>\r\n                    </div>\r\n                </div>\r\n                <canvas baseChart [datasets]=\"barChartData\" [labels]=\"barChartLabels1\" [options]=\"barChartOptions\" [legend]=\"barChartLegend\" [chartType]=\"barChartType\" (chartHover)=\"chartHovered($event)\" [colors]=\"barChartColors1\" (chartClick)=\"chartClicked($event)\">\r\n            </canvas>\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"col-md-6 \">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <div class=\"d-flex align-items-center\">\r\n                    <div>\r\n                        <span class=\"btn-circle btn-lg btn btn-outline-secondary\">\r\n                            <i class=\"sl-icon-people\"></i>\r\n                        </span>\r\n                    </div>\r\n                    <div class=\"m-l-10\">\r\n                        <h4 class=\"card-title \">Total Revenue </h4>\r\n                        <h3>${{earning}}</h3>\r\n                    </div>\r\n\r\n                    <div class=\"ml-auto\">\r\n                        <select class=\"custom-select b-0\" (change)=\"filterData($event.target.value)\">\r\n                            <option value=\"weekly\">Weekly</option>\r\n                            <option value=\"monthly\">Monthly</option>\r\n                        </select>\r\n                        <!--<ul class=\"list-inline font-12 dl m-r-10\">\r\n                            <li class=\"list-inline-item\">\r\n                                <i class=\"fas fa-dot-circle text-info\"></i> Users\r\n                            </li>\r\n                             <li class=\"list-inline-item\">\r\n                                <i class=\"fas fa-dot-circle text-danger\"></i> Iphone</li>\r\n                        </ul>-->\r\n                    </div>\r\n                </div>\r\n                <canvas baseChart [datasets]=\"barChartData1\" [labels]=\"barChartLabels2\" [options]=\"barChartOptions\" [legend]=\"barChartLegend\" [chartType]=\"barChartType\" (chartHover)=\"chartHovered($event)\" [colors]=\"barChartColors1\" (chartClick)=\"chartClicked($event)\">\r\n            </canvas>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
 
 /***/ }),
 
@@ -1145,6 +1145,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var c3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! c3 */ "./node_modules/c3/c3.js");
 /* harmony import */ var c3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(c3__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/api.service */ "./src/app/shared/services/api.service.ts");
+/* harmony import */ var src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/spinner.service */ "./src/app/shared/services/spinner.service.ts");
+/* harmony import */ var src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/services/common.service */ "./src/app/shared/services/common.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1159,63 +1164,92 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 };
 
 
+
+
+
+
+
 let InfocardComponent = class InfocardComponent {
-    constructor() {
+    constructor(api, router, toastr, spinner, comm) {
+        this.api = api;
+        this.router = router;
+        this.toastr = toastr;
+        this.spinner = spinner;
+        this.comm = comm;
+        this.totalUsers = 0;
+        this.newUsers = 0;
+        this.totalMatches = 0;
+        this.newMatches = 0;
         this.lineChartData = [
-            { data: [12, 19, 3, 5, 2, 3], label: 'Balance $' }
+            { data: [12, 19, 3, 5, 2, 3], label: "Balance $" },
         ];
         this.lineChartLabels = [
-            '2012',
-            '2013',
-            '2014',
-            '2015',
-            '2016',
-            '2017'
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
         ];
         this.lineChartOptions = {
             responsive: true,
             elements: {
                 point: {
-                    radius: 2
-                }
+                    radius: 2,
+                },
             },
             scales: {
                 xAxes: [
                     {
                         gridLines: {
                             display: false,
-                            drawBorder: false
+                            drawBorder: false,
                         },
                         ticks: {
-                            display: false
-                        }
-                    }
+                            display: false,
+                        },
+                    },
                 ],
                 yAxes: [
                     {
                         gridLines: {
                             display: false,
-                            drawBorder: false
+                            drawBorder: false,
                         },
                         ticks: {
-                            display: false
-                        }
-                    }
-                ]
-            }
+                            display: false,
+                        },
+                    },
+                ],
+            },
         };
         this.lineChartColors = [
             {
-                backgroundColor: 'transparent',
-                borderColor: '#4dc8ff',
-                pointBackgroundColor: '#4dc8ff',
-                pointBorderColor: '#4dc8ff',
-                pointHoverBackgroundColor: '#4dc8ff',
-                pointHoverBorderColor: '#4dc8ff'
-            }
+                backgroundColor: "transparent",
+                borderColor: "#4dc8ff",
+                pointBackgroundColor: "#4dc8ff",
+                pointBorderColor: "#4dc8ff",
+                pointHoverBackgroundColor: "#4dc8ff",
+                pointHoverBorderColor: "#4dc8ff",
+            },
         ];
         this.lineChartLegend = false;
-        this.lineChartType = 'line';
+        this.lineChartType = "line";
+        this.getDashboardData();
+    }
+    getDashboardData() {
+        this.api.dashboard("weekly").subscribe((res) => {
+            var _a, _b, _c, _d;
+            if (res.statusCode == 200) {
+                this.totalUsers = (_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.totaluser;
+                this.newUsers = (_b = res === null || res === void 0 ? void 0 : res.data) === null || _b === void 0 ? void 0 : _b.newUser;
+                this.totalMatches = (_c = res === null || res === void 0 ? void 0 : res.data) === null || _c === void 0 ? void 0 : _c.totalNewUserMatch;
+                this.newMatches = (_d = res === null || res === void 0 ? void 0 : res.data) === null || _d === void 0 ? void 0 : _d.newUserMatch;
+            }
+            else {
+                this.toastr.error(res["message"]);
+            }
+        });
     }
     ngAfterViewInit() {
         // (<any>('#ravenue')).sparkline([6, 10, 9, 11, 9, 10, 12], {
@@ -1228,42 +1262,52 @@ let InfocardComponent = class InfocardComponent {
         //     barColor: '#2961ff'
         // });
         const chart = c3__WEBPACK_IMPORTED_MODULE_1__["generate"]({
-            bindto: '#foo',
+            bindto: "#foo",
             data: {
-                columns: [['data', 91.4]],
-                type: 'gauge'
+                columns: [["data", 91.4]],
+                type: "gauge",
             },
             gauge: {
                 label: {
                     format: function (value, ratio) {
                         return value;
                     },
-                    show: false
+                    show: false,
                 },
                 min: 0,
                 max: 100,
-                units: ' %',
-                width: 15
+                units: " %",
+                width: 15,
             },
             legend: {
-                hide: true
+                hide: true,
             },
             size: {
-                height: 80
+                height: 80,
             },
             color: {
-                pattern: ['#7e74fb']
-            }
+                pattern: ["#7e74fb"],
+            },
         });
     }
 };
-InfocardComponent.ctorParameters = () => [];
+InfocardComponent.ctorParameters = () => [
+    { type: src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrService"] },
+    { type: src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"] },
+    { type: src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"] }
+];
 InfocardComponent = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-        selector: 'app-info-card',
-        template: __importDefault(__webpack_require__(/*! raw-loader!./info-card.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dashboards/dashboard-components/info-card/info-card.component.html")).default
+        selector: "app-info-card",
+        template: __importDefault(__webpack_require__(/*! raw-loader!./info-card.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dashboards/dashboard-components/info-card/info-card.component.html")).default,
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
+        ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrService"],
+        src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"],
+        src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]])
 ], InfocardComponent);
 
 
@@ -1871,6 +1915,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var c3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! c3 */ "./node_modules/c3/c3.js");
 /* harmony import */ var c3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(c3__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/api.service */ "./src/app/shared/services/api.service.ts");
+/* harmony import */ var src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/spinner.service */ "./src/app/shared/services/spinner.service.ts");
+/* harmony import */ var src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/services/common.service */ "./src/app/shared/services/common.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1885,153 +1934,178 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 };
 
 
+
+
+
+
+
 let SalesComponent = class SalesComponent {
-    constructor() {
+    constructor(api, router, toastr, spinner, comm) {
+        this.api = api;
+        this.router = router;
+        this.toastr = toastr;
+        this.spinner = spinner;
+        this.comm = comm;
+        this.type = "weekly";
+        this.earning = 0;
         // Barchart
         this.barChart = {
-            type: 'Bar',
+            type: "Bar",
             data: {
-                labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-                series: [[50, 40, 30, 70, 50, 20, 30]]
+                labels: ["M", "T", "W", "T", "F", "S", "S"],
+                series: [[50, 40, 30, 70, 50, 20, 30]],
             },
             options: {
                 height: 290,
                 chartPadding: {
                     top: 15,
-                    left: -25
+                    left: -25,
                 },
                 axisX: {
                     showLabel: true,
-                    showGrid: false
+                    showGrid: false,
                 },
                 axisY: {
                     showLabel: false,
-                    showGrid: false
+                    showGrid: false,
                 },
-                fullWidth: true
-            }
+                fullWidth: true,
+            },
         };
         // Line chart
         this.lineChart = {
-            type: 'Line',
+            type: "Line",
             data: {
-                labels: ['1PM', '2PM', '3PM', '4PM', '5PM', '6PM'],
-                series: [[2, 0, 5, 2, 5, 2]]
+                labels: ["1PM", "2PM", "3PM", "4PM", "5PM", "6PM"],
+                series: [[2, 0, 5, 2, 5, 2]],
             },
             options: {
                 showArea: true,
                 showPoint: false,
                 chartPadding: {
-                    left: -35
+                    left: -35,
                 },
                 axisX: {
                     showLabel: true,
-                    showGrid: false
+                    showGrid: false,
                 },
                 axisY: {
                     showLabel: false,
-                    showGrid: true
+                    showGrid: true,
                 },
-                fullWidth: true
-            }
+                fullWidth: true,
+            },
         };
         // This is line chart
         // bar chart
         this.lineChartLegend = true;
-        this.lineChartType = 'line';
+        this.lineChartType = "line";
         this.barChartOptions = {
             scaleShowVerticalLines: false,
             responsive: true,
-            barThickness: 10
+            barThickness: 10,
         };
         this.barChartLabels = [
-            'Jan',
-            'Feb',
-            'Mar',
-            'April',
-            'May',
-            'June',
-            'July',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
+            "Jan",
+            "Feb",
+            "Mar",
+            "April",
+            "May",
+            "June",
+            "July",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
         ];
-        this.barChartType = 'bar';
+        this.barChartType = "bar";
         this.barChartLegend = true;
         this.barChartData = [
-            { data: [65, 59, 80, 81, 56, 55, 40, 65, 64, 2, 3, 55], label: 'Sales' },
+            { data: [65, 59, 80, 81, 56, 55, 40, 65, 64, 2, 3, 55], label: "Sales" },
         ];
-        this.barChartColors = [
-            { backgroundColor: '#36bea6' }
-        ];
+        this.barChartColors = [{ backgroundColor: "#36bea6" }];
         //   user
         this.barChartLabels1 = [
-            'Area 1',
-            'Area 2',
-            'Area 3',
-            'Area 4',
-            'Area 5',
-            'Area 6',
-            'Area 7',
-            'Area 8',
-            'Area 9',
+            "Area 1",
+            "Area 2",
+            "Area 3",
+            "Area 4",
+            "Area 5",
+            "Area 6",
+            "Area 7",
+            "Area 8",
+            "Area 9",
         ];
-        this.barChartColors1 = [
-            { backgroundColor: '#EC75F6' }
-        ];
+        this.barChartColors1 = [{ backgroundColor: "#EC75F6" }];
         this.barChartData1 = [
-            { data: [65, 59, 80, 81, 56, 55, 40, 65, 64, 2, 3, 55], label: 'Revenue' },
+            { data: [0, 0, 0, 0, 0, 0, 0], label: "Revenue" },
         ];
-        this.barChartLabels2 = [
-            'Area 1',
-            'Area 2',
-            'Area 3',
-            'Area 4',
-            'Area 5',
-            'Area 6',
-            'Area 7',
-            'Area 8',
-            'Area 9',
-        ];
+        this.barChartLabels2 = ["M", "T", "W", "T", "F", "S", "S"];
+        this.getDashboardData();
+    }
+    filterData(value) {
+        this.type = value;
+        this.getDashboardData();
+    }
+    getDashboardData() {
+        this.api.dashboard(this.type).subscribe((res) => {
+            if (res.statusCode == 200) {
+                this.earning = res.data.totalEarning;
+                this.barChartData1 = [{ data: [], label: "Revenue" }];
+                this.barChartLabels2 = [];
+                var graphData = [];
+                var labelData = [];
+                for (let obj of res.data.dataToSend) {
+                    labelData.push(obj.name);
+                    graphData.push(obj.totalAmount);
+                }
+                console.log("data", graphData);
+                console.log("label", labelData);
+                this.barChartData1 = [{ data: graphData, label: "Revenue" }];
+                this.barChartLabels2 = labelData;
+            }
+            else {
+                this.toastr.error(res["message"]);
+            }
+        });
     }
     ngAfterViewInit() {
         const chart2 = c3__WEBPACK_IMPORTED_MODULE_1__["generate"]({
-            bindto: '#product-sales',
+            bindto: "#product-sales",
             data: {
                 columns: [
-                    ['user', 5, 6, 3, 7, 9, 10, 14, 12, 11, 9, 8, 7, 10, 6, 12, 10, 8],
+                    ["user", 5, 6, 3, 7, 9, 10, 14, 12, 11, 9, 8, 7, 10, 6, 12, 10, 8],
                 ],
-                type: 'spline'
+                type: "spline",
             },
             axis: {
                 y: {
                     show: true,
                     tick: {
                         count: 0,
-                        outer: false
-                    }
+                        outer: false,
+                    },
                 },
                 x: {
-                    show: true
-                }
+                    show: true,
+                },
             },
             padding: {
                 top: 40,
                 right: 10,
                 bottom: 40,
-                left: 20
+                left: 20,
             },
             point: {
-                r: 0
+                r: 0,
             },
             legend: {
-                hide: false
+                hide: false,
             },
             color: {
-                pattern: ['#fbb03b']
-            }
+                pattern: ["#fbb03b"],
+            },
         });
     }
     // events
@@ -2042,14 +2116,24 @@ let SalesComponent = class SalesComponent {
         // console.log(e);
     }
 };
-SalesComponent.ctorParameters = () => [];
+SalesComponent.ctorParameters = () => [
+    { type: src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrService"] },
+    { type: src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"] },
+    { type: src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"] }
+];
 SalesComponent = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-        selector: 'app-sales',
+        selector: "app-sales",
         template: __importDefault(__webpack_require__(/*! raw-loader!./sales.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dashboards/dashboard-components/sales/sales.component.html")).default,
         styles: [__importDefault(__webpack_require__(/*! ./sales.component.scss */ "./src/app/dashboards/dashboard-components/sales/sales.component.scss")).default]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
+        ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrService"],
+        src_app_shared_services_spinner_service__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"],
+        src_app_shared_services_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]])
 ], SalesComponent);
 
 

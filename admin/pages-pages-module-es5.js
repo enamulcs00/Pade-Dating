@@ -26483,7 +26483,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row\">\r\n    <!-- Column -->\r\n    <div class=\"col-lg-12\">\r\n        <div class=\"card\">\r\n\r\n            <div class=\"card-body\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-4\">\r\n                        <form>\r\n                            <div class=\"mb-2\">\r\n                                <!-- <input type=\"text\" class=\"form-control\" id=\"prenametext\" (keydown)=\"applyFilter($event)\" placeholder=\"Search\"> -->\r\n                                <input type=\"text\" class=\"form-control\" (keyup)='keyUp.next($event)' placeholder=\"Search\"  name=\"name\">\r\n                            </div>\r\n                        </form>\r\n                    </div>\r\n                    <div class=\"col-md-8  d-flex justify-content-end\">\r\n                        <select class=\"form-control mr-2 select-box\" name=\"status\" (change)=\"filterBy(IsActive)\" [(ngModel)]=\"IsActive\">\r\n                            <option [value]=\"''\" selected>All</option>\r\n                            <option [value]=\"true\">Block</option>\r\n                            <option [value]=\"false\">Unbloack</option>\r\n                         </select>\r\n                        <!-- <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\r\n                            <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\r\n                                All\r\n                            </button>\r\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\r\n                                <button class=\"dropdown-item\" value=\"0\" (click)=\"filterBy('')\">All</button>\r\n                                <button class=\"dropdown-item\" value=\"1\" (click)=\"filterBy('true')\">Blocked</button>\r\n                                <button class=\"dropdown-item\" value=\"2\" (click)=\"filterBy('false')\">Unblocked</button>\r\n                            </div>\r\n                        </div> -->\r\n                        <button class=\"btn btn-primary mb-2 mr-2\" (click)=\"openLink()\"><i class=\"sl-icon-cloud-download\"></i> Export CSV</button>\r\n                        <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add User</button> -->\r\n                    </div>\r\n                </div>\r\n                <div class=\"table-responsive\">\r\n                    <table mat-table class=\" w-100\" [dataSource]=\"dataSource\" matSort>\r\n                        <ng-container matColumnDef=\"image\">\r\n                            <th mat-header-cell *matHeaderCellDef> Image </th>\r\n                            <td mat-cell *matCellDef=\"let row\">\r\n                                <span class=\"img-small\"><img [src]=\"row.image?row.image:'assets/images/gallery/noimage.png'\" alt=\"wedding\" width=\"80\" height=\"80\"\r\n                                    class=\"rounded\"></span>\r\n                            </td>\r\n                        </ng-container>\r\n                        <ng-container matColumnDef=\"name\">\r\n                            <th mat-header-cell *matHeaderCellDef> Name </th>\r\n                            <td mat-cell *matCellDef=\"let row\"> {{row.firstName}} {{row.lastName}}</td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"contact\">\r\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Contact </th>\r\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.phoneNo}} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"email\">\r\n                            <th mat-header-cell *matHeaderCellDef>Email </th>\r\n                            <td mat-cell *matCellDef=\"let row\"> {{row.email}} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"address\">\r\n                            <th mat-header-cell *matHeaderCellDef>Address </th>\r\n                            <td mat-cell *matCellDef=\"let row\"> {{row.address}} </td>\r\n                        </ng-container>\r\n                        \r\n                        <ng-container matColumnDef=\"username\">\r\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Username </th>\r\n                            <td mat-cell *matCellDef=\"let row\"> {{row.username}} </td>\r\n                        </ng-container>\r\n                        <ng-container matColumnDef=\"dateofbirth\">\r\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">DOB </th>\r\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.dateofbirth|date}} </td>\r\n                        </ng-container>\r\n                        <ng-container matColumnDef=\"gender\">\r\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Gender </th>\r\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.gender}} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"status\">\r\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Status </th>\r\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\r\n                                <mat-slide-toggle [checked]=\"row.isBlocked === true ? true : false\" (change)=\"blockUsers(row, $event.checked)\">\r\n                                    {{row.isBlocked === true ? \"Blocked\" :\"Unblocked\"}}\r\n                                </mat-slide-toggle>\r\n                            </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"action\">\r\n                            <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Action </th>\r\n                            <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\r\n                                <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\r\n                                    <button class=\"btn btn-outline-primary btn-sm\" id=\"dropdownBasic1\"\r\n                                        ngbDropdownToggle>\r\n                                        Action\r\n                                    </button>\r\n\r\n                                    <!-- <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\r\n                                        <a class=\"dropdown-item\" routerLink=\"/pages/users_detail\"><i class=\"ti-eye\"></i>\r\n                                            Accept\r\n                                        </a>\r\n\r\n                                        <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete)\"><i\r\n                                                class=\"ti-trash\"></i>\r\n                                            Reject</button>\r\n                                    </div> -->\r\n\r\n                                    <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\r\n                                        <a class=\"dropdown-item\" (click)=\"viewUserDetail(row)\" style=\"cursor: default;\"><i class=\"ti-eye\"></i>\r\n                                            View\r\n                                        </a>\r\n                                        <button class=\"dropdown-item\" (click)=\"userEditModal(userEdit, row)\"><i\r\n                                                _ngcontent-axh-c146=\"\" class=\"ti-marker-alt\"></i> Edit</button>\r\n\r\n                                        <button class=\"dropdown-item\" (click)=\"deleteUser(userDelete, row)\"><i\r\n                                                class=\"ti-trash\"></i>\r\n                                            Delete</button>\r\n                                    </div>\r\n                                </div>\r\n                            </td>\r\n                        </ng-container>\r\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n                        <tr class=\"mat-row\" *matNoDataRow>\r\n                            <td class=\"mat-cell\" colspan=\"9\">Data not found!</td>\r\n                          </tr>\r\n                    </table>\r\n                </div>\r\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" [pageSize]=\"pageSize\">\r\n                </mat-paginator>\r\n                <!-- <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" [pageSize]=\"pageSize\" (page)=\"pageChange($event)\"></mat-paginator> -->\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <ng-template #content3 let-modal>\r\n        <div class=\"modal-header p-2\">\r\n            <h4 class=\"modal-title\">Driving Licence</h4>\r\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\r\n                <span aria-hidden=\"true\">&times;</span>\r\n            </button>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </ng-template>\r\n\r\n\r\n    <!-- delete modal -->\r\n    <ng-template #userDelete let-modal>\r\n        <div class=\"modal-body\">\r\n            <p>Are you want to delete this user?</p>\r\n            <div class=\"btn-group\">\r\n                <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\r\n                    (click)=\"modal.close('Cross click')\">Yes</button>\r\n                <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\r\n                    (click)=\"modal.dismiss('Cross click')\">No</button>\r\n            </div>\r\n        </div>\r\n    </ng-template>\r\n\r\n    <!-- edit user detail -->\r\n    <ng-template #userEdit let-modal>\r\n        <div class=\"modal-body\">\r\n            <div class=\"card\">\r\n                <form [formGroup]=\"userForm\">\r\n                    <div class=\"form-body\">\r\n                        <div class=\"card-body\">\r\n                            <div class=\"row p-t-20\">\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">First name</label>\r\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('required') && submitted\">\r\n                                            Please enter the first name!\r\n                                        </mat-error>\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\r\n                                            First name should alphabetic!\r\n                                        </mat-error>\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('maxlength') && !userForm.controls['firstName'].hasError('required')\">\r\n                                            Maxlength should 15!\r\n                                        </mat-error> \r\n                                    </div>\r\n                                     </div>\r\n                                \r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">Last name</label>\r\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('required') && submitted\">\r\n                                            Please enter the last name!\r\n                                        </mat-error>\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('pattern') && !userForm.controls['lastName'].hasError('required') && !userForm.controls['lastName'].hasError('maxlength')\">\r\n                                            Last name should alphabetic!\r\n                                        </mat-error>\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['lastName'].hasError('maxlength') && !userForm.controls['lastName'].hasError('required')\">\r\n                                            Maxlength should 15!\r\n                                        </mat-error>  \r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">User name</label>\r\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" (keydown.space)=\"$event.preventDefault()\" formControlName=\"userName\">\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('required') && submitted\">\r\n                                            Please enter the user name!\r\n                                        </mat-error>\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('pattern') && !userForm.controls['userName'].hasError('required') && !userForm.controls['userName'].hasError('maxlength')\">\r\n                                            User name should alpha numeric!\r\n                                        </mat-error>\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['userName'].hasError('maxlength') && !userForm.controls['userName'].hasError('required')\">\r\n                                            Maxlength should 15!\r\n                                        </mat-error>  \r\n                                    </div>\r\n                                     </div>\r\n                                \r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group has-success\">\r\n                                        <div class=\"form-group\">\r\n                                            <label class=\"control-label\">Upload User Profile</label>\r\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\" (change)=\"uploadFile($event)\"\r\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\r\n                                                    for=\"inputGroupFile01\">{{imagePath?imagePath:'Choose file'}}</label></div>\r\n                                                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"!imagePath && submitted\">\r\n                                                        Please upload user profile!\r\n                                                    </mat-error>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <!--/row-->\r\n                            <div class=\"row \">\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">Phone number</label>\r\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('required') && submitted\">\r\n                                            Please enter the phone number!\r\n                                        </mat-error>\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('minlength') && !userForm.controls['phoneNo'].hasError('required')\">\r\n                                            Phone number must be at least 7 digit long.\r\n                                        </mat-error>\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('maxlength') && !userForm.controls['phoneNo'].hasError('required')\">\r\n                                            Phone number can be max 15 digit long.\r\n                                        </mat-error>\r\n            \r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['phoneNo'].hasError('pattern') && !userForm.controls['phoneNo'].hasError('required') && !userForm.controls['phoneNo'].hasError('maxlength')\">\r\n                                            Phone number not valid!\r\n                                        </mat-error>\r\n                                    </div>\r\n                                </div>\r\n                                <!--/span-->\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group has-danger\">\r\n                                        <label class=\"control-label\">Email</label>\r\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\r\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\r\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('required') && submitted\">\r\n                                                Please enter the email address!\r\n                                            </mat-error>\r\n                \r\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['email'].hasError('pattern') && !userForm.controls['email'].hasError('required')\">\r\n                                                Email is invalid!\r\n                                            </mat-error>\r\n                                    </div>\r\n                                </div>\r\n                                <!--/span-->\r\n                            </div>\r\n                            <!--/row-->\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group has-danger\">\r\n                                        <label class=\"control-label\">DOB</label>\r\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" max=\"{{minAge | date:'yyyy-MM-dd'}}\" formControlName=\"dateofbirth\"\r\n                                            placeholder=\"eg:- 08/07/1998\">\r\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['dateofbirth'].hasError('required') && submitted\">\r\n                                                Please enter date of birth!\r\n                                            </mat-error>\r\n                                        </div>\r\n                                </div>\r\n                                <!--/span-->\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">Gender</label>\r\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\r\n                                            tabindex=\"1\">\r\n                                            <option value=\"MALE\" selected>Male</option>\r\n                                            <option value=\"FEMALE\">Female</option>\r\n                                        </select>\r\n                                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['gender'].hasError('required') && submitted\">\r\n                                            Please  choose gender!\r\n                                        </mat-error>\r\n                                    </div>\r\n                                </div>\r\n                                <!--/span-->\r\n                            </div>\r\n                            <!--/row-->\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n                                    <div class=\"form-group has-danger\">\r\n                                        <label class=\"control-label\">Address</label>\r\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\r\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\r\n                                            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['address'].hasError('required') && submitted\">\r\n                                                Please enter the email address!\r\n                                            </mat-error>\r\n                                        </div>\r\n                                </div>\r\n                                \r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">User Status</label>\r\n                                        <div class=\"form-check\">\r\n                                            <input type=\"checkbox\" id=\"exampleCheck1\" [(ngModel)]=\"isBlocked\" [ngModelOptions]=\"{standalone: true}\"\r\n                                                class=\"form-check-input\">\r\n                                            <label class=\"form-check-label\" for=\"exampleCheck1\">{{isBlocked?'Blocked':'Unblock'}}</label>\r\n                                        </div>\r\n                                    </div>\r\n\r\n                                </div>\r\n                               </div>\r\n                        \r\n                        </div>\r\n\r\n                        <div class=\"form-actions\">\r\n                            <div class=\"card-body\">\r\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\r\n                                    (click)=\"UpadteUser()\">\r\n                                    <i class=\"fa fa-check\"></i>Update</button>\r\n                                <button type=\"button\" class=\"btn btn-dark\"\r\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n         </div>\r\n    </ng-template>\r\n\r\n    <!-- add user -->\r\n    <ng-template #addUser let-modal>\r\n        <div class=\"modal-body\">\r\n            <div class=\"card\">\r\n                <form [formGroup]=\"userForm\">\r\n                    <div class=\"form-body\">\r\n                        <div class=\"card-body\">\r\n                            <div class=\"row p-t-20\">\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">First name</label>\r\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\r\n                                      </div>\r\n                                     </div>\r\n                                \r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">Last name</label>\r\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\r\n                                      </div>\r\n                                </div>\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">User Name</label>\r\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"userName\">\r\n                                      </div>\r\n                                     </div>\r\n                                \r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group has-success\">\r\n                                        <div class=\"form-group\">\r\n                                            <label class=\"control-label\">Upload User Profile</label>\r\n                                            <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\"\r\n                                                    id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\r\n                                                    for=\"inputGroupFile01\">Choose file</label></div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <!--/row-->\r\n                            <div class=\"row \">\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">Contact No</label>\r\n                                        <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\r\n\r\n                                    </div>\r\n                                </div>\r\n                                <!--/span-->\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group has-danger\">\r\n                                        <label class=\"control-label\">Email</label>\r\n                                        <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\r\n                                            placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"email\">\r\n\r\n                                    </div>\r\n                                </div>\r\n                                <!--/span-->\r\n                            </div>\r\n                            <!--/row-->\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group has-danger\">\r\n                                        <label class=\"control-label\">DOB</label>\r\n                                        <input type=\"date\" id=\"date\" class=\"form-control\" formControlName=\"dateofbirth\"\r\n                                            placeholder=\"eg:- 08/07/1998\">\r\n                                    </div>\r\n                                </div>\r\n                                <!--/span-->\r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">Gender</label>\r\n                                        <select class=\"form-control custom-select\" formControlName=\"gender\" data-placeholder=\"Choose a Category\"\r\n                                            tabindex=\"1\">\r\n                                            <option value=\"Male\" selected>Male</option>\r\n                                            <option value=\"Female\">Female</option>\r\n                                        </select>\r\n                                    </div>\r\n                                </div>\r\n                                <!--/span-->\r\n                            </div>\r\n                            <!--/row-->\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n                                    <div class=\"form-group has-danger\">\r\n                                        <label class=\"control-label\">Address</label>\r\n                                        <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\r\n                                            placeholder=\"#433 New garden Complex\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\r\n                                    </div>\r\n                                </div>\r\n                                \r\n                                <div class=\"col-md-6\">\r\n                                    <div class=\"form-group\">\r\n                                        <label class=\"control-label\">User Status</label>\r\n                                        <div class=\"custom-control custom-radio\">\r\n                                            <input type=\"radio\" id=\"customRadio1\" name=\"customRadio\"\r\n                                                class=\"custom-control-input\">\r\n                                            <label class=\"custom-control-label\" for=\"customRadio1\">Active</label>\r\n                                        </div>\r\n                                        <div class=\"custom-control custom-radio\">\r\n                                            <input type=\"radio\" id=\"customRadio2\" name=\"customRadio\"\r\n                                                class=\"custom-control-input\">\r\n                                            <label class=\"custom-control-label\" for=\"customRadio2\">Inactive</label>\r\n                                        </div>\r\n                                    </div>\r\n\r\n                                </div>\r\n                               </div>\r\n                        \r\n                        </div>\r\n\r\n                        <div class=\"form-actions\">\r\n                            <div class=\"card-body\">\r\n                                <button type=\"submit\" class=\"btn btn-success mr-3\"\r\n                                    (click)=\"modal.dismiss('Cross click')\">\r\n                                    <i class=\"fa fa-check\"></i> Add</button>\r\n                                <button type=\"button\" class=\"btn btn-dark\"\r\n                                    (click)=\"modal.dismiss('Cross click')\">Cancel</button>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n\r\n        </div>\r\n    </ng-template>";
+      __webpack_exports__["default"] = "<div class=\"row\">\r\n  <!-- Column -->\r\n  <div class=\"col-lg-12\">\r\n    <div class=\"card\">\r\n\r\n      <div class=\"card-body\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-4\">\r\n            <form>\r\n              <div class=\"mb-2\">\r\n                <!-- <input type=\"text\" class=\"form-control\" id=\"prenametext\" (keydown)=\"applyFilter($event)\" placeholder=\"Search\"> -->\r\n                <input type=\"text\" class=\"form-control\" (keyup)='keyUp.next($event)' placeholder=\"Search\" name=\"name\">\r\n              </div>\r\n            </form>\r\n          </div>\r\n          <div class=\"col-md-8  d-flex justify-content-end\">\r\n            <select class=\"form-control mr-2 select-box\" name=\"status\" (change)=\"filterBy(IsActive)\"\r\n              [(ngModel)]=\"IsActive\">\r\n              <option [value]=\"''\" selected>All</option>\r\n              <option [value]=\"true\">Block</option>\r\n              <option [value]=\"false\">Unbloack</option>\r\n            </select>\r\n            <!-- <div ngbDropdown class=\"d-inline-block mb-2 mr-2\">\r\n                            <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle>\r\n                                All\r\n                            </button>\r\n                            <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\r\n                                <button class=\"dropdown-item\" value=\"0\" (click)=\"filterBy('')\">All</button>\r\n                                <button class=\"dropdown-item\" value=\"1\" (click)=\"filterBy('true')\">Blocked</button>\r\n                                <button class=\"dropdown-item\" value=\"2\" (click)=\"filterBy('false')\">Unblocked</button>\r\n                            </div>\r\n                        </div> -->\r\n            <button class=\"btn btn-primary mb-2 mr-2\" (click)=\"openLink()\"><i class=\"sl-icon-cloud-download\"></i> Export\r\n              CSV</button>\r\n            <!-- <button class=\"btn btn-seconadary mb-2\" (click)=\"addUserModal(addUser)\"><i class=\"sl-icon-plus\"></i> Add User</button> -->\r\n          </div>\r\n        </div>\r\n        <div class=\"table-responsive\">\r\n          <table mat-table class=\" w-100\" [dataSource]=\"dataSource\" matSort>\r\n            <ng-container matColumnDef=\"image\">\r\n              <th mat-header-cell *matHeaderCellDef> Image </th>\r\n              <td mat-cell *matCellDef=\"let row\">\r\n                <span class=\"img-small\"><img [src]=\"row.image?row.image:'assets/images/gallery/noimage.png'\"\r\n                    alt=\"wedding\" width=\"80\" height=\"80\" class=\"rounded\"></span>\r\n              </td>\r\n            </ng-container>\r\n            <ng-container matColumnDef=\"name\">\r\n              <th mat-header-cell *matHeaderCellDef> Name </th>\r\n              <td mat-cell *matCellDef=\"let row\"> {{row.firstName}} {{row.lastName}}</td>\r\n            </ng-container>\r\n\r\n            <ng-container matColumnDef=\"contact\">\r\n              <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Contact </th>\r\n              <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.phoneNo}} </td>\r\n            </ng-container>\r\n\r\n            <ng-container matColumnDef=\"email\">\r\n              <th mat-header-cell *matHeaderCellDef>Email </th>\r\n              <td mat-cell *matCellDef=\"let row\"> {{row.email}} </td>\r\n            </ng-container>\r\n\r\n            <ng-container matColumnDef=\"address\">\r\n              <th mat-header-cell *matHeaderCellDef>Address </th>\r\n              <td mat-cell *matCellDef=\"let row\"> {{row.address}} </td>\r\n            </ng-container>\r\n\r\n            <ng-container matColumnDef=\"username\">\r\n              <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Username </th>\r\n              <td mat-cell *matCellDef=\"let row\"> {{row.username}} </td>\r\n            </ng-container>\r\n            <ng-container matColumnDef=\"dateofbirth\">\r\n              <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">DOB </th>\r\n              <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.dateofbirth|date}} </td>\r\n            </ng-container>\r\n            <ng-container matColumnDef=\"gender\">\r\n              <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\">Gender </th>\r\n              <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\"> {{row.gender}} </td>\r\n            </ng-container>\r\n\r\n            <ng-container matColumnDef=\"status\">\r\n              <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Status </th>\r\n              <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\r\n                <mat-slide-toggle [checked]=\"row.isBlocked === true ? true : false\"\r\n                  (change)=\"blockUsers(row, $event.checked)\">\r\n                  {{row.isBlocked === true ? \"Blocked\" :\"Unblocked\"}}\r\n                </mat-slide-toggle>\r\n              </td>\r\n            </ng-container>\r\n\r\n            <ng-container matColumnDef=\"action\">\r\n              <th mat-header-cell *matHeaderCellDef class=\"text-nowrap\"> Action </th>\r\n              <td mat-cell *matCellDef=\"let row\" class=\"text-nowrap\">\r\n                <div ngbDropdown placement=\"bottom\" class=\"d-inline-block\" container=\"body\">\r\n                  <button class=\"btn btn-outline-primary btn-sm\" id=\"dropdownBasic1\" ngbDropdownToggle>\r\n                    Action\r\n                  </button>\r\n\r\n                  <!-- <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\r\n                                        <a class=\"dropdown-item\" routerLink=\"/pages/users_detail\"><i class=\"ti-eye\"></i>\r\n                                            Accept\r\n                                        </a>\r\n\r\n                                        <button class=\"dropdown-item\" (click)=\"userDeleteModal(userDelete)\"><i\r\n                                                class=\"ti-trash\"></i>\r\n                                            Reject</button>\r\n                                    </div> -->\r\n\r\n                  <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\r\n                    <a style=\"cursor: pointer;\" class=\"dropdown-item\" (click)=\"viewUserDetail(row)\"\r\n                      ><i class=\"ti-eye\"></i>\r\n                      View\r\n                    </a>\r\n                    <button style=\"cursor: pointer;\" class=\"dropdown-item\" (click)=\"userEditModal(userEdit, row)\"><i\r\n                        _ngcontent-axh-c146=\"\" class=\"ti-marker-alt\"></i> Edit</button>\r\n\r\n                    <button style=\"cursor: pointer;\" class=\"dropdown-item\" (click)=\"deleteUser(userDelete, row)\"><i\r\n                        class=\"ti-trash\"></i>\r\n                      Delete</button>\r\n                  </div>\r\n                </div>\r\n              </td>\r\n            </ng-container>\r\n            <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n            <tr class=\"mat-row\" *matNoDataRow>\r\n              <td class=\"mat-cell\" colspan=\"9\">Data not found!</td>\r\n            </tr>\r\n          </table>\r\n        </div>\r\n        <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" [pageSize]=\"pageSize\">\r\n        </mat-paginator>\r\n        <!-- <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [length]=\"totalUser\" [pageSize]=\"pageSize\" (page)=\"pageChange($event)\"></mat-paginator> -->\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <ng-template #content3 let-modal>\r\n    <div class=\"modal-header p-2\">\r\n      <h4 class=\"modal-title\">Driving Licence</h4>\r\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n      </button>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <figure class=\"\"><img src=\"assets/images/gallery/driving-licence.jpg\" class=\"img-fluid\"></figure>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </ng-template>\r\n\r\n\r\n  <!-- delete modal -->\r\n  <ng-template #userDelete let-modal>\r\n    <div class=\"modal-body\">\r\n      <p>Are you want to delete this user?</p>\r\n      <div class=\"btn-group\">\r\n        <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\r\n          (click)=\"modal.close('Cross click')\">Yes</button>\r\n        <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\r\n          (click)=\"modal.dismiss('Cross click')\">No</button>\r\n      </div>\r\n    </div>\r\n  </ng-template>\r\n\r\n  <!-- edit user detail -->\r\n  <ng-template #userEdit let-modal>\r\n    <div class=\"modal-body\">\r\n      <div class=\"card\">\r\n        <form [formGroup]=\"userForm\">\r\n          <div class=\"form-body\">\r\n            <div class=\"card-body\">\r\n              <div class=\"row p-t-20\">\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">First name</label>\r\n                    <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref\r\n                      (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['firstName'].hasError('required') && submitted\">\r\n                      Please enter the first name!\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\r\n                      First name should alphabetic!\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['firstName'].hasError('maxlength') && !userForm.controls['firstName'].hasError('required')\">\r\n                      Maxlength should 15!\r\n                    </mat-error>\r\n                  </div>\r\n                </div>\r\n\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">Last name</label>\r\n                    <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref\r\n                      (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['lastName'].hasError('required') && submitted\">\r\n                      Please enter the last name!\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['lastName'].hasError('pattern') && !userForm.controls['lastName'].hasError('required') && !userForm.controls['lastName'].hasError('maxlength')\">\r\n                      Last name should alphabetic!\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['lastName'].hasError('maxlength') && !userForm.controls['lastName'].hasError('required')\">\r\n                      Maxlength should 15!\r\n                    </mat-error>\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">User name</label>\r\n                    <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\"\r\n                      (keydown.space)=\"$event.preventDefault()\" formControlName=\"userName\">\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['userName'].hasError('required') && submitted\">\r\n                      Please enter the user name!\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['userName'].hasError('pattern') && !userForm.controls['userName'].hasError('required') && !userForm.controls['userName'].hasError('maxlength')\">\r\n                      User name should alpha numeric!\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['userName'].hasError('maxlength') && !userForm.controls['userName'].hasError('required')\">\r\n                      Maxlength should 15!\r\n                    </mat-error>\r\n                  </div>\r\n                </div>\r\n\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group has-success\">\r\n                    <div class=\"form-group\">\r\n                      <label class=\"control-label\">Upload User Profile</label>\r\n                      <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\"\r\n                          (change)=\"uploadFile($event)\" id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label\r\n                          class=\"custom-file-label\" for=\"inputGroupFile01\">{{imagePath?imagePath:'Choose file'}}</label>\r\n                      </div>\r\n                      <mat-error class=\"form-text text-danger w-100\" *ngIf=\"!imagePath && submitted\">\r\n                        Please upload user profile!\r\n                      </mat-error>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n              <!--/row-->\r\n              <div class=\"row \">\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">Phone number</label>\r\n                    <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref\r\n                      (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['phoneNo'].hasError('required') && submitted\">\r\n                      Please enter the phone number!\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['phoneNo'].hasError('minlength') && !userForm.controls['phoneNo'].hasError('required')\">\r\n                      Phone number must be at least 7 digit long.\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['phoneNo'].hasError('maxlength') && !userForm.controls['phoneNo'].hasError('required')\">\r\n                      Phone number can be max 15 digit long.\r\n                    </mat-error>\r\n\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['phoneNo'].hasError('pattern') && !userForm.controls['phoneNo'].hasError('required') && !userForm.controls['phoneNo'].hasError('maxlength')\">\r\n                      Phone number not valid!\r\n                    </mat-error>\r\n                  </div>\r\n                </div>\r\n                <!--/span-->\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group has-danger\">\r\n                    <label class=\"control-label\">Email</label>\r\n                    <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\r\n                      placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"\r\n                      formControlName=\"email\">\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['email'].hasError('required') && submitted\">\r\n                      Please enter the email address!\r\n                    </mat-error>\r\n\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['email'].hasError('pattern') && !userForm.controls['email'].hasError('required')\">\r\n                      Email is invalid!\r\n                    </mat-error>\r\n                  </div>\r\n                </div>\r\n                <!--/span-->\r\n              </div>\r\n              <!--/row-->\r\n              <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group has-danger\">\r\n                    <label class=\"control-label\">DOB</label>\r\n                    <input type=\"date\" id=\"date\" class=\"form-control\" max=\"{{minAge | date:'yyyy-MM-dd'}}\"\r\n                      formControlName=\"dateofbirth\" placeholder=\"eg:- 08/07/1998\">\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['dateofbirth'].hasError('required') && submitted\">\r\n                      Please enter date of birth!\r\n                    </mat-error>\r\n                  </div>\r\n                </div>\r\n                <!--/span-->\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">Gender</label>\r\n                    <select class=\"form-control custom-select\" formControlName=\"gender\"\r\n                      data-placeholder=\"Choose a Category\" tabindex=\"1\">\r\n                      <option value=\"MALE\" selected>Male</option>\r\n                      <option value=\"FEMALE\">Female</option>\r\n                    </select>\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['gender'].hasError('required') && submitted\">\r\n                      Please choose gender!\r\n                    </mat-error>\r\n                  </div>\r\n                </div>\r\n                <!--/span-->\r\n              </div>\r\n              <!--/row-->\r\n              <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                  <div class=\"form-group has-danger\">\r\n                    <label class=\"control-label\">Address</label>\r\n                    <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\r\n                      placeholder=\"#433 New garden Complex\" #ref\r\n                      (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\r\n                    <mat-error class=\"form-text text-danger w-100\"\r\n                      *ngIf=\"userForm.controls['address'].hasError('required') && submitted\">\r\n                      Please enter the email address!\r\n                    </mat-error>\r\n                  </div>\r\n                </div>\r\n\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">User Status</label>\r\n                    <div class=\"form-check\">\r\n                      <input type=\"checkbox\" id=\"exampleCheck1\" [(ngModel)]=\"isBlocked\"\r\n                        [ngModelOptions]=\"{standalone: true}\" class=\"form-check-input\">\r\n                      <label class=\"form-check-label\" for=\"exampleCheck1\">{{isBlocked?'Blocked':'Unblock'}}</label>\r\n                    </div>\r\n                  </div>\r\n\r\n                </div>\r\n              </div>\r\n\r\n            </div>\r\n\r\n            <div class=\"form-actions\">\r\n              <div class=\"card-body\">\r\n                <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"UpadteUser()\">\r\n                  <i class=\"fa fa-check\"></i>Update</button>\r\n                <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </ng-template>\r\n\r\n  <!-- add user -->\r\n  <ng-template #addUser let-modal>\r\n    <div class=\"modal-body\">\r\n      <div class=\"card\">\r\n        <form [formGroup]=\"userForm\">\r\n          <div class=\"form-body\">\r\n            <div class=\"card-body\">\r\n              <div class=\"row p-t-20\">\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">First name</label>\r\n                    <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref\r\n                      (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"firstName\">\r\n                  </div>\r\n                </div>\r\n\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">Last name</label>\r\n                    <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref\r\n                      (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"lastName\">\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">User Name</label>\r\n                    <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"John doe\" #ref\r\n                      (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"userName\">\r\n                  </div>\r\n                </div>\r\n\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group has-success\">\r\n                    <div class=\"form-group\">\r\n                      <label class=\"control-label\">Upload User Profile</label>\r\n                      <div class=\"custom-file text-nowrap text-truncate\"><input class=\"custom-file-input\"\r\n                          id=\"inputGroupFile01\" type=\"file\" name=\"image\"><label class=\"custom-file-label\"\r\n                          for=\"inputGroupFile01\">Choose file</label></div>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n              <!--/row-->\r\n              <div class=\"row \">\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">Contact No</label>\r\n                    <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder=\"eg:-894681814\" #ref\r\n                      (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"phoneNo\">\r\n\r\n                  </div>\r\n                </div>\r\n                <!--/span-->\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group has-danger\">\r\n                    <label class=\"control-label\">Email</label>\r\n                    <input type=\"email\" id=\"email\" class=\"form-control form-control-danger\"\r\n                      placeholder=\"example@gmail.com\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\"\r\n                      formControlName=\"email\">\r\n\r\n                  </div>\r\n                </div>\r\n                <!--/span-->\r\n              </div>\r\n              <!--/row-->\r\n              <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group has-danger\">\r\n                    <label class=\"control-label\">DOB</label>\r\n                    <input type=\"date\" id=\"date\" class=\"form-control\" formControlName=\"dateofbirth\"\r\n                      placeholder=\"eg:- 08/07/1998\">\r\n                  </div>\r\n                </div>\r\n                <!--/span-->\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">Gender</label>\r\n                    <select class=\"form-control custom-select\" formControlName=\"gender\"\r\n                      data-placeholder=\"Choose a Category\" tabindex=\"1\">\r\n                      <option value=\"Male\" selected>Male</option>\r\n                      <option value=\"Female\">Female</option>\r\n                    </select>\r\n                  </div>\r\n                </div>\r\n                <!--/span-->\r\n              </div>\r\n              <!--/row-->\r\n              <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                  <div class=\"form-group has-danger\">\r\n                    <label class=\"control-label\">Address</label>\r\n                    <textarea name=\"\" id=\"\" cols=\"30\" rows=\"3\" class=\"form-control\" formControlName=\"address\"\r\n                      placeholder=\"#433 New garden Complex\" #ref\r\n                      (keydown.space)=\"!ref.value?$event.preventDefault():null\"></textarea>\r\n                  </div>\r\n                </div>\r\n\r\n                <div class=\"col-md-6\">\r\n                  <div class=\"form-group\">\r\n                    <label class=\"control-label\">User Status</label>\r\n                    <div class=\"custom-control custom-radio\">\r\n                      <input type=\"radio\" id=\"customRadio1\" name=\"customRadio\" class=\"custom-control-input\">\r\n                      <label class=\"custom-control-label\" for=\"customRadio1\">Active</label>\r\n                    </div>\r\n                    <div class=\"custom-control custom-radio\">\r\n                      <input type=\"radio\" id=\"customRadio2\" name=\"customRadio\" class=\"custom-control-input\">\r\n                      <label class=\"custom-control-label\" for=\"customRadio2\">Inactive</label>\r\n                    </div>\r\n                  </div>\r\n\r\n                </div>\r\n              </div>\r\n\r\n            </div>\r\n\r\n            <div class=\"form-actions\">\r\n              <div class=\"card-body\">\r\n                <button type=\"submit\" class=\"btn btn-success mr-3\" (click)=\"modal.dismiss('Cross click')\">\r\n                  <i class=\"fa fa-check\"></i> Add</button>\r\n                <button type=\"button\" class=\"btn btn-dark\" (click)=\"modal.dismiss('Cross click')\">Cancel</button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </form>\r\n      </div>\r\n\r\n    </div>\r\n  </ng-template>\r\n";
       /***/
     },
 
@@ -39117,6 +39117,16 @@
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! rxjs/operators */
       "./node_modules/rxjs/_esm2015/operators/index.js");
+      /* harmony import */
+
+
+      var moment__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! moment */
+      "./node_modules/moment/moment.js");
+      /* harmony import */
+
+
+      var moment__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_14__);
 
       var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
         var c = arguments.length,
@@ -39159,14 +39169,14 @@
           this.comm = comm;
           this.submitted = false;
           this.isBlocked = false;
-          this.displayedColumns = ['image', 'name', 'email', 'contact', 'username', 'dateofbirth', 'gender', 'address', 'status', 'action'];
+          this.displayedColumns = ["image", "name", "email", "contact", "username", "dateofbirth", "gender", "address", "status", "action"];
           this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"]();
-          this.exportLink = '';
+          this.exportLink = "";
           this.pageSize = 10;
           this.pageIndex = 1;
           this.minAge = 18;
-          this.searchBy = '';
-          this.IsActive = '';
+          this.searchBy = "";
+          this.IsActive = "";
           this.keyUp = new rxjs__WEBPACK_IMPORTED_MODULE_12__["Subject"]();
 
           this.setValues = function (data) {
@@ -39196,12 +39206,12 @@
           };
 
           this.isDelete = {
-            value: '',
+            value: "",
             event: new rxjs__WEBPACK_IMPORTED_MODULE_12__["Subject"]()
           };
           this.isLoadingResults = false;
           this.table = [{
-            name: 'Sandy',
+            name: "Sandy",
             // id: "#sand334553",
             contact: "+91-33434343",
             email: "sand@example.com",
@@ -39217,7 +39227,7 @@
             status: "",
             action: "1"
           }, {
-            name: 'Rohan',
+            name: "Rohan",
             // id: "#rohan334553",
             contact: "+91-33434343",
             email: "sand@example.com",
@@ -39233,7 +39243,7 @@
             status: "",
             action: "1"
           }, {
-            name: 'john',
+            name: "john",
             // id: "#rohan334553",
             contact: "+91-33434343",
             email: "sand@example.com",
@@ -39262,12 +39272,12 @@
               lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(15), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("^[a-zA-Z ]*$")])),
               userName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(15), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern(/^[a-zA-Z0-9]+$/)])),
               // countryCode: new FormControl("", Validators.compose([Validators.required])),
-              phoneNo: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(15), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(7), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-s./0-9]*$')]),
+              phoneNo: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(15), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(7), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-s./0-9]*$")]),
               email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required,, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/)])),
               dateofbirth: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
               address: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
               image: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
-              gender: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
+              gender: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
             });
           }
         }, {
@@ -39281,7 +39291,7 @@
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_13__["debounceTime"])(500), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_13__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_13__["mergeMap"])(function (search) {
               return Object(rxjs__WEBPACK_IMPORTED_MODULE_12__["of"])(search).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_13__["delay"])(500));
             })).subscribe(function (x) {
-              _this159.isDelete.event.next('data');
+              _this159.isDelete.event.next("data");
             });
             Object(rxjs__WEBPACK_IMPORTED_MODULE_12__["merge"])(this.paginator.page, this.isDelete.event).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_13__["startWith"])({}), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_13__["switchMap"])(function () {
               _this159.isLoadingResults = true;
@@ -39290,13 +39300,13 @@
                 page: _this159.paginator.pageIndex + 1
               };
 
-              if (_this159.isDelete.value != '') {
-                forms['search'] = _this159.isDelete.value;
-                forms['Page'] = 1;
+              if (_this159.isDelete.value != "") {
+                forms["search"] = _this159.isDelete.value;
+                forms["Page"] = 1;
               }
 
-              if (_this159.IsActive != null && _this159.IsActive != '') {
-                forms['isBlocked'] = _this159.IsActive;
+              if (_this159.IsActive != null && _this159.IsActive != "") {
+                forms["isBlocked"] = _this159.IsActive;
               } // return this._common.getGuides(forms);
 
 
@@ -39336,7 +39346,7 @@
         }, {
           key: "pageChange",
           value: function pageChange(event) {
-            console.log('ev page', event);
+            console.log("ev page", event);
             this.pageSize = event.pageSize;
             this.pageIndex = event.pageIndex;
             this.isDelete.event.next();
@@ -39354,20 +39364,20 @@
             this.isBlocked = data.isBlocked;
             this.objId = data._id;
             this.files = data.image;
-            this.imagePath = data.image.split('/').pop();
-            this.userForm.controls['firstName'].setValue(data.firstName);
-            this.userForm.controls['lastName'].setValue(data.lastName);
-            this.userForm.controls['email'].setValue(data.email);
-            this.userForm.controls['phoneNo'].setValue(data.phoneNo);
-            this.userForm.controls['dateofbirth'].setValue(data.dateofbirth);
-            this.userForm.controls['userName'].setValue(data.username);
-            this.userForm.controls['address'].setValue(data.address);
-            this.userForm.controls['gender'].setValue(data.gender || 'MALE');
-            this.userForm.controls['image'].setValue(data.image);
+            this.imagePath = data.image.split("/").pop();
+            this.userForm.controls["firstName"].setValue(data.firstName);
+            this.userForm.controls["lastName"].setValue(data.lastName);
+            this.userForm.controls["email"].setValue(data.email);
+            this.userForm.controls["phoneNo"].setValue(data.phoneNo);
+            this.userForm.controls["dateofbirth"].setValue(moment__WEBPACK_IMPORTED_MODULE_14__(data.dateofbirth).format("YYYY-MM-DD"));
+            this.userForm.controls["userName"].setValue(data.username);
+            this.userForm.controls["address"].setValue(data.address);
+            this.userForm.controls["gender"].setValue(data.gender || "MALE");
+            this.userForm.controls["image"].setValue(data.image);
             this.modalService.open(userEdit, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'lg'
+              size: "lg"
             }).result.then(function (result) {
               _this160.closeResult = "Closed with: ".concat(result);
 
@@ -39389,19 +39399,19 @@
 
               if (result) {
                 var data = _this160.userForm.value;
-                data['id'] = data._id;
+                data["id"] = data._id;
                 var formData = new FormData();
                 formData.append("data", JSON.stringify(data));
                 formData.append("pic", _this160.File);
 
                 _this160.api.updateUser(data).subscribe(function (response) {
-                  if (response['statusCode'] === 200) {
-                    _this160.toastr.success(response['message']); // this.getUsers();
+                  if (response["statusCode"] === 200) {
+                    _this160.toastr.success(response["message"]); // this.getUsers();
 
 
                     _this160.isDelete.event.next();
                   } else {
-                    _this160.toastr.error(response['message']);
+                    _this160.toastr.error(response["message"]);
                   }
                 });
               }
@@ -39434,13 +39444,13 @@
               isBlocked: status
             };
             this.api.blockUsers(item._id, data).subscribe(function (response) {
-              if (response['statusCode'] === 200) {
+              if (response["statusCode"] === 200) {
                 // this.getUsers();
-                _this161.toastr.success(response['message']);
+                _this161.toastr.success(response["message"]);
 
                 _this161.isDelete.event.next();
               } else {
-                _this161.toastr.error(response['message']);
+                _this161.toastr.error(response["message"]);
               }
             });
           }
@@ -39451,9 +39461,9 @@
 
             // const message = 'Are you sure you want to delete ' + list.firstName + ' ' + list.lastName + ' ?';
             this.modalService.open(userModal, {
-              ariaLabelledBy: 'modal-basic-title',
+              ariaLabelledBy: "modal-basic-title",
               centered: true,
-              size: 'sm'
+              size: "sm"
             }).result.then(function (result) {
               _this162.closeResult = "Closed with: ".concat(result);
 
@@ -39463,13 +39473,13 @@
                 };
 
                 _this162.api.deleteUser(list._id).subscribe(function (response) {
-                  if (response['statusCode'] === 200) {
-                    _this162.toastr.success(response['message']); // this.getUsers();
+                  if (response["statusCode"] === 200) {
+                    _this162.toastr.success(response["message"]); // this.getUsers();
 
 
                     _this162.isDelete.event.next();
                   } else {
-                    _this162.toastr.error(response['message']);
+                    _this162.toastr.error(response["message"]);
                   }
                 });
               }
@@ -39486,9 +39496,9 @@
           key: "discountModal",
           value: function discountModal(discount) {
             this.modalService.open(discount, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'lg'
+              size: "lg"
             });
           }
         }, {
@@ -39512,7 +39522,7 @@
             var _this164 = this;
 
             this.modalService.open(content1, {
-              ariaLabelledBy: 'modal-basic-title'
+              ariaLabelledBy: "modal-basic-title"
             }).result.then(function (result) {
               _this164.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
@@ -39523,27 +39533,27 @@
           key: "openWindowCustomClass",
           value: function openWindowCustomClass(content3) {
             this.modalService.open(content3, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'lg'
+              size: "lg"
             });
           }
         }, {
           key: "userprofileModal",
           value: function userprofileModal(userDelete) {
             this.modalService.open(userDelete, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'lg'
+              size: "lg"
             });
           }
         }, {
           key: "userDeleteModal",
           value: function userDeleteModal(userDelete) {
             this.modalService.open(userDelete, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'sm'
+              size: "sm"
             }).result.then(function (x) {// alert(x);
             });
           }
@@ -39551,27 +39561,27 @@
           key: "userDetailModal",
           value: function userDetailModal(userDetail) {
             this.modalService.open(userDetail, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'lg'
+              size: "lg"
             });
           }
         }, {
           key: "addUserModal",
           value: function addUserModal(addUser) {
             this.modalService.open(addUser, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'lg'
+              size: "lg"
             });
           }
         }, {
           key: "getDismissReason",
           value: function getDismissReason(reason) {
             if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ModalDismissReasons"].ESC) {
-              return 'by pressing ESC';
+              return "by pressing ESC";
             } else if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ModalDismissReasons"].BACKDROP_CLICK) {
-              return 'by clicking on a backdrop';
+              return "by clicking on a backdrop";
             } else {
               return "with: ".concat(reason);
             }
@@ -39583,12 +39593,12 @@
 
             var url = "uploadFile";
             var formdata = new FormData();
-            formdata.append('file', fileData);
+            formdata.append("file", fileData);
             this.api.postApi(url, formdata).subscribe(function (res) {
               console.log(res.data);
 
               if (res.statusCode == 200) {
-                _this165.toastr.success('File updated successfully', '', {
+                _this165.toastr.success("File updated successfully", "", {
                   timeOut: 700
                 });
 
@@ -39605,7 +39615,7 @@
             if (event.target.files && event.target.files[0]) {
               var type = event.target.files[0].type;
 
-              if (type === 'image/png' || type === 'image/jpg' || type === 'image/jpeg') {
+              if (type === "image/png" || type === "image/jpg" || type === "image/jpeg") {
                 var fileData = event.target.files[0];
                 this.sendFile(fileData);
                 var reader = new FileReader();
@@ -39621,16 +39631,16 @@
             this.submitted = true;
             var url = "users/".concat(this.objId);
             var obj = {
-              "firstName": this.userForm.controls['firstName'].value,
-              "lastName": this.userForm.controls['lastName'].value,
-              "gender": this.userForm.controls['gender'].value,
-              "address": this.userForm.controls['address'].value,
-              "image": this.files,
-              "phoneNo": this.userForm.controls['phoneNo'].value,
-              "email": this.userForm.controls['email'].value,
-              "dateofbirth": this.userForm.controls['dateofbirth'].value,
-              "username": this.userForm.controls['userName'].value,
-              "isBlocked": this.isBlocked
+              firstName: this.userForm.controls["firstName"].value,
+              lastName: this.userForm.controls["lastName"].value,
+              gender: this.userForm.controls["gender"].value,
+              address: this.userForm.controls["address"].value,
+              image: this.files,
+              phoneNo: this.userForm.controls["phoneNo"].value,
+              email: this.userForm.controls["email"].value,
+              dateofbirth: this.userForm.controls["dateofbirth"].value,
+              username: this.userForm.controls["userName"].value,
+              isBlocked: this.isBlocked
             };
 
             if (this.userForm.valid && this.imagePath) {
@@ -39638,7 +39648,7 @@
                 if (res.statusCode == 200) {
                   _this166.submitted = false;
 
-                  _this166.toastr.success(res.message, '', {
+                  _this166.toastr.success(res.message, "", {
                     timeOut: 900
                   });
 
@@ -39691,7 +39701,7 @@
         }]
       };
       UsersComponent = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-        selector: 'app-users',
+        selector: "app-users",
         template: __importDefault(__webpack_require__(
         /*! raw-loader!./users.component.html */
         "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/users/users.component.html"))["default"],
@@ -40753,141 +40763,6 @@
         /*! ./vendors.component.css */
         "./src/app/pages/vendors/vendors.component.css"))["default"]]
       }), __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]])], VendorsComponent);
-      /***/
-    },
-
-    /***/
-    "./src/app/shared/services/common.service.ts":
-    /*!***************************************************!*\
-      !*** ./src/app/shared/services/common.service.ts ***!
-      \***************************************************/
-
-    /*! exports provided: CommonService */
-
-    /***/
-    function srcAppSharedServicesCommonServiceTs(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "CommonService", function () {
-        return CommonService;
-      });
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! @angular/core */
-      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-      /* harmony import */
-
-
-      var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ngx-spinner */
-      "./node_modules/ngx-spinner/__ivy_ngcc__/fesm2015/ngx-spinner.js");
-      /* harmony import */
-
-
-      var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/common/http */
-      "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-      /* harmony import */
-
-
-      var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! rxjs/operators */
-      "./node_modules/rxjs/_esm2015/operators/index.js");
-
-      var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
-        var c = arguments.length,
-            r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-            d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-          if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-        }
-        return c > 3 && r && Object.defineProperty(target, key, r), r;
-      };
-
-      var __metadata = undefined && undefined.__metadata || function (k, v) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-      }; // import { ApiService } from "../api/api.service";
-
-
-      var CommonService = /*#__PURE__*/function () {
-        function CommonService(spinner, http) {
-          _classCallCheck(this, CommonService);
-
-          this.spinner = spinner;
-          this.http = http;
-          this.oderStatus = "pending";
-          this.storeOderStatus = "pending";
-          this.dropSetting = {
-            singleSelection: false,
-            idField: "_id",
-            textField: "name",
-            selectAllText: "Select All",
-            unSelectAllText: "UnSelect All",
-            itemsShowLimit: 3,
-            allowSearchFilter: true
-          };
-          this.singleDropSetting = {
-            enableCheckAll: false,
-            singleSelection: true,
-            idField: "_id",
-            textField: "name",
-            selectAllText: "Select All",
-            unSelectAllText: "UnSelect All",
-            itemsShowLimit: 3,
-            allowSearchFilter: true
-          };
-          this.currencyOptions = [{
-            code: "INR",
-            symbol: "₹"
-          }, {
-            code: "USD",
-            symbol: "$"
-          }, {
-            code: "Peso",
-            symbol: "₱"
-          }];
-          this.getCountryCode();
-        }
-
-        _createClass(CommonService, [{
-          key: "getCountryCode",
-          value: function getCountryCode() {
-            return this.http.get("assets/json/countryCode.json").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
-              return response;
-            }));
-          }
-        }, {
-          key: "showSpinner",
-          value: function showSpinner() {
-            this.spinner.show();
-          }
-        }, {
-          key: "hideSpinner",
-          value: function hideSpinner() {
-            this.spinner.hide();
-          }
-        }]);
-
-        return CommonService;
-      }();
-
-      CommonService.ctorParameters = function () {
-        return [{
-          type: ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"]
-        }, {
-          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-        }];
-      };
-
-      CommonService = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
-        providedIn: "root"
-      }), __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], CommonService);
       /***/
     }
   }]);

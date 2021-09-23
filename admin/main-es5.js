@@ -22,7 +22,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<router-outlet>\r\n<app-spinner></app-spinner>\r\n<ngx-spinner bdColor=\"rgba(51,51,51,0.8)\"\r\nsize=\"medium\"\r\ncolor=\"#FFBDC0\"\r\ntype=\"ball-spin-clockwise-fade\"><p style=\"font-size: 20px; color: white\">Loading...</p>\r\n</ngx-spinner>\r\n</router-outlet>";
+      __webpack_exports__["default"] = "<router-outlet>\r\n<app-spinner></app-spinner>\r\n<ngx-spinner bdColor=\"rgba(51,51,51,0.8)\"\r\nsize=\"medium\"\r\ncolor=\"#FFBDC0\"\r\ntype=\"ball-spin-clockwise-fade \" class=\"d-none\"><p style=\"font-size: 20px; color: white\">Loading...</p>\r\n</ngx-spinner>\r\n</router-outlet>";
       /***/
     },
 
@@ -1878,6 +1878,11 @@
           value: function deletePackage(id) {
             return this.http["delete"](_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + "packages/" + id);
           }
+        }, {
+          key: "dashboard",
+          value: function dashboard(type) {
+            return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + "dashboard?type=" + type);
+          }
         }]);
 
         return ApiService;
@@ -2525,7 +2530,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! D:\Apptunix\pade_adminpanel\src\main.ts */
+      /*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\src\main.ts */
       "./src/main.ts");
       /***/
     }

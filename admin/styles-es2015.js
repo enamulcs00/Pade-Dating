@@ -1060,20 +1060,20 @@ module.exports = content.locals || {};
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\src\styles.css */"./src/styles.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\node_modules\chartist\dist\chartist.css */"./node_modules/chartist/dist/chartist.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\node_modules\c3\c3.min.css */"./node_modules/c3/c3.min.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\node_modules\datatables.net-dt\css\jquery.dataTables.css */"./node_modules/datatables.net-dt/css/jquery.dataTables.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\node_modules\ngx-toastr\toastr.css */"./node_modules/ngx-toastr/toastr.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\node_modules\quill\dist\quill.snow.css */"./node_modules/quill/dist/quill.snow.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\node_modules\quill\dist\quill.bubble.css */"./node_modules/quill/dist/quill.bubble.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\node_modules\angular-calendar\css\angular-calendar.css */"./node_modules/angular-calendar/css/angular-calendar.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\node_modules\@swimlane\ngx-datatable\index.css */"./node_modules/@swimlane/ngx-datatable/index.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\node_modules\@swimlane\ngx-datatable\themes\material.css */"./node_modules/@swimlane/ngx-datatable/themes/material.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\node_modules\@swimlane\ngx-datatable\assets\icons.css */"./node_modules/@swimlane/ngx-datatable/assets/icons.css");
-__webpack_require__(/*! D:\Apptunix\pade_adminpanel\src\assets\vendor\css-chart.css */"./src/assets/vendor/css-chart.css");
-module.exports = __webpack_require__(/*! D:\Apptunix\pade_adminpanel\src\assets\scss\style.scss */"./src/assets/scss/style.scss");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\node_modules\chartist\dist\chartist.css */"./node_modules/chartist/dist/chartist.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\node_modules\c3\c3.min.css */"./node_modules/c3/c3.min.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\node_modules\datatables.net-dt\css\jquery.dataTables.css */"./node_modules/datatables.net-dt/css/jquery.dataTables.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\node_modules\ngx-toastr\toastr.css */"./node_modules/ngx-toastr/toastr.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\node_modules\quill\dist\quill.snow.css */"./node_modules/quill/dist/quill.snow.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\node_modules\quill\dist\quill.bubble.css */"./node_modules/quill/dist/quill.bubble.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\node_modules\angular-calendar\css\angular-calendar.css */"./node_modules/angular-calendar/css/angular-calendar.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\node_modules\@swimlane\ngx-datatable\index.css */"./node_modules/@swimlane/ngx-datatable/index.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\node_modules\@swimlane\ngx-datatable\themes\material.css */"./node_modules/@swimlane/ngx-datatable/themes/material.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\node_modules\@swimlane\ngx-datatable\assets\icons.css */"./node_modules/@swimlane/ngx-datatable/assets/icons.css");
+__webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\src\assets\vendor\css-chart.css */"./src/assets/vendor/css-chart.css");
+module.exports = __webpack_require__(/*! C:\Users\raghv\Desktop\DEV\Pade Dating\pade_adminpanel\src\assets\scss\style.scss */"./src/assets/scss/style.scss");
 
 
 /***/ })
