@@ -183,30 +183,30 @@
 </ng-template> -->
 <h3 class="mb-3">Subscription Plans</h3>
 <ul ngbNav #nav="ngbNav" class="nav-tabs custom-nav">
-   
-    <li ngbNavItem>
-      <a ngbNavLink>One Month</a>
-      <ng-template ngbNavContent>          
-        <app-one-month *ngIf="countries" [countries]="countries"></app-one-month>
-      </ng-template>
-    </li>
-    <li ngbNavItem>
-      <a ngbNavLink>Three Months</a>
-      <ng-template ngbNavContent>
-        <app-three-month *ngIf="countries" [countries]="countries"></app-three-month>
-</ng-template>
-    </li>
-    <li ngbNavItem>
-        <a ngbNavLink>Six Months</a>
-        <ng-template ngbNavContent>
-        <app-six-month *ngIf="countries" [countries]="countries"></app-six-month>
+
+  <li ngbNavItem>
+    <a ngbNavLink >One Month</a>
+    <ng-template ngbNavContent>
+      <app-one-month *ngIf="countries" [countries]="countries"></app-one-month>
     </ng-template>
-      </li>
-      <li ngbNavItem>
-        <a ngbNavLink>One Year</a>
-        <ng-template ngbNavContent>
-            <app-one-year *ngIf="countries" [countries]="countries"></app-one-year>
+  </li>
+  <li ngbNavItem>
+    <a ngbNavLink>Three Months</a>
+    <ng-template ngbNavContent>
+      <app-three-month *ngIf="countries" [countries]="countries"></app-three-month>
     </ng-template>
-      </li>
-  </ul>
-  <div [ngbNavOutlet]="nav"></div>
+  </li>
+  <li ngbNavItem>
+    <a ngbNavLink >Six Months</a>
+    <ng-template ngbNavContent>
+      <app-six-month *ngIf="countries" [countries]="countries"></app-six-month>
+    </ng-template>
+  </li>
+  <li ngbNavItem>
+    <a ngbNavLink>One Year</a>
+    <ng-template ngbNavContent>
+      <app-one-year *ngIf="countries" [countries]="countries"></app-one-year>
+    </ng-template>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>

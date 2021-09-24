@@ -1870,8 +1870,8 @@
           }
         }, {
           key: "getAllPackages",
-          value: function getAllPackages(page, count) {
-            return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + "packages/?page=" + page + "&count=" + count);
+          value: function getAllPackages(page, count, type) {
+            return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + "packages/?page=" + page + "&count=" + count + "&type=" + type);
           }
         }, {
           key: "deletePackage",

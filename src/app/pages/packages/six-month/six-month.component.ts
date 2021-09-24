@@ -200,7 +200,7 @@ export class SixMonthComponent implements OnInit {
 				startWith({}),
 				switchMap(() => {
 					this.isLoadingResults = true;
-					return this.service.getAllPackages(this.paginator.pageIndex + 1, this.paginator.pageSize);
+					return this.service.getAllPackages(this.paginator.pageIndex + 1, this.paginator.pageSize,6);
 				}),
 				map((data: any) => {
 					this.isLoadingResults = false;

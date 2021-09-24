@@ -184,8 +184,8 @@ export class ApiService {
 		return this.http.put(environment.apiUrl + "packages/" + id, body);
 	}
 
-	getAllPackages(page, count) {
-		return this.http.get(environment.apiUrl + "packages/?page=" + page + "&count=" + count);
+	getAllPackages(page, count,type) {
+		return this.http.get(environment.apiUrl + "packages/?page=" + page + "&count=" + count + "&type=" + type);
 	}
 
 	deletePackage(id) {

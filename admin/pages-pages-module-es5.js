@@ -25983,7 +25983,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<!-- <div class=\"card\">\r\n    <div class=\"card-body\">\r\n        <div class=\"d-block text-right\">\r\n            <button class=\"btn btn-primary mb-3\" (click)=\"packageModal(item)\">Add Packages</button>\r\n        </div>\r\n   \r\n<div class=\"row\">\r\n    <div class=\"col-md-4\" *ngFor=\"let item of packages\">\r\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\r\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \r\n            <h2 class=\"pb-3\">{{item?.name}}</h2>\r\n            <h1 class=\"price\">{{item?.price.units}} {{item?.price.amount}}/<span>{{item?.month}}Months</span></h1>\r\n            <h4 class=\"pt-3 pb-3\">{{'Save up to :'+' '+ item?.saveUpto}}%</h4>\r\n            <div class=\"row\">\r\n<div class=\"col-md-6\">\r\n    <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button>\r\n</div>\r\n<div class=\"col-md-6\">\r\n    <button class=\"btn btn-block\" (click)=\"packagedelModal(userDelete,item._id)\">Delete</button>\r\n</div>\r\n            </div>\r\n            < <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button>\r\n        </div>\r\n    </div>    \r\n   \r\n<p *ngIf=\"totalUser==0\">Data not found!</p>\r\n</div>\r\n<mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [pageSize]=\"pageSize\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\r\n</div>\r\n</div>\r\n\r\n<ng-template #item let-modal>\r\n    <div class=\"modal-body\">\r\n        <form [formGroup]=\"userForm\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <div class=\"form-group\">\r\n                    <label> Plan Name</label>\r\n                    <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\r\n                        Please enter the plan name!\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\r\n                        First name should alphabetic!\r\n                    </mat-error> \r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\r\n                        Maxlength should 15!\r\n                    </mat-error> \r\n                </div>\r\n                <div class=\"row\" formGroupName=\"price\">\r\n<div class=\"col-md-6\">\r\n    <div class=\"form-group\">\r\n        <label> Price</label>\r\n        <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\r\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\r\n            Please enter the price!\r\n        </mat-error>\r\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\r\n            Maxlength should 10!\r\n        </mat-error> \r\n    </div>\r\n</div>\r\n<div class=\"col-md-6\">\r\n    <div class=\"form-group\">\r\n        <label> Price unit</label>\r\n        <input type=\"text\" list=\"brow\"\r\n         placeholder=\"eg:- $ or Rs\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\" (keypress)=\"service.AlphabetOnly($event)\">\r\n         <datalist id=\"brow\">\r\n            <option [value]=\"code?.symbol\" *ngFor=\"let code of currencyArray\">\r\n            \r\n           </datalist>\r\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\r\n            Please enter the price unit!\r\n        </mat-error>\r\n        \r\n    </div>\r\n</div>\r\n </div>\r\n<div class=\"form-group\">\r\n                    <label> Months</label>\r\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\r\n                        Please enter the months!\r\n                    </mat-error>                    \r\n                 \r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label> Save Upto</label>\r\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\r\n                        Please enter the months!\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\r\n                        Maxlength should 10!\r\n                    </mat-error> \r\n                </div>\r\n                <button class=\"btn btn-primary\" (click)=\"SavePackage()\">Save</button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n    </div>\r\n</ng-template>\r\n<ng-template #itemedit let-modal>\r\n    <div class=\"modal-body\">\r\n        <form [formGroup]=\"userForm\">\r\n            <div class=\"card\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"form-group\">\r\n                        <label> Plan Name</label>\r\n                        <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\r\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\r\n                            Please enter the plan name!\r\n                        </mat-error>\r\n                         <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\r\n                            First name should alphabetic!\r\n                        </mat-error>\r\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\r\n                            Maxlength should 15!\r\n                        </mat-error> \r\n                    </div>\r\n                    <div class=\"row\" formGroupName=\"price\">\r\n    <div class=\"col-md-6\">\r\n        <div class=\"form-group\">\r\n            <label> Price</label>\r\n            <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\r\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\r\n                Please enter the price!\r\n            </mat-error>\r\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\r\n                Maxlength should 10!\r\n            </mat-error> \r\n        </div>\r\n    </div>\r\n    <div class=\"col-md-6\">\r\n        <div class=\"form-group\">\r\n            <label> Price unit</label>\r\n            <input type=\"text\" list=\"brow\" maxlength=\"10\" placeholder=\"eg:- $ or Rs\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\" (keypress)=\"service.AlphabetOnly($event)\">\r\n            <datalist id=\"brow\">\r\n                <option [value]=\"code?.symbol\" *ngFor=\"let code of currencyArray\">\r\n                \r\n               </datalist>\r\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\r\n                Please enter the price unit!\r\n            </mat-error>\r\n            \r\n        </div>\r\n    </div>\r\n     </div>\r\n    <div class=\"form-group\">\r\n                        <label> Months</label>\r\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\r\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\r\n                            Please enter the months!\r\n                        </mat-error>\r\n                    \r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label> Save Upto</label>\r\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\r\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\r\n                            Please enter the months!\r\n                        </mat-error>\r\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\r\n                            Maxlength should 10!\r\n                        </mat-error> \r\n                    </div>\r\n                    <button class=\"btn btn-primary\" (click)=\"updatePackage()\">Update</button>\r\n                </div>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</ng-template>\r\n<ng-template #userDelete let-modal>\r\n    <div class=\"modal-body\">\r\n        <p>Are you want to delete this package?</p>\r\n        <div class=\"btn-group\">\r\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\r\n            (click)=\"deletePackage()\">Yes</button>\r\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\r\n                (click)=\"modal.dismiss('Cross click')\">No</button>\r\n        </div>\r\n    </div>\r\n</ng-template> -->\r\n<h3 class=\"mb-3\">Subscription Plans</h3>\r\n<ul ngbNav #nav=\"ngbNav\" class=\"nav-tabs custom-nav\">\r\n   \r\n    <li ngbNavItem>\r\n      <a ngbNavLink>One Month</a>\r\n      <ng-template ngbNavContent>          \r\n        <app-one-month *ngIf=\"countries\" [countries]=\"countries\"></app-one-month>\r\n      </ng-template>\r\n    </li>\r\n    <li ngbNavItem>\r\n      <a ngbNavLink>Three Months</a>\r\n      <ng-template ngbNavContent>\r\n        <app-three-month *ngIf=\"countries\" [countries]=\"countries\"></app-three-month>\r\n</ng-template>\r\n    </li>\r\n    <li ngbNavItem>\r\n        <a ngbNavLink>Six Months</a>\r\n        <ng-template ngbNavContent>\r\n        <app-six-month *ngIf=\"countries\" [countries]=\"countries\"></app-six-month>\r\n    </ng-template>\r\n      </li>\r\n      <li ngbNavItem>\r\n        <a ngbNavLink>One Year</a>\r\n        <ng-template ngbNavContent>\r\n            <app-one-year *ngIf=\"countries\" [countries]=\"countries\"></app-one-year>\r\n    </ng-template>\r\n      </li>\r\n  </ul>\r\n  <div [ngbNavOutlet]=\"nav\"></div>\r\n";
+      __webpack_exports__["default"] = "<!-- <div class=\"card\">\r\n    <div class=\"card-body\">\r\n        <div class=\"d-block text-right\">\r\n            <button class=\"btn btn-primary mb-3\" (click)=\"packageModal(item)\">Add Packages</button>\r\n        </div>\r\n   \r\n<div class=\"row\">\r\n    <div class=\"col-md-4\" *ngFor=\"let item of packages\">\r\n        <div class=\"package-box border text-center p-4 text-white rounded bg-primary\">\r\n        <span class=\"h1\"><i class=\"fas fa-chess-king \"></i></span> \r\n            <h2 class=\"pb-3\">{{item?.name}}</h2>\r\n            <h1 class=\"price\">{{item?.price.units}} {{item?.price.amount}}/<span>{{item?.month}}Months</span></h1>\r\n            <h4 class=\"pt-3 pb-3\">{{'Save up to :'+' '+ item?.saveUpto}}%</h4>\r\n            <div class=\"row\">\r\n<div class=\"col-md-6\">\r\n    <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button>\r\n</div>\r\n<div class=\"col-md-6\">\r\n    <button class=\"btn btn-block\" (click)=\"packagedelModal(userDelete,item._id)\">Delete</button>\r\n</div>\r\n            </div>\r\n            < <button class=\"btn btn-block\" (click)=\"packageEditModal(itemedit,item)\">Edit</button>\r\n        </div>\r\n    </div>    \r\n   \r\n<p *ngIf=\"totalUser==0\">Data not found!</p>\r\n</div>\r\n<mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\" [pageSize]=\"pageSize\" [length]=\"totalUser\" (page)=\"pageChange($event)\"></mat-paginator>\r\n</div>\r\n</div>\r\n\r\n<ng-template #item let-modal>\r\n    <div class=\"modal-body\">\r\n        <form [formGroup]=\"userForm\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <div class=\"form-group\">\r\n                    <label> Plan Name</label>\r\n                    <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\r\n                        Please enter the plan name!\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\r\n                        First name should alphabetic!\r\n                    </mat-error> \r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\r\n                        Maxlength should 15!\r\n                    </mat-error> \r\n                </div>\r\n                <div class=\"row\" formGroupName=\"price\">\r\n<div class=\"col-md-6\">\r\n    <div class=\"form-group\">\r\n        <label> Price</label>\r\n        <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\r\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\r\n            Please enter the price!\r\n        </mat-error>\r\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\r\n            Maxlength should 10!\r\n        </mat-error> \r\n    </div>\r\n</div>\r\n<div class=\"col-md-6\">\r\n    <div class=\"form-group\">\r\n        <label> Price unit</label>\r\n        <input type=\"text\" list=\"brow\"\r\n         placeholder=\"eg:- $ or Rs\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\" (keypress)=\"service.AlphabetOnly($event)\">\r\n         <datalist id=\"brow\">\r\n            <option [value]=\"code?.symbol\" *ngFor=\"let code of currencyArray\">\r\n            \r\n           </datalist>\r\n        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\r\n            Please enter the price unit!\r\n        </mat-error>\r\n        \r\n    </div>\r\n</div>\r\n </div>\r\n<div class=\"form-group\">\r\n                    <label> Months</label>\r\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\r\n                        Please enter the months!\r\n                    </mat-error>                    \r\n                 \r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label> Save Upto</label>\r\n                    <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\r\n                        Please enter the months!\r\n                    </mat-error>\r\n                    <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\r\n                        Maxlength should 10!\r\n                    </mat-error> \r\n                </div>\r\n                <button class=\"btn btn-primary\" (click)=\"SavePackage()\">Save</button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n    </div>\r\n</ng-template>\r\n<ng-template #itemedit let-modal>\r\n    <div class=\"modal-body\">\r\n        <form [formGroup]=\"userForm\">\r\n            <div class=\"card\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"form-group\">\r\n                        <label> Plan Name</label>\r\n                        <input type=\"text\" placeholder=\"Plan Name\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"name\">\r\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('required') && submitted\">\r\n                            Please enter the plan name!\r\n                        </mat-error>\r\n                         <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['firstName'].hasError('pattern') && !userForm.controls['firstName'].hasError('required') && !userForm.controls['firstName'].hasError('maxlength')\">\r\n                            First name should alphabetic!\r\n                        </mat-error>\r\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['name'].hasError('maxlength') && !userForm.controls['name'].hasError('required')\">\r\n                            Maxlength should 15!\r\n                        </mat-error> \r\n                    </div>\r\n                    <div class=\"row\" formGroupName=\"price\">\r\n    <div class=\"col-md-6\">\r\n        <div class=\"form-group\">\r\n            <label> Price</label>\r\n            <input type=\"number\" min=\"0\" maxlength=\"10\" placeholder=\"$20\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"amount\">\r\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('required') && submitted\">\r\n                Please enter the price!\r\n            </mat-error>\r\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"amount.hasError('maxlength') && !amount.hasError('required')\">\r\n                Maxlength should 10!\r\n            </mat-error> \r\n        </div>\r\n    </div>\r\n    <div class=\"col-md-6\">\r\n        <div class=\"form-group\">\r\n            <label> Price unit</label>\r\n            <input type=\"text\" list=\"brow\" maxlength=\"10\" placeholder=\"eg:- $ or Rs\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"units\" (keypress)=\"service.AlphabetOnly($event)\">\r\n            <datalist id=\"brow\">\r\n                <option [value]=\"code?.symbol\" *ngFor=\"let code of currencyArray\">\r\n                \r\n               </datalist>\r\n            <mat-error class=\"form-text text-danger w-100\" *ngIf=\"units.hasError('required') && submitted\">\r\n                Please enter the price unit!\r\n            </mat-error>\r\n            \r\n        </div>\r\n    </div>\r\n     </div>\r\n    <div class=\"form-group\">\r\n                        <label> Months</label>\r\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"4 Months\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"month\">\r\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['month'].hasError('required') && submitted\">\r\n                            Please enter the months!\r\n                        </mat-error>\r\n                    \r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label> Save Upto</label>\r\n                        <input type=\"number\" min=\"0\" max=\"100\" placeholder=\"20%\" class=\"form-control\" #ref (keydown.space)=\"!ref.value?$event.preventDefault():null\" formControlName=\"saveUpto\">\r\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('required') && submitted\">\r\n                            Please enter the months!\r\n                        </mat-error>\r\n                        <mat-error class=\"form-text text-danger w-100\" *ngIf=\"userForm.controls['saveUpto'].hasError('maxlength') && !userForm.controls['saveUpto'].hasError('required')\">\r\n                            Maxlength should 10!\r\n                        </mat-error> \r\n                    </div>\r\n                    <button class=\"btn btn-primary\" (click)=\"updatePackage()\">Update</button>\r\n                </div>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</ng-template>\r\n<ng-template #userDelete let-modal>\r\n    <div class=\"modal-body\">\r\n        <p>Are you want to delete this package?</p>\r\n        <div class=\"btn-group\">\r\n            <button type=\"button\" class=\"btn btn-primary mr-2\" aria-label=\"Close\"\r\n            (click)=\"deletePackage()\">Yes</button>\r\n            <button type=\"button\" class=\"btn btn-seconadary\" aria-label=\"Close\"\r\n                (click)=\"modal.dismiss('Cross click')\">No</button>\r\n        </div>\r\n    </div>\r\n</ng-template> -->\r\n<h3 class=\"mb-3\">Subscription Plans</h3>\r\n<ul ngbNav #nav=\"ngbNav\" class=\"nav-tabs custom-nav\">\r\n\r\n  <li ngbNavItem>\r\n    <a ngbNavLink >One Month</a>\r\n    <ng-template ngbNavContent>\r\n      <app-one-month *ngIf=\"countries\" [countries]=\"countries\"></app-one-month>\r\n    </ng-template>\r\n  </li>\r\n  <li ngbNavItem>\r\n    <a ngbNavLink>Three Months</a>\r\n    <ng-template ngbNavContent>\r\n      <app-three-month *ngIf=\"countries\" [countries]=\"countries\"></app-three-month>\r\n    </ng-template>\r\n  </li>\r\n  <li ngbNavItem>\r\n    <a ngbNavLink >Six Months</a>\r\n    <ng-template ngbNavContent>\r\n      <app-six-month *ngIf=\"countries\" [countries]=\"countries\"></app-six-month>\r\n    </ng-template>\r\n  </li>\r\n  <li ngbNavItem>\r\n    <a ngbNavLink>One Year</a>\r\n    <ng-template ngbNavContent>\r\n      <app-one-year *ngIf=\"countries\" [countries]=\"countries\"></app-one-year>\r\n    </ng-template>\r\n  </li>\r\n</ul>\r\n<div [ngbNavOutlet]=\"nav\"></div>\r\n";
       /***/
     },
 
@@ -31293,7 +31293,7 @@
 
             Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["merge"])(this.paginator.page, this.isDelete.event).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["startWith"])({}), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["switchMap"])(function () {
               _this107.isLoadingResults = true;
-              return _this107.service.getAllPackages(_this107.paginator.pageIndex + 1, _this107.paginator.pageSize);
+              return _this107.service.getAllPackages(_this107.paginator.pageIndex + 1, _this107.paginator.pageSize, 1);
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])(function (data) {
               _this107.isLoadingResults = false;
 
@@ -31853,7 +31853,7 @@
 
             Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["merge"])(this.paginator.page, this.isDelete.event).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["startWith"])({}), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["switchMap"])(function () {
               _this112.isLoadingResults = true;
-              return _this112.service.getAllPackages(_this112.paginator.pageIndex + 1, _this112.paginator.pageSize);
+              return _this112.service.getAllPackages(_this112.paginator.pageIndex + 1, _this112.paginator.pageSize, 12);
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])(function (data) {
               _this112.isLoadingResults = false;
 
@@ -32263,13 +32263,14 @@
           this.InRange = false;
           this.pageSize = 10;
           this.pageIndex = 1;
+          this.type = 1;
           this.userForm = this.fb.group({
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(15)])),
             saveUpto: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(10)])),
             month: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])),
             price: this.fb.group({
-              amount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(10)]),
-              units: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])
+              amount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(10)]),
+              units: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])
             })
           });
           this.service.getCurrency().subscribe(function (res) {
@@ -32289,7 +32290,7 @@
           value: function getCountries() {
             var _this118 = this;
 
-            this.service.getApi('getCountries').subscribe(function (res) {
+            this.service.getApi("getCountries").subscribe(function (res) {
               if (res.statusCode === 200) {
                 _this118.countries = res["data"]; // console.log('Countries', this.countries);
               } else {
@@ -32303,9 +32304,9 @@
             this.userForm.reset();
             this.submitted = false;
             this.modalService.open(item, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'lg'
+              size: "lg"
             });
           }
         }, {
@@ -32313,9 +32314,9 @@
           value: function packagedelModal(item, id) {
             this.id = id;
             this.modalService.open(item, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'sm'
+              size: "sm"
             });
           }
         }, {
@@ -32323,14 +32324,14 @@
           value: function packageEditModal(itemedit, item) {
             this.objId = item._id;
             this.submitted = false;
-            this.userForm.controls['name'].setValue(item.name);
-            this.userForm.controls['saveUpto'].setValue(item.saveUpto);
-            this.userForm.controls['price'].setValue(item.price);
-            this.userForm.controls['month'].setValue(item.month);
+            this.userForm.controls["name"].setValue(item.name);
+            this.userForm.controls["saveUpto"].setValue(item.saveUpto);
+            this.userForm.controls["price"].setValue(item.price);
+            this.userForm.controls["month"].setValue(item.month);
             this.modalService.open(itemedit, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'lg'
+              size: "lg"
             });
           }
         }, {
@@ -32342,14 +32343,14 @@
               return item.symbol === _this119.userForm.value.price.units;
             }) == undefined) {
               this.units.reset();
-              this.toast.error('Please select price unit from dropdown');
+              this.toast.error("Please select price unit from dropdown");
             }
 
             var obj = {
-              "name": this.userForm.value.name,
-              "price": this.userForm.value.price,
-              "month": this.userForm.value.month,
-              "saveUpto": this.userForm.value.saveUpto
+              name: this.userForm.value.name,
+              price: this.userForm.value.price,
+              month: this.userForm.value.month,
+              saveUpto: this.userForm.value.saveUpto
             };
             this.submitted = true;
             var url = "packages";
@@ -32375,7 +32376,7 @@
         }, {
           key: "pageChange",
           value: function pageChange(event) {
-            console.log('ev page', event);
+            console.log("ev page", event);
             this.pageSize = event.pageSize;
 
             if (event.pageIndex == 0) {
@@ -32391,7 +32392,7 @@
           value: function getPackages() {
             var _this120 = this;
 
-            var url = "packages?page=".concat(this.pageIndex, "&count=").concat(this.pageSize);
+            var url = "packages?page=".concat(this.pageIndex, "&count=").concat(this.pageSize, "&type=").concat(this.type);
             this.service.getApi(url).subscribe(function (res) {
               if (res.statusCode === 200) {
                 _this120.packages = res.data.doc;
@@ -32412,15 +32413,15 @@
               return item.symbol === _this121.userForm.value.price.units;
             }) == undefined) {
               this.units.reset();
-              this.toast.error('Please select price unit from dropdown');
+              this.toast.error("Please select price unit from dropdown");
             }
 
-            console.log('Form', this.userForm.value.pric);
+            console.log("Form", this.userForm.value.pric);
             var obj = {
-              "name": this.userForm.value.name,
-              "price": this.userForm.value.price,
-              "month": this.userForm.value.month,
-              "saveUpto": this.userForm.value.saveUpto
+              name: this.userForm.value.name,
+              price: this.userForm.value.price,
+              month: this.userForm.value.month,
+              saveUpto: this.userForm.value.saveUpto
             };
             this.submitted = true;
             var url = "packages/".concat(this.objId);
@@ -32432,7 +32433,7 @@
 
                   _this121.submitted = false;
 
-                  _this121.toast.success('Package data updated successfully.');
+                  _this121.toast.success("Package data updated successfully.");
 
                   _this121.modalService.dismissAll();
                 } else {
@@ -32463,29 +32464,29 @@
           key: "addSubscriptionModal",
           value: function addSubscriptionModal(addSubscription) {
             this.modalService.open(addSubscription, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'lg'
+              size: "lg"
             }); // alert("Hello")
           }
         }, {
           key: "editSubscriptionModal",
           value: function editSubscriptionModal(editSubscription) {
             this.modalService.open(editSubscription, {
-              backdropClass: 'light-blue-backdrop',
+              backdropClass: "light-blue-backdrop",
               centered: true,
-              size: 'lg'
+              size: "lg"
             }); // alert("Hello")
           }
         }, {
           key: "amount",
           get: function get() {
-            return this.userForm.get('price.amount');
+            return this.userForm.get("price.amount");
           }
         }, {
           key: "units",
           get: function get() {
-            return this.userForm.get('price.units');
+            return this.userForm.get("price.units");
           }
         }]);
 
@@ -32507,7 +32508,7 @@
       };
 
       PackagesComponent = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-        selector: 'app-packages',
+        selector: "app-packages",
         template: __importDefault(__webpack_require__(
         /*! raw-loader!./packages.component.html */
         "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/packages/packages.component.html"))["default"],
@@ -32773,7 +32774,7 @@
 
             Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["merge"])(this.paginator.page, this.isDelete.event).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["startWith"])({}), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["switchMap"])(function () {
               _this123.isLoadingResults = true;
-              return _this123.service.getAllPackages(_this123.paginator.pageIndex + 1, _this123.paginator.pageSize);
+              return _this123.service.getAllPackages(_this123.paginator.pageIndex + 1, _this123.paginator.pageSize, 6);
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])(function (data) {
               _this123.isLoadingResults = false;
 
@@ -33333,7 +33334,7 @@
 
             Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["merge"])(this.paginator.page, this.isDelete.event).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["startWith"])({}), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["switchMap"])(function () {
               _this128.isLoadingResults = true;
-              return _this128.service.getAllPackages(_this128.paginator.pageIndex + 1, _this128.paginator.pageSize);
+              return _this128.service.getAllPackages(_this128.paginator.pageIndex + 1, _this128.paginator.pageSize, 3);
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])(function (data) {
               _this128.isLoadingResults = false;
 

@@ -1102,8 +1102,8 @@ let ApiService = class ApiService {
     updatePackage(id, body) {
         return this.http.put(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + "packages/" + id, body);
     }
-    getAllPackages(page, count) {
-        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + "packages/?page=" + page + "&count=" + count);
+    getAllPackages(page, count, type) {
+        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + "packages/?page=" + page + "&count=" + count + "&type=" + type);
     }
     deletePackage(id) {
         return this.http.delete(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + "packages/" + id);
